@@ -1,0 +1,168 @@
+{
+ "round": "text-style-tiles",
+ "kind": "finalists",
+ "layout": "tiles",
+ "fonts": [
+  "bebas-neue",
+  "inter",
+  "caveat",
+  "space-mono",
+  "bowlby-one",
+  "fraunces",
+  "anton",
+  "special-elite"
+ ],
+ "photoTag": "Test photo",
+ "title": "Text style",
+ "what": "How titles and labels sit on your video. Shown in your fonts and colors. How text moves comes later, in Movement.",
+ "rule": "mark as many finalists as you like. Next, you'll pick a main and a backup from them, and keep any others as alternatives.",
+ "keepWord": "finalist|finalists",
+ "trimAbove": 6,
+ "buttons": [
+  {
+   "value": "yes",
+   "label": "Finalist"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "yes"
+ ],
+ "next": "Next: your finalists, large. You'll pick a main and a backup.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "blocks",
+   "name": "Color blocks",
+   "line": "Words on solid blocks of your colors.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;font-size:8.5cqw;line-height:1.18\"><span style=\"background:#2EC4A6;color:#F4FBF7;padding:0 1.6cqw;box-decoration-break:clone;-webkit-box-decoration-break:clone\">I TRIED IT</span><br><span style=\"background:#F4FBF7;color:#13302A;padding:0 1.6cqw\">FOR 30 DAYS</span></div><div style=\"position:absolute;left:5%;bottom:11%;background:#F4FBF7;color:#13302A;font:600 3.4cqw 'Inter',Arial,sans-serif;padding:.8cqw 1.8cqw\">Day 1 vs Day 30</div></div>",
+   "pick": true,
+   "why": "Clean and readable, and it carries your colors without shouting."
+  },
+  {
+   "id": "plain",
+   "name": "Bare words",
+   "line": "Just the words with a soft shadow.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#fff;font-size:9cqw;line-height:1.02;text-shadow:0 .4cqw 1.6cqw rgba(0,0,0,.7)\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:600 3.6cqw 'Inter',Arial,sans-serif;text-shadow:0 .3cqw 1.2cqw rgba(0,0,0,.8)\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "bar",
+   "name": "Bottom bar",
+   "line": "Title and label in one bar at the bottom.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:0;bottom:12%;background:#F4FBF7;border-left:1.6cqw solid #2EC4A6;padding:1.2cqw 3cqw 1.2cqw 4cqw;max-width:62%\"><div style=\"font-size:6.6cqw;line-height:1;color:#13302A\">I TRIED IT FOR 30 DAYS</div><div style=\"font:600 3.2cqw 'Inter',Arial,sans-serif;color:#13302A;opacity:.8;margin-top:.6cqw\">Day 1 vs Day 30</div></div></div>"
+  },
+  {
+   "id": "highlighter",
+   "name": "Highlighter",
+   "line": "A marker stroke behind the words.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#13302A;font-size:9cqw;line-height:1.08\"><span style=\"background:linear-gradient(transparent 18%,#FFD166 18%,#FFD166 90%,transparent 90%);color:#13302A;padding:0 1cqw\">I TRIED IT</span><br><span style=\"background:linear-gradient(transparent 18%,#2EC4A6 18%,#2EC4A6 90%,transparent 90%);color:#13302A;padding:0 1cqw\">FOR 30 DAYS</span></div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:600 3.5cqw 'Inter',Arial,sans-serif;border-bottom:.6cqw solid #2EC4A6;padding-bottom:.4cqw;text-shadow:0 .2cqw .8cqw rgba(0,0,0,.7)\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "pill",
+   "name": "Pill label",
+   "line": "Plain title, label in a rounded pill.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#fff;font-size:9cqw;line-height:1.02;text-shadow:0 .3cqw 1.2cqw rgba(0,0,0,.6)\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;background:#2EC4A6;color:#F4FBF7;font:700 3.4cqw 'Inter',Arial,sans-serif;padding:.9cqw 2.4cqw;border-radius:99px\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "underline",
+   "name": "Underline",
+   "line": "One thick line under the key words.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#fff;font-size:9cqw;line-height:1.05;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\">I TRIED IT<br><span style=\"border-bottom:1.1cqw solid #2EC4A6\">FOR 30 DAYS</span></div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:600 3.4cqw 'Inter',Arial,sans-serif;text-shadow:0 .2cqw .8cqw rgba(0,0,0,.8)\">→ Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "kicker",
+   "name": "Kicker",
+   "line": "A small label above a big title.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;\"><div style=\"font:700 3cqw 'Inter',Arial,sans-serif;letter-spacing:.3cqw;color:#2EC4A6;text-transform:uppercase;margin-bottom:.8cqw;text-shadow:0 .2cqw .8cqw rgba(0,0,0,.6)\">Day 1 vs Day 30</div><div style=\"color:#fff;font-size:10cqw;line-height:.98;text-shadow:0 .4cqw 1.4cqw rgba(0,0,0,.6)\">I TRIED IT<br>FOR 30 DAYS</div></div></div>"
+  },
+  {
+   "id": "stacked",
+   "name": "Two-tone stack",
+   "line": "Each line in a different color.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;font-size:9.5cqw;line-height:.96\"><span style=\"color:#fff;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\">I TRIED IT</span><br><span style=\"color:#2EC4A6;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\">FOR 30 DAYS</span></div><div style=\"position:absolute;left:5%;bottom:11%;color:#13302A;background:#E8F3EE;font:600 3.3cqw 'Inter',Arial,sans-serif;padding:.7cqw 1.8cqw\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "outline",
+   "name": "Outline",
+   "line": "Hollow letters, thin outline.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:transparent;-webkit-text-stroke:.35cqw #fff;font-size:10cqw;line-height:1\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:700 3.4cqw 'Inter',Arial,sans-serif;border:.35cqw solid #fff;padding:.6cqw 1.6cqw;border-radius:99px\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "shadow",
+   "name": "Hard shadow",
+   "line": "A solid offset shadow, a bit retro.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#F4FBF7;font-size:9.5cqw;line-height:1.02;text-shadow:.7cqw .7cqw 0 #13302A\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;background:#FFD166;color:#13302A;font:700 3.4cqw 'Inter',Arial,sans-serif;padding:.7cqw 1.8cqw;box-shadow:.6cqw .6cqw 0 #13302A\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "brackets",
+   "name": "Corner brackets",
+   "line": "Words framed by two corner lines.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#fff;font-size:8.6cqw;line-height:1.02;padding:2cqw 2.6cqw;border-left:.5cqw solid #2EC4A6;border-top:.5cqw solid #2EC4A6;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:600 3.4cqw 'Inter',Arial,sans-serif;padding:0 0 0 2cqw;border-left:.5cqw solid #2EC4A6;text-shadow:0 .2cqw .8cqw rgba(0,0,0,.8)\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "tape",
+   "name": "Tape label",
+   "line": "Words on a strip of tape.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;transform:rotate(-2.5deg)\"><div style=\"background:#E8F3EE;color:#13302A;font-size:8cqw;line-height:1.05;padding:1.2cqw 3cqw;clip-path:polygon(2% 0,98% 4%,100% 50%,97% 100%,1% 96%,0 50%);box-shadow:0 .5cqw 1.4cqw rgba(0,0,0,.3)\">I TRIED IT<br>FOR 30 DAYS</div></div><div style=\"position:absolute;left:5%;bottom:11%;background:#2EC4A6;color:#F4FBF7;font:700 3.3cqw 'Inter',Arial,sans-serif;padding:.7cqw 2cqw;transform:rotate(2deg);clip-path:polygon(3% 0,100% 6%,97% 100%,0 92%)\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "split",
+   "name": "Split color",
+   "line": "Letters half one color, half another.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;font-size:10cqw;line-height:1;background:linear-gradient(180deg,#fff 50%,#2EC4A6 50%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 .3cqw .8cqw rgba(0,0,0,.5))\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:700 3.4cqw 'Inter',Arial,sans-serif;background:rgba(0,0,0,.55);padding:.7cqw 1.8cqw\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "stamp",
+   "name": "Stamp",
+   "line": "A tilted rubber stamp.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#2EC4A6;font-size:8.6cqw;line-height:1.02;border:.7cqw solid #2EC4A6;padding:1.2cqw 2.4cqw;transform:rotate(-6deg);background:rgba(255,255,255,.12);text-shadow:0 .2cqw .6cqw rgba(0,0,0,.35)\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:700 3.4cqw 'Inter',Arial,sans-serif;text-transform:uppercase;letter-spacing:.3cqw;text-shadow:0 .2cqw .8cqw rgba(0,0,0,.8)\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "sticker",
+   "name": "Sticker",
+   "line": "A thick-outlined sticker, slightly tilted.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;background:#fff;color:#13302A;font-size:8.2cqw;line-height:1.02;padding:1.6cqw 2.6cqw;border:.6cqw solid #13302A;border-radius:2cqw;box-shadow:1cqw 1cqw 0 #2EC4A6;transform:rotate(-3deg)\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;background:#FFD166;color:#13302A;font:800 3.4cqw 'Inter',Arial,sans-serif;padding:.8cqw 2cqw;border:.5cqw solid #13302A;border-radius:99px;transform:rotate(2deg)\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "handwritten",
+   "name": "Handwritten",
+   "line": "Your notes font, like you wrote it on.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#fff;font:700 10cqw/1 'Caveat',cursive;text-shadow:0 .3cqw 1.2cqw rgba(0,0,0,.7);transform:rotate(-3deg)\">I tried it<br>for 30 days</div><div style=\"position:absolute;left:5%;bottom:11%;color:#FFD166;font:700 6cqw 'Caveat',cursive;text-shadow:0 .2cqw 1cqw rgba(0,0,0,.8)\">Day 1 vs Day 30 →</div></div>"
+  },
+  {
+   "id": "glitch",
+   "name": "Glitch",
+   "line": "A color-split, digital edge.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;color:#fff;font-size:9.5cqw;line-height:1.02;text-shadow:.5cqw 0 0 #2EC4A6,-.5cqw 0 0 #FFD166\">I TRIED IT<br>FOR 30 DAYS</div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:700 3.4cqw 'Space Mono',monospace;background:#000;padding:.6cqw 1.6cqw;text-shadow:.25cqw 0 0 #2EC4A6\">Day 1 vs Day 30</div></div>"
+  },
+  {
+   "id": "clipping",
+   "name": "Cut-out letters",
+   "line": "Each word cut from a different scrap.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 45%,transparent 70%)\"></div><div style=\"position:absolute;inset:0;container-type:size;font-family:'Bebas Neue',Impact,sans-serif\"><div style=\"position:absolute;left:5%;top:9%;max-width:48%;\"><span style=\"display:inline-block;margin:.3cqw;padding:.2cqw 1.1cqw;font-size:8cqw;line-height:1;background:#fff;color:#13302A;transform:rotate(-4deg);font-family:'Bebas Neue',Impact,sans-serif\">I</span><span style=\"display:inline-block;margin:.3cqw;padding:.2cqw 1.1cqw;font-size:7.4cqw;line-height:1;background:#2EC4A6;color:#F4FBF7;transform:rotate(3deg);font-family:'Bowlby One',Impact,sans-serif\">TRIED</span><span style=\"display:inline-block;margin:.3cqw;padding:.2cqw 1.1cqw;font-size:8.4cqw;line-height:1;background:#13302A;color:#F4FBF7;transform:rotate(-2deg);font-family:'Bebas Neue',Impact,sans-serif\">IT</span><span style=\"display:inline-block;margin:.3cqw;padding:.2cqw 1.1cqw;font-size:6.8cqw;line-height:1;background:#E8F3EE;color:#13302A;transform:rotate(4deg);font-family:'Fraunces',Georgia,serif\">FOR</span><span style=\"display:inline-block;margin:.3cqw;padding:.2cqw 1.1cqw;font-size:9cqw;line-height:1;background:#FFD166;color:#13302A;transform:rotate(-5deg);font-family:'Anton',Impact,sans-serif\">30</span><span style=\"display:inline-block;margin:.3cqw;padding:.2cqw 1.1cqw;font-size:7.6cqw;line-height:1;background:#fff;color:#13302A;transform:rotate(2deg);font-family:'Special Elite',monospace\">DAYS</span></div><div style=\"position:absolute;left:5%;bottom:11%;color:#fff;font:600 3.4cqw 'Inter',Arial,sans-serif;text-shadow:0 .2cqw .8cqw rgba(0,0,0,.8)\">Day 1 vs Day 30</div></div>"
+  }
+ ],
+ "stage": "look",
+ "stepId": "text-style",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "1 of 2"
+}

@@ -1,0 +1,144 @@
+{
+ "round": "font-sets",
+ "kind": "fixed",
+ "mode": "sets",
+ "fonts": [
+  "anton",
+  "bebas-neue",
+  "bowlby-one",
+  "caveat",
+  "dm-sans",
+  "fraunces",
+  "inter",
+  "lora",
+  "permanent-marker",
+  "special-elite"
+ ],
+ "title": "Font set",
+ "what": "Your finalists combined into sets. Swap any font, then use the set you like.",
+ "next": "Next: text style.",
+ "persona": "Wren",
+ "slots": [
+  {
+   "id": "title",
+   "label": "Title"
+  },
+  {
+   "id": "text",
+   "label": "Text"
+  },
+  {
+   "id": "notes",
+   "label": "Notes"
+  }
+ ],
+ "choices": {
+  "title": [
+   {
+    "id": "anton",
+    "name": "Anton",
+    "css": "'Anton',Impact,sans-serif;font-weight:400;--fs:0.9"
+   },
+   {
+    "id": "bebas-neue",
+    "name": "Bebas Neue",
+    "css": "'Bebas Neue',Impact,sans-serif;font-weight:400;--fs:1.0"
+   },
+   {
+    "id": "bowlby-one",
+    "name": "Bowlby One",
+    "css": "'Bowlby One',Impact,sans-serif;font-weight:400;--fs:0.7"
+   },
+   {
+    "id": "fraunces",
+    "name": "Fraunces",
+    "css": "'Fraunces',Impact,sans-serif;font-weight:900;--fs:0.75"
+   }
+  ],
+  "text": [
+   {
+    "id": "dm-sans",
+    "name": "DM Sans",
+    "css": "'DM Sans',Arial,sans-serif;font-weight:400;--fs:1.0"
+   },
+   {
+    "id": "inter",
+    "name": "Inter",
+    "css": "'Inter',Arial,sans-serif;font-weight:400;--fs:1.0"
+   },
+   {
+    "id": "lora",
+    "name": "Lora",
+    "css": "'Lora',Arial,sans-serif;font-weight:400;--fs:1.0"
+   }
+  ],
+  "notes": [
+   {
+    "id": "caveat",
+    "name": "Caveat",
+    "css": "'Caveat',cursive;font-weight:700;--fs:1.0"
+   },
+   {
+    "id": "permanent-marker",
+    "name": "Permanent Marker",
+    "css": "'Permanent Marker',cursive;font-weight:400;--fs:0.85"
+   },
+   {
+    "id": "special-elite",
+    "name": "Special Elite",
+    "css": "'Special Elite',cursive;font-weight:400;--fs:0.8"
+   }
+  ]
+ },
+ "presets": [
+  {
+   "name": "Bold & friendly",
+   "pick": true,
+   "line": "Tall title, plain text, handwritten notes.",
+   "picks": {
+    "title": "bebas-neue",
+    "text": "inter",
+    "notes": "caveat"
+   }
+  },
+  {
+   "name": "Classic",
+   "line": "Magazine-style title and text, typewriter notes.",
+   "picks": {
+    "title": "fraunces",
+    "text": "lora",
+    "notes": "special-elite"
+   }
+  },
+  {
+   "name": "Loud",
+   "line": "Heavy title, clean text, marker notes.",
+   "picks": {
+    "title": "bowlby-one",
+    "text": "dm-sans",
+    "notes": "permanent-marker"
+   }
+  }
+ ],
+ "preview": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div class=\"ov2\" style=\"padding:5% 6%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"position:relative;padding-top:20px\"><span class=\"lab\" style=\"left:0;top:0;bottom:auto\">Title</span><div style=\"display:inline-block;background:#2EC4A6;color:#F4FBF7;padding:4px 10px;font-family:{{title}};font-size:calc(28px * var(--fs,1));line-height:1.2\">I TRIED IT</div><br><div style=\"display:inline-block;background:#F4FBF7;color:#13302A;padding:4px 10px;margin-top:6px;font-family:{{title}};font-size:calc(28px * var(--fs,1));line-height:1.2\">FOR 30 DAYS</div></div><div style=\"display:flex;justify-content:space-between;align-items:flex-end\"><div style=\"position:relative;padding-top:20px;max-width:60%\"><span class=\"lab\" style=\"left:0;top:0;bottom:auto\">Text</span><div style=\"background:#F4FBF7;color:#13302A;padding:6px 10px;font-family:{{text}};font-size:calc(15px * var(--fs,1));line-height:1.3\">Here's what actually happened.</div></div><div style=\"position:relative;padding-top:20px\"><span class=\"lab\" style=\"left:auto;right:0;top:0;bottom:auto\">Notes</span><div style=\"color:#FFD166;font-family:{{notes}};font-size:calc(26px * var(--fs,1));line-height:1.2;transform:rotate(-6deg);text-shadow:0 1px 3px #000\">start here →</div></div></div></div>",
+ "stage": "look",
+ "stepId": "fonts",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "2 of 2"
+}

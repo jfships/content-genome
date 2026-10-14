@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css">
+<style>
+.stage{perspective:1600px;perspective-origin:50% 40%}
+.row{position:absolute;transform-style:preserve-3d}
+.row .scr{position:absolute;width:560px;height:350px}
+.row .lb{position:absolute;top:-64px;left:0;font-size:38px}
+#cap{position:absolute;left:120px;top:80px;font-size:52px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div class="stage"><div class="w3">
+  <div class="row" id="r3" style="left:1120px;top:230px"><div class="h lb">3 · Edit</div><div class="scr"><img src="assets/screen-1.png"></div></div>
+  <div class="row" id="r2" style="left:660px;top:330px"><div class="h lb">2 · Idea</div><div class="scr"><img src="assets/screen-2.png"></div></div>
+  <div class="row" id="r1" style="left:330px;top:450px"><div class="h lb">1 · Brand</div><div class="scr"><img src="assets/screen-3.png"></div></div>
+ </div></div>
+ <div id="cap" class="h">Focus on <span class="blk" id="fw">The Brand</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+gsap.set("#r1",{z:180}); gsap.set("#r2",{z:-200}); gsap.set("#r3",{z:-700});
+const blur=(r,b)=>({filter:`blur(${b}px)`,opacity:b>0?.55:1});
+gsap.set("#r1",blur(0,0)); gsap.set("#r2",blur(0,8)); gsap.set("#r3",blur(0,14));
+tl.fromTo(".w3",{rotationY:16,z:-300},{rotationY:8,z:0,duration:1.2,ease:"expo.out"},0);
+// rack focus front -> middle -> back, label follows
+const focus=(t,a,b,c,word)=>{tl.to("#r1",{filter:`blur(${a}px)`,opacity:a?.55:1,duration:.6,ease:"power2.inOut"},t);
+ tl.to("#r2",{filter:`blur(${b}px)`,opacity:b?.55:1,duration:.6,ease:"power2.inOut"},t);
+ tl.to("#r3",{filter:`blur(${c}px)`,opacity:c?.55:1,duration:.6,ease:"power2.inOut"},t);
+ tl.set("#fw",{textContent:word},t+.3);};
+focus(1.8,8,0,8,"The Idea"); focus(3.4,14,8,0,"The Edit");
+tl.to(".w3",{rotationY:-4,duration:3.6,ease:"power2.inOut"},1.6);
+window.__timelines["main"]=tl;
+</script></body></html>

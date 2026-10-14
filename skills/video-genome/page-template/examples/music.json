@@ -1,0 +1,49 @@
+{
+ "round": "music",
+ "stage": "plan",
+ "stepId": "music",
+ "fonts": [
+  "inter"
+ ],
+ "kind": "adjust",
+ "keepValues": [
+  "ok"
+ ],
+ "keepWord": "part|parts",
+ "buttons": [
+  {
+   "value": "ok",
+   "label": "Sounds right"
+  },
+  {
+   "value": "change",
+   "label": "Change it"
+  }
+ ],
+ "title": "Music",
+ "what": "The kind of music under each part, from your brand. These are descriptions; real tracks come later (cost shown first).",
+ "next": "Next: Shorts moments.",
+ "options": [
+  {
+   "id": "m-open",
+   "name": "Opening",
+   "at": "0:00–0:40",
+   "line": "Tension pulse, 128 BPM, builds to the first cut.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#252e3c\"><text x=\"18\" y=\"74\" font-family=\"Inter,Arial,sans-serif\" font-size=\"15\" font-weight=\"800\" fill=\"#EEF1F5\" text-anchor=\"start\">Tension pulse · 128</text><text x=\"18\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"12\" font-weight=\"500\" fill=\"#8a94a6\" text-anchor=\"start\">0:00–0:40</text></svg>"
+  },
+  {
+   "id": "m-middle",
+   "name": "The 30 days",
+   "at": "0:40–6:00",
+   "line": "Minimal electronic, 118 BPM, low under your voice.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#252e3c\"><text x=\"18\" y=\"74\" font-family=\"Inter,Arial,sans-serif\" font-size=\"15\" font-weight=\"800\" fill=\"#EEF1F5\" text-anchor=\"start\">Minimal electronic · 118</text><text x=\"18\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"12\" font-weight=\"500\" fill=\"#8a94a6\" text-anchor=\"start\">0:40–6:00</text></svg>"
+  },
+  {
+   "id": "m-end",
+   "name": "The result",
+   "at": "6:00–end",
+   "line": "Cinematic build, 96 BPM, peaks on the result.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#252e3c\"><text x=\"18\" y=\"74\" font-family=\"Inter,Arial,sans-serif\" font-size=\"15\" font-weight=\"800\" fill=\"#EEF1F5\" text-anchor=\"start\">Cinematic build · 96</text><text x=\"18\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"12\" font-weight=\"500\" fill=\"#8a94a6\" text-anchor=\"start\">6:00–end</text></svg>"
+  }
+ ]
+}

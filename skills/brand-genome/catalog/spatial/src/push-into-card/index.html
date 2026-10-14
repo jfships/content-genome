@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080"><script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css"><style>
+.stage{perspective:1500px}
+.cd{position:absolute;width:500px;height:312px}
+.cd .scr{position:absolute;inset:0}
+.cd .lb{position:absolute;left:0;top:-52px;font-size:30px}
+#full{position:absolute;left:260px;top:120px;width:1400px;height:875px}
+#cap{position:absolute;left:120px;top:60px;font-size:48px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div class="stage"><div class="w3" id="w"><div class="cd" id="cd0" style="left:180px;top:200px"><div class="scr"><img src="assets/screen-1.png"></div><div class="h lb">Colors</div></div><div class="cd" id="cd1" style="left:720px;top:200px"><div class="scr"><img src="assets/screen-2.png"></div><div class="h lb">Fonts</div></div><div class="cd" id="cd2" style="left:1260px;top:200px"><div class="scr"><img src="assets/screen-3.png"></div><div class="h lb">Motion</div></div><div class="cd" id="cd3" style="left:180px;top:580px"><div class="scr"><img src="assets/screen-4.png"></div><div class="h lb">Kit</div></div><div class="cd" id="cd4" style="left:720px;top:580px"><div class="scr"><img src="assets/screen-5.png"></div><div class="h lb">Reels</div></div><div class="cd" id="cd5" style="left:1260px;top:580px"><div class="scr"><img src="assets/screen-6.png"></div><div class="h lb">Words</div></div></div></div>
+ <div class="scr" id="full"><img src="assets/screen-1.png"></div>
+ <div id="cap" class="h">Open <span class="blk">Colors</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true}); gsap.set(["#full","#cap"],{opacity:0});
+tl.fromTo(".cd",{opacity:0,y:40,z:-200},{opacity:1,y:0,z:0,duration:.8,ease:"expo.out",stagger:.06},0);
+tl.fromTo("#cap",{opacity:0},{opacity:1,duration:.4,immediateRender:false},1.2);
+tl.to("#cd0",{scale:1.06,duration:.25,ease:"power2.out"},1.6);
+// shared-axis push: the camera drives into the chosen card; the others fall away
+tl.to("#w",{z:900,x:600,y:240,duration:.8,ease:"power3.in"},2.0);
+tl.to([".cd:not(#cd0)"],{opacity:0,filter:"blur(12px)",duration:.5,ease:"power2.in"},2.0);
+tl.to("#cd0",{opacity:0,duration:.25},2.6);
+tl.fromTo("#full",{opacity:0,scale:.8,filter:"blur(12px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:.8,ease:"expo.out",immediateRender:false},2.6);
+tl.to("#cap",{opacity:0,duration:.2},2.6);
+window.__timelines["main"]=tl;
+</script></body></html>

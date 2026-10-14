@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__</title>
+<style>
+__FONTS__
+:root{--bg:#f4f4f4;--tx:#111;--hl:#2ec4a6;--ex2:#ffd166;--lt:#e8f3ee;--title:Impact,sans-serif;--text:Arial,sans-serif;--notes:cursive;--card:#fff;--mute:#5d6663;--line:rgba(0,0,0,.1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* keep bar: same link always, pin, copy, change */
+#keep{position:sticky;top:0;z-index:20;background:var(--tx);color:var(--bg);font-size:13.5px}
+#keep .in{max-width:1180px;margin:0 auto;padding:9px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+#keep b{font-weight:700}
+#keep .sp{flex:1}
+#keep button{font:600 13px var(--text);border:0;border-radius:99px;padding:7px 14px;cursor:pointer;background:var(--hl);color:var(--tx)}
+#keep button.ghost{background:transparent;color:var(--bg);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+#nav{position:sticky;top:42px;z-index:19;background:var(--bg);border-bottom:1px solid var(--line)}
+#nav .in{max-width:1180px;margin:0 auto;padding:8px 20px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+#nav a{flex:none;text-decoration:none;font:600 13px var(--text);padding:6px 12px;border-radius:99px;background:var(--lt);color:var(--tx)}
+#nav a:hover{background:var(--hl)}
+/* hero */
+#hero{max-width:1180px;margin:0 auto;padding:56px 20px 40px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+#hero .kicker{font:700 12.5px var(--text);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+#hero h1{font:400 clamp(64px,11vw,148px)/.86 var(--title);margin:14px 0 10px;letter-spacing:.005em}
+#hero .handle{font:700 18px var(--text);color:var(--hl)}
+#hero .promise{font-size:22px;line-height:1.35;margin:18px 0 0;max-width:30ch}
+#hero .wm{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:var(--tx);box-shadow:0 20px 50px rgba(0,0,0,.18)}
+#hero .wm .html{position:absolute;inset:0}
+#hero .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+#hero .chips span{font:700 12.5px var(--text);padding:6px 12px;border-radius:99px;background:var(--tx);color:var(--bg)}
+#hero .chips span:first-child{background:var(--hl);color:var(--tx)}
+/* sections */
+section{scroll-margin-top:100px;max-width:1180px;margin:0 auto;padding:44px 20px;border-top:1px solid var(--line)}
+section .hd{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:6px}
+section h2{font:400 clamp(40px,6vw,64px)/.9 var(--title);margin:0}
+section .num{font:700 13px var(--text);color:var(--mute);letter-spacing:.12em}
+section .acts{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+section .acts a,section .acts button{font:600 13px var(--text);text-decoration:none;border:0;cursor:pointer;padding:7px 13px;border-radius:99px;background:var(--lt);color:var(--tx)}
+section .acts button{background:var(--tx);color:var(--bg)}
+section .line{color:var(--mute);margin:6px 0 22px;max-width:70ch}
+section p.t{max-width:70ch;margin:0 0 12px}
+section ul.l{margin:0 0 8px;padding-left:20px;max-width:75ch}
+section ul.l li{margin:4px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--min,300px),1fr));gap:18px}
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.06),0 6px 20px rgba(0,0,0,.05);position:relative}
+.card .m{position:relative;overflow:hidden;background:#111;aspect-ratio:16/9}
+.card .m img{width:100%;height:100%;object-fit:cover;display:block}
+.card .m .html{position:absolute;inset:0}
+.card .m .ov{position:absolute;inset:0;pointer-events:none}
+.card .cap{padding:12px 14px 14px}
+.card .cap b{font-size:15px}
+.card .cap .note{display:block;color:var(--mute);font-size:13.5px;margin-top:2px}
+.lab{display:inline-block;vertical-align:2px;margin-right:8px;font:700 10.5px/1 var(--text);letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border-radius:4px;background:var(--tx);color:var(--bg)}
+.lab.Backup{background:var(--card);color:var(--tx);box-shadow:inset 0 0 0 2px var(--tx)}
+.lab.Library,.lab.Kept{background:var(--hl);color:var(--tx)}
+.lab.Our-pick{background:var(--ex2);color:#111}
+.lab.Your-quirk{background:var(--card);color:var(--tx);box-shadow:inset 0 0 0 2px var(--hl)}
+.hl-note{max-width:1180px;margin:0 auto;padding:14px 20px;font-size:14.5px}
+.hl-note span{display:block;background:var(--lt);color:var(--tx);border-radius:10px;padding:10px 14px}
+html.dark-bg .hl-note span{background:var(--card)}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;width:64px;height:64px;border:0;border-radius:50%;background:rgba(0,0,0,.72);color:#fff;font-size:24px;cursor:pointer;box-shadow:0 0 0 3px rgba(255,255,255,.85)}
+.card.playing .play{opacity:.28}
+/* palette */
+.pal{display:grid;grid-template-columns:repeat(5,1fr);border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.pal div{aspect-ratio:1/1.1;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;font:700 12.5px/1.3 var(--text)}
+.pal small{font-weight:500;opacity:.8}
+.fontrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.fontrow .card{padding:18px}
+.fontrow .smp{font-size:42px;line-height:1;margin:10px 0 6px}
+.fontrow .job{font:700 11.5px var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.chg{list-style:none;padding:0;margin:0}
+.chg li{padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+footer a{color:inherit}
+footer{max-width:1180px;margin:0 auto;padding:30px 20px 60px;color:var(--mute);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:30;max-width:92vw}
+#toast.on{opacity:1}
+#note{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.5);display:grid;place-items:center;padding:20px}
+#note[hidden]{display:none}
+#note .box{background:#fff;color:#111;max-width:440px;border-radius:14px;padding:22px 22px 18px;box-shadow:0 20px 60px rgba(0,0,0,.35);font:15.5px/1.5 var(--text)}
+#note h3{margin:0 0 8px;font:700 19px/1.25 var(--text)}
+#note p{margin:0 0 10px}
+#note button{margin-top:6px;font:600 14px var(--text);border:0;border-radius:99px;padding:9px 18px;cursor:pointer;background:#111;color:#fff}
+section .acts .chgname{font:500 13px var(--text);color:var(--mute);align-self:center}
+/* a no-all-caps house rule (houseRules.noAllCaps) reaches the page's own labels too */
+html.no-caps *{text-transform:none!important;letter-spacing:normal!important}
+@media (max-width:760px){
+  #hero{grid-template-columns:1fr;padding-top:32px;gap:24px}
+  .fontrow{grid-template-columns:1fr}
+  .pal{grid-template-columns:repeat(5,1fr)}
+  .pal div{font-size:10.5px;padding:8px}
+  section .acts{margin-left:0;width:100%}
+  #keep{position:static}
+  #keep .in{gap:8px;padding:9px 16px}
+  #keep .in > span:first-child{width:100%}
+  #keep button{padding:6px 11px;font-size:12.5px}
+}
+</style>
+__HEAD__
+</head>
+<body>
+<div id="keep"><div class="in"><span><b>Your Brand Genome.</b> It stays at this same link; come back any time.</span><span class="sp"></span>
+<button type="button" class="ghost" id="copy">Copy as text</button><button type="button" id="howChg">How to change something</button></div></div>
+<nav id="nav"><div class="in"></div></nav>
+<div class="hl-note" id="hlTop" hidden><span></span></div>
+<header id="hero"></header>
+<main id="main"></main>
+<div class="hl-note" id="hlBot" hidden><span></span></div>
+<footer><span id="upd"></span><span id="credit"></span></footer>
+<div id="toast"></div>
+<div id="note" hidden><div class="box" role="dialog" aria-labelledby="noteH"><h3 id="noteH">Want to change something?</h3>
+<p>Tell me in the chat, and say what you want to change, for example: <b>"change my colors"</b> or <b>"the sting is too long"</b>. Each section below shows the words to use.</p>
+<p>I'll change only that part, ask before anything else moves, and update this page at the same link.</p>
+<button type="button" id="noteOk">Got it</button></div></div>
+<script>
+const D = __DATA__;
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const r = document.documentElement.style;
+const P = D.palette || [];
+['--bg','--tx','--hl','--ex2','--lt'].forEach((v,i) => { if (P[i]) r.setProperty(v, P[i].hex); });
+// Dark palettes: when the background is dark, cards take a lighter shade of it (never white), so light words stay readable.
+const lum = h => { const m = String(h||'').replace('#',''); if (m.length < 6) return 1; const c = [0,2,4].map(i => parseInt(m.substr(i,2),16)/255).map(v => v <= .03928 ? v/12.92 : Math.pow((v+.055)/1.055, 2.4)); return .2126*c[0] + .7152*c[1] + .0722*c[2]; };
+if (P[0] && lum(P[0].hex) < .2) { document.documentElement.classList.add('dark-bg'); r.setProperty('--card', 'color-mix(in srgb, ' + P[0].hex + ' 86%, #fff)'); r.setProperty('--mute', 'rgba(255,255,255,.68)'); r.setProperty('--line', 'rgba(255,255,255,.14)'); }
+if ((D.houseRules || {}).noAllCaps) document.documentElement.classList.add('no-caps');
+const FC = D.fontsCss || {}; if (FC.title) r.setProperty('--title', FC.title); if (FC.text) r.setProperty('--text', FC.text); if (FC.notes) r.setProperty('--notes', FC.notes);
+const C = D.creator || {};
+document.title = (C.name ? C.name + ' · ' : '') + 'Brand Genome';
+
+// hero
+document.getElementById('hero').innerHTML = `<div><div class="kicker">Brand Genome</div><h1>${esc(C.name)}</h1><div class="handle">${esc(C.handle)}</div>
+  ${C.promise ? `<p class="promise">${esc(C.promise)}</p>` : ''}${(C.chips||[]).length ? `<div class="chips">${C.chips.map(c=>`<span>${esc(c)}</span>`).join('')}</div>` : ''}</div>
+  ${C.wordmarkHtml ? `<div class="wm"><div class="html">${C.wordmarkHtml}</div></div>` : ''}`;
+
+// the section nav sits under the keep bar, whatever its height
+const fitNav = () => { const k = document.getElementById('keep'); document.getElementById('nav').style.top = (getComputedStyle(k).position === 'sticky' ? k.offsetHeight : 0) + 'px'; }; fitNav(); addEventListener('resize', fitNav);
+// toast
+const toast = m => { const t = document.getElementById('toast'); t.textContent = m; t.classList.add('on'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('on'), 3200); };
+
+const lowerFirst = s => String(s||'').replace(/^[A-Z](?![A-Z])/, c => c.toLowerCase());
+const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+
+// sections
+const nav = document.querySelector('#nav .in'), main = document.getElementById('main');
+function media(it){
+  const ar = it.aspect ? `aspect-ratio:${esc(it.aspect)};` : '';
+  if (it.html) return `<div class="m" style="${ar}"><div class="html">${it.html}</div></div>`;
+  if (it.image) return `<div class="m" style="${ar}"><img src="${esc(it.image)}" alt="" style="${it.css?`filter:${esc(it.css)}`:''}">${it.overlay?`<div class="ov" style="${esc(it.overlay)}"></div>`:''}</div>`;
+  return '';
+}
+(D.sections || []).forEach((s, i) => {
+  const id = 's-' + slug(s.change || s.title);
+  nav.insertAdjacentHTML('beforeend', `<a href="#${id}">${esc(s.nav || s.title)}</a>`);
+  let body = '';
+  (s.text || []).forEach(t => body += `<p class="t">${esc(t)}</p>`);
+  if ((s.list || []).length) body += `<ul class="l">${s.list.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
+  if (s.palette) body += `<div class="pal">${P.map(p => `<div style="background:${esc(p.hex)};color:${esc(p.on || '#111')}">${esc(p.role)}<small>${esc(p.hex)}</small></div>`).join('')}</div>`;
+  if (s.fontSet) body += `<div class="fontrow">${s.fontSet.map(f => `<div class="card"><div class="job">${esc(f.job)}</div><div class="smp" style="font-family:${esc(f.css)}">${esc(f.sample)}</div><div style="color:var(--mute);font-size:13.5px">${esc(f.name)}</div></div>`).join('')}</div>`;
+  if ((s.items || []).length) body += `<div class="grid" style="--min:${esc(s.min || '300px')}">${s.items.map((it, k) => `<div class="card" data-s="${i}" data-k="${k}">${media(it)}<div class="cap">${it.label ? `<span class="lab ${esc(String(it.label).replace(/\s+/g,'-'))}">${esc(it.label)}</span>` : ''}<b>${esc(it.name)}</b>${it.note ? `<span class="note">${esc(it.note)}</span>` : ''}</div></div>`).join('')}</div>`;
+  main.insertAdjacentHTML('beforeend', `<section id="${id}"><div class="hd"><span class="num">${String(i+1).padStart(2,'0')}</span><h2>${esc(s.title)}</h2>
+    <div class="acts">${s.from ? `<a href="${esc(s.from)}" target="_blank" rel="noopener">How it was chosen →</a>` : ''}${s.change ? `<span class="chgname">To change it, tell me in chat: change my ${esc(lowerFirst(s.change))}</span>` : ''}</div></div>
+    ${s.line ? `<p class="line">${esc(s.line)}</p>` : ''}${body}</section>`);
+});
+if ((D.changes || []).length) {
+  nav.insertAdjacentHTML('beforeend', `<a href="#s-changes">Changes</a>`);
+  main.insertAdjacentHTML('beforeend', `<section id="s-changes"><div class="hd"><h2>Changes</h2></div><p class="line">Every change since the brand was built, newest first.</p><ul class="chg">${D.changes.map(c => `<li>${esc(c)}</li>`).join('')}</ul></section>`);
+}
+if (D.credit !== false) document.getElementById('credit').innerHTML = 'Made with brand-genome by jfships · <a href="https://youtube.com/@jfships_ai" target="_blank" rel="noopener">youtube.com/@jfships_ai</a>';
+document.getElementById('upd').textContent = (D.updated ? `Last updated ${D.updated}` : '') + (D.offline ? ` · Offline copy: "${D.offline}" in your brand folder` : '');
+// "Highlights only": at the top and the bottom of the page
+if (D.highlights) ['hlTop','hlBot'].forEach(id => { const el = document.getElementById(id); el.hidden = false; el.querySelector('span').textContent = D.highlights; });
+// "How to change something": a notice on first load (and on the keep-bar button). Changes are asked for in the chat,
+// naming what to change; nothing on this page sends anything.
+const NOTE_KEY = 'bg-genome-note-' + slug(C.name || 'brand');
+function showNote(){ document.getElementById('note').hidden = false; }
+document.getElementById('howChg').addEventListener('click', showNote);
+document.getElementById('noteOk').addEventListener('click', () => { document.getElementById('note').hidden = true; try { localStorage.setItem(NOTE_KEY, '1'); } catch(e){} });
+let seen = false; try { seen = localStorage.getItem(NOTE_KEY) === '1'; } catch(e){}
+if (!seen) showNote();
+
+// play (same contract as the voting pages: class "playing" + window[play](id, el) / window[play+'Stop'])
+document.querySelectorAll('.card[data-s]').forEach(el => {
+  const it = D.sections[el.dataset.s].items[el.dataset.k]; if (!it.play) return;
+  const pb = document.createElement('button'); pb.type = 'button'; pb.className = 'play'; pb.textContent = '▶'; pb.setAttribute('aria-label','Play');
+  el.querySelector('.m').appendChild(pb); let tm = null;
+  const stop = () => { clearTimeout(tm); el.classList.remove('playing'); pb.textContent = '▶'; if (typeof it.play === 'string' && window[it.play+'Stop']) try { window[it.play+'Stop'](it.id, el); } catch(e){} };
+  pb.addEventListener('click', () => { if (el.classList.contains('playing')) return stop();
+    void el.offsetWidth; el.classList.add('playing'); pb.textContent = '❚❚'; tm = setTimeout(stop, it.playMs || 2500);
+    if (typeof it.play === 'string' && window[it.play]) try { window[it.play](it.id, el); } catch(e){} });
+});
+
+// copy the Genome as text (the master is Brand Genome.md in the brand folder; the offline visual copy is written there too)
+const asText = () => [`# ${C.name} · Brand Genome`, C.handle, C.promise, ''].concat((D.sections || []).flatMap(s => [`## ${s.title}`, s.line || '', ...(s.text || []), ...(s.list || []).map(x => '- ' + x), ...(s.items || []).map(it => `- ${it.label ? it.label + ': ' : ''}${it.name}${it.note ? ' (' + it.note + ')' : ''}`), ...(s.palette ? P.map(p => `- ${p.role}: ${p.hex}`) : []), ...(s.fontSet ? s.fontSet.map(f => `- ${f.job}: ${f.name}`) : []), ''])).join('\n');
+document.getElementById('copy').addEventListener('click', async () => { try { await navigator.clipboard.writeText(asText()); toast('Copied. Paste it anywhere.'); } catch(e){ toast('Copy blocked here. The full copy is Brand Genome.md in your brand folder.'); } });
+</script>
+</body>
+</html>

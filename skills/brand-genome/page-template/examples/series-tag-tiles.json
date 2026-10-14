@@ -1,0 +1,127 @@
+{
+ "round": "series-tag-tiles",
+ "kind": "finalists",
+ "layout": "tiles",
+ "fonts": [
+  "bebas-neue",
+  "inter",
+  "caveat",
+  "space-mono"
+ ],
+ "title": "Series tag",
+ "what": "Names the show once, a few seconds in, over your first line. Shown with a sample series name.",
+ "rule": "mark as many finalists as you like. Next, you'll pick a main and a backup from them, and keep any others as alternatives.",
+ "keepWord": "finalist|finalists",
+ "trimAbove": 6,
+ "buttons": [
+  {
+   "value": "yes",
+   "label": "Finalist"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "yes"
+ ],
+ "next": "Next: your finalists, large. You'll pick a main and a backup.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "pill",
+   "name": "Pill",
+   "line": "Rounded pills: the series, the episode under it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"display:grid;gap:1cqw;justify-items:start\"><span style=\"background:#2EC4A6;color:#F4FBF7;font:800 4.4cqw 'Inter',Arial,sans-serif;padding:1.2cqw 2.8cqw;border-radius:99px\">30-DAY TESTS</span><span style=\"background:#F4FBF7;color:#13302A;font:800 3.2cqw 'Inter',Arial,sans-serif;padding:.8cqw 2.2cqw;border-radius:99px\">EP 12</span></div></div></div>",
+   "pick": true,
+   "why": "Small and clear; the number does the work."
+  },
+  {
+   "id": "bar",
+   "name": "Side bar",
+   "line": "A bar with a colored edge.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"background:#F4FBF7;color:#13302A;border-left:1.4cqw solid #2EC4A6;padding:1.4cqw 3cqw;font:400 6cqw/1 'Bebas Neue',Impact,sans-serif\">30-DAY TESTS<div style=\"font:700 3cqw 'Inter',Arial,sans-serif;color:#2EC4A6;margin-top:.6cqw\">EP 12</div></div></div></div>"
+  },
+  {
+   "id": "stack",
+   "name": "Stacked",
+   "line": "Episode number above the series name.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"color:#fff;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\"><div style=\"display:inline-block;font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;letter-spacing:.3cqw;padding:.4cqw 1.4cqw;margin-bottom:.8cqw;text-shadow:none\">EP 12</div><div style=\"font:400 8cqw/1 'Bebas Neue',Impact,sans-serif\">30-DAY TESTS</div></div></div></div>"
+  },
+  {
+   "id": "underline",
+   "name": "Underline",
+   "line": "Name with a thick colored line, the episode under it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"color:#fff;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\"><div style=\"font:400 7.4cqw/1 'Bebas Neue',Impact,sans-serif;border-bottom:1cqw solid #2EC4A6;padding-bottom:.6cqw;display:inline-block\">30-DAY TESTS</div><div style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;letter-spacing:.3cqw;margin-top:1cqw\">EP 12</div></div></div></div>"
+  },
+  {
+   "id": "box",
+   "name": "Outline box",
+   "line": "A thin outlined box, two lines.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"border:.5cqw solid #fff;color:#fff;padding:1.4cqw 2.6cqw;background:rgba(0,0,0,.55);display:inline-block\"><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;letter-spacing:.3cqw\">30-DAY TESTS</div><div style=\"font:800 3.2cqw 'Inter',Arial,sans-serif;color:#2EC4A6;letter-spacing:.3cqw;margin-top:.6cqw\">EP 12</div></div></div></div>"
+  },
+  {
+   "id": "chapter",
+   "name": "Chapter number",
+   "line": "A big episode number, the series under it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"color:#fff;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\"><div style=\"font:400 15cqw/.85 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">12</div><div style=\"font:700 3.6cqw/1.2 'Inter',Arial,sans-serif;letter-spacing:.2cqw;margin-top:.6cqw\">30-DAY TESTS</div></div></div></div>"
+  },
+  {
+   "id": "tab",
+   "name": "Folder tab",
+   "line": "A file-folder tab with the episode on it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"display:inline-block\"><div style=\"background:#FFD166;color:#13302A;font:800 2.8cqw 'Inter',Arial,sans-serif;padding:.6cqw 1.8cqw;border-radius:1.2cqw 1.2cqw 0 0;display:inline-block\">EP 12</div><div style=\"background:#F4FBF7;color:#13302A;font:400 7cqw/1 'Bebas Neue',Impact,sans-serif;padding:1.4cqw 2.6cqw\">30-DAY TESTS</div></div></div></div>"
+  },
+  {
+   "id": "ticket",
+   "name": "Ticket",
+   "line": "A ticket with a tear-off stub for the episode.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"display:inline-grid;background:#FFD166;color:#13302A;border-radius:1cqw;overflow:hidden\"><span style=\"font:400 6.4cqw/1 'Bebas Neue',Impact,sans-serif;padding:1.6cqw 2.6cqw 1.2cqw\">30-DAY TESTS</span><span style=\"border-top:.5cqw dashed #13302A;padding:1cqw 2.6cqw;font:800 3.2cqw 'Space Mono',monospace\">EP 12</span></div></div></div>"
+  },
+  {
+   "id": "stamp",
+   "name": "Stamp",
+   "line": "A tilted rubber stamp.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"border:.7cqw solid #2EC4A6;color:#2EC4A6;font:400 7cqw/1 'Bebas Neue',Impact,sans-serif;padding:1.2cqw 2.4cqw;transform:rotate(-6deg);background:rgba(255,255,255,.85);display:inline-block\">30-DAY TESTS<div style=\"font:700 3cqw 'Space Mono',monospace;text-align:right;margin-top:.4cqw\">EP 12</div></div></div></div>"
+  },
+  {
+   "id": "sticker",
+   "name": "Sticker",
+   "line": "A thick-outlined sticker with a smaller one under it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"display:grid;justify-items:start;gap:1.2cqw\"><div style=\"background:#fff;color:#13302A;border:.6cqw solid #13302A;box-shadow:.8cqw .8cqw 0 #2EC4A6;font:400 7cqw/1 'Bebas Neue',Impact,sans-serif;padding:1.6cqw 2.6cqw;border-radius:2cqw;transform:rotate(-3deg)\">30-DAY TESTS</div><div style=\"background:#2EC4A6;color:#13302A;border:.5cqw solid #13302A;font:800 3.4cqw 'Inter',Arial,sans-serif;padding:.8cqw 2cqw;border-radius:1.4cqw;transform:rotate(2deg);margin-left:3cqw\">EP 12</div></div></div></div>"
+  },
+  {
+   "id": "tape",
+   "name": "Tape",
+   "line": "Two strips of tape.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"display:grid;justify-items:start;gap:.8cqw\"><div style=\"background:#E8F3EE;color:#13302A;font:400 7cqw/1 'Bebas Neue',Impact,sans-serif;padding:1.2cqw 3cqw;transform:rotate(-2deg);clip-path:polygon(2% 0,98% 4%,100% 50%,97% 100%,1% 96%,0 50%)\">30-DAY TESTS</div><div style=\"background:#FFD166;color:#13302A;font:800 3.4cqw 'Inter',Arial,sans-serif;padding:.8cqw 2.4cqw;transform:rotate(1.5deg);clip-path:polygon(3% 0,97% 6%,100% 50%,96% 100%,2% 94%,0 50%)\">EP 12</div></div></div></div>"
+  },
+  {
+   "id": "hand",
+   "name": "Handwritten",
+   "line": "Written on like a note.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"color:#fff;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.7);transform:rotate(-4deg)\"><div style=\"font:700 9cqw/1 'Caveat',cursive\">30-day tests</div><div style=\"font:700 6cqw/1 'Caveat',cursive;color:#FFD166;margin-left:6cqw\">episode 12</div></div></div></div>"
+  }
+ ],
+ "stage": "kit",
+ "stepId": "series-tag",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "1 of 2"
+}

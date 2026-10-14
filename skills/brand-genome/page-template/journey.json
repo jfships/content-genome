@@ -1,0 +1,227 @@
+{
+ "_about": "The visible journey. build.py computes every page's header from this: stage n of N, step n of N, the strip and % done. A page names only `stage` and `stepId` (and `part`, e.g. \"1 of 2\"). required: false = the ready-for-review question in chat also offers **Skip this step** (the stage file names the default). `if`: the stage shows only when the page data's `journeyIf` list contains that word (vertical = they picked Shorts/Reels/TikTok).",
+ "stages": [
+  {
+   "id": "setup",
+   "name": "Setup",
+   "steps": [
+    {
+     "id": "setup",
+     "name": "Setup",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "you",
+   "name": "You",
+   "steps": [
+    {
+     "id": "interview",
+     "name": "Interview",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "research",
+   "name": "Research",
+   "steps": [
+    {
+     "id": "research",
+     "name": "Research",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "formats",
+   "name": "Formats",
+   "steps": [
+    {
+     "id": "formats",
+     "name": "Formats",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "look",
+   "name": "Look",
+   "steps": [
+    {
+     "id": "color-editing",
+     "name": "Color editing",
+     "required": true
+    },
+    {
+     "id": "scene-filters",
+     "name": "Filters for specific scenes",
+     "required": false
+    },
+    {
+     "id": "art-styles",
+     "name": "Art styles",
+     "required": false
+    },
+    {
+     "id": "palette",
+     "name": "Color palette",
+     "required": true
+    },
+    {
+     "id": "fonts",
+     "name": "Fonts",
+     "required": true
+    },
+    {
+     "id": "text-style",
+     "name": "Text style",
+     "required": true
+    },
+    {
+     "id": "captions",
+     "name": "Captions",
+     "required": true
+    },
+    {
+     "id": "backdrops",
+     "name": "Backdrops",
+     "required": false
+    },
+    {
+     "id": "extras",
+     "name": "Extras",
+     "required": false
+    },
+    {
+     "id": "break-from-reality",
+     "name": "Break-from-reality moments",
+     "required": false
+    }
+   ]
+  },
+  {
+   "id": "movement",
+   "name": "Movement",
+   "steps": [
+    {
+     "id": "motion-feel",
+     "name": "Motion feel and entrances",
+     "required": true
+    },
+    {
+     "id": "scene-changes",
+     "name": "Scene changes",
+     "required": false
+    },
+    {
+     "id": "spatial",
+     "name": "Spatial moves",
+     "required": false
+    }
+   ]
+  },
+  {
+   "id": "sound",
+   "name": "Sound",
+   "steps": [
+    {
+     "id": "music",
+     "name": "Music",
+     "required": true
+    },
+    {
+     "id": "sound-effects",
+     "name": "Sound effects",
+     "required": false
+    }
+   ]
+  },
+  {
+   "id": "kit",
+   "name": "Kit",
+   "steps": [
+    {
+     "id": "wordmark",
+     "name": "Wordmark",
+     "required": false
+    },
+    {
+     "id": "name-tag",
+     "name": "Name tag",
+     "required": true
+    },
+    {
+     "id": "series-tag",
+     "name": "Series tag",
+     "required": false
+    },
+    {
+     "id": "sting",
+     "name": "Sting",
+     "required": true
+    },
+    {
+     "id": "sound-logo",
+     "name": "Sound logo",
+     "required": true
+    },
+    {
+     "id": "close-out",
+     "name": "Ways to close a video",
+     "required": false
+    },
+    {
+     "id": "thumbnails",
+     "name": "Thumbnail layouts",
+     "required": false
+    },
+    {
+     "id": "profile-picture",
+     "name": "Profile picture",
+     "required": false
+    },
+    {
+     "id": "banner",
+     "name": "Banner",
+     "required": false
+    }
+   ]
+  },
+  {
+   "id": "vertical",
+   "name": "Vertical",
+   "if": "vertical",
+   "steps": [
+    {
+     "id": "vertical-layouts",
+     "name": "Shorts and Reels layouts",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "genome",
+   "name": "Brand Genome",
+   "steps": [
+    {
+     "id": "genome",
+     "name": "Brand Genome",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "handoff",
+   "name": "Handoff",
+   "steps": [
+    {
+     "id": "handoff",
+     "name": "Handoff",
+     "required": true
+    }
+   ]
+  }
+ ]
+}

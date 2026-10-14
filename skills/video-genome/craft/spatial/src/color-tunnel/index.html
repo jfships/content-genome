@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080"><script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css">
+<style>
+#root{background:var(--bg-edge)}
+.stage{perspective:900px;perspective-origin:50% 50%}
+.ring{position:absolute;left:360px;top:200px;width:1200px;height:680px;border:26px solid;border-radius:18px;box-sizing:border-box;box-shadow:0 0 60px rgba(255,122,26,.15)}
+#end{position:absolute;left:0;right:0;top:450px;text-align:center;font-size:96px;opacity:0}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div class="stage"><div class="w3" id="cam"><div class="ring" data-i="0" style="border-color:var(--bg)"></div><div class="ring" data-i="1" style="border-color:var(--pop)"></div><div class="ring" data-i="2" style="border-color:#ffffff"></div><div class="ring" data-i="3" style="border-color:var(--pale)"></div><div class="ring" data-i="4" style="border-color:var(--second)"></div><div class="ring" data-i="5" style="border-color:var(--surface)"></div><div class="ring" data-i="6" style="border-color:var(--bg)"></div><div class="ring" data-i="7" style="border-color:var(--pop)"></div><div class="ring" data-i="8" style="border-color:#ffffff"></div><div class="ring" data-i="9" style="border-color:var(--pale)"></div><div class="ring" data-i="10" style="border-color:var(--second)"></div><div class="ring" data-i="11" style="border-color:var(--surface)"></div><div class="ring" data-i="12" style="border-color:var(--bg)"></div><div class="ring" data-i="13" style="border-color:var(--pop)"></div><div class="ring" data-i="14" style="border-color:#ffffff"></div><div class="ring" data-i="15" style="border-color:var(--pale)"></div></div></div>
+ <div id="end" class="h">Brand. Idea. <span class="blk">Video.</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+document.querySelectorAll(".ring").forEach(r=>{const i=+r.dataset.i;gsap.set(r,{z:-i*420,rotationZ:i*4});});
+tl.fromTo("#cam",{z:-200,rotationZ:0},{z:6400,rotationZ:-30,duration:4.4,ease:"power2.in"},0.1);
+tl.to(".ring",{filter:"blur(3px)",duration:1.2},2.6);
+tl.fromTo("#end",{opacity:0,scale:2.2,filter:"blur(12px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:.7,ease:"expo.out",immediateRender:false},4.4);
+window.__timelines["main"]=tl;
+</script></body></html>

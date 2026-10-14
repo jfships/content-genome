@@ -1,0 +1,116 @@
+{
+ "round": "name-tag-tiles",
+ "kind": "finalists",
+ "layout": "tiles",
+ "fonts": [
+  "bebas-neue",
+  "inter",
+  "caveat",
+  "space-mono"
+ ],
+ "photoTag": "Test photo",
+ "title": "Name tag",
+ "what": "The tag with your name when you first speak. Shown with a sample name.",
+ "rule": "mark as many finalists as you like. Next, you'll pick a main and a backup from them, and keep any others as alternatives.",
+ "keepWord": "finalist|finalists",
+ "trimAbove": 6,
+ "buttons": [
+  {
+   "value": "yes",
+   "label": "Finalist"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "yes"
+ ],
+ "next": "Next: your finalists, large. You'll pick a main and a backup.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "bar",
+   "name": "Side bar",
+   "line": "Name on a bar with a stripe of your color.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"background:#F4FBF7;border-left:1.4cqw solid #2EC4A6;padding:1.2cqw 2.6cqw\"><div style=\"font:800 4.4cqw/1.1 'Inter',Arial,sans-serif;color:#13302A\">Wren</div><div style=\"font:500 2.8cqw/1.3 'Inter',Arial,sans-serif;color:#13302A;opacity:.75\">Austin</div></div></div></div>",
+   "pick": true,
+   "why": "Readable at a glance and matches your text style."
+  },
+  {
+   "id": "two-block",
+   "name": "Two blocks",
+   "line": "Name and place on two color blocks.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"display:grid;justify-items:start\"><span style=\"background:#2EC4A6;color:#F4FBF7;font:800 4.6cqw/1.2 'Inter',Arial,sans-serif;padding:.6cqw 2cqw\">Wren</span><span style=\"background:#13302A;color:#F4FBF7;font:600 3cqw/1.3 'Inter',Arial,sans-serif;padding:.5cqw 2cqw\">Austin</span></div></div></div>"
+  },
+  {
+   "id": "pill",
+   "name": "Pill",
+   "line": "A rounded pill with your name.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><span style=\"display:inline-flex;gap:1.6cqw;align-items:center;background:#F4FBF7;color:#13302A;font:700 3.8cqw 'Inter',Arial,sans-serif;padding:1.2cqw 3cqw;border-radius:99cqw\"><i style=\"width:2.2cqw;height:2.2cqw;border-radius:50%;background:#2EC4A6\"></i>Wren<span style=\"opacity:.6;font-weight:500\">Austin</span></span></div></div>"
+  },
+  {
+   "id": "underline",
+   "name": "Underline",
+   "line": "Big name, a line of your color under it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"color:#fff;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\"><div style=\"font:400 8cqw/1 'Bebas Neue',Impact,sans-serif;border-bottom:1cqw solid #2EC4A6;padding-bottom:.6cqw\">Wren</div><div style=\"font:600 3cqw/1.6 'Inter',Arial,sans-serif\">Austin</div></div></div></div>"
+  },
+  {
+   "id": "title-font",
+   "name": "Big title",
+   "line": "Your name in your title font, no box.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"font:400 11cqw/.9 'Bebas Neue',Impact,sans-serif;color:#fff;text-shadow:0 .4cqw 1.4cqw rgba(0,0,0,.7)\">Wren<br><span style=\"font-size:5cqw;color:#FFD166\">Austin</span></div></div></div>"
+  },
+  {
+   "id": "tape",
+   "name": "Tape label",
+   "line": "Your name on a strip of tape.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"transform:rotate(-2deg);background:#E8F3EE;color:#13302A;font:700 4.2cqw/1.2 'Inter',Arial,sans-serif;padding:1cqw 3cqw;clip-path:polygon(2% 0,98% 6%,100% 50%,97% 100%,1% 94%,0 50%)\">Wren · Austin</div></div></div>"
+  },
+  {
+   "id": "handwritten",
+   "name": "Handwritten",
+   "line": "Written on, in your notes font.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"font:700 8cqw/1 'Caveat',cursive;color:#fff;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.7);transform:rotate(-4deg)\">hi, I'm Wren<span style=\"color:#FFD166\"> ←</span></div></div></div>"
+  },
+  {
+   "id": "mono",
+   "name": "Typed",
+   "line": "Typed out, like a caption in a documentary.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"font:700 3.6cqw/1.5 'Space Mono',monospace;color:#fff;background:rgba(0,0,0,.6);padding:1cqw 2cqw\">Wren<br><span style=\"color:#2EC4A6\">Austin</span></div></div></div>"
+  },
+  {
+   "id": "sticker",
+   "name": "Sticker",
+   "line": "A thick-outlined sticker, slightly tilted.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"transform:rotate(-3deg);background:#fff;color:#13302A;font:800 4.4cqw/1.1 'Inter',Arial,sans-serif;padding:1.4cqw 2.6cqw;border:.6cqw solid #13302A;border-radius:2cqw;box-shadow:.8cqw .8cqw 0 #2EC4A6\">Wren<div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif\">Austin</div></div></div></div>"
+  },
+  {
+   "id": "id-badge",
+   "name": "ID badge",
+   "line": "Like a conference badge clipped on.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 15% 82%,rgba(0,0,0,.45),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;bottom:12%\"><div style=\"width:28cqw;background:#fff;border-radius:1.4cqw;overflow:hidden;box-shadow:0 .6cqw 2cqw rgba(0,0,0,.4);text-align:center\"><div style=\"background:#2EC4A6;color:#F4FBF7;font:800 2.6cqw/2.2 'Inter',Arial,sans-serif\">HELLO, I'M</div><div style=\"font:400 8cqw/1.3 'Bebas Neue',Impact,sans-serif;color:#13302A\">Wren</div><div style=\"font:600 2.6cqw/2 'Inter',Arial,sans-serif;color:#13302A;opacity:.7\">Austin</div></div></div></div>"
+  }
+ ],
+ "stage": "kit",
+ "stepId": "name-tag",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "1 of 2"
+}

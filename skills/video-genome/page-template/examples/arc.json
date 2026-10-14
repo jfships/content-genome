@@ -1,0 +1,68 @@
+{
+ "kind": "fixed",
+ "single": "pick",
+ "singleFallback": "backup",
+ "altValue": "alt",
+ "buttons": [
+  {
+   "value": "pick",
+   "label": "Main"
+  },
+  {
+   "value": "backup",
+   "label": "Backup"
+  },
+  {
+   "value": "alt",
+   "label": "Alternative"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "pick",
+  "backup",
+  "alt"
+ ],
+ "keepWord": "option|options",
+ "round": "arc",
+ "stage": "plan",
+ "stepId": "arc",
+ "fonts": [
+  "inter"
+ ],
+ "title": "Story arc",
+ "what": "How the feeling moves from start to end. The line shows energy over the video.",
+ "next": "Next: the rest of the story plan.",
+ "options": [
+  {
+   "id": "problem-turn-payoff",
+   "name": "Problem, turn, payoff",
+   "line": "The shape your brief already follows.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><line x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\" stroke=\"#8a94a6\" stroke-opacity=\".5\"/><polyline points=\"20,117 104,128 174,95 230,51 300,73\" fill=\"none\" stroke=\"#F2B33D\" stroke-width=\"3\" stroke-linejoin=\"round\"/></svg>",
+   "taken": "your brief",
+   "pick": true,
+   "why": "Your script is already built on it; changing it means rewriting the middle."
+  },
+  {
+   "id": "rags-riches",
+   "name": "Low to high",
+   "line": "Would change where the high point lands.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><line x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\" stroke=\"#8a94a6\" stroke-opacity=\".5\"/><polyline points=\"20,139 132,117 216,84 300,46\" fill=\"none\" stroke=\"#F2B33D\" stroke-width=\"3\" stroke-linejoin=\"round\"/></svg>"
+  },
+  {
+   "id": "man-in-hole",
+   "name": "Fall, then climb",
+   "line": "Would change where the high point lands.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><line x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\" stroke=\"#8a94a6\" stroke-opacity=\".5\"/><polyline points=\"20,84 104,134 188,95 300,51\" fill=\"none\" stroke=\"#F2B33D\" stroke-width=\"3\" stroke-linejoin=\"round\"/></svg>"
+  },
+  {
+   "id": "loop",
+   "name": "Ends where it starts",
+   "line": "Would change where the high point lands.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><line x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\" stroke=\"#8a94a6\" stroke-opacity=\".5\"/><polyline points=\"20,84 104,117 188,62 300,84\" fill=\"none\" stroke=\"#F2B33D\" stroke-width=\"3\" stroke-linejoin=\"round\"/></svg>"
+  }
+ ]
+}

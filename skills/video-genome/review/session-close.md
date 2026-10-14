@@ -1,0 +1,13 @@
+# Session close: the brand review
+
+Steps 1–2b run whenever a session ends (pause, "stopping here", end of the day). Steps 3–5 (the page) run at delivery, or at the start of the next session once any open page has been reviewed; never while another page is waiting. Short when there's nothing to review.
+
+1. **Save where we are.** `START-HERE.md` `## Videos`: active episode, step, open page link and whether it was reviewed, debt summary line, next action, date. Update the project copy in the same turn.
+2. **List what went outside the brand** this session in `START-HERE.md` `## Videos` ("Brand review owed: 2 items"), from `log.md` **Outside the brand** (`craft/brand-fit.md`), plus any rule the video broke on purpose (a banned word in a parody, a second big moment). None → say "Nothing outside your brand this session." and stop.
+2b. **Log what the skill got wrong.** Every problem with this skill (or brand-genome, idea-genome) that came up this session goes in the skill-issues log: `SKILL-ISSUES.md` where the creator keeps the skills' source if they have one, otherwise `00 Decisions/skill-issues.md`. One numbered item each: what happened, the creator's words if they said it, and the fix (which file, what changes). Mark items Claude found "(Claude)". Write them as they happen, not only at close; at close, check nothing was missed.
+3. **Pose the decisions on one page** (`page-template/examples/brand-review.json`; mid-episode, leave out `stage` and `stepId` so the header doesn't jump to Deliver): each item with its still, where it was used and why. **Add to my brand · Keep as one-off · Don't use again.**
+4. **Apply the answers:**
+   - **With a Brand Genome:** if the brand-genome skill is available, hand each "Add to my brand" item to its change step (it reruns only that decision and asks before anything downstream changes). If it isn't available, write the item to the Genome's §16 Changes as `proposed` and tell the creator. Every item, whatever the answer, gets a row in `00 Decisions/genome-deviations.md` (date, video, rule or gap, what we did, why, one-off or pattern) if that log exists.
+   - **With a Brand Sheet:** "Add to my brand" writes the item into the right section of `Brand Sheet.md` and a dated line in §16 Changes. "Don't use again" becomes a house rule.
+   - "Keep as one-off" changes nothing but the log.
+5. **One line to close:** what was saved and how to resume ("Say *continue my video* in this project").

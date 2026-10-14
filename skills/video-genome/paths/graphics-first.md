@@ -1,0 +1,70 @@
+# Order A: graphics first, voice last
+
+Build a polished motion draft, the creator records over it, then rebuild the video around their real words.
+
+## A1. Polished draft (gate: the creator reviews the render on a draft-review page)
+
+**Long videos can be built one part (act) at a time:** draft, review, record and rebuild one part, lock it, then the next. The plan names the parts; a locked part isn't reopened unless the creator asks. Work from `debt.md`: build items get built here; anything not yet shot, recorded or generated goes in as a labeled placeholder.
+
+Build in HyperFrames: clips with `class="clip"` and `data-start`/`data-duration`, and the timeline at `window.__timelines["main"]`. Add a timeline label per beat (`tl.addLabel("s1-cards", 14.3)`) and place tweens relative to labels, so the rebuild can retime a beat to the creator's words by moving one label. The draft runs at a comfortable speaking pace, with breathing gaps between scenes. Always deliver the script beside the draft.
+
+**Polish rules. Check every scene against them.**
+- **Something changes every 5–10 s**, and every 2–4 s in the first 30 s. Any hold longer than 6 s needs a reason: camera drift, parallax, a counter, a reveal or a cut. A static text card is never a scene by itself.
+- **The hook proves the promise visually first.** Open on the video's own best material, then the line. The first 2 s are the most striking image, never a logo fade.
+- **Laid out, scene by scene.** Every scene follows `craft/layout.md`: the graphic fills the open side, nothing hugs an edge, no empty patch without a job, placement re-decided when what's on screen changes. Every still passes its check.
+- **Depth on every frame.** A background, a mid layer and a foreground layer, plus the pack's texture (grain, paper, noise) and vignette. Never the same flat background for two scenes in a row; rotate the pack's backgrounds and accents.
+- **The pack's motion vocabulary only,** from the brand's motion table. Reserved transitions stay with their component (e.g. a wipe that belongs to the sting).
+- **The pack's title styles.** Plain headline cards are the exception, not the default.
+- **2–4 signature moments per long video,** from the brand's kept list (definitions in `craft/graphics-library.md`).
+- **Walkthrough accents whenever a screen is shown:** cursor click, typing, scroll, push-in, drag, notification, tooltip, slider.
+- **Brand components exactly where the brand puts them:** sting + sound logo after the hook, series tag at the first on-camera moment, end card, corner mark only if the brand turns it on, episode number where the brand says.
+- **Show the real thing,** each artifact visibly different.
+- **House rules** from the brand, every one.
+- **Draft-only overlays:** a cue strip (SAY / SILENT + the bullet cue) and a dashed zone where the creator will probably appear (a provisional placement; A4 decides the final one). Both come out in the rebuild.
+- **Temp sound:** a temp music bed and the key SFX, so the energy can be judged (`craft/sound.md`).
+
+Run **gate 2** (build checks) on stills, then render, then **gate 3** and **gate 4** in `review/checks.md` before showing the creator. Show it with the render plus a draft-review page (`draft-review.json`): one still per scene with its time and line, **Looks right / Change it** and a note per scene. On this voiceless draft, skip the gate-3 checks that need a voice (captions, face, voice sync); they run after the rebuild.
+
+## A2. Recording kit (gate)
+
+Write `RECORDING.md` in plain words:
+- **Setup:** their camera, lights, mic, and the room background from the brand (generated plate, simple backdrop, or real room blurred and graded).
+- **Takes:** clap, wait 2 s, play the draft, talk. Record every hook option.
+- **Cue table:** video time / on screen / bullet cue. Cues by default; the full script on a prompter if the creator prefers that (brand file §10 Voice).
+- **Wording that must be exact** (names, numbers, claims).
+- **A practice take first,** scored with the brand's take scorecard, then the real take.
+- **Everything else owed by the creator** from `debt.md` (screenshots, documents, permissions).
+
+## A3. Transcribe, cut, claim check (gate)
+
+- **Transcribe** with the bundled `$SKILL/tools/talking-head/scripts/transcribe.py --lang <the brand's content language>`. For long takes on a slow link, extract a 16 kHz mono WAV first and transcribe that.
+- **The cut:**
+  - Drop stumbles, fillers, repeats and weak asides. Never reword.
+  - Pick the best hook.
+  - Claim check against the truth rules and Proof.
+  - Flag misheard words; ask before "fixing" anything they said.
+- **Frame-accurate rough cut:**
+  - Video: `fps=30`, then `select='between(n,a,b-1)+…'` with `setpts=N/30/TB`.
+  - Audio: `aselect` over the same spans with `asetpts=N/SR/TB`.
+  - Not trim+concat. Video and audio durations must match within 0.05 s.
+- The creator approves the cut on a page (`cut-list.json`): only the judgment calls (a second take, an aside, a long pause), each with its time and line, **Keep / Cut**.
+
+## A4. Placement and rebuild (gate: placement page first)
+
+**Placement options.** One page (`placement.json`): a real frame of their take over a real scene for each option, with the scene's time and line in `context`, a Recommended pick, Main + Backup. Geometry for each in `craft/layout.md` §2. Single beats can still differ, decided by layout rule 4 (new scene, new layout):
+- Full-frame camera with graphics over it
+- Cutout beside the graphics
+- Corner bubble
+- Side panel
+- Taking turns: creator full screen, then graphics full screen
+- Voice only, over graphics
+
+**Rebuild.**
+- Map word times through the cut into output time: `python3 $SKILL/tools/remap_words.py work/words.json work/cutlist.json work/words_out.json`.
+- Retime every key moment to the word that names it (move the beat's label).
+- Rewrite headlines to echo their words.
+- Captions in the pack's caption style (`embedded-captions` or the bundled `captions.py`), 2–7 words per phrase. Turn them off where big type already says the line.
+- **Cutout:** make a person matte (bundled `base.py` with `"matte": true`, which uses mediapipe, falling back to rembg). Then soft-edge it (guided filter or a 2–3 px feather), add a soft shadow, and keyframe size per beat.
+- **Real footage gets the pack grade** (`$SKILL/tools/grade.py` with the brand's recipe). Graded footage with flat graphics, or the other way round, is the most common "cheap" tell.
+- Mix with `$SKILL/tools/mix.py`: music ducked under the voice, SFX and sound logo placed, master at target loudness (`craft/sound.md`).
+- Rerun gates 2–4 at every beat change, and look at a full-resolution frame of each overlap.

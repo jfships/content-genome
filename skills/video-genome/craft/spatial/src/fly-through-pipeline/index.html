@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script>
+<link rel="stylesheet" href="shared/base.css"><style>
+
+
+body{margin:0;background:#081a30}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,var(--bg) 0%,var(--bg-deep) 55%,var(--bg-edge) 100%);font-family:var(--font-text)}
+#stage{position:absolute;inset:0;perspective:1400px;perspective-origin:50% 45%}
+#world{position:absolute;inset:0;transform-style:preserve-3d}
+.floor{position:absolute;left:-2000px;width:5920px;top:620px;height:6000px;background-image:linear-gradient(rgba(214,223,234,.12) 2px,transparent 2px),linear-gradient(90deg,rgba(214,223,234,.12) 2px,transparent 2px);background-size:160px 160px}
+.layer{position:absolute;left:460px;top:200px;width:1000px;height:625px;transform-style:preserve-3d}
+.layer img.scr{width:100%;height:100%;object-fit:cover;object-position:left top;border-radius:22px;box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 0 2px rgba(255,255,255,.18)}
+.chip{position:absolute;left:0;top:-78px;font-family:var(--font-display);font-size:46px;color:#fff;display:flex;gap:16px;align-items:center}
+.chip span{background:var(--pop);font-family:var(--font-text);font-weight:700;font-size:24px;padding:6px 14px;border-radius:8px}
+.phone{position:absolute;left:310px;top:-40px;width:380px;height:676px;border-radius:44px;background:#0b1b30;padding:14px;box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:32px}
+#hud{position:absolute;left:120px;right:120px;bottom:70px;height:60px}
+#rail{position:absolute;left:0;right:0;top:28px;height:4px;background:rgba(214,223,234,.25)}
+#fill{position:absolute;left:0;top:28px;height:4px;width:1680px;background:var(--pop);transform-origin:left center}
+.node{position:absolute;top:10px;width:40px;height:40px;border-radius:50%;background:var(--bg-deep);border:4px solid rgba(214,223,234,.5)}
+.nl{position:absolute;top:-34px;font-weight:700;font-size:22px;color:var(--pale);width:200px;margin-left:-80px;text-align:center}
+#title{position:absolute;left:120px;top:70px;font-family:var(--font-display);font-size:40px;color:#fff;opacity:.92}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="7">
+ <div id="stage"><div id="world">
+  <div class="floor" id="floor"></div>
+  <div class="layer" id="L0"><div class="chip">Brand <span>brand-genome</span></div><img class="scr" src="assets/screen-1.png"></div>
+  <div class="layer" id="L1"><div class="chip">Idea <span>idea-genome</span></div><img class="scr" src="assets/screen-2.png"></div>
+  <div class="layer" id="L2"><div class="chip">Plan <span>video-genome</span></div><img class="scr" src="assets/screen-3.png"></div>
+  <div class="layer" id="L3"><div class="chip" style="left:310px;top:-118px">Edit</div><div class="phone"><img src="assets/video-frame.jpg"></div></div>
+ </div></div>
+ <div id="title">A Content Team in a Box</div>
+ <div id="hud"><div id="rail"></div><div id="fill"></div>
+  <div class="node" id="n0" style="left:0"><div class="nl">Brand</div></div>
+  <div class="node" id="n1" style="left:540px"><div class="nl">Idea</div></div>
+  <div class="node" id="n2" style="left:1100px"><div class="nl">Plan</div></div>
+  <div class="node" id="n3" style="left:1640px"><div class="nl">Edit</div></div>
+ </div>
+</div>
+<script>
+const D=1500; const tl=gsap.timeline({paused:true});
+gsap.set("#floor",{rotationX:90,z:-2600,y:0,transformOrigin:"50% 0%"});
+const OX=[0,420,-420,0],OY=[0,-60,40,0];
+["#L0","#L1","#L2","#L3"].forEach((s,i)=>gsap.set(s,{z:-i*D,x:OX[i],y:OY[i]}));
+gsap.set("#world",{z:-900,y:40});
+gsap.set("#fill",{scaleX:0});
+// entrance: world arrives from deep, first screen settles
+tl.fromTo("#world",{z:-2600,rotationY:-14},{z:0,rotationY:0,duration:1.1,ease:"expo.out"},0);
+tl.fromTo("#title",{opacity:0,y:20},{opacity:.92,y:0,duration:.6,ease:"power3.out"},.3);
+tl.fromTo("#n0",{borderColor:"rgba(214,223,234,.5)",backgroundColor:"#0c2747"},{borderColor:"#ff7a1a",backgroundColor:"#ff7a1a",duration:.3},.6);
+// three dives
+const t0=[1.5,3.0,4.5];
+t0.forEach((t,i)=>{
+  tl.to("#world",{z:(i+1)*D,x:-OX[i+1],y:40-OY[i+1],duration:.85,ease:"power3.inOut"},t);
+  tl.to(`#L${i}`,{opacity:0,duration:.28,ease:"power2.in"},t+.02);
+  tl.to(`#L${i} .scr`,{filter:"blur(18px)",duration:.28,ease:"power2.in"},t+.02);
+  tl.fromTo(`#L${i+1} .scr, #L${i+1} .phone`,{filter:"blur(18px)"},{filter:"blur(0px)",duration:.55,ease:"expo.out"},t+.45);
+  tl.to("#fill",{scaleX:(i+1)/3,duration:.85,ease:"power3.inOut"},t);
+  tl.to(`#n${i+1}`,{borderColor:"#ff7a1a",backgroundColor:"#ff7a1a",duration:.25},t+.7);
+});
+// final: phone turns to face, small hold
+tl.fromTo("#L3 .phone",{rotationY:-28},{rotationY:0,duration:1,ease:"power3.out"},5.1);
+window.__timelines["main"]=tl;
+</script></body></html>

@@ -1,0 +1,27 @@
+<title>03 Real screenshot</title>
+<style>
+#shot{position:absolute;left:-660px;top:-279px;width:1320px;height:558px;object-fit:cover;border-radius:28px}
+#ring{position:absolute;left:-218px;top:-266px;width:430px;height:252px;border-radius:26px;box-shadow:0 0 0 6px var(--warn),0 0 0 9999px rgba(10,12,18,.45)}
+</style>
+<div data-slot="shape">
+  <div class="L" id="Lpill"><div class="row disp" style="transform:translate(-50%,-50%);gap:20px;font-size:50px;font-weight:600;color:#fff"><span id="ic"></span>Cash close, live</div></div>
+  <div class="L" id="Lshot"><img id="shot" src="../inputs/shots/app.png" alt=""><div id="ring"></div></div>
+</div><!--/shape-->
+<script>
+// Look: real screenshot. The user's own screen inside the shape (motion/inputs/shots/). The shape morphs to the screenshot's
+// aspect ratio; the cursor points at the one thing that matters, a highlight ring lands on the word, and the camera pushes in.
+// Screenshot pixel box -> shape coords: x = -W/2 + px*scale, y = -H/2 + py*scale (scale = shape w / image width).
+const $=id=>document.getElementById(id); const C=Object.assign({accent:'#FF5A1F',surface:'#FFFFFF',canvas:'#E9E7E2'},window.BRAND);
+$('ic').innerHTML=M.icon('receipt',46,'#fff',2.4);
+const SHOT=1.0, CLICK=2.8;                      // put these on the spoken words
+const push=M.track(0,[[CLICK+0.1,1,M.SOFT]]), ring=M.track(0,[[CLICK,1,[16,0.75]]]);
+M.scene({
+  W:2560,H:1440,bg:C.canvas,T:6.0,intro:0.1,
+  SH:{pill:{w:640,h:128,r:64,bg:C.accent,cam:2.0}, shot:{w:1320,h:558,r:28,bg:'#FFFFFF',cam:1.55}},
+  start:'pill', SEQ:[[SHOT,'shot']],
+  layers:[{el:'Lpill',tin:null,tout:SHOT},{el:'Lshot',tin:SHOT,tout:null,update:(t)=>{
+    const r=ring(t); $('ring').style.opacity=M.clamp(r*1.4).toFixed(3); $('ring').style.transform=`scale(${(1.06-0.06*r).toFixed(4)})`;}}],
+  geom:(t,g)=>{const u=push(t); g.fx=-3*u; g.fy=-140*u; g.s*=1+0.3*u; return g;},
+  cursor:{size:58,clicks:[CLICK],keys:[[0,900,560],[2.0,900,560],[2.65,40,-120],[3.2,40,-120],[4.2,120,-40]]},
+});
+</script>

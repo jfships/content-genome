@@ -1,0 +1,52 @@
+{
+ "round": "story-rest",
+ "stage": "plan",
+ "stepId": "story-rest",
+ "fonts": [
+  "inter"
+ ],
+ "kind": "adjust",
+ "keepValues": [
+  "ok"
+ ],
+ "keepWord": "part|parts",
+ "buttons": [
+  {
+   "value": "ok",
+   "label": "Confirm"
+  },
+  {
+   "value": "change",
+   "label": "Change it"
+  }
+ ],
+ "title": "Rest of the story plan",
+ "what": "How the video keeps people watching. Picked to fit your arc; confirm each or mark it to change.",
+ "next": "Next: the opening line.",
+ "options": [
+  {
+   "id": "proof",
+   "name": "Proof",
+   "line": "Show the day 30 result on screen, not just say it.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#252e3c\"><text x=\"18\" y=\"74\" font-family=\"Inter,Arial,sans-serif\" font-size=\"15\" font-weight=\"800\" fill=\"#EEF1F5\" text-anchor=\"start\">Proof</text><text x=\"18\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"12\" font-weight=\"500\" fill=\"#8a94a6\" text-anchor=\"start\">The real result, shown</text></svg>"
+  },
+  {
+   "id": "retention",
+   "name": "Keeping people watching",
+   "line": "A tease at 2:00 (\"day 12 nearly ended it\") paid off at 4:30.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#252e3c\"><text x=\"18\" y=\"74\" font-family=\"Inter,Arial,sans-serif\" font-size=\"15\" font-weight=\"800\" fill=\"#EEF1F5\" text-anchor=\"start\">Tease and payoff</text><text x=\"18\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"12\" font-weight=\"500\" fill=\"#8a94a6\" text-anchor=\"start\">2:00 → 4:30</text></svg>"
+  },
+  {
+   "id": "pacing",
+   "name": "Pace",
+   "line": "Fast first minute, slower middle, fastest just before the result.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><line x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\" stroke=\"#8a94a6\" stroke-opacity=\".5\"/><polyline points=\"20,62 104,106 188,95 244,46 300,84\" fill=\"none\" stroke=\"#F2B33D\" stroke-width=\"3\" stroke-linejoin=\"round\"/></svg>"
+  },
+  {
+   "id": "ending",
+   "name": "Ending and ask",
+   "line": "Call back to day 1, then one reason to watch the next video.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#252e3c\"><text x=\"18\" y=\"74\" font-family=\"Inter,Arial,sans-serif\" font-size=\"15\" font-weight=\"800\" fill=\"#EEF1F5\" text-anchor=\"start\">Callback + next video</text><text x=\"18\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"12\" font-weight=\"500\" fill=\"#8a94a6\" text-anchor=\"start\">No slow wind-down</text></svg>"
+  }
+ ]
+}

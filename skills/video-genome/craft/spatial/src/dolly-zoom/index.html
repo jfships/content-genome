@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css">
+<style>
+#bg{position:absolute;left:-960px;top:-540px;width:3840px;height:2160px;
+ background-image:linear-gradient(rgba(214,223,234,.24) 2px,transparent 2px),linear-gradient(90deg,rgba(214,223,234,.24) 2px,transparent 2px);background-size:96px 96px;background-position:center}
+#bg2{position:absolute;left:-960px;top:-540px;width:3840px;height:2160px;background:radial-gradient(circle at 50% 50%,transparent 0,transparent 18%,rgba(4,16,31,.75) 60%)}
+#scr{position:absolute;left:460px;top:200px;width:1000px;height:625px}
+#w{position:absolute;left:0;right:0;bottom:90px;text-align:center;font-size:72px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="5">
+ <div id="bg"></div><div id="bg2"></div>
+ <div class="scr" id="scr"><img src="assets/screen-1.png"></div>
+ <div id="w" class="h">Wait. <span class="blk">It Scored It?</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+gsap.set("#w",{opacity:0});
+tl.fromTo("#scr",{scale:.6,opacity:0},{scale:1,opacity:1,duration:.8,ease:"expo.out"},0);
+// dolly zoom: background rushes away while the screen holds its size
+tl.fromTo("#bg",{scale:3.2},{scale:.4,duration:2.2,ease:"power2.inOut"},1.0);
+tl.fromTo("#scr",{scale:1},{scale:1.04,duration:2.2,ease:"power2.inOut",immediateRender:false},1.0);
+tl.fromTo("#scr img",{filter:"saturate(1)"},{filter:"saturate(1.25)",duration:2.2,immediateRender:false},1.0);
+tl.fromTo("#w",{opacity:0,scale:1.3},{opacity:1,scale:1,duration:.3,ease:"power3.out",immediateRender:false},3.2);
+window.__timelines["main"]=tl;
+</script></body></html>

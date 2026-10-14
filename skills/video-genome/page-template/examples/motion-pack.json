@@ -1,0 +1,79 @@
+{
+ "round": "motion-pack",
+ "stage": "plan",
+ "stepId": "look",
+ "fonts": [
+  "inter"
+ ],
+ "aspect": "16/9",
+ "layout": "tiles",
+ "kind": "library",
+ "keepValues": [
+  "keep"
+ ],
+ "keepWord": "move|moves",
+ "buttons": [
+  {
+   "value": "keep",
+   "label": "Keep"
+  },
+  {
+   "value": "no",
+   "label": "Skip"
+  }
+ ],
+ "title": "Moves for your screens",
+ "what": "Six ways to show a screen or an idea, built in your colors. Click a card to play it. Keep the ones that feel like you.",
+ "next": "Next: where you sit on screen.",
+ "head": "<script>window.playClip=function(id,el){var v=el.querySelector(\"video\");if(v){v.currentTime=0;v.play();}};window.playClipStop=function(id,el){var v=el.querySelector(\"video\");if(v){v.pause();}};</script>",
+ "options": [
+  {
+   "id": "m1",
+   "name": "Screen floats in",
+   "line": "A page floats in space, tilted; a light sweeps across it. Good for: introducing a tool.",
+   "play": "playClip",
+   "playMs": 6300,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><g transform=\"translate(80,40) skewY(-8)\" opacity=\"1\"><rect width=\"160\" height=\"95\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"64\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"148\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"112\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g><path d=\"M120 30 L170 30 L120 150 L70 150 Z\" fill=\"#fff\" opacity=\".08\"/></svg><video src=\"clips/m1.mp4\" poster=\"clips/m1.jpg\" preload=\"metadata\" muted playsinline style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></video>"
+  },
+  {
+   "id": "m2",
+   "name": "Fly through the steps",
+   "line": "The camera flies past each step in a row of screens. Good for: showing a process.",
+   "play": "playClip",
+   "playMs": 6300,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><g transform=\"translate(30,70) skewY(-6)\" opacity=\"0.5\"><rect width=\"70\" height=\"45\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"28\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"58\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"49\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g><g transform=\"translate(115,55) skewY(-6)\" opacity=\"0.75\"><rect width=\"90\" height=\"58\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"36\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"78\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"63\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g><g transform=\"translate(215,35) skewY(-6)\" opacity=\"1\"><rect width=\"95\" height=\"65\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"38\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"83\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"66\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g></svg><video src=\"clips/m2.mp4\" poster=\"clips/m2.jpg\" preload=\"metadata\" muted playsinline style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></video>"
+  },
+  {
+   "id": "m3",
+   "name": "Cards stack in depth",
+   "line": "Screens sit behind each other; focus moves from back to front. Good for: before and after.",
+   "play": "playClip",
+   "playMs": 6300,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><g transform=\"translate(120,30) skewY(0)\" opacity=\"0.4\"><rect width=\"120\" height=\"75\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"48\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"108\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"84\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g><g transform=\"translate(95,50) skewY(0)\" opacity=\"0.7\"><rect width=\"120\" height=\"75\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"48\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"108\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"84\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g><g transform=\"translate(70,70) skewY(0)\" opacity=\"1\"><rect width=\"120\" height=\"75\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"48\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"108\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"84\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g></svg><video src=\"clips/m3.mp4\" poster=\"clips/m3.jpg\" preload=\"metadata\" muted playsinline style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></video>"
+  },
+  {
+   "id": "m4",
+   "name": "Tools on a ring",
+   "line": "Cards circle one center, the one that matters turns to face you. Good for: how tools connect.",
+   "play": "playClip",
+   "playMs": 6300,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"160\" cy=\"95\" rx=\"120\" ry=\"34\" fill=\"none\" stroke=\"#8a94a6\" stroke-dasharray=\"3 4\"/><g transform=\"translate(40,70) skewY(0)\" opacity=\"0.6\"><rect width=\"50\" height=\"32\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"20\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"38\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"35\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g><g transform=\"translate(230,70) skewY(0)\" opacity=\"0.6\"><rect width=\"50\" height=\"32\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"20\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"38\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"35\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g><g transform=\"translate(125,85) skewY(0)\" opacity=\"1\"><rect width=\"70\" height=\"45\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"28\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"58\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"49\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g></svg><video src=\"clips/m4.mp4\" poster=\"clips/m4.jpg\" preload=\"metadata\" muted playsinline style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></video>"
+  },
+  {
+   "id": "m5",
+   "name": "Push into the screen",
+   "line": "The camera pushes into one card until it fills the frame. Good for: going into detail.",
+   "play": "playClip",
+   "playMs": 6300,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><g transform=\"translate(110,55) skewY(0)\" opacity=\"1\"><rect width=\"100\" height=\"62\" rx=\"4\" fill=\"#252e3c\" stroke=\"#8a94a6\" stroke-width=\"1\"/><rect x=\"6\" y=\"6\" width=\"40\" height=\"5\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"6\" y=\"16\" width=\"88\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/><rect x=\"6\" y=\"23\" width=\"70\" height=\"3\" rx=\"1.5\" fill=\"#8a94a6\"/></g><path d=\"M95 45 h12 M95 45 v12 M225 45 h-12 M225 45 v12 M95 130 h12 M95 130 v-12 M225 130 h-12 M225 130 v-12\" stroke=\"#F2B33D\" stroke-width=\"2\"/></svg><video src=\"clips/m5.mp4\" poster=\"clips/m5.jpg\" preload=\"metadata\" muted playsinline style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></video>"
+  },
+  {
+   "id": "m6",
+   "name": "3D title",
+   "line": "A big title flies in, turns and catches a glint. Good for: episode or chapter title.",
+   "play": "playClip",
+   "playMs": 6300,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><text x=\"162\" y=\"104\" font-family=\"Inter,Arial,sans-serif\" font-size=\"44\" font-weight=\"900\" fill=\"#000\" text-anchor=\"middle\">DAY 30</text><text x=\"160\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"44\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">DAY 30</text></svg><video src=\"clips/m6.mp4\" poster=\"clips/m6.jpg\" preload=\"metadata\" muted playsinline style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></video>"
+  }
+ ]
+}

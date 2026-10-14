@@ -1,0 +1,120 @@
+{
+ "round": "made-scenes",
+ "kind": "library",
+ "layout": "tiles",
+ "keepWord": "art style|art styles",
+ "photoTag": "Test scene",
+ "title": "Art styles for scenes you can't film",
+ "what": "A generated picture for imaginary scenes: a flashback, a what-if.",
+ "next": "Next: your color palette.",
+ "persona": "Wren",
+ "sections": [
+  {
+   "id": "moments",
+   "title": "",
+   "line": "",
+   "kind": "library",
+   "keepWord": "art style|art styles",
+   "keepValues": [
+    "keep"
+   ],
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "options": [
+    {
+     "id": "watercolor",
+     "name": "Watercolor",
+     "line": "For: a soft memory",
+     "images": [
+      "img/looks/watercolor.jpg"
+     ],
+     "pick": true,
+     "why": "Soft and warm; it suits the before-and-after stories you told me."
+    },
+    {
+     "id": "pencil",
+     "name": "Pencil sketch",
+     "line": "For: explaining how something works",
+     "images": [
+      "img/looks/pencil.jpg"
+     ]
+    },
+    {
+     "id": "pop-comic",
+     "name": "Pop comic",
+     "line": "For: a dramatic \"before\"",
+     "images": [
+      "img/looks/pop-comic.jpg"
+     ]
+    },
+    {
+     "id": "paper-diorama",
+     "name": "Paper diorama",
+     "line": "For: a \"what if\"",
+     "images": [
+      "img/looks/paper-diorama.jpg"
+     ]
+    },
+    {
+     "id": "claymation",
+     "name": "Claymation",
+     "line": "For: a joke",
+     "images": [
+      "img/looks/claymation.jpg"
+     ]
+    },
+    {
+     "id": "blueprint",
+     "name": "Blueprint",
+     "line": "For: a plan or a build",
+     "images": [
+      "img/looks/blueprint.jpg"
+     ]
+    },
+    {
+     "id": "chalkboard",
+     "name": "Chalkboard",
+     "line": "For: prices and numbers",
+     "images": [
+      "img/looks/chalkboard.jpg"
+     ]
+    },
+    {
+     "id": "toy-bricks",
+     "name": "Toy bricks",
+     "line": "For: a silly rebuild",
+     "images": [
+      "img/looks/toy-bricks.jpg"
+     ]
+    }
+   ]
+  }
+ ],
+ "stage": "look",
+ "stepId": "art-styles",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ]
+}

@@ -1,0 +1,50 @@
+<title>03 Backstory (speaker to side)</title>
+<style>
+.rw{position:absolute;left:-360px;width:720px;height:88px;display:flex;align-items:center;gap:26px;font-size:44px;font-weight:600;letter-spacing:-.015em;white-space:nowrap}
+.rw .dot{width:14px;height:14px;border-radius:4px;background:var(--line);flex:none}
+#hl{position:absolute;left:-380px;width:760px;border-radius:18px;background:var(--accentSoft);box-shadow:inset 0 0 0 1.5px var(--accent)}
+</style>
+<div data-slot="shape">
+  <div class="L" id="Lstat">
+    <div class="a" style="left:-370px;top:-100px;width:200px;height:200px;border-radius:40px;background:var(--accent)"><div class="a" id="icS" style="left:44px;top:44px"></div></div>
+    <div class="row" style="left:-120px;top:-112px;gap:22px;align-items:baseline"><span class="num" id="n" style="font-size:150px;font-weight:700;letter-spacing:-.04em">12</span><span class="disp" style="font-size:56px;font-weight:600;color:var(--muted)">years</span></div>
+    <div class="a" id="sub" style="left:-116px;top:52px;font-size:40px;font-weight:500;white-space:nowrap">Professional line cook</div>
+  </div>
+  <div class="L" id="Llist">
+    <div class="row" style="left:-360px;top:46px;gap:14px"><span id="icS2"></span><span class="micro" style="color:var(--muted)">12 years in kitchens</span></div>
+    <div id="hl"></div>
+    <div class="rw disp" id="r0" style="top:112px"><span class="dot"></span>Problem solving</div>
+    <div class="rw disp" id="r1" style="top:212px"><span class="dot"></span>Logic injection</div>
+    <div class="rw disp" id="r2" style="top:312px"><span class="dot"></span>Repeatable solutions</div>
+  </div>
+</div><!--/shape-->
+<script>
+// Look: speaker to side (engine speaker layer). The clip starts and ends with the speaker full-frame, so the cut is invisible.
+const $=id=>document.getElementById(id); const C=Object.assign({accent:'#FF5A1F',surface:'#FFFFFF',canvas:'#E9E7E2',line:'#EDEAE5',ink:'#0B0B0B',muted:'#8A8782'},window.BRAND);
+$('icS').innerHTML=M.icon('spade',112,'#fff',3.2); $('icS2').innerHTML=M.icon('spade',26,C.accent,2.2);
+// clip in = 18.10. 12 .37, professional 1.17, problem 4.32, logic 5.44, developing 9.04, solutions 10.16
+const RT=[4.32,5.44,9.04], OUT=10.75;
+const top0=r=>112+r*100-8, bot0=r=>112+r*100+88+8;
+const hT=M.track(top0(0),[[5.44,top0(1),M.SLOW],[9.04,top0(2),M.SLOW]]), hB=M.track(bot0(0),[[5.44,bot0(1),M.FAST],[9.04,bot0(2),M.FAST]]);
+M.scene({
+  W:2560,H:1440,bg:C.canvas,T:11.4,intro:0.35,center:[780,720],
+  SH:{stat:{w:900,h:330,r:36,bg:C.surface,cam:1.55}, l1:{w:840,h:236,r:32,bg:C.surface,cam:1.6}, l2:{w:840,h:336,r:32,bg:C.surface,cam:1.55}, l3:{w:840,h:436,r:32,bg:C.surface,cam:1.5}},
+  start:'stat', SEQ:[[4.1,'l1'],[5.44,'l2'],[9.04,'l3']],
+  speaker:{src:'../work/frames/03/', fps:60, focus:'auto', start:'full',
+           boxes:{side:[1560,110,900,1220,40]}, SEQ:[[0.05,'side'],[OUT,'full']], shadow:'0 30px 80px -20px rgba(0,0,0,.7)'},
+  layers:[
+    {el:'Lstat',tin:0.35,tout:4.1,update:(t)=>{
+      const k=M.eo((t-0.37)/0.55); M.setText($('n'),String(Math.round(12*k)));
+      const v=M.vis(t,1.17,null,{din:0,lin:0.24}); const s=$('sub').style; s.opacity=v.o; s.filter=v.blur>0.05?`blur(${v.blur}px)`:'none';
+    }},
+    {el:'Llist',tin:4.1,tout:null,anchor:'t',o:{din:0.02,lin:0.22},update:(t)=>{
+      let act=0; for(let i=0;i<3;i++) if(t>=RT[i]) act=i;
+      for(let i=0;i<3;i++){const e=$('r'+i), v=M.vis(t,RT[i],null,{din:0,lin:0.22});
+        e.style.opacity=v.o; e.style.filter=v.blur>0.05?`blur(${v.blur}px)`:'none'; e.style.transform=`translateY(${(1-v.a)*14}px)`;
+        e.style.color=i===act?C.ink:C.muted; e.querySelector('.dot').style.background=i===act?C.accent:C.line;}
+      const hs=$('hl').style; hs.top=hT(t)+'px'; hs.height=Math.max(0,hB(t)-hT(t))+'px'; hs.opacity=M.vis(t,RT[0],null,{din:0.05,lin:0.22}).o;
+    }},
+  ],
+  extra:(t,g)=>{ const f=1-M.eo((t-OUT)/0.3); document.getElementById('world').style.opacity=f; },
+});
+</script>

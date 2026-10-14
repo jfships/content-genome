@@ -1,0 +1,464 @@
+{
+ "round": "motion-entrances",
+ "kind": "library",
+ "badge": "Pick a feel + library",
+ "fonts": [
+  "bebas-neue",
+  "inter"
+ ],
+ "title": "Motion feel and how things come in",
+ "what": "How titles and labels arrive on screen, grouped by feel. Pick a main feel and a backup, and keep any entrances you like.",
+ "purpose": "You're picking how your videos move, and building your library of entrances.",
+ "sectionPick": {
+  "word": "feel",
+  "buttons": [
+   {
+    "value": "pick",
+    "label": "Main feel"
+   },
+   {
+    "value": "backup",
+    "label": "Backup feel"
+   },
+   {
+    "value": "alt",
+    "label": "Alternative"
+   }
+  ]
+ },
+ "next": "Next: scene changes.",
+ "persona": "Wren",
+ "sections": [
+  {
+   "id": "calm",
+   "title": "Calm",
+   "line": "Slow, soft arrivals. Nothing jumps.",
+   "kind": "library",
+   "layout": "tiles",
+   "keepWord": "entrance|entrances",
+   "movable": false,
+   "rule": "keep any entrances you like from this group.",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "feel-calm",
+     "name": "The calm feel",
+     "line": "Titles and labels together, in this feel.",
+     "html": "<style>.card.playing .mf-glide .t{animation:mf-glidet 2.2s cubic-bezier(.45,0,.2,1) 0.0s 2 both}@keyframes mf-glidet{0%{opacity:0;transform:translateY(12%)}45%,100%{opacity:1;transform:none}}.card.playing .mf-glide .l{animation:mf-glidel 2.2s cubic-bezier(.45,0,.2,1) 0.0s 2 both}@keyframes mf-glidel{0%,20%{opacity:0;transform:translateY(40%)}60%,100%{opacity:1;transform:none}}</style><div class=\"mf-glide\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700,
+     "control": true,
+     "pick": true,
+     "why": "Calm and clear: it suits explaining things without rushing."
+    },
+    {
+     "id": "fade-up",
+     "name": "Fade up",
+     "line": "Fades in while rising a little.",
+     "html": "<style>.card.playing .en-fade-up .t{animation:en-fade-upt 1.8s ease-out 0s 2 both}@keyframes en-fade-upt{0%{opacity:0;transform:translateY(12%)}40%,100%{opacity:1;transform:none}}</style><div class=\"en-fade-up\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "blur",
+     "name": "Blur in",
+     "line": "Comes into focus.",
+     "html": "<style>.card.playing .en-blur .t{animation:en-blurt 2.0s ease-out 0s 2 both}@keyframes en-blurt{0%{filter:blur(2.4cqw);opacity:0}45%,100%{filter:none;opacity:1}}</style><div class=\"en-blur\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4300
+    },
+    {
+     "id": "ink-bleed",
+     "name": "Ink bleed",
+     "line": "Spreads in like ink on paper.",
+     "html": "<style>.card.playing .en-ink-bleed .t{animation:en-ink-bleedt 2.4s ease-out 0s 2 both}@keyframes en-ink-bleedt{0%{filter:blur(3cqw);opacity:0;transform:scale(1.05)}50%,100%{filter:none;opacity:1;transform:none}}</style><div class=\"en-ink-bleed\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 5100
+    },
+    {
+     "id": "word-stagger",
+     "name": "Word by word",
+     "line": "Words arrive one after another.",
+     "html": "<style>.card.playing .en-word-stagger .w{animation:en-word-staggerw 2.2s ease-out 2 both;animation-delay:calc(var(--i) * 0.132s)}@keyframes en-word-staggerw{0%{opacity:0;transform:translateY(40%)}12%,100%{opacity:1;transform:none}}</style><div class=\"en-word-stagger\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\"><span class=\"w\" style=\"display:inline-block;--i:1\">I</span> <span class=\"w\" style=\"display:inline-block;--i:2\">TRIED</span> <span class=\"w\" style=\"display:inline-block;--i:3\">IT</span><br><span class=\"w\" style=\"display:inline-block;--i:4\">FOR</span> <span class=\"w\" style=\"display:inline-block;--i:5\">30</span> <span class=\"w\" style=\"display:inline-block;--i:6\">DAYS</span></div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700
+    },
+    {
+     "id": "highlight",
+     "name": "Marker sweep",
+     "line": "A marker stroke sweeps in behind it.",
+     "html": "<style>.card.playing .en-highlight .hl{animation:en-highlighth 2.0s cubic-bezier(.65,0,.35,1) 2 both}@keyframes en-highlighth{0%{background-size:0% 100%}40%,100%{background-size:100% 100%}}</style><div class=\"en-highlight\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\"><span class=\"hl\" style=\"background:linear-gradient(#FFD166,#FFD166) 0 85%/100% 70% no-repeat;padding:0 1cqw\">I TRIED IT</span><br><span class=\"hl\" style=\"background:linear-gradient(#FFD166,#FFD166) 0 85%/100% 70% no-repeat;padding:0 1cqw\">FOR 30 DAYS</span></div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4300
+    }
+   ]
+  },
+  {
+   "id": "smooth",
+   "title": "Smooth",
+   "line": "Clean, measured reveals.",
+   "kind": "library",
+   "layout": "tiles",
+   "keepWord": "entrance|entrances",
+   "movable": false,
+   "rule": "keep any entrances you like from this group.",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "feel-smooth",
+     "name": "The smooth feel",
+     "line": "Titles and labels together, in this feel.",
+     "html": "<style>.card.playing .mf-editorial .t{animation:mf-editorialt 2.2s cubic-bezier(.65,0,.35,1) 0.0s 2 both}@keyframes mf-editorialt{0%{clip-path:inset(100% 0 0 0);transform:translateY(10%)}45%,100%{clip-path:inset(0 0 0 0);transform:none}}.card.playing .mf-editorial .l{animation:mf-editoriall 2.2s cubic-bezier(.65,0,.35,1) 0.0s 2 both}@keyframes mf-editoriall{0%,35%{clip-path:inset(0 100% 0 0)}70%,100%{clip-path:inset(0 0 0 0)}}</style><div class=\"mf-editorial\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700,
+     "control": true
+    },
+    {
+     "id": "mask",
+     "name": "Mask reveal",
+     "line": "Slides up from behind an invisible edge.",
+     "html": "<style>.card.playing .en-mask .t{animation:en-maskt 1.8s cubic-bezier(.65,0,.35,1) 0s 2 both}@keyframes en-maskt{0%{clip-path:inset(0 0 100% 0);transform:translateY(30%)}40%,100%{clip-path:inset(0 0 0 0);transform:none}}</style><div class=\"en-mask\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "wipe",
+     "name": "Wipe",
+     "line": "A clean edge sweeps it in.",
+     "html": "<style>.card.playing .en-wipe .t{animation:en-wipet 1.8s cubic-bezier(.65,0,.35,1) 0s 2 both}@keyframes en-wipet{0%{clip-path:inset(0 100% 0 0)}40%,100%{clip-path:inset(0 0 0 0)}}</style><div class=\"en-wipe\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "slide",
+     "name": "Slide in",
+     "line": "Slides in from the side.",
+     "html": "<style>.card.playing .en-slide .t{animation:en-slidet 1.6s cubic-bezier(.16,1,.3,1) 0s 2 both}@keyframes en-slidet{0%{transform:translateX(-110%)}35%,100%{transform:none}}</style><div class=\"en-slide\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3500
+    },
+    {
+     "id": "rotate",
+     "name": "Rotate in",
+     "line": "Swings in on a pivot.",
+     "html": "<style>.card.playing .en-rotate .t{animation:en-rotatet 1.8s cubic-bezier(.16,1,.3,1) 0s 2 both}@keyframes en-rotatet{0%{transform:rotate(-25deg) translateY(-20%);opacity:0;transform-origin:0 100%}40%,100%{transform:none;opacity:1}}</style><div class=\"en-rotate\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "flip",
+     "name": "Flip",
+     "line": "Flips over like a card.",
+     "html": "<style>.card.playing .en-flip .t{animation:en-flipt 1.8s cubic-bezier(.16,1,.3,1) 0s 2 both}@keyframes en-flipt{0%{transform:perspective(60cqw) rotateX(-90deg);opacity:0}35%,100%{transform:none;opacity:1}}</style><div class=\"en-flip\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "page-curl",
+     "name": "Page curl",
+     "line": "Peels in like a page turn.",
+     "html": "<style>.card.playing .en-page-curl .t{animation:en-page-curlt 2.0s cubic-bezier(.16,1,.3,1) 0s 2 both}@keyframes en-page-curlt{0%{transform:perspective(60cqw) rotateY(80deg);transform-origin:0 50%;opacity:.2}40%,100%{transform:none;opacity:1}}</style><div class=\"en-page-curl\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4300
+    }
+   ]
+  },
+  {
+   "id": "snappy",
+   "title": "Snappy",
+   "line": "Quick and crisp. In and done.",
+   "kind": "library",
+   "layout": "tiles",
+   "keepWord": "entrance|entrances",
+   "movable": false,
+   "rule": "keep any entrances you like from this group.",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "feel-snappy",
+     "name": "The snappy feel",
+     "line": "Titles and labels together, in this feel.",
+     "html": "<style>.card.playing .mf-snap .t{animation:mf-snapt 1.6s cubic-bezier(.16,1,.3,1) 0.0s 2 both}@keyframes mf-snapt{0%{transform:translateX(-120%)}22%{transform:none}100%{transform:none}}.card.playing .mf-snap .l{animation:mf-snapl 1.6s cubic-bezier(.16,1,.3,1) 0.0s 2 both}@keyframes mf-snapl{0%,12%{transform:scale(0)}26%{transform:scale(1.08)}32%,100%{transform:none}}</style><div class=\"mf-snap\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3500,
+     "control": true
+    },
+    {
+     "id": "cut",
+     "name": "Hard cut",
+     "line": "Just appears.",
+     "html": "<style>.card.playing .en-cut .t{animation:en-cutt 1.4s linear 0s 2 both}@keyframes en-cutt{0%,30%{opacity:0}31%,100%{opacity:1}}</style><div class=\"en-cut\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3100
+    },
+    {
+     "id": "zoom",
+     "name": "Zoom in",
+     "line": "Grows into place.",
+     "html": "<style>.card.playing .en-zoom .t{animation:en-zoomt 1.6s cubic-bezier(.16,1,.3,1) 0s 2 both}@keyframes en-zoomt{0%{transform:scale(.4);opacity:0}35%,100%{transform:none;opacity:1}}</style><div class=\"en-zoom\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3500
+    },
+    {
+     "id": "typewriter",
+     "name": "Typewriter",
+     "line": "Letters appear one by one.",
+     "html": "<style>.card.playing .en-typewriter .c{animation:en-typewriterc 2.2s steps(1) 2 both;animation-delay:calc(var(--i) * 0.066s)}@keyframes en-typewriterc{0%{opacity:0}1%,100%{opacity:1}}</style><div class=\"en-typewriter\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\"><span class=\"c\" style=\"display:inline-block;--i:1\">I</span><span class=\"c\" style=\"display:inline-block;--i:2\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:3\">T</span><span class=\"c\" style=\"display:inline-block;--i:4\">R</span><span class=\"c\" style=\"display:inline-block;--i:5\">I</span><span class=\"c\" style=\"display:inline-block;--i:6\">E</span><span class=\"c\" style=\"display:inline-block;--i:7\">D</span><span class=\"c\" style=\"display:inline-block;--i:8\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:9\">I</span><span class=\"c\" style=\"display:inline-block;--i:10\">T</span><br><span class=\"c\" style=\"display:inline-block;--i:11\">F</span><span class=\"c\" style=\"display:inline-block;--i:12\">O</span><span class=\"c\" style=\"display:inline-block;--i:13\">R</span><span class=\"c\" style=\"display:inline-block;--i:14\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:15\">3</span><span class=\"c\" style=\"display:inline-block;--i:16\">0</span><span class=\"c\" style=\"display:inline-block;--i:17\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:18\">D</span><span class=\"c\" style=\"display:inline-block;--i:19\">A</span><span class=\"c\" style=\"display:inline-block;--i:20\">Y</span><span class=\"c\" style=\"display:inline-block;--i:21\">S</span></div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700
+    },
+    {
+     "id": "scramble",
+     "name": "Decode",
+     "line": "Random letters settle into the words.",
+     "html": "<style>.card.playing .en-scramble .c{animation:en-scramblec 2.2s steps(3) 2 both;animation-delay:calc(var(--i) * 0.066s)}@keyframes en-scramblec{0%{opacity:.3;transform:translateY(-30%) rotate(20deg);filter:blur(.3cqw)}10%,100%{opacity:1;transform:none;filter:none}}</style><div class=\"en-scramble\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\"><span class=\"c\" style=\"display:inline-block;--i:1\">I</span><span class=\"c\" style=\"display:inline-block;--i:2\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:3\">T</span><span class=\"c\" style=\"display:inline-block;--i:4\">R</span><span class=\"c\" style=\"display:inline-block;--i:5\">I</span><span class=\"c\" style=\"display:inline-block;--i:6\">E</span><span class=\"c\" style=\"display:inline-block;--i:7\">D</span><span class=\"c\" style=\"display:inline-block;--i:8\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:9\">I</span><span class=\"c\" style=\"display:inline-block;--i:10\">T</span><br><span class=\"c\" style=\"display:inline-block;--i:11\">F</span><span class=\"c\" style=\"display:inline-block;--i:12\">O</span><span class=\"c\" style=\"display:inline-block;--i:13\">R</span><span class=\"c\" style=\"display:inline-block;--i:14\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:15\">3</span><span class=\"c\" style=\"display:inline-block;--i:16\">0</span><span class=\"c\" style=\"display:inline-block;--i:17\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:18\">D</span><span class=\"c\" style=\"display:inline-block;--i:19\">A</span><span class=\"c\" style=\"display:inline-block;--i:20\">Y</span><span class=\"c\" style=\"display:inline-block;--i:21\">S</span></div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700
+    },
+    {
+     "id": "print-out",
+     "name": "Print out",
+     "line": "Prints out line by line like a receipt.",
+     "html": "<style>.card.playing .en-print-out .t{animation:en-print-outt 2.0s steps(4) 0s 2 both}@keyframes en-print-outt{0%{clip-path:inset(0 0 100% 0)}20%{clip-path:inset(0 0 55% 0)}40%,100%{clip-path:inset(0 0 0 0)}}</style><div class=\"en-print-out\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4300
+    },
+    {
+     "id": "counter",
+     "name": "Counter roll",
+     "line": "Numbers roll up to the value.",
+     "html": "<style>.en-counter .d{transform:translateY(calc(var(--n) * -1em))}.card.playing .en-counter .d{animation:en-countern 2.2s cubic-bezier(.16,1,.3,1) 2 both}@keyframes en-countern{0%{transform:translateY(-9em)}50%,100%{transform:translateY(calc(var(--n) * -1em))}}</style><div class=\"en-counter\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR <span style=\"display:inline-block;height:1em;overflow:hidden;vertical-align:top\"><span class=\"d\" style=\"display:block;--n:3\">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</span></span><span style=\"display:inline-block;height:1em;overflow:hidden;vertical-align:top\"><span class=\"d\" style=\"display:block;--n:0\">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</span></span> DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700
+    }
+   ]
+  },
+  {
+   "id": "punchy",
+   "title": "Punchy",
+   "line": "Big hits that land hard.",
+   "kind": "library",
+   "layout": "tiles",
+   "keepWord": "entrance|entrances",
+   "movable": false,
+   "rule": "keep any entrances you like from this group.",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "feel-punchy",
+     "name": "The punchy feel",
+     "line": "Titles and labels together, in this feel.",
+     "html": "<style>.card.playing .mf-punch .t{animation:mf-puncht 1.6s cubic-bezier(.2,.9,.3,1) 0.0s 2 both}@keyframes mf-puncht{0%{transform:scale(1.8);opacity:0}14%{transform:scale(.94);opacity:1}20%,100%{transform:none}}.card.playing .mf-punch .l{animation:mf-punchl 1.6s cubic-bezier(.2,.9,.3,1) 0.0s 2 both}@keyframes mf-punchl{0%,18%{transform:translateX(-140%)}26%{transform:translateX(6%)}30%,100%{transform:none}}</style><div class=\"mf-punch\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3500,
+     "control": true
+    },
+    {
+     "id": "slam",
+     "name": "Slam",
+     "line": "Drops in hard with a tiny shake.",
+     "html": "<style>.card.playing .en-slam .t{animation:en-slamt 1.8s cubic-bezier(.5,0,.75,0) 0s 2 both}@keyframes en-slamt{0%{transform:translateY(-160%) scale(1.2)}16%{transform:none}20%{transform:translate(1.5%,1%)}24%{transform:translate(-1.5%,0)}28%,100%{transform:none}}</style><div class=\"en-slam\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "side-slam",
+     "name": "Side slam",
+     "line": "Slams in from the side and stops dead.",
+     "html": "<style>.card.playing .en-side-slam .t{animation:en-side-slamt 1.6s cubic-bezier(.2,1,.3,1) 0s 2 both}@keyframes en-side-slamt{0%{transform:translateX(160%)}16%{transform:translateX(-4%)}20%,100%{transform:none}}</style><div class=\"en-side-slam\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3500
+    },
+    {
+     "id": "stamp",
+     "name": "Stamp",
+     "line": "Stamps down with a thud.",
+     "html": "<style>.card.playing .en-stamp .t{animation:en-stampt 1.8s cubic-bezier(.5,0,.75,0) 0s 2 both}@keyframes en-stampt{0%{transform:scale(2.4) rotate(-6deg);opacity:0}14%{transform:scale(.96) rotate(-3deg);opacity:1}20%,100%{transform:rotate(-3deg)}}</style><div class=\"en-stamp\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "glitch",
+     "name": "Glitch",
+     "line": "Color-split jitter, then settles.",
+     "html": "<style>.card.playing .en-glitch .t{animation:en-glitcht 1.8s linear 0s 2 both}@keyframes en-glitcht{0%{opacity:0}8%{opacity:1;transform:translateX(5%);text-shadow:.8cqw 0 #f0f,-.8cqw 0 #0ff}14%{transform:translateX(-3%)}18%{opacity:.3}22%,100%{opacity:1;transform:none;text-shadow:none}}</style><div class=\"en-glitch\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "neon-flicker",
+     "name": "Neon flicker",
+     "line": "Flickers on like a neon tube.",
+     "html": "<style>.card.playing .en-neon-flicker .t{animation:en-neon-flickert 1.8s steps(1) 0s 2 both}@keyframes en-neon-flickert{0%{opacity:0}5%{opacity:1}8%{opacity:.1}12%{opacity:.9}15%{opacity:.2}22%,100%{opacity:1}}</style><div class=\"en-neon-flicker\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "shatter",
+     "name": "Reform",
+     "line": "Pieces fly in and snap together.",
+     "html": "<style>.card.playing .en-shatter .c{animation:en-shatterc 2.2s cubic-bezier(.16,1,.3,1) 2 both;animation-delay:calc(var(--i) * 0.066s)}@keyframes en-shatterc{0%{transform:translate(calc((var(--i) - 8) * 6cqw),calc((var(--i) % 3 - 1) * 14cqw)) rotate(calc(var(--i) * 40deg));opacity:0}14%,100%{transform:none;opacity:1}}</style><div class=\"en-shatter\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\"><span class=\"c\" style=\"display:inline-block;--i:1\">I</span><span class=\"c\" style=\"display:inline-block;--i:2\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:3\">T</span><span class=\"c\" style=\"display:inline-block;--i:4\">R</span><span class=\"c\" style=\"display:inline-block;--i:5\">I</span><span class=\"c\" style=\"display:inline-block;--i:6\">E</span><span class=\"c\" style=\"display:inline-block;--i:7\">D</span><span class=\"c\" style=\"display:inline-block;--i:8\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:9\">I</span><span class=\"c\" style=\"display:inline-block;--i:10\">T</span><br><span class=\"c\" style=\"display:inline-block;--i:11\">F</span><span class=\"c\" style=\"display:inline-block;--i:12\">O</span><span class=\"c\" style=\"display:inline-block;--i:13\">R</span><span class=\"c\" style=\"display:inline-block;--i:14\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:15\">3</span><span class=\"c\" style=\"display:inline-block;--i:16\">0</span><span class=\"c\" style=\"display:inline-block;--i:17\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:18\">D</span><span class=\"c\" style=\"display:inline-block;--i:19\">A</span><span class=\"c\" style=\"display:inline-block;--i:20\">Y</span><span class=\"c\" style=\"display:inline-block;--i:21\">S</span></div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700
+    }
+   ]
+  },
+  {
+   "id": "playful",
+   "title": "Playful",
+   "line": "Bouncy and cartoony.",
+   "kind": "library",
+   "layout": "tiles",
+   "keepWord": "entrance|entrances",
+   "movable": false,
+   "rule": "keep any entrances you like from this group.",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "feel-playful",
+     "name": "The playful feel",
+     "line": "Titles and labels together, in this feel.",
+     "html": "<style>.card.playing .mf-playful .t{animation:mf-playfult 2.0s ease-out 0.0s 2 both}@keyframes mf-playfult{0%{transform:scale(0) rotate(-8deg)}18%{transform:scale(1.15) rotate(3deg)}26%{transform:scale(.95) rotate(-1deg)}32%,100%{transform:none}}.card.playing .mf-playful .l{animation:mf-playfull 2.0s ease-out 0.0s 2 both}@keyframes mf-playfull{0%,22%{transform:translateY(160%)}34%{transform:translateY(-20%)}40%,100%{transform:none}}</style><div class=\"mf-playful\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4300,
+     "control": true
+    },
+    {
+     "id": "word-spring",
+     "name": "Word spring",
+     "line": "Each word springs in with a bounce.",
+     "html": "<style>.card.playing .en-word-spring .w{animation:en-word-springw 2.2s ease-out 2 both;animation-delay:calc(var(--i) * 0.132s)}@keyframes en-word-springw{0%{transform:scale(0)}8%{transform:scale(1.25)}12%,100%{transform:none}}</style><div class=\"en-word-spring\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\"><span class=\"w\" style=\"display:inline-block;--i:1\">I</span> <span class=\"w\" style=\"display:inline-block;--i:2\">TRIED</span> <span class=\"w\" style=\"display:inline-block;--i:3\">IT</span><br><span class=\"w\" style=\"display:inline-block;--i:4\">FOR</span> <span class=\"w\" style=\"display:inline-block;--i:5\">30</span> <span class=\"w\" style=\"display:inline-block;--i:6\">DAYS</span></div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700
+    },
+    {
+     "id": "bounce",
+     "name": "Bounce",
+     "line": "Drops from above and bounces three times.",
+     "html": "<style>.card.playing .en-bounce .t{animation:en-bouncet 2.0s ease-in 0s 2 both}@keyframes en-bouncet{0%{transform:translateY(-160%)}14%{transform:none}20%{transform:translateY(-18%)}26%{transform:none}30%{transform:translateY(-6%)}34%,100%{transform:none}}</style><div class=\"en-bounce\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4300
+    },
+    {
+     "id": "letter-drop",
+     "name": "Letter drop",
+     "line": "Letters fall in one by one.",
+     "html": "<style>.card.playing .en-letter-drop .c{animation:en-letter-dropc 2.4s ease-in 2 both;animation-delay:calc(var(--i) * 0.072s)}@keyframes en-letter-dropc{0%{transform:translateY(-220%);opacity:0}6%{transform:translateY(10%);opacity:1}9%,100%{transform:none}}</style><div class=\"en-letter-drop\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\"><span class=\"c\" style=\"display:inline-block;--i:1\">I</span><span class=\"c\" style=\"display:inline-block;--i:2\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:3\">T</span><span class=\"c\" style=\"display:inline-block;--i:4\">R</span><span class=\"c\" style=\"display:inline-block;--i:5\">I</span><span class=\"c\" style=\"display:inline-block;--i:6\">E</span><span class=\"c\" style=\"display:inline-block;--i:7\">D</span><span class=\"c\" style=\"display:inline-block;--i:8\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:9\">I</span><span class=\"c\" style=\"display:inline-block;--i:10\">T</span><br><span class=\"c\" style=\"display:inline-block;--i:11\">F</span><span class=\"c\" style=\"display:inline-block;--i:12\">O</span><span class=\"c\" style=\"display:inline-block;--i:13\">R</span><span class=\"c\" style=\"display:inline-block;--i:14\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:15\">3</span><span class=\"c\" style=\"display:inline-block;--i:16\">0</span><span class=\"c\" style=\"display:inline-block;--i:17\">&nbsp;</span><span class=\"c\" style=\"display:inline-block;--i:18\">D</span><span class=\"c\" style=\"display:inline-block;--i:19\">A</span><span class=\"c\" style=\"display:inline-block;--i:20\">Y</span><span class=\"c\" style=\"display:inline-block;--i:21\">S</span></div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 5100
+    },
+    {
+     "id": "swing-in",
+     "name": "Hanging sign",
+     "line": "Drops and swings into place like a sign.",
+     "html": "<style>.card.playing .en-swing-in .t{animation:en-swing-int 2.2s ease-out 0s 2 both}@keyframes en-swing-int{0%{transform:translateY(-150%) rotate(10deg)}22%{transform:rotate(-8deg)}32%{transform:rotate(4deg)}40%{transform:rotate(-2deg)}46%,100%{transform:none}}</style><div class=\"en-swing-in\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 4700
+    },
+    {
+     "id": "squash",
+     "name": "Squash & stretch",
+     "line": "Lands with a cartoon squash.",
+     "html": "<style>.card.playing .en-squash .t{animation:en-squasht 1.8s ease-in 0s 2 both}@keyframes en-squasht{0%{transform:translateY(-140%) scaleY(1.3)}18%{transform:translateY(0) scale(1.2,.7)}26%{transform:scale(.92,1.12)}32%,100%{transform:none}}</style><div class=\"en-squash\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "unroll",
+     "name": "Unroll",
+     "line": "Unrolls downward like a scroll.",
+     "html": "<style>.card.playing .en-unroll .t{animation:en-unrollt 1.8s cubic-bezier(.16,1,.3,1) 0s 2 both}@keyframes en-unrollt{0%{transform:scaleY(0);transform-origin:50% 0;filter:brightness(.6)}30%{transform:scaleY(1.06);transform-origin:50% 0;filter:none}36%,100%{transform:none}}</style><div class=\"en-unroll\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3900
+    },
+    {
+     "id": "boil",
+     "name": "Boiling lines",
+     "line": "A hand-drawn wiggle that never quite stops.",
+     "html": "<style>.card.playing .en-boil .t{animation:en-boilt 0.5s steps(1) 0s infinite both}@keyframes en-boilt{0%{transform:rotate(-.8deg)}25%{transform:rotate(.6deg) translateX(.3%)}50%{transform:rotate(-.4deg)}75%{transform:rotate(.8deg)}100%{transform:none}}</style><div class=\"en-boil\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;overflow:hidden\"><div class=\"t\" style=\"position:absolute;left:8%;top:18%;font:400 13cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">I TRIED IT<br>FOR 30 DAYS</div><div class=\"l\" style=\"position:absolute;left:8%;bottom:16%;font:700 4.4cqw 'Inter',Arial,sans-serif;color:#F4FBF7;background:#2EC4A6;padding:1cqw 2.4cqw\">Day 1 vs Day 30</div></div>",
+     "play": true,
+     "playMs": 3000
+    }
+   ]
+  }
+ ],
+ "stage": "movement",
+ "stepId": "motion-feel",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ]
+}

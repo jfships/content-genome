@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script>
+<link rel="stylesheet" href="shared/base.css"><style>
+
+
+body{margin:0;background:#081a30}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,var(--bg) 0%,var(--bg-deep) 60%,var(--bg-edge) 100%);font-family:var(--font-text)}
+#stage{position:absolute;inset:0;perspective:1700px;perspective-origin:50% 40%}
+#card{position:absolute;left:510px;top:100px;width:900px;height:880px;border-radius:22px;overflow:hidden;background:var(--bg);box-shadow:0 60px 160px rgba(0,0,0,.6),0 0 0 2px rgba(255,255,255,.18)}
+#page{position:absolute;left:0;top:0;width:900px;display:block}
+#cur{position:absolute;left:0;top:0;width:44px;height:44px}
+#rip{position:absolute;width:30px;height:30px;border-radius:50%;border:4px solid var(--pop);left:0;top:0}
+.br{position:absolute;width:60px;height:60px;border:6px solid var(--pop)}
+#stamp{position:absolute;left:1130px;top:330px;font-family:var(--font-display);font-size:56px;color:#fff;background:var(--pop);padding:6px 22px 12px;white-space:nowrap}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div id="stage"><div id="card"><img id="page" src="assets/screen-1.png"></div></div>
+ <div class="br" id="k1" style="border-right:0;border-bottom:0"></div><div class="br" id="k2" style="border-left:0;border-bottom:0"></div>
+ <div class="br" id="k3" style="border-right:0;border-top:0"></div><div class="br" id="k4" style="border-left:0;border-top:0"></div>
+ <div id="rip"></div>
+ <svg id="cur" viewBox="0 0 24 24"><path d="M3 2 L3 20 L8 15 L11 22 L14 21 L11 14 L18 14 Z" fill="#fff" stroke="#0c2747" stroke-width="1.5"/></svg>
+ <div id="stamp">Palette Locked.</div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+gsap.set(["#cur","#rip","#stamp",".br"],{opacity:0});
+tl.fromTo("#card",{rotationX:24,rotationY:-22,z:-500,y:80},{rotationX:14,rotationY:-12,z:0,y:0,duration:1.1,ease:"expo.out"},0);
+// page scrolls inside the tilted card
+tl.fromTo("#page",{y:0},{y:-960,duration:1.6,ease:"power3.inOut"},0.7);
+// cursor arrives and clicks a swatch
+tl.fromTo("#cur",{opacity:0,x:1500,y:900},{opacity:1,x:960,y:300,duration:.7,ease:"power3.out",immediateRender:false},2.0);
+tl.to("#cur",{scale:.85,duration:.08},2.75).to("#cur",{scale:1,duration:.15},2.83);
+tl.fromTo("#rip",{opacity:1,x:950,y:290,scale:.4},{opacity:0,scale:3.2,duration:.6,ease:"power2.out",immediateRender:false},2.78);
+// camera: card flattens and zooms to the palette
+tl.to("#cur",{opacity:0,duration:.2},3.0);
+tl.to("#card",{rotationX:0,rotationY:0,scale:1.55,x:0,y:400,duration:1.0,ease:"power3.inOut"},3.0);
+// HUD brackets lock onto the palette
+const B=[[380,500],[1540,500],[380,795],[1540,795]];
+["#k1","#k2","#k3","#k4"].forEach((k,i)=>{const d=i%2?-1:1,e=i<2?1:-1;
+  tl.fromTo(k,{opacity:0,x:B[i][0]-d*80-(i%2?60:0),y:B[i][1]-e*80-(i<2?0:60)},{opacity:1,x:B[i][0]-(i%2?60:0),y:B[i][1]-(i<2?0:60),duration:.45,ease:"power3.out",immediateRender:false},3.9+i*.05);});
+tl.fromTo("#stamp",{opacity:0,scale:1.4,rotation:-4},{opacity:1,scale:1,rotation:-4,duration:.35,ease:"power3.out",immediateRender:false},4.5);
+window.__timelines["main"]=tl;
+</script></body></html>

@@ -1,0 +1,23 @@
+{
+ "title": "Sample · Profile intro (v2)",
+ "video": "work/source.mp4",
+ "fps": "60",
+ "base": {"background": {"mode": "blur", "amount": 0.55},
+          "zooms": [{"t": 16.90, "hold": 0.5, "scale": 1.12},
+                    {"t": 60.85, "hold": 0.9, "scale": 1.12},
+                    {"t": 75.65, "hold": 1.0, "scale": 1.12}],
+          "matte": true},
+ "base_video": "work/base.mp4",
+ "matte": "work/matte.mp4",
+ "caption_fixes": {"automization": "automation"},
+ "captions": "work/captions.ass",
+ "clips": [
+  {"id":"01","title":"What I do","line":"“…product designer, software engineer, workflow automation specialist.”","in":4.10,"out":10.30,"kind":"pip","file":"out/01-roles-pip_0m04s10.mp4"},
+  {"id":"02","title":"Come to life","line":"“…make it come to life.”","in":14.60,"out":16.60,"kind":"pop","behind":true,"file":"out/02-life-pop_0m14s60.mov"},
+  {"id":"03","title":"12 years in kitchens","line":"“I spent 12 years as a professional line cook… problem solving, logic injection… repeatable solutions.”","in":18.10,"out":29.50,"kind":"pip","file":"out/03-backstory-pip_0m18s10.mp4"},
+  {"id":"04","title":"Disconnected tools","line":"“…many disconnected softwares that didn't communicate… every ad hoc request… verifications were my responsibility.”","in":38.10,"out":49.20,"kind":"pip","file":"out/04-disconnected-pip_0m38s10.mp4"},
+  {"id":"05","title":"Runs without me","line":"“…the software that my businesses run on, they're live in production… run without me day to day.”","in":51.30,"out":60.00,"kind":"full","file":"out/04-runs-without-me_0m51s30.mp4"},
+  {"id":"06","title":"Message me on my site","line":"“…discuss what's possible? Contact me…”","in":69.00,"out":84.10,"kind":"panel","captions":"high","file":"out/05-contact_1m09s00.mov"}
+ ],
+ "notes": ["Illustrative: request alerts and checklist rows in 04, the 'Owner on site' switch in 05."]
+}

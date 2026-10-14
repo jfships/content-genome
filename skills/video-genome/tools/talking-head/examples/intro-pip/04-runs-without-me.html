@@ -1,0 +1,72 @@
+<title>04 Runs without me</title>
+<style>
+.tile{position:absolute;margin-top:40px;width:260px;height:210px;border-radius:24px;background:#1E2433;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;font-size:34px;font-weight:500;color:#F8FAFC}
+.tile .ib{width:84px;height:84px;border-radius:20px;background:#6366F1;display:flex;align-items:center;justify-content:center}
+.tile .gd{position:absolute;right:18px;top:18px;width:14px;height:14px;border-radius:50%;background:#22C55E}
+.ln{position:absolute;height:4px;border-radius:2px;background:#6366F1}
+#live{position:absolute;left:0;top:-150px;transform-origin:50% 50%;display:flex;align-items:center;gap:16px;padding:16px 30px;border-radius:999px;background:rgba(34,197,94,.14);box-shadow:inset 0 0 0 1.5px rgba(34,197,94,.45);color:#22C55E;font-size:34px;font-weight:600;white-space:nowrap}
+#live i{width:16px;height:16px;border-radius:50%;background:#22C55E;display:block}
+.st{position:absolute;left:-420px;width:840px;height:88px;display:flex;align-items:center;gap:26px;font-size:40px;font-weight:500;white-space:nowrap}
+.st .cc{width:52px;height:52px;border-radius:50%;box-shadow:inset 0 0 0 3px #2A3346;display:flex;align-items:center;justify-content:center;flex:none}
+#tg{position:absolute;left:716px;top:10px;width:124px;height:68px;border-radius:34px}
+#kn{position:absolute;top:6px;width:56px;height:56px;border-radius:50%;background:#fff}
+</style>
+<div data-slot="shape">
+  <div class="L" id="Lboard">
+    <div class="ln" id="l0"></div><div class="ln" id="l1"></div><div class="ln" id="l2"></div>
+    <div class="tile" id="t0" style="left:-670px;top:-60px"><span class="ib"></span>Register<span class="gd"></span></div>
+    <div class="tile" id="t1" style="left:-310px;top:-60px"><span class="ib"></span>Bookings<span class="gd"></span></div>
+    <div class="tile" id="t2" style="left:50px;top:-60px"><span class="ib"></span>Cash close<span class="gd"></span></div>
+    <div class="tile" id="t3" style="left:410px;top:-60px"><span class="ib"></span>Time clock<span class="gd"></span></div>
+    <div id="live"><i></i>Live in production</div>
+  </div>
+  <div class="L" id="Lstat">
+    <div class="a micro" style="left:-420px;top:50px;color:#94A3B8">Today</div>
+    <div class="st" id="s0" style="top:100px"><span class="cc"></span>Cash close reconciled</div>
+    <div class="st" id="s1" style="top:200px"><span class="cc"></span>Booking synced to register</div>
+    <div class="st" id="s2" style="top:300px"><span class="cc"></span>Staff clocked in</div>
+    <div class="a" style="left:-420px;top:418px;width:840px;height:2px;background:#1E2433"></div>
+    <div class="st" id="own" style="top:456px"><span class="cc" id="ownIc" style="box-shadow:none;background:#1E2433"></span><span id="ownT">Owner on site</span><div id="tg"><div id="kn"></div></div></div>
+  </div>
+</div><!--/shape-->
+<script>
+const $=id=>document.getElementById(id);
+['receipt','calendar','coin','clock'].forEach((n,i)=>$('t'+i).querySelector('.ib').innerHTML=M.icon(n,44,'#fff',2.2));
+$('ownIc').innerHTML=M.icon('user',28,'#94A3B8',2.2);
+// clip in = 51.30. software .37, businesses 1.01, run 1.57, live 2.13, And 3.94, run 5.70, without 7.07, me 7.39
+const TT=[0.1,0.1,0.1,0.1];
+const LT=[0.45,0.8,1.15];
+const LIVE=2.13;
+const ST=[4.15,4.5,4.85], CK=[5.1,5.4,5.7];
+const CLICK=7.07;
+const liveS=M.track(0,[[LIVE,1,[16,0.72]]]);
+const ckS=CK.map(c=>M.track(0,[[c,1,[18,0.7]]]));
+const knob=M.track(1,[[CLICK,0,M.FAST]]);
+const tgC=M.ctrack('#6366F1',[[CLICK,'#2A3346']],[18,1]);
+M.scene({
+  W:2560,H:1440,bg:'#0F1117',T:8.7,intro:0.05,
+  SH:{board:{w:1460,h:520,r:34,bg:'#141824',cam:1.62}, stat:{w:1000,h:600,r:34,bg:'#141824',cam:1.85}},
+  start:'board', SEQ:[[3.94,'stat']],
+  layers:[
+    {el:'Lboard',tin:null,tout:3.94,update:(t)=>{
+      for(let i=0;i<4;i++){const e=$('t'+i), v=M.vis(t,TT[i],null,{din:0,lin:0.2}); e.style.opacity=v.o;
+        const on=M.clamp((t-LT[Math.min(i,2)]-0.25)/0.2); e.querySelector('.gd').style.opacity=on;}
+      for(let i=0;i<3;i++){const x0=-410+360*i, d=M.eo((t-LT[i])/0.3), L=$('l'+i).style; L.left=x0+'px'; L.top='83px'; L.width=(100*d)+'px';}
+      const s=liveS(t), lv=$('live').style; lv.opacity=M.clamp(s*1.6); lv.transform=`translate(-50%,-50%) scale(${Math.max(0,0.6+0.4*s).toFixed(4)})`;
+    }},
+    {el:'Lstat',tin:3.94,tout:null,anchor:'t',o:{din:0.02,lin:0.22},update:(t)=>{
+      for(let i=0;i<3;i++){
+        const e=$('s'+i), v=M.vis(t,ST[i],null,{din:0,lin:0.2});
+        e.style.opacity=v.o; e.style.filter=v.blur>0.05?`blur(${v.blur}px)`:'none'; e.style.transform=`translateX(${(1-v.a)*-18}px)`;
+        const c=ckS[i](t), cc=e.querySelector('.cc');
+        if(c>0.02){ if(!cc._on){cc.innerHTML=M.icon('check',30,'#0F1117',3.4);cc._on=1;} cc.style.background='#22C55E'; cc.style.boxShadow='none'; cc.firstChild.style.transform=`scale(${Math.max(0,c).toFixed(3)})`; }
+        else { cc.style.background='transparent'; cc.style.boxShadow='inset 0 0 0 3px #2A3346'; if(cc._on){cc.innerHTML='';cc._on=0;} }
+      }
+      const ov=M.vis(t,5.0,null,{din:0,lin:0.25}), o=$('own').style; o.opacity=ov.o; o.filter=ov.blur>0.05?`blur(${ov.blur}px)`:'none';
+      const k=knob(t); $('kn').style.left=(6+56*k)+'px'; $('tg').style.background=tgC(t);
+      $('ownT').style.color=t<CLICK?'#F8FAFC':'#64748B';
+    }},
+  ],
+  cursor:{size:58,clicks:[CLICK],keys:[[0,980,560],[6.1,980,560],[6.85,366,206],[7.45,366,206],[8.7,440,300]]},
+});
+</script>

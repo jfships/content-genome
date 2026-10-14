@@ -1,0 +1,150 @@
+{
+ "round": "sound-logo-tiles",
+ "kind": "finalists",
+ "layout": "tiles",
+ "fonts": [
+  "anton",
+  "inter"
+ ],
+ "head": "<script>window.BG_LOGO={\"rise3\": {\"n\": [72, 76, 79], \"w\": \"triangle\", \"s\": 0.14, \"d\": 0.5}, \"fall3\": {\"n\": [79, 76, 72], \"w\": \"sine\", \"s\": 0.16, \"d\": 0.6}, \"doorbell\": {\"n\": [76, 72], \"w\": \"sine\", \"s\": 0.28, \"d\": 0.8}, \"sparkle\": {\"n\": [84, 88, 91, 96], \"w\": \"sine\", \"s\": 0.07, \"d\": 0.5}, \"bass2\": {\"n\": [43, 48], \"w\": \"triangle\", \"s\": 0.22, \"d\": 0.7}, \"arp5\": {\"n\": [60, 64, 67, 72, 76], \"w\": \"square\", \"s\": 0.08, \"d\": 0.3}, \"question\": {\"n\": [72, 74, 79], \"w\": \"triangle\", \"s\": 0.16, \"d\": 0.5}, \"octave\": {\"n\": [67, 79], \"w\": \"sine\", \"s\": 0.2, \"d\": 0.7}, \"chip\": {\"n\": [83, 88], \"w\": \"square\", \"s\": 0.08, \"d\": 0.35}, \"bluesy\": {\"n\": [67, 70, 72], \"w\": \"sawtooth\", \"s\": 0.15, \"d\": 0.45}, \"tritone\": {\"n\": [72, 78], \"w\": \"triangle\", \"s\": 0.2, \"d\": 0.6}, \"whistle\": {\"n\": [86, 91], \"w\": \"sine\", \"s\": 0.25, \"d\": 0.6}};window.BG_CHOSEN_STING=\"pop\";</script><script>\n(function(){\n  var ctx=null, live={};\n  function A(){ if(!ctx) ctx=new (window.AudioContext||window.webkitAudioContext)(); if(ctx.state==='suspended') ctx.resume(); return ctx; }\n  function g(out,t,a,d,v){ var x=ctx.createGain(); x.gain.setValueAtTime(0.0001,t); x.gain.exponentialRampToValueAtTime(v,t+a); x.gain.exponentialRampToValueAtTime(0.0001,t+a+d); x.connect(out); return x; }\n  function tone(out,type,f,t,d,v,f2){ var o=ctx.createOscillator(); o.type=type; o.frequency.setValueAtTime(f,t); if(f2) o.frequency.exponentialRampToValueAtTime(f2,t+d); o.connect(g(out,t,.005,d,v)); o.start(t); o.stop(t+d+.05); }\n  function nz(out,t,d,v,f1,f2,type){ var n=ctx.createBufferSource(), b=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*d),ctx.sampleRate), c=b.getChannelData(0); for(var i=0;i<c.length;i++) c[i]=Math.random()*2-1; n.buffer=b; var f=ctx.createBiquadFilter(); f.type=type||'bandpass'; f.frequency.setValueAtTime(f1,t); if(f2) f.frequency.exponentialRampToValueAtTime(f2,t+d); n.connect(f); f.connect(g(out,t,.01,d,v)); n.start(t); n.stop(t+d); }\n  function m(n){ return 440*Math.pow(2,(n-69)/12); }\n  var S = {\n    whoosh:function(o,t){ nz(o,t,.5,.5,300,4000); tone(o,'sine',m(76),t+.45,.5,.18); },\n    pop:function(o,t){ tone(o,'sine',m(84),t,.08,.4,m(96)); tone(o,'triangle',m(79),t+.12,.35,.2); },\n    chime:function(o,t){ [72,76,79,84].forEach(function(n,i){ tone(o,'sine',m(n),t+i*.09,.9,.14); }); },\n    thump:function(o,t){ tone(o,'sine',140,t,.35,.9,40); nz(o,t,.08,.3,2000); tone(o,'sawtooth',m(48),t+.05,.5,.06); },\n    riser:function(o,t){ nz(o,t,.9,.25,400,6000,'highpass'); tone(o,'sawtooth',200,t,.9,.05,900); tone(o,'sine',140,t+.95,.4,.9,40); },\n    type:function(o,t){ for(var i=0;i<6;i++) nz(o,t+i*.08,.03,.4,3500); tone(o,'sine',m(88),t+.55,.3,.15); },\n    glitch:function(o,t){ for(var i=0;i<8;i++) tone(o,'square',m(60+Math.floor(Math.random()*24)),t+i*.05,.04,.08); nz(o,t+.42,.2,.3,1500); },\n    drums:function(o,t){ [0,.1,.2,.28,.36].forEach(function(d,i){ nz(o,t+d,.08,.4,900+i*300); }); tone(o,'sine',150,t+.48,.4,.9,45); },\n    kalimba:function(o,t){ [72,79,76,84].forEach(function(n,i){ tone(o,'triangle',m(n),t+i*.13,.6,.18); }); },\n    stab:function(o,t){ [60,64,67,71].forEach(function(n){ tone(o,'sawtooth',m(n),t,.4,.05); }); tone(o,'sine',m(36),t,.5,.4); },\n    scratch:function(o,t){ nz(o,t,.25,.6,800,3000); nz(o,t+.25,.2,.5,3000,600); tone(o,'sine',m(79),t+.5,.3,.18); },\n    bell:function(o,t){ tone(o,'sine',m(83),t,1.2,.2); tone(o,'sine',m(83)*2.76,t,.6,.05); }\n  };\n  window.bgSting=function(id,el){ A(); window.bgStingStop(id); var o=ctx.createGain(); o.gain.value=.6; o.connect(ctx.destination); live[id]=o; var k=(window.BG_STING||{})[id]; if(S[k]) S[k](o,ctx.currentTime+.05); };\n  window.bgStingStop=function(id){ var o=live[id]; if(o){ try{o.disconnect();}catch(e){} delete live[id]; } };\n  window.bgLogo=function(id,el){ A(); window.bgStingStop(id); var o=ctx.createGain(); o.gain.value=.6; o.connect(ctx.destination); live[id]=o;\n    var L=(window.BG_LOGO||{})[id]; if(!L) return; var t=ctx.currentTime+.05; (S[window.BG_CHOSEN_STING]||S.pop)(o,t); t+=.45; L.n.forEach(function(n,i){ tone(o,L.w,m(n),t+i*L.s,L.d,.22); }); };\n  window.bgLogoStop=window.bgStingStop;\n})();\n</script>",
+ "title": "Sound logo",
+ "what": "A few notes people learn to recognize as you. Each one plays right after your main sting, so you hear it in place.",
+ "rule": "mark as many finalists as you like. Next, you'll pick a main and a backup from them, and keep any others as alternatives.",
+ "keepWord": "finalist|finalists",
+ "trimAbove": 6,
+ "buttons": [
+  {
+   "value": "yes",
+   "label": "Finalist"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "yes"
+ ],
+ "next": "Next: your finalists, large. You'll pick a main and a backup.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "rise3",
+   "name": "Three up",
+   "line": "Three rising notes. Bright, hopeful.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:50%;bottom:44%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000,
+   "pick": true,
+   "why": "Bright and short; it matches a pop-in sting."
+  },
+  {
+   "id": "fall3",
+   "name": "Three down",
+   "line": "Three falling notes. Calm, wrapped up.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:50%;bottom:44%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "doorbell",
+   "name": "Doorbell",
+   "line": "Two notes, like a friendly doorbell.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "sparkle",
+   "name": "Sparkle",
+   "line": "A quick sparkle of high notes.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:39%;bottom:33%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:61%;bottom:45%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "bass2",
+   "name": "Low two",
+   "line": "Two deep notes. Serious, confident.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "arp5",
+   "name": "Arpeggio",
+   "line": "Five notes running up a chord.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:34%;bottom:30%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:50%;bottom:38%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:66%;bottom:52%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "question",
+   "name": "Question",
+   "line": "Ends up high, like a question.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:50%;bottom:31%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "octave",
+   "name": "Octave jump",
+   "line": "One note, then the same an octave up.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "chip",
+   "name": "Game coin",
+   "line": "An 8-bit coin sound.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "bluesy",
+   "name": "Bluesy",
+   "line": "Three notes with a blue note in the middle.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:50%;bottom:46%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "tritone",
+   "name": "Mischief",
+   "line": "A sneaky, unresolved pair.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  },
+  {
+   "id": "whistle",
+   "name": "Whistle",
+   "line": "A two-note whistle.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A\"><div style=\"position:absolute;left:6%;top:8%;font:400 9cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">WREN <span style=\"font:800 3.4cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.6cqw;border-radius:99cqw;vertical-align:middle\">EP 12</span></div><div style=\"position:absolute;left:6%;right:6%;top:34%;bottom:10%\"><i style=\"position:absolute;left:18%;bottom:18%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i><i style=\"position:absolute;left:82%;bottom:64%;width:6cqw;height:6cqw;border-radius:50%;background:#2EC4A6\"></i></div><div style=\"position:absolute;right:5%;top:9%;font:600 3cqw 'Inter',Arial,sans-serif;color:#F4FBF7;opacity:.7\">plays with your sting</div></div>",
+   "play": "bgLogo",
+   "playMs": 2000
+  }
+ ],
+ "stage": "kit",
+ "stepId": "sound-logo",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "1 of 2"
+}

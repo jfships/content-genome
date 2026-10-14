@@ -1,0 +1,178 @@
+{
+ "round": "footage-looks-tiles",
+ "kind": "finalists",
+ "layout": "tiles",
+ "fonts": [],
+ "photoTag": "Test photo",
+ "title": "Color editing",
+ "what": "Color optimization of your raw footage.",
+ "rule": "mark as many finalists as you like. Next, you'll pick a main and a backup from them, and keep any others as alternatives.",
+ "keepWord": "finalist|finalists",
+ "trimAbove": 6,
+ "buttons": [
+  {
+   "value": "yes",
+   "label": "Finalist"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "yes"
+ ],
+ "next": "Next: your finalists, large. You'll pick a main and a backup.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "as-shot",
+   "name": "As shot",
+   "line": "No editing. Here so you can compare.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "control": true
+  },
+  {
+   "id": "clean-bright",
+   "name": "Clean & bright",
+   "line": "Fresh and true to life.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "contrast(1.06) saturate(1.08) brightness(1.04)",
+   "pick": true,
+   "why": "Bright and clean, true to how things really look."
+  },
+  {
+   "id": "warm-film",
+   "name": "Warm film",
+   "line": "Golden and soft.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "sepia(.22) saturate(1.15) contrast(.97) brightness(1.02)",
+   "overlay": "background:rgba(255,170,80,.12);mix-blend-mode:soft-light"
+  },
+  {
+   "id": "pastel",
+   "name": "Pastel",
+   "line": "Light, gentle colors.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "saturate(.7) brightness(1.1) contrast(.9)",
+   "overlay": "background:rgba(255,230,240,.12)"
+  },
+  {
+   "id": "punchy",
+   "name": "Punchy",
+   "line": "Strong colors and contrast.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "saturate(1.55) contrast(1.2)"
+  },
+  {
+   "id": "teal-orange",
+   "name": "Teal & orange",
+   "line": "Warm skin, cool shadows.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "saturate(1.25) contrast(1.12)",
+   "overlay": "background:linear-gradient(rgba(0,120,140,.35),rgba(0,120,140,.35));mix-blend-mode:screen;opacity:.45"
+  },
+  {
+   "id": "sun-flare",
+   "name": "Sun flare",
+   "line": "A warm glow from one corner.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "saturate(1.1) brightness(1.03)",
+   "overlay": "background:radial-gradient(circle at 85% 10%,rgba(255,200,120,.75),rgba(255,200,120,0) 55%);mix-blend-mode:screen"
+  },
+  {
+   "id": "portra",
+   "name": "Soft film",
+   "line": "Warm, a little faded, fine grain.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "contrast(.92) saturate(.92) brightness(1.04) sepia(.1)",
+   "overlay": "background:rgba(255,220,200,.10)"
+  },
+  {
+   "id": "cool-clean",
+   "name": "Cool & crisp",
+   "line": "Clean with a cool, modern edge.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "saturate(.95) contrast(1.1) brightness(1.02) hue-rotate(-6deg)",
+   "overlay": "background:rgba(120,170,230,.12);mix-blend-mode:soft-light"
+  },
+  {
+   "id": "matte",
+   "name": "Soft & faded",
+   "line": "Calm colors, nothing harsh.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "contrast(.85) saturate(.8) brightness(1.06)"
+  },
+  {
+   "id": "rich",
+   "name": "Rich & deep",
+   "line": "Deep shadows, rich color.",
+   "images": [
+    "img/01-desk-talking.jpg",
+    "img/05-vanity.jpg",
+    "img/06-shop-counter.jpg"
+   ],
+   "css": "contrast(1.22) saturate(1.2) brightness(.95)"
+  }
+ ],
+ "stage": "look",
+ "stepId": "color-editing",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "1 of 2"
+}

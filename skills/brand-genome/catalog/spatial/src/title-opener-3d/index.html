@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080"><script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css"><style>
+#root{background:radial-gradient(ellipse at 50% 40%,var(--bg),var(--bg-edge) 75%)}
+.stage{perspective:1600px;perspective-origin:50% 45%}
+#title{position:absolute;left:0;right:0;top:290px;height:500px;transform-style:preserve-3d}
+.ly{position:absolute;left:0;right:0;text-align:center;font-family:var(--font-display);font-size:170px;line-height:.95}
+#sub{position:absolute;left:0;right:0;top:850px;text-align:center;font-weight:700;font-size:34px;color:var(--second)}
+#glint{position:absolute;left:0;right:0;top:290px;height:340px;background:linear-gradient(100deg,transparent 42%,rgba(255,255,255,.55) 50%,transparent 58%);mix-blend-mode:overlay}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div class="stage"><div id="title"><div class="ly" style="color:var(--pop)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:#d36412">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:#d36412">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div><div class="ly" style="color:var(--bg-deep)">CONTENT TEAM<br>IN A BOX</div></div></div>
+ <div id="glint"></div>
+ <div id="sub">EP 02 · Free tools · Brand, idea, plan, edit</div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+document.querySelectorAll(".ly").forEach((l,i)=>gsap.set(l,{z:-i*3}));
+gsap.set("#sub",{opacity:0}); gsap.set("#glint",{xPercent:-100});
+tl.fromTo("#title",{rotationX:70,rotationY:-30,z:-1600,opacity:0},{rotationX:12,rotationY:-16,z:0,opacity:1,duration:2.0,ease:"expo.out"},0.1);
+tl.to("#title",{rotationX:6,rotationY:10,duration:2.4,ease:"power3.inOut"},2.1);
+tl.to("#glint",{xPercent:100,duration:1.0,ease:"power2.inOut"},2.6);
+tl.fromTo("#sub",{opacity:0,y:14},{opacity:1,y:0,duration:.5,immediateRender:false},3.2);
+window.__timelines["main"]=tl;
+</script></body></html>

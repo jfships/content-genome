@@ -1,0 +1,96 @@
+{
+ "round": "wordmark-pick",
+ "kind": "fixed",
+ "fonts": [
+  "anton",
+  "unbounded",
+  "fraunces",
+  "instrument-serif",
+  "space-mono",
+  "caveat",
+  "permanent-marker",
+  "special-elite",
+  "bowlby-one",
+  "bebas-neue",
+  "inter"
+ ],
+ "aspect": "16/17.5",
+ "title": "Wordmark: your finalists",
+ "what": "Your finalists, large.",
+ "single": "pick",
+ "singleFallback": "backup",
+ "altValue": "alt",
+ "keepValues": [
+  "pick",
+  "backup",
+  "alt"
+ ],
+ "buttons": [
+  {
+   "value": "pick",
+   "label": "Main"
+  },
+  {
+   "value": "backup",
+   "label": "Backup"
+  },
+  {
+   "value": "alt",
+   "label": "Alternative"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "next": "Next: your name tag.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "episode-pill",
+   "name": "Episode pill",
+   "line": "Your name with an episode number that changes every video.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e4e6e5;padding:2.4%;display:grid;grid-template-rows:auto auto;gap:2cqw;align-content:start\"><div><div style=\"position:relative;aspect-ratio:16/9;container-type:inline-size;background:#F4FBF7;color:#13302A;display:grid;place-items:center;border-radius:.6cqw;overflow:hidden\"><div style=\"display:grid;gap:2.4cqw;justify-items:start\"><div style=\"font:400 17cqw/.85 'Anton',Impact,sans-serif;letter-spacing:.01em\">WREN</div><div style=\"display:flex;gap:2.4cqw;align-items:center\"><span style=\"font:800 4.6cqw/1 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:1cqw 2.4cqw;border-radius:99cqw\">EP 12</span><span style=\"font:600 4.2cqw/1 'Inter',Arial,sans-serif\">@wren</span></div></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Closing card</div></div><div style=\"display:grid;grid-template-columns:1fr 1.78fr;gap:2cqw;align-items:start\"><div><div style=\"aspect-ratio:1;container-type:inline-size;background:#13302A;color:#F4FBF7;border-radius:50%;display:grid;place-items:center;overflow:hidden\"><div style=\"display:grid;justify-items:center;gap:3cqw\"><div style=\"font:400 44cqw/.8 'Anton',Impact,sans-serif\">W</div><span style=\"font:800 9cqw/1 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:2cqw 4cqw;border-radius:99cqw\">EP 12</span></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Profile picture</div></div><div><div style=\"position:relative;aspect-ratio:16/9;container-type:inline-size;background:url(img/01-desk-talking.jpg) center/cover;border-radius:.6cqw;overflow:hidden;color:#fff\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse at 100% 100%,rgba(0,0,0,.55),transparent 45%)\"></div><div style=\"position:absolute;right:4cqw;bottom:4cqw;transform:scale(1.7);transform-origin:100% 100%;text-shadow:0 .3cqw 1.2cqw rgba(0,0,0,.6)\"><div style=\"display:flex;gap:1.4cqw;align-items:center;font:400 6cqw/1 'Anton',Impact,sans-serif\">WREN <span style=\"font:800 2.8cqw 'Inter',Arial,sans-serif;background:#2EC4A6;color:#F4FBF7;padding:.6cqw 1.2cqw;border-radius:99cqw\">EP 12</span></div></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Corner of a video</div></div></div></div>",
+   "pick": true,
+   "why": "The episode number gives every video a reason to exist in a series."
+  },
+  {
+   "id": "stacked",
+   "name": "Stacked block",
+   "line": "Big, solid letters, like a poster. Very readable on thumbnails.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e4e6e5;padding:2.4%;display:grid;grid-template-rows:auto auto;gap:2cqw;align-content:start\"><div><div style=\"position:relative;aspect-ratio:16/9;container-type:inline-size;background:#F4FBF7;color:#13302A;display:grid;place-items:center;border-radius:.6cqw;overflow:hidden\"><svg viewBox=\"0 0 100 46\" style=\"width:70cqw\"><text x=\"0\" y=\"40\" textLength=\"100\" lengthAdjust=\"spacingAndGlyphs\" font-size=\"52\" font-family=\"Anton,Impact,sans-serif\" fill=\"currentColor\">WREN</text><rect x=\"0\" y=\"43\" width=\"100\" height=\"3\" fill=\"#2EC4A6\"/></svg></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Closing card</div></div><div style=\"display:grid;grid-template-columns:1fr 1.78fr;gap:2cqw;align-items:start\"><div><div style=\"aspect-ratio:1;container-type:inline-size;background:#13302A;color:#F4FBF7;border-radius:50%;display:grid;place-items:center;overflow:hidden\"><svg viewBox=\"0 0 100 100\" style=\"width:60cqw\"><text x=\"50\" y=\"86\" text-anchor=\"middle\" font-size=\"110\" font-family=\"Anton,Impact,sans-serif\" fill=\"currentColor\">W</text><rect x=\"20\" y=\"92\" width=\"60\" height=\"6\" fill=\"#2EC4A6\"/></svg></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Profile picture</div></div><div><div style=\"position:relative;aspect-ratio:16/9;container-type:inline-size;background:url(img/01-desk-talking.jpg) center/cover;border-radius:.6cqw;overflow:hidden;color:#fff\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse at 100% 100%,rgba(0,0,0,.55),transparent 45%)\"></div><div style=\"position:absolute;right:4cqw;bottom:4cqw;transform:scale(1.7);transform-origin:100% 100%;text-shadow:0 .3cqw 1.2cqw rgba(0,0,0,.6)\"><div style=\"font:400 6.4cqw/1 'Anton',Impact,sans-serif;border-bottom:.6cqw solid #2EC4A6\">WREN</div></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Corner of a video</div></div></div></div>"
+  },
+  {
+   "id": "monogram-box",
+   "name": "Monogram box",
+   "line": "An initial in a square with one color corner. Clean at tiny sizes.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e4e6e5;padding:2.4%;display:grid;grid-template-rows:auto auto;gap:2cqw;align-content:start\"><div><div style=\"position:relative;aspect-ratio:16/9;container-type:inline-size;background:#F4FBF7;color:#13302A;display:grid;place-items:center;border-radius:.6cqw;overflow:hidden\"><div style=\"display:flex;align-items:center;gap:4cqw\"><div style=\"position:relative;border:1.2cqw solid currentColor;display:grid;place-items:center;font:800 11cqw/1 'Unbounded',Arial,sans-serif;width:24cqw;aspect-ratio:1\">W<i style=\"position:absolute;right:-1.2cqw;bottom:-1.2cqw;width:6cqw;height:6cqw;background:#2EC4A6\"></i></div><div style=\"display:grid;gap:2cqw\"><div style=\"font:400 8cqw/1 'Unbounded',Arial,sans-serif\">Wren</div><div style=\"font:800 3.8cqw/1 'Unbounded',Arial,sans-serif;color:#2EC4A6\">@wren</div></div></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Closing card</div></div><div style=\"display:grid;grid-template-columns:1fr 1.78fr;gap:2cqw;align-items:start\"><div><div style=\"aspect-ratio:1;container-type:inline-size;background:#13302A;color:#F4FBF7;border-radius:50%;display:grid;place-items:center;overflow:hidden\"><div style=\"position:relative;border:3cqw solid currentColor;display:grid;place-items:center;font:800 24cqw/1 'Unbounded',Arial,sans-serif;width:52cqw;aspect-ratio:1\">W<i style=\"position:absolute;right:-3cqw;bottom:-3cqw;width:13cqw;height:13cqw;background:#2EC4A6\"></i></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Profile picture</div></div><div><div style=\"position:relative;aspect-ratio:16/9;container-type:inline-size;background:url(img/01-desk-talking.jpg) center/cover;border-radius:.6cqw;overflow:hidden;color:#fff\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse at 100% 100%,rgba(0,0,0,.55),transparent 45%)\"></div><div style=\"position:absolute;right:4cqw;bottom:4cqw;transform:scale(1.7);transform-origin:100% 100%;text-shadow:0 .3cqw 1.2cqw rgba(0,0,0,.6)\"><div style=\"position:relative;border:.5cqw solid currentColor;display:grid;place-items:center;font:800 4cqw/1 'Unbounded',Arial,sans-serif;width:9cqw;aspect-ratio:1\">W<i style=\"position:absolute;right:-.5cqw;bottom:-.5cqw;width:2.2cqw;height:2.2cqw;background:#2EC4A6\"></i></div></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Corner of a video</div></div></div></div>"
+  },
+  {
+   "id": "editorial",
+   "name": "Editorial serif",
+   "line": "An elegant serif name with a colored full stop.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e4e6e5;padding:2.4%;display:grid;grid-template-rows:auto auto;gap:2cqw;align-content:start\"><div><div style=\"position:relative;aspect-ratio:16/9;container-type:inline-size;background:#F4FBF7;color:#13302A;display:grid;place-items:center;border-radius:.6cqw;overflow:hidden\"><div style=\"display:grid;gap:1cqw;justify-items:start\"><div style=\"font:400 19cqw/.9 'Instrument Serif',Georgia,serif;letter-spacing:-.01em\">Wren<span style=\"color:#2EC4A6\">.</span></div><div style=\"font:italic 400 5cqw/1 'Instrument Serif',Georgia,serif;opacity:.75\">@wren</div></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Closing card</div></div><div style=\"display:grid;grid-template-columns:1fr 1.78fr;gap:2cqw;align-items:start\"><div><div style=\"aspect-ratio:1;container-type:inline-size;background:#13302A;color:#F4FBF7;border-radius:50%;display:grid;place-items:center;overflow:hidden\"><div style=\"font:400 50cqw/1 'Instrument Serif',Georgia,serif\">W<span style=\"color:#2EC4A6\">.</span></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Profile picture</div></div><div><div style=\"position:relative;aspect-ratio:16/9;container-type:inline-size;background:url(img/01-desk-talking.jpg) center/cover;border-radius:.6cqw;overflow:hidden;color:#fff\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse at 100% 100%,rgba(0,0,0,.55),transparent 45%)\"></div><div style=\"position:absolute;right:4cqw;bottom:4cqw;transform:scale(1.7);transform-origin:100% 100%;text-shadow:0 .3cqw 1.2cqw rgba(0,0,0,.6)\"><div style=\"font:400 7cqw/1 'Instrument Serif',Georgia,serif\">Wren<span style=\"color:#2EC4A6\">.</span></div></div></div><div style=\"font:600 2.6cqw 'Inter',Arial,sans-serif;color:#666;margin-top:.8cqw\">Corner of a video</div></div></div></div>"
+  }
+ ],
+ "stage": "kit",
+ "stepId": "wordmark",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "2 of 2"
+}

@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080"><script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css"><style>
+.stage{perspective:1900px;perspective-origin:50% 30%}
+#pg{position:absolute;left:460px;top:170px;width:1000px;height:740px;transform-style:preserve-3d}
+#pg>.scr{position:absolute;inset:0}
+.pn{position:absolute;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 3px var(--pop)}
+.pn img{width:100%;height:100%;object-fit:cover;object-position:left top}
+#cap{position:absolute;left:120px;top:70px;font-size:52px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="7">
+ <div class="stage"><div id="pg">
+  <div class="scr"><img src="assets/screen-1.png"></div>
+  <div class="pn" id="p1" style="left:60px;top:80px;width:420px;height:170px"><img src="assets/screen-2.png"></div>
+  <div class="pn" id="p2" style="left:540px;top:260px;width:400px;height:150px"><img src="assets/screen-3.png"></div>
+  <div class="pn" id="p3" style="left:120px;top:460px;width:420px;height:200px"><img src="assets/screen-4.png"></div>
+ </div></div>
+ <div id="cap" class="h">Inside the <span class="blk">Genome</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true}); gsap.set([".pn","#cap"],{opacity:0});
+tl.fromTo("#pg",{rotationX:0,rotationY:0,z:-300},{rotationX:38,rotationY:-18,rotationZ:6,z:0,duration:1.4,ease:"power3.inOut"},0.2);
+tl.fromTo("#cap",{opacity:0,y:20},{opacity:1,y:0,duration:.5,ease:"power3.out",immediateRender:false},.6);
+["#p1","#p2","#p3"].forEach((p,i)=>tl.fromTo(p,{opacity:0,z:0},{opacity:1,z:180+i*60,duration:.8,ease:"expo.out",immediateRender:false},1.8+i*.5));
+tl.to("#pg",{rotationY:-6,rotationX:30,duration:1.8,ease:"power3.inOut"},3.6);
+window.__timelines["main"]=tl;
+</script></body></html>

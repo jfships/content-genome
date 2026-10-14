@@ -1,0 +1,90 @@
+<title>03 Disconnected</title>
+<style>
+.tile{position:absolute;width:260px;height:210px;border-radius:24px;background:#1E2433;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;font-size:34px;font-weight:500;color:#CBD5E1}
+.tile .ib{width:84px;height:84px;border-radius:20px;background:#2A3346;display:flex;align-items:center;justify-content:center}
+.ln{position:absolute;height:0;border-top:4px dashed #475569}
+.xb{position:absolute;width:44px;height:44px;border-radius:50%;background:#EF4444;display:flex;align-items:center;justify-content:center}
+.toast{position:absolute;left:-330px;width:660px;height:104px;border-radius:18px;background:#0F1117;box-shadow:0 0 0 1.5px #2A3346,0 24px 50px -16px rgba(0,0,0,.8);display:flex;align-items:center;gap:22px;padding:0 28px;box-sizing:border-box;transform-origin:50% 0}
+.toast .bar{position:absolute;left:0;top:18px;bottom:18px;width:5px;border-radius:3px;background:#FBBF24}
+.toast .sk{height:14px;border-radius:7px;background:#2A3346}
+.ck{position:absolute;left:-420px;width:840px;height:92px;display:flex;align-items:center;font-size:40px;font-weight:500;white-space:nowrap}
+.ck .you{margin-left:auto;display:flex;align-items:center;gap:10px;padding:10px 22px;border-radius:999px;background:#FBBF24;color:#1A1205;font-size:28px;font-weight:600}
+.ck .bx{width:40px;height:40px;border-radius:10px;box-shadow:inset 0 0 0 3px #475569;margin-right:26px;flex:none}
+</style>
+<div data-slot="shape">
+  <div class="L" id="Lboard">
+    <div class="tile" id="t0" style="left:-670px;top:-60px"><span class="ib"></span>Register</div>
+    <div class="tile" id="t1" style="left:-310px;top:-60px"><span class="ib"></span>Bookings</div>
+    <div class="tile" id="t2" style="left:50px;top:-60px"><span class="ib"></span>Spreadsheet</div>
+    <div class="tile" id="t3" style="left:410px;top:-60px"><span class="ib"></span>Messages</div>
+    <div class="ln" id="l0"></div><div class="ln" id="l1"></div><div class="ln" id="l2"></div>
+    <div class="xb" id="x0"></div><div class="xb" id="x1"></div><div class="xb" id="x2"></div>
+    <div class="toast" id="q0"><span class="bar"></span><span class="ic"></span><div><div style="font-size:32px;font-weight:600">New request</div><div class="sk" style="width:300px;margin-top:12px"></div></div></div>
+    <div class="toast" id="q1"><span class="bar"></span><span class="ic"></span><div><div style="font-size:32px;font-weight:600">New request</div><div class="sk" style="width:240px;margin-top:12px"></div></div></div>
+    <div class="toast" id="q2"><span class="bar"></span><span class="ic"></span><div><div style="font-size:32px;font-weight:600">New request</div><div class="sk" style="width:330px;margin-top:12px"></div></div></div>
+    <div class="toast" id="q3"><span class="bar"></span><span class="ic"></span><div><div style="font-size:32px;font-weight:600">New request</div><div class="sk" style="width:270px;margin-top:12px"></div></div></div>
+  </div>
+  <div class="L" id="Lcheck">
+    <div class="a micro" style="left:-420px;top:50px;color:#94A3B8">Verifications</div>
+    <div class="ck" id="c0" style="top:104px"><span class="bx"></span>Cash count<span class="you"></span></div>
+    <div class="ck" id="c1" style="top:208px"><span class="bx"></span>Receipts<span class="you"></span></div>
+    <div class="ck" id="c2" style="top:312px"><span class="bx"></span>Bookings<span class="you"></span></div>
+    <div class="ck" id="c3" style="top:416px"><span class="bx"></span>Staff hours<span class="you"></span></div>
+  </div>
+</div><!--/shape-->
+<script>
+const $=id=>document.getElementById(id);
+['receipt','calendar','sheet','message'].forEach((n,i)=>$('t'+i).querySelector('.ib').innerHTML=M.icon(n,44,'#CBD5E1',2.2));
+for(let i=0;i<3;i++) $('x'+i).innerHTML=M.icon('x',24,'#fff',3);
+for(let i=0;i<4;i++){ $('q'+i).querySelector('.ic').innerHTML=M.icon('bell',40,'#FBBF24',2.4); $('c'+i).querySelector('.you').innerHTML=M.icon('user',24,'#1A1205',2.6)+'You'; }
+// clip in = 38.10. dealing .19, disconnected 1.07, softwares 1.95, communicate 2.99,
+// constantly 4.95, connected 5.67, every 6.39, ad hoc 6.71, request 7.43, verifications 9.03, my 10.07
+const TT=[0.25,0.5,0.75,1.0];
+const LT=[1.95,2.1,2.25];
+const BRK=2.99;
+const QT=[5.0,5.67,6.39,7.1];
+const CT=[9.03,9.28,9.53,9.78];
+const MY=10.07;
+const gapOpen=M.track(0,[[BRK,1,[16,0.75]]]);
+// toast stacking: each toast's depth = how many newer toasts exist
+const depth=QT.map((q,i)=>M.track(0,QT.slice(i+1).map((q2,j)=>[q2,j+1,M.FAST])));
+const dim=M.track(1,[[4.95,0.35,M.SOFT]]);
+const pulse=M.track(0,[[MY,1,[20,0.6]],[MY+0.18,0,[14,0.9]]]);
+M.scene({
+  W:2560,H:1440,bg:'#0F1117',T:10.75,intro:0.05,
+  SH:{board0:{w:1460,h:400,r:34,bg:'#141824',cam:1.62}, board:{w:1460,h:580,r:34,bg:'#141824',cam:1.6}, check:{w:1000,h:600,r:34,bg:'#141824',cam:1.85}},
+  start:'board0', SEQ:[[4.95,'board'],[8.63,'check']],
+  layers:[
+    {el:'Lboard',tin:null,tout:8.63,update:(t)=>{
+      const d=dim(t);
+      for(let i=0;i<4;i++){const e=$('t'+i), v=M.vis(t,TT[i],null,{din:0,lin:0.22}); e.style.opacity=(v.o*d).toFixed(3); e.style.filter=v.blur>0.05?`blur(${v.blur}px)`:'none'; e.style.transform=`translateY(${(1-v.a)*16}px) scale(${0.96+0.04*v.a})`;}
+      const g=gapOpen(t);
+      for(let i=0;i<3;i++){
+        const x0=-670+360*i+260, x1=x0+100, mid=(x0+x1)/2, y=45;
+        const draw=M.clamp(M.eo((t-LT[i])/0.35));
+        const half=(x1-x0)/2, open=18*g;
+        const L=$('l'+i).style; L.top=y+'px'; L.left=x0+'px'; L.width=Math.max(0,(x1-x0)*draw)+'px';
+        L.borderTopColor=g>0.02?'#EF4444':'#475569'; L.opacity=d;
+        // gap: clip the middle using a mask
+        L.webkitMaskImage=g>0.01?`linear-gradient(90deg,#000 ${half-open}px,transparent ${half-open}px,transparent ${half+open}px,#000 ${half+open}px)`:'none';
+        const xb=$('x'+i).style, s=M.clamp(g*1.05,0,1.08);
+        xb.left=(mid-22)+'px'; xb.top=(y-20)+'px'; xb.transform=`scale(${Math.max(0,s).toFixed(3)})`; xb.opacity=Math.min(1,g*2)*d;
+      }
+      for(let i=0;i<4;i++){
+        const e=$('q'+i), v=M.vis(t,QT[i],null,{din:0,lin:0.2}), dp=depth[i](t);
+        const y=-262+dp*24 - (1-v.a)*40;
+        e.style.top=y+'px'; e.style.opacity=v.o.toFixed(3); e.lastElementChild.style.opacity=e.querySelector('.ic').style.opacity=M.clamp(1-dp*1.6).toFixed(3); e.style.filter=v.blur>0.05?`blur(${v.blur}px)`:'none';
+        e.style.transform=`scale(${(1-0.05*dp)*(0.96+0.04*v.a)})`; e.style.zIndex=10+i; e.style.background=dp>0.5?'#171C2A':'#0F1117';
+      }
+    }},
+    {el:'Lcheck',tin:8.63,tout:null,anchor:'t',o:{din:0.02,lin:0.22},update:(t)=>{
+      const p=pulse(t);
+      for(let i=0;i<4;i++){
+        const e=$('c'+i), v=M.vis(t,CT[i],null,{din:0,lin:0.2});
+        e.style.opacity=v.o; e.style.filter=v.blur>0.05?`blur(${v.blur}px)`:'none'; e.style.transform=`translateX(${(1-v.a)*-18}px)`;
+        e.querySelector('.you').style.transform=`scale(${1+0.12*p})`;
+      }
+    }},
+  ],
+});
+</script>

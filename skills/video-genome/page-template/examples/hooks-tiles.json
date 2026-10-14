@@ -1,0 +1,67 @@
+{
+ "kind": "finalists",
+ "layout": "tiles",
+ "trimAbove": 6,
+ "keepWord": "finalist|finalists",
+ "keepValues": [
+  "yes"
+ ],
+ "buttons": [
+  {
+   "value": "yes",
+   "label": "Finalist"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "round": "hooks-tiles",
+ "stage": "plan",
+ "stepId": "hooks",
+ "part": "1 of 2",
+ "fonts": [
+  "inter"
+ ],
+ "title": "Opening line",
+ "what": "The first 3 seconds: what you say, the words on screen and the first picture, together.",
+ "next": "Next: pick a main and a backup from your finalists.",
+ "options": [
+  {
+   "id": "cold-open",
+   "name": "Cold open",
+   "line": "Start on day 30's result, then rewind.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"30\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">Day 30.</text></svg>"
+  },
+  {
+   "id": "confession",
+   "name": "Confession",
+   "line": "Start with the moment you almost quit.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"20\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">I almost quit.</text></svg>"
+  },
+  {
+   "id": "number",
+   "name": "One number",
+   "line": "Start on the number that changed.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"30\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">38%</text></svg>"
+  },
+  {
+   "id": "question",
+   "name": "Question",
+   "line": "Ask the viewer the question you had.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"30\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">Worth it?</text></svg>"
+  },
+  {
+   "id": "contrast",
+   "name": "Day 1 vs Day 30",
+   "line": "Show both days side by side, no words.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"30\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">1 vs 30</text></svg>"
+  },
+  {
+   "id": "dare",
+   "name": "The dare",
+   "line": "Start with who told you it wouldn't work.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"20\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">\"You won't last.\"</text></svg>"
+  }
+ ]
+}

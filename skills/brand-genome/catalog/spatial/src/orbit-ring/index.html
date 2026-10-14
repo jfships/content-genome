@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080"><script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css"><style>
+.stage{perspective:1600px;perspective-origin:50% 30%}
+#ring{position:absolute;left:960px;top:560px;width:0;height:0;transform-style:preserve-3d}
+.it{position:absolute;left:-130px;top:-82px;width:260px;height:164px;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 2px rgba(255,255,255,.18)}
+.it img{width:100%;height:100%;object-fit:cover;object-position:left top}
+#core{position:absolute;left:0;right:0;top:470px;text-align:center;font-size:76px;text-shadow:0 10px 40px rgba(4,16,31,.8)}
+#halo{position:absolute;left:660px;top:330px;width:600px;height:440px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,122,26,.45),transparent 65%)}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div id="halo"></div>
+ <div class="stage"><div class="w3"><div id="ring"></div></div></div>
+ <div id="core" class="h">One <span class="blk">Genome</span></div>
+</div>
+<script>
+const im=["g-colors","g-fonts","g-movement","g-kit","g-shorts","g-words","g-formats","g-who","idea-ui","plan-ui","g-top","reel"];
+const ring=document.getElementById("ring");const N=12,R=700;
+im.forEach((n,i)=>{const d=document.createElement("div");d.className="it";d.innerHTML='<img src="assets/'+n+(n=="reel"?".jpg":".png")+'">';ring.appendChild(d);});
+const its=[...ring.children];
+function lay(a0){its.forEach((d,i)=>{const a=a0+i/N*Math.PI*2;const x=Math.sin(a)*R,z=Math.cos(a)*R;
+ gsap.set(d,{x,z,rotationY:a*180/Math.PI});const f=(Math.cos(a)+1)/2;d.style.opacity=.3+.7*f;d.style.filter="blur("+((1-f)*5).toFixed(1)+"px)";});}
+const S={a:0};lay(0);gsap.set("#ring",{rotationX:-14});gsap.set(["#core","#halo"],{opacity:0});
+const tl=gsap.timeline({paused:true});
+tl.fromTo("#ring",{scale:.3,rotationX:-60},{scale:1,rotationX:-14,duration:1.4,ease:"expo.out"},0);
+tl.fromTo(S,{a:-1.4},{a:1.2,duration:5.8,ease:"power1.inOut",onUpdate:()=>lay(S.a),immediateRender:false},0);
+tl.fromTo("#halo",{opacity:0,scale:.6},{opacity:1,scale:1,duration:1.2,ease:"power3.out",immediateRender:false},1.0);
+tl.fromTo("#core",{opacity:0,z:0,scale:.8},{opacity:1,scale:1,duration:.6,ease:"expo.out",immediateRender:false},1.4);
+window.__timelines["main"]=tl;
+</script></body></html>

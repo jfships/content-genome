@@ -1,0 +1,249 @@
+{
+ "round": "scene-changes",
+ "kind": "library",
+ "layout": "tiles",
+ "fonts": [
+  "bebas-neue",
+  "inter"
+ ],
+ "keepWord": "scene change|scene changes",
+ "title": "Scene changes",
+ "what": "How one shot turns into the next. Press Play on each.",
+ "buttons": [
+  {
+   "value": "keep",
+   "label": "Keep in library"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "keep"
+ ],
+ "next": "Next: four plain lines on how your feel plays out, for you to confirm. Then Sound.",
+ "persona": "Wren",
+ "sections": [
+  {
+   "id": "standard",
+   "title": "Everyday",
+   "kind": "library",
+   "keepWord": "scene change|scene changes",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "layout": "tiles",
+   "movable": false,
+   "options": [
+    {
+     "id": "hard-cut",
+     "name": "Hard cut",
+     "line": "Straight to the next shot.",
+     "html": "<style>.tr-hard-cut .b{opacity:0}.card.playing .tr-hard-cut .b{animation:tr-hard-cutb 2.0s ease-in-out 0s 2 both}@keyframes tr-hard-cutb{0%,45%{opacity:0}46%,100%{opacity:1}}.card:not(.playing) .tr-hard-cut .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-hard-cut\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 4200
+    },
+    {
+     "id": "dissolve",
+     "name": "Dissolve",
+     "line": "One shot melts into the next.",
+     "html": "<style>.tr-dissolve .b{opacity:0}.card.playing .tr-dissolve .b{animation:tr-dissolveb 2.2s ease-in-out 0s 2 both}@keyframes tr-dissolveb{0%,25%{opacity:0}65%,100%{opacity:1}}.card:not(.playing) .tr-dissolve .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-dissolve\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 4600,
+     "pick": true,
+     "why": "Calm and invisible; it fits most cuts."
+    },
+    {
+     "id": "soft-rise",
+     "name": "Soft rise",
+     "line": "The next shot rises gently into place.",
+     "html": "<style>.tr-soft-rise .b{opacity:0}.card.playing .tr-soft-rise .b{animation:tr-soft-riseb 2.2s ease-in-out 0s 2 both}@keyframes tr-soft-riseb{0%,25%{opacity:0;transform:translateY(10%)}60%,100%{opacity:1;transform:none}}.card:not(.playing) .tr-soft-rise .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-soft-rise\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 4600
+    },
+    {
+     "id": "color-wipe",
+     "name": "Color wipe",
+     "line": "A band of your color sweeps across.",
+     "html": "<style>.tr-color-wipe .b{opacity:0}.card.playing .tr-color-wipe .b{animation:tr-color-wipeb 2.2s ease-in-out 0s 2 both}@keyframes tr-color-wipeb{0%,45%{clip-path:inset(0 100% 0 0)}46%,100%{clip-path:inset(0 0 0 0)}}.card.playing .tr-color-wipe .x{animation:tr-color-wipex 2.2s ease-in-out 0s 2 both}@keyframes tr-color-wipex{0%,15%{transform:translateX(-101%)}45%{transform:translateX(0)}75%,100%{transform:translateX(101%)}}.card:not(.playing) .tr-color-wipe .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-color-wipe\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;inset:0;background:#2EC4A6;transform:translateX(-101%)\"></div></div>",
+     "play": true,
+     "playMs": 4600
+    },
+    {
+     "id": "split-slide",
+     "name": "Split slide",
+     "line": "The shot splits and slides apart.",
+     "html": "<style>.tr-split-slide .b{opacity:0}.card.playing .tr-split-slide .b{animation:tr-split-slideb 2.2s ease-in-out 0s 2 both}@keyframes tr-split-slideb{0%,100%{opacity:1}}.tr-split-slide .b{opacity:1}.tr-split-slide .x,.tr-split-slide .y{display:none}.card.playing .tr-split-slide .x,.card.playing .tr-split-slide .y{display:block}.card.playing .tr-split-slide .x{animation:tr-split-slidex 2.2s cubic-bezier(.65,0,.35,1) 0s 2 both}@keyframes tr-split-slidex{0%,25%{transform:none}65%,100%{transform:translateX(-101%)}}.card.playing .tr-split-slide .y{animation:tr-split-slidey 2.2s cubic-bezier(.65,0,.35,1) 0s 2 both}@keyframes tr-split-slidey{0%,25%{transform:none}65%,100%{transform:translateX(101%)}}.card:not(.playing) .tr-split-slide .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-split-slide\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;inset:0 50% 0 0;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div><div class=\"y\" style=\"position:absolute;inset:0 0 0 50%;overflow:hidden\"><div style=\"position:absolute;inset:0 0 0 -100%\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div></div></div>",
+     "play": true,
+     "playMs": 4600
+    },
+    {
+     "id": "whip-pan",
+     "name": "Whip pan",
+     "line": "A fast blurred swish to the next shot.",
+     "html": "<style>.tr-whip-pan .b{opacity:0}.card.playing .tr-whip-pan .b{animation:tr-whip-panb 2.0s ease-in-out 0s 2 both}@keyframes tr-whip-panb{0%,40%{transform:translateX(100%);filter:blur(3cqw)}60%{transform:none;filter:blur(1cqw)}70%,100%{filter:none;transform:none}}.card:not(.playing) .tr-whip-pan .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-whip-pan\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 4200
+    },
+    {
+     "id": "zoom-through",
+     "name": "Zoom through",
+     "line": "Flies through the shot into the next one.",
+     "html": "<style>.tr-zoom-through .b{opacity:0}.card.playing .tr-zoom-through .b{animation:tr-zoom-throughb 2.2s ease-in-out 0s 2 both}@keyframes tr-zoom-throughb{0%,40%{opacity:0;transform:scale(.6)}65%,100%{opacity:1;transform:none}}.card:not(.playing) .tr-zoom-through .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-zoom-through\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 4600
+    },
+    {
+     "id": "slice-shift",
+     "name": "Slice shift",
+     "line": "Strips slide away to reveal the next shot.",
+     "html": "<style>.tr-slice-shift .b{opacity:0}.card.playing .tr-slice-shift .b{animation:tr-slice-shiftb 2.2s ease-in-out 0s 2 both}@keyframes tr-slice-shiftb{0%,100%{opacity:1}}.card.playing .tr-slice-shift .x0{animation:tr-slice-shifts 2.2s cubic-bezier(.65,0,.35,1) 0.00s 2 both}.card.playing .tr-slice-shift .x1{animation:tr-slice-shifts 2.2s cubic-bezier(.65,0,.35,1) 0.06s 2 both}.card.playing .tr-slice-shift .x2{animation:tr-slice-shifts 2.2s cubic-bezier(.65,0,.35,1) 0.12s 2 both}.card.playing .tr-slice-shift .x3{animation:tr-slice-shifts 2.2s cubic-bezier(.65,0,.35,1) 0.18s 2 both}@keyframes tr-slice-shifts{0%,25%{transform:none}65%,100%{transform:translateX(-101%)}}.tr-slice-shift .b{opacity:1}.tr-slice-shift [class^=x]{display:none}.card.playing .tr-slice-shift [class^=x]{display:block}.card:not(.playing) .tr-slice-shift .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-slice-shift\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x0\" style=\"position:absolute;left:0;right:0;top:0%;height:25%;overflow:hidden\"><div style=\"position:absolute;left:0;right:0;top:0%;height:400%\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div></div><div class=\"x1\" style=\"position:absolute;left:0;right:0;top:25%;height:25%;overflow:hidden\"><div style=\"position:absolute;left:0;right:0;top:-100%;height:400%\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div></div><div class=\"x2\" style=\"position:absolute;left:0;right:0;top:50%;height:25%;overflow:hidden\"><div style=\"position:absolute;left:0;right:0;top:-200%;height:400%\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div></div><div class=\"x3\" style=\"position:absolute;left:0;right:0;top:75%;height:25%;overflow:hidden\"><div style=\"position:absolute;left:0;right:0;top:-300%;height:400%\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div></div></div>",
+     "play": true,
+     "playMs": 4600
+    },
+    {
+     "id": "iris",
+     "name": "Iris",
+     "line": "A circle closes and opens, old-cartoon style.",
+     "html": "<style>.tr-iris .b{opacity:0}.card.playing .tr-iris .b{animation:tr-irisb 2.4s ease-in-out 0s 2 both}@keyframes tr-irisb{0%,45%{clip-path:circle(0% at 50% 50%)}75%,100%{clip-path:circle(75% at 50% 50%)}}.card:not(.playing) .tr-iris .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-iris\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 5000
+    },
+    {
+     "id": "film-burn",
+     "name": "Film burn",
+     "line": "A warm light burn flares between shots.",
+     "html": "<style>.tr-film-burn .b{opacity:0}.card.playing .tr-film-burn .b{animation:tr-film-burnb 2.4s ease-in-out 0s 2 both}@keyframes tr-film-burnb{0%,45%{opacity:0}50%,100%{opacity:1}}.card.playing .tr-film-burn .x{animation:tr-film-burnx 2.4s ease-in-out 0s 2 both}@keyframes tr-film-burnx{0%,25%{opacity:0}45%{opacity:1}75%,100%{opacity:0}}.card:not(.playing) .tr-film-burn .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-film-burn\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;inset:0;background:radial-gradient(circle at 70% 40%,#fff6d0,#ffb347 30%,#d1401a 60%,transparent 80%);opacity:0;mix-blend-mode:screen\"></div></div>",
+     "play": true,
+     "playMs": 5000
+    },
+    {
+     "id": "spin-blur",
+     "name": "Spin blur",
+     "line": "The shot spins away into the next.",
+     "html": "<style>.tr-spin-blur .b{opacity:0}.card.playing .tr-spin-blur .b{animation:tr-spin-blurb 2.2s ease-in-out 0s 2 both}@keyframes tr-spin-blurb{0%,40%{opacity:0;transform:rotate(-40deg) scale(.6);filter:blur(2cqw)}65%,100%{opacity:1;transform:none;filter:none}}.card:not(.playing) .tr-spin-blur .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-spin-blur\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 4600
+    },
+    {
+     "id": "pixel",
+     "name": "Pixel dissolve",
+     "line": "Breaks into blocks and rebuilds.",
+     "html": "<style>.tr-pixel .b{opacity:0}.card.playing .tr-pixel .b{animation:tr-pixelb 2.2s ease-in-out 0s 2 both}@keyframes tr-pixelb{0%,30%{opacity:0;filter:blur(2.5cqw) contrast(6)}55%{opacity:1;filter:blur(1cqw) contrast(3)}70%,100%{filter:none}}.card:not(.playing) .tr-pixel .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-pixel\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 4600
+    },
+    {
+     "id": "ink-wipe",
+     "name": "Ink wipe",
+     "line": "An ink blot spreads into the next shot.",
+     "html": "<style>.tr-ink-wipe .b{opacity:0}.card.playing .tr-ink-wipe .b{animation:tr-ink-wipeb 2.4s ease-in-out 0s 2 both}@keyframes tr-ink-wipeb{0%,30%{clip-path:circle(0% at 30% 60%)}70%,100%{clip-path:circle(85% at 30% 60%)}}.card:not(.playing) .tr-ink-wipe .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-ink-wipe\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div></div>",
+     "play": true,
+     "playMs": 5000
+    }
+   ]
+  },
+  {
+   "id": "bfr",
+   "title": "Break-from-reality transitions",
+   "line": "Playful ones, for a joke or a big moment.",
+   "kind": "library",
+   "keepWord": "scene change|scene changes",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "layout": "tiles",
+   "movable": false,
+   "options": [
+    {
+     "id": "record-scratch",
+     "name": "Record scratch",
+     "line": "Freeze, a scratch, then the next shot.",
+     "html": "<style>.tr-record-scratch .b{opacity:0}.card.playing .tr-record-scratch .b{animation:tr-record-scratchb 2.6s ease-in-out 0s 2 both}@keyframes tr-record-scratchb{0%,55%{opacity:0}56%,100%{opacity:1}}.card.playing .tr-record-scratch .x{animation:tr-record-scratchx 2.6s ease-in-out 0s 2 both}@keyframes tr-record-scratchx{0%,20%{opacity:0}22%,54%{opacity:1}55%,100%{opacity:0}}.card:not(.playing) .tr-record-scratch .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-record-scratch\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;inset:0;background:rgba(0,0,0,.35);opacity:0;display:flex;align-items:flex-end;padding:5%\"><span style=\"background:#fff;color:#111;font:800 4.4cqw 'Inter',Arial,sans-serif;padding:.6cqw 1.6cqw;transform:rotate(-4deg)\">*record scratch*</span></div></div>",
+     "play": true,
+     "playMs": 5400
+    },
+    {
+     "id": "page-tear",
+     "name": "Page tear",
+     "line": "The shot rips away like paper.",
+     "html": "<style>.tr-page-tear .b{opacity:0}.card.playing .tr-page-tear .b{animation:tr-page-tearb 2.4s ease-in-out 0s 2 both}@keyframes tr-page-tearb{0%,100%{opacity:1}}.tr-page-tear .b{opacity:1}.tr-page-tear .x,.tr-page-tear .y{display:none}.card.playing .tr-page-tear .x,.card.playing .tr-page-tear .y{display:block}.card.playing .tr-page-tear .x{animation:tr-page-tearx 2.4s cubic-bezier(.65,0,.35,1) 0s 2 both}@keyframes tr-page-tearx{0%,25%{transform:none}65%,100%{transform:translateX(-110%) rotate(-8deg)}}.card.playing .tr-page-tear .y{animation:tr-page-teary 2.4s cubic-bezier(.65,0,.35,1) 0s 2 both}@keyframes tr-page-teary{0%,25%{transform:none}65%,100%{transform:translateX(110%) rotate(8deg)}}.card:not(.playing) .tr-page-tear .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-page-tear\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;inset:0;clip-path:polygon(0 0,55% 0,48% 18%,57% 36%,47% 55%,56% 74%,49% 100%,0 100%)\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div><div class=\"y\" style=\"position:absolute;inset:0;clip-path:polygon(55% 0,100% 0,100% 100%,49% 100%,56% 74%,47% 55%,57% 36%,48% 18%)\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div></div>",
+     "play": true,
+     "playMs": 5000
+    },
+    {
+     "id": "cartoon-whip",
+     "name": "Cartoon whip",
+     "line": "Speed lines and a zip to the next shot.",
+     "html": "<style>.tr-cartoon-whip .b{opacity:0}.card.playing .tr-cartoon-whip .b{animation:tr-cartoon-whipb 2.2s ease-in-out 0s 2 both}@keyframes tr-cartoon-whipb{0%,45%{transform:translateX(100%)}55%,100%{transform:none}}.card.playing .tr-cartoon-whip .x{animation:tr-cartoon-whipx 2.2s ease-in-out 0s 2 both}@keyframes tr-cartoon-whipx{0%,30%{opacity:0;transform:scaleX(0)}42%{opacity:.9;transform:scaleX(1)}55%,100%{opacity:0;transform:scaleX(1)}}.card:not(.playing) .tr-cartoon-whip .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-cartoon-whip\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;left:0;right:0;top:12%;height:1.2cqw;background:#fff;opacity:0;transform-origin:0 50%\"></div><div class=\"x\" style=\"position:absolute;left:0;right:0;top:27%;height:1.2cqw;background:#fff;opacity:0;transform-origin:0 50%\"></div><div class=\"x\" style=\"position:absolute;left:0;right:0;top:42%;height:1.2cqw;background:#fff;opacity:0;transform-origin:0 50%\"></div><div class=\"x\" style=\"position:absolute;left:0;right:0;top:57%;height:1.2cqw;background:#fff;opacity:0;transform-origin:0 50%\"></div><div class=\"x\" style=\"position:absolute;left:0;right:0;top:72%;height:1.2cqw;background:#fff;opacity:0;transform-origin:0 50%\"></div><div class=\"x\" style=\"position:absolute;left:0;right:0;top:87%;height:1.2cqw;background:#fff;opacity:0;transform-origin:0 50%\"></div></div>",
+     "play": true,
+     "playMs": 4600
+    },
+    {
+     "id": "tv-static",
+     "name": "TV static",
+     "line": "A burst of static between shots.",
+     "html": "<style>.tr-tv-static .b{opacity:0}.card.playing .tr-tv-static .b{animation:tr-tv-staticb 2.4s ease-in-out 0s 2 both}@keyframes tr-tv-staticb{0%,52%{opacity:0}53%,100%{opacity:1}}.card.playing .tr-tv-static .x{animation:tr-tv-staticx 2.4s ease-in-out 0s 2 both}@keyframes tr-tv-staticx{0%,30%{opacity:0}32%,52%{opacity:1}53%,100%{opacity:0}}.card:not(.playing) .tr-tv-static .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-tv-static\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;inset:0;opacity:0;background:repeating-radial-gradient(circle at 17% 32%,#fff 0 1px,#555 1px 2px,#111 2px 3px),repeating-linear-gradient(0deg,rgba(255,255,255,.2) 0 1px,transparent 1px 3px);background-size:7px 7px,100% 100%\"></div></div>",
+     "play": true,
+     "playMs": 5000
+    },
+    {
+     "id": "comic-panel",
+     "name": "Comic panels",
+     "line": "The screen splits into comic panels.",
+     "html": "<style>.tr-comic-panel .b{opacity:0}.card.playing .tr-comic-panel .b{animation:tr-comic-panelb 2.4s ease-in-out 0s 2 both}@keyframes tr-comic-panelb{0%,45%{clip-path:polygon(0 0,0 0,0 100%,0 100%)}75%,100%{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}}.card.playing .tr-comic-panel .x{animation:tr-comic-panelx 2.4s ease-in-out 0s 2 both}@keyframes tr-comic-panelx{0%,25%{opacity:0}35%,60%{opacity:1}75%,100%{opacity:0}}.card:not(.playing) .tr-comic-panel .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-comic-panel\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;inset:0;opacity:0;background:linear-gradient(115deg,transparent 48%,#000 48% 52%,transparent 52%),linear-gradient(0deg,transparent 48%,#000 48% 52%,transparent 52%);border:1.2cqw solid #000\"></div></div>",
+     "play": true,
+     "playMs": 5000
+    },
+    {
+     "id": "tv-off",
+     "name": "TV switch-off",
+     "line": "Squeezes to a line like an old TV.",
+     "html": "<style>.tr-tv-off .b{opacity:0}.card.playing .tr-tv-off .b{animation:tr-tv-offb 2.2s ease-in-out 0s 2 both}@keyframes tr-tv-offb{0%,45%{opacity:0}46%,100%{opacity:1}}.card.playing .tr-tv-off .x{animation:tr-tv-offx 2.2s ease-in-out 0s 2 both}@keyframes tr-tv-offx{0%,15%{transform:none}35%{transform:scaleY(.02)}45%,100%{transform:scale(0,.02);opacity:0}}.tr-tv-off .x{display:none}.card.playing .tr-tv-off .x{display:block}.card:not(.playing) .tr-tv-off .b{opacity:1;clip-path:inset(0 0 0 50%)}</style><div class=\"tr-tv-off\" style=\"position:absolute;inset:0;container-type:size;overflow:hidden\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div><div class=\"b\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#13302A;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">SCENE 2</div></div><div class=\"x\" style=\"position:absolute;inset:0\"><div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;padding-left:8%;font:400 12cqw 'Bebas Neue',Impact,sans-serif;color:#13302A\">SCENE 1</div></div></div>",
+     "play": true,
+     "playMs": 4600
+    }
+   ]
+  }
+ ],
+ "stage": "movement",
+ "stepId": "scene-changes",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ]
+}

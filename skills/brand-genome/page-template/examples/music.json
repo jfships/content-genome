@@ -1,0 +1,179 @@
+{
+ "round": "music",
+ "kind": "library",
+ "layout": "tiles",
+ "fonts": [
+  "bebas-neue",
+  "inter"
+ ],
+ "keepWord": "kind of music|kinds of music",
+ "head": "<style>.mu .eq i{display:block;flex:1;background:#2EC4A6;height:22%;border-radius:.6cqw .6cqw 0 0;opacity:.55}.card.playing .mu .eq i{animation:eqb .5s ease-in-out infinite alternate;opacity:1}@keyframes eqb{0%{height:15%}50%{height:85%}100%{height:35%}}</style><script>window.BG_MUSIC={\"lofi\": {\"bpm\": 80, \"kick\": \"x.....x...x.....\", \"snare\": \"....x.......x...\", \"hat\": \"x.x.x.x.x.x.x.x.\", \"bass\": [45, 43, 41, 40], \"chord\": [0, 3, 7, 10], \"bw\": \"triangle\", \"pw\": \"sine\", \"x\": \"crackle\"}, \"acoustic\": {\"bpm\": 105, \"kick\": \"x.......x.......\", \"snare\": \"....x.......x...\", \"hat\": \"..x...x...x...x.\", \"bass\": [48, 43, 45, 41], \"chord\": [0, 4, 7], \"bw\": \"triangle\", \"pw\": \"triangle\", \"x\": \"pluck\"}, \"indie-pop\": {\"bpm\": 115, \"kick\": \"x...x...x...x...\", \"snare\": \"....x.......x...\", \"hat\": \"x.x.x.x.x.x.x.x.\", \"bass\": [43, 47, 45, 41], \"chord\": [0, 4, 7], \"bw\": \"sawtooth\", \"pw\": \"square\", \"x\": \"\"}, \"minimal\": {\"bpm\": 118, \"kick\": \"x...x...x...x...\", \"snare\": \"........x.......\", \"hat\": \".x.x.x.x.x.x.x.x\", \"bass\": [41, 41, 44, 39], \"chord\": [0, 3, 7], \"bw\": \"sine\", \"pw\": \"sine\", \"x\": \"arp\"}, \"boom-bap\": {\"bpm\": 90, \"kick\": \"x......x..x.....\", \"snare\": \"....x.......x...\", \"hat\": \"x.x.x.x.x.x.x.x.\", \"bass\": [38, 38, 41, 36], \"chord\": [0, 3, 7], \"bw\": \"sine\", \"pw\": \"triangle\", \"x\": \"\"}, \"cinematic\": {\"bpm\": 96, \"kick\": \"x.......x.......\", \"snare\": \"................\", \"hat\": \"................\", \"bass\": [36, 41, 43, 44], \"chord\": [0, 7, 12, 16], \"bw\": \"sawtooth\", \"pw\": \"sawtooth\", \"x\": \"rise\"}, \"tropical\": {\"bpm\": 108, \"kick\": \"x...x...x...x...\", \"snare\": \"....x.......x...\", \"hat\": \"..x...x...x...x.\", \"bass\": [45, 41, 48, 43], \"chord\": [0, 4, 7], \"bw\": \"sine\", \"pw\": \"triangle\", \"x\": \"marimba\"}, \"funk\": {\"bpm\": 108, \"kick\": \"x..x..x...x.....\", \"snare\": \"....x.......x...\", \"hat\": \"xxxxxxxxxxxxxxxx\", \"bass\": [40, 40, 45, 43], \"chord\": [0, 4, 7, 10], \"bw\": \"square\", \"pw\": \"square\", \"x\": \"\"}, \"jazz\": {\"bpm\": 120, \"kick\": \"x.........x.....\", \"snare\": \"......x.......x.\", \"hat\": \"x..x.xx..x.xx..x\", \"bass\": [41, 46, 39, 44], \"chord\": [0, 4, 7, 11], \"bw\": \"triangle\", \"pw\": \"sine\", \"x\": \"\"}, \"synthwave\": {\"bpm\": 100, \"kick\": \"x...x...x...x...\", \"snare\": \"....x.......x...\", \"hat\": \"x.x.x.x.x.x.x.x.\", \"bass\": [45, 41, 43, 40], \"chord\": [0, 3, 7], \"bw\": \"sawtooth\", \"pw\": \"sawtooth\", \"x\": \"arp\"}, \"tension\": {\"bpm\": 128, \"kick\": \"x.......x.......\", \"snare\": \"................\", \"hat\": \"x.x.x.x.x.x.x.x.\", \"bass\": [38, 38, 39, 39], \"chord\": [0, 1], \"bw\": \"sawtooth\", \"pw\": \"sine\", \"x\": \"tick\"}, \"ambient\": {\"bpm\": 70, \"kick\": \"................\", \"snare\": \"................\", \"hat\": \"................\", \"bass\": [40, 45, 43, 38], \"chord\": [0, 7, 12, 16], \"bw\": \"sine\", \"pw\": \"sine\", \"x\": \"\"}, \"chiptune\": {\"bpm\": 140, \"kick\": \"x...x...x...x...\", \"snare\": \"....x.......x...\", \"hat\": \"x.x.x.x.x.x.x.x.\", \"bass\": [48, 45, 41, 43], \"chord\": [0, 4, 7, 12], \"bw\": \"square\", \"pw\": \"square\", \"x\": \"arp\"}, \"western\": {\"bpm\": 88, \"kick\": \"x.......x.......\", \"snare\": \"....x.......x...\", \"hat\": \"................\", \"bass\": [40, 40, 43, 38], \"chord\": [0, 7], \"bw\": \"triangle\", \"pw\": \"triangle\", \"x\": \"twang\"}, \"pizzicato\": {\"bpm\": 120, \"kick\": \"x.......x.......\", \"snare\": \"................\", \"hat\": \"................\", \"bass\": [43, 41, 40, 38], \"chord\": [0, 4, 7], \"bw\": \"triangle\", \"pw\": \"triangle\", \"x\": \"pluck\"}, \"elevator\": {\"bpm\": 112, \"kick\": \"x..x..x.x..x..x.\", \"snare\": \"....x.......x...\", \"hat\": \"..x...x...x...x.\", \"bass\": [41, 46, 44, 39], \"chord\": [0, 4, 7, 11], \"bw\": \"sine\", \"pw\": \"sine\", \"x\": \"\"}};</script><script>\n(function(){\n  var ctx = null, playing = {};\n  function ac(){ if(!ctx){ ctx = new (window.AudioContext||window.webkitAudioContext)(); } if(ctx.state==='suspended') ctx.resume(); return ctx; }\n  function mtof(m){ return 440*Math.pow(2,(m-69)/12); }\n  function env(g,t,a,d,v){ g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(v,t+a); g.gain.exponentialRampToValueAtTime(0.0001,t+a+d); }\n  function osc(type,f,t,dur,v,out){ var o=ctx.createOscillator(), g=ctx.createGain(); o.type=type; o.frequency.setValueAtTime(f,t); o.connect(g); g.connect(out); env(g,t,0.01,dur,v); o.start(t); o.stop(t+dur+0.05); return o; }\n  function noise(t,dur,v,hp,out){ var n=ctx.createBufferSource(), b=ctx.createBuffer(1,ctx.sampleRate*dur,ctx.sampleRate), d=b.getChannelData(0); for(var i=0;i<d.length;i++) d[i]=Math.random()*2-1; n.buffer=b; var f=ctx.createBiquadFilter(); f.type='highpass'; f.frequency.value=hp; var g=ctx.createGain(); n.connect(f); f.connect(g); g.connect(out); env(g,t,0.002,dur,v); n.start(t); n.stop(t+dur); }\n  function kick(t,out){ var o=ctx.createOscillator(), g=ctx.createGain(); o.frequency.setValueAtTime(140,t); o.frequency.exponentialRampToValueAtTime(42,t+0.18); o.connect(g); g.connect(out); env(g,t,0.003,0.28,0.9); o.start(t); o.stop(t+0.35); }\n  window.bgMusic = function(id, el){\n    var L = (window.BG_MUSIC||{})[id]; if(!L) return; window.bgMusicStop(id, el); ac();\n    var out = ctx.createGain(); out.gain.value = 0.55; out.connect(ctx.destination); playing[id] = out;\n    var t0 = ctx.currentTime + 0.06, s = 60/L.bpm/4;   // 16th-note length\n    for (var bar=0; bar<4; bar++) for (var st=0; st<16; st++){\n      var t = t0 + (bar*16+st)*s;\n      if (L.kick[st]==='x') kick(t,out);\n      if (L.snare[st]==='x') noise(t,0.16,0.35,1200,out);\n      if (L.hat[st]==='x') noise(t,0.04,0.12,7000,out);\n      var root = L.bass[bar];\n      if (st%4===0 && L.kick.indexOf('x')>=0 || (L.kick.indexOf('x')<0 && st===0)) osc(L.bw, mtof(root), t, s*3.5, 0.28, out);\n      if (st===0) L.chord.forEach(function(iv){ osc(L.pw, mtof(root+24+iv), t, s*15, L.pw==='sawtooth'||L.pw==='square'?0.035:0.07, out); });\n      if (L.x==='arp' && st%2===0) osc('square', mtof(root+36+L.chord[(st/2)%L.chord.length]), t, s*1.2, 0.04, out);\n      if ((L.x==='pluck'||L.x==='marimba'||L.x==='twang') && (st===0||st===6||st===10)) osc(L.x==='twang'?'sawtooth':'triangle', mtof(root+24+L.chord[(st/2)%L.chord.length]), t, s*2, 0.12, out);\n      if (L.x==='tick' && st%2===0) noise(t,0.015,0.2,9000,out);\n      if (L.x==='crackle' && Math.random()<0.4) noise(t+Math.random()*s,0.01,0.05,3000,out);\n      if (L.x==='rise' && st===0 && bar===3) { var o=ctx.createOscillator(), g=ctx.createGain(); o.type='sawtooth'; o.frequency.setValueAtTime(200,t); o.frequency.exponentialRampToValueAtTime(1200,t+16*s); o.connect(g); g.connect(out); g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.06,t+16*s); o.start(t); o.stop(t+16*s); }\n    }\n  };\n  window.bgMusicStop = function(id){ var out = playing[id]; if(out){ try{ out.gain.setTargetAtTime(0.0001, ctx.currentTime, 0.03); setTimeout(function(){ out.disconnect(); }, 200); }catch(e){} delete playing[id]; } };\n})();\n</script>",
+ "title": "Music",
+ "what": "Sketches of each kind of music (its tempo and energy). Your library saves the recipe; real tracks are made from it when a video is edited.",
+ "buttons": [
+  {
+   "value": "keep",
+   "label": "Keep in library"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "keep"
+ ],
+ "next": "Next: sound effects.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "lofi",
+   "name": "Lo-fi beats",
+   "line": "Relaxed and warm. Good under talking.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Lo-fi beats</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">80 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 12400,
+   "pick": true,
+   "why": "Relaxed under talking, and it never fights your voice."
+  },
+  {
+   "id": "acoustic",
+   "name": "Light acoustic",
+   "line": "Bright and friendly. Good under talking.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Light acoustic</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">105 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 9542
+  },
+  {
+   "id": "indie-pop",
+   "name": "Indie pop",
+   "line": "Upbeat and hopeful. Good for montages.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Indie pop</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">115 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 8747
+  },
+  {
+   "id": "minimal",
+   "name": "Minimal electronic",
+   "line": "Focused and modern. Good under explaining.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Minimal electronic</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">118 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 8535
+  },
+  {
+   "id": "boom-bap",
+   "name": "Boom bap",
+   "line": "Confident swagger. Good for intros.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Boom bap</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">90 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 11066
+  },
+  {
+   "id": "cinematic",
+   "name": "Cinematic build",
+   "line": "Rising and epic. Good for reveals.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Cinematic build</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">96 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 10400
+  },
+  {
+   "id": "tropical",
+   "name": "Tropical house",
+   "line": "Sunny and light. Good for travel and wins.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Tropical house</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">108 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 9288
+  },
+  {
+   "id": "funk",
+   "name": "Funk",
+   "line": "Groovy and playful. Good for fast fixes.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Funk</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">108 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 9288
+  },
+  {
+   "id": "jazz",
+   "name": "Jazz trio",
+   "line": "Smart, late-night. Good under talking.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Jazz trio</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">120 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 8400
+  },
+  {
+   "id": "synthwave",
+   "name": "Synthwave",
+   "line": "Retro, nighttime drive. Good for intros.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Synthwave</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">100 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 10000
+  },
+  {
+   "id": "tension",
+   "name": "Tension pulse",
+   "line": "Suspense. Good before a reveal.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Tension pulse</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">128 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 7900
+  },
+  {
+   "id": "ambient",
+   "name": "Ambient",
+   "line": "Calm and spacious. Good for thoughtful parts.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Ambient</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">70 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 14114
+  },
+  {
+   "id": "chiptune",
+   "name": "Chiptune",
+   "line": "Retro game, playful. Good for jokes.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Chiptune</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">140 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 7257
+  },
+  {
+   "id": "western",
+   "name": "Desert western",
+   "line": "Dramatic standoff, wry. Good for showdowns.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Desert western</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">88 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 11309
+  },
+  {
+   "id": "pizzicato",
+   "name": "Mischief pizzicato",
+   "line": "Sneaky and comic. Good for little disasters.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Mischief pizzicato</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">120 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 8400
+  },
+  {
+   "id": "elevator",
+   "name": "Elevator bossa",
+   "line": "Ironic and calm. Good for deadpan bits.",
+   "html": "<div class=\"mu\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 10cqw/1 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\">Elevator bossa</div><div class=\"eq\" style=\"display:flex;align-items:flex-end;gap:1.2cqw;height:24cqw\"><i style=\"animation-delay:-0.00s\"></i><i style=\"animation-delay:-0.37s\"></i><i style=\"animation-delay:-0.74s\"></i><i style=\"animation-delay:-0.11s\"></i><i style=\"animation-delay:-0.48s\"></i><i style=\"animation-delay:-0.85s\"></i><i style=\"animation-delay:-0.22s\"></i><i style=\"animation-delay:-0.59s\"></i><i style=\"animation-delay:-0.96s\"></i><i style=\"animation-delay:-0.33s\"></i><i style=\"animation-delay:-0.70s\"></i><i style=\"animation-delay:-0.07s\"></i><i style=\"animation-delay:-0.44s\"></i><i style=\"animation-delay:-0.81s\"></i><i style=\"animation-delay:-0.18s\"></i><i style=\"animation-delay:-0.55s\"></i><i style=\"animation-delay:-0.92s\"></i><i style=\"animation-delay:-0.29s\"></i></div><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">112 BPM · 4-bar sketch</div></div>",
+   "play": "bgMusic",
+   "playMs": 8971
+  }
+ ],
+ "stage": "sound",
+ "stepId": "music",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "round": "draft-review",
+ "stage": "build-g",
+ "stepId": "draft",
+ "journeyIf": [
+  "graphics-first"
+ ],
+ "fonts": [
+  "inter"
+ ],
+ "kind": "adjust",
+ "keepValues": [
+  "ok"
+ ],
+ "keepWord": "scene|scenes",
+ "buttons": [
+  {
+   "value": "ok",
+   "label": "Looks right"
+  },
+  {
+   "value": "change",
+   "label": "Change it"
+  }
+ ],
+ "title": "Draft video",
+ "what": "One still per scene of the draft. Mark what to change and say how in the note.",
+ "next": "Next: your recording kit.",
+ "options": [
+  {
+   "id": "sc1",
+   "name": "Opening",
+   "at": "0:00–0:06",
+   "line": "Day 30 result, then rewind.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><text x=\"160\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"36\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">DAY 30</text></svg>"
+  },
+  {
+   "id": "sc2",
+   "name": "The first week",
+   "at": "0:42–1:30",
+   "line": "List of the first 7 days beside you.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><rect x=\"150\" y=\"26\" width=\"154\" height=\"128\" rx=\"4\" fill=\"#252e3c\" stroke=\"#F2B33D\" stroke-width=\"1.2\"/><rect x=\"158\" y=\"36\" width=\"95.48\" height=\"17.92\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"158\" y=\"60.92\" width=\"124.2\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"158\" y=\"69.92\" width=\"96.6\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"158\" y=\"78.92\" width=\"124.2\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"158\" y=\"87.92\" width=\"96.6\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"158\" y=\"96.92\" width=\"124.2\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"158\" y=\"105.92\" width=\"96.6\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/></svg>"
+  },
+  {
+   "id": "sc3",
+   "name": "The 38% moment",
+   "at": "2:14",
+   "line": "Big number on the open side.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"90\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M28.0,180 C30.0,118.0 60.0,104.0 90,104.0 C120.0,104.0 150.0,118.0 152.0,180 Z\" fill=\"#8a94a6\"/><text x=\"225\" y=\"104\" font-family=\"Inter,Arial,sans-serif\" font-size=\"52\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">38%</text></svg>"
+  }
+ ]
+}

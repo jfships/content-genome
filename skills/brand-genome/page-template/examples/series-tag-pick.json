@@ -1,0 +1,88 @@
+{
+ "round": "series-tag-pick",
+ "kind": "fixed",
+ "fonts": [
+  "bebas-neue",
+  "inter",
+  "caveat",
+  "space-mono"
+ ],
+ "title": "Series tag: your finalists",
+ "what": "Your finalists, large.",
+ "single": "pick",
+ "singleFallback": "backup",
+ "altValue": "alt",
+ "keepValues": [
+  "pick",
+  "backup",
+  "alt"
+ ],
+ "buttons": [
+  {
+   "value": "pick",
+   "label": "Main"
+  },
+  {
+   "value": "backup",
+   "label": "Backup"
+  },
+  {
+   "value": "alt",
+   "label": "Alternative"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "next": "Next: your sting.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "pill",
+   "name": "Pill",
+   "line": "Rounded pills: the series, the episode under it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"display:grid;gap:1cqw;justify-items:start\"><span style=\"background:#2EC4A6;color:#F4FBF7;font:800 4.4cqw 'Inter',Arial,sans-serif;padding:1.2cqw 2.8cqw;border-radius:99px\">30-DAY TESTS</span><span style=\"background:#F4FBF7;color:#13302A;font:800 3.2cqw 'Inter',Arial,sans-serif;padding:.8cqw 2.2cqw;border-radius:99px\">EP 12</span></div></div></div>",
+   "pick": true,
+   "why": "Small and clear; the number does the work."
+  },
+  {
+   "id": "bar",
+   "name": "Side bar",
+   "line": "A bar with a colored edge.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"background:#F4FBF7;color:#13302A;border-left:1.4cqw solid #2EC4A6;padding:1.4cqw 3cqw;font:400 6cqw/1 'Bebas Neue',Impact,sans-serif\">30-DAY TESTS<div style=\"font:700 3cqw 'Inter',Arial,sans-serif;color:#2EC4A6;margin-top:.6cqw\">EP 12</div></div></div></div>"
+  },
+  {
+   "id": "chapter",
+   "name": "Chapter number",
+   "line": "A big episode number, the series under it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"color:#fff;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6)\"><div style=\"font:400 15cqw/.85 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">12</div><div style=\"font:700 3.6cqw/1.2 'Inter',Arial,sans-serif;letter-spacing:.2cqw;margin-top:.6cqw\">30-DAY TESTS</div></div></div></div>"
+  },
+  {
+   "id": "sticker",
+   "name": "Sticker",
+   "line": "A thick-outlined sticker with a smaller one under it.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 18% 20%,rgba(0,0,0,.55),transparent 75%)\"></div><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:12%\"><div style=\"display:grid;justify-items:start;gap:1.2cqw\"><div style=\"background:#fff;color:#13302A;border:.6cqw solid #13302A;box-shadow:.8cqw .8cqw 0 #2EC4A6;font:400 7cqw/1 'Bebas Neue',Impact,sans-serif;padding:1.6cqw 2.6cqw;border-radius:2cqw;transform:rotate(-3deg)\">30-DAY TESTS</div><div style=\"background:#2EC4A6;color:#13302A;border:.5cqw solid #13302A;font:800 3.4cqw 'Inter',Arial,sans-serif;padding:.8cqw 2cqw;border-radius:1.4cqw;transform:rotate(2deg);margin-left:3cqw\">EP 12</div></div></div></div>"
+  }
+ ],
+ "stage": "kit",
+ "stepId": "series-tag",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "2 of 2"
+}

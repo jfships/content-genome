@@ -1,0 +1,62 @@
+{
+ "kind": "fixed",
+ "single": "pick",
+ "singleFallback": "backup",
+ "altValue": "alt",
+ "buttons": [
+  {
+   "value": "pick",
+   "label": "Main"
+  },
+  {
+   "value": "backup",
+   "label": "Backup"
+  },
+  {
+   "value": "alt",
+   "label": "Alternative"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "pick",
+  "backup",
+  "alt"
+ ],
+ "keepWord": "option|options",
+ "round": "hooks-pick",
+ "stage": "plan",
+ "stepId": "hooks",
+ "part": "2 of 2",
+ "fonts": [
+  "inter"
+ ],
+ "title": "Opening line: your finalists",
+ "what": "Pick the opening you'll record first. The backup gets recorded too, so the edit can swap them.",
+ "next": "Next: the script.",
+ "options": [
+  {
+   "id": "cold-open",
+   "name": "Cold open",
+   "line": "Start on day 30's result, then rewind.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"30\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">Day 30.</text></svg>",
+   "pick": true,
+   "why": "Proves the promise before anything else."
+  },
+  {
+   "id": "confession",
+   "name": "Confession",
+   "line": "Start with the moment you almost quit.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"20\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">I almost quit.</text></svg>"
+  },
+  {
+   "id": "number",
+   "name": "One number",
+   "line": "Start on the number that changed.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><text x=\"220\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"30\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">38%</text></svg>"
+  }
+ ]
+}

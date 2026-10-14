@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css">
+<style>
+.stage{perspective:2400px;perspective-origin:50% 20%}
+#rig{position:absolute;left:610px;top:520px;width:700px;height:438px;transform-style:preserve-3d}
+.ly{position:absolute;inset:0;transform-style:preserve-3d}
+.ly .scr{position:absolute;inset:0}
+.edge{position:absolute;inset:-3px;border-radius:20px;border:3px solid var(--pop);opacity:0}
+.tag{position:absolute;left:730px;top:150px;transform-style:preserve-3d;white-space:nowrap}
+.tag .h{font-size:46px}.tag .sub{font-size:22px;margin-top:4px}
+.ln{position:absolute;left:700px;top:180px;width:0;height:3px;background:var(--pop)}
+#title{position:absolute;left:120px;top:80px;font-size:56px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="7">
+ <div class="stage"><div id="rig">
+  <div class="ly" id="L3"><div class="scr"><img src="assets/screen-1.png"></div><div class="edge"></div><div class="ln"></div><div class="tag"><div class="h">Movement</div><div class="sub">Snap. No bounce.</div></div></div>
+  <div class="ly" id="L2"><div class="scr"><img src="assets/screen-2.png"></div><div class="edge"></div><div class="ln"></div><div class="tag"><div class="h">Fonts</div><div class="sub">Your two fonts</div></div></div>
+  <div class="ly" id="L1"><div class="scr"><img src="assets/screen-3.png"></div><div class="edge"></div><div class="ln"></div><div class="tag"><div class="h">Colors</div><div class="sub">Engineering blue + safety orange</div></div></div>
+ </div></div>
+ <div id="title" class="h">What a Brand <span class="blk">Is Made Of</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+gsap.set(".tag,.ln",{opacity:0}); gsap.set("#title",{opacity:0});
+gsap.set(".tag",{rotationX:-62,transformOrigin:"0% 50%"}); // keep labels upright toward camera
+tl.fromTo("#rig",{rotationX:0,rotationZ:0,z:-200},{rotationX:62,rotationZ:-38,z:0,duration:1.3,ease:"power3.inOut"},0.2);
+tl.fromTo("#title",{opacity:0,y:24},{opacity:1,y:0,duration:.6,ease:"power3.out",immediateRender:false},0.5);
+// separate with clean spacing, top first
+tl.fromTo("#L1",{z:0},{z:300,duration:1.0,ease:"expo.out"},1.5);
+tl.fromTo("#L2",{z:0},{z:150,duration:1.0,ease:"expo.out"},1.62);
+// depth of field: back layer softens when the top one is the subject
+["#L1","#L2","#L3"].forEach((l,i)=>{
+  const t=2.4+i*.55;
+  tl.to(`${l} .edge`,{opacity:1,duration:.25},t);
+  tl.fromTo(`${l} .ln`,{width:0,opacity:1},{width:240,duration:.35,ease:"power3.out",immediateRender:false},t);
+  tl.fromTo(`${l} .tag`,{opacity:0,x:-30},{opacity:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},t+.15);
+  if(i<2) tl.to(`${l} .edge`,{opacity:0,duration:.3},t+.55);
+});
+// one deliberate camera move while they hold
+tl.to("#rig",{rotationZ:-24,duration:1.6,ease:"power3.inOut"},3.4);
+// snap back together into one flat page
+tl.to(".tag,.ln",{opacity:0,duration:.25},5.3);
+tl.to(["#L1","#L2"],{z:0,duration:.5,ease:"power3.in"},5.35);
+tl.to("#rig",{rotationX:0,rotationZ:0,scale:1.2,duration:.8,ease:"power3.inOut"},5.6);
+window.__timelines["main"]=tl;
+</script></body></html>

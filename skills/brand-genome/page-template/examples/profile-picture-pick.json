@@ -1,0 +1,88 @@
+{
+ "round": "profile-picture-pick",
+ "kind": "fixed",
+ "fonts": [
+  "anton",
+  "bowlby-one",
+  "inter"
+ ],
+ "aspect": "16/10",
+ "title": "Profile picture: your finalists",
+ "what": "Your finalists, large.",
+ "single": "pick",
+ "singleFallback": "backup",
+ "altValue": "alt",
+ "keepValues": [
+  "pick",
+  "backup",
+  "alt"
+ ],
+ "buttons": [
+  {
+   "value": "pick",
+   "label": "Main"
+  },
+  {
+   "value": "backup",
+   "label": "Backup"
+  },
+  {
+   "value": "alt",
+   "label": "Alternative"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "next": "Next: your banner.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "photo-plain",
+   "name": "Photo, plain",
+   "line": "Your face filling the circle. The most common choice.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#eef0ef;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4cqw;padding:0 5%\"><div><div style=\"width:100%;aspect-ratio:1;border-radius:50%;background:#000;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 26%;\"></div><div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif;color:#666;margin-top:1.2cqw;text-align:center\">Your channel page</div></div><div style=\"display:grid;gap:4cqw\"><div style=\"display:flex;gap:2.4cqw;align-items:center;background:#fff;border-radius:1.6cqw;padding:2.4cqw\"><div style=\"width:10cqw;aspect-ratio:1;border-radius:50%;background:#000;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 26%;\"></div><div style=\"display:grid;gap:1cqw\"><b style=\"font:700 3.4cqw 'Inter',Arial,sans-serif\">Wren</b><span style=\"font:500 2.8cqw 'Inter',Arial,sans-serif;color:#777\">1.2K views · 2 days ago</span></div></div><div style=\"display:flex;gap:2cqw;align-items:flex-start;background:#fff;border-radius:1.6cqw;padding:2.4cqw\"><div style=\"width:6.4cqw;aspect-ratio:1;border-radius:50%;background:#000;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 26%;\"></div><div style=\"font:500 2.8cqw/1.35 'Inter',Arial,sans-serif;color:#333\"><b>@wren</b> Thanks for watching, more on Tuesday!</div></div><div style=\"background:#111;border-radius:1.6cqw;padding:2.4cqw;display:flex;gap:2.4cqw;align-items:center\"><div style=\"width:8cqw;aspect-ratio:1;border-radius:50%;background:#000;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 26%;\"></div><span style=\"font:600 3cqw 'Inter',Arial,sans-serif;color:#fff\">@wren · Follow</span></div><div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif;color:#666;margin-top:1.2cqw;text-align:center\">In the feed, in comments, on a dark screen</div></div></div>"
+  },
+  {
+   "id": "photo-ring",
+   "name": "Photo + color ring",
+   "line": "Your photo inside a ring of your color.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#eef0ef;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4cqw;padding:0 5%\"><div><div style=\"width:100%;aspect-ratio:1;border-radius:50%;background:#2EC4A6;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"position:absolute;inset:7%;border-radius:50%;overflow:hidden\"><img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 26%;\"></div></div><div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif;color:#666;margin-top:1.2cqw;text-align:center\">Your channel page</div></div><div style=\"display:grid;gap:4cqw\"><div style=\"display:flex;gap:2.4cqw;align-items:center;background:#fff;border-radius:1.6cqw;padding:2.4cqw\"><div style=\"width:10cqw;aspect-ratio:1;border-radius:50%;background:#2EC4A6;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"position:absolute;inset:7%;border-radius:50%;overflow:hidden\"><img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 26%;\"></div></div><div style=\"display:grid;gap:1cqw\"><b style=\"font:700 3.4cqw 'Inter',Arial,sans-serif\">Wren</b><span style=\"font:500 2.8cqw 'Inter',Arial,sans-serif;color:#777\">1.2K views · 2 days ago</span></div></div><div style=\"display:flex;gap:2cqw;align-items:flex-start;background:#fff;border-radius:1.6cqw;padding:2.4cqw\"><div style=\"width:6.4cqw;aspect-ratio:1;border-radius:50%;background:#2EC4A6;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"position:absolute;inset:7%;border-radius:50%;overflow:hidden\"><img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 26%;\"></div></div><div style=\"font:500 2.8cqw/1.35 'Inter',Arial,sans-serif;color:#333\"><b>@wren</b> Thanks for watching, more on Tuesday!</div></div><div style=\"background:#111;border-radius:1.6cqw;padding:2.4cqw;display:flex;gap:2.4cqw;align-items:center\"><div style=\"width:8cqw;aspect-ratio:1;border-radius:50%;background:#2EC4A6;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"position:absolute;inset:7%;border-radius:50%;overflow:hidden\"><img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 26%;\"></div></div><span style=\"font:600 3cqw 'Inter',Arial,sans-serif;color:#fff\">@wren · Follow</span></div><div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif;color:#666;margin-top:1.2cqw;text-align:center\">In the feed, in comments, on a dark screen</div></div></div>"
+  },
+  {
+   "id": "mono-pop",
+   "name": "Monogram on pop color",
+   "line": "Your initial on your brightest color.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#eef0ef;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4cqw;padding:0 5%\"><div><div style=\"width:100%;aspect-ratio:1;border-radius:50%;background:#2EC4A6;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"font:400 62cqw/1 'Anton',Impact,sans-serif;color:#13302A\">W</div></div><div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif;color:#666;margin-top:1.2cqw;text-align:center\">Your channel page</div></div><div style=\"display:grid;gap:4cqw\"><div style=\"display:flex;gap:2.4cqw;align-items:center;background:#fff;border-radius:1.6cqw;padding:2.4cqw\"><div style=\"width:10cqw;aspect-ratio:1;border-radius:50%;background:#2EC4A6;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"font:400 62cqw/1 'Anton',Impact,sans-serif;color:#13302A\">W</div></div><div style=\"display:grid;gap:1cqw\"><b style=\"font:700 3.4cqw 'Inter',Arial,sans-serif\">Wren</b><span style=\"font:500 2.8cqw 'Inter',Arial,sans-serif;color:#777\">1.2K views · 2 days ago</span></div></div><div style=\"display:flex;gap:2cqw;align-items:flex-start;background:#fff;border-radius:1.6cqw;padding:2.4cqw\"><div style=\"width:6.4cqw;aspect-ratio:1;border-radius:50%;background:#2EC4A6;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"font:400 62cqw/1 'Anton',Impact,sans-serif;color:#13302A\">W</div></div><div style=\"font:500 2.8cqw/1.35 'Inter',Arial,sans-serif;color:#333\"><b>@wren</b> Thanks for watching, more on Tuesday!</div></div><div style=\"background:#111;border-radius:1.6cqw;padding:2.4cqw;display:flex;gap:2.4cqw;align-items:center\"><div style=\"width:8cqw;aspect-ratio:1;border-radius:50%;background:#2EC4A6;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"font:400 62cqw/1 'Anton',Impact,sans-serif;color:#13302A\">W</div></div><span style=\"font:600 3cqw 'Inter',Arial,sans-serif;color:#fff\">@wren · Follow</span></div><div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif;color:#666;margin-top:1.2cqw;text-align:center\">In the feed, in comments, on a dark screen</div></div></div>",
+   "pick": true,
+   "why": "Reads clearly even at the smallest size."
+  },
+  {
+   "id": "seal",
+   "name": "Seal",
+   "line": "Your initial in a ring.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#eef0ef;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4cqw;padding:0 5%\"><div><div style=\"width:100%;aspect-ratio:1;border-radius:50%;background:#13302A;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"width:78cqw;aspect-ratio:1;border-radius:50%;border:5cqw solid #2EC4A6;display:grid;place-items:center;font:400 48cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">W</div></div><div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif;color:#666;margin-top:1.2cqw;text-align:center\">Your channel page</div></div><div style=\"display:grid;gap:4cqw\"><div style=\"display:flex;gap:2.4cqw;align-items:center;background:#fff;border-radius:1.6cqw;padding:2.4cqw\"><div style=\"width:10cqw;aspect-ratio:1;border-radius:50%;background:#13302A;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"width:78cqw;aspect-ratio:1;border-radius:50%;border:5cqw solid #2EC4A6;display:grid;place-items:center;font:400 48cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">W</div></div><div style=\"display:grid;gap:1cqw\"><b style=\"font:700 3.4cqw 'Inter',Arial,sans-serif\">Wren</b><span style=\"font:500 2.8cqw 'Inter',Arial,sans-serif;color:#777\">1.2K views · 2 days ago</span></div></div><div style=\"display:flex;gap:2cqw;align-items:flex-start;background:#fff;border-radius:1.6cqw;padding:2.4cqw\"><div style=\"width:6.4cqw;aspect-ratio:1;border-radius:50%;background:#13302A;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"width:78cqw;aspect-ratio:1;border-radius:50%;border:5cqw solid #2EC4A6;display:grid;place-items:center;font:400 48cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">W</div></div><div style=\"font:500 2.8cqw/1.35 'Inter',Arial,sans-serif;color:#333\"><b>@wren</b> Thanks for watching, more on Tuesday!</div></div><div style=\"background:#111;border-radius:1.6cqw;padding:2.4cqw;display:flex;gap:2.4cqw;align-items:center\"><div style=\"width:8cqw;aspect-ratio:1;border-radius:50%;background:#13302A;display:grid;place-items:center;overflow:hidden;container-type:inline-size;position:relative;flex:none\"><div style=\"width:78cqw;aspect-ratio:1;border-radius:50%;border:5cqw solid #2EC4A6;display:grid;place-items:center;font:400 48cqw/1 'Anton',Impact,sans-serif;color:#F4FBF7\">W</div></div><span style=\"font:600 3cqw 'Inter',Arial,sans-serif;color:#fff\">@wren · Follow</span></div><div style=\"font:600 2.8cqw 'Inter',Arial,sans-serif;color:#666;margin-top:1.2cqw;text-align:center\">In the feed, in comments, on a dark screen</div></div></div>"
+  }
+ ],
+ "stage": "kit",
+ "stepId": "profile-picture",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "2 of 2"
+}

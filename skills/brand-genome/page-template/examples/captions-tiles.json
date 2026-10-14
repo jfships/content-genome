@@ -1,0 +1,200 @@
+{
+ "round": "captions-tiles",
+ "kind": "finalists",
+ "layout": "tiles",
+ "fonts": [
+  "bebas-neue",
+  "inter",
+  "caveat",
+  "space-mono"
+ ],
+ "photoTag": "Test photo",
+ "title": "Captions",
+ "what": "The words on screen while you talk. Press Play on any card to see them come in.",
+ "rule": "mark as many finalists as you like. Next, you'll pick a main and a backup from them, and keep any others as alternatives.",
+ "keepWord": "finalist|finalists",
+ "trimAbove": 6,
+ "buttons": [
+  {
+   "value": "yes",
+   "label": "Finalist"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "yes"
+ ],
+ "next": "Next: your finalists, large. You'll pick a main and a backup.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "strip",
+   "name": "Dark strip",
+   "line": "Words on a dark strip. Readable on anything.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-strip .w{animation:cp-strip-in .2s ease-out both}.card.playing .cp-strip .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-strip .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-strip .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-strip .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-strip .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-strip .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-strip .w:nth-child(7){animation-delay:2.04s}@keyframes cp-strip-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-strip\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:600 4.3cqw 'Inter',Arial,sans-serif;background:rgba(0,0,0,.78);padding:1cqw 2cqw;border-radius:1cqw;left:12%;right:12%\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280,
+   "pick": true,
+   "why": "Readable on any background, so it never fights your footage."
+  },
+  {
+   "id": "plain",
+   "name": "Plain white",
+   "line": "White words, soft shadow.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-plain .w{animation:cp-plain-in .2s ease-out both}.card.playing .cp-plain .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-plain .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-plain .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-plain .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-plain .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-plain .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-plain .w:nth-child(7){animation-delay:2.04s}@keyframes cp-plain-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-plain\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:700 4.6cqw 'Inter',Arial,sans-serif;text-shadow:0 .3cqw 1cqw #000,0 0 .4cqw #000\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "highlight",
+   "name": "Highlight",
+   "line": "The word being said lights up in your color.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.cp-highlight .k{background:#2EC4A6;color:#F4FBF7;text-shadow:none;padding:0 1cqw;border-radius:.6cqw}.card.playing .cp-highlight .k{background:transparent;color:#fff;padding:0 1cqw}.card.playing .cp-highlight .w{animation:cp-highlight-hl 0.34s step-end none}.card.playing .cp-highlight .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-highlight .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-highlight .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-highlight .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-highlight .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-highlight .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-highlight .w:nth-child(7){animation-delay:2.04s}@keyframes cp-highlight-hl{0%{background:#2EC4A6;color:#F4FBF7;text-shadow:none;padding:0 1cqw;border-radius:.6cqw}100%{background:#2EC4A6;color:#F4FBF7;text-shadow:none;padding:0 1cqw;border-radius:.6cqw}}</style><div class=\"cp-highlight\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:800 4.6cqw 'Inter',Arial,sans-serif;text-shadow:0 .3cqw 1cqw #000\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "fill",
+   "name": "Fill-in",
+   "line": "Words fill with your color as you say them.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.cp-fill .w{color:rgba(255,255,255,.55)}.cp-fill .w:nth-child(-n+5){color:#2EC4A6}.card.playing .cp-fill .w{color:rgba(255,255,255,.55);animation:cp-fill-f .01s step-end both}.card.playing .cp-fill .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-fill .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-fill .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-fill .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-fill .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-fill .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-fill .w:nth-child(7){animation-delay:2.04s}@keyframes cp-fill-f{to{color:#2EC4A6}}</style><div class=\"cp-fill\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;font:800 4.6cqw 'Inter',Arial,sans-serif;background:rgba(0,0,0,.55);padding:1cqw 2cqw;border-radius:1cqw;left:12%;right:12%\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "outlined",
+   "name": "Bold outline",
+   "line": "Thick outlined capitals, the short-video classic.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-outlined .w{animation:cp-outlined-in .28s cubic-bezier(.3,1.6,.5,1) both}.card.playing .cp-outlined .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-outlined .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-outlined .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-outlined .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-outlined .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-outlined .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-outlined .w:nth-child(7){animation-delay:2.04s}@keyframes cp-outlined-in{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}</style><div class=\"cp-outlined\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:900 5.2cqw 'Inter',Arial,sans-serif;-webkit-text-stroke:.5cqw #000;paint-order:stroke fill;text-transform:uppercase\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "popup",
+   "name": "Pop-up",
+   "line": "Each word pops in with a bounce.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-popup .w{animation:cp-popup-in .28s cubic-bezier(.3,1.6,.5,1) both}.card.playing .cp-popup .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-popup .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-popup .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-popup .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-popup .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-popup .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-popup .w:nth-child(7){animation-delay:2.04s}@keyframes cp-popup-in{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}</style><div class=\"cp-popup\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:900 5cqw 'Inter',Arial,sans-serif;text-transform:uppercase;text-shadow:0 .4cqw 0 #000,0 0 1cqw #000\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "twoline",
+   "name": "Subtitle",
+   "line": "Small, quiet, like a film subtitle.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-twoline .w{animation:cp-twoline-in .2s ease-out both}.card.playing .cp-twoline .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-twoline .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-twoline .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-twoline .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-twoline .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-twoline .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-twoline .w:nth-child(7){animation-delay:2.04s}@keyframes cp-twoline-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-twoline\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:500 4cqw 'Inter',Arial,sans-serif;text-shadow:0 .2cqw .8cqw #000;max-width:60%;left:20%;right:20%\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "keycolor",
+   "name": "Key words",
+   "line": "The important words in your second color.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.cp-keycolor .w:nth-child(5),.cp-keycolor .w:nth-child(4){color:#FFD166}.card.playing .cp-keycolor .w{animation:cp-keycolor-in .2s ease-out both}.card.playing .cp-keycolor .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-keycolor .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-keycolor .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-keycolor .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-keycolor .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-keycolor .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-keycolor .w:nth-child(7){animation-delay:2.04s}@keyframes cp-keycolor-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-keycolor\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:800 4.6cqw 'Inter',Arial,sans-serif;text-shadow:0 .3cqw 1cqw #000\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "chips",
+   "name": "Word chips",
+   "line": "Each word on its own chip; the one being said lights up.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.cp-chips .w{background:rgba(0,0,0,.7);color:#fff;padding:.4cqw 1.2cqw;border-radius:.8cqw}.cp-chips .k{background:#2EC4A6;color:#F4FBF7}.card.playing .cp-chips .k{background:rgba(0,0,0,.7);color:#fff}.card.playing .cp-chips .w{animation:cp-chips-hl 0.34s step-end none}.card.playing .cp-chips .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-chips .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-chips .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-chips .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-chips .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-chips .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-chips .w:nth-child(7){animation-delay:2.04s}@keyframes cp-chips-hl{0%{background:#2EC4A6;color:#F4FBF7}100%{background:#2EC4A6;color:#F4FBF7}}</style><div class=\"cp-chips\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;gap:.8cqw;font:700 4cqw 'Inter',Arial,sans-serif\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "classic",
+   "name": "Yellow classic",
+   "line": "Yellow with a black edge, old-TV style.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-classic .w{animation:cp-classic-in .2s ease-out both}.card.playing .cp-classic .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-classic .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-classic .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-classic .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-classic .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-classic .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-classic .w:nth-child(7){animation-delay:2.04s}@keyframes cp-classic-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-classic\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#FFD166;font:700 4.4cqw 'Inter',Arial,sans-serif;-webkit-text-stroke:.35cqw #000;paint-order:stroke fill\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "corner",
+   "name": "Side note",
+   "line": "Small, to the side, out of the way.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-corner .w{animation:cp-corner-in .2s ease-out both}.card.playing .cp-corner .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-corner .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-corner .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-corner .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-corner .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-corner .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-corner .w:nth-child(7){animation-delay:2.04s}@keyframes cp-corner-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-corner\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;justify-content:flex-start;text-align:left;left:4%;right:auto;max-width:46%;color:#fff;font:600 3.8cqw 'Inter',Arial,sans-serif;border-left:.8cqw solid #2EC4A6;padding-left:1.6cqw;background:linear-gradient(90deg,rgba(0,0,0,.6),transparent)\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "bigword",
+   "name": "One big word",
+   "line": "One word at a time, huge.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.cp-bigword .w{position:absolute;left:0;top:0;opacity:0}.cp-bigword .k{opacity:1}.card.playing .cp-bigword .k{opacity:0}.card.playing .cp-bigword .w{animation:cp-bigword-s 0.34s step-end both;animation-fill-mode:none}.card.playing .cp-bigword .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-bigword .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-bigword .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-bigword .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-bigword .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-bigword .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-bigword .w:nth-child(7){animation-delay:2.04s}.card.playing .cp-bigword .w:last-child{animation-fill-mode:forwards}@keyframes cp-bigword-s{0%{opacity:1;transform:scale(1.08)}100%{opacity:1}}</style><div class=\"cp-bigword\" style=\"position:absolute;left:4%;top:34%;width:52%;height:34%;font:400 15cqw/1 'Bebas Neue',Impact,sans-serif;color:#fff;text-shadow:0 .5cqw 1.6cqw rgba(0,0,0,.8)\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "stacked",
+   "name": "Stacked",
+   "line": "A few words stacked big beside you.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.cp-stacked .w{display:none}.cp-stacked .w:nth-child(4),.cp-stacked .w:nth-child(5),.cp-stacked .w:nth-child(6){display:block}.cp-stacked .k{color:#2EC4A6}.card.playing .cp-stacked .w{display:block;animation:cp-stacked-in .2s ease-out both}.card.playing .cp-stacked .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-stacked .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-stacked .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-stacked .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-stacked .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-stacked .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-stacked .w:nth-child(7){animation-delay:2.04s}@keyframes cp-stacked-in{from{opacity:0;transform:translateX(-2cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-stacked\" style=\"position:absolute;left:5%;top:30%;width:46%;flex-direction:column;align-items:flex-start;text-align:left;font:400 8cqw/0.98 'Bebas Neue',Impact,sans-serif;color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.8)\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "typewriter",
+   "name": "Typewriter",
+   "line": "Typed out, one word at a time.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-typewriter .w{animation:cp-typewriter-in .01s step-end both}.card.playing .cp-typewriter .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-typewriter .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-typewriter .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-typewriter .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-typewriter .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-typewriter .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-typewriter .w:nth-child(7){animation-delay:2.04s}@keyframes cp-typewriter-in{from{visibility:hidden}to{visibility:visible}}</style><div class=\"cp-typewriter\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#13302A;background:#F4FBF7;font:700 3.8cqw 'Space Mono',monospace;padding:1cqw 1.8cqw;left:10%;right:10%\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "bubble",
+   "name": "Speech bubble",
+   "line": "Your words in a bubble beside you.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-bubble .w{animation:cp-bubble-in .2s ease-out both}.card.playing .cp-bubble .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-bubble .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-bubble .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-bubble .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-bubble .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-bubble .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-bubble .w:nth-child(7){animation-delay:2.04s}@keyframes cp-bubble-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-bubble\" style=\"position:absolute;left:4%;bottom:auto;top:44%;right:auto;max-width:40%;display:flex;flex-wrap:wrap;gap:0 1.2cqw;justify-content:flex-start;text-align:left;background:#fff;color:#13302A;font:700 3.8cqw 'Inter',Arial,sans-serif;padding:1.6cqw 2.2cqw;border-radius:3cqw 3cqw 3cqw .6cqw;box-shadow:0 .6cqw 1.6cqw rgba(0,0,0,.35)\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "slam",
+   "name": "Slam",
+   "line": "Each word slams in.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.cp-slam .k{color:#2EC4A6}.card.playing .cp-slam .w{animation:cp-slam-in .22s cubic-bezier(.2,1.8,.4,1) both}.card.playing .cp-slam .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-slam .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-slam .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-slam .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-slam .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-slam .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-slam .w:nth-child(7){animation-delay:2.04s}@keyframes cp-slam-in{from{opacity:0;transform:scale(2.2) rotate(-8deg)}to{opacity:1;transform:none}}</style><div class=\"cp-slam\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:400 7cqw 'Bebas Neue',Impact,sans-serif;text-shadow:0 .4cqw 0 #13302A,0 0 1.2cqw rgba(0,0,0,.6);gap:0 1.8cqw\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "handwritten",
+   "name": "Handwritten",
+   "line": "In your notes font.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.cp-handwritten .k{color:#FFD166}.card.playing .cp-handwritten .w{animation:cp-handwritten-in .2s ease-out both}.card.playing .cp-handwritten .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-handwritten .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-handwritten .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-handwritten .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-handwritten .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-handwritten .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-handwritten .w:nth-child(7){animation-delay:2.04s}@keyframes cp-handwritten-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-handwritten\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:700 6.4cqw 'Caveat',cursive;text-shadow:0 .3cqw 1cqw #000\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  },
+  {
+   "id": "neon",
+   "name": "Neon",
+   "line": "Glowing in your pop color.",
+   "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><style>.card.playing .cp-neon .w{animation:cp-neon-in .2s ease-out both}.card.playing .cp-neon .w:nth-child(1){animation-delay:0.00s}.card.playing .cp-neon .w:nth-child(2){animation-delay:0.34s}.card.playing .cp-neon .w:nth-child(3){animation-delay:0.68s}.card.playing .cp-neon .w:nth-child(4){animation-delay:1.02s}.card.playing .cp-neon .w:nth-child(5){animation-delay:1.36s}.card.playing .cp-neon .w:nth-child(6){animation-delay:1.70s}.card.playing .cp-neon .w:nth-child(7){animation-delay:2.04s}@keyframes cp-neon-in{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}</style><div class=\"cp-neon\" style=\"position:absolute;left:6%;right:6%;bottom:9%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.4cqw;text-align:center;container-type:normal;color:#fff;font:700 4.8cqw 'Inter',Arial,sans-serif;text-shadow:0 0 .6cqw #2EC4A6,0 0 2cqw #2EC4A6,0 0 4cqw #2EC4A6\"><span class=\"w\">and</span><span class=\"w\">that's</span><span class=\"w\">the</span><span class=\"w\">part</span><span class=\"w k\">nobody</span><span class=\"w\">tells</span><span class=\"w\">you</span></div></div>",
+   "play": true,
+   "playMs": 3280
+  }
+ ],
+ "stage": "look",
+ "stepId": "captions",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "1 of 2"
+}

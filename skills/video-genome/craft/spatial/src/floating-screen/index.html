@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script>
+<link rel="stylesheet" href="shared/base.css"><style>
+
+
+body{margin:0;background:#081a30}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(ellipse at 35% 45%,#1d5596 0%,var(--bg-deep) 55%,var(--bg-edge) 100%);font-family:var(--font-text)}
+#stage{position:absolute;inset:0;perspective:1800px;perspective-origin:40% 50%}
+#world{position:absolute;inset:0;transform-style:preserve-3d}
+#win{position:absolute;left:150px;top:170px;width:1120px;height:730px;border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:0 60px 160px rgba(0,0,0,.6),0 0 0 2px rgba(255,255,255,.16)}
+#bar{height:44px;background:#e9eef5;display:flex;align-items:center;gap:10px;padding:0 18px}
+#bar i{width:13px;height:13px;border-radius:50%;background:#c9d2de;display:block}
+#bar b{margin-left:24px;flex:1;height:24px;border-radius:12px;background:#fff;font:700 14px var(--font-text);color:#6b7a90;display:flex;align-items:center;padding-left:14px}
+#win img{display:block;width:100%;height:calc(100% - 44px);object-fit:cover;object-position:left top}
+#sweep{position:absolute;top:-40%;left:-60%;width:40%;height:180%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);pointer-events:none}
+#front{position:absolute;inset:0;perspective:1200px;perspective-origin:75% 40%}
+.word{position:absolute;left:1210px;top:300px;font-family:var(--font-display);font-size:84px;line-height:1;color:#fff;white-space:nowrap}
+.word span{display:inline-block;background:var(--pop);padding:10px 22px 16px}
+#w2 span{background:#fff;color:var(--bg)}
+.tag{position:absolute;font-weight:700;font-size:26px;color:#fff;background:rgba(12,39,71,.85);border:2px solid var(--pop);border-radius:12px;padding:12px 20px;white-space:nowrap}
+.tag em{font-style:normal;color:var(--pop)}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div id="stage"><div id="world">
+  <div id="win"><div id="bar"><i></i><i></i><i></i><b>Brand Genome · yourbrand</b></div><img src="assets/screen-1.png"><div id="sweep"></div></div>
+  <div class="tag" id="t1"><em>●</em> Palette locked</div>
+  <div class="tag" id="t2"><em>●</em> Fonts locked</div>
+  <div class="tag" id="t3"><em>●</em> Motion: Snap</div>
+ </div></div>
+ <div id="front"><div class="word" id="w1"><span>Your Brand.</span></div><div class="word" id="w2"><span>From Zero.</span></div></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+gsap.set(["#w1","#w2","#t1","#t2","#t3"],{opacity:0});
+gsap.set("#t1",{x:120,y:250,z:220}); gsap.set("#t2",{x:880,y:560,z:320}); gsap.set("#t3",{x:300,y:860,z:160});
+tl.fromTo("#win",{z:-1400,y:260,rotationY:-38,rotationX:16,opacity:0},{z:0,y:0,rotationY:-16,rotationX:7,opacity:1,duration:1.4,ease:"expo.out"},0);
+tl.fromTo("#sweep",{x:0},{x:3600,duration:1.1,ease:"power2.inOut"},1.2);
+// word 1 arrives from depth
+tl.fromTo("#w1",{z:-900,opacity:0,filter:"blur(10px)"},{z:0,opacity:1,filter:"blur(0px)",duration:.7,ease:"expo.out"},1.5);
+// zoom-through swap to word 2
+tl.to("#w1",{z:520,opacity:.15,filter:"blur(10px)",duration:.22,ease:"power3.in"},2.9);
+tl.set("#w1",{opacity:0},3.12);
+tl.fromTo("#w2",{z:-300,opacity:.15,filter:"blur(10px)"},{z:0,opacity:1,filter:"blur(0px)",duration:.55,ease:"expo.out",immediateRender:false},3.12);
+// tags on their beats, from depth
+["#t1","#t2","#t3"].forEach((t,i)=>tl.fromTo(t,{opacity:0,z:-600},{opacity:1,z:gsap.getProperty(t,"z"),duration:.6,ease:"expo.out"},3.7+i*.45));
+// one finishing camera move: window turns to face the viewer
+tl.to("#win",{rotationY:-6,rotationX:3,duration:1.2,ease:"power3.inOut"},4.6);
+window.__timelines["main"]=tl;
+</script></body></html>

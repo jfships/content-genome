@@ -1,0 +1,157 @@
+{
+ "round": "sting-tiles",
+ "kind": "finalists",
+ "layout": "tiles",
+ "fonts": [
+  "anton",
+  "inter"
+ ],
+ "head": "<script>window.BG_STING={\"pop-in\": \"pop\", \"swipe\": \"whoosh\", \"chime\": \"chime\", \"drop\": \"thump\", \"riser\": \"riser\", \"typed\": \"type\", \"glitch\": \"glitch\", \"drum-fill\": \"drums\", \"kalimba\": \"kalimba\", \"synth-stab\": \"stab\", \"scratch\": \"scratch\", \"bell\": \"bell\"};</script><script>\n(function(){\n  var ctx=null, live={};\n  function A(){ if(!ctx) ctx=new (window.AudioContext||window.webkitAudioContext)(); if(ctx.state==='suspended') ctx.resume(); return ctx; }\n  function g(out,t,a,d,v){ var x=ctx.createGain(); x.gain.setValueAtTime(0.0001,t); x.gain.exponentialRampToValueAtTime(v,t+a); x.gain.exponentialRampToValueAtTime(0.0001,t+a+d); x.connect(out); return x; }\n  function tone(out,type,f,t,d,v,f2){ var o=ctx.createOscillator(); o.type=type; o.frequency.setValueAtTime(f,t); if(f2) o.frequency.exponentialRampToValueAtTime(f2,t+d); o.connect(g(out,t,.005,d,v)); o.start(t); o.stop(t+d+.05); }\n  function nz(out,t,d,v,f1,f2,type){ var n=ctx.createBufferSource(), b=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*d),ctx.sampleRate), c=b.getChannelData(0); for(var i=0;i<c.length;i++) c[i]=Math.random()*2-1; n.buffer=b; var f=ctx.createBiquadFilter(); f.type=type||'bandpass'; f.frequency.setValueAtTime(f1,t); if(f2) f.frequency.exponentialRampToValueAtTime(f2,t+d); n.connect(f); f.connect(g(out,t,.01,d,v)); n.start(t); n.stop(t+d); }\n  function m(n){ return 440*Math.pow(2,(n-69)/12); }\n  var S = {\n    whoosh:function(o,t){ nz(o,t,.5,.5,300,4000); tone(o,'sine',m(76),t+.45,.5,.18); },\n    pop:function(o,t){ tone(o,'sine',m(84),t,.08,.4,m(96)); tone(o,'triangle',m(79),t+.12,.35,.2); },\n    chime:function(o,t){ [72,76,79,84].forEach(function(n,i){ tone(o,'sine',m(n),t+i*.09,.9,.14); }); },\n    thump:function(o,t){ tone(o,'sine',140,t,.35,.9,40); nz(o,t,.08,.3,2000); tone(o,'sawtooth',m(48),t+.05,.5,.06); },\n    riser:function(o,t){ nz(o,t,.9,.25,400,6000,'highpass'); tone(o,'sawtooth',200,t,.9,.05,900); tone(o,'sine',140,t+.95,.4,.9,40); },\n    type:function(o,t){ for(var i=0;i<6;i++) nz(o,t+i*.08,.03,.4,3500); tone(o,'sine',m(88),t+.55,.3,.15); },\n    glitch:function(o,t){ for(var i=0;i<8;i++) tone(o,'square',m(60+Math.floor(Math.random()*24)),t+i*.05,.04,.08); nz(o,t+.42,.2,.3,1500); },\n    drums:function(o,t){ [0,.1,.2,.28,.36].forEach(function(d,i){ nz(o,t+d,.08,.4,900+i*300); }); tone(o,'sine',150,t+.48,.4,.9,45); },\n    kalimba:function(o,t){ [72,79,76,84].forEach(function(n,i){ tone(o,'triangle',m(n),t+i*.13,.6,.18); }); },\n    stab:function(o,t){ [60,64,67,71].forEach(function(n){ tone(o,'sawtooth',m(n),t,.4,.05); }); tone(o,'sine',m(36),t,.5,.4); },\n    scratch:function(o,t){ nz(o,t,.25,.6,800,3000); nz(o,t+.25,.2,.5,3000,600); tone(o,'sine',m(79),t+.5,.3,.18); },\n    bell:function(o,t){ tone(o,'sine',m(83),t,1.2,.2); tone(o,'sine',m(83)*2.76,t,.6,.05); }\n  };\n  window.bgSting=function(id,el){ A(); window.bgStingStop(id); var o=ctx.createGain(); o.gain.value=.6; o.connect(ctx.destination); live[id]=o; var k=(window.BG_STING||{})[id]; if(S[k]) S[k](o,ctx.currentTime+.05); };\n  window.bgStingStop=function(id){ var o=live[id]; if(o){ try{o.disconnect();}catch(e){} delete live[id]; } };\n  window.bgLogo=function(id,el){ A(); window.bgStingStop(id); var o=ctx.createGain(); o.gain.value=.6; o.connect(ctx.destination); live[id]=o;\n    var L=(window.BG_LOGO||{})[id]; if(!L) return; var t=ctx.currentTime+.05; (S[window.BG_CHOSEN_STING]||S.pop)(o,t); t+=.45; L.n.forEach(function(n,i){ tone(o,L.w,m(n),t+i*L.s,L.d,.22); }); };\n  window.bgLogoStop=window.bgStingStop;\n})();\n</script>",
+ "title": "Sting",
+ "what": "Your sting is a 1–2 second branded opener, a tiny intro with your name and sound. It plays right after your hook, about 10–20 seconds in.",
+ "rule": "mark as many finalists as you like. Next, you'll pick a main and a backup from them, and keep any others as alternatives.",
+ "keepWord": "finalist|finalists",
+ "trimAbove": 6,
+ "buttons": [
+  {
+   "value": "yes",
+   "label": "Finalist"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "yes"
+ ],
+ "next": "Next: your finalists, large. You'll pick a main and a backup.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "where",
+   "name": "Where your sting plays",
+   "line": "Hook first (about 10–20 seconds), then the sting, then the video.",
+   "control": true,
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:4cqw;padding:0 6%\"><div style=\"display:flex;height:16cqw;font:700 4cqw 'Inter',Arial,sans-serif;color:#fff;border-radius:1.6cqw;overflow:hidden\"><div style=\"flex:2.2;background:#8a8f8d;display:grid;place-items:center\">Hook</div><div style=\"flex:.7;background:#2EC4A6;color:#F4FBF7;display:grid;place-items:center;font-weight:900\">Sting</div><div style=\"flex:6;background:#13302A;display:grid;place-items:center\">The video</div></div><div style=\"display:flex;font:600 3.4cqw 'Inter',Arial,sans-serif;color:#555\"><span style=\"flex:2.2\">0 s</span><span style=\"flex:.7;margin-left:-2cqw;white-space:nowrap\">~15 s</span><span style=\"flex:6;text-align:right\">rest of the video</span></div></div>"
+  },
+  {
+   "id": "pop-in",
+   "name": "Pop in",
+   "line": "Your wordmark pops in with a bright pop.",
+   "html": "<style>.card.playing .st-pop-in .mk{animation:st-pop-in 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-pop-in{0%{transform:scale(0)}35%{transform:scale(1.12)}50%,100%{transform:none}}.card.playing .st-pop-in .mk{opacity:1}.card.playing .st-pop-in .sn{opacity:0}</style><div class=\"st-pop-in\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ bright pop · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700,
+   "pick": true,
+   "why": "Short and bright; it won't wear out after fifty videos."
+  },
+  {
+   "id": "swipe",
+   "name": "Color swipe",
+   "line": "A band of your color swipes across and leaves your name.",
+   "html": "<style>.card.playing .st-swipe .mk{animation:st-swipe 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-swipe{0%,30%{clip-path:inset(0 100% 0 0)}60%,100%{clip-path:inset(0 0 0 0)}}.card.playing .st-swipe .swp{animation:st-swipes 1.2s ease-in-out both}@keyframes st-swipes{0%{transform:translateX(-101%)}40%{transform:translateX(0)}100%{transform:translateX(101%)}}.card.playing .st-swipe .mk{opacity:1}.card.playing .st-swipe .sn{opacity:0}</style><div class=\"st-swipe\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"swp\" style=\"position:absolute;inset:0;background:#2EC4A6;transform:translateX(-101%)\"></div><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ whoosh · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "chime",
+   "name": "Chime",
+   "line": "A soft rise with a little chime. Friendly.",
+   "html": "<style>.card.playing .st-chime .mk{animation:st-chime 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-chime{0%{opacity:0;transform:translateY(20%)}55%,100%{opacity:1;transform:none}}.card.playing .st-chime .mk{opacity:1}.card.playing .st-chime .sn{opacity:0}</style><div class=\"st-chime\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ chime · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "drop",
+   "name": "Bass drop",
+   "line": "Lands hard on a deep thump.",
+   "html": "<style>.card.playing .st-drop .mk{animation:st-drop 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-drop{0%{transform:translateY(-140%)}22%{transform:translateY(4%)}30%,100%{transform:none}}.card.playing .st-drop .mk{opacity:1}.card.playing .st-drop .sn{opacity:0}</style><div class=\"st-drop\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ deep thump · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "riser",
+   "name": "Riser and hit",
+   "line": "Builds up, then hits.",
+   "html": "<style>.card.playing .st-riser .mk{animation:st-riser 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-riser{0%,60%{transform:scale(.2);opacity:0}70%{transform:scale(1.15);opacity:1}80%,100%{transform:none}}.card.playing .st-riser .mk{opacity:1}.card.playing .st-riser .sn{opacity:0}</style><div class=\"st-riser\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ riser + hit · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "typed",
+   "name": "Typed",
+   "line": "Typed out with key clicks.",
+   "html": "<style>.card.playing .st-typed .mk{animation:st-typed 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-typed{0%{clip-path:inset(0 100% 0 0)}50%,100%{clip-path:inset(0 0 0 0)}}.card.playing .st-typed .mk{opacity:1}.card.playing .st-typed .sn{opacity:0}</style><div class=\"st-typed\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ key clicks · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "glitch",
+   "name": "Glitch",
+   "line": "A digital stutter, then clean.",
+   "html": "<style>.card.playing .st-glitch .mk{animation:st-glitch 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-glitch{0%{opacity:0}10%{opacity:1;transform:translateX(6%) skewX(12deg)}20%{transform:translateX(-4%)}30%{opacity:.3}40%,100%{opacity:1;transform:none}}.card.playing .st-glitch .mk{opacity:1}.card.playing .st-glitch .sn{opacity:0}</style><div class=\"st-glitch\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ glitch · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "drum-fill",
+   "name": "Drum fill",
+   "line": "A quick drum fill into your name.",
+   "html": "<style>.card.playing .st-drum-fill .mk{animation:st-drum-fill 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-drum-fill{0%,40%{opacity:0;transform:scale(.8)}55%,100%{opacity:1;transform:none}}.card.playing .st-drum-fill .mk{opacity:1}.card.playing .st-drum-fill .sn{opacity:0}</style><div class=\"st-drum-fill\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ drum fill · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "kalimba",
+   "name": "Kalimba",
+   "line": "Plucky notes, playful and warm.",
+   "html": "<style>.card.playing .st-kalimba .mk{animation:st-kalimba 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-kalimba{0%{transform:rotate(-12deg) scale(.6);opacity:0}40%{transform:rotate(4deg) scale(1.05);opacity:1}60%,100%{transform:none}}.card.playing .st-kalimba .mk{opacity:1}.card.playing .st-kalimba .sn{opacity:0}</style><div class=\"st-kalimba\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ kalimba · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "synth-stab",
+   "name": "Synth stab",
+   "line": "One bold synth chord. Retro.",
+   "html": "<style>.card.playing .st-synth-stab .mk{animation:st-synth-stab 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-synth-stab{0%{opacity:0;letter-spacing:1em}30%,100%{opacity:1;letter-spacing:normal}}.card.playing .st-synth-stab .mk{opacity:1}.card.playing .st-synth-stab .sn{opacity:0}</style><div class=\"st-synth-stab\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ synth chord · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "scratch",
+   "name": "Record scratch",
+   "line": "A scratch, then your name. Comic.",
+   "html": "<style>.card.playing .st-scratch .mk{animation:st-scratch 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-scratch{0%,45%{transform:rotate(-90deg) scale(.4);opacity:0}65%,100%{transform:none;opacity:1}}.card.playing .st-scratch .mk{opacity:1}.card.playing .st-scratch .sn{opacity:0}</style><div class=\"st-scratch\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ record scratch · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  },
+  {
+   "id": "bell",
+   "name": "Bell",
+   "line": "One clear bell. Calm and premium.",
+   "html": "<style>.card.playing .st-bell .mk{animation:st-bell 1.4s cubic-bezier(.2,.9,.3,1) both}@keyframes st-bell{0%{opacity:0;filter:blur(2cqw)}60%,100%{opacity:1;filter:none}}.card.playing .st-bell .mk{opacity:1}.card.playing .st-bell .sn{opacity:0}</style><div class=\"st-bell\" style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:grid;place-items:center;overflow:hidden\"><div class=\"mk\" style=\"opacity:.16\"><div style=\"font:400 22cqw/.85 'Anton',Impact,sans-serif;color:#13302A\">WREN</div></div><div class=\"sn\" style=\"position:absolute;left:5%;bottom:7%;font:700 3.6cqw 'Inter',Arial,sans-serif;color:#13302A;background:#fff;border:.3cqw solid #13302A;padding:.8cqw 2cqw;border-radius:99cqw;transition:opacity .2s\">♪ bell · 1.5 s</div></div>",
+   "play": "bgSting",
+   "playMs": 1700
+  }
+ ],
+ "stage": "kit",
+ "stepId": "sting",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "1 of 2"
+}

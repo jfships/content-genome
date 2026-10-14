@@ -1,0 +1,215 @@
+{
+ "_about": "The visible journey for video-genome pages. build.py computes every page's header from this: stage n of N, step n of N, the strip and % done. A page names only `stage` and `stepId` (and `part`, e.g. \"1 of 2\"). `journeyIf` on the page picks the build stage: [\"graphics-first\"] or [\"footage-first\"]. required: false = the chat question also offers **Skip this step**. Keep in step with SKILL.md's Flow table.",
+ "stages": [
+  {
+   "id": "start",
+   "name": "Start",
+   "steps": [
+    {
+     "id": "brand",
+     "name": "Your brand",
+     "required": true
+    },
+    {
+     "id": "intake",
+     "name": "What you brought",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "plan",
+   "name": "Plan",
+   "steps": [
+    {
+     "id": "order",
+     "name": "Order of work",
+     "required": true
+    },
+    {
+     "id": "titles",
+     "name": "Title",
+     "required": true
+    },
+    {
+     "id": "thumbnail",
+     "name": "Thumbnail",
+     "required": true
+    },
+    {
+     "id": "angle",
+     "name": "Your angle",
+     "required": true
+    },
+    {
+     "id": "video-type",
+     "name": "Kind of video",
+     "required": true
+    },
+    {
+     "id": "framework",
+     "name": "Script shape",
+     "required": true
+    },
+    {
+     "id": "arc",
+     "name": "Story arc",
+     "required": true
+    },
+    {
+     "id": "story-rest",
+     "name": "Rest of the story plan",
+     "required": true
+    },
+    {
+     "id": "hooks",
+     "name": "Opening line",
+     "required": true
+    },
+    {
+     "id": "script",
+     "name": "Script",
+     "required": true
+    },
+    {
+     "id": "look",
+     "name": "Look",
+     "required": true
+    },
+    {
+     "id": "break-from-reality",
+     "name": "Break-from-reality moments",
+     "required": true
+    },
+    {
+     "id": "music",
+     "name": "Music",
+     "required": true
+    },
+    {
+     "id": "vertical-moments",
+     "name": "Shorts moments",
+     "required": false
+    },
+    {
+     "id": "cta",
+     "name": "Ending and ask",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "assets",
+   "name": "Asset list",
+   "steps": [
+    {
+     "id": "asset-list",
+     "name": "What's still needed",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "build-g",
+   "name": "Build",
+   "steps": [
+    {
+     "id": "draft",
+     "name": "Draft video",
+     "required": true
+    },
+    {
+     "id": "recording",
+     "name": "Recording kit",
+     "required": true
+    },
+    {
+     "id": "cut",
+     "name": "The cut",
+     "required": true
+    },
+    {
+     "id": "placement",
+     "name": "Where you sit on screen",
+     "required": true
+    },
+    {
+     "id": "rebuild",
+     "name": "Rebuild on your words",
+     "required": true
+    }
+   ],
+   "if": "graphics-first"
+  },
+  {
+   "id": "build-f",
+   "name": "Build",
+   "steps": [
+    {
+     "id": "shoot",
+     "name": "Shoot brief",
+     "required": true
+    },
+    {
+     "id": "cut",
+     "name": "The cut",
+     "required": true
+    },
+    {
+     "id": "direction",
+     "name": "Style of the edit",
+     "required": true
+    },
+    {
+     "id": "moments",
+     "name": "Moment by moment",
+     "required": true
+    },
+    {
+     "id": "build",
+     "name": "Build",
+     "required": true
+    }
+   ],
+   "if": "footage-first"
+  },
+  {
+   "id": "sound",
+   "name": "Sound",
+   "steps": [
+    {
+     "id": "mix",
+     "name": "Mix",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "checks",
+   "name": "Checks",
+   "steps": [
+    {
+     "id": "review",
+     "name": "Review",
+     "required": true
+    }
+   ]
+  },
+  {
+   "id": "deliver",
+   "name": "Deliver",
+   "steps": [
+    {
+     "id": "brand-review",
+     "name": "Brand review",
+     "required": false
+    },
+    {
+     "id": "files",
+     "name": "Files",
+     "required": true
+    }
+   ]
+  }
+ ]
+}

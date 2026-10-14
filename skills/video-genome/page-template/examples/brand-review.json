@@ -1,0 +1,48 @@
+{
+ "round": "brand-review",
+ "stage": "deliver",
+ "stepId": "brand-review",
+ "fonts": [
+  "inter"
+ ],
+ "kind": "adjust",
+ "keepValues": [
+  "add"
+ ],
+ "keepWord": "item|items",
+ "buttons": [
+  {
+   "value": "add",
+   "label": "Add to my brand"
+  },
+  {
+   "value": "once",
+   "label": "Keep as one-off"
+  },
+  {
+   "value": "no",
+   "label": "Don't use again"
+  }
+ ],
+ "title": "Brand review",
+ "what": "Things this video used that aren't in your brand yet. Decide what happens to each.",
+ "next": "Next: files and delivery.",
+ "options": [
+  {
+   "id": "stamp",
+   "name": "Stamp number",
+   "at": "2:14, the 38% moment",
+   "line": "A stamped number. Same colors and fonts, new move.",
+   "outside": true,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"90\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M28.0,180 C30.0,118.0 60.0,104.0 90,104.0 C120.0,104.0 150.0,118.0 152.0,180 Z\" fill=\"#8a94a6\"/><g transform=\"rotate(-8 230 95)\"><rect x=\"180\" y=\"66\" width=\"104\" height=\"54\" fill=\"none\" stroke=\"#F2B33D\" stroke-width=\"4\"/><text x=\"232\" y=\"106\" font-family=\"Inter,Arial,sans-serif\" font-size=\"32\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">+38%</text></g></svg>"
+  },
+  {
+   "id": "split",
+   "name": "Split screen",
+   "at": "5:02–5:20",
+   "line": "Half you, half the graphic. Your brand had only the corner bubble.",
+   "outside": true,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><rect x=\"160\" y=\"0\" width=\"160\" height=\"180\" fill=\"#252e3c\"/><ellipse cx=\"80\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M18.0,180 C20.0,118.0 50.0,104.0 80,104.0 C110.0,104.0 140.0,118.0 142.0,180 Z\" fill=\"#8a94a6\"/><rect x=\"176\" y=\"26\" width=\"128\" height=\"128\" rx=\"4\" fill=\"#252e3c\" stroke=\"#F2B33D\" stroke-width=\"1.2\"/><rect x=\"184\" y=\"36\" width=\"79.36\" height=\"17.92\" rx=\"2\" fill=\"#F2B33D\"/><rect x=\"184\" y=\"60.92\" width=\"100.8\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"184\" y=\"69.92\" width=\"78.39999999999999\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"184\" y=\"78.92\" width=\"100.8\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"184\" y=\"87.92\" width=\"78.39999999999999\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"184\" y=\"96.92\" width=\"100.8\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/><rect x=\"184\" y=\"105.92\" width=\"78.39999999999999\" height=\"4\" rx=\"2\" fill=\"#EEF1F5\" opacity=\".7\"/></svg>"
+  }
+ ]
+}

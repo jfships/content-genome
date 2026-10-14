@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css">
+<style>
+.stage{perspective:1800px;perspective-origin:50% 60%}
+.c{position:absolute;left:710px;top:300px;width:500px;height:320px;transform-origin:50% 160%}
+.c .scr{position:absolute;inset:0}
+.c .lb{position:absolute;left:0;bottom:-54px;font-size:30px}
+#cap{position:absolute;left:0;right:0;top:80px;text-align:center;font-size:58px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div class="stage"><div class="w3">
+  <div class="c" id="k0"><div class="scr"><img src="assets/screen-1.png"></div><div class="h lb">Who</div></div>
+  <div class="c" id="k1"><div class="scr"><img src="assets/screen-2.png"></div><div class="h lb">Formats</div></div>
+  <div class="c" id="k2"><div class="scr"><img src="assets/screen-3.png"></div><div class="h lb">Look</div></div>
+  <div class="c" id="k3"><div class="scr"><img src="assets/screen-4.png"></div><div class="h lb">Motion</div></div>
+  <div class="c" id="k4"><div class="scr"><img src="assets/screen-5.png"></div><div class="h lb">Kit</div></div>
+ </div></div>
+ <div id="cap" class="h">One Genome, <span class="blk">Five Answers</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+gsap.set(".lb",{opacity:0}); gsap.set("#cap",{opacity:0});
+const ks=["#k0","#k1","#k2","#k3","#k4"];
+ks.forEach((k,i)=>gsap.set(k,{z:i*2}));
+tl.fromTo(".c",{y:300,rotationX:40,opacity:0},{y:0,rotationX:0,opacity:1,duration:1.0,ease:"expo.out"},0);
+// fan out like a hand of cards, in depth
+ks.forEach((k,i)=>{const o=i-2;
+  tl.to(k,{rotationZ:o*13,rotationY:o*-8,x:o*300,z:-Math.abs(o)*160,duration:1.1,ease:"power3.inOut"},1.1+i*.04);});
+tl.to(".lb",{opacity:1,duration:.4,stagger:.08},2.1);
+tl.fromTo("#cap",{opacity:0,y:20},{opacity:1,y:0,duration:.5,ease:"power3.out",immediateRender:false},2.4);
+// pull the centre card forward
+tl.to("#k2",{z:260,rotationZ:0,y:-30,duration:.9,ease:"power3.inOut"},3.8);
+tl.to(["#k0","#k1","#k3","#k4"],{opacity:.45,duration:.6},3.9);
+window.__timelines["main"]=tl;
+</script></body></html>

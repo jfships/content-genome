@@ -1,0 +1,27 @@
+<title>02 Come to life (word pop, tucked behind speaker)</title>
+<style>
+#shape{display:none}
+.wp{display:inline-block;font-family:'BrandDisplay','BrandUI',sans-serif;font-size:300px;font-weight:700;letter-spacing:-.03em;line-height:1;white-space:nowrap;transform-origin:50% 60%}
+</style>
+<div data-slot="world">
+  <!-- Layout from subject.py box (14.6-16.6s): head/shoulders span x 1296-1824 at text height. "come to" ends 30px inside the
+       head's left edge, "life" starts 30px inside its right edge: only word edges tuck behind, every word stays readable. -->
+  <div class="row" style="left:40px;top:-150px;transform:translateX(-100%);gap:56px"><span class="wp" id="w0">come</span><span class="wp" id="w1">to</span></div>
+  <div class="row" style="left:580px;top:-150px"><span class="wp" id="w2">life</span></div>
+</div><!--/world-->
+<script>
+const $=id=>document.getElementById(id); const C=Object.assign({accent:'#FF5A1F'},window.BRAND);
+// clip in = 14.60. come .46, to .62, life .70
+const WT=[0.46,0.62,0.70], COL=['#FFFFFF','#FFFFFF',C.accent], OUT=1.75;
+const pops=WT.map(t=>M.track(0,[[t,1,[16,0.72]]]));
+M.scene({
+  W:2560,H:1440,bg:null,T:2.0,intro:null,center:[1280,370],
+  SH:{x:{w:10,h:10,r:0,bg:'#000000',cam:1}}, start:'x', SEQ:[],
+  extra:(t)=>{
+    for(let i=0;i<3;i++){const e=$('w'+i), p=pops[i](t), out=M.eo((t-OUT)/0.2);
+      e.style.color=COL[i]; e.style.opacity=(M.clamp(p*1.6)*(1-out)).toFixed(3);
+      e.style.transform=`translateY(${((1-p)*60).toFixed(1)}px) scale(${(0.85+0.15*p).toFixed(4)})`;
+      e.style.filter=p<0.6?`blur(${((0.6-p)*14).toFixed(1)}px)`:'none';}
+  },
+});
+</script>

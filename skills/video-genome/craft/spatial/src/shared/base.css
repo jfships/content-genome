@@ -1,0 +1,19 @@
+:root{
+ /* Set these from the brand's pack before building. Example values = the brand these moves were first built for. */
+ --bg:#1b4f8a; --bg-deep:#0c2747; --bg-edge:#04101f; --surface:#0f2f55;
+ --pop:#ff7a1a; --second:#ffc398; --pale:#d6dfea; --ink:#ffffff;
+ --font-display:"Display"; --font-text:"Text";
+}
+@font-face{font-family:"Display";src:url(display.woff2)}
+@font-face{font-family:"Text";src:url(text.woff2);font-weight:700}
+body{margin:0;background:var(--bg-edge)}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,var(--bg) 0%,var(--bg-deep) 58%,var(--bg-edge) 100%);font-family:var(--font-text);color:#fff}
+#root:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(2,8,16,.55) 100%)}
+.stage{position:absolute;inset:0;perspective:1600px}
+.w3{position:absolute;inset:0;transform-style:preserve-3d}
+.scr{position:absolute;border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 40px 110px rgba(0,0,0,.55),0 0 0 2px rgba(255,255,255,.16)}
+.scr img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
+.h{font-family:var(--font-display);color:#fff;white-space:nowrap}
+.blk{display:inline-block;background:var(--pop);padding:6px 18px 12px}
+.blkw{display:inline-block;background:#fff;color:var(--bg);padding:6px 18px 12px}
+.sub{font-weight:700;color:var(--second);white-space:nowrap}

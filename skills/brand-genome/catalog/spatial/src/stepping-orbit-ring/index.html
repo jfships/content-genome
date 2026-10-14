@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css">
+<style>
+.stage{perspective:2000px;perspective-origin:50% 40%}
+#ring{position:absolute;left:960px;top:440px;width:0;height:0;transform-style:preserve-3d}
+.card{position:absolute;left:-260px;top:-165px;width:520px;height:330px;transform-style:preserve-3d;backface-visibility:hidden}
+.card .scr,.card .lb{backface-visibility:hidden}
+.card .scr{position:absolute;inset:0}
+.card .lb{position:absolute;left:0;top:-60px;font-size:34px}
+#core{position:absolute;left:0;right:0;top:900px;text-align:center;font-size:64px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="7">
+ <div class="stage"><div class="w3"><div id="ring">
+  <div class="card" id="c0"><div class="h lb">Brand</div><div class="scr"><img src="assets/screen-1.png"></div></div>
+  <div class="card" id="c1"><div class="h lb">Idea</div><div class="scr"><img src="assets/screen-2.png"></div></div>
+  <div class="card" id="c2"><div class="h lb">Plan</div><div class="scr"><img src="assets/screen-3.png"></div></div>
+  <div class="card" id="c3"><div class="h lb">Look</div><div class="scr"><img src="assets/screen-4.png"></div></div>
+  <div class="card" id="c4"><div class="h lb">Kit</div><div class="scr"><img src="assets/screen-5.png"></div></div>
+  <div class="card" id="c5"><div class="h lb">Reels</div><div class="scr"><img src="assets/screen-6.png"></div></div>
+ </div></div></div>
+ <div id="core" class="h">Your Content <span class="blk">Team</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true}); const R=760,N=6;
+const cards=[...document.querySelectorAll(".card")];
+function lay(rot){cards.forEach((c,i)=>{const a=(i/N)*Math.PI*2+rot;const x=Math.sin(a)*R,z=Math.cos(a)*R-R*0.35;
+  gsap.set(c,{x,z,rotationY:a*180/Math.PI});
+  const front=(Math.cos(a)+1)/2; c.style.opacity=0.25+0.75*front; c.querySelector(".scr").style.filter=`blur(${(1-front)*6}px) brightness(${0.55+0.45*front})`;});}
+const S={r:0}; lay(0);
+gsap.set("#ring",{rotationX:-8}); gsap.set("#core",{opacity:0});
+tl.fromTo("#ring",{z:-1200,rotationX:-30},{z:0,rotationX:-8,duration:1.4,ease:"expo.out"},0);
+tl.fromTo(S,{r:Math.PI*0.6},{r:0,duration:1.4,ease:"expo.out",onUpdate:()=>lay(S.r),immediateRender:false},0);
+// step the ring one card at a time on beats (no endless spin)
+for(let k=1;k<=3;k++) tl.to(S,{r:-k*(Math.PI*2/N),duration:.8,ease:"power3.inOut",onUpdate:()=>lay(S.r)},1.4+k*1.0);
+tl.fromTo("#core",{opacity:0,scale:.9},{opacity:1,scale:1,duration:.5,ease:"power3.out",immediateRender:false},5.4);
+window.__timelines["main"]=tl;
+</script></body></html>

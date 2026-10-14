@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080"><script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css"><style>
+#bg{position:absolute;left:-960px;top:-540px;width:3840px;height:2160px;background-image:linear-gradient(rgba(214,223,234,.12) 2px,transparent 2px),linear-gradient(90deg,rgba(214,223,234,.12) 2px,transparent 2px);background-size:80px 80px}
+#midL{position:absolute;inset:0}
+#fg{position:absolute;left:0;right:0;top:440px;text-align:center;font-size:110px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div id="bg"></div><div id="midL"><div class="scr m" style="left:120px;top:140px;width:420px;height:260px"><img src="assets/screen-1.png"></div><div class="scr m" style="left:1380px;top:120px;width:440px;height:272px"><img src="assets/screen-2.png"></div><div class="scr m" style="left:160px;top:700px;width:380px;height:235px"><img src="assets/screen-3.png"></div><div class="scr m" style="left:1400px;top:690px;width:400px;height:248px"><img src="assets/screen-4.png"></div><div class="scr m" style="left:760px;top:60px;width:360px;height:223px"><img src="assets/screen-5.png"></div><div class="scr m" style="left:780px;top:830px;width:360px;height:223px"><img src="assets/screen-6.png"></div></div>
+ <div id="fg" class="h">Content Team <span class="blk">in a Box</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo("#bg",{scale:1},{scale:1.25,duration:5.8,ease:"power1.inOut"},0);
+tl.fromTo("#midL",{scale:1.0},{scale:1.7,duration:5.8,ease:"power1.inOut"},0);
+tl.fromTo(".m",{opacity:0,z:0},{opacity:1,duration:.6,stagger:.1,ease:"power3.out"},0.2);
+tl.fromTo("#fg",{scale:.6,opacity:0},{scale:1.15,opacity:1,duration:5.6,ease:"power1.out"},0.2);
+tl.to(".m img",{filter:"blur(4px) brightness(.7)",duration:2},3.2);
+window.__timelines["main"]=tl;
+</script></body></html>

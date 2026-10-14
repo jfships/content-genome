@@ -1,0 +1,287 @@
+{
+ "round": "backdrops",
+ "kind": "library",
+ "keepWord": "backdrop|backdrops",
+ "fonts": [
+  "bebas-neue"
+ ],
+ "title": "Backdrops",
+ "what": "What goes behind you when your room is removed, and behind title cards. The gray figure stands in for you.",
+ "next": "Next: extras for special moments.",
+ "persona": "Wren",
+ "sections": [
+  {
+   "id": "everyday",
+   "title": "Everyday",
+   "line": "",
+   "kind": "library",
+   "keepWord": "backdrop|backdrops",
+   "layout": "tiles",
+   "movable": false,
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "light-plain",
+     "name": "Light plain",
+     "line": "For: title cards",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:#F4FBF7\"></div><div style=\"position:absolute;left:8%;top:14%;font:400 7.5cqw 'Bebas Neue',Impact,sans-serif;color:#13302A;background:#F4FBF7;padding:.6cqw 2cqw\">Part 2</div></div>",
+     "pick": true,
+     "why": "A calm default for title cards; you can change it any time."
+    },
+    {
+     "id": "pop-plain",
+     "name": "Pop color",
+     "line": "For: behind you when your room is removed",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:#2EC4A6\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "dark-plain",
+     "name": "Dark plain",
+     "line": "For: serious moments and the last screen",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:#13302A\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "studio",
+     "name": "Studio sweep",
+     "line": "For: a clean, professional backdrop",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#ffffff,#E8F3EE 45%,#b9c4bf)\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "blur",
+     "name": "Your space, blurred",
+     "line": "For: staying in your world, without the clutter",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/06-shop-counter.jpg) center/cover;filter:blur(6px)\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "grad",
+     "name": "Soft gradient",
+     "line": "For: chapter cards",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:linear-gradient(135deg,#2EC4A6,#F4FBF7)\"></div><div style=\"position:absolute;left:8%;top:14%;font:400 7.5cqw 'Bebas Neue',Impact,sans-serif;color:#13302A;background:#F4FBF7;padding:.6cqw 2cqw\">Part 2</div></div>"
+    },
+    {
+     "id": "paper",
+     "name": "Paper",
+     "line": "For: notes and lists",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:#F4FBF7 repeating-linear-gradient(0deg,rgba(0,0,0,.035) 0 2px,transparent 2px 4px)\"></div><div style=\"position:absolute;left:8%;top:14%;font:400 7.5cqw 'Bebas Neue',Impact,sans-serif;color:#13302A;background:#F4FBF7;padding:.6cqw 2cqw\">Part 2</div></div>"
+    },
+    {
+     "id": "grid",
+     "name": "Grid paper",
+     "line": "For: explaining something step by step",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:#F4FBF7;background-image:linear-gradient(rgba(0,0,0,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.1) 1px,transparent 1px);background-size:6cqw 6cqw\"></div><div style=\"position:absolute;left:8%;top:14%;font:400 7.5cqw 'Bebas Neue',Impact,sans-serif;color:#13302A;background:#F4FBF7;padding:.6cqw 2cqw\">Part 2</div></div>"
+    },
+    {
+     "id": "spots",
+     "name": "Polka dots",
+     "line": "For: bloopers and silly moments",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:#E8F3EE;background-image:radial-gradient(#FFD166 18%,transparent 19%);background-size:7cqw 7cqw\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "rays",
+     "name": "Sunburst",
+     "line": "For: big announcements",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 100%,#FFD166 0 10deg,#F4FBF7 10deg 20deg)\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "city-night",
+     "name": "City at night",
+     "line": "For: a calm, after-hours feel",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/city-night.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "chalkboard",
+     "name": "Chalkboard",
+     "line": "For: numbers and prices",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/chalkboard.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "corkboard",
+     "name": "Cork board",
+     "line": "For: plans and ideas pinned up",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/corkboard.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "blueprint",
+     "name": "Blueprint",
+     "line": "For: how something works",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/blueprint.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "space",
+     "name": "Space",
+     "line": "For: a big idea, or \"out of this world\"",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/space.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    }
+   ]
+  },
+  {
+   "id": "fun",
+   "title": "Fun and absurd",
+   "line": "For a joke or a big moment.",
+   "kind": "library",
+   "keepWord": "backdrop|backdrops",
+   "layout": "tiles",
+   "movable": false,
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "weather",
+     "name": "Weather map",
+     "line": "For: a \"forecast\" joke",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/weather-map.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "news-desk",
+     "name": "News desk",
+     "line": "For: announcing something small as if it's huge",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/news-desk.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "courtroom",
+     "name": "Courtroom",
+     "line": "For: putting a habit on trial",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/courtroom.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "game-show",
+     "name": "Game show",
+     "line": "For: a quiz or a big choice",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/game-show.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "award-stage",
+     "name": "Award stage",
+     "line": "For: celebrating a tiny win",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/award-stage.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "moon",
+     "name": "The moon",
+     "line": "For: \"one small step\"",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/moon.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "fish-tank",
+     "name": "Inside a fish tank",
+     "line": "For: feeling watched",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/fish-tank.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "giant-kitchen",
+     "name": "Giant's kitchen",
+     "line": "For: feeling tiny next to a problem",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/giant-kitchen.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "crime-scene",
+     "name": "Crime scene",
+     "line": "For: \"what went wrong here\"",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/crime-scene.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "cereal-box",
+     "name": "Cereal box",
+     "line": "For: selling something like an ad",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/cereal-box.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    }
+   ]
+  },
+  {
+   "id": "you-as",
+   "title": "You as…",
+   "line": "Sets that cast you in a role for a moment.",
+   "kind": "library",
+   "keepWord": "backdrop|backdrops",
+   "layout": "tiles",
+   "movable": false,
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "president",
+     "name": "President",
+     "line": "For: a big announcement from \"the office\"",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/president-office.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "pilot",
+     "name": "Pilot",
+     "line": "For: \"this is your captain speaking\"",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/cockpit.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "baseball",
+     "name": "Pro ballplayer",
+     "line": "For: stepping up to a challenge",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/baseball.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "detective",
+     "name": "Detective",
+     "line": "For: solving a mystery",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/detective.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    },
+    {
+     "id": "olympian",
+     "name": "Champion",
+     "line": "For: winning at something small",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/backdrops/podium.jpg) center/cover\"></div><div style=\"position:absolute;left:74%;bottom:0;transform:translateX(-50%);width:22%;height:46%;background:#8a8a8a;border-radius:50% 50% 0 0/40% 40% 0 0\"></div><div style=\"position:absolute;left:74%;bottom:38%;transform:translateX(-50%);width:10.5%;aspect-ratio:1;background:#8a8a8a;border-radius:50%\"></div></div>"
+    }
+   ]
+  }
+ ],
+ "stage": "look",
+ "stepId": "backdrops",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ]
+}

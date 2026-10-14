@@ -1,0 +1,227 @@
+{
+ "round": "moments-library",
+ "kind": "library",
+ "fonts": [
+  "bebas-neue",
+  "inter",
+  "caveat",
+  "space-mono"
+ ],
+ "title": "Extras",
+ "what": "Things a video can do when a moment calls for one. You won't use them all; they're there when needed.",
+ "next": "Next: break-from-reality moments (the last Look step).",
+ "persona": "Wren",
+ "sections": [
+  {
+   "id": "extras",
+   "title": "Small extras",
+   "line": "",
+   "kind": "library",
+   "keepWord": "extra|extras",
+   "layout": "tiles",
+   "keepValues": [
+    "keep"
+   ],
+   "movable": false,
+   "photoTag": "Test photo",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "options": [
+    {
+     "id": "callout",
+     "name": "Callout",
+     "line": "For: pointing at one detail",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%\"><circle cx=\"40\" cy=\"128\" r=\"22\" fill=\"none\" stroke=\"#2EC4A6\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"116\" x2=\"104\" y2=\"86\" stroke=\"#2EC4A6\" stroke-width=\"3\"/><rect x=\"104\" y=\"72\" width=\"78\" height=\"24\" rx=\"3\" fill=\"#F4FBF7\"/><text x=\"112\" y=\"89\" font-family=\"Inter,Arial,sans-serif\" font-size=\"13\" font-weight=\"700\" fill=\"#13302A\">this one</text></svg></div>",
+     "pick": true,
+     "why": "The extra most videos need: pointing at one detail."
+    },
+    {
+     "id": "arrow",
+     "name": "Arrow",
+     "line": "For: \"look here\"",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><svg viewBox=\"0 0 100 60\" style=\"position:absolute;left:20%;top:40%;width:22%;overflow:visible\"><path d=\"M95 5 C 70 10, 45 25, 18 48\" fill=\"none\" stroke=\"#2EC4A6\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M8 54 L 28 50 L 18 38 Z\" fill=\"#2EC4A6\"/></svg><div style=\"position:absolute;left:40%;top:30%;font:700 4cqw 'Caveat',cursive;color:#fff;text-shadow:0 .2cqw .8cqw #000\">look!</div></div>"
+    },
+    {
+     "id": "chapter",
+     "name": "Chapter card",
+     "line": "For: starting a new part of the video",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#F4FBF7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1cqw\"><div style=\"font:700 3.6cqw 'Inter',Arial,sans-serif;color:#2EC4A6;letter-spacing:.6cqw\">PART 2</div><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif;color:#13302A\">THE HARD PART</div></div>",
+     "photoTag": ""
+    },
+    {
+     "id": "spotlight",
+     "name": "Spotlight",
+     "line": "For: making everyone look at one thing",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:radial-gradient(circle at 63% 34%,transparent 13cqw,rgba(0,0,0,.86) 22cqw)\"></div></div>"
+    },
+    {
+     "id": "zoom",
+     "name": "Zoom-in",
+     "line": "For: a reaction that needs a close-up",
+     "html": "<div style=\"position:absolute;inset:0;background:url(img/01-desk-talking.jpg) 50% 26%/260% no-repeat\"></div><div style=\"position:absolute;inset:6%;border:3px solid #fff;border-radius:2px;clip-path:polygon(0 0,18% 0,18% 3%,3% 3%,3% 18%,0 18%,0 82%,3% 82%,3% 97%,18% 97%,18% 100%,82% 100%,82% 97%,97% 97%,97% 82%,100% 82%,100% 18%,97% 18%,97% 3%,82% 3%,82% 0,100% 0,100% 100%,0 100%)\"></div>"
+    },
+    {
+     "id": "timer",
+     "name": "Timer",
+     "line": "For: showing how long something takes",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:4%;top:8%;background:#13302A;color:#F4FBF7;font:700 7cqw 'Space Mono',monospace;padding:1cqw 3cqw;border-radius:1.5cqw\">00:30</div></div>"
+    },
+    {
+     "id": "progress",
+     "name": "Progress bar",
+     "line": "For: how far along you are",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:0;right:0;top:0;height:2.6cqw;background:rgba(0,0,0,.35)\"><div style=\"width:62%;height:100%;background:#2EC4A6\"></div></div><div style=\"position:absolute;left:3%;top:5cqw;font:700 3.4cqw 'Inter',Arial,sans-serif;color:#fff;text-shadow:0 .2cqw .8cqw #000\">Day 18 of 30</div></div>"
+    },
+    {
+     "id": "checklist",
+     "name": "Checklist",
+     "line": "For: steps or a list as you go",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:4%;top:10%;background:#F4FBF7;color:#13302A;font:600 3.8cqw/1.7 'Inter',Arial,sans-serif;padding:1.8cqw 3cqw;border-radius:1.5cqw\"><div><span style=\"color:#2EC4A6;font-weight:800\">✓</span> Week one</div><div><span style=\"color:#2EC4A6;font-weight:800\">✓</span> The hard part</div><div><span style=\"color:#2EC4A6;font-weight:800\">○</span> The result</div></div></div>"
+    },
+    {
+     "id": "scorecard",
+     "name": "Scorecard",
+     "line": "For: rating something",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:4%;top:10%;background:#F4FBF7;color:#13302A;font:700 3.6cqw/1.75 'Inter',Arial,sans-serif;padding:1.8cqw 3cqw;border-radius:1.5cqw\">Difficulty <span style=\"color:#2EC4A6\">★★★★☆</span><br>Cost <span style=\"color:#2EC4A6\">★★☆☆☆</span><br>Worth it <span style=\"color:#2EC4A6\">★★★★★</span></div></div>"
+    },
+    {
+     "id": "counter",
+     "name": "Big number",
+     "line": "For: one number that matters",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:5%;top:16%;color:#fff;text-shadow:0 .5cqw 1.6cqw rgba(0,0,0,.7)\"><div style=\"font:400 22cqw/0.9 'Bebas Neue',Impact,sans-serif;color:#2EC4A6\">30</div><div style=\"font:400 7cqw/1 'Bebas Neue',Impact,sans-serif\">DAYS</div></div></div>"
+    },
+    {
+     "id": "thought",
+     "name": "Inner voice",
+     "line": "For: what you were really thinking",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:4%;top:12%;background:#fff;color:#13302A;font:italic 600 4cqw 'Inter',Arial,sans-serif;padding:2cqw 3cqw;border-radius:4cqw;max-width:40%\">is this even working?</div><div style=\"position:absolute;left:38%;top:36%;width:3cqw;height:3cqw;border-radius:50%;background:#fff\"></div><div style=\"position:absolute;left:43%;top:42%;width:1.8cqw;height:1.8cqw;border-radius:50%;background:#fff\"></div></div>"
+    },
+    {
+     "id": "comment",
+     "name": "Viewer comment",
+     "line": "For: answering a question someone asked",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:4%;top:12%;background:#fff;color:#111;font:4cqw 'Inter',Arial,sans-serif;padding:2cqw 2.6cqw;border-radius:2cqw;max-width:44%;box-shadow:0 .6cqw 2cqw rgba(0,0,0,.35)\"><div style=\"font:700 3.2cqw 'Inter',Arial,sans-serif;color:#666;margin-bottom:.6cqw\">@viewer</div>Does this really work?</div></div>"
+    },
+    {
+     "id": "location",
+     "name": "Location tag",
+     "line": "For: saying where you are",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:4%;bottom:12%;background:#F4FBF7;color:#13302A;font:700 3.8cqw 'Inter',Arial,sans-serif;padding:1.2cqw 2.6cqw;border-radius:99px;display:flex;align-items:center\"><svg viewBox=\"0 0 24 24\" style=\"width:4.5cqw;height:4.5cqw;vertical-align:middle;margin-right:1cqw\"><path d=\"M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z\" fill=\"#2EC4A6\"/></svg>Somewhere new</div></div>"
+    },
+    {
+     "id": "quote",
+     "name": "Quote card",
+     "line": "For: a line worth repeating",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#13302A;display:flex;align-items:center;padding:0 9%\"><div style=\"font:400 8.5cqw/1.05 'Bebas Neue',Impact,sans-serif;color:#F4FBF7\"><span style=\"color:#2EC4A6\">“</span>THE HARD PART IS WEEK ONE.<span style=\"color:#2EC4A6\">”</span></div></div>",
+     "photoTag": ""
+    },
+    {
+     "id": "compare",
+     "name": "Side by side",
+     "line": "For: comparing before and after",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size;display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#000\"><div style=\"position:relative;background:url(img/05-vanity.jpg) center/cover;filter:grayscale(1) brightness(.9)\"><span style=\"position:absolute;left:5%;top:7%;background:#000;color:#fff;font:700 3.4cqw 'Inter',Arial,sans-serif;padding:.6cqw 1.6cqw\">DAY 1</span></div><div style=\"position:relative;background:url(img/05-vanity.jpg) center/cover;filter:saturate(1.3)\"><span style=\"position:absolute;left:5%;top:7%;background:#2EC4A6;color:#F4FBF7;font:700 3.4cqw 'Inter',Arial,sans-serif;padding:.6cqw 1.6cqw\">DAY 30</span></div></div>"
+    }
+   ]
+  },
+  {
+   "id": "big",
+   "title": "Big moments",
+   "line": "Bigger pieces, used once in a while.",
+   "kind": "library",
+   "keepWord": "extra|extras",
+   "layout": "tiles",
+   "keepValues": [
+    "keep"
+   ],
+   "movable": false,
+   "photoTag": "Test photo",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "options": [
+    {
+     "id": "freeze",
+     "name": "Freeze & draw",
+     "line": "For: stopping the action to explain it",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:rgba(255,255,255,.08);filter:saturate(.6)\"></div><svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%\"><path d=\"M30 40 C 60 20, 100 30, 110 60\" fill=\"none\" stroke=\"#2EC4A6\" stroke-width=\"4\" stroke-linecap=\"round\"/><path d=\"M104 52 L 112 64 L 98 62\" fill=\"none\" stroke=\"#2EC4A6\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg><div style=\"position:absolute;left:4%;top:7%;font:700 5cqw 'Caveat',cursive;color:#fff;text-shadow:0 .2cqw .8cqw #000\">wait for it</div><div style=\"position:absolute;right:3%;bottom:6%;background:#000;color:#fff;font:700 3cqw 'Space Mono',monospace;padding:.6cqw 1.4cqw\">❚❚ PAUSED</div></div>"
+    },
+    {
+     "id": "clones",
+     "name": "Clone grid",
+     "line": "For: arguing with yourself",
+     "html": "<div style=\"position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#000\"><div style=\"background:url(img/01-desk-talking.jpg) center 30%/cover;filter:none\"></div><div style=\"background:url(img/01-desk-talking.jpg) center 30%/cover;filter:hue-rotate(40deg)\"></div><div style=\"background:url(img/01-desk-talking.jpg) center 30%/cover;filter:saturate(1.6)\"></div><div style=\"background:url(img/01-desk-talking.jpg) center 30%/cover;filter:grayscale(1)\"></div></div>"
+    },
+    {
+     "id": "wordburst",
+     "name": "Word burst",
+     "line": "For: a punchline, one word at a time",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:4%;top:30%;display:flex;gap:2cqw;font:400 11cqw/1 'Bebas Neue',Impact,sans-serif;color:#fff;text-shadow:0 .5cqw 1.4cqw #000\"><span>WAIT.</span><span style=\"color:#2EC4A6\">FOR.</span><span>IT.</span></div></div>"
+    },
+    {
+     "id": "countdown",
+     "name": "Countdown",
+     "line": "For: building up to a reveal",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;left:8%;top:10%;font:400 34cqw/1 'Bebas Neue',Impact,sans-serif;color:#2EC4A6;text-shadow:0 .8cqw 2cqw rgba(0,0,0,.6)\">3</div></div>"
+    },
+    {
+     "id": "wipe",
+     "name": "Before/after wipe",
+     "line": "For: a reveal with a sliding line",
+     "html": "<div style=\"position:absolute;inset:0;container-type:size;background:url(img/06-shop-counter.jpg) center/cover;filter:saturate(1.3)\"></div><div style=\"position:absolute;inset:0 48% 0 0;background:url(img/06-shop-counter.jpg) left center/cover;filter:grayscale(1) brightness(.85);background-size:208% auto\"></div><div style=\"position:absolute;left:52%;top:0;bottom:0;width:4px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.6)\"></div><div style=\"position:absolute;left:52%;top:50%;transform:translate(-50%,-50%);width:9%;aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.5)\"></div>"
+    },
+    {
+     "id": "replay",
+     "name": "Instant replay",
+     "line": "For: \"let's see that again\"",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 2px,transparent 2px 5px)\"></div><div style=\"position:absolute;left:4%;top:8%;background:#e11;color:#fff;font:800 4cqw 'Inter',Arial,sans-serif;padding:.8cqw 2cqw;letter-spacing:.3cqw\">◀◀ REPLAY</div><div style=\"position:absolute;left:4%;bottom:8%;color:#fff;font:700 3.4cqw 'Space Mono',monospace;text-shadow:0 .2cqw .6cqw #000\">0.5x</div></div>"
+    },
+    {
+     "id": "scratch",
+     "name": "Record scratch",
+     "line": "For: \"yep, that's me\" freeze-frames",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;left:0;top:-8%;width:125%;height:125%;object-fit:cover;object-position:left center\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;filter:none;background:rgba(0,0,0,.18)\"></div><div style=\"position:absolute;left:4%;top:14%;font:700 7cqw/1.05 'Caveat',cursive;color:#fff;text-shadow:0 .3cqw 1cqw #000;max-width:46%\">Yep. That's me.<br><span style=\"font-size:4.4cqw\">You're probably wondering how I got here.</span></div></div>"
+    },
+    {
+     "id": "glitch",
+     "name": "Glitch cut",
+     "line": "Big moments only. The frame tears apart for a second.",
+     "html": "<img src=\"img/01-desk-talking.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"><div style=\"position:absolute;inset:0;container-type:size\"><div style=\"position:absolute;inset:0;background:url(img/01-desk-talking.jpg) center/cover;clip-path:inset(30% 0 55% 0);transform:translateX(4cqw);filter:hue-rotate(90deg)\"></div><div style=\"position:absolute;inset:0;background:url(img/01-desk-talking.jpg) center/cover;clip-path:inset(62% 0 25% 0);transform:translateX(-3cqw);filter:invert(1)\"></div></div>"
+    }
+   ]
+  }
+ ],
+ "stage": "look",
+ "stepId": "extras",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ]
+}

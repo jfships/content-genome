@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css">
+<style>
+.stage{perspective:1500px;perspective-origin:50% 30%}
+#floor{position:absolute;left:-600px;top:720px;width:3600px;height:2400px;transform-style:preserve-3d;
+ background-image:linear-gradient(rgba(214,223,234,.10) 2px,transparent 2px),linear-gradient(90deg,rgba(214,223,234,.10) 2px,transparent 2px);background-size:120px 120px}
+#floor svg{position:absolute;inset:0;width:3600px;height:2400px;overflow:visible}
+.st{position:absolute;width:640px;height:400px;transform-style:preserve-3d}
+.st .scr{position:absolute;inset:0}
+.st .rim{position:absolute;inset:-4px;border-radius:22px;border:4px solid var(--pop);opacity:0;box-shadow:0 0 50px rgba(255,122,26,.6)}
+.st .cap{position:absolute;left:0;top:-70px;font-size:40px}
+.st .cap span{font-family:var(--font-text);font-weight:700;font-size:20px;color:var(--second);margin-left:12px}
+#end{position:absolute;left:0;right:0;top:80px;text-align:center;font-size:60px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="7">
+ <div class="stage"><div class="w3" id="cam">
+  <div id="floor"><svg viewBox="0 0 3600 2400"><defs><filter id="gl" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+   <path id="track" d="M 900 560 L 1500 560 L 1700 360 L 2300 360 L 2500 560 L 3050 560" fill="none" stroke="rgba(214,223,234,.18)" stroke-width="8"/>
+   <path id="beam" d="M 900 560 L 1500 560 L 1700 360 L 2300 360 L 2500 560 L 3050 560" fill="none" stroke="#ff7a1a" stroke-width="10" stroke-linecap="round" filter="url(#gl)"/>
+   <circle id="pk" r="22" fill="#fff" filter="url(#gl)"/></svg></div>
+  <div class="st" id="S1"><div class="h cap">Brand<span>brand-genome</span></div><div class="scr"><img src="assets/screen-1.png"></div><div class="rim"></div></div>
+  <div class="st" id="S2"><div class="h cap">Idea<span>idea-genome</span></div><div class="scr"><img src="assets/screen-2.png"></div><div class="rim"></div></div>
+  <div class="st" id="S3"><div class="h cap">Plan + Edit<span>video-genome</span></div><div class="scr"><img src="assets/screen-3.png"></div><div class="rim"></div></div>
+ </div></div>
+ <div id="end" class="h">Three Tools. <span class="blk">One Pipeline.</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+const beam=document.getElementById("beam"),pk=document.getElementById("pk"),L=beam.getTotalLength();
+gsap.set("#floor",{rotationX:90,transformOrigin:"50% 0%"});
+// stations stand on the floor along the track (floor x -> world x, floor y -> depth)
+const pos=[[900-600,-560],[2000-600,-360],[3050-600,-560]];
+["#S1","#S2","#S3"].forEach((s,i)=>gsap.set(s,{x:pos[i][0]-320,y:720-400-30,z:pos[i][1]}));
+gsap.set(beam,{strokeDasharray:L,strokeDashoffset:L}); gsap.set("#end",{opacity:0});
+// camera starts on station 1, then travels with the packet
+gsap.set("#cam",{x:960-(pos[0][0]),z:300,y:40});
+tl.fromTo("#cam",{z:-600,rotationY:10},{z:520,rotationY:0,duration:1.1,ease:"expo.out"},0);
+tl.to("#S1 .rim",{opacity:1,duration:.3},1.0);
+const P={t:0}; function place(){const p=beam.getPointAtLength(P.t*L);pk.setAttribute("cx",p.x);pk.setAttribute("cy",p.y);}
+tl.fromTo(P,{t:0},{t:1,duration:3.6,ease:"power1.inOut",onUpdate:place,immediateRender:false},1.3);
+tl.fromTo(beam,{strokeDashoffset:L},{strokeDashoffset:0,duration:3.6,ease:"power1.inOut",immediateRender:false},1.3);
+// camera follows: dolly right while the packet travels
+tl.to("#cam",{x:960-pos[1][0],z:420,duration:1.8,ease:"power2.inOut"},1.3);
+tl.to("#S2 .rim",{opacity:1,duration:.3},2.9);
+tl.to("#cam",{x:960-pos[2][0],z:520,duration:1.8,ease:"power2.inOut"},3.1);
+tl.to("#S3 .rim",{opacity:1,duration:.3},4.8);
+// pull back to see the whole pipeline lit
+tl.to("#cam",{x:960-pos[1][0],z:-900,y:120,rotationX:-6,duration:1.3,ease:"power3.inOut"},5.0);
+tl.fromTo("#end",{opacity:0,y:20},{opacity:1,y:0,duration:.5,ease:"power3.out",immediateRender:false},5.8);
+window.__timelines["main"]=tl;
+</script></body></html>

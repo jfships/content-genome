@@ -1,0 +1,61 @@
+{
+ "kind": "fixed",
+ "single": "pick",
+ "singleFallback": "backup",
+ "altValue": "alt",
+ "buttons": [
+  {
+   "value": "pick",
+   "label": "Main"
+  },
+  {
+   "value": "backup",
+   "label": "Backup"
+  },
+  {
+   "value": "alt",
+   "label": "Alternative"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "pick",
+  "backup",
+  "alt"
+ ],
+ "keepWord": "option|options",
+ "round": "titles",
+ "stage": "plan",
+ "stepId": "titles",
+ "fonts": [
+  "inter"
+ ],
+ "title": "Title",
+ "what": "How the video reads in the feed. Each title is shown with the thumbnail idea it promises.",
+ "next": "Next: the thumbnail.",
+ "options": [
+  {
+   "id": "t1",
+   "name": "I Tried It for 30 Days",
+   "line": "Plain promise. Safe.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"230\" cy=\"77.0\" rx=\"24.200000000000003\" ry=\"29.700000000000003\" fill=\"#8a94a6\"/><path d=\"M161.8,180 C164.0,129.8 197.0,114.4 230,114.4 C263.0,114.4 296.0,129.8 298.2,180 Z\" fill=\"#8a94a6\"/><text x=\"16\" y=\"70\" font-family=\"Inter,Arial,sans-serif\" font-size=\"26\" font-weight=\"900\" fill=\"#EEF1F5\" text-anchor=\"start\">30 DAYS</text><text x=\"16\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"26\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"start\">LATER</text></svg>"
+  },
+  {
+   "id": "t2",
+   "name": "Day 1 vs Day 30",
+   "line": "The contrast does the work.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"230\" cy=\"77.0\" rx=\"24.200000000000003\" ry=\"29.700000000000003\" fill=\"#8a94a6\"/><path d=\"M161.8,180 C164.0,129.8 197.0,114.4 230,114.4 C263.0,114.4 296.0,129.8 298.2,180 Z\" fill=\"#8a94a6\"/><text x=\"16\" y=\"70\" font-family=\"Inter,Arial,sans-serif\" font-size=\"26\" font-weight=\"900\" fill=\"#EEF1F5\" text-anchor=\"start\">DAY 1</text><text x=\"16\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"26\" font-weight=\"900\" fill=\"#3DDC97\" text-anchor=\"start\">DAY 30</text></svg>",
+   "pick": true,
+   "why": "The thumbnail can show it in one glance."
+  },
+  {
+   "id": "t3",
+   "name": "Nobody Tells You This About Day 12",
+   "line": "Curiosity; must pay off.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"230\" cy=\"77.0\" rx=\"24.200000000000003\" ry=\"29.700000000000003\" fill=\"#8a94a6\"/><path d=\"M161.8,180 C164.0,129.8 197.0,114.4 230,114.4 C263.0,114.4 296.0,129.8 298.2,180 Z\" fill=\"#8a94a6\"/><text x=\"16\" y=\"70\" font-family=\"Inter,Arial,sans-serif\" font-size=\"26\" font-weight=\"900\" fill=\"#EEF1F5\" text-anchor=\"start\">DAY</text><text x=\"16\" y=\"100\" font-family=\"Inter,Arial,sans-serif\" font-size=\"26\" font-weight=\"900\" fill=\"#FF5A36\" text-anchor=\"start\">12</text></svg>"
+  }
+ ]
+}

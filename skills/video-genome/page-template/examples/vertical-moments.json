@@ -1,0 +1,44 @@
+{
+ "round": "vertical-moments",
+ "stage": "plan",
+ "stepId": "vertical-moments",
+ "fonts": [
+  "inter"
+ ],
+ "aspect": "9/16",
+ "layout": "tiles",
+ "kind": "library",
+ "keepValues": [
+  "keep"
+ ],
+ "keepWord": "Short|Shorts",
+ "buttons": [
+  {
+   "value": "keep",
+   "label": "Make a Short"
+  },
+  {
+   "value": "no",
+   "label": "Skip"
+  }
+ ],
+ "title": "Shorts moments",
+ "what": "Parts of the video that work alone. Each needs a hook in its first 3 seconds.",
+ "next": "Next: the ending and the ask.",
+ "options": [
+  {
+   "id": "v1",
+   "name": "Almost quit",
+   "at": "1:35–2:05",
+   "line": "Opens on \"I almost quit.\"",
+   "html": "<svg viewBox=\"0 0 108 192\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><g transform=\"translate(-26,0) scale(.5)\"><ellipse cx=\"160\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M98.0,180 C100.0,118.0 130.0,104.0 160,104.0 C190.0,104.0 220.0,118.0 222.0,180 Z\" fill=\"#8a94a6\"/></g><rect x=\"10\" y=\"124\" width=\"88\" height=\"18\" rx=\"2\" fill=\"#F2B33D\"/></svg>"
+  },
+  {
+   "id": "v2",
+   "name": "The 38%",
+   "at": "2:10–2:40",
+   "line": "Opens on the number.",
+   "html": "<svg viewBox=\"0 0 108 192\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><text x=\"54\" y=\"60\" font-family=\"Inter,Arial,sans-serif\" font-size=\"26\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">38%</text><g transform=\"translate(-26,40) scale(.5)\"><ellipse cx=\"160\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M98.0,180 C100.0,118.0 130.0,104.0 160,104.0 C190.0,104.0 220.0,118.0 222.0,180 Z\" fill=\"#8a94a6\"/></g></svg>"
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "kind": "fixed",
+ "single": "pick",
+ "singleFallback": "backup",
+ "altValue": "alt",
+ "buttons": [
+  {
+   "value": "pick",
+   "label": "Main"
+  },
+  {
+   "value": "backup",
+   "label": "Backup"
+  },
+  {
+   "value": "alt",
+   "label": "Alternative"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "pick",
+  "backup",
+  "alt"
+ ],
+ "keepWord": "option|options",
+ "round": "moment-look",
+ "stage": "build-f",
+ "stepId": "moments",
+ "journeyIf": [
+  "footage-first"
+ ],
+ "fonts": [
+  "inter"
+ ],
+ "title": "The 38% moment",
+ "what": "What appears while you say the number.",
+ "context": {
+  "time": "2:14",
+  "said": "and my focus went up thirty-eight percent",
+  "now": "you, center-left, talking to camera",
+  "changes": "only this moment; the next one is decided on its own page"
+ },
+ "next": "Next: the moment at 2:31.",
+ "options": [
+  {
+   "id": "big-number",
+   "name": "Big number",
+   "line": "The number fills the open side.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"90\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M28.0,180 C30.0,118.0 60.0,104.0 90,104.0 C120.0,104.0 150.0,118.0 152.0,180 Z\" fill=\"#8a94a6\"/><text x=\"225\" y=\"104\" font-family=\"Inter,Arial,sans-serif\" font-size=\"52\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">38%</text><text x=\"225\" y=\"126\" font-family=\"Inter,Arial,sans-serif\" font-size=\"11\" font-weight=\"600\" fill=\"#EEF1F5\" text-anchor=\"middle\">focus, day 1 vs day 30</text></svg>",
+   "pick": true,
+   "why": "One clear star; nothing to read but the number."
+  },
+  {
+   "id": "bar",
+   "name": "Bar grows",
+   "line": "Two bars, day 1 and day 30.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"90\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M28.0,180 C30.0,118.0 60.0,104.0 90,104.0 C120.0,104.0 150.0,118.0 152.0,180 Z\" fill=\"#8a94a6\"/><rect x=\"168\" y=\"110\" width=\"40\" height=\"40\" fill=\"#8a94a6\"/><rect x=\"226\" y=\"60\" width=\"40\" height=\"90\" fill=\"#F2B33D\"/><text x=\"188\" y=\"164\" font-family=\"Inter,Arial,sans-serif\" font-size=\"9\" font-weight=\"600\" fill=\"#EEF1F5\" text-anchor=\"middle\">Day 1</text><text x=\"246\" y=\"164\" font-family=\"Inter,Arial,sans-serif\" font-size=\"9\" font-weight=\"600\" fill=\"#EEF1F5\" text-anchor=\"middle\">Day 30</text></svg>"
+  },
+  {
+   "id": "behind",
+   "name": "Words behind you",
+   "line": "The number sits behind your shoulder.",
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><text x=\"118\" y=\"118\" font-family=\"Inter,Arial,sans-serif\" font-size=\"66\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">38%</text><ellipse cx=\"232\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M170.0,180 C172.0,118.0 202.0,104.0 232,104.0 C262.0,104.0 292.0,118.0 294.0,180 Z\" fill=\"#8a94a6\"/></svg>"
+  },
+  {
+   "id": "stamp",
+   "name": "Stamp",
+   "line": "A rubber-stamp number thuds onto the frame.",
+   "outside": true,
+   "html": "<svg viewBox=\"0 0 320 180\" style=\"position:absolute;inset:0;width:100%;height:100%;background:#1d2430\"><ellipse cx=\"90\" cy=\"70.0\" rx=\"22.0\" ry=\"27.0\" fill=\"#8a94a6\"/><path d=\"M28.0,180 C30.0,118.0 60.0,104.0 90,104.0 C120.0,104.0 150.0,118.0 152.0,180 Z\" fill=\"#8a94a6\"/><g transform=\"rotate(-8 230 95)\"><rect x=\"180\" y=\"66\" width=\"104\" height=\"54\" fill=\"none\" stroke=\"#F2B33D\" stroke-width=\"4\"/><text x=\"232\" y=\"106\" font-family=\"Inter,Arial,sans-serif\" font-size=\"32\" font-weight=\"900\" fill=\"#F2B33D\" text-anchor=\"middle\">+38%</text></g></svg>"
+  }
+ ]
+}

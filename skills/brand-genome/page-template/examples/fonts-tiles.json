@@ -1,0 +1,518 @@
+{
+ "round": "fonts-tiles",
+ "kind": "finalists",
+ "fonts": [
+  "abril-fatface",
+  "alfa-slab-one",
+  "amatic-sc",
+  "anton",
+  "architects-daughter",
+  "archivo-black",
+  "atkinson-hyperlegible",
+  "bebas-neue",
+  "big-shoulders-display",
+  "black-ops-one",
+  "bowlby-one",
+  "bungee",
+  "bungee-shade",
+  "caveat",
+  "courier-prime",
+  "covered-by-your-grace",
+  "crimson-pro",
+  "dm-sans",
+  "dm-serif-display",
+  "fraunces",
+  "fredoka",
+  "gloria-hallelujah",
+  "gochi-hand",
+  "homemade-apple",
+  "ibm-plex-sans",
+  "indie-flower",
+  "instrument-serif",
+  "inter",
+  "jetbrains-mono",
+  "kalam",
+  "karla",
+  "libre-franklin",
+  "lilita-one",
+  "lora",
+  "manrope",
+  "merriweather",
+  "monoton",
+  "nunito",
+  "oswald",
+  "outfit",
+  "passion-one",
+  "patrick-hand",
+  "permanent-marker",
+  "playfair-display",
+  "poppins",
+  "press-start-2p",
+  "reenie-beanie",
+  "righteous",
+  "rock-salt",
+  "rubik",
+  "rubik-glitch",
+  "russo-one",
+  "rye",
+  "sedgwick-ave",
+  "shadows-into-light",
+  "shrikhand",
+  "source-serif-4",
+  "space-grotesk",
+  "space-mono",
+  "special-elite",
+  "syne",
+  "titan-one",
+  "unbounded",
+  "vt323",
+  "work-sans"
+ ],
+ "title": "Fonts",
+ "what": "Fonts for big titles, regular text and small handwritten notes.",
+ "rule": "mark as many finalists as you like in each group. Next, I'll combine your finalists into font sets over a sample clip.",
+ "next": "Next: your finalists combined into sets, over a sample clip. You'll build one.",
+ "persona": "Wren",
+ "sections": [
+  {
+   "id": "title",
+   "title": "Big titles",
+   "line": "",
+   "kind": "finalists",
+   "keepWord": "finalist|finalists",
+   "layout": "tiles",
+   "aspect": "16/9",
+   "keepValues": [
+    "yes"
+   ],
+   "buttons": [
+    {
+     "value": "yes",
+     "label": "Finalist"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "movable": false,
+   "trimAbove": 6,
+   "options": [
+    {
+     "id": "title-anton",
+     "name": "Anton",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Anton',Impact,sans-serif;font-weight:400;--fs:0.9;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-archivo-black",
+     "name": "Archivo Black",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Archivo Black',Impact,sans-serif;font-weight:400;--fs:0.7;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-bebas-neue",
+     "name": "Bebas Neue",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;--fs:1.0;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>",
+     "pick": true,
+     "why": "Tall and clear; it fits a lot of words in a thumbnail."
+    },
+    {
+     "id": "title-oswald",
+     "name": "Oswald",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Oswald',Impact,sans-serif;font-weight:700;--fs:0.85;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-permanent-marker",
+     "name": "Permanent Marker",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Permanent Marker',Impact,sans-serif;font-weight:400;--fs:0.85;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-abril-fatface",
+     "name": "Abril Fatface",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Abril Fatface',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-alfa-slab-one",
+     "name": "Alfa Slab One",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Alfa Slab One',Impact,sans-serif;font-weight:400;--fs:0.7;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-big-shoulders-display",
+     "name": "Big Shoulders Display",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;--fs:0.9;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-bowlby-one",
+     "name": "Bowlby One",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Bowlby One',Impact,sans-serif;font-weight:400;--fs:0.7;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-dm-serif-display",
+     "name": "DM Serif Display",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'DM Serif Display',Impact,sans-serif;font-weight:400;--fs:0.8;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-fraunces",
+     "name": "Fraunces",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Fraunces',Impact,sans-serif;font-weight:900;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-fredoka",
+     "name": "Fredoka",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Fredoka',Impact,sans-serif;font-weight:700;--fs:0.8;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-instrument-serif",
+     "name": "Instrument Serif",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Instrument Serif',Impact,sans-serif;font-weight:400;--fs:0.9;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-lilita-one",
+     "name": "Lilita One",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Lilita One',Impact,sans-serif;font-weight:400;--fs:0.8;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-passion-one",
+     "name": "Passion One",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Passion One',Impact,sans-serif;font-weight:700;--fs:0.85;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-playfair-display",
+     "name": "Playfair Display",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Playfair Display',Impact,sans-serif;font-weight:900;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-righteous",
+     "name": "Righteous",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Righteous',Impact,sans-serif;font-weight:400;--fs:0.8;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-russo-one",
+     "name": "Russo One",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Russo One',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-syne",
+     "name": "Syne",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Syne',Impact,sans-serif;font-weight:800;--fs:0.6;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-titan-one",
+     "name": "Titan One",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Titan One',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-unbounded",
+     "name": "Unbounded",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Unbounded',Impact,sans-serif;font-weight:700;--fs:0.7;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-black-ops-one",
+     "name": "Black Ops One",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Black Ops One',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-bungee",
+     "name": "Bungee",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Bungee',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-bungee-shade",
+     "name": "Bungee Shade",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Bungee Shade',Impact,sans-serif;font-weight:400;--fs:0.7;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-monoton",
+     "name": "Monoton",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Monoton',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-press-start-2p",
+     "name": "Press Start 2P",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Press Start 2P',Impact,sans-serif;font-weight:400;--fs:0.6;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-rubik-glitch",
+     "name": "Rubik Glitch",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Rubik Glitch',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-rye",
+     "name": "Rye",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Rye',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    },
+    {
+     "id": "title-shrikhand",
+     "name": "Shrikhand",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Shrikhand',Impact,sans-serif;font-weight:400;--fs:0.75;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">I TRIED IT<br>FOR 30 DAYS</div></div>"
+    }
+   ]
+  },
+  {
+   "id": "text",
+   "title": "Text",
+   "line": "",
+   "kind": "finalists",
+   "keepWord": "finalist|finalists",
+   "layout": "tiles",
+   "aspect": "16/9",
+   "keepValues": [
+    "yes"
+   ],
+   "buttons": [
+    {
+     "value": "yes",
+     "label": "Finalist"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "movable": false,
+   "trimAbove": 6,
+   "options": [
+    {
+     "id": "text-atkinson-hyperlegible",
+     "name": "Atkinson Hyperlegible",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Atkinson Hyperlegible',Arial,sans-serif;font-weight:400;--fs:1.05;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-dm-sans",
+     "name": "DM Sans",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'DM Sans',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-ibm-plex-sans",
+     "name": "IBM Plex Sans",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'IBM Plex Sans',Arial,sans-serif;font-weight:400;--fs:1.05;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-inter",
+     "name": "Inter",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Inter',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-libre-franklin",
+     "name": "Libre Franklin",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Libre Franklin',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-lora",
+     "name": "Lora",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Lora',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-manrope",
+     "name": "Manrope",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Manrope',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-merriweather",
+     "name": "Merriweather",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Merriweather',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-nunito",
+     "name": "Nunito",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Nunito',Arial,sans-serif;font-weight:400;--fs:1.05;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-outfit",
+     "name": "Outfit",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Outfit',Arial,sans-serif;font-weight:400;--fs:1.05;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-poppins",
+     "name": "Poppins",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Poppins',Arial,sans-serif;font-weight:400;--fs:0.95;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-rubik",
+     "name": "Rubik",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Rubik',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-work-sans",
+     "name": "Work Sans",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Work Sans',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-courier-prime",
+     "name": "Courier Prime",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Courier Prime',Arial,sans-serif;font-weight:400;--fs:0.9;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-crimson-pro",
+     "name": "Crimson Pro",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Crimson Pro',Arial,sans-serif;font-weight:400;--fs:1.1;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-instrument-serif",
+     "name": "Instrument Serif",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Instrument Serif',Arial,sans-serif;font-weight:400;--fs:0.9;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-jetbrains-mono",
+     "name": "JetBrains Mono",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'JetBrains Mono',Arial,sans-serif;font-weight:400;--fs:0.9;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-karla",
+     "name": "Karla",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Karla',Arial,sans-serif;font-weight:400;--fs:1.05;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-source-serif-4",
+     "name": "Source Serif 4",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Source Serif 4',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-space-grotesk",
+     "name": "Space Grotesk",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Space Grotesk',Arial,sans-serif;font-weight:400;--fs:1.0;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    },
+    {
+     "id": "text-space-mono",
+     "name": "Space Mono",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Space Mono',Arial,sans-serif;font-weight:400;--fs:0.9;font-size:calc(19px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">Here's what actually happened.</div></div>"
+    }
+   ]
+  },
+  {
+   "id": "notes",
+   "title": "Notes",
+   "line": "",
+   "kind": "finalists",
+   "keepWord": "finalist|finalists",
+   "layout": "tiles",
+   "aspect": "16/9",
+   "keepValues": [
+    "yes"
+   ],
+   "buttons": [
+    {
+     "value": "yes",
+     "label": "Finalist"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "movable": false,
+   "trimAbove": 6,
+   "options": [
+    {
+     "id": "notes-caveat",
+     "name": "Caveat",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Caveat',cursive;font-weight:700;--fs:1.0;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-indie-flower",
+     "name": "Indie Flower",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Indie Flower',cursive;font-weight:400;--fs:0.9;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-kalam",
+     "name": "Kalam",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Kalam',cursive;font-weight:700;--fs:0.9;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-patrick-hand",
+     "name": "Patrick Hand",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Patrick Hand',cursive;font-weight:400;--fs:1.0;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-permanent-marker",
+     "name": "Permanent Marker",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Permanent Marker',cursive;font-weight:400;--fs:0.85;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-shadows-into-light",
+     "name": "Shadows Into Light",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Shadows Into Light',cursive;font-weight:400;--fs:0.95;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-amatic-sc",
+     "name": "Amatic SC",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Amatic SC',cursive;font-weight:700;--fs:1.15;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-architects-daughter",
+     "name": "Architects Daughter",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Architects Daughter',cursive;font-weight:400;--fs:0.85;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-covered-by-your-grace",
+     "name": "Covered By Your Grace",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Covered By Your Grace',cursive;font-weight:400;--fs:0.95;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-gloria-hallelujah",
+     "name": "Gloria Hallelujah",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Gloria Hallelujah',cursive;font-weight:400;--fs:0.8;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-gochi-hand",
+     "name": "Gochi Hand",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Gochi Hand',cursive;font-weight:400;--fs:0.9;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-space-mono",
+     "name": "Space Mono",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Space Mono',cursive;font-weight:400;--fs:0.9;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-special-elite",
+     "name": "Special Elite",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Special Elite',cursive;font-weight:400;--fs:0.8;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-homemade-apple",
+     "name": "Homemade Apple",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Homemade Apple',cursive;font-weight:400;--fs:0.8;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-reenie-beanie",
+     "name": "Reenie Beanie",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Reenie Beanie',cursive;font-weight:400;--fs:1.0;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-rock-salt",
+     "name": "Rock Salt",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Rock Salt',cursive;font-weight:400;--fs:0.7;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-sedgwick-ave",
+     "name": "Sedgwick Ave",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'Sedgwick Ave',cursive;font-weight:400;--fs:0.9;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    },
+    {
+     "id": "notes-vt323",
+     "name": "VT323",
+     "html": "<div style=\"position:absolute;inset:0;background:#F4FBF7;display:flex;align-items:center;justify-content:center;padding:5%\"><div style=\"font-family:'VT323',cursive;font-weight:400;--fs:0.95;font-size:calc(30px * var(--fs,1));line-height:1.2;color:#13302A;text-align:center\">start here →</div></div>"
+    }
+   ]
+  }
+ ],
+ "stage": "look",
+ "stepId": "fonts",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ],
+ "part": "1 of 2"
+}

@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080"><script src="shared/gsap.min.js"></script><link rel="stylesheet" href="shared/base.css"><style>
+.stage{perspective:1600px}
+#card{position:absolute;left:510px;top:200px;width:900px;height:562px;transform-style:preserve-3d}
+.face{position:absolute;inset:0;backface-visibility:hidden}
+#cap{position:absolute;left:0;right:0;bottom:80px;text-align:center;font-size:56px}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+ <div class="stage"><div id="card">
+  <div class="scr face" id="f0"><img src="assets/screen-1.png"></div>
+  <div class="scr face" id="f1"><img src="assets/screen-2.png"></div>
+ </div></div>
+ <div id="cap" class="h">Brand → <span class="blk" id="cw">Idea</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+gsap.set("#f1",{rotationY:180}); gsap.set("#cap",{opacity:0});
+tl.fromTo("#card",{y:300,rotationX:40,opacity:0},{y:0,rotationX:0,opacity:1,duration:1,ease:"expo.out"},0);
+tl.fromTo("#cap",{opacity:0},{opacity:1,duration:.4,immediateRender:false},.8);
+tl.to("#card",{rotationY:180,duration:.9,ease:"power3.inOut"},1.7);
+tl.to("#card",{z:-200,duration:.45,ease:"power2.out"},1.7).to("#card",{z:0,duration:.45,ease:"power2.in"},2.15);
+// second flip swaps the back face to the plan
+tl.set("#f0 img",{attr:{src:"assets/screen-3.png"}},3.3);
+tl.set("#cw",{textContent:"Plan"},3.9);
+tl.to("#card",{rotationY:360,duration:.9,ease:"power3.inOut"},3.4);
+tl.to("#card",{z:-200,duration:.45,ease:"power2.out"},3.4).to("#card",{z:0,duration:.45,ease:"power2.in"},3.85);
+window.__timelines["main"]=tl;
+</script></body></html>

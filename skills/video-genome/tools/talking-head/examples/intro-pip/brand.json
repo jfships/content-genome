@@ -1,0 +1,7 @@
+{
+ "name": "Sample Co",
+ "colors": {"canvas":"#0F1117","surface":"#141824","inset":"#1E2433","line":"#2A3346","ink":"#F8FAFC","muted":"#94A3B8","faint":"#64748B",
+            "accent":"#6366F1","accentSoft":"rgba(99,102,241,.18)","ok":"#22C55E","warn":"#FBBF24","warnInk":"#1A1205","bad":"#EF4444"},
+ "fonts": {"ui":"fonts/Geist-400.woff2","display":"fonts/SpaceGrotesk-400.woff2","mono":"fonts/JetBrainsMono-400.woff2"},
+ "shape_shadow": "0 0 0 1.5px #1E2433,0 30px 80px -24px rgba(0,0,0,.7)"
+}

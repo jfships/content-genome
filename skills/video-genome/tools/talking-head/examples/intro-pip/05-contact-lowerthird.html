@@ -1,0 +1,23 @@
+<title>05 Contact</title>
+<style>
+html.alpha #shape{box-shadow:0 12px 40px -10px rgba(0,0,0,.55)}
+</style>
+<div data-slot="shape">
+  <div class="L" id="La"><div class="row" style="transform:translate(-50%,-50%);gap:20px;font-size:40px;font-weight:500;color:#0F172A"><span id="icA"></span>Let's talk about what's possible</div></div>
+  <div class="L" id="Lb"><div class="row disp" style="transform:translate(-50%,-50%);gap:20px;font-size:44px;font-weight:600;letter-spacing:-.015em;color:#fff"><span id="icB"></span>Message me on my site</div></div>
+</div><!--/shape-->
+<script>
+const $=id=>document.getElementById(id);
+$('icA').innerHTML=M.icon('message',38,'#6366F1',2.4);
+$('icB').innerHTML=M.icon('message',40,'#fff',2.4);
+// clip in = 69.00. discuss 69.69 -> .69 ; Contact 72.13 -> 3.13
+M.scene({
+  W:2560,H:1440,bg:null,T:15.1,intro:0.6,center:[1280,1255],
+  SH:{a:{w:760,h:104,r:52,bg:'#F8FAFC',cam:1.55}, b:{w:640,h:116,r:58,bg:'#6366F1',cam:1.6}},
+  start:'a', SEQ:[[3.13,'b']],
+  layers:[
+    {el:'La',tin:0.6,tout:3.13},
+    {el:'Lb',tin:3.13,tout:null},
+  ],
+});
+</script>
