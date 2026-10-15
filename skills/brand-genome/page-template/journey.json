@@ -223,12 +223,12 @@
    ]
   },
   {
-   "id": "handoff",
-   "name": "Handoff",
+   "id": "wrap-up",
+   "name": "Wrap-up",
    "steps": [
     {
-     "id": "handoff",
-     "name": "Handoff",
+     "id": "wrap-up",
+     "name": "Wrap-up",
      "required": true
     }
    ]

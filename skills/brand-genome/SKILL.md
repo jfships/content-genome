@@ -49,7 +49,7 @@ Read this file first. When a stage starts, read its file in `stages/`, and only 
 | 7 | Brand kit | `stages/07-brand-kit.md` | Wordmark, name tag, series tag, sting + sound logo (WAV), endings and thumbnail libraries (+ thumbnail text spec), profile picture, banner |
 | 8 | Vertical (only if Shorts / Reels / TikTok were picked) | `stages/08-vertical.md` | How Shorts are shot + framing, tall backdrop, 9:16 layouts with framing specs, hook text, vertical captions, covers, Short endings, opener rules, safe box, audio policy, vertical pacing |
 | 9 | Brand Genome | `stages/09-brand-genome.md` | Written automatically first: profiles copy (bios, descriptions, templates, highlight covers, trailer plan) and the run sheet; then `Brand Genome.md`, the Brand Genome page (highlights), its offline copy and link shortcut |
-| 10 | Handoff | `stages/10-handoff.md` | The brand folder `README.md` for outside tools, photos still owed, then "bring an idea, or ask for a brainstorm, to idea-genome", or a clear stop |
+| 10 | Wrap-up | `stages/10-wrap-up.md` | The brand folder `README.md` for outside tools, photos still owed, then "bring an idea, or ask for a brainstorm, to idea-genome", or a clear stop |
 
 The writing voice is asked in Stage 1 (1d, chat questions, no page); the voice kit, image rules and break-from-reality bank are written automatically (Stages 1 and 4). The visible journey the pages show lives in `page-template/journey.json`; keep it in step with this table.
 
@@ -135,7 +135,7 @@ Stage docs in `00 Decisions/`: `persona-card.md` (demo only), `formats.md`, `loo
 
 ## Auto mode, in one line
 
-A real creator answers a short interview (who's on screen, what and why, who for, the feel, limits, name, likes and dislikes), then Claude fills every page as their proxy with a one-line why per pick, runs without waiting, and ends on the Brand Genome page for review; changes go through `revisit.md`. Full rules: `stages/00-setup.md` §6. Auto and demo runs suggest the creator's strongest model (today: Fable) at the start, because Claude makes every call, and say when it's done so they can switch back or stay on it for idea-genome (`stages/10-handoff.md` §4).
+A real creator answers a short interview (who's on screen, what and why, who for, the feel, limits, name, likes and dislikes), then Claude fills every page as their proxy with a one-line why per pick, runs without waiting, and ends on the Brand Genome page for review; changes go through `revisit.md`. Full rules: `stages/00-setup.md` §6. Auto and demo runs suggest the creator's strongest model (today: Fable) at the start, because Claude makes every call, and say when it's done so they can switch back or stay on it for idea-genome (`stages/10-wrap-up.md` §4).
 
 ## Demo mode, in one paragraph
 

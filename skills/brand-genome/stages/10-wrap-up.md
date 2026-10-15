@@ -1,4 +1,4 @@
-# Stage 10: Handoff
+# Stage 10: Wrap-up
 
 This skill ends here. It does not record, edit or render.
 
