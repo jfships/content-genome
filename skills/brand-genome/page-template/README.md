@@ -17,3 +17,5 @@ Images in the examples are referenced as `img/<benchmark file>`, `img/looks/<slu
 A card can play a rendered clip: `html` = `<video src="clips/<id>.mp4" poster="clips/<id>.jpg" preload="metadata" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>`, `play: "playClip"`, `playMs` = clip length + 0.3 s, and once per page in `head`:
 `<script>window.playClip=function(id,el){var v=el.querySelector("video");if(v){v.currentTime=0;v.play();}};window.playClipStop=function(id,el){var v=el.querySelector("video");if(v){v.pause();}};</script>`
 Publish the clips and posters with the page (`files`). Clips stay small: draft quality, 15 fps, 6 s.
+
+**Typing guard (keep it).** Saved notes echo back from the shared store. The template never redraws the page while a comment box has focus; it waits until the person leaves the box, and saves the note on leaving. Any page built by hand or changed later keeps this rule: a redraw that rebuilds the text box mid-typing throws the cursor out.

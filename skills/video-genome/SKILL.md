@@ -1,6 +1,6 @@
 ---
 name: video-genome
-description: "Make polished, on-brand YouTube episodes plus Shorts, Reels and TikTok cutdowns from any idea, brief, script, plan or footage, with any brand kit or none (included kits, or a Brand Genome if one exists). Runs a fixed step-by-step flow: word decisions asked one at a time in chat, visual and sound decisions on one page each, always with a main and a backup; plans from story libraries, builds spatial agency-level motion for screen demos, lays out every scene with real layout rules, tracks asset debt, builds graphics first or footage first, runs four gates of checks and logs results. Use for any channel video, cutdown or thumbnail."
+description: "Make polished, on-brand YouTube episodes, and Shorts, Reels and TikToks on their own short-form track (never a crop of the long edit), from any idea, brief, script, plan or footage, with any brand kit or none (included kits, or a Brand Genome if one exists). Runs a fixed step-by-step flow: word decisions asked one at a time in chat, visual and sound decisions on one page each, always with a main and a backup; plans from story libraries, builds spatial agency-level motion for screen demos, lays out every scene with real layout rules, tracks asset debt, builds graphics first or footage first, runs four gates of checks and logs results. Use for any channel video, Short or Reel, thumbnail, title or upload copy."
 ---
 
 # Video Genome
@@ -43,15 +43,17 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 
 ## Flow
 
+**A Short, Reel or TikTok runs on the Shorts track** (`shorts/README.md`): its own checklist, tall rough draft, pacing, checks and review, after the same Step 0. Never plan, pace or review a Short with the long-form steps below, and never make one by cropping the long edit.
+
 | Step | File | Gate |
 |---|---|---|
 | 0a. Brand | `setup/brand-intake.md` | A brand file exists and is read (Genome, Sheet, or picked kit) |
 | 0b. Tools | `setup/tools.md` | Brand folder found, tools ready, HyperFrames up to date, render capacity stated |
-| 0c. What they brought | `plan/intake.md` | The "this video is about" line confirmed; every run-sheet item marked taken or open; taken items confirmed in chat |
+| 0c. What they brought | `plan/intake.md` | The "this video is about" line confirmed; every run-sheet item marked taken or open; taken items confirmed in chat; draft quality picked and the rough-cutout note given |
 | 1. Plan | `plan/run-sheet.md` + `plan/story-libraries.md` | Every open item decided, one question or page each; gate 1 passes |
 | 2. Asset debt | `plan/asset-debt.md` + `craft/asset-library.md` | Everything owed listed, library searched, creator's list sent |
-| 3a. Graphics first | `paths/graphics-first.md` | Draft reviewed → recording → cut → placement → rebuild |
-| 3b. Footage first | `paths/footage-first.md` | Shoot brief → footage → cut → style of the edit → moments → build |
+| 3a. Graphics first | `paths/graphics-first.md` | Draft reviewed → recording → cut → placement → rebuild; final cutout method decided before the first final draft |
+| 3b. Footage first | `paths/footage-first.md` | Shoot brief → footage → cut → style of the edit → moments → build; final cutout method decided before the first final draft |
 | 4. Sound | `craft/sound.md` | Levels metered, mix to target |
 | 5. Checks | `review/checks.md` | Gates 2–4 pass, debt is zero, fresh reviewer scores 8+ |
 | 6. Deliver | `craft/deliverables.md` + `review/session-close.md` | Every file meets its platform's spec; brand review done |
@@ -75,7 +77,7 @@ Read when their part starts:
 - `craft/graphics-library.md`: the catalog of moves, with each one's fit
 - `craft/spatial/README.md`: spatial moves (3D camera, depth, screens in space) with working sources; read before planning the look of any screen demo or explainer
 - `craft/uniqueness.md`: how a video stays recognizably theirs
-- `craft/vertical.md`: Shorts, Reels and TikTok
+- `shorts/README.md`: the Shorts track (Shorts, Reels, TikTok); `craft/vertical.md` points there
 - `craft/thumbnails.md`
 - `craft/sound.md`
 - `craft/deliverables.md`
@@ -91,7 +93,7 @@ Read when their part starts:
 6. **Show the real thing.** When the script says they built, made or decided something, show the real artifact (screens, pages, footage, the object), each one visibly different.
 7. **Every scene is laid out, not placed.** Placement is re-decided per scene from what's on screen (`craft/layout.md`); every still passes its check.
 8. **Every graphic must be readable on a phone and earn its place.** A graphic that illustrates a line literally (boxes for "tools") is cut or replaced with something funny or concrete.
-9. **Converge on stills, not renders.** Stills take seconds and renders take minutes. Fix layout in stills first.
+9. **Converge on stills, not renders.** Stills take seconds and renders take minutes. Fix layout in stills first. Drafts render at the draft quality the creator picked in intake, with the fast rough cutout; finals render at full quality with the final cutout method, decided before the first final draft (`plan/intake.md`, `plan/run-sheet.md` item 14).
 10. **Score harshly, fix the worst three, repeat.** A fresh reviewer that didn't build the video scores it before the creator sees it.
 11. **Money and credits.** Before any paid generation (music, voices, images, video), name the tool, what it makes and the cost from the tool's own price check, and wait for approval unless the brand's budget pre-approves it.
 12. **Disclose what must be disclosed.** Realistic synthetic people, voices or events get the platform's label (check current rules).
@@ -154,7 +156,9 @@ Content Creation/
 | `brand_check.py` | Lists colors and fonts in a build that aren't in the brand's pack |
 | `remap_words.py` | Moves word times from the raw take onto the cut |
 | `mix.py` | Voice clean-up, music ducked under voice, SFX, sound logo, loudness master |
-| `reframe_vertical.py` | 16:9 footage → 9:16, following the speaker's head |
+| `reframe_vertical.py` | One 16:9 source clip → a 9:16 part, following the speaker's head (a part for a Short, never the long edit) |
+| `short_timing.py` | A Short's timing numbers: pace, gaps, first payoff, word budget (`shorts/checks.md`) |
+| `thumb_text.py` | Builds and measures a thumbnail's text block to the rules in `craft/thumbnails.md` |
 | `talking-head/` | Transcription, inspection, background blur/zoom, mattes, speaker-to-side, captions, composite, thumbnails, motion engine |
 
 ## Credits

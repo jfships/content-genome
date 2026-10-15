@@ -1,5 +1,7 @@
 # Checks: four gates
 
+*Long videos. A Short uses `shorts/checks.md` (its gates, timing numbers and scored review).*
+
 Nothing reaches the creator without passing the gates for its stage. Log every gate in `_review/review-log.md`: date, what was checked, scores, problems found, what changed.
 
 ## Gate 1: Plan (before asking for approval)
@@ -26,7 +28,6 @@ Nothing reaches the creator without passing the gates for its stage. Log every g
 - [ ] Kit placements match the brand (sting after the hook, series tag timing, end card, corner mark on or off).
 - [ ] **Layout:** the 12-point still check in `craft/layout.md` §3 on every scene still. Any "no" is fixed here.
 - [ ] Text sizes: ≥ 28 px on 16:9 (key phrases ≈ 76 px, nothing under ≈ 43 px per `craft/layout.md`); ≥ 44 / 34 / 30 px on 9:16.
-- [ ] Vertical stills with each platform's safe-zone overlay drawn on; nothing important underneath.
 - [ ] Anti-slideshow test (`craft/motion.md` §9) on 5 random stills.
 
 ## Gate 3: Render

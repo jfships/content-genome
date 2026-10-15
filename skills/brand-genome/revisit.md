@@ -15,6 +15,7 @@ The creator names the change in plain words. Find the decision in the table belo
 - **Interview answers:** re-ask only the questions that cover the change (one AskUserQuestion, current answer shown first). Never rerun the whole interview. In demo mode, the persona answers in character and the persona card is updated.
 - A real problem with the step itself (the options don't fit any more) can redo the step with fresh options, as in "redo [round]". Old pages stay readable.
 - Keep the scope: if the creator starts naming other changes mid-flow, finish this one, then take the next one the same way.
+- **A whole stage** ("change the vertical part", "redo my Shorts setup"): ask once which steps (multi-select, every step of that stage listed with its current pick, all ticked), then rerun only those steps in order, the same way; everything outside the stage stays. For Stage 8, the fixed rules are restated, never asked.
 
 ## 3. Check what it touches, and ask
 
@@ -71,8 +72,9 @@ One line: what changed and what didn't ("Palette changed to Warm clay. Wordmark 
 | the jingle, the notes | Sound logo | Stage 7.5 | `brand-kit.md` | nothing |
 | endings, outros | Ways to close a video | Stage 7.6 | `brand-kit.md` | nothing (library) |
 | thumbnails | Thumbnail layouts | Stage 7.7 | `brand-kit.md` | nothing (library) |
+| thumbnail text: font, colors, outline | Thumbnail text spec (taste values only; the craft rules are fixed) | Stage 7.7 | `brand-kit.md` | thumbnail layouts, Short covers (update by themselves) |
 | profile picture, banner | Profile picture / Banner | Stage 7.8–7.9 | `brand-kit.md`, `06 Profiles/` | profiles copy (highlight covers) |
-| Shorts, Reels, TikTok layouts | Vertical layouts | Stage 8 | `vertical.md` | nothing |
+| Shorts, Reels, TikTok: "change the vertical part", layouts, how I shoot Shorts, hook text, Shorts captions, covers, endings, trending sounds, Shorts pacing | Vertical system (any one step, or all of Stage 8) | Stage 8 | `vertical.md` | nothing (the Genome's Vertical heading and the page's Shorts section update by themselves) |
 | bios, descriptions, the checklist | Profiles copy / Run sheet | Stage 9 | `profiles.md`, `run-sheet.md` | nothing |
 
 The visible stages and steps match `page-template/journey.json`; if that file changes, update this table.

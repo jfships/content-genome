@@ -290,11 +290,20 @@ __HEAD__
       col = db.collection('votes-' + D.round);
       document.getElementById('copy').dataset.live = '1';
       col.onSnapshot(snap => {
-        snap.docs.forEach(doc => { const v = doc.data(); if (!v) return; if (doc.id === 'set') { state.set = v.set; state.setName = v.name; return; } state[doc.id] = {verdict:v.verdict, note:v.note||'', answered_by:v.answered_by||'creator', section:v.section}; });
-        render();
+        // never rebuild the page under someone who is typing: keep their own unsaved note, and redraw once they leave the box
+        const typingId = typingIn();
+        snap.docs.forEach(doc => { const v = doc.data(); if (!v) return; if (doc.id === 'set') { state.set = v.set; state.setName = v.name; return; } const keep = doc.id === typingId && state[doc.id] ? state[doc.id].note : undefined; state[doc.id] = {verdict:v.verdict, note:keep !== undefined ? keep : (v.note||''), answered_by:v.answered_by||'creator', section:v.section}; });
+        renderSoon();
       }, () => {});
     }).catch(()=>{});
   }
+  // ---------- typing guard ----------
+  // A saved note echoes back from the shared store and used to redraw the whole page, which threw the cursor out of the
+  // comment box mid-sentence. While a box inside the page has focus, redraws wait until the person leaves it.
+  let renderPending = false;
+  function typingIn(){ const a = document.activeElement; const m = document.getElementById('main'); if (!a || !m || !m.contains(a) || !/^(TEXTAREA|INPUT)$/.test(a.tagName)) return null; const c = a.closest('[data-id]'); return c ? c.dataset.id : '__field'; }
+  function renderSoon(){ if (typingIn()) { renderPending = true; return; } renderPending = false; render(); }
+  document.addEventListener('focusout', () => setTimeout(() => { if (renderPending && !typingIn()) { renderPending = false; render(); } }, 0));
   function persist(o){
     try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){}
     if (col) {
@@ -479,7 +488,7 @@ __HEAD__
     el.querySelectorAll('.mv').forEach(a => a.addEventListener('click', () => move(o, a.dataset.to)));
     const nw = el.querySelector('.notewrap');
     nw.querySelector('a').addEventListener('click', () => { nw.classList.add('open'); nw.querySelector('textarea').focus(); });
-    let t; nw.querySelector('textarea').addEventListener('input', e => { clearTimeout(t); t = setTimeout(()=>{ saveNote(o, e.target.value, el, s); }, 600); });
+    let t; const nta = nw.querySelector('textarea'); nta.addEventListener('input', e => { clearTimeout(t); t = setTimeout(()=>{ saveNote(o, e.target.value, el, s); }, 600); }); nta.addEventListener('blur', e => { clearTimeout(t); if ((state[o.id]||{}).note !== e.target.value) saveNote(o, e.target.value, el, s); });
     paint(el, o, s);
     return el;
   }

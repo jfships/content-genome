@@ -10,7 +10,7 @@ Check the developed idea against each item below. List what fits (one line each,
 | Voice: banned words, phrasing rules | Genome Voice |
 | House rules | Genome House rules, `00 Decisions/house-rules.md` |
 | Closes / CTA | Genome closes |
-| Vertical: does it cut into Shorts/Reels in the kept layouts | Genome vertical system |
+| Vertical: a Short follows the vertical rules (no sting, sound logo, end card or name tag; captions; hook first). A long video lists the Shorts it can feed, each its own Short record, never a cut of it | Genome vertical system |
 | Likeness: generated versions of the creator need reference photos | Genome likeness / asset index |
 | Truth rules: every claim real or labeled | `Who I Am.md` truth rules |
 | Format fit | Genome Formats |
@@ -29,6 +29,8 @@ Propose narrow exceptions where possible (e.g. banned hype words allowed only in
 
 "Done" means every line is `done`, or `open` with an owner and next step. A written file is not done. Show the list to the creator.
 
+Long video: the first table. A Short: the Short block below it.
+
 | Item | Done when |
 |---|---|
 | Promise | One line: what the viewer gets |
@@ -36,7 +38,7 @@ Propose narrow exceptions where possible (e.g. banned hype words allowed only in
 | Why now | One line, or "evergreen" |
 | Premise | One-line version of the idea |
 | Hook | 2–3 concepts ranked |
-| Turn / stakes | What changes and roughly when |
+| Turn / stakes | What changes and roughly when (long videos only) |
 | Viewer takeaway | What they leave with |
 | Only-you line | Written, or flagged as missing |
 | Proof | Have / need listed, with owners |
@@ -44,5 +46,25 @@ Propose narrow exceptions where possible (e.g. banned hype words allowed only in
 | Versions to test | None, or every row has versions + test type (paid rows have a quoted cost) and the creator's choice is recorded |
 | Genome conflicts | Every one ruled |
 | Titles + thumbnail | 3 titles, each with what the thumbnail shows |
-| Vertical cutdowns | Which parts stand alone as Shorts/Reels, or "none" |
+| Shorts this video can feed | Candidate moments, each becomes its own Short record (`short-form.md`), or "none" |
+| Score with evidence | Every line has evidence; guesses marked |
+
+### Short / Reel completeness block
+
+Replaces the table above for a Short. Same rule: every line `done`, or `open` with an owner.
+
+| Item | Done when |
+|---|---|
+| Stranger test | Pass, with one line of why. Fail = rejected, stop here |
+| One idea | One message; overlaps checked (`short-form.md` S12) |
+| Message | One sentence, 12 words or fewer |
+| Shape | Exactly one named from `catalog/short-shapes.md`; 3 real examples shown |
+| Hook, three layers | First frame, spoken line and 3–7 words of on-screen text, all written word for word |
+| Word count | Script words ≤ the budget for the target length |
+| Last line | Written exactly: payoff, button, hold ≤1 s or loop. No outro |
+| Send reason | Who sends it to whom, and why |
+| Goal per platform | YouTube Shorts (long video it points to), Instagram, TikTok, or "not posting" |
+| Proof | Have / need listed, with owners |
+| Versions to test | None, or every row filled |
+| Genome conflicts | Every one ruled |
 | Score with evidence | Every line has evidence; guesses marked |

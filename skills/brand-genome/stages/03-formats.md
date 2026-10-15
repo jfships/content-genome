@@ -12,16 +12,21 @@ Start from `../catalog/vertical-voice-formats.md` (format recipes), the research
 
 The example shows the shape; it is not a suggested episode. Say so if they ask.
 
+A Short format is its own show, written and shot for vertical, never "the long one, cut down". Propose Short formats from the catalog's Short formats table; each maps to one of the six Short shapes there.
+
 ## Ask
 
-Say what it changes: "A format is a show you repeat. It decides the shape of your videos, their length, and the piece viewers come back for. Pick the ones you'd make again and again." Multi-select; recommend one long-form and one vertical format as the starting pair. Keep 2–3.
+Say what it changes: "A format is a show you repeat. It decides the shape of your videos, their length, and the piece viewers come back for. Pick the ones you'd make again and again." Multi-select; recommend one long-form and one Short format as the starting pair (only a long one if no Short platform was picked in Stage 0). Keep 2–3.
 
 ## Write each kept format into `formats.md`
 
 - **Name** (it can become the series name in the series tag, Stage 7).
 - **Promise:** what the viewer gets, in one line.
-- **Structure:** 4–7 beats in order (hook, setup, the turn, the payoff…).
-- **Length:** long and/or vertical, and target duration.
+- **Long or Short:** one or the other. A show that has both is two formats (the long one and its Short), each with its own beats.
+- **Structure:** long: 4–7 beats in order (hook, setup, the turn, the payoff…). Short: its own beats, hook → one point → payoff or loop, and one message per Short (one sentence, ≤12 words).
+- **Short shape** (Short formats only): exactly one of the six in `../catalog/vertical-voice-formats.md` (Payoff first → loop · Myth-bust · List of 3 or fewer · Before / after · Skit / POV · Reaction / reply), by name.
+- **Source** (Short formats only): *written and shot for vertical* (the default: re-scripted, the hook recorded fresh for vertical) or *mined from a long video and rebuilt tall* (only moments that pass the stranger test: a stranger who never saw the long video gets the point and gets value; still a fresh hook and its own beats). Never a crop of the long edit.
+- **Length:** target duration (long: minutes; Short: inside the shape's range, 20–45 s by default).
 - **The recurring piece:** a segment, a signature moment, a running gag or a catchphrase that makes it recognizable.
 - **Personality check:** how it delivers the lead personality pick. A format that is only "informational" when "entertaining" leads needs a twist built in.
 - **Effort:** low / medium / high to make, so they can keep a steady cadence.
@@ -32,4 +37,4 @@ Story arcs, hooks and script frameworks are chosen per video in video-genome; do
 
 ## Output
 
-`formats.md`: the kept formats with structure and recurring piece, and the recommended starting pair.
+`formats.md`: the kept formats with structure, recurring piece, and for Short formats their shape and source; the recommended starting pair.

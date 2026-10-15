@@ -13,6 +13,7 @@ Run the ones that fit the entry. **Own idea or bank pick:** no candidates are ra
 | grid | Format × topic grid | Cross the Genome's kept formats with 4–6 themes; fill each cell with one line. | Many candidates fast |
 | series | Series extension | Read `results-log.md`; for the top performers, list part 2, the reverse, the sequel, the spin-off. | Ideas with an audience waiting |
 | timely | Timely hook | Search current news, seasons, platform trends in the niche. Keep only those the creator has a real take on. | Why-now ideas |
+| clip-mine | Shorts from a long video | Walk the long video's transcript. List every self-contained moment. Run the stranger test on each (`short-form.md` S2). Keep fewer, stronger ones. Each kept moment gets its hook re-recorded vertically and becomes its own Short record through `short-form.md`. A crop of the long edit is never a draft. | Short candidates that stand alone |
 | results | Results signal | From `results-log.md`, note which formats, angles, hooks and title formulas over- or under-performed. Feed into scoring, not into candidates directly. | Scoring weights |
 
 **In demo mode** the persona's niche is researched for real; candidates come from the persona card's proof and story beats.

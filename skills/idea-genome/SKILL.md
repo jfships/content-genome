@@ -1,6 +1,6 @@
 ---
 name: idea-genome
-description: Turn a theme, a half-formed thought or nothing at all into a scored, on-brand video idea with an angle and titles, saved as an Idea Record that video-genome plans from. Runs a brainstorm session when the creator arrives with no idea. Use when someone wants video ideas, topics, an angle, titles, or says "I have an idea for a video".
+description: Turn a theme, a half-formed thought or nothing at all into a scored, on-brand video idea with an angle and titles, saved as an Idea Record that video-genome plans from. Runs a brainstorm session when the creator arrives with no idea. Use when someone wants video ideas, topics, an angle, titles, or says "I have an idea for a video". Also plans Shorts/Reels/TikToks (new, or mined from a long video), one record per Short.
 ---
 
 # idea-genome: from nothing (or a hunch) to an Idea Record
@@ -17,6 +17,8 @@ editing        →  video-genome  →  build → review → deliver → results 
 ```
 
 **Scope.** This skill decides *what* a video is and *why it gets clicked*: theme, idea, angle, audience, the proof that backs it, the opening hook (ranked), and 3 titles, all developed with the creator. It does not write the script, pick the story arc or plan beats (video-genome's plan does that, because those depend on the video type and the footage). It never builds media.
+
+**Shorts are the exception on shape.** For a Short / Reel the shape *is* the idea, so it is settled here (`short-form.md`): one shape, the hook word for word, the word budget and the exact last line.
 
 **Every video starts from a developed Idea Record**, including when the creator brings their own idea. Their idea skips the brainstorm; it never skips development, the Genome cross-check, the completeness check or the record.
 
@@ -74,10 +76,10 @@ Content Creation/
 | 0. Load + explain | this file | Channel found, Genome and bank read, flow explained to the creator |
 | 1. Entry | below | Brainstorm, theme, own idea, or bank pick |
 | 2. Candidates | `catalog/sources.md` | 10–20 raw candidates in the bank (brainstorm and theme paths only) |
-| 3. Develop | `develop.md` | The pick, researched and worked through with the creator (ALL paths) |
+| 3. Develop | `develop.md` (a Short: `short-form.md`) | The pick, researched and worked through with the creator (ALL paths) |
 | 4. Angles | `catalog/angles.md` | Best angle + one alternative |
-| 5. Titles | `catalog/titles.md` | 3 titles, each with what the thumbnail must show |
-| 6. Hook concepts | `develop.md` §Hooks | 2–3 first-10-second concepts, ranked |
+| 5. Titles | `catalog/titles.md` | Long video: 3 titles, each with what the thumbnail must show. A Short: cover line + working title (`short-form.md`) |
+| 6. Hook concepts | `develop.md` §Hooks | Long video: 2–3 first-10-second concepts, ranked. A Short: hook text + first frame + spoken line, word for word (`short-form.md`) |
 | 7. Genome cross-check | `checks.md` | Fits listed; every conflict ruled by the creator |
 | 8. Completeness check | `checks.md` | Every item done, or open with an owner |
 | 9. Score | `scoring.md` | Explained once, then scored with one line of evidence per criterion |
@@ -100,6 +102,9 @@ After loading, tell the creator in 3–4 plain lines, before any question:
 - **I have a theme, not an idea:** run Step 2 limited to that theme, then Develop the creator's pick.
 - **Nothing, brainstorm with me:** theme check-in in `catalog/sources.md`, Step 2 across the channel's pillars, creator picks 1 (or a short queue) from the best 5, then Develop.
 - **Pick from the bank:** show the top 5 `parked` ideas in `idea-bank.md` with last score and what would raise it; the pick goes to Develop.
+- **A Short / Reel** (new, or a moment from a long video): go to `short-form.md`. It replaces develop.md's structure and hooks parts for this Short; checks, scoring and the record still run.
+
+**One Idea Record per Short.** Five Shorts are five records, each with its own message, shape, checks and score. The first-10-seconds hook and the 3 titles with thumbnails are long-form rules; on a Short the hook text, first frame and cover line do that job.
 
 ### Session rules (all steps)
 
@@ -124,7 +129,7 @@ Set the record's `status: ready`, update the bank and `## Ideas` in `START-HERE.
 ## Files this skill writes
 
 - `04 Ideas/idea-bank.md` from `templates/idea-bank.md`: one row per candidate, status `raw / shortlisted / ready / parked / rejected / made`.
-- `04 Ideas/IDEA NNN <slug>.md` from `templates/idea-record.md`. IDs never repeat; NNN is the next number in the bank.
+- `04 Ideas/IDEA NNN <slug>.md` from `templates/idea-record.md` (long template, or its Short variant for a Short). IDs never repeat; NNN is the next number in the bank.
 - `00 Decisions/genome-deviations.md` from `templates/genome-deviations.md`: created on the first approved exception if missing; one row per exception. Record only; never changes the Genome.
 - `START-HERE.md` `## Ideas` section.
 

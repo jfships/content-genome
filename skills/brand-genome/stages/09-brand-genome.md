@@ -12,7 +12,7 @@ Before compiling, write these from everything decided so far, and show them on t
 - **Templates:**
    - video description (hook line, what's inside, chapters slot, links, disclosure line)
    - pinned comment (a question or the free resource)
-   - vertical caption with its call to action
+   - vertical caption with its call to action, one per Short platform (Instagram: the call to action as on-screen text over the last line at most, e.g. comment a keyword; never an end card)
 - **Highlight covers (Instagram).** One per format, plus a few generic ones (behind the scenes, before-and-after), as icons in the brand's style.
 - **Channel trailer plan.** 30–60 s, built from the recommended first format: hook, who it's for, what they'll get, a glimpse of a signature moment, follow. The plan only; making it is a video skill's job.
 
@@ -20,11 +20,11 @@ Before compiling, write these from everything decided so far, and show them on t
 1. **Format:** which format from Stage 3 this video follows, or "one-off" with a reason.
 2. **Look:** the main look (or backup, with a reason), backdrop, any filters for specific scenes and moments-library items with their use-when, at most one "big moments only" item, and nothing from the No lists.
 3. **Movement and sound:** the motion table plus any change for this video (one line), and the music lanes per section.
-4. **Personality check:** for every beat, name what makes it deliver the lead personality (a joke, a twist, a reveal, a real artifact, a payoff). "It explains X" is not an answer. A beat that's hard to make entertaining without forcing it uses the brand's fallback (§2), never a forced joke. The ending gets the hardest look: a callback and a concrete reason to watch the next one, never a slow wind-down.
+4. **Personality check:** for every beat, name what makes it deliver the lead personality (a joke, a twist, a reveal, a real artifact, a payoff). "It explains X" is not an answer. A beat that's hard to make entertaining without forcing it uses the brand's fallback (§2), never a forced joke. The ending gets the hardest look: in a long video, a callback and a concrete reason to watch the next one, never a slow wind-down (long-form endings only). A Short ends on its payoff, a button line, a deadpan hold or a loop line, from the kept Short endings; never an outro, end card or subscribe ask.
 5. **How far they'll go:** every effect, joke and break-from-reality moment stays inside the level picked in Stage 1.
 6. **Break-from-reality check:** 2–3 spots proposed; 1–2 kept.
 7. **Story-visual briefs** follow the image rules.
-8. **Vertical rule:** 2–4 moments that stand alone, each with a hook in the first 3 s, in the vertical layouts.
+8. **Vertical rule:** each Short has its own one-sentence message (≤12 words), names one Short shape, and passes the stranger test alone. It is written for vertical, with its hook recorded fresh for vertical (hook text, spoken line and the creator on screen in the first 1–2 s, nothing before it), in a kept vertical layout with its framing spec. Never moments cut from the long edit; long footage only as parts rebuilt tall. No sting, sound logo, name tag or end card.
 9. **Voice check:** script and captions pass the voice kit and its AI-tell rules; every take gets the scorecard.
 10. **Truth check:** every claim traces to Proof in the identity doc. **Disclosure check** for synthetic images or voices.
 
@@ -36,14 +36,14 @@ In the brand folder root (`Brands/<Brand>/Brand Genome.md`), with a copy in the 
 
 1. **Creator:** name, handle per platform, target platforms, publishing rhythm, content language(s) (as language codes, e.g. `en`, `es`), on camera / voice only / avatar, mode (real / demo / auto), any tools the creator chose to use (from `START-HERE.md`), link to `Who I Am.md`, Proof and truth rules (copied in full), quirks and running gags. In demo: the full persona card and the avatar or face references, so a video skill can keep answering as the persona.
 2. **Why and feel:** why the content exists; who's on screen (main route + secondary); what the channel is about (one line); content personality, ranked, one line each, plus the fallback line (what carries a topic that's hard to make entertaining); how far they'll go (the level and what it means in practice); filming setup (where and with what)
-3. **Research:** link to `02 Research/channel-playbook.md`, its 5 most important defaults, and the benchmark channels (names + links). It guides how a video gets made; it never supplies ideas.
-4. **Formats:** the kept formats (structure, length, recurring piece, default vertical layout) and the starting pair. No topics, no ideas: those come from the creator per video.
+3. **Research:** link to `02 Research/channel-playbook.md`, its 5 most important defaults, the benchmark channels (names + links) and the short-form benchmarks (creators + example Short links). It guides how a video gets made; it never supplies ideas.
+4. **Formats:** the kept formats (long or Short, structure, length, recurring piece; Short formats also their Short shape, source and default vertical layout) and the starting pair. No topics, no ideas: those come from the creator per video.
 5. **Look (fixed picks + backups + alternatives):** palette (hex + role: background, words, pop color, second color, pale), main footage look (CSS recipe after tuning to the palette) + backup + alternatives, font set (files, sizes, weights, width scale) + caption font if different, text style + backup + alternatives, caption style + backup + alternatives and where captions are on. Then **Libraries:** filters for specific scenes, art styles for scenes you can't film, backdrops (default marked), small extras, big moments ("Big moments only." items marked), break-from-reality moments, each by catalog slug with its **use when** (the card line, or the creator's note). Also list each round's **No** options, so video skills never use them
 6. **Movement:** motion feel (catalog slug) + backup + alternatives, the entrances library, the motion table, the moves library (transitions and camera moves by catalog slug, with any rule), the spatial library (kept spatial moves by slug, their source files in `07 Asset Library/graphics/`, skipped ones, rules), + the vertical row
 7. **Sound:** the music library (each kind: mood, genre, BPM, prompt, where used), phrase length, the sound library (moment kind → files), rules, sound logo file
-8. **Kit:** wordmark, name tag, lockup, series tag, sting, sound logo, corner mark (or "off"), episode-number placement, the endings library, the thumbnail library, profile picture, banner: each with exact sizes, positions, timing, when it appears, and the source file path
-9. **Vertical:** layouts per format, caption spec, sting decision, tag and cover rules, the first-3-seconds rule, vertical music lane, safe zones (with the date checked)
-10. **Voice:** voice kit, AI-tell rules, take scorecard
+8. **Kit:** wordmark, name tag, lockup, series tag, sting, sound logo, corner mark (or "off"), episode-number placement, the endings library (long videos only), the thumbnail library + the thumbnail text spec (taste: font, colors, outline; craft: the fixed rules; the title is written after the thumbnail is locked and never repeats it), profile picture, banner: each with exact sizes, positions, timing, when it appears, and the source file path
+9. **Vertical:** how they shoot Shorts (native vertical / 4K center crop / from long, as parts) + framing marks; the tall backdrop (file); kept layouts per format, each with its framing spec; hook text (Main + Backup + alternatives, rules); vertical caption spec; Short endings library; opener rules (no sting, sound logo or name tag; "Part N" only inside the hook); safe box and 3:4 grid crop (with the date checked); cover templates; audio policy per platform + vertical music lane; vertical pacing row; vertical delivery (from the voice kit)
+10. **Voice:** voice kit (including vertical delivery), AI-tell rules, take scorecard
 11. **Break-from-reality moments:** the kept templates (chosen in Stage 4 and written up right after)
 12. **Images:** image rules, likeness references (best photo per slot), photos still owed, disclosure rules
 13. **Profiles:** bios, descriptions, templates, trailer plan

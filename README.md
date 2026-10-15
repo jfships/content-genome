@@ -1,12 +1,12 @@
-# genome-skills
+# content-genome
 
-[![Release](https://img.shields.io/github/v/release/jfships/genome-skills?color=ff7a1a&label=release)](../../releases/latest)
-[![License: MIT](https://img.shields.io/github/license/jfships/genome-skills?color=1b4f8a)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/jfships/content-genome?color=ff7a1a&label=release)](../../releases/latest)
+[![License: MIT](https://img.shields.io/github/license/jfships/content-genome?color=1b4f8a)](LICENSE)
 [![Claude skills](https://img.shields.io/badge/Claude-skills-1b4f8a)](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
 
 Three free Claude skills that take you from "I should start posting" to a finished, on-brand video. My channel's first episode was made with them.
 
-[![brand-genome builds the brand, idea-genome scores the idea and writes the titles, video-genome makes the video and cuts it into Shorts, Reels and TikToks](media/demo.gif)][episode]
+[![brand-genome builds the brand, idea-genome scores the idea and writes the titles, video-genome makes the video and its Shorts, Reels and TikToks](media/demo.gif)][episode]
 
 ## Install
 
@@ -19,9 +19,9 @@ Three free Claude skills that take you from "I should start posting" to a finish
 **Claude Code**
 
 ```bash
-git clone https://github.com/jfships/genome-skills
+git clone https://github.com/jfships/content-genome.git
 mkdir -p ~/.claude/skills
-cp -r genome-skills/skills/* ~/.claude/skills/
+cp -r content-genome/skills/* ~/.claude/skills/
 ```
 
 Then ask for what you want, e.g. "build my brand genome", "give me a video idea", "make this into a video".
@@ -48,7 +48,7 @@ Builds your whole content brand by picking from visuals instead of describing: i
 
 <img src="media/idea-genome.jpg" alt="idea-genome ranks three hooks for the first ten seconds" width="640">
 
-Turns a theme, a hunch or nothing at all into a scored video idea, with an angle, three titles with their own thumbnails, and ranked hooks for the first ten seconds.
+Turns a theme, a hunch or nothing at all into a scored video idea, with an angle, three titles with their own thumbnails, and ranked hooks for the first ten seconds. Shorts get their own path: one idea per Short, a shape built for 30 seconds, and a check that a stranger gets it without the long video.
 
 **You end up with:** an Idea Record per video.
 
@@ -56,7 +56,7 @@ Turns a theme, a hunch or nothing at all into a scored video idea, with an angle
 
 <img src="media/video-genome.jpg" alt="video-genome writes the script and plans every shot" width="640">
 
-Takes the brand and the idea, writes the script and plans every shot. Then it builds and checks the video: long episodes plus Shorts, Reels and TikTok cutdowns, with motion graphics, sound and thumbnails.
+Takes the brand and the idea, writes the script and plans every shot. Then it builds and checks the video: long episodes, plus Shorts, Reels and TikToks on their own track (written and built tall, never a crop of the long edit), with motion graphics, sound, thumbnails, titles and upload copy.
 
 **You end up with:** finished video files and a results log.
 

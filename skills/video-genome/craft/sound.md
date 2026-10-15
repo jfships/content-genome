@@ -26,7 +26,7 @@ The brand's sound lanes, SFX set, rules and sound logo decide what the brand sou
 
 - One bed per section, from the lanes the brand assigns to that part (hook, working sections, reveal, ending).
 - It switches or drops at turning points. Silence before a big line is a tool.
-- Long-form and vertical can use different lanes; the brand says which.
+- Long-form and vertical can use different lanes; the brand says which. Shorts: voice-led, music ducked about 15–25 dB, sparse dry SFX; music rights per platform in `shorts/platforms.md` (a YouTube Short over 60 s with a Content ID claim is blocked).
 
 ## Sound effects
 
@@ -39,7 +39,7 @@ The brand's sound lanes, SFX set, rules and sound logo decide what the brand sou
 - Three groups: voice, music, SFX. Music is **carved** under the voice (a dip in the voice's frequencies, e.g. `hyperframes-audio`'s carve), not just lowered.
 - Voice chain starting point: `highpass=f=80, afftdn=nf=-25, acompressor=threshold=-20dB:ratio=3`.
 - Final master: `loudnorm=I=-14:TP=-1` (YouTube normalizes to −14 LUFS). Drafts without voice: −16 LUFS.
-- Sound logo on the sting, every long-form episode.
+- Sound logo on the sting, every long-form episode. Never on a Short.
 - Audio-only fixes don't need a re-render: rebuild the mix from the same clip list and remux onto the video.
 
 ## Checks (part of gate 3)

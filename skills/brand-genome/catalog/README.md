@@ -22,5 +22,5 @@ The creator builds a style without knowing any design words. They never describe
 | `moments.md` | Big moments, break-from-reality moments | 4.9, 4.10 |
 | `motion.md` | Motion feels with their entrances, transitions, camera | 5 |
 | `sound.md` | Music lanes, sound-effect roles, sound logo styles | 6, 7 |
-| `kit.md` | Wordmarks, series tags, stings, thumbnail systems, ways to close a video, corner marks, profile pictures and banners | 7 |
-| `vertical-voice-formats.md` | Vertical layouts, caption styles, voice styles, format recipes | 1d, 3, 8 |
+| `kit.md` | Wordmarks, series tags, stings, thumbnail systems (with the thumbnail text spec), ways to close a video, corner marks, profile pictures and banners | 7 |
+| `vertical-voice-formats.md` | Vertical layouts (with framing families), hook text styles, Short covers, Short endings, voice styles, format recipes (long and Short) | 1d, 3, 8 |

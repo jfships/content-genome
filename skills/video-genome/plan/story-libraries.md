@@ -29,7 +29,7 @@ The **angle** and **title formula** come from the Idea Record; don't re-pick the
 - Relentless pacing + strategic silence more than once: one held pause, max.
 - Faceless voiceover + real testimonial on camera: fine, but the testimonial is the only face; say so.
 - Hard ask CTA + "entertaining" leading the personality: use soft or loop instead unless the brand says otherwise.
-- Hook → Context → Payoff → Loop belongs to vertical; for long-form pick another framework.
+- Hook → Context → Payoff → Loop belongs to vertical; for long-form pick another framework. Shorts don't use the story stack: they pick one shape from `shorts/shapes.md`.
 
 **Vary on purpose.** Read the last 3 episodes' stacks in `03 Videos/results-log.md`. Don't repeat the same arc and hook pair twice in a row unless the log shows it over-performing.
 

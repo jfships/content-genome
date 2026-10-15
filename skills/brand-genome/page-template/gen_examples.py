@@ -1065,7 +1065,7 @@ CLOSE = [  # id, name, tier, line, html
  ("credits", "Credits roll", "R", "For: big episodes. Thanks scroll up like a film.",
   endscreen(f'<div style="position:absolute;inset:0;background:#0c0c0c"></div><div style="position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:2.4cqw;color:#fff;text-align:center;font:500 3.6cqw/1.3 {TEXT}">'
             f'<div style="opacity:.55">Filmed, edited and over-thought by</div><div style="font:400 10cqw/1 {F["anton"]}">{WM_NAME.upper()}</div><div style="opacity:.55;margin-top:2cqw">Music</div><div>Your music lane</div><div style="opacity:.55;margin-top:2cqw">Thanks for watching</div><div style="color:{HL}">{WM_HANDLE}</div></div>', bg="#0c0c0c")),
- ("loop", "Loop back to the hook", "R", "For: Shorts-style endings. The last line leads into the first.",
+ ("loop", "Loop back to the hook", "R", "For: a long video that ends where it began. (Shorts loop in their own way.)",
   endscreen(f'<div style="position:absolute;left:6%;bottom:12%;right:40%;display:grid;gap:1.6cqw"><span style="justify-self:start;background:{HL};color:{BG};font:800 3cqw {TEXT};padding:1cqw 2.4cqw;border-radius:99cqw">↺ BACK TO THE START</span><div style="font:400 9cqw/.9 {TITLE};color:#fff;text-shadow:0 .4cqw 1.4cqw rgba(0,0,0,.6)">{SAMPLE_TITLE}</div></div>', img=FACE, dim=.15)),
  ("freeze", "Freeze-frame sign-off", "R", "For: ending on a funny or honest moment.",
   endscreen(f'<div style="position:absolute;inset:0;backdrop-filter:grayscale(1) contrast(1.1)"></div><div style="position:absolute;left:6%;top:14%;display:grid;gap:2cqw"><span style="font:800 3cqw {MONO};color:#fff;letter-spacing:.3cqw">❚❚ PAUSED</span><div style="font:400 9cqw/.9 {TITLE};color:#fff;background:{TX};padding:1.4cqw 3cqw">SEE YOU NEXT TIME.</div></div>', img=FACE, dim=.1)),
@@ -1174,49 +1174,54 @@ finalist_flow("banner", "Banner", "The wide image at the top of your channel pag
  [b[0] for b in BAN[:4]], "Next: layouts for Shorts, Reels and TikTok.", ["anton", "bebas-neue", "inter", "caveat"], aspect="16/14")
 
 # ---------- 17. Vertical: layouts library, each a real 9:16 test frame in a phone, with the app's buttons ghosted ----------
+# Built on the native vertical test photo, never a 16:9 photo cropped to 9:16. Every phone draws the safe box
+# (x 65-930, y 250-1450 on 1080x1920, dashed) and the Instagram 3:4 grid crop (y 240-1680 survive, dotted lines).
+VF = "img/10-car-vertical.jpg"
+SAFE = ('<div style="position:absolute;left:6.02%;width:80.09%;top:13.02%;height:62.5%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none"></div>'
+        + ''.join(f'<i style="position:absolute;left:0;right:0;top:{y};border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block"></i>' for y in ("12.5%", "87.5%")))
 def phone(inner):
     ui = (f'<div style="position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5">'
           + ''.join(f'<i style="width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block"></i>' for _ in range(4)) + '</div>'
           f'<div style="position:absolute;left:5%;right:20%;bottom:5%;display:grid;gap:2cqw;opacity:.55;z-index:5"><i style="height:3cqw;width:45%;background:rgba(255,255,255,.9);border-radius:2cqw;display:block"></i><i style="height:2.6cqw;width:80%;background:rgba(255,255,255,.8);border-radius:2cqw;display:block"></i></div>')
     return (f'<div style="position:absolute;inset:0;container-type:size;background:#e9ecea;display:grid;place-items:center">'
             f'<div style="height:94%;aspect-ratio:9/16;background:#111;border-radius:6cqh;padding:1.2cqh;box-sizing:border-box;box-shadow:0 1cqh 3cqh rgba(0,0,0,.25)">'
-            f'<div style="position:relative;width:100%;height:100%;border-radius:5cqh;overflow:hidden;container-type:inline-size;background:{TX}">{inner}{ui}</div></div></div>')
+            f'<div style="position:relative;width:100%;height:100%;border-radius:5cqh;overflow:hidden;container-type:inline-size;background:{TX}">{inner}{ui}{SAFE}</div></div></div>')
 SCREEN = (f'<div style="position:absolute;inset:0;background:{LT};padding:12% 9%;display:grid;align-content:start;gap:4cqw">'
           f'<div style="font:800 5cqw {TEXT};color:{TX};opacity:.6">My 30 days</div><div style="display:flex;align-items:flex-end;gap:3cqw;height:40cqw">'
           + ''.join(f'<i style="flex:1;height:{h}%;background:{HL if k == 4 else TX};border-radius:1.4cqw 1.4cqw 0 0;display:block"></i>' for k, h in enumerate([22, 35, 30, 55, 92])) +
           f'</div><div style="display:flex;justify-content:space-between;font:700 4cqw {TEXT};color:{TX}"><span>Day 1</span><span>Day 30</span></div></div>')
-VIMG = lambda img, pos="62% 35%", extra="": f'<img src="{img}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{pos};{extra}">'
-VCAP = lambda top="58%": f'<div style="position:absolute;left:8%;right:22%;top:{top};text-align:center;z-index:4"><span style="font:800 6.4cqw/1.25 {TEXT};color:#fff;background:{TX};padding:.6cqw 2cqw;box-decoration-break:clone;-webkit-box-decoration-break:clone">the part nobody <span style="color:{HL}">tells</span> you</span></div>'
+VIMG = lambda img, pos="50% 50%", extra="": f'<img src="{img}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{pos};{extra}">'
+VCAP = lambda top="62%": f'<div style="position:absolute;left:8%;right:14%;top:{top};text-align:center;z-index:4"><span style="font:900 7cqw/1.25 {TEXT};color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.6);white-space:nowrap">NOBODY <span style="color:{HL}">TELLS</span> YOU</span></div>'
 VTITLE = lambda top="9%", col="#fff": f'<div style="position:absolute;left:7%;right:7%;top:{top};font:400 13cqw/.9 {TITLE};color:{col};text-shadow:0 .5cqw 2cqw rgba(0,0,0,.5);z-index:4">{SAMPLE_TITLE}</div>'
 VERT = [  # id, name, tier, line, inner
- ("full-face", "Full frame + captions", "C", "For: talking straight to camera.", VIMG(FACE) + VCAP()),
+ ("full-face", "Full frame + captions", "C", "For: talking straight to camera.", VIMG(VF) + VCAP()),
  ("title-top", "Title on top", "C", "For: a hook that needs words on screen from the first second.",
-  f'<div style="position:absolute;left:0;right:0;top:24%;bottom:0">{VIMG(FACE, "62% 30%")}</div>' + VTITLE("7%") + VCAP("66%")),
+  f'<div style="position:absolute;left:0;right:0;top:24%;bottom:0">{VIMG(VF, "50% 28%")}</div>' + VTITLE("7%") + VCAP("66%")),
  ("split", "Split: screen + you", "C", "For: showing something while you explain it.",
-  f'<div style="position:absolute;left:0;right:0;top:0;height:50%;overflow:hidden">{SCREEN}</div><div style="position:absolute;left:0;right:0;bottom:0;height:50%">{VIMG(FACE, "64% 30%")}</div>'
-  f'<i style="position:absolute;left:0;right:0;top:49.6%;height:.8%;background:{HL};z-index:3"></i>' + VCAP("46%")),
+  f'<div style="position:absolute;left:0;right:0;top:0;height:60%;overflow:hidden">{SCREEN}</div><div style="position:absolute;left:0;right:0;bottom:0;height:40%">{VIMG(VF, "50% 22%")}</div>'
+  f'<i style="position:absolute;left:0;right:0;top:59.6%;height:.8%;background:{HL};z-index:3"></i>' + VCAP("56.5%")),
  ("pip", "Picture in picture", "C", "For: the thing is the star, you comment in the corner.",
-  SCREEN + f'<div style="position:absolute;left:8%;top:56%;width:38%;aspect-ratio:3/4;border-radius:4cqw;overflow:hidden;border:1cqw solid {HL};z-index:4">{VIMG(FACE, "66% 30%")}</div>' + VCAP("44%")),
+  SCREEN + f'<div style="position:absolute;left:6%;top:50.5%;width:33.3%;aspect-ratio:3/4;border-radius:4cqw;overflow:hidden;border:1cqw solid {HL};z-index:4">{VIMG(VF, "50% 24%")}</div>' + VCAP("42%")),
  ("card-text", "Text card", "C", "For: a list or a tip, no footage needed.",
   f'<div style="position:absolute;inset:0;background:{BG};padding:14% 8%;display:grid;align-content:start;gap:5cqw">'
   f'<div style="font:400 13cqw/.9 {TITLE};color:{TX}">{SAMPLE_TITLE}</div>' + ''.join(f'<div style="font:700 6cqw {TEXT};color:{TX};border-left:1.6cqw solid {HL};padding-left:3cqw">{x}</div>' for x in SAMPLE_LIST) + '</div>'),
  ("backdrop", "You over a backdrop", "R", "For: your room removed, a color behind you.",
-  f'<div style="position:absolute;inset:0;background:{HL}"></div>{VIMG(FACE, "64% 30%", "-webkit-mask-image:radial-gradient(ellipse 45% 40% at 60% 52%,#000 70%,transparent 72%);mask-image:radial-gradient(ellipse 45% 40% at 60% 52%,#000 70%,transparent 72%)")}' + VTITLE("8%", TX) + VCAP("70%")),
+  f'<div style="position:absolute;inset:0;background:{HL}"></div>{VIMG(VF, "50% 28%", "-webkit-mask-image:radial-gradient(ellipse 42% 38% at 50% 44%,#000 70%,transparent 72%);mask-image:radial-gradient(ellipse 42% 38% at 50% 44%,#000 70%,transparent 72%)")}' + VTITLE("8%", TX) + VCAP("70%")),
  ("before-after", "Before / after", "R", "For: showing a change, top vs bottom.",
-  f'<div style="position:absolute;left:0;right:0;top:0;height:50%">{VIMG(FACE, "62% 28%", "filter:grayscale(1) brightness(.75)")}</div><div style="position:absolute;left:0;right:0;bottom:0;height:50%">{VIMG(FACE, "62% 28%", "filter:saturate(1.25)")}</div>'
+  f'<div style="position:absolute;left:0;right:0;top:0;height:50%">{VIMG(VF, "50% 28%", "filter:grayscale(1) brightness(.75)")}</div><div style="position:absolute;left:0;right:0;bottom:0;height:50%">{VIMG(VF, "50% 28%", "filter:saturate(1.25)")}</div>'
   + ''.join(f'<span style="position:absolute;left:6%;top:{t};z-index:4;font:400 9cqw/1 {TITLE};background:{b};color:{c};padding:1cqw 3cqw">{w}</span>' for t, b, c, w in [("6%", "#fff", TX, "DAY 1"), ("56%", HL, TX, "DAY 30")])),
  ("reaction", "Reaction", "R", "For: reacting to something, your face small at the bottom.",
-  f'<div style="position:absolute;left:0;right:0;top:0;height:66%;overflow:hidden">{SCREEN}</div><div style="position:absolute;left:0;right:0;bottom:0;height:34%">{VIMG(FACE, "64% 26%")}</div>'
-  f'<span style="position:absolute;left:6%;top:61%;z-index:4;background:{EX2};color:{TX};font:800 5cqw {TEXT};padding:1cqw 2.6cqw;border-radius:2cqw">wait for it…</span>'),
+  f'<div style="position:absolute;left:0;right:0;top:44.7%;bottom:0">{VIMG(VF, "50% 18%")}</div><div style="position:absolute;left:0;right:0;top:13%;aspect-ratio:16/9;overflow:hidden;z-index:2">{SCREEN}</div>'
+  f'<span style="position:absolute;left:6%;top:47%;z-index:4;background:{EX2};color:{TX};font:800 5cqw {TEXT};padding:1cqw 2.6cqw;border-radius:2cqw">wait for it…</span>' + VCAP("67%")),
  ("quote", "Big quote", "R", "For: one line you want people to screenshot.",
   f'<div style="position:absolute;inset:0;background:{TX};display:grid;align-content:center;padding:0 9%;gap:4cqw"><div style="font:400 30cqw/.6 {F["fr"]};color:{HL}">“</div>'
   f'<div style="font:400 11cqw/1 {F["is"]};color:{BG}">{SAMPLE_CAPTION[0].upper() + SAMPLE_CAPTION[1:]}.</div><div style="font:700 5cqw {TEXT};color:{HL}">{WM_HANDLE}</div></div>'),
  ("listicle", "Countdown list", "F", "For: top-3 style videos, the number stays on screen.",
-  f'<div style="position:absolute;left:0;right:0;top:24%;bottom:0">{VIMG(FACE, "62% 30%")}</div>' + f'<div style="position:absolute;left:6%;top:4%;z-index:4;display:flex;gap:3cqw;align-items:center"><span style="font:400 22cqw/.8 {TITLE};color:{HL}">#3</span><span style="font:800 6cqw {TEXT};color:#fff;background:{TX};padding:1cqw 2.4cqw">{SAMPLE_LIST[2][4:]}</span></div>'),
+  f'<div style="position:absolute;left:0;right:0;top:24%;bottom:0">{VIMG(VF, "50% 28%")}</div>' + f'<div style="position:absolute;left:6%;top:4%;z-index:4;display:flex;gap:3cqw;align-items:center"><span style="font:400 22cqw/.8 {TITLE};color:{HL}">#3</span><span style="font:800 6cqw {TEXT};color:#fff;background:{TX};padding:1cqw 2.4cqw">{SAMPLE_LIST[2][4:]}</span></div>'),
  ("zoom-frame", "Framed window", "F", "For: a softer look, the shot inside a border in your color.",
-  f'<div style="position:absolute;inset:0;background:{EX2}"></div><div style="position:absolute;left:7%;right:7%;top:24%;bottom:22%;border-radius:6cqw;overflow:hidden;border:1.4cqw solid {TX}">{VIMG(FACE, "64% 30%")}</div>' + VTITLE("3%", TX) + VCAP("78%")),
+  f'<div style="position:absolute;inset:0;background:{EX2}"></div><div style="position:absolute;left:7%;right:7%;top:24%;bottom:22%;border-radius:6cqw;overflow:hidden;border:1.4cqw solid {TX}">{VIMG(VF, "50% 28%")}</div>' + VTITLE("3%", TX) + VCAP("78%")),
  ("notes", "Handwritten notes", "F", "For: explaining something, notes drawn over the shot.",
-  VIMG(FACE, "64% 30%") + f'<div style="position:absolute;left:6%;top:60%;z-index:4;font:700 10cqw/1 {NOTES};color:#fff;transform:rotate(-5deg);text-shadow:0 .4cqw 1.4cqw rgba(0,0,0,.7)">{SAMPLE_LABEL}</div>'
+  VIMG(VF, "50% 28%") + f'<div style="position:absolute;left:6%;top:60%;z-index:4;font:700 10cqw/1 {NOTES};color:#fff;transform:rotate(-5deg);text-shadow:0 .4cqw 1.4cqw rgba(0,0,0,.7)">{SAMPLE_LABEL}</div>'
   f'<svg viewBox="0 0 100 20" style="position:absolute;left:6%;top:69%;width:52%;z-index:4;overflow:visible"><path d="M3 12 C 30 4, 60 18, 97 6" fill="none" stroke="{EX2}" stroke-width="3.5" stroke-linecap="round"/></svg>')]
 # Cut-out and green-screen layouts use a plain gray silhouette for the creator (never another person's photo).
 VSIL = lambda left="50%", h="58%", bottom="0", col="#8d8d8d": (f'<svg viewBox="0 0 100 120" preserveAspectRatio="xMidYMax meet" style="position:absolute;left:{left};bottom:{bottom};height:{h};transform:translateX(-50%);z-index:3;overflow:visible">'
@@ -1227,7 +1232,7 @@ WEBCARD = (f'<div style="position:absolute;inset:0;background:#f4f4f4;padding:10
            f'<div style="display:flex;gap:2cqw;align-items:center"><i style="width:8cqw;height:8cqw;border-radius:50%;background:{HL};display:block"></i><i style="height:3cqw;width:40%;background:#bbb;border-radius:2cqw;display:block"></i></div>'
            + ''.join(f'<i style="height:3cqw;width:{w}%;background:#cfcfcf;border-radius:2cqw;display:block"></i>' for w in (92, 86, 95, 70)) +
            f'<div style="height:30cqw;border-radius:2cqw;background:linear-gradient(135deg,{HL},{EX2})"></div></div>')
-FACECIRC = lambda left, top, size, pos="62% 26%": f'<div style="position:absolute;left:{left};top:{top};width:{size};aspect-ratio:1;border-radius:50%;overflow:hidden;border:1cqw solid #fff;z-index:4;box-shadow:0 1cqw 3cqw rgba(0,0,0,.4)">{VIMG(FACE, pos)}</div>'
+FACECIRC = lambda left, top, size, pos="50% 26%": f'<div style="position:absolute;left:{left};top:{top};width:{size};aspect-ratio:1;border-radius:50%;overflow:hidden;border:1cqw solid #fff;z-index:4;box-shadow:0 1cqw 3cqw rgba(0,0,0,.4)">{VIMG(VF, pos)}</div>'
 VERT_CUT = [
  ("cutout-screen", "Cut-out over the screen", "R", "For: talking over what you're showing.", SCREEN + VSIL("50%", "48%") + VCAP("44%")),
  ("title-behind", "Title behind you", "R", "For: a hook that sits right behind your head.", f'<div style="position:absolute;inset:0;background:{HL}"></div><div style="position:absolute;left:4%;right:4%;top:18%;font:400 26cqw/.82 {TITLE};color:{TX};z-index:2">I TRIED<br>IT</div>' + VSIL("50%", "56%")),
@@ -1238,25 +1243,25 @@ VERT_CUT = [
  ("floating-head", "Floating head", "C", "For: commenting on something, your face in a circle.", WEBCARD + FACECIRC("8%", "60%", "38%")),
  ("floating-cards", "Floating cards", "R", "For: listing points around you.", f'<div style="position:absolute;inset:0;background:{BG}"></div>' + VSIL("50%", "50%")
    + ''.join(f'<span style="position:absolute;left:{l};top:{t};z-index:4;background:#fff;color:{TX};font:700 5.4cqw {TEXT};padding:1.6cqw 3cqw;border-radius:2cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.2);transform:rotate({r}deg)">{w}</span>' for l, t, r, w in [("6%", "14%", -4, "Week one"), ("48%", "26%", 3, "The hard part"), ("12%", "38%", 2, "The result")])),
- ("comment-reply", "Reply to a comment", "C", "For: answering a viewer.", VIMG(FACE) + f'<div style="position:absolute;left:6%;right:18%;top:12%;z-index:4;background:#fff;border-radius:3cqw;padding:3cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.3)"><div style="font:700 4cqw {TEXT};color:#666">Reply to @viewer</div><div style="font:600 5.4cqw/1.25 {TEXT};color:#111">Does this really work?</div></div>'),
+ ("comment-reply", "Reply to a comment", "C", "For: answering a viewer.", VIMG(VF) + f'<div style="position:absolute;left:6%;right:18%;top:12%;z-index:4;background:#fff;border-radius:3cqw;padding:3cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.3)"><div style="font:700 4cqw {TEXT};color:#666">Reply to @viewer</div><div style="font:600 5.4cqw/1.25 {TEXT};color:#111">Does this really work?</div></div>'),
  ("pointing", "Pointing at the screen", "R", "For: \"look at this part\".", SCREEN + VSIL("30%", "46%") + f'<svg viewBox="0 0 100 100" style="position:absolute;left:30%;top:36%;width:40%;z-index:4;overflow:visible"><path d="M5 60 L 70 10" stroke="#8d8d8d" stroke-width="9" stroke-linecap="round"/><path d="M62 4 L 80 4 L 74 22" fill="none" stroke="{HL}" stroke-width="5" stroke-linecap="round"/></svg>'),
- ("stacked-reactions", "Stacked reactions", "F", "For: two takes on the same thing.", SCREEN + FACECIRC("6%", "56%", "34%") + FACECIRC("44%", "62%", "30%", "70% 26%")),
- ("side-by-side", "Side by side", "R", "For: comparing two things.", f'<div style="position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#000"><div style="position:relative">{VIMG(FACE, "58% 30%", "filter:grayscale(1)")}</div><div style="position:relative">{VIMG(FACE, "66% 30%", "filter:saturate(1.3)")}</div></div>'
+ ("stacked-reactions", "Stacked reactions", "F", "For: two takes on the same thing.", SCREEN + FACECIRC("6%", "56%", "34%") + FACECIRC("44%", "62%", "30%", "50% 26%")),
+ ("side-by-side", "Side by side", "R", "For: comparing two things.", f'<div style="position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#000"><div style="position:relative">{VIMG(VF, "50% 28%", "filter:grayscale(1)")}</div><div style="position:relative">{VIMG(VF, "50% 28%", "filter:saturate(1.3)")}</div></div>'
    + ''.join(f'<span style="position:absolute;left:{l};top:8%;z-index:4;font:400 9cqw/1 {TITLE};background:{b};color:{c};padding:1cqw 2.4cqw">{w}</span>' for l, b, c, w in [("4%", "#fff", TX, "THIS"), ("54%", HL, TX, "THAT")]))]
 VERT_BFR = [
- ("notification", "Trapped in a notification", "F", "For: a joke about being ignored.", SCREEN + f'<div style="position:absolute;left:5%;right:5%;top:6%;z-index:4;background:rgba(255,255,255,.95);border-radius:4cqw;padding:2.6cqw;display:flex;gap:3cqw;align-items:center;box-shadow:0 1cqw 3cqw rgba(0,0,0,.3)"><div style="width:16cqw;aspect-ratio:1;border-radius:3cqw;overflow:hidden;position:relative;flex:none">{VIMG(FACE)}</div><div><div style="font:800 4.4cqw {TEXT};color:#111">Let me out of here</div><div style="font:500 4cqw {TEXT};color:#666">now · tap to reply</div></div></div>'),
- ("peek", "Peeking in", "F", "For: interrupting your own video.", SCREEN + f'<div style="position:absolute;right:-22%;top:34%;width:60%;aspect-ratio:3/4;border-radius:50% 50% 0 0;overflow:hidden;z-index:4;transform:rotate(-12deg)">{VIMG(FACE, "64% 26%")}</div><span style="position:absolute;left:12%;top:40%;z-index:4;font:700 9cqw {NOTES};color:{TX}">psst…</span>'),
- ("shrunk", "Shrunk in a frame", "F", "For: feeling small, or a \"portrait\" joke.", f'<div style="position:absolute;inset:0;background:#d9cfc0;background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.04) 0 2px,transparent 2px 9px)"></div><div style="position:absolute;left:32%;top:30%;width:36%;aspect-ratio:3/4;border:2.6cqw solid #a07a3e;box-shadow:inset 0 0 0 1cqw #d8b46a,0 2cqw 4cqw rgba(0,0,0,.35);overflow:hidden">{VIMG(FACE, "62% 24%")}</div>'),
- ("crack", "The screen cracks", "F", "For: a moment that \"breaks\" the video.", VIMG(FACE) + '<svg viewBox="0 0 100 178" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;z-index:4"><g fill="none" stroke="#fff" stroke-width=".7" opacity=".9"><path d="M30 60 L10 20 M30 60 L0 70 M30 60 L22 110 L5 150 M30 60 L60 40 L90 10 M30 60 L55 85 L100 95 M55 85 L60 130 L80 178 M22 110 L45 120"/></g></svg>'),
- ("tilt", "The frame tilts", "F", "For: things going sideways.", f'<div style="position:absolute;inset:0;background:#111"></div><div style="position:absolute;inset:10% 4%;transform:rotate(-9deg);border:1cqw solid #fff;overflow:hidden">{VIMG(FACE)}</div>' + VCAP("72%"))]
+ ("notification", "Trapped in a notification", "F", "For: a joke about being ignored.", SCREEN + f'<div style="position:absolute;left:5%;right:5%;top:6%;z-index:4;background:rgba(255,255,255,.95);border-radius:4cqw;padding:2.6cqw;display:flex;gap:3cqw;align-items:center;box-shadow:0 1cqw 3cqw rgba(0,0,0,.3)"><div style="width:16cqw;aspect-ratio:1;border-radius:3cqw;overflow:hidden;position:relative;flex:none">{VIMG(VF)}</div><div><div style="font:800 4.4cqw {TEXT};color:#111">Let me out of here</div><div style="font:500 4cqw {TEXT};color:#666">now · tap to reply</div></div></div>'),
+ ("peek", "Peeking in", "F", "For: interrupting your own video.", SCREEN + f'<div style="position:absolute;right:-22%;top:34%;width:60%;aspect-ratio:3/4;border-radius:50% 50% 0 0;overflow:hidden;z-index:4;transform:rotate(-12deg)">{VIMG(VF, "50% 28%")}</div><span style="position:absolute;left:12%;top:40%;z-index:4;font:700 9cqw {NOTES};color:{TX}">psst…</span>'),
+ ("shrunk", "Shrunk in a frame", "F", "For: feeling small, or a \"portrait\" joke.", f'<div style="position:absolute;inset:0;background:#d9cfc0;background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.04) 0 2px,transparent 2px 9px)"></div><div style="position:absolute;left:32%;top:30%;width:36%;aspect-ratio:3/4;border:2.6cqw solid #a07a3e;box-shadow:inset 0 0 0 1cqw #d8b46a,0 2cqw 4cqw rgba(0,0,0,.35);overflow:hidden">{VIMG(VF, "50% 28%")}</div>'),
+ ("crack", "The screen cracks", "F", "For: a moment that \"breaks\" the video.", VIMG(VF) + '<svg viewBox="0 0 100 178" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;z-index:4"><g fill="none" stroke="#fff" stroke-width=".7" opacity=".9"><path d="M30 60 L10 20 M30 60 L0 70 M30 60 L22 110 L5 150 M30 60 L60 40 L90 10 M30 60 L55 85 L100 95 M55 85 L60 130 L80 178 M22 110 L45 120"/></g></svg>'),
+ ("tilt", "The frame tilts", "F", "For: things going sideways.", f'<div style="position:absolute;inset:0;background:#111"></div><div style="position:absolute;inset:10% 4%;transform:rotate(-9deg);border:1cqw solid #fff;overflow:hidden">{VIMG(VF)}</div>' + VCAP("72%"))]
 VBTN = [{"value": "keep", "label": "Keep in library"}, {"value": "no", "label": "Discard"}]
 vsec = lambda id, title, line, rows: {"id": id, "title": title, "line": line, "kind": "library", "keepWord": "layout|layouts", "layout": "tiles", "aspect": "3/4.6", "movable": False,
-   "buttons": VBTN, "keepValues": ["keep"], "options": [{"id": v[0], "name": v[1], "line": v[3], "html": phone(v[4]), **({} if "img/0" in v[4] else {"photoTag": ""}), **({"pick": True, "why": "It's the one you'll use most; the captions carry the video."} if v[0] == "full-face" else {})} for v in rows]}
+   "buttons": VBTN, "keepValues": ["keep"], "options": [{"id": v[0], "name": v[1], "line": v[3], "html": phone(v[4]), **({} if VF in v[4] else {"photoTag": ""}), **({"pick": True, "why": "It's the one you'll use most; the captions carry the video."} if v[0] == "full-face" else {})} for v in rows]}
 W("vertical-layouts", {
  "round": "vertical-layouts", "kind": "library", "keepWord": "layout|layouts", "photoTag": PHOTO_TAG,
  "fonts": ["bebas-neue", "inter", "fraunces", "instrument-serif", "caveat"],
- "title": "Layouts for Shorts, Reels and TikTok", "what": "Each one shown on a phone. The faded shapes are the app's own buttons and caption; the gray figure stands in for you.",
- "next": "Next: your Brand Genome, everything in one place.", "persona": SAY_PERSONA,
+ "title": "Layouts for Shorts, Reels and TikTok", "what": "Each one on a phone. Faded shapes are the app's buttons; keep words inside the dashed box; the dotted lines show what the grid keeps.",
+ "next": "Next: hook text, the words on screen from the first second.", "persona": SAY_PERSONA,
  "sections": [vsec("everyday", "Everyday", "", VERT), vsec("cutout", "Cut-out and green screen", "Your background removed or replaced.", VERT_CUT), vsec("bfr", "Break-from-reality", "Layouts that bend the frame for a laugh.", VERT_BFR)]})
 
 # ---------- Change mode (revisit.md): the same page as the first build, opened on one decision ----------

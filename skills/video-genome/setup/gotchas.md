@@ -5,6 +5,7 @@
 - Rough speed: a few frames a second with 4 workers, so a 4-minute draft can take ~20 minutes; on a 2-core cloud workspace a 6-second clip takes 1–1.5 minutes. Converge on stills first (`setup/tools.md` §2b).
 - A render launched from a process that exits gets cancelled; detach it (above) and re-render anything cut short.
 - Never kill all render processes by name; you may kill someone else's job.
+- **Cutouts silently falling back to rembg.** MediaPipe 0.10.15+ dropped its old interface (`mp.solutions`), and 0.10.14 won't install on newer Python. `base.py` now uses the current interface (the selfie segmenter model, downloaded to `motion/models/`). If it ever prints `cutout: rembg`, stop and fix MediaPipe: rembg is often 10× slower.
 - If the environment has a preinstalled browser, point HyperFrames and Playwright at it (`HYPERFRAMES_BROWSER_PATH=…`, Playwright `executablePath`) instead of downloading one, and pin the Playwright version that matches it.
 
 ## HyperFrames compositions

@@ -62,7 +62,9 @@ HyperFrames (HTML + GSAP compositions rendered to video, by HeyGen) is the main 
 
 Rendering is the slow part. Before planning, measure and say it in one line: "Renders here take about N minutes per 6-second clip; a test pack of 12 is about M minutes."
 - Time one short draft (`render -q draft -f 15`) on the machine that will render. A small cloud workspace (2 cores, no graphics card) renders roughly 1–1.5 minutes per 6-second clip; a creator's own computer is often several times faster.
-- Draft menus and test packs at 15 fps; render finals one at a time.
+- Time it at each draft-quality option offered in intake (`plan/intake.md`, "Draft quality and cutouts") so the creator picks with real waiting times. A doubling of height costs about 4×; a doubling of frame rate about 2×.
+- Draft menus and test packs at 15 fps; drafts at the creator's chosen draft quality; finals at the footage's full size and rate, one at a time.
+- **Cutouts:** draft cutouts run on MediaPipe's selfie segmenter (about real time at 540p on a 2-core machine). If `base.py` prints `cutout: rembg`, MediaPipe is broken; fix it before drafting, because rembg is often 10× slower.
 - **When renders will be long** (a test pack over ~20 clips, or a full episode), offer HyperFrames' cloud rendering (AWS Lambda or Google Cloud Run, from its docs) as a one-time setup, with its cost, or rendering on the creator's computer. Ask once; save the answer in the brand file's Creator section (tools and budget).
 
 ## 3. Bundled tools and folders

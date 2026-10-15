@@ -20,6 +20,7 @@ def norm(w): return re.sub(r'[^\w\']', '', w.lower())
 
 def phrases(words_p, plan_p, out_p):
     W = json.load(open(words_p)); P = json.load(open(plan_p)) if plan_p and pathlib.Path(plan_p).exists() else {}
+    if isinstance(W, dict): W = W.get('words', [])   # remap_words.py output: {"words": [...], "duration": s}
     fixes = P.get('caption_fixes', {})
     ws = []
     for w in W:

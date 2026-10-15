@@ -46,8 +46,8 @@ Read this file first. When a stage starts, read its file in `stages/`, and only 
 | 4 | Look | `stages/04-look.md` | Color editing → filters → art styles (+ image rules, photo kit) → palette (color editing tuned to it automatically) → fonts → text style → captions → backdrops → extras → break-from-reality; the look (fixed picks + backups + alternatives, libraries), house rules |
 | 5 | Movement | `stages/05-movement.md` | Motion feel + entrances (one page), scene changes, spatial moves (rendered clips), the motion table |
 | 6 | Sound | `stages/06-sound.md` | Music library with tempo, phrase length, sound library |
-| 7 | Brand kit | `stages/07-brand-kit.md` | Wordmark, name tag, series tag, sting + sound logo (WAV), endings and thumbnail libraries, profile picture, banner |
-| 8 | Vertical (only if Shorts / Reels / TikTok were picked) | `stages/08-vertical.md` | 9:16 layouts library, safe zones, captions, vertical motion and sound |
+| 7 | Brand kit | `stages/07-brand-kit.md` | Wordmark, name tag, series tag, sting + sound logo (WAV), endings and thumbnail libraries (+ thumbnail text spec), profile picture, banner |
+| 8 | Vertical (only if Shorts / Reels / TikTok were picked) | `stages/08-vertical.md` | How Shorts are shot + framing, tall backdrop, 9:16 layouts with framing specs, hook text, vertical captions, covers, Short endings, opener rules, safe box, audio policy, vertical pacing |
 | 9 | Brand Genome | `stages/09-brand-genome.md` | Written automatically first: profiles copy (bios, descriptions, templates, highlight covers, trailer plan) and the run sheet; then `Brand Genome.md`, the Brand Genome page (highlights), its offline copy and link shortcut |
 | 10 | Handoff | `stages/10-handoff.md` | The brand folder `README.md` for outside tools, photos still owed, then "bring an idea, or ask for a brainstorm, to idea-genome", or a clear stop |
 

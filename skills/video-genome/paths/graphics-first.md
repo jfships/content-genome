@@ -1,5 +1,7 @@
 # Order A: graphics first, voice last
 
+*Long videos. A Short uses `shorts/build.md`: its pace, polish and layout rules are different.*
+
 Build a polished motion draft, the creator records over it, then rebuild the video around their real words.
 
 ## A1. Polished draft (gate: the creator reviews the render on a draft-review page)
@@ -64,7 +66,7 @@ Write `RECORDING.md` in plain words:
 - Retime every key moment to the word that names it (move the beat's label).
 - Rewrite headlines to echo their words.
 - Captions in the pack's caption style (`embedded-captions` or the bundled `captions.py`), 2–7 words per phrase. Turn them off where big type already says the line.
-- **Cutout:** make a person matte (bundled `base.py` with `"matte": true`, which uses mediapipe, falling back to rembg). Then soft-edge it (guided filter or a 2–3 px feather), add a soft shadow, and keyframe size per beat.
+- **Cutout:** drafts use the fast rough cutout (bundled `base.py` with `"matte": true` and the draft `"height"`; MediaPipe). Before the first final draft, the final cutout method must be decided (`plan/run-sheet.md` item 14) and its matte made; pass it as `"matte_video"` and drop `"height"`. Then soft-edge it (guided filter or a 2–3 px feather), add a soft shadow, and keyframe size per beat.
 - **Real footage gets the pack grade** (`$SKILL/tools/grade.py` with the brand's recipe). Graded footage with flat graphics, or the other way round, is the most common "cheap" tell.
 - Mix with `$SKILL/tools/mix.py`: music ducked under the voice, SFX and sound logo placed, master at target loudness (`craft/sound.md`).
 - Rerun gates 2–4 at every beat change, and look at a full-resolution frame of each overlap.

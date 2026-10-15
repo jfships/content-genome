@@ -198,6 +198,16 @@
      "id": "vertical-layouts",
      "name": "Shorts and Reels layouts",
      "required": true
+    },
+    {
+     "id": "hook-text",
+     "name": "Hook text",
+     "required": true
+    },
+    {
+     "id": "covers",
+     "name": "Short covers",
+     "required": false
     }
    ]
   },

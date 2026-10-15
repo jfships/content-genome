@@ -12,7 +12,9 @@ Both steps are **libraries**: keep every kind of music and every sound they like
 - Each card plays a short Web Audio sketch (drums, bass and chords at the lane's tempo) with one big play/pause. The page says plainly they are sketches of tempo and energy, not finished music: "Your library saves the recipe; real tracks are made from it when a video is edited." Keep in library / Discard; keep as many as they like.
 - **Phrase length:** with tempo now set, write how many beats a scene change spans (8 for long, 4 for vertical, from the lane's tempo) into the motion table's Phrase length row. No question.
 - **Rules to write down:** no vocals under speech; the lane changes or drops at turning points; silence before a big line is a tool.
-- **Licensing:** only generated music or music with a license that allows the platform. Never commercial songs.
+- **Licensing:** only generated music or music with a license that allows the platform. Never commercial songs in a master.
+  - **TikTok exception:** a trending sound may be added inside the TikTok app, low under the voice, if the creator says yes in Stage 8. YouTube and Instagram masters stay clean.
+  - **YouTube Shorts over 60 s:** any Content ID claim blocks the Short worldwide, so anything over 60 s uses licensed, own or royalty-free music. Shorts Audio Library tracks have 30 / 60 / 90 s limits (check live).
 
 ## 6b. Sound effects (library, skippable)
 

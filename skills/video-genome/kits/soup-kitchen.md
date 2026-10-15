@@ -75,9 +75,9 @@ open · Formats this kit is built for (offer them at intake; the creator decides
 
 ## 9. Vertical
 - Layouts: Full frame + captions (default) · Pretty/Real split, top/bottom (one beat max) · Title on top (the hook) · Over a review card (One-Star Theater) · Text card (time jumps)
-- Captions: ≥44 px headline / 34 px body at 1080×1920, ≤2 lines, 3–5 words per line.
+- Captions: ≥44 px headline / 34 px body at 1080×1920, 2–3 word chunks, one line (two at most).
 - Motion: holds −25%, no title longer than 1.5 s. First 3 s: visual + spoken + text hook together.
-- Safe zones (starting point; confirm live at upload): no text in the bottom ~20% or right ~15%; key action inside the center ~4:5.
+- Safe box: x 65–930, y 250–1450 at 1080×1920; cover text inside y 400–1300 (Instagram grid crop). Confirm live at upload.
 
 ## 10. Voice
 open · Kit default when the creator has none: short sentences (3–9 words), warm and optimistic against obvious disaster, problems get a shrug and a grin, never mean.

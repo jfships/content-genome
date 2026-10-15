@@ -12,7 +12,8 @@ command -v $PY >/dev/null || missing+=("python 3.10-3.12 (Windows: winget instal
 if [ ${#missing[@]} -gt 0 ]; then printf 'Missing:\n'; printf ' - %s\n' "${missing[@]}"; exit 1; fi
 pipi(){ $PY -m pip install -q "$@" 2>/dev/null || $PY -m pip install -q --user "$@" 2>/dev/null || $PY -m pip install -q --break-system-packages "$@"; }
 pipi numpy opencv-python-headless fonttools brotli
-pipi "mediapipe==0.10.14" || echo "Note: mediapipe didn't install; background looks will fall back to rembg (pip install rembg onnxruntime)."
+pipi mediapipe || echo "Note: mediapipe didn't install; draft cutouts will fall back to rembg, which is much slower (pip install rembg onnxruntime)."
+[ -f "$MOTION_DIR/models/selfie_segmenter.tflite" ] || curl -sSL -o "$MOTION_DIR/models/selfie_segmenter.tflite" https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/latest/selfie_segmenter.tflite || echo "Note: couldn't download the cutout model; base.py will try again on first run."
 pipi sherpa-onnx || echo "Note: sherpa-onnx didn't install; transcription will rely on faster-whisper."
 pipi faster-whisper || echo "Note: faster-whisper didn't install; transcription will use the Parakeet fallback."
 if [ ! -d "$MOTION_DIR/node_modules/playwright" ]; then

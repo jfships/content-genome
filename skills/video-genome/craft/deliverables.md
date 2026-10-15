@@ -3,15 +3,19 @@
 ## Long-form (YouTube)
 
 - 16:9, at least 1080p; 4K when the source is 4K. No length limit; as long as the content earns.
-- Chapters (timestamps from the plan's beats).
-- Description from the brand's description template: hook line, what's inside, chapters, links, the call to action, any disclosure.
-- 3 title candidates for A/B testing.
-- 2–3 thumbnails (`craft/thumbnails.md`).
-- The pinned comment from the brand's template.
+- 2–3 thumbnails (`craft/thumbnails.md`), locked before the title's final words.
+- Up to 3 titles for YouTube's title-and-thumbnail test, written after the thumbnail is locked (rules in `plan/run-sheet.md` item 2: 30–50 characters, hook and search term in the first 40–50, adds what the thumbnail doesn't say).
+- **Description,** in the brand's description template and this order:
+  - The first ~150 characters are all most viewers see: the main search term in the first 40 characters, no links up top.
+  - A short summary, then what each tool or part does.
+  - Links, tools used (paid or free), the disclosure line if made-up AI characters appear, socials.
+  - 3–5 hashtags at the bottom. About 1,000–2,500 characters in all.
+- **Chapters** only on longer videos with clearly separate sections (about 8 minutes or more): start at 0:00, at least 3, each at least 10 s, titles written like search phrases, never "Intro" or "Part 1". Skip them on short, story-driven videos, because they let people jump past the setup.
+- **Pinned comment:** one or two lines, the main link plus one easy action (a yes/no question). Tell the creator to post and pin it within 5 minutes of going live and to reply to comments for the first hour.
 
-## Vertical
+## Shorts, Reels, TikTok
 
-- One file per moment, 1080×1920, with its caption text, cover frame and hashtags or keywords per platform.
+One clean file per platform, each with its own caption text, cover, ending and keywords: `shorts/platforms.md`. Never a crop of the long video's file.
 
 ## Files and naming
 

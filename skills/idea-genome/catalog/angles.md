@@ -20,3 +20,5 @@ An angle is the twist that makes an idea clickable. Same idea, different angle, 
 | ranked | Ranked | Criteria first, bottom to top, surprise #1 | Lists | Criteria shown up front |
 
 Add new angles when the creator's world suggests one; mark them `new`.
+
+**Shorts / Reels.** Multi-part angles (price-tiers, time-tiers, ranked, tried-n-days) fit a Short only as a list of 3 or fewer (`catalog/short-shapes.md`), strongest first, no slow build to #1. Otherwise not at all. Single-point angles (myth-test, superlative, reverse, insider, familiar-twist) fit most shapes; each shape lists the angles that fit it.

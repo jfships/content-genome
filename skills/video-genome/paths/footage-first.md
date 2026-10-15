@@ -10,7 +10,7 @@ Write `SHOOT.md` in plain words, from the approved plan:
 - **Hooks to record:** 3–6, each said 2–3 ways.
 - **Beats as bullet cues,** not a script, in the format's order.
 - **Proof to capture:** screen recordings, the real object, the real place, before/after shots. These become the "show the real thing" material.
-- **Framing that leaves room:** sit on a third with the open two-thirds on the side you face, eyes on the top third line, 5–10% head room (`craft/layout.md`). For vertical-first videos, frame for 9:16 with the face between about a sixth and half of the way down.
+- **Framing that leaves room:** sit on a third with the open two-thirds on the side you face, eyes on the top third line, 5–10% head room (`craft/layout.md`). Shorts are shot on their own track (`shorts/build.md` "Recording"); if the long video's takes will also feed Shorts, film 4K and keep the face near the center so a vertical part can be taken from it.
 - **Setup:** light, mic, room background from the brand; clap at the start of each take.
 - **Extra takes for set pieces:** if a signature moment or break-from-reality moment needs several takes of the creator (Clone Grid, Mirror Debate, The Department of Me), list each take: position in the frame, what they say or do, same lighting, camera locked off.
 - **Practice take** scored with the brand's take scorecard.
@@ -52,7 +52,7 @@ Rules:
 - Never invent numbers, quotes, prices or results; label illustrative stand-ins.
 - One idea per moment. One change per spoken beat (0.4–1.2 s).
 - At least 2 s of plain face between moments that cover or move the face. Nothing in the first second of the hook.
-- Brand components where the brand puts them (sting after the hook, series tag at the first on-camera moment).
+- Brand components where the brand puts them (sting after the hook, series tag at the first on-camera moment). Long videos only; Shorts carry none of them (`shorts/build.md`).
 - Signature moments, wildcard and break-from-reality moments as planned in Step 1.
 - List the base treatment, zoom words, caption style and thumbnail stills.
 
@@ -65,12 +65,12 @@ Order matters; later steps use earlier outputs.
 2. **Overlay clips** (panels, word pops, text behind the speaker, speaker-to-side, lower thirds): place by `craft/layout.md`, build with the bundled engine (`tools/talking-head/reference/engine-api.md`, `reference/looks.md`, the examples), restyled from the brand (fonts, colors, motion table). Speaker-to-side needs `speaker_frames.py` after the base.
 3. **Full-graphic scenes** (cutaways, signature moments, chapter cards, data moves): build in HyperFrames, as in Order A. Footage that plays inside a scene is a root-level clip, not nested inside another timed element.
 4. **Stills on the key words:** `node tools/talking-head/engine/beats.js …` for engine clips, Playwright stills for HyperFrames scenes. Fix anything cramped, clipped, unreadable or off-word, then check again.
-5. **Render** each clip at the footage's fps and resolution. Transparent clips go to `.mov`.
+5. **Render** drafts at the chosen draft quality (`plan.md`, "Draft quality") and finals at the footage's fps and resolution. Transparent clips go to `.mov`. Drafts use the rough cutout; the first final draft needs the final cutout method decided and its matte made (`plan/run-sheet.md` item 14, passed to `base.py` as `"matte_video"`).
 6. **Captions:** `captions.py phrases`, read and fix `captions.json`, then `captions.py ass … --style plain|highlight` in the pack's caption style.
 7. **Insert the sting.** The sting goes after the hook, not over speech: split the cut at the end of the hook, place the sting clip (with the sound logo) between the two parts, and shift every later time (clips, words, captions) by the sting's length. Use `remap_words.py` with the new spans to keep word times right.
 8. **Composite:** `python3 $SKILL/tools/talking-head/scripts/composite.py motion/plan.json motion/out/picture.mp4 --deliver motion/out/picture-1080p.mp4 --size 1920x1080 --fps 30`. For text behind the speaker, run `subject.py occlusion` on every such clip; a FAIL blocks delivery.
 9. **Mix and finish:** `python3 $SKILL/tools/mix.py mix.json` puts the cleaned voice, the music lanes (ducked under the voice), the SFX and the sound logo on the composite, at the target loudness (`craft/sound.md`).
-10. **Vertical cuts:** reframe the footage to 9:16 with `python3 $SKILL/tools/reframe_vertical.py cut.mp4 v.mp4 --start S --end E --subject motion/work/subject.json` (follows the head; never stretches), then lay graphics and captions over it in the brand's vertical layout (`craft/vertical.md`).
+10. **Shorts are not made here.** Never crop this cut into a Short. Each Short runs on the Shorts track (`shorts/README.md`) with its own script, fresh hook and tall build; this episode's footage can be a part inside it (`reframe_vertical.py` on one source clip, following the head).
 
 Then sound (`craft/sound.md`), gates 2–4 (`review/checks.md`) and deliverables.
 

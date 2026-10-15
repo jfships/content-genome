@@ -56,7 +56,7 @@ A big hit gets a 60–120 ms wind-up or a held beat before it. Attached parts (s
 
 - Ask for an exact BPM in every music prompt. `frames_per_beat = (60 / BPM) × fps`. Find beat 1's offset in the file (the first strong onset) and round each *cumulative* beat to a frame, so cuts don't drift.
 - Structural changes land on the beat. Scene changes land on phrases of the brand's phrase length (usually 8 beats long-form, 4 vertical, tightening toward the climax). Small accents land on the half-beat. Never cut on every beat.
-- **Energy arc:** establish (long holds) → develop (shots shorten) → climax (fastest changes, the biggest visual on the music's drop) → resolve (one long hold). Uniform pacing reads flat.
+- **Energy arc (long videos):** establish (long holds) → develop (shots shorten) → climax (fastest changes, the biggest visual on the music's drop) → resolve (one long hold). Uniform pacing reads flat. A Short has no build-up: it peaks at the hook and the last line, with a change every 3–5 s (`shorts/build.md` "Pace").
 - One "wow" moment per piece; a second one cancels the first. Silence and stillness before a big line are tools.
 - Once there's a voice, it's the grid: retime beats to the words first, then nudge hits onto the nearest music beat.
 

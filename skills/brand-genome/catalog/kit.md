@@ -38,9 +38,9 @@
 
 The episode number always sits on its own line, above or below the series name.
 
-Bar · Boxed fallback · Corner chip · Typewriter line · Sticky note · Label tape · Ticker strip · Chapter card · Stamp · Handwritten. Each shown on the default backdrop plus a phone frame; the page's `what` says when it appears.
+Bar · Boxed fallback · Corner chip · Typewriter line · Sticky note · Label tape · Ticker strip · Chapter card · Stamp · Handwritten. Each shown on the default backdrop plus a phone frame; the page's `what` says when it appears. On Shorts only as "Part N", folded into the hook text or a small tag right after the hook, never before it.
 
-## Intro sting styles (1–2 s, after the hook)
+## Intro sting styles (1–2 s, after the hook; long videos only, never on Shorts)
 
 | Slug | Name | Tier | What it is |
 |---|---|---|---|
@@ -57,6 +57,8 @@ Bar · Boxed fallback · Corner chip · Typewriter line · Sticky note · Label 
 
 ## Thumbnail systems
 
+Every one is mocked with the thumbnail text spec (Stage 7, step 7): the brand's font, colors and outline; one loud element, 3–5 loud words; the block left-aligned and centered on the face, one shared ink width, one fixed gap; checked at 168×94 among other thumbnails.
+
 | Slug | Name | Tier | What it is |
 |---|---|---|---|
 | face-screen | Screen + Face | C | Their face beside the thing on screen |
@@ -71,9 +73,9 @@ Bar · Boxed fallback · Corner chip · Typewriter line · Sticky note · Label 
 | collage | Collage | F | Cut-out pieces of the video taped together |
 | comic-panel | Comic Panel | F | The thumbnail as a comic panel with a speech bubble |
 
-## Ways to close a video (library, Stage 7 step 6)
+## Ways to close a video (library, Stage 7 step 6; long videos only)
 
-Next video · Two-video grid · Subscribe + one video · Centered minimal · Hand-drawn arrow · Credits roll · Loop back to the hook · Freeze-frame sign-off · Blooper tag · One-line sign-off · Question for the comments · Next-episode teaser · Series progress · Fade to color · Split screen · Pinned-comment pointer. Never on vertical.
+Next video · Two-video grid · Subscribe + one video · Centered minimal · Hand-drawn arrow · Credits roll · Loop back to the hook (a long video that ends where it began) · Freeze-frame sign-off · Blooper tag · One-line sign-off · Question for the comments · Next-episode teaser · Series progress · Fade to color · Split screen · Pinned-comment pointer. End cards and close-outs never go on a Short. Shorts end on a payoff or a loop line: the Short endings in `vertical-voice-formats.md` (Stage 8).
 
 ## Corner mark (optional, off by default)
 

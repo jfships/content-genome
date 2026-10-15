@@ -13,8 +13,8 @@ Classify every round before building it. Each section shows a rule line above it
 | **Fixed** | One answer, plus a backup. This is what makes the channel recognizable. | Two pages, always: **finalists** (small tiles) → **pick** (the finalists large, side by side, in context) | Page 1: **Finalist** / **Discard**. Page 2: **Main** / **Backup** / **Alternative** / **Discard** |
 | **Library** | More is better, as long as the creator likes it. The right one is picked per video, later, by the video skill. | Many small tiles, each with its use-when line. No cap. | **Keep in library** / **Discard** |
 
-Fixed (finalists → pick): color editing, text style, captions, wordmark, name tag, series tag, sting, sound logo, profile picture, banner. Three fixed rounds work differently: the **palette** (finalists → **This one** / **Discard**, one answer, no backup), **fonts** (finalists per job → the set builder, one set) and the **motion feel** (no finalists: picked by group on the one entrances page; see Stage 5).
-Library: filters for specific scenes, art styles for scenes you can't film, backdrops, extras, break-from-reality moments, entrances, scene changes, music, sound effects, ways to close a video, thumbnail layouts, vertical layouts.
+Fixed (finalists → pick): color editing, text style, captions, wordmark, name tag, series tag, sting, sound logo, profile picture, banner. Hook text (Stage 8) is fixed but one pick page, no finalists (the text style was already narrowed). Three fixed rounds work differently: the **palette** (finalists → **This one** / **Discard**, one answer, no backup), **fonts** (finalists per job → the set builder, one set) and the **motion feel** (no finalists: picked by group on the one entrances page; see Stage 5).
+Library: filters for specific scenes, art styles for scenes you can't film, backdrops, extras, break-from-reality moments, entrances, scene changes, music, sound effects, ways to close a video, thumbnail layouts, vertical layouts, Short covers.
 
 ### The two-page finalist flow (one shared pattern; never rebuilt per step)
 
@@ -60,8 +60,11 @@ One line per round on what it decides. Test: if the creator could ask "didn't I 
 | 7.7 | Thumbnail layouts | Library | Layouts to choose from per video | Tiles at feed size |
 | 7.8 | Profile picture | Fixed | Ask "a photo of you?" first | Yes: tips, no page · No: logo options · Not sure: photo-style and logo options on one page; finalists → pick |
 | 7.9 | Banner | Fixed | One per platform that has one | Finalists → pick, on a channel-page mock |
-| 8.1 | Vertical layouts | Library | Layouts for Shorts, Reels, TikTok | 9:16 test frames in phones |
-| 8 | Vertical rules, captions | Question | Sting, faster motion, music under vertical; captions on vertical | Chat |
+| 8 | How they shoot Shorts | Question | Native vertical, 4K center crop, or from long videos as parts; framing marks follow | Chat |
+| 8.1 | Vertical layouts | Library | Layouts for Shorts, Reels, TikTok; a framing spec per kept layout follows automatically | 9:16 test frames in phones |
+| 8.2 | Hook text | Fixed | The 3–7 words on screen from frame 1; the vertical caption spec shown beside it | One pick page, phone frames |
+| 8.3 | Short covers | Library | Cover templates that survive the 3:4 grid crop | Phone frames beside their crop |
+| 8 | Vertical rules, pacing | Question | Short endings, music under Shorts, trending sounds on TikTok, captions on Shorts; then the pacing row confirmed | Chat |
 | 9 | Bios, profiles copy, run sheet | Written automatically | Shown on the Brand Genome page for edits | No page |
 | any | Change something | Same as the original round | One decision, rerun in change mode (`revisit.md`) | The original page with `change` + `current` |
 
@@ -149,7 +152,7 @@ Color editing is fixed; every other look goes to the filters library. The skill 
 
 ### Three-photo rule
 
-A footage look is judged on three benchmark frames: **a face, hands at work, a place**, picked from `benchmark/README.md` to match the creator's field; when no frame matches the field, pick the nearest in mood and say so once in chat. A filter that only reads on a certain kind of shot (tiny world needs a high, wide view; fake night needs windows or lights) uses a frame that suits it instead (`catalog/looks.md` names it). Verticals (Stage 8) crop the face frame to 9:16 and use drawn graphics for "the screen"; never another person's photo standing in for the creator.
+A footage look is judged on three benchmark frames: **a face, hands at work, a place**, picked from `benchmark/README.md` to match the creator's field; when no frame matches the field, pick the nearest in mood and say so once in chat. A filter that only reads on a certain kind of shot (tiny world needs a high, wide view; fake night needs windows or lights) uses a frame that suits it instead (`catalog/looks.md` names it). Verticals (Stage 8) use the native vertical test photo (`benchmark/10-car-vertical.jpg`, or the creator's own upright photo once it exists), never a 16:9 photo cropped to 9:16, with drawn graphics for "the screen" and the safe box and 3:4 grid crop drawn on every phone; never another person's photo standing in for the creator.
 
 ## The pages, in the creator's words
 
@@ -182,6 +185,8 @@ The JSONs in `page-template/examples/` are the spec for their rounds. Copy the o
 | 7.8 Profile picture | `profile-picture-tiles.json` → `profile-picture-pick.json` | Finalist → Main · Backup · Alternative · Discard |
 | 7.9 Banner | `banner-tiles.json` → `banner-pick.json` (one pair per platform with a banner) | same |
 | 8.1 Vertical layouts | `vertical-layouts.json` | Keep in library · Discard |
+| 8.2 Hook text | build like `vertical-layouts.json` (phone frames, one pick page) | Main · Backup · Alternative · Discard |
+| 8.3 Short covers | build like `vertical-layouts.json` (each phone beside its 3:4 crop) | Keep in library · Discard |
 | Change mode | `change-palette-tiles.json` (any page + `change`, `current`) | the round's own |
 
 Sound pages (music, sting, sound logo, sound effects) put their Web Audio code in `head` and name it in `play`. Every sound page says plainly that these are sketches of the sound, not finished audio.

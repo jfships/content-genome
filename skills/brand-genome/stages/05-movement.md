@@ -49,14 +49,14 @@ Write one table into the Brand Genome. Use these exact fields so video skills ca
 | Transitions | default + extras + reserved | hard cut; match cut, object wipe |
 | Hold | stillness after a beat lands | ≥ 0.3 s |
 | Camera | drift, push-in range, parallax | drift 1→1.05; push 1.4–2×; 1 / 0.5 / 0.2 |
-| Shot hold | typical shot length, long / vertical | 4–8 s / 1.5–3 s |
+| Shot hold | typical shot length, long / vertical | 4–8 s / a visual change every 3–5 s, none over ~8 s |
 | Phrase length | filled in Stage 6 | 8 beats / 4 beats |
 | Spatial | kept spatial moves (catalog slugs) + any rule | fly-through, rack-focus, push-into-card; never on talking-head beats |
 | Never | banned moves | bounce, spin, zoom-blur |
 
 Ease names are GSAP's (power2 = cubic, power3 = quart). Write the cubic-bezier equivalents beside them for tools that don't use GSAP. Ease names and bezier values never appear in chat; they live in the table only.
 
-**Vertical variant:** a second, faster row for Shorts and Reels (shorter holds, shorter phrases). Stage 8 confirms it.
+**Vertical variant:** a second row for Shorts and Reels, with these values: a visual change every 3–5 s (cut, punch-in, graphic, text or B-roll), no single visual over ~8 s; punch-ins of about 1.1–1.25× on the hook and each punchline (eased in, hard cut back); one held deadpan beat (≤1.5 s) allowed per punchline; phrase length 4 beats. Stage 8 confirms it.
 
 ## Output
 

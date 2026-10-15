@@ -69,6 +69,7 @@ Write up to 5 short verbatim lines as **voice anchors** under "Voice and deliver
 
 **The voice kit is written automatically** right after (no page), from these answers, the interview and the content personality, into `00 Decisions/voice-kit.md`:
 - **Spoken:** pace, energy, how to open and close, how to show enthusiasm on camera, what to do with hands and eyes.
+- **Vertical delivery** (when a Short platform was picked): about 150 words a minute, one idea per Short, eyes on the lens, energy from the writing and the edit, not from shouting; deadpan lines are read flat and land on tight cuts. Each new thought opens with a hook sentence, which also makes long videos easier to mine for Shorts.
 - **Written:**
   - sentence length
   - words used and avoided
@@ -84,7 +85,7 @@ Write up to 5 short verbatim lines as **voice anchors** under "Voice and deliver
   - no automatic lists of three
   - contractions as they speak
   - no exclamation marks they wouldn't say out loud
-- **Take-review scorecard,** used on every recorded take, scored 1–5: energy, clarity, pace, eye line, did the personality come through, and one line on what to change next take. Most first-time creators start out dry; score it every time.
+- **Take-review scorecard,** used on every recorded take, scored 1–5: energy, clarity, pace, eye line, did the personality come through, plus one yes/no, **message in one sentence?** (could a viewer say what they walked away with in one sentence), and one line on what to change next take. Most first-time creators start out dry; score it every time.
 
 ## Output
 

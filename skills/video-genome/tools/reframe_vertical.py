@@ -7,9 +7,8 @@ Follows the speaker's head: from work/subject.json if base.py already wrote it
 (--subject), otherwise by sampling ~4 frames a second with the bundled person
 segmentation (talking-head/scripts/base.py: MediaPipe, fallback rembg). If
 neither is available it falls back to a center crop and says so. The path is
-smoothed and a full-height 9:16 window keeps the head centered horizontally. Output is scaled to 1080x1920. Use it for the
-footage layer of a vertical cut; graphics and captions are then laid out over
-it in the Genome's vertical layout.
+smoothed and a full-height 9:16 window keeps the head centered horizontally. Output is scaled to 1080x1920. Use it on one source clip to make a 9:16 part inside a Short (shorts/build.md), never on the
+finished long edit: a crop of the long edit is never a Short.
 """
 import argparse
 import subprocess

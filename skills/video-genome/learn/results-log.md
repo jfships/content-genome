@@ -15,6 +15,8 @@ Ask the creator for numbers at 48 hours and again at 28 days (one AskUserQuestio
 - **CTR** (click rate) and **Avg % watched** only where the platform shows them; blank otherwise.
 - **What worked / didn't:** one line each, in the creator's words if they gave any, plus one line from the retention graph if they shared it (where people left).
 
+**Shorts** get their own row shape and numbers (viewed vs swiped, skip rate, sends): `shorts/platforms.md` "Results".
+
 ## Reading it
 
 Before planning a new episode, and when idea-genome scores ideas, summarize the log in 3 lines: which formats, angles, hooks and title formulas beat the channel's median, and which fell below. With fewer than 5 videos, say the signal is weak and don't lean on it.
