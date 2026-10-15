@@ -25,7 +25,7 @@ Build in HyperFrames: clips with `class="clip"` and `data-start`/`data-duration`
 - **Draft-only overlays:** a cue strip (SAY / SILENT + the bullet cue) and a dashed zone where the creator will probably appear (a provisional placement; A4 decides the final one). Both come out in the rebuild.
 - **Temp sound:** a temp music bed and the key SFX, so the energy can be judged (`craft/sound.md`).
 
-Run **gate 2** (build checks) on stills, then render, then **gate 3** and **gate 4** in `review/checks.md` before showing the creator. Show it with the render plus a draft-review page (`draft-review.json`): one still per scene with its time and line, **Looks right / Change it** and a note per scene. On this voiceless draft, skip the gate-3 checks that need a voice (captions, face, voice sync); they run after the rebuild.
+Run **gate 2** (build checks) on stills, then render, then **gate 3** and **gate 4** in `review/checks.md` before showing the creator. Show it with the render plus a draft-review page (`draft-review.json`): one still per scene with its time and line, **Looks right / Change it** and a note per scene. On this voiceless draft, skip the gate-3 checks that need a voice (captions, face, voice sync); they run after the rebuild. Once they've seen it, give the switch-model nudge (SKILL.md, "Which model for which part").
 
 ## A2. Recording kit (gate)
 

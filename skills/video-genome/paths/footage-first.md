@@ -72,7 +72,7 @@ Order matters; later steps use earlier outputs.
 9. **Mix and finish:** `python3 $SKILL/tools/mix.py mix.json` puts the cleaned voice, the music lanes (ducked under the voice), the SFX and the sound logo on the composite, at the target loudness (`craft/sound.md`).
 10. **Shorts are not made here.** Never crop this cut into a Short. Each Short runs on the Shorts track (`shorts/README.md`) with its own script, fresh hook and tall build; this episode's footage can be a part inside it (`reframe_vertical.py` on one source clip, following the head).
 
-Then sound (`craft/sound.md`), gates 2–4 (`review/checks.md`) and deliverables.
+Once the creator has seen the first full draft, give the switch-model nudge (SKILL.md, "Which model for which part"). Then sound (`craft/sound.md`), gates 2–4 (`review/checks.md`) and deliverables.
 
 ## Two hard rules for anything that moves or covers the speaker
 

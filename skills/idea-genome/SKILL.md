@@ -96,6 +96,8 @@ After loading, tell the creator in 3–4 plain lines, before any question:
 3. Claude's role: brings research and options, recommends one each time; the creator decides.
 4. What they approve at the end: the Idea Record. Nothing gets made until then.
 
+Then one line on the model, unless you're already running on their strongest one: "For best results, run this on your strongest model (today: Fable), if you have it. Developing an idea is almost all judgment, which is where it's clearly better. It's also inexpensive here, because this is a short step." A nudge, not a question: you can't switch the model; the creator does it in the model picker. Say it once per session and carry on either way.
+
 ### 1. Entry (one AskUserQuestion)
 
 - **I have an idea:** capture it in their words, then go to Step 3 (Develop) with it as the pick. Brainstorm candidates are skipped; development is not.

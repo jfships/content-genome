@@ -29,7 +29,7 @@ Tracker line on every reply that moves the work: "Short 2 of 3 · plan · decisi
 | S0. About | One confirmed line: "This Short is about ___, for ___, on ___ (platforms). Its message: ___." | Line confirmed; Idea Record present (idea-genome's Short record, or one written here with the same fields) |
 | S1. Plan | The Short checklist below, one decision at a time | Short gate 1 passes (`checks.md`) |
 | S2. Asset debt | `plan/asset-debt.md`, same as long-form | Everything owed listed, library searched |
-| S3. Tall rough draft | `build.md` "Rough draft": built 9:16 from the start, temp voice or the creator's existing words, before anything is recorded | Creator watched it and said what changes |
+| S3. Tall rough draft | `build.md` "Rough draft": built 9:16 from the start, temp voice or the creator's existing words, before anything is recorded | Creator watched it and said what changes; switch-model nudge given (main SKILL.md, "Which model for which part") |
 | S4. Record | Hook and lines recorded vertical (`build.md` "Recording") | Takes in, transcribed |
 | S5. Build | Cut, pace, lay out, caption, sound (`build.md`) | Short gates 2–3 pass |
 | S6. Review | Timing numbers + scored review + fresh reviewer (`checks.md`) | Every score 8+ |

@@ -135,7 +135,7 @@ Stage docs in `00 Decisions/`: `persona-card.md` (demo only), `formats.md`, `loo
 
 ## Auto mode, in one line
 
-A real creator answers a short interview (who's on screen, what and why, who for, the feel, limits, name, likes and dislikes), then Claude fills every page as their proxy with a one-line why per pick, runs without waiting, and ends on the Brand Genome page for review; changes go through `revisit.md`. Full rules: `stages/00-setup.md` §6.
+A real creator answers a short interview (who's on screen, what and why, who for, the feel, limits, name, likes and dislikes), then Claude fills every page as their proxy with a one-line why per pick, runs without waiting, and ends on the Brand Genome page for review; changes go through `revisit.md`. Full rules: `stages/00-setup.md` §6. Auto and demo runs suggest the creator's strongest model (today: Fable) at the start, because Claude makes every call, and say when it's done so they can switch back or stay on it for idea-genome (`stages/10-handoff.md` §4).
 
 ## Demo mode, in one paragraph
 

@@ -61,6 +61,11 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 
 Every session ends with `review/session-close.md`, whatever step it stopped on.
 
+**Which model for which part.** You can't switch the model; the creator does it in the model picker. So nudge, never ask: one line with the reason and the cost, said once per video, then carry on either way without waiting. Name the role, with today's model as the example, and add "if you have it".
+- **At the start of a video** (before the first question in 0c), unless you're already on their strongest model: "For best results, run planning and the first draft on your strongest model (today: Fable), if you have it. That's where the creative calls are made. It costs more credits, so once the first draft is built, switch to your everyday model (today: Opus) for the iteration."
+- **Once the creator has seen the first draft** (graphics first: the A1 draft review; footage first: the first full draft out of B6; Shorts: the S3 tall rough draft), unless you're already on their everyday model: "First draft's done. For best results on cost, switch to your everyday model (today: Opus) now. Fixes, renders and checks are long, repeat-heavy work, and it handles them well for less."
+- A resumed video gets the nudge that fits where it is: before the first draft, the strongest model; after it, the everyday one.
+
 **Pick the order in Step 1** (one AskUserQuestion):
 - **Graphics first:** build a polished motion draft, the creator records over it from bullet cues, then the video is rebuilt around their real words. Best when the video is mostly graphics, or when the creator is new to camera and needs a pacing guide.
 - **Footage first:** they film first (a talking head, a vlog, a screen recording), then graphics are built around the footage. Best when they already film, when the story happens on camera, or for quick turnarounds.

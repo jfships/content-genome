@@ -26,6 +26,8 @@ cp -r content-genome/skills/* ~/.claude/skills/
 
 Then ask for what you want, e.g. "build my brand genome", "give me a video idea", "make this into a video".
 
+**For best results:** run idea-genome, video-genome's planning and first draft, and brand-genome when you let it decide for you (auto or demo), on your strongest model (today: Fable). That's where the creative calls are made. Then switch to your everyday model (today: Opus) for fixes, renders and checks, which costs less. The skills remind you when to switch.
+
 ## Watch it
 
 AI didn't kill everything. I made this episode with tools I built myself, and these are the tools.

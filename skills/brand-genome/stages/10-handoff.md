@@ -37,6 +37,7 @@ The `## Brand` section of `START-HERE.md` (only that section) gets the read orde
 
 Look in this session's skill list for **idea-genome** and **video-genome** (the companion skills from the same bundle).
 - **Both found:** name both: idea-genome turns an idea, a theme or nothing into an Idea Record; video-genome reads that record and `Brand Genome.md` (look, motion, sound, kit placements, vertical rules, voice, run sheet) and makes the video. Offer to start idea-genome.
+- **Model line** (auto or demo runs, when you're on their strongest model): "Going straight into an idea? Stay on Fable: idea-genome works best there and it's a short step. Otherwise, switch back to your everyday model (today: Opus)."
 - **One missing:** name the one that's installed and the one that's missing, from the same bundle.
 - **Neither:** say so plainly: "The brand is done. Ideas and videos need idea-genome and video-genome, and neither is installed." Stop. Do not build the video here.
 
