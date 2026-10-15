@@ -1,4 +1,4 @@
-# content-genome
+﻿# content-genome
 
 [![Release](https://img.shields.io/github/v/release/jfships/content-genome?color=ff7a1a&label=release)](../../releases/latest)
 [![License: MIT](https://img.shields.io/github/license/jfships/content-genome?color=1b4f8a)](LICENSE)
@@ -12,9 +12,9 @@ Three free Claude skills that take you from "I should start posting" to a finish
 
 **Claude (web, desktop, mobile)**
 
-1. Download a skill: [brand-genome.zip](../../releases/latest/download/brand-genome.zip) · [idea-genome.zip](../../releases/latest/download/idea-genome.zip) · [video-genome.zip](../../releases/latest/download/video-genome.zip)
-2. In Claude, go to **Customize → Skills**, click **+**, then **Create skill → Upload a skill**, and pick the zip.
-3. Make sure code execution is on (**Settings → Capabilities**).
+1. Download a skill: [brand-genome.zip](../../releases/latest/download/brand-genome.zip) Â· [idea-genome.zip](../../releases/latest/download/idea-genome.zip) Â· [video-genome.zip](../../releases/latest/download/video-genome.zip)
+2. In Claude, go to **Customize â†’ Skills**, click **+**, then **Create skill â†’ Upload a skill**, and pick the zip.
+3. Make sure code execution is on (**Settings â†’ Capabilities**).
 
 **Claude Code**
 
@@ -34,7 +34,7 @@ AI didn't kill everything. I made this episode with tools I built myself, and th
 
 ## The three skills
 
-They hand off to each other: **brand-genome** (once per brand) → **idea-genome** (per video) → **video-genome** (per video). Each one also works on its own. video-genome runs without a Brand Genome, using a brand kit you already have or one of the kits it ships with.
+They hand off to each other: **brand-genome** (once per brand) â†’ **idea-genome** (per video) â†’ **video-genome** (per video). Each one also works on its own. video-genome runs without a Brand Genome, using a brand kit you already have or one of the kits it ships with.
 
 ### [brand-genome](skills/brand-genome)
 
@@ -75,4 +75,4 @@ If you want a tool like these made for your own business, reach out through [You
 
 [MIT](LICENSE). The benchmark photos in `skills/brand-genome/benchmark` are AI-generated test frames that ship with the skill. The Geist fonts in video-genome are under the SIL Open Font License (see `OFL-Geist.txt`). Images in `media/` are stills from the episode.
 
-[episode]: https://youtube.com/@jfships_ai
+[episode]: https://youtu.be/sevoOfx7Dno
