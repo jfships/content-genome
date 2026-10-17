@@ -61,10 +61,12 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 
 Every session ends with `review/session-close.md`, whatever step it stopped on.
 
-**Which model for which part.** You can't switch the model; the creator does it in the model picker. So nudge, never ask: one line with the reason and the cost, said once per video, then carry on either way without waiting. Name the role, with today's model as the example, and add "if you have it".
+**Which model for which part.** You can't switch the model; the creator does it in the model picker. So nudge, never ask: one line with the reason and the cost at each hand-off below, then carry on either way, except where the creator asked you to pause at model switches; then wait until they say they've switched. Name the role, with today's model as the example, and add "if you have it".
 - **At the start of a video** (before the first question in 0c), unless you're already on their strongest model: "For best results, run planning and the first draft on your strongest model (today: Fable), if you have it. That's where the creative calls are made. It costs more credits, so once the first draft is built, switch to your everyday model (today: Opus) for the iteration."
 - **Once the creator has seen the first draft** (graphics first: the A1 draft review; footage first: the first full draft out of B6; Shorts: the S3 tall rough draft), unless you're already on their everyday model: "First draft's done. For best results on cost, switch to your everyday model (today: Opus) now. Fixes, renders and checks are long, repeat-heavy work, and it handles them well for less."
 - A resumed video gets the nudge that fits where it is: before the first draft, the strongest model; after it, the everyday one.
+- **At every hand-off between kinds of work, not once per video:** before any page or taste review: "Taste call next. Switch to your strongest model (today: Fable) if you have it." Before any re-cut, render, matte or check stretch: "Mechanical stretch next. Switch to your everyday model (today: Opus)."
+- **Say each line once per hand-off,** not every reply. Skip it when the creator is already on the right model, has said they don't have the stronger one, or chose to stay put; don't repeat it for the same hand-off.
 
 **Pick the order in Step 1** (one AskUserQuestion):
 - **Graphics first:** build a polished motion draft, the creator records over it from bullet cues, then the video is rebuilt around their real words. Best when the video is mostly graphics, or when the creator is new to camera and needs a pacing guide.

@@ -1,0 +1,99 @@
+{
+ "round": "hook-text",
+ "kind": "fixed",
+ "fonts": [
+  "bebas-neue",
+  "inter"
+ ],
+ "aspect": "3/4.6",
+ "photoTag": "Test photo",
+ "title": "Hook text",
+ "what": "The words on screen from the first frame. Dashed box: keep words inside. Dotted lines: what the grid keeps.",
+ "single": "pick",
+ "singleFallback": "backup",
+ "altValue": "alt",
+ "keepValues": [
+  "pick",
+  "backup",
+  "alt"
+ ],
+ "buttons": [
+  {
+   "value": "pick",
+   "label": "Main"
+  },
+  {
+   "value": "backup",
+   "label": "Backup"
+  },
+  {
+   "value": "alt",
+   "label": "Alternative"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "next": "Next: covers, then a few questions about endings and music.",
+ "persona": "Wren",
+ "options": [
+  {
+   "id": "hook-block",
+   "name": "Color block",
+   "line": "Words on a solid block in your pop color.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e9ecea;display:grid;place-items:center\"><div style=\"height:94%;aspect-ratio:9/16;background:#111;border-radius:6cqh;padding:1.2cqh;box-sizing:border-box;box-shadow:0 1cqh 3cqh rgba(0,0,0,.25)\"><div style=\"position:relative;width:100%;height:100%;border-radius:5cqh;overflow:hidden;container-type:inline-size;background:#13302A\"><img src=\"img/10-car-vertical.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;\"><div style=\"position:absolute;left:7%;right:7%;top:13.5%;z-index:4\"><span style=\"display:inline-block;background:#2EC4A6;color:#13302A;font:400 12cqw/1 'Bebas Neue',Impact,sans-serif;padding:1.5cqw 3.5cqw\">NOBODY TELLS YOU THIS</span></div><div style=\"position:absolute;left:8%;right:14%;top:66%;text-align:center;z-index:4\"><span style=\"font:900 7cqw/1.25 'Inter',Arial,sans-serif;color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.6);white-space:nowrap\">NOBODY <span style=\"color:#2EC4A6\">TELLS</span> YOU</span></div><div style=\"position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5\"><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i></div><div style=\"position:absolute;left:5%;right:20%;bottom:5%;display:grid;gap:2cqw;opacity:.55;z-index:5\"><i style=\"height:3cqw;width:45%;background:rgba(255,255,255,.9);border-radius:2cqw;display:block\"></i><i style=\"height:2.6cqw;width:80%;background:rgba(255,255,255,.8);border-radius:2cqw;display:block\"></i></div><div style=\"position:absolute;left:6.02%;width:80.09%;top:13.02%;height:62.5%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none\"></div><i style=\"position:absolute;left:0;right:0;top:12.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i><i style=\"position:absolute;left:0;right:0;top:87.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i></div></div></div>"
+  },
+  {
+   "id": "hook-outline",
+   "name": "Outlined",
+   "line": "Big white words, dark outline, no box.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e9ecea;display:grid;place-items:center\"><div style=\"height:94%;aspect-ratio:9/16;background:#111;border-radius:6cqh;padding:1.2cqh;box-sizing:border-box;box-shadow:0 1cqh 3cqh rgba(0,0,0,.25)\"><div style=\"position:relative;width:100%;height:100%;border-radius:5cqh;overflow:hidden;container-type:inline-size;background:#13302A\"><img src=\"img/10-car-vertical.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;\"><div style=\"position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 14cqw/.95 'Bebas Neue',Impact,sans-serif;color:#fff;-webkit-text-stroke:.9cqw #13302A;paint-order:stroke fill;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.5)\">NOBODY TELLS YOU THIS</div><div style=\"position:absolute;left:8%;right:14%;top:66%;text-align:center;z-index:4\"><span style=\"font:900 7cqw/1.25 'Inter',Arial,sans-serif;color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.6);white-space:nowrap\">NOBODY <span style=\"color:#2EC4A6\">TELLS</span> YOU</span></div><div style=\"position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5\"><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i></div><div style=\"position:absolute;left:5%;right:20%;bottom:5%;display:grid;gap:2cqw;opacity:.55;z-index:5\"><i style=\"height:3cqw;width:45%;background:rgba(255,255,255,.9);border-radius:2cqw;display:block\"></i><i style=\"height:2.6cqw;width:80%;background:rgba(255,255,255,.8);border-radius:2cqw;display:block\"></i></div><div style=\"position:absolute;left:6.02%;width:80.09%;top:13.02%;height:62.5%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none\"></div><i style=\"position:absolute;left:0;right:0;top:12.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i><i style=\"position:absolute;left:0;right:0;top:87.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i></div></div></div>"
+  },
+  {
+   "id": "hook-two-tone",
+   "name": "Two-tone",
+   "line": "One key word in the pop color, the rest white.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e9ecea;display:grid;place-items:center\"><div style=\"height:94%;aspect-ratio:9/16;background:#111;border-radius:6cqh;padding:1.2cqh;box-sizing:border-box;box-shadow:0 1cqh 3cqh rgba(0,0,0,.25)\"><div style=\"position:relative;width:100%;height:100%;border-radius:5cqh;overflow:hidden;container-type:inline-size;background:#13302A\"><img src=\"img/10-car-vertical.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;\"><div style=\"position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 14cqw/.95 'Bebas Neue',Impact,sans-serif;color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)\">NOBODY TELLS YOU <span style=\"color:#2EC4A6\">THIS</span></div><div style=\"position:absolute;left:8%;right:14%;top:66%;text-align:center;z-index:4\"><span style=\"font:900 7cqw/1.25 'Inter',Arial,sans-serif;color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.6);white-space:nowrap\">NOBODY <span style=\"color:#2EC4A6\">TELLS</span> YOU</span></div><div style=\"position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5\"><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i></div><div style=\"position:absolute;left:5%;right:20%;bottom:5%;display:grid;gap:2cqw;opacity:.55;z-index:5\"><i style=\"height:3cqw;width:45%;background:rgba(255,255,255,.9);border-radius:2cqw;display:block\"></i><i style=\"height:2.6cqw;width:80%;background:rgba(255,255,255,.8);border-radius:2cqw;display:block\"></i></div><div style=\"position:absolute;left:6.02%;width:80.09%;top:13.02%;height:62.5%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none\"></div><i style=\"position:absolute;left:0;right:0;top:12.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i><i style=\"position:absolute;left:0;right:0;top:87.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i></div></div></div>",
+   "pick": true,
+   "why": "Reads at feed size, sits above the face, and uses your text style."
+  },
+  {
+   "id": "hook-label",
+   "name": "Label + line",
+   "line": "A small label above one big line.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e9ecea;display:grid;place-items:center\"><div style=\"height:94%;aspect-ratio:9/16;background:#111;border-radius:6cqh;padding:1.2cqh;box-sizing:border-box;box-shadow:0 1cqh 3cqh rgba(0,0,0,.25)\"><div style=\"position:relative;width:100%;height:100%;border-radius:5cqh;overflow:hidden;container-type:inline-size;background:#13302A\"><img src=\"img/10-car-vertical.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;\"><div style=\"position:absolute;left:7%;right:7%;top:13.5%;z-index:4\"><div style=\"display:inline-block;background:#fff;color:#13302A;font:800 4.6cqw 'Inter',Arial,sans-serif;padding:.8cqw 2.4cqw;border-radius:1.4cqw;margin-bottom:2cqw\">WEEK ONE</div><div style=\"font:400 13cqw/.95 'Bebas Neue',Impact,sans-serif;color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)\">NOBODY TELLS YOU THIS</div></div><div style=\"position:absolute;left:8%;right:14%;top:66%;text-align:center;z-index:4\"><span style=\"font:900 7cqw/1.25 'Inter',Arial,sans-serif;color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.6);white-space:nowrap\">NOBODY <span style=\"color:#2EC4A6\">TELLS</span> YOU</span></div><div style=\"position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5\"><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i></div><div style=\"position:absolute;left:5%;right:20%;bottom:5%;display:grid;gap:2cqw;opacity:.55;z-index:5\"><i style=\"height:3cqw;width:45%;background:rgba(255,255,255,.9);border-radius:2cqw;display:block\"></i><i style=\"height:2.6cqw;width:80%;background:rgba(255,255,255,.8);border-radius:2cqw;display:block\"></i></div><div style=\"position:absolute;left:6.02%;width:80.09%;top:13.02%;height:62.5%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none\"></div><i style=\"position:absolute;left:0;right:0;top:12.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i><i style=\"position:absolute;left:0;right:0;top:87.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i></div></div></div>"
+  },
+  {
+   "id": "hook-sticker",
+   "name": "Sticker",
+   "line": "Words on a tilted, thick-outlined sticker.",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e9ecea;display:grid;place-items:center\"><div style=\"height:94%;aspect-ratio:9/16;background:#111;border-radius:6cqh;padding:1.2cqh;box-sizing:border-box;box-shadow:0 1cqh 3cqh rgba(0,0,0,.25)\"><div style=\"position:relative;width:100%;height:100%;border-radius:5cqh;overflow:hidden;container-type:inline-size;background:#13302A\"><img src=\"img/10-car-vertical.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;\"><div style=\"position:absolute;left:8%;top:14%;z-index:4;transform:rotate(-4deg);background:#FFD166;color:#13302A;border:1.2cqw solid #fff;border-radius:3cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.35);font:400 11cqw/1 'Bebas Neue',Impact,sans-serif;padding:1.6cqw 4cqw\">NOBODY TELLS YOU THIS</div><div style=\"position:absolute;left:8%;right:14%;top:66%;text-align:center;z-index:4\"><span style=\"font:900 7cqw/1.25 'Inter',Arial,sans-serif;color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.6);white-space:nowrap\">NOBODY <span style=\"color:#2EC4A6\">TELLS</span> YOU</span></div><div style=\"position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5\"><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i></div><div style=\"position:absolute;left:5%;right:20%;bottom:5%;display:grid;gap:2cqw;opacity:.55;z-index:5\"><i style=\"height:3cqw;width:45%;background:rgba(255,255,255,.9);border-radius:2cqw;display:block\"></i><i style=\"height:2.6cqw;width:80%;background:rgba(255,255,255,.8);border-radius:2cqw;display:block\"></i></div><div style=\"position:absolute;left:6.02%;width:80.09%;top:13.02%;height:62.5%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none\"></div><i style=\"position:absolute;left:0;right:0;top:12.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i><i style=\"position:absolute;left:0;right:0;top:87.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i></div></div></div>"
+  },
+  {
+   "id": "hook-part",
+   "name": "Part N + hook",
+   "line": "\"Part 2\" folded into the hook line (numbered series only).",
+   "html": "<div style=\"position:absolute;inset:0;container-type:size;background:#e9ecea;display:grid;place-items:center\"><div style=\"height:94%;aspect-ratio:9/16;background:#111;border-radius:6cqh;padding:1.2cqh;box-sizing:border-box;box-shadow:0 1cqh 3cqh rgba(0,0,0,.25)\"><div style=\"position:relative;width:100%;height:100%;border-radius:5cqh;overflow:hidden;container-type:inline-size;background:#13302A\"><img src=\"img/10-car-vertical.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;\"><div style=\"position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 13cqw/.95 'Bebas Neue',Impact,sans-serif;color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)\"><span style=\"display:inline-block;vertical-align:middle;background:#2EC4A6;color:#13302A;font:800 4.6cqw 'Inter',Arial,sans-serif;padding:.8cqw 2.2cqw;border-radius:5cqw;margin-right:2cqw\">PART 2</span>NOBODY TELLS YOU THIS</div><div style=\"position:absolute;left:8%;right:14%;top:66%;text-align:center;z-index:4\"><span style=\"font:900 7cqw/1.25 'Inter',Arial,sans-serif;color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.6);white-space:nowrap\">NOBODY <span style=\"color:#2EC4A6\">TELLS</span> YOU</span></div><div style=\"position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5\"><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i><i style=\"width:9cqw;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.85);display:block\"></i></div><div style=\"position:absolute;left:5%;right:20%;bottom:5%;display:grid;gap:2cqw;opacity:.55;z-index:5\"><i style=\"height:3cqw;width:45%;background:rgba(255,255,255,.9);border-radius:2cqw;display:block\"></i><i style=\"height:2.6cqw;width:80%;background:rgba(255,255,255,.8);border-radius:2cqw;display:block\"></i></div><div style=\"position:absolute;left:6.02%;width:80.09%;top:13.02%;height:62.5%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none\"></div><i style=\"position:absolute;left:0;right:0;top:12.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i><i style=\"position:absolute;left:0;right:0;top:87.5%;border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block\"></i></div></div></div>"
+  }
+ ],
+ "stage": "vertical",
+ "stepId": "hook-text",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ]
+}

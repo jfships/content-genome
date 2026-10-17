@@ -1,9 +1,9 @@
 # Gotchas (read before the first build of a session)
 
 ## Rendering
-- Long renders must survive the tool call that starts them. Launch through a wrapper script, detached: `setsid nohup bash render.sh out.mp4 > render.log 2>&1 < /dev/null & disown`. `render.sh` sets the browser path and runs `./node_modules/.bin/hyperframes render -q standard -w 4 -o "$1"`. Launching `npx` directly in the background gets cancelled when the call returns. Poll the log.
+- Renders must finish inside the tool call that starts them. Current HyperFrames versions cancel a detached render as soon as the launching call returns (`render_cancelled_parent_exited`), even through `setsid nohup`. Keep each render inside your tool's time limit and run it in the foreground; split long renders, or use `--docker` or cloud rendering (`setup/tools.md` §2b). Set the browser path in the command: `./node_modules/.bin/hyperframes render -q standard -w 4 -o out.mp4`.
 - Rough speed: a few frames a second with 4 workers, so a 4-minute draft can take ~20 minutes; on a 2-core cloud workspace a 6-second clip takes 1–1.5 minutes. Converge on stills first (`setup/tools.md` §2b).
-- A render launched from a process that exits gets cancelled; detach it (above) and re-render anything cut short.
+- A render cut short is re-rendered from the start; don't trust a partial file.
 - Never kill all render processes by name; you may kill someone else's job.
 - **Cutouts silently falling back to rembg.** MediaPipe 0.10.15+ dropped its old interface (`mp.solutions`), and 0.10.14 won't install on newer Python. `base.py` now uses the current interface (the selfie segmenter model, downloaded to `motion/models/`). If it ever prints `cutout: rembg`, stop and fix MediaPipe: rembg is often 10× slower.
 - If the environment has a preinstalled browser, point HyperFrames and Playwright at it (`HYPERFRAMES_BROWSER_PATH=…`, Playwright `executablePath`) instead of downloading one, and pin the Playwright version that matches it.
@@ -27,6 +27,15 @@
 
 ## HyperFrames registry demos
 - About half of the catalog demos fail offline (pages embedded in other pages, CDN fonts and scripts, WebGPU shaders), and some that render show blank placeholders. Use them as references to rebuild in the brand, not as finished pieces.
+
+## Frames from the web
+- Video downloaders are often blocked on a work machine. To get stills of a video without one, open it in any browser you can run scripts in, play and pause once, seek to the time, draw the video to a canvas and read the image back (1600×900 is plenty for a direction page).
+- If large results get cut off or saved to a file instead of shown, return fewer frames per call and decode them from the saved file; never parse a truncated result as JSON.
+- Turn autoplay off and re-check the page URL: the site starts the next video when the current one ends, and a frame grabbed after the end is the outro card.
+- Stills are enough for direction pages. Real clips still need a download on the creator's computer.
+
+## HyperFrames snapshot
+- `hyperframes snapshot -o` is a directory, and `--at` takes a comma list of times. One call with all the times, not one call per time with a `.png` name.
 
 ## Fonts and libraries
 - Web fonts and CDNs are often blocked. Use local `@fontsource/*` files and a local `gsap.min.js` from npm.

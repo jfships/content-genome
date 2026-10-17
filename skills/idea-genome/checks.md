@@ -58,7 +58,7 @@ Replaces the table above for a Short. Same rule: every line `done`, or `open` wi
 | Stranger test | Pass, with one line of why. Fail = rejected, stop here |
 | One idea | One message; overlaps checked (`short-form.md` S12) |
 | Message | One sentence, 12 words or fewer |
-| Shape | Exactly one named from `catalog/short-shapes.md`; 3 real examples shown |
+| Shape | Exactly one named from `catalog/short-shapes.md` |
 | Hook, three layers | First frame, spoken line and 3–7 words of on-screen text, all written word for word |
 | Word count | Script words ≤ the budget for the target length |
 | Last line | Written exactly: payoff, button, hold ≤1 s or loop. No outro |

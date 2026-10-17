@@ -23,7 +23,7 @@ PLACE_IN = {
  "close-out": ("kit", "close-out", ""),
  "profile-picture-tiles": ("kit", "profile-picture", "1 of 2"), "profile-picture-pick": ("kit", "profile-picture", "2 of 2"),
  "banner-tiles": ("kit", "banner", "1 of 2"), "banner-pick": ("kit", "banner", "2 of 2"),
- "vertical-layouts": ("vertical", "vertical-layouts", "")}
+ "vertical-layouts": ("vertical", "vertical-layouts", ""), "hook-text": ("vertical", "hook-text", ""), "sound-effects": ("sound", "sound-effects", "")}
 NICHE = ["dog", "groom", "poodle", "coat", "matted", "mats", "dryer", "clipper", "fur", "paw", "leash", "bark"]   # Wren's niche: never in option copy
 LABELS = {"no": "Discard", "keep": "Keep in library"}
 def _fix(d):
@@ -1263,6 +1263,93 @@ W("vertical-layouts", {
  "title": "Layouts for Shorts, Reels and TikTok", "what": "Each one on a phone. Faded shapes are the app's buttons; keep words inside the dashed box; the dotted lines show what the grid keeps.",
  "next": "Next: hook text, the words on screen from the first second.", "persona": SAY_PERSONA,
  "sections": [vsec("everyday", "Everyday", "", VERT), vsec("cutout", "Cut-out and green screen", "Your background removed or replaced.", VERT_CUT), vsec("bfr", "Break-from-reality", "Layouts that bend the frame for a laugh.", VERT_BFR)]})
+
+# ---------- 17b. Vertical: hook text (fixed: Main / Backup / Alternative / Discard), phone frames, safe box + grid crop drawn ----------
+# The words sit at y 250-520 (13%-27% of the frame) above the face, on screen from frame 1. Each option is the locked
+# text style or a hook-only style at hook size; the full-face layout and the vertical captions sit below the chin.
+HOOK_WORDS = "Nobody tells you this"
+def hook_card(inner):
+    return phone(VIMG(VF) + inner + VCAP("66%"))
+HOOKS = [  # id, name, line, inner html
+ ("hook-block", "Color block", "Words on a solid block in your pop color.",
+  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4"><span style="display:inline-block;background:{HL};color:{TX};font:400 12cqw/1 {TITLE};padding:1.5cqw 3.5cqw">{HOOK_WORDS.upper()}</span></div>'),
+ ("hook-outline", "Outlined", "Big white words, dark outline, no box.",
+  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 14cqw/.95 {TITLE};color:#fff;-webkit-text-stroke:.9cqw {TX};paint-order:stroke fill;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.5)">{HOOK_WORDS.upper()}</div>'),
+ ("hook-two-tone", "Two-tone", "One key word in the pop color, the rest white.",
+  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 14cqw/.95 {TITLE};color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)">NOBODY TELLS YOU <span style="color:{HL}">THIS</span></div>'),
+ ("hook-label", "Label + line", "A small label above one big line.",
+  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4"><div style="display:inline-block;background:#fff;color:{TX};font:800 4.6cqw {TEXT};padding:.8cqw 2.4cqw;border-radius:1.4cqw;margin-bottom:2cqw">WEEK ONE</div>'
+  f'<div style="font:400 13cqw/.95 {TITLE};color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)">{HOOK_WORDS.upper()}</div></div>'),
+ ("hook-sticker", "Sticker", "Words on a tilted, thick-outlined sticker.",
+  f'<div style="position:absolute;left:8%;top:14%;z-index:4;transform:rotate(-4deg);background:{EX2};color:{TX};border:1.2cqw solid #fff;border-radius:3cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.35);font:400 11cqw/1 {TITLE};padding:1.6cqw 4cqw">{HOOK_WORDS.upper()}</div>'),
+ ("hook-part", "Part N + hook", "\"Part 2\" folded into the hook line (numbered series only).",
+  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 13cqw/.95 {TITLE};color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)"><span style="display:inline-block;vertical-align:middle;background:{HL};color:{TX};font:800 4.6cqw {TEXT};padding:.8cqw 2.2cqw;border-radius:5cqw;margin-right:2cqw">PART 2</span>{HOOK_WORDS.upper()}</div>')]
+W("hook-text", {
+ "round": "hook-text", "kind": "fixed", "fonts": ["bebas-neue", "inter"], "aspect": "3/4.6", "photoTag": PHOTO_TAG,
+ "title": "Hook text", "what": "The words on screen from the first frame. Dashed box: keep words inside. Dotted lines: what the grid keeps.",
+ "single": "pick", "singleFallback": "backup", "altValue": "alt", "keepValues": ["pick", "backup", "alt"], "buttons": PICK_BTN,
+ "next": "Next: covers, then a few questions about endings and music.", "persona": SAY_PERSONA,
+ "options": [dict(id=h[0], name=h[1], line=h[2], html=hook_card(h[3]), **({"pick": True, "why": "Reads at feed size, sits above the face, and uses your text style."} if h[0] == "hook-two-tone" else {})) for h in HOOKS]})
+
+# ---------- 13b. Sound: sound effects (library, a section per moment kind; each sound plays with the visual it belongs to) ----------
+SFX = [  # moment kind, kind title, line, [(id, name, line)]
+ ("whoosh", "Wipes and moves", "Under a scene change or something sliding in.", [("whoosh-soft", "Soft air", "A quiet sweep. Barely there."), ("whoosh-fast", "Fast sweep", "Short and bright. Fits quick cuts.")]),
+ ("tick", "Counters and typing", "Under numbers counting and words appearing.", [("tick-soft", "Soft tick", "A small round blip."), ("tick-key", "Keyboard", "A dry key click.")]),
+ ("hit", "Big words landing", "When a big title or number lands.", [("hit-low", "Low thump", "Weighty and calm."), ("hit-bright", "Bright hit", "Sharp and clear.")]),
+ ("click", "Buttons and cursors", "When something on a screen is pressed.", [("click-ui", "Clean click", "A neat interface click."), ("click-pop", "Pop", "A rounder, friendlier click.")]),
+ ("riser", "Before a reveal", "A rise that ends right as the reveal appears.", [("riser-sweep", "Rising sweep", "Smooth and steady."), ("riser-noise", "Air rise", "Airy build.")]),
+ ("stop", "Punchlines", "Right on the joke or the point.", [("stop-drop", "Pitch drop", "The sound falls away."), ("stop-thud", "Dry thud", "One small hit, then quiet.")])]
+SFX_JS = r'''<script>
+(function(){
+  var ctx=null;
+  function ac(){ if(!ctx){ ctx=new (window.AudioContext||window.webkitAudioContext)(); } if(ctx.state==='suspended') ctx.resume(); return ctx; }
+  function env(g,t,a,d,v){ g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(v,t+a); g.gain.exponentialRampToValueAtTime(0.0001,t+a+d); }
+  function tone(type,f0,f1,t,dur,v,out){ var o=ctx.createOscillator(),g=ctx.createGain(); o.type=type; o.frequency.setValueAtTime(f0,t); if(f1!==f0) o.frequency.exponentialRampToValueAtTime(f1,t+dur); o.connect(g); g.connect(out); env(g,t,0.005,dur,v); o.start(t); o.stop(t+dur+0.05); }
+  function noise(t,dur,v,ftype,f0,f1,out){ var n=ctx.createBufferSource(),b=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*(dur+0.1)),ctx.sampleRate),d=b.getChannelData(0); for(var i=0;i<d.length;i++) d[i]=Math.random()*2-1; n.buffer=b; var f=ctx.createBiquadFilter(); f.type=ftype; f.frequency.setValueAtTime(f0,t); if(f1!==f0) f.frequency.exponentialRampToValueAtTime(f1,t+dur); var g=ctx.createGain(); n.connect(f); f.connect(g); g.connect(out); env(g,t,Math.min(0.08,dur/3),dur,v); n.start(t); n.stop(t+dur+0.1); }
+  var S={
+   'whoosh-soft':function(t,o){ noise(t,0.5,0.35,'bandpass',300,2500,o); },
+   'whoosh-fast':function(t,o){ noise(t,0.25,0.4,'bandpass',900,5000,o); },
+   'tick-soft':function(t,o){ for(var i=0;i<4;i++) tone('sine',1800,1800,t+i*0.16,0.04,0.3,o); },
+   'tick-key':function(t,o){ for(var i=0;i<5;i++){ noise(t+i*0.11,0.025,0.5,'highpass',3000,3000,o); tone('square',220,150,t+i*0.11,0.03,0.12,o); } },
+   'hit-low':function(t,o){ tone('sine',110,38,t,0.5,0.9,o); noise(t,0.12,0.25,'lowpass',400,200,o); },
+   'hit-bright':function(t,o){ tone('square',330,110,t,0.25,0.3,o); noise(t,0.08,0.4,'highpass',2500,2500,o); },
+   'click-ui':function(t,o){ tone('triangle',1500,1100,t,0.04,0.5,o); },
+   'click-pop':function(t,o){ tone('sine',500,900,t,0.08,0.6,o); },
+   'riser-sweep':function(t,o){ tone('sawtooth',150,1400,t,0.9,0.12,o); },
+   'riser-noise':function(t,o){ noise(t,0.9,0.4,'bandpass',300,6000,o); },
+   'stop-drop':function(t,o){ tone('sawtooth',900,70,t,0.4,0.25,o); },
+   'stop-thud':function(t,o){ tone('sine',120,50,t,0.25,0.8,o); }
+  };
+  window.bgSfx=function(id){ var a=ac(); var o=a.createGain(); o.gain.value=0.7; o.connect(a.destination); var f=S[id]; if(f) f(a.currentTime+0.05,o); setTimeout(function(){ try{o.disconnect();}catch(e){} },1500); };
+  window.bgSfxStop=function(){};
+})();
+</script>'''
+SFX_CSS = (f'<style>.sx .bar i{{display:block;height:100%;width:30%;background:{HL};border-radius:1cqw;transform:translateX(0)}}'
+           '.card.playing .sx .bar i{animation:sxm 1s ease-in-out infinite alternate}@keyframes sxm{0%{transform:translateX(0)}100%{transform:translateX(230%)}}'
+           f'.sx .ct b{{font:400 22cqw/1 {TITLE};color:{BG};opacity:.35;margin-right:3cqw}}.card.playing .sx .ct b{{animation:sxc 1s steps(1) infinite}}.card.playing .sx .ct b:nth-child(2){{animation-delay:.25s}}.card.playing .sx .ct b:nth-child(3){{animation-delay:.5s}}@keyframes sxc{{0%{{opacity:1;color:{HL}}}25%,100%{{opacity:.35;color:{BG}}}}}'
+           f'.sx .ht b{{display:inline-block;font:400 24cqw/1 {TITLE};color:{BG}}}.card.playing .sx .ht b{{animation:sxh .5s ease-out infinite}}@keyframes sxh{{0%{{transform:scale(1.8);opacity:0}}40%{{transform:scale(1);opacity:1}}100%{{transform:scale(1)}}}}'
+           f'.sx .ck{{position:relative;height:18cqw}}.sx .ck u{{position:absolute;left:12%;top:2cqw;width:44%;height:13cqw;border-radius:2cqw;background:{HL};text-decoration:none}}.sx .ck s{{position:absolute;left:70%;top:12cqw;width:6cqw;height:6cqw;background:{BG};clip-path:polygon(0 0,100% 55%,55% 60%,40% 100%);text-decoration:none}}.card.playing .sx .ck s{{animation:sxk 1s ease-in-out infinite alternate}}.card.playing .sx .ck u{{animation:sxu 1s steps(1) infinite alternate}}@keyframes sxk{{0%{{left:70%}}100%{{left:34%}}}}@keyframes sxu{{0%{{opacity:1}}90%,100%{{opacity:.55}}}}'
+           f'.sx .rs{{display:flex;align-items:flex-end;gap:2cqw;height:24cqw}}.sx .rs i{{display:block;flex:1;background:{HL};height:15%;border-radius:.6cqw .6cqw 0 0}}.card.playing .sx .rs i{{animation:sxr 1s ease-in infinite}}@keyframes sxr{{0%{{height:10%}}100%{{height:95%}}}}'
+           f'.sx .sp b{{display:block;font:400 18cqw/1 {TITLE};color:{BG}}}.sx .sp i{{display:block;height:2cqw;width:100%;background:{HL};margin-top:3cqw}}.card.playing .sx .sp i{{animation:sxs .9s ease-in infinite}}@keyframes sxs{{0%{{width:100%}}100%{{width:0}}}}</style>')
+SFX_VIS = {
+ "whoosh": '<div class="bar" style="height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden"><i></i></div>',
+ "tick": '<div class="ct"><b>1</b><b>2</b><b>3</b></div>',
+ "hit": '<div class="ht"><b>BIG</b></div>',
+ "click": '<div class="ck"><u></u><s></s></div>',
+ "riser": '<div class="rs">' + ''.join('<i style="animation-delay:%.2fs"></i>' % (k * .04) for k in range(14)) + '</div>',
+ "stop": '<div class="sp"><b>…and that\'s it</b><i></i></div>'}
+def sfx_card(name, kind, k="whoosh"):
+    return (f'<div class="sx" style="position:absolute;inset:0;container-type:size;background:{TX};color:{BG};padding:8%;display:flex;flex-direction:column;justify-content:space-between">'
+            f'<div style="font:400 11cqw/1 {TITLE}">{name}</div>{SFX_VIS[k]}'
+            f'<div style="font:700 4cqw {TEXT};color:{HL}">{kind}</div></div>')
+W("sound-effects", {
+ "round": "sound-effects", "kind": "library", "layout": "tiles", "fonts": ["bebas-neue", "inter"], "keepWord": "sound|sounds",
+ "head": SFX_CSS + SFX_JS, "title": "Sound effects", "what": "Short sounds for the moments in a video. Press play on each; keep any you like.",
+ "buttons": [{"value": "keep", "label": "Keep in library"}, {"value": "no", "label": "Discard"}], "keepValues": ["keep"],
+ "next": "Next: your brand kit.", "persona": SAY_PERSONA,
+ "sections": [{"id": k, "title": t, "line": l, "kind": "library", "keepWord": "sound|sounds", "layout": "tiles",
+               "buttons": [{"value": "keep", "label": "Keep in library"}, {"value": "no", "label": "Discard"}], "keepValues": ["keep"],
+               "options": [{"id": i, "name": n, "line": ln, "html": sfx_card(n, t, k), "play": "bgSfx", "playMs": 1200} for i, n, ln in opts]} for k, t, l, opts in SFX]})
 
 # ---------- Change mode (revisit.md): the same page as the first build, opened on one decision ----------
 # The current pick comes first, tagged "What you have now"; the header says only this one thing is changing.

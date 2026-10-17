@@ -6,6 +6,8 @@ Every question follows the voice in `../voting-pages.md`: say what the answer ch
 
 ## 1a. Core interview (2 rounds)
 
+**An existing `Who I Am.md`** (from a voice intake, a client form or an earlier run) that covers 1a and 1b is the interview: read it, confirm what it says in one pass, and ask only the gaps.
+
 **Demo mode: the interview builds the persona.** Run the same questions a real creator gets, as AskUserQuestion cards. On each card the first option is the persona's answer, invented in character on the spot and labeled "(invented in character)". The operator confirms with one click, or picks or types another answer (a veto). In fast-forward, show the questions and the persona's answers as a list instead of cards. Never fill the doc silently. Viewers should see that a real creator gets interviewed and that the seed was only a seed. Stage 1 is the one place the operator clicks; from Stage 2 on the run moves by itself.
 
 **Round 1: the basics (4–5 questions).**

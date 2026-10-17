@@ -11,7 +11,7 @@ A Short is not the long video cropped. It's its own video: written for vertical,
 - **Safe box:** anything important stays inside x 65–930, y 250–1450. The top ~250 px is the platform's top bar; the right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~470 px by the caption, handle and audio rows. **Instagram grid crop:** the grid shows a centered 3:4, so only y 240–1680 survive. Both are drawn on every vertical mock, on every page.
 - **The hook:** lands in the first 1–2 s on three layers together: the creator (or their real material) on screen in frame 1, a spoken line, and 3–7 words of hook text visible from frame 1. Frame 1 makes sense with no context. Nothing comes before it.
 - **Openers:** no sting, no sound logo, no name tag on Shorts. Corner mark off.
-- **Series tag:** only as "Part N", for series formats, folded into the hook text (or a small tag right after the hook). Never before the hook, never competing with it.
+- **Series tag:** the series or show name never appears on a Short or Reel; each one stands alone. Only "Part N" for a numbered part, folded into the hook text (or a small tag right after the hook). Never before the hook, never competing with it.
 - **Endings:** no subscribe ask, no end card or closing card, no sting, no outro, no words that announce the end. Each Short ends on one of the kept Short endings (step 6).
 
 ## 1. How they shoot Shorts (chat, before any page)
@@ -54,7 +54,7 @@ A split (stacked or 60/40) only when both must be seen at the same moment.
 
 ## 4. Hook text (fixed, one pick page)
 
-The 3–7 words on screen from frame 1 that tell a stranger why to stay. Built like `vertical-layouts.json` (phone frames), title "Hook text", 6–10 options: the locked text style (Stage 4, step 6), its backup and alternatives at hook size, plus a few hook-only styles from `../catalog/vertical-voice-formats.md` ("Hook text styles"). Say in one line that it starts from their text style. Each option sits at y 250–520 above the face on the full-face layout, with the vertical captions below the chin; one option folds "Part 2" into the hook to show the series-tag rule. One page, no finalists (the text style was already narrowed in Stage 4): **Main** · **Backup** · **Alternative** · **Discard**. Rules written with it: 3–7 words, on screen from frame 1 for at least 2 s, never touching the captions or the face, inside the safe box, at least 44 px.
+The 3–7 words on screen from frame 1 that tell a stranger why to stay. Start from `../page-template/examples/hook-text.json` (phone frames, safe box and grid crop drawn), title "Hook text", 6–10 options: the locked text style (Stage 4, step 6), its backup and alternatives at hook size, plus a few hook-only styles from `../catalog/vertical-voice-formats.md` ("Hook text styles"). Say in one line that it starts from their text style. Each option sits at y 250–520 above the face on the full-face layout, with the vertical captions below the chin; one option folds "Part 2" into the hook to show the series-tag rule. One page, no finalists (the text style was already narrowed in Stage 4): **Main** · **Backup** · **Alternative** · **Discard**. Rules written with it: 3–7 words, on screen from frame 1 for at least 2 s, never touching the captions or the face, inside the safe box, at least 44 px.
 
 The same page shows one reference card with no buttons (`control: true`), **Your captions on a Short**: the Stage 4 caption style at the vertical spec, in a phone frame with the safe box drawn on:
 - 2–3 word chunks, one line (two at most)
@@ -77,14 +77,47 @@ Up to four questions, each saying what it changes:
 
 ## 7. Vertical pacing (stated, one confirm)
 
-Show the vertical row of the motion table (Stage 5d) as plain lines, then ask once: **Keep all** / **Change one (say which)**.
-- a visual change every 3–5 s (a cut, punch-in, graphic, text or B-roll); no single visual over ~8 s
+Ask two things in one AskUserQuestion call, each with what it changes:
+- **How long a shot can stay** (the ceiling): *Crisp, about 2 s* (comedy, rants, fast talkers) · *Standard, about 2.5 s* (default) · *Relaxed, about 3.5 s* (calm, teaching). Recommend from the content personality. It's a soft ceiling: proof gets its reading time and the deadpan hold its 1.5 s.
+- **Spoken pace target:** *Quick, about 2.8–3.2 words a second* · *Standard, 2.6–3* (default) · *Measured, 2.3–2.7*. Say plainly that it's a target, not a speed-up: when the creator already talks at it, nothing is sped up.
+
+Then show the rest of the vertical row as plain lines and ask once: **Keep all** / **Change one (say which)**.
+- each shot sized for its job: talking lines end on the last word, proof gets reading time, cutaways 0.5–1.5 s; no single visual over ~4 s
 - punch-ins of about 1.1–1.25× on the hook and each punchline, eased in, hard cut back
 - one held deadpan beat (1.5 s at most) allowed per punchline
 - music phrases of 4 beats
 
+## 8. Instagram carousels and Stories (only if Instagram was picked)
+
+Reels are covered above. Instagram's other two formats have their own rules. Check live first; the numbers are starting points (Oct 2026) and several come from vendor guides, not Instagram (sources: `../catalog/instagram-carousels-stories.md`).
+
+**Ask once (AskUserQuestion, say what it changes):** do they post still carousels (*Yes* · *Sometimes* · *No*) and roughly how many Instagram followers they have today. Followers decide Stories: they reach only people who already follow. Under about 300, skip Stories and plan Reels plus three evergreen Highlights. *No* to carousels skips the carousel part.
+
+### Carousels
+
+Starting rules (say them in two plain lines in chat; the creator can change any):
+- **Canvas:** 1080×1350 (4:5), one ratio for the whole carousel, never 1:1 and 4:5 mixed. The profile grid shows a centered crop (sources disagree on the exact shape, check live), so keep the key words and faces in the middle. Keep text out of the top 120 px and bottom 150 px, and 65 px off the sides (house numbers).
+- **Slide 1 is the hook:** one specific claim or number, high contrast, readable at feed size; a swipe cue on slide 1 only; a logo, if any, under 15% of the slide.
+- **Length:** 6–10 slides (the platform allows 20; guides put 7–10 best; no official number).
+- **Value slides:** one idea each, under about 25 words, at most two type sizes (headline, body), a progress mark like "3 / 7".
+- **Text sizes** (house numbers at 1080 wide; no source gives any): headline at least 80 px, body at least 44 px.
+- **Last slide** mirrors slide 1 (same color and type) and asks for one thing: save, follow, send to someone, or comment. A link only if the link is the point. The caption is short and never repeats the slides.
+
+**Page: carousel layouts** (library, skippable). Start from `../page-template/examples/vertical-layouts.json` and swap the phone for a 4:5 slide strip: 8–10 layouts, each showing three slides (cover, a value slide, the last slide) in the locked palette, fonts and text style, with the creator's real photo or a drawn stand-in. **Keep in library** / **Discard**. Skipped → "Carousel layouts: owed" in `vertical.md`; video-genome never guesses them.
+
+### Stories (only with the follower gate passed)
+
+Starting rules:
+- **Canvas** 1080×1920; keep the top 250 px and bottom 340 px clear, 65 px off the sides (third-party readings of Instagram's layout; check live).
+- **3–4 frames per sequence:** hook clip (5–15 s, the face moving in the first second) → proof → poll → link frame last. One idea per frame, readable in 2 seconds, captions on.
+- **Native look:** plain video or photo with the brand's text style on top, never a designed flyer and never a 16:9 thumbnail pasted on a color field.
+- **One sticker per frame, on the last frame.** The link sticker always has custom text with a specific promise ("Full video on YouTube").
+- **Highlights:** evergreen only (about, best work, episodes, tools), at most 3 at first. The cover is one centered icon or word in the brand colors: build it from the covers page templates (step 5).
+
+Write the four frame specs (hook, proof, poll, link: what's in it, where the text sits) into `vertical.md` as plain lines. No page unless the creator wants to choose their frame look.
+
 ## Output
 
-`vertical.md`: how they shoot Shorts and the framing marks; the tall backdrop (file path); the kept layouts with their use-when and framing spec; hook text (Main, Backup, alternatives, rules); the caption spec; the kept Short endings; covers (kept, or the skipped default); the fixed rules (hook, openers, series tag, endings); safe box and 3:4 crop numbers with the date checked; the audio policy per platform and the music lane; the vertical pacing row; the pages' artifact URLs.
+`vertical.md`: how they shoot Shorts and the framing marks; the tall backdrop (file path); the kept layouts with their use-when and framing spec; hook text (Main, Backup, alternatives, rules); the caption spec; the kept Short endings; covers (kept, or the skipped default); the fixed rules (hook, openers, series tag, endings); safe box and 3:4 crop numbers with the date checked; the audio policy per platform and the music lane; the vertical pacing row; the pages' artifact URLs. If Instagram was picked: the carousel rules and kept layouts (or "owed"), and the Stories frame specs and Highlight covers (or "skipped: under the follower gate").
 
 **Hand-off at the end of Vertical** (one line): "Shorts and Reels are done. Next: your Brand Genome, everything you picked in one place."

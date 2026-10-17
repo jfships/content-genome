@@ -48,6 +48,8 @@ Confirm every taken item in chat: list them in one message (item, what it says, 
 
 ## Draft quality and cutouts: explain, then pick (every video)
 
+Ask again when real footage arrives (first draft built from real takes, or a resumed session): the rough-draft choice below doesn't carry over. See `shorts/build.md` "Cut (S5)".
+
 Ask once per video, after the "this video is about" line and before planning. Explain the why first, in plain words, then one AskUserQuestion. Save the answer in `plan.md` (`Draft quality: 540p · 15 fps`) and `log.md`. The creator can change it any time ("bump drafts to 720").
 
 **The why, said to the creator (adapt, keep it short):**
@@ -61,6 +63,7 @@ Ask once per video, after the "this video is about" line and before planning. Ex
   - **720p · input fps:** for judging timing, lip sync and music hits. About 3–4× slower than the first option.
   - **360p · 15 fps:** for very long videos or big test packs, when only the order and pacing are being judged.
   - **1080p · input fps:** only when a draft must be shown to someone else. Close to final render times.
+- **HyperFrames always draws at the composition's size** and has no width flag, so a size menu does nothing there; offer frame rate (and a smaller composition) instead, and skip the measured-time step for sizes.
 - Put the measured time next to each option (`setup/tools.md` §2b): "about N min for the whole draft".
 - In builds: pass the size to `base.py` (`"height"`), cut and render drafts at that size and rate (`render -q draft -f <fps>`), and render finals at the input's size and rate.
 

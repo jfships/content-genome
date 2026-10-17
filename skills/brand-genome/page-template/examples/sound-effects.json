@@ -1,0 +1,283 @@
+{
+ "round": "sound-effects",
+ "kind": "library",
+ "layout": "tiles",
+ "fonts": [
+  "bebas-neue",
+  "inter"
+ ],
+ "keepWord": "sound|sounds",
+ "head": "<style>.sx .bar i{display:block;height:100%;width:30%;background:#2EC4A6;border-radius:1cqw;transform:translateX(0)}.card.playing .sx .bar i{animation:sxm 1s ease-in-out infinite alternate}@keyframes sxm{0%{transform:translateX(0)}100%{transform:translateX(230%)}}</style><script>\n(function(){\n  var ctx=null;\n  function ac(){ if(!ctx){ ctx=new (window.AudioContext||window.webkitAudioContext)(); } if(ctx.state==='suspended') ctx.resume(); return ctx; }\n  function env(g,t,a,d,v){ g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(v,t+a); g.gain.exponentialRampToValueAtTime(0.0001,t+a+d); }\n  function tone(type,f0,f1,t,dur,v,out){ var o=ctx.createOscillator(),g=ctx.createGain(); o.type=type; o.frequency.setValueAtTime(f0,t); if(f1!==f0) o.frequency.exponentialRampToValueAtTime(f1,t+dur); o.connect(g); g.connect(out); env(g,t,0.005,dur,v); o.start(t); o.stop(t+dur+0.05); }\n  function noise(t,dur,v,ftype,f0,f1,out){ var n=ctx.createBufferSource(),b=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*(dur+0.1)),ctx.sampleRate),d=b.getChannelData(0); for(var i=0;i<d.length;i++) d[i]=Math.random()*2-1; n.buffer=b; var f=ctx.createBiquadFilter(); f.type=ftype; f.frequency.setValueAtTime(f0,t); if(f1!==f0) f.frequency.exponentialRampToValueAtTime(f1,t+dur); var g=ctx.createGain(); n.connect(f); f.connect(g); g.connect(out); env(g,t,Math.min(0.08,dur/3),dur,v); n.start(t); n.stop(t+dur+0.1); }\n  var S={\n   'whoosh-soft':function(t,o){ noise(t,0.5,0.35,'bandpass',300,2500,o); },\n   'whoosh-fast':function(t,o){ noise(t,0.25,0.4,'bandpass',900,5000,o); },\n   'tick-soft':function(t,o){ for(var i=0;i<4;i++) tone('sine',1800,1800,t+i*0.16,0.04,0.3,o); },\n   'tick-key':function(t,o){ for(var i=0;i<5;i++){ noise(t+i*0.11,0.025,0.5,'highpass',3000,3000,o); tone('square',220,150,t+i*0.11,0.03,0.12,o); } },\n   'hit-low':function(t,o){ tone('sine',110,38,t,0.5,0.9,o); noise(t,0.12,0.25,'lowpass',400,200,o); },\n   'hit-bright':function(t,o){ tone('square',330,110,t,0.25,0.3,o); noise(t,0.08,0.4,'highpass',2500,2500,o); },\n   'click-ui':function(t,o){ tone('triangle',1500,1100,t,0.04,0.5,o); },\n   'click-pop':function(t,o){ tone('sine',500,900,t,0.08,0.6,o); },\n   'riser-sweep':function(t,o){ tone('sawtooth',150,1400,t,0.9,0.12,o); },\n   'riser-noise':function(t,o){ noise(t,0.9,0.4,'bandpass',300,6000,o); },\n   'stop-drop':function(t,o){ tone('sawtooth',900,70,t,0.4,0.25,o); },\n   'stop-thud':function(t,o){ tone('sine',120,50,t,0.25,0.8,o); }\n  };\n  window.bgSfx=function(id){ var a=ac(); var o=a.createGain(); o.gain.value=0.7; o.connect(a.destination); var f=S[id]; if(f) f(a.currentTime+0.05,o); setTimeout(function(){ try{o.disconnect();}catch(e){} },1500); };\n  window.bgSfxStop=function(){};\n})();\n</script>",
+ "title": "Sound effects",
+ "what": "Short sounds for the moments in a video. Press play on each; keep any you like.",
+ "buttons": [
+  {
+   "value": "keep",
+   "label": "Keep in library"
+  },
+  {
+   "value": "no",
+   "label": "Discard"
+  }
+ ],
+ "keepValues": [
+  "keep"
+ ],
+ "next": "Next: your brand kit.",
+ "persona": "Wren",
+ "sections": [
+  {
+   "id": "whoosh",
+   "title": "Wipes and moves",
+   "line": "Under a scene change or something sliding in.",
+   "kind": "library",
+   "keepWord": "sound|sounds",
+   "layout": "tiles",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "whoosh-soft",
+     "name": "Soft air",
+     "line": "A quiet sweep. Barely there.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Soft air</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Wipes and moves</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    },
+    {
+     "id": "whoosh-fast",
+     "name": "Fast sweep",
+     "line": "Short and bright. Fits quick cuts.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Fast sweep</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Wipes and moves</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    }
+   ]
+  },
+  {
+   "id": "tick",
+   "title": "Counters and typing",
+   "line": "Under numbers counting and words appearing.",
+   "kind": "library",
+   "keepWord": "sound|sounds",
+   "layout": "tiles",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "tick-soft",
+     "name": "Soft tick",
+     "line": "A small round blip.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Soft tick</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Counters and typing</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    },
+    {
+     "id": "tick-key",
+     "name": "Keyboard",
+     "line": "A dry key click.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Keyboard</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Counters and typing</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    }
+   ]
+  },
+  {
+   "id": "hit",
+   "title": "Big words landing",
+   "line": "When a big title or number lands.",
+   "kind": "library",
+   "keepWord": "sound|sounds",
+   "layout": "tiles",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "hit-low",
+     "name": "Low thump",
+     "line": "Weighty and calm.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Low thump</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Big words landing</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    },
+    {
+     "id": "hit-bright",
+     "name": "Bright hit",
+     "line": "Sharp and clear.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Bright hit</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Big words landing</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    }
+   ]
+  },
+  {
+   "id": "click",
+   "title": "Buttons and cursors",
+   "line": "When something on a screen is pressed.",
+   "kind": "library",
+   "keepWord": "sound|sounds",
+   "layout": "tiles",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "click-ui",
+     "name": "Clean click",
+     "line": "A neat interface click.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Clean click</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Buttons and cursors</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    },
+    {
+     "id": "click-pop",
+     "name": "Pop",
+     "line": "A rounder, friendlier click.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Pop</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Buttons and cursors</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    }
+   ]
+  },
+  {
+   "id": "riser",
+   "title": "Before a reveal",
+   "line": "A rise that ends right as the reveal appears.",
+   "kind": "library",
+   "keepWord": "sound|sounds",
+   "layout": "tiles",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "riser-sweep",
+     "name": "Rising sweep",
+     "line": "Smooth and steady.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Rising sweep</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Before a reveal</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    },
+    {
+     "id": "riser-noise",
+     "name": "Air rise",
+     "line": "Airy build.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Air rise</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Before a reveal</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    }
+   ]
+  },
+  {
+   "id": "stop",
+   "title": "Punchlines",
+   "line": "Right on the joke or the point.",
+   "kind": "library",
+   "keepWord": "sound|sounds",
+   "layout": "tiles",
+   "buttons": [
+    {
+     "value": "keep",
+     "label": "Keep in library"
+    },
+    {
+     "value": "no",
+     "label": "Discard"
+    }
+   ],
+   "keepValues": [
+    "keep"
+   ],
+   "options": [
+    {
+     "id": "stop-drop",
+     "name": "Pitch drop",
+     "line": "The sound falls away.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Pitch drop</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Punchlines</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    },
+    {
+     "id": "stop-thud",
+     "name": "Dry thud",
+     "line": "One small hit, then quiet.",
+     "html": "<div class=\"sx\" style=\"position:absolute;inset:0;container-type:size;background:#13302A;color:#F4FBF7;padding:8%;display:flex;flex-direction:column;justify-content:space-between\"><div style=\"font:400 11cqw/1 'Bebas Neue',Impact,sans-serif\">Dry thud</div><div class=\"bar\" style=\"height:7cqw;background:rgba(255,255,255,.12);border-radius:1cqw;overflow:hidden\"><i></i></div><div style=\"font:700 4cqw 'Inter',Arial,sans-serif;color:#2EC4A6\">Punchlines</div></div>",
+     "play": "bgSfx",
+     "playMs": 1200
+    }
+   ]
+  }
+ ],
+ "stage": "sound",
+ "stepId": "sound-effects",
+ "journeyIf": [
+  "vertical"
+ ],
+ "nicheWords": [
+  "dog",
+  "groom",
+  "poodle",
+  "coat",
+  "matted",
+  "mats",
+  "dryer",
+  "clipper",
+  "fur",
+  "paw",
+  "leash",
+  "bark"
+ ]
+}

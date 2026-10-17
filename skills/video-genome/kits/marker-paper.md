@@ -67,7 +67,7 @@ open
 
 ## 9. Vertical
 - Layouts: Full frame + captions (default) · Handwritten notes over you · Before / after
-- Motion: base units ×0.8; a change every 3–5 s, punch-ins on the hook and punchline; no sting, sound logo, name tag or end card; end on the payoff or loop back to the start.
+- Motion: base units ×0.8; shots sized for their job, ceiling ~2.5 s (shorts/build.md "Pace"), speech at 2.6–3 words a second, punch-ins on the hook and punchline; no sting, sound logo, name tag or end card; end on the payoff or loop back to the start.
 - Captions on, 2–3 word chunks, around y 1150–1400 below the face, clear of the platform buttons (craft/layout.md). Hook text 3–7 words from frame 1. Shot tall, never cropped from the long edit (shorts/build.md).
 
 ## 10. Voice

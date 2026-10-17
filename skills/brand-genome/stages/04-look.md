@@ -21,6 +21,8 @@ Ask with AskUserQuestion, now, not in Stage 1. Each question says what the answe
    - *Not sure yet* (keep the real room for now; backdrops still get picked, for title cards and later)
    Lighting and framing advice is video-genome's job, per video, from these answers and the chosen look.
 
+4. **Existing logo.** "Do you (or your client) already have a logo?" *No* · *Yes, and its colors stay*. If yes, ask for the file; its colors become a house rule and the Color palette step (below) is built around them. Stage 7 then places the logo instead of drawing a wordmark.
+
 Write them into `Who I Am.md` (taste and can't-stand under "Takes they hold"; setup and background under "Filming setup"). A can't-stand that binds type or copy ("no tiny all-caps labels", a banned word) also goes into `house-rules.md` and into every page's `houseRules` from here on. They shape **Our pick for you** on every page in this stage and the sorting into fixed pages vs library pages. In demo, the persona answers in character and the answers go on the persona card.
 
 **Pick the test photos:** from `../benchmark/README.md`, the three frames closest to the creator's field (face, hands at work, place; nearest in mood when nothing matches). Say in chat, once: "I'll show every option on the same three test photos, so you can compare. They won't be in your videos." On the page they carry only the small "Test photo" tag.

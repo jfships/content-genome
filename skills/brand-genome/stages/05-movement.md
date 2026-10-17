@@ -26,6 +26,7 @@ Then derive rhythm, camera and text timing from the motion feel and the keeps. S
 
 Screens and ideas moving in 3D space: camera fly-throughs, screens floating in depth, exploded layers, orbit rings, tunnels, dolly zooms, rack focus, push into a card, 3D card flips, whip pans, 3D titles. This is what makes a screen demo or an explainer look like a top agency made it, and it's the usual fallback when a topic is hard to make entertaining. Working sources and rules: `../catalog/spatial/README.md`.
 
+- **Check free disk first (at least 2 GB).** HyperFrames refuses to render with under 1 GB free. If there isn't room, build the page as poster cards (a snapshot at 3 s of each move) marked "clip owed" rather than skipping the page.
 - **Build a real test pack, not mockups.** 8–12 moves from the catalog, each a 6-second clip in the creator's palette and fonts (set `shared/base.css` `:root` and the font files), showing their real screens if they have any (their site, an app they use, their notes); otherwise neutral stand-in screens drawn in code, labeled as stand-ins. Render with HyperFrames at draft quality (`npx hyperframes render -q draft -f 15`). Say how long rendering will take before starting.
 - **Page:** `motion-entrances.json` shape with one section, each card a clip (`html` = a muted `<video>` with a poster, `play` = a small play function defined in `head`; `../page-template/README.md`, "Clip cards"). **Keep in library** / **Discard**, notes on each.
 - **Go wide.** The creator can't ask for moves they've never seen. Include the HyperFrames registry's spatial pieces and anything new from outside it (the catalog lists where to look), rebuilt in the brand. If they ask for more, run another round; the library is meant to keep growing.
@@ -49,14 +50,15 @@ Write one table into the Brand Genome. Use these exact fields so video skills ca
 | Transitions | default + extras + reserved | hard cut; match cut, object wipe |
 | Hold | stillness after a beat lands | ≥ 0.3 s |
 | Camera | drift, push-in range, parallax | drift 1→1.05; push 1.4–2×; 1 / 0.5 / 0.2 |
-| Shot hold | typical shot length, long / vertical | 4–8 s / a visual change every 3–5 s, none over ~8 s |
+| Shot hold | typical shot length, long / vertical ceiling | 4–8 s / ceiling ~2.5 s, each shot sized for its job |
+| Spoken pace | target words a second after the edit, long / vertical | 2.3–2.8 / 2.6–3 |
 | Phrase length | filled in Stage 6 | 8 beats / 4 beats |
 | Spatial | kept spatial moves (catalog slugs) + any rule | fly-through, rack-focus, push-into-card; never on talking-head beats |
 | Never | banned moves | bounce, spin, zoom-blur |
 
 Ease names are GSAP's (power2 = cubic, power3 = quart). Write the cubic-bezier equivalents beside them for tools that don't use GSAP. Ease names and bezier values never appear in chat; they live in the table only.
 
-**Vertical variant:** a second row for Shorts and Reels, with these values: a visual change every 3–5 s (cut, punch-in, graphic, text or B-roll), no single visual over ~8 s; punch-ins of about 1.1–1.25× on the hook and each punchline (eased in, hard cut back); one held deadpan beat (≤1.5 s) allowed per punchline; phrase length 4 beats. Stage 8 confirms it.
+**Vertical variant:** a second row for Shorts and Reels, with these values: shot lengths by job (talking lines end on the last word, usually 1–2.5 s; proof gets reading time, about 0.3 s a word + 0.5 s; cutaways 0.5–1.5 s), a ceiling of about 2.5 s a shot, no single visual over ~4 s; a spoken-pace target of 2.6–3 words a second (a target, never a fixed speed-up: the edit speeds speech only by what's missing, 12% max); punch-ins of about 1.1–1.25× on the hook and each punchline (eased in, hard cut back); one held deadpan beat (≤1.5 s) allowed per punchline; phrase length 4 beats. Stage 8 confirms it.
 
 ## Output
 

@@ -101,6 +101,12 @@ The engine animates with springs. Match the brand's motion feel: Snap/Punch → 
 `bash $SKILL/tools/talking-head/scripts/setup.sh work/motion`
 It needs Node 18+, Python 3 and ffmpeg (with prores_ks and libass). It installs Playwright + Chromium and the Python packages (numpy, opencv, mediapipe, fonttools, sherpa-onnx, faster-whisper). Run engine scripts with `NODE_PATH=./motion/node_modules`. On Windows, use Git Bash; if `python3` is missing, use `python`. Full reference: `tools/talking-head/README.md` and `tools/talking-head/reference/`.
 
+## 3b. Free temp voice
+For lines the creator hasn't recorded, so a draft can be judged whole. Both run free on CPU, offline once downloaded. If one download site is blocked, try the project's GitHub release.
+- **Kokoro** (sherpa-onnx `kokoro-en-v0_19` from the sherpa-onnx tts-models release; a male US voice, speaker 6, speed about 1.08).
+- **Piper** (sherpa-onnx with `vits-piper-en_US-ryan-medium`; `length_scale` (speech speed; higher is slower) about 1.45 gives roughly 3 words a second).
+Pick a voice close to the creator's own (gender, accent); the two above are examples, and both libraries have others. Set the speed to land in the brand's pace. Tag every temp stretch "temp voice" on screen. If neither can be fetched, say so and use the on-screen script, never skip the line.
+
 ## 4. Optional services (from the brand's Creator section: tools and budget)
 
 - **Music, sound effects, narrator voices:** e.g. ElevenLabs (API or connector). Keep the API key in a local `.env` file that a script reads; never print it, never paste it into chat.

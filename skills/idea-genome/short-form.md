@@ -35,7 +35,7 @@ If it takes two sentences, it's two Shorts (see S12).
 Pick exactly one shape from `catalog/short-shapes.md`.
 
 1. Recommend one, with one line of why, plus one alternative.
-2. **Before it's locked, show 3 real example Shorts of that shape in the creator's niche.** Find them live with web search; give the real links. Never invent a link. If you can't find 3, say how many you found and show those.
+2. **The shape is proven by watching it, not by links.** video-genome's tall rough draft is where the creator judges it. Show real example Shorts of the shape in their niche only if they ask: find them live with web search and give the real links. Never invent a link.
 3. The creator picks.
 
 The long video's order never transfers. If this Short comes from a long video, the beats are rebuilt in the shape, not kept in the episode's order.
@@ -66,16 +66,18 @@ Use the shortest length that lands the idea.
 | Instagram Reels | 20–60 s |
 | TikTok | 25–45 s (61–75 s only if the creator is in TikTok's Creator Rewards) |
 
-Word budget at ~150 words a minute:
+Word budget at the brand's pace (default about 2.8 words a second):
 
 | Length | Words |
 |---|---|
-| 15 s | ~37 |
-| 30 s | ~75 |
-| 45 s | ~110 |
-| 60 s | ~150 |
+| 15 s | ~42 |
+| 30 s | ~84 |
+| 45 s | ~126 |
+| 60 s | ~168 |
 
 Write the target length and the word cap. The script must fit the cap. Footage builds may run over and get cut after watching; the script may not.
+
+The creator's own words (voice memos, notes) are the base, not the limit. Once the shape and tone are known, restructure them, reweight them (put the strongest item at the center) and propose new lines in the creator's tone, each marked "new" so the creator keeps or cuts it. Never invent facts.
 
 ## S7. The last line (exact)
 

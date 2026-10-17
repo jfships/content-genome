@@ -4,7 +4,7 @@ The same six shapes as idea-genome's `catalog/short-shapes.md` (same names and s
 
 **The long video's order never transfers.** A Short made from a long video is rebuilt in one of these shapes, not kept in the episode's order.
 
-Before a shape is locked, show the creator 3 real example Shorts of it in their niche (`README.md`, checklist item 3). Examples below are made up and labeled as examples, in a neutral niche (home cooking).
+The creator judges a shape by watching it as a tall rough draft (`README.md`, checklist item 3); real example Shorts only if they ask. Examples below are made up and labeled as examples, in a neutral niche (home cooking).
 
 ## 1. Payoff first → loop (`hook-payoff-loop`)
 
@@ -49,7 +49,7 @@ Before a shape is locked, show the creator 3 real example Shorts of it in their 
 ## 6. Reaction / reply (`reaction-reply`)
 
 - **Beats:** the clip, comment or other Short being answered (reply-with-a-Short, remix) → the creator's take → button.
-- **Length:** 15–40 s. The reacted-to clip is a third of the runtime or less. The creator's face is on screen in frame 1.
+- **Length:** 15–40 s. The reacted-to clip is a third of the runtime or less, counting any moving picture of the source at any size; a frozen frame or a product still counts as a graphic. The creator's face is on screen in frame 1.
 - **Example:** a comment "You can't cook rice in a kettle" on screen → creator holding a kettle → it works, or it doesn't.
 - **Watch out:** the take is the content, not the clip; check the rights to the clip.
 - **Angles that fit:** myth-test, matchup, insider.

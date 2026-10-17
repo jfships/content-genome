@@ -15,7 +15,7 @@
 
 ## Shorts, Reels, TikTok
 
-One clean file per platform, each with its own caption text, cover, ending and keywords: `shorts/platforms.md`. Never a crop of the long video's file.
+One clean file per platform, each with its own caption text, cover, ending and keywords: `shorts/platforms.md`. Never a crop of the long video's file. A launch Story is only made when the brand's follower gate passes (`craft/vertical.md`, "Instagram Stories").
 
 ## Files and naming
 
