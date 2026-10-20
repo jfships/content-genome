@@ -7,7 +7,7 @@ Coordinates: 16:9 is 1920×1080 (thirds at x 640/1280, y 360/720). 9:16 is 1080�
 ## 1. Rules
 
 **Around the speaker**
-1. **Fill the open side.** Speaker on one third → the graphic fills the other two-thirds, sized to it, starting one gutter (≈96 px) from the speaker. Never a small box parked at the far edge with a gap in the middle (the Act One failure).
+1. **Fill the open side.** Speaker on one third → the graphic fills the other two-thirds, sized to it, starting one gutter (≈96 px) from the speaker. Never a small box parked at the far edge with a gap in the middle (the commonest first-draft failure).
 2. **Room in front.** Leave space on the side the speaker faces. Graphics go in that space or behind them, never between them and the edge they look toward (short-siding).
 3. **Off face and hands.** Nothing covers the face, mouth or gesturing hands. Words behind the speaker sit beside the head, never across it.
 4. **New scene, new layout.** Decide placement per scene from where the speaker is now; never inherit it. Speaker leaves → the graphic takes the frame. Speaker moves → the graphic moves to the new open side.
@@ -47,10 +47,7 @@ Pick per scene; the brand's layout picks (if any) come first, these fill the gap
 | Lower third | x=96, bottom ≈950, 90–130 px tall | Naming a person, place or topic, 3–4 s |
 | Words behind | One word at 12–18% frame height on the shoulder line, speaker cut out in front, ≥ 70% of it visible | Hook line, chapter title |
 | Captions | y≈70–80% on 16:9; around y 1150–1400 on 9:16 | Subtitles, emphasis |
-| 9:16 stack | A 16:9 screen or graphic band on top (y ~250–860), speaker below; captions around y 1150–1400, inside x 65–930 | Shorts, Reels showing a screen |
-| 9:16 full face | Chest-up, eyes near y≈640, hook text above, captions below the chin | Talking Shorts |
-| 9:16 corner face | Content fills the frame; the speaker's face in a corner bubble inside the safe box | Commentary over a screen or clip |
-| 9:16 side column | Speaker slightly off-center, caption column in the open side (x 60–540) | Short punchy lines |
+| 9:16 (vertical) | The named layouts with pixel boxes live in `shorts/build.md` "Layouts": Full frame, Punch-in, Split top, Over their page, Full graphic, Words behind, Floating card | Shorts, Reels, TikTok |
 
 ## 3. Still check (gate 2, every scene; gate 4 hunts for misses)
 

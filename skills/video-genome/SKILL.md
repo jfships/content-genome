@@ -52,10 +52,10 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 | 0c. What they brought | `plan/intake.md` | The "this video is about" line confirmed; every run-sheet item marked taken or open; taken items confirmed in chat; draft quality picked and the rough-cutout note given |
 | 1. Plan | `plan/run-sheet.md` + `plan/story-libraries.md` | Every open item decided, one question or page each; gate 1 passes |
 | 2. Asset debt | `plan/asset-debt.md` + `craft/asset-library.md` | Everything owed listed, library searched, creator's list sent |
-| 3a. Graphics first | `paths/graphics-first.md` | Draft reviewed → recording → cut → placement → rebuild; final cutout method decided before the first final draft |
-| 3b. Footage first | `paths/footage-first.md` | Shoot brief → footage → cut → style of the edit → moments → build; final cutout method decided before the first final draft |
+| 3a. Graphics first | `paths/graphics-first.md` | Beat brief written → draft reviewed → recording → cut → placement → rebuild; final cutout method decided before the first final draft |
+| 3b. Footage first | `paths/footage-first.md` | Shoot brief → footage → cut → style of the edit → beat brief → build; final cutout method decided before the first final draft |
 | 4. Sound | `craft/sound.md` | Levels metered, mix to target |
-| 5. Checks | `review/checks.md` | Gates 2–4 pass, debt is zero, fresh reviewer scores 8+ |
+| 5. Checks | `review/checks.md` | Gates 2–4 pass, debt is zero, technical review clean, beat-brief self-check done |
 | 6. Deliver | `craft/deliverables.md` + `review/session-close.md` | Every file meets its platform's spec; brand review done |
 | 7. Results | `learn/results-log.md` | 48 h and 28 d numbers logged after the creator publishes |
 
@@ -77,6 +77,7 @@ Recommend one from the format and video type. Steps 0–2 and 4–7 are the same
 Read when their part starts:
 - `decision-pages.md` and `page-template/`: every decision page (read before the first one of a session)
 - `plan/story-libraries.md`: the story stack libraries and how to combine them
+- `craft/graphic-jobs.md`: what a graphic is for (five jobs), choosing from every source, design-don't-pick, execution bar; read before planning the look of any beat
 - `craft/layout.md`: where things sit on screen; read before building any scene
 - `craft/brand-fit.md`: when the brand's graphics don't fit a moment
 - `craft/asset-library.md`: the brand's central asset library and index
@@ -99,12 +100,12 @@ Read when their part starts:
 5. **Never invent.** No made-up numbers, quotes, prices, results or testimonials. Claims trace to Proof in the identity doc. Illustrative stand-ins are labeled in the plan.
 6. **Show the real thing.** When the script says they built, made or decided something, show the real artifact (screens, pages, footage, the object), each one visibly different.
 7. **Every scene is laid out, not placed.** Placement is re-decided per scene from what's on screen (`craft/layout.md`); every still passes its check.
-8. **Every graphic must be readable on a phone and earn its place.** A graphic that illustrates a line literally (boxes for "tools") is cut or replaced with something funny or concrete.
+8. **Every graphic does a job, and is designed, not picked.** A graphic is the straight man, the unsaid line, the exaggeration, the proof, or a planned breather (`craft/graphic-jobs.md`). One that only illustrates the line is cut. Candidates come from every source (the subject's material, the brand's devices, a new device in brand limits, a generated image or clip); the pick is written with its reason in the beat brief; the brand's lists are a floor, never a ceiling. Readable on a phone, always.
 9. **Converge on stills, not renders.** Stills take seconds and renders take minutes. Fix layout in stills first. Drafts render at the draft quality the creator picked in intake, with the fast rough cutout; finals render at full quality with the final cutout method, decided before the first final draft (`plan/intake.md`, `plan/run-sheet.md` item 14).
-10. **Score harshly, fix the worst three, repeat.** A fresh reviewer that didn't build the video scores it before the creator sees it.
+10. **Technical review, then the creator judges.** A separate agent that didn't build the video runs the technical review (`review/checks.md` gate 4): clipped words, collisions, safe box, freezes, durations, levels, pace, glitches, as a pass/fail list with times. Nothing reaches the creator with an open item. Taste is the creator's: the builder's own check is the beat brief, never a score, and any taste question goes to them on a rendered clip card.
 11. **Money and credits.** Before any paid generation (music, voices, images, video), name the tool, what it makes and the cost from the tool's own price check, and wait for approval unless the brand's budget pre-approves it.
 12. **Disclose what must be disclosed.** Realistic synthetic people, voices or events get the platform's label (check current rules).
-13. **Keep everything.** Old renders are versioned (`-v1`, `-v2`), never overwritten. Each episode keeps `log.md`: decisions, tool versions, review scores, anything outside the brand.
+13. **Keep everything.** Old renders are versioned (`-v1`, `-v2`), never overwritten. Each episode keeps `log.md`: decisions, tool versions, technical-review results, anything outside the brand.
 14. **Reuse before making.** Search the brand's asset library before shooting, generating or building anything; file every reusable result back into it.
 15. **No build without a record.** Every episode has an `idea.md`, a `plan.md` with a story stack, and a `debt.md`.
 16. **Entertaining first; motion carries what jokes can't.** When a beat is hard to make entertaining without forcing it, spatial motion carries it (brand file §2 fallback, `craft/spatial/`). The bar is a top agency's launch film, not a slideshow with easing.
@@ -122,7 +123,7 @@ Content Creation/
       START-HERE.md             ← Claude's resume file; sections: ## Brand, ## Ideas, ## Videos
       Brand Genome.md | Brand Sheet.md   ← the brand file
       Who I Am.md
-      00 Decisions/             ← brand decision docs, house-rules.md, genome-deviations.md
+      00 Decisions/             ← brand decision docs, house-rules.md, genome-deviations.md, style-ledger.md (what worked and what was killed, per video)
       01 Brand Kit/             ← wordmark, sting, sound logo, end card, page sources
       02 Research/              ← channel-playbook.md
       03 Videos/
@@ -132,7 +133,7 @@ Content Creation/
           plan.md               ← run sheet + story stack, approved
           debt.md               ← asset debt
           RECORDING.md | SHOOT.md
-          log.md                ← decisions, tool versions, review scores
+          log.md                ← decisions, tool versions, technical-review results
           work/                 ← sources, transcripts, scripts, build files
           _review/              ← stills, contact sheets, review-log.md
           out/                  ← renders, versioned
@@ -165,6 +166,7 @@ Content Creation/
 | `mix.py` | Voice clean-up, music ducked under voice, SFX, sound logo, loudness master |
 | `reframe_vertical.py` | One 16:9 source clip → a 9:16 part, following the speaker's head (a part for a Short, never the long edit) |
 | `short_timing.py` | A Short's timing numbers: pace, gaps, first payoff, word budget (`shorts/checks.md`) |
+| `tech_review.py` | The technical review on a render: clipped words at cuts, caption timing and collisions, safe box and layout boxes per beat, unplanned freezes, graphic durations, levels, pace (`review/checks.md` gate 4) |
 | `thumb_text.py` | Builds and measures a thumbnail's text block to the rules in `craft/thumbnails.md` |
 | `talking-head/` | Transcription, inspection, background blur/zoom, mattes, speaker-to-side, captions, composite, thumbnails, motion engine |
 

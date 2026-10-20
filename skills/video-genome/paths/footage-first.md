@@ -40,14 +40,24 @@ Propose these as one check page (`intake-confirm.json` shape, `adjust`): each it
 - **Base treatment:** background blur, dim, color or image replacement; zoom style (ease or punch) from the motion table.
 - **Captions:** the brand's caption style, or none.
 
-## B5. Moment plan (gate: one page)
+## B5. Beat brief (gate: written, then one page)
 
-One row per moment in `plan.md`, shown to the creator as one check page (`draft-review.json` shape): a still of each moment built over their frame, its time and the line it covers, **Looks right / Change it**. A moment with two genuinely good options gets its own pick page (`moment-look.json`) first. The plan.md row:
+One row per beat, in `plan.md`. The builder writes it, not the creator; it is the creative work, done on the strongest model.
 
-| # | In–Out | Line it covers | Move | What happens, on which words | Why this move |
+| # | In–Out | Line | Job | Device (source) | Layout + speaker box | Graphic box | Size | Enter / exit | Hold | Why this, not the two alternates |
+
+- **Job:** straight man · unsaid line · exaggeration · proof · breather (`craft/graphic-jobs.md`). "Illustrates the line" is not a job.
+- **Device (source):** what it is and where it came from: *their material* · *kept* (the brand's lists) · *new* (designed in brand limits, `craft/brand-fit.md`) · *generated* (image or clip, brand image rules). Candidates from every source are listed before the pick.
+- **Layout and boxes:** the named layout for the speaker (`shorts/build.md` "Layouts" for vertical; `craft/layout.md` §2 for wide) and the pixel box of the graphic. Consecutive beats never share a layout unless the hold is the joke.
+- **Size, enter/exit, hold:** in px and seconds, from the brand's motion table; proof holds ≥ 1.1 s; no single graphic over ~4 s.
+- **Why:** the builder writes 2–3 treatments per beat, ranks them, drops its own weakest and records why the winner beat the other two. The creator sees Main and Backup only on beats the builder marks **unsure**, as rendered clip cards (never stills for anything that moves, never a text description).
+- Every moving graphic is proved as a rendered 2–4 s clip of that beat before the full build.
+- Gate: every beat has a job, a source, a reason and a layout, and `craft/graphic-jobs.md` "Self-check" passes, before the first still is built.
+
+Then the creator sees one check page (`draft-review.json` shape): a rendered clip card per beat that moves, a still per beat that doesn't, each with its time and line, **Looks right / Change it**. Beats the builder marked unsure get their own pick page (`moment-look.json`, clip cards) first.
 
 Rules:
-- Placement per moment from `craft/layout.md`: the graphic on the open side, re-decided whenever the speaker moves or leaves.
+- Placement per beat is the named layout in the row, re-decided whenever the speaker moves or leaves (`craft/layout.md`).
 - Show the subject's real objects, taken from the words.
 - Never invent numbers, quotes, prices or results; label illustrative stand-ins.
 - One idea per moment. One change per spoken beat (0.4–1.2 s).

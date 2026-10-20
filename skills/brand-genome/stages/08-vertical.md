@@ -103,7 +103,7 @@ Starting rules (say them in two plain lines in chat; the creator can change any)
 - **Text sizes** (house numbers at 1080 wide; no source gives any): headline at least 80 px, body at least 44 px.
 - **Last slide** mirrors slide 1 (same color and type) and asks for one thing: save, follow, send to someone, or comment. A link only if the link is the point. The caption is short and never repeats the slides.
 
-**Page: carousel layouts** (library, skippable). Start from `../page-template/examples/vertical-layouts.json` and swap the phone for a 4:5 slide strip: 8–10 layouts, each showing three slides (cover, a value slide, the last slide) in the locked palette, fonts and text style, with the creator's real photo or a drawn stand-in. **Keep in library** / **Discard**. Skipped → "Carousel layouts: owed" in `vertical.md`; video-genome never guesses them.
+**Page: carousel layouts** (library, skippable). Start from `../page-template/examples/vertical-layouts.json` and swap the phone for a 4:5 slide strip: 8–10 layouts, each showing three slides (cover, a value slide, the last slide) in the locked palette, fonts and text style, with the creator's real photo or a drawn stand-in. Include a stacked "podcast split" (two wide, zoomed-out framings of the creator one above the other, one written line per panel, each line in its own frame; carousel-only if the brand bans split screen while talking). Say on the page: "Seen a layout you like that isn't here? Tell me and I'll add it." An added layout is built the same way, goes on the same page and is voted like the rest. **Keep in library** / **Discard**. Skipped → "Carousel layouts: owed" in `vertical.md`; video-genome never guesses them.
 
 ### Stories (only with the follower gate passed)
 

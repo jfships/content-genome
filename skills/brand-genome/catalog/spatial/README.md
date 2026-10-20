@@ -44,6 +44,24 @@ Every move below has a working source in `src/<move>/index.html`: a 6-second Hyp
 
 **Other sources worth checking each time** (new ones appear monthly): HyperFrames' own launch films (creativeclaw.co motion-design collection) as the quality bar; charlie947/motion-graphics-skills; VisualxIntelligence/motion-tools-and-skills (film-style prompts and a study of agent-made videos); Claude Motion; real 3D scenes through a 3D tool (costs credits; ask first).
 
+## Real 3D (Three.js), the second round
+
+CSS 3D moves above are flat layers posed in space. Some looks need a real 3D renderer: glass that bends light, particles, liquid surfaces, a wireframe drawing itself, bars as solid blocks, a screen burning away. Render them with Three.js in a headless browser (Playwright/Chromium with the software GPU flags `--use-gl=angle --use-angle=swiftshader --enable-unsafe-swiftshader`), frame by frame into ffmpeg: no GPU and no HyperFrames needed, about 1–2 minutes per 6-second draft at 1280×720, 15 fps. Run it where there is room (a cloud workspace is fine; clips come back at under 1 MB each).
+
+| Move | What it shows | Use when | Slug |
+|---|---|---|---|
+| Glass box | A rounded glass cube with the subject inside; the background bends through it | One idea or object made precious | `glass-box` |
+| Glass layers fly-through | Camera passes through a stack of glass panes, one screen each | Steps or layers of a process | `glass-stack` |
+| Floating slab | A thick white screen turns in space, a light sweeps it, chips with words lift off | Introducing a tool or result | `floating-slab` |
+| Particles form the words | Thousands of dots gather into the mark, a sphere, then a word | Opener or reveal | `particle-morph` |
+| Blueprint build | Boxes draw themselves as wireframe on a grid, fill in, link up, get labels | How something is put together | `blueprint-build` |
+| 3D bar wave | A field of solid bars ripples, then settles into the chart with the winner in the pop color | A number or trend | `bar-wave` |
+| Liquid blobs | Ray-marched blobs in the pop color merge and split | Mood beat or background | `liquid-blobs` |
+| Screen burns into dust | A screen burns away along a noise edge into sparks; the next screen forms | Scene change, "it's gone" | `dissolve` |
+| Hologram phone | A see-through phone scans in over glowing rings | Product or app reveal | `hologram-phone` |
+
+Rules that held in the first run: give every basic (unlit) material `toneMapped:false` or the brand colors drift; with bloom, keep white UI below the threshold (scale the texture to about 0.8, threshold 1.0) or the whole screen blooms; ray marching renders at half size and scales up; draw stand-in screens in code and label them as stand-ins. The page is built like any other library page with clip cards (`page-template/README.md`). Keep the source next to the clips with a one-line re-render command so the library can be regenerated at final quality.
+
 **Tried and skipped by the first creator** (taste, not quality; still offer them): words on a tilted track, isometric blocks, dark keynote reveal, hologram projection, paper pop-up.
 
 ## Rules (from HyperFrames' product-launch-video skill and our own tests)

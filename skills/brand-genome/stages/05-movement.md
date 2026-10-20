@@ -31,7 +31,8 @@ Screens and ideas moving in 3D space: camera fly-throughs, screens floating in d
 - **Page:** `motion-entrances.json` shape with one section, each card a clip (`html` = a muted `<video>` with a poster, `play` = a small play function defined in `head`; `../page-template/README.md`, "Clip cards"). **Keep in library** / **Discard**, notes on each.
 - **Go wide.** The creator can't ask for moves they've never seen. Include the HyperFrames registry's spatial pieces and anything new from outside it (the catalog lists where to look), rebuilt in the brand. If they ask for more, run another round; the library is meant to keep growing.
 - No renderer available → skip with "Spatial library: owed" in the Genome; video-genome builds it before the first screen-demo episode.
-- Recap line: "Spatial library: 14 moves kept, 4 skipped."
+- **Real 3D round (offered after the CSS pack, skippable).** Glass, particles, liquid, wireframe, solid bars, dust: `../catalog/spatial/README.md` "Real 3D". Render 6–9 as 6-second drafts in the brand colors with Three.js in a headless browser (no GPU needed), same clip-card page, **Keep in library** / **Discard**. Needs about 2 GB free wherever it renders (a cloud workspace is fine, the clips are small); the creator can delete the render folder afterwards, the source stays with the clips. If it looks thin, say so and run a second round before asking for picks: a creator cannot ask for moves they have never seen.
+- Recap line: "Spatial library: 14 moves kept, 4 skipped; real 3D: 7 kept, 1 skipped."
 
 ## 5d. The motion table
 

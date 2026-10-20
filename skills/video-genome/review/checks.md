@@ -1,8 +1,8 @@
 # Checks: four gates
 
-*Long videos. A Short uses `shorts/checks.md` (its gates, timing numbers and scored review).*
+*Long videos. A Short uses `shorts/checks.md` (its gates, timing numbers and technical review).*
 
-Nothing reaches the creator without passing the gates for its stage. Log every gate in `_review/review-log.md`: date, what was checked, scores, problems found, what changed.
+Nothing reaches the creator without passing the gates for its stage. Log every gate in `_review/review-log.md`: date, what was checked, faults found, what changed.
 
 ## Gate 1: Plan (before asking for approval)
 
@@ -44,41 +44,28 @@ After rendering, check five views:
 - [ ] **Sync:** video and audio durations match within 0.05 s. For each big hit, compare the SFX onset (from the mix plan, or `ffmpeg -af silencedetect` on the SFX stem) with the frame where the action lands in the strips; within 1 frame.
 - [ ] **Deliverables checklist** in `craft/deliverables.md`.
 
-## Gate 4: Scored review (before the creator sees it)
+## Gate 4: Technical review (before the creator sees it)
 
-**Self-review first.** Score each 1–10 as a harsh motion director, not a proud author:
-1. **Entertaining / personality:** would a stranger keep watching this beat? Every beat has a named reason; the ending isn't a wind-down.
-2. **Hook:** striking in 0–2 s, promise shown by 10 s.
-3. **Phone readability.**
-4. **Motion:** eased, no dead frames, layers present, follows the brand's table.
-5. **Variety:** no repeated transition, composition or flat background twice in a row.
-6. **Composition:** passes `craft/layout.md`: the graphic fills the open side, one focal point, depth, safe margins, nothing touching frame edges, no empty patch without a job.
-7. **Brand accuracy:** palette, fonts, placements, motion language, house rules.
-8. **Uniqueness:** passes the "whose channel is this?" and "is this a template?" tests (`craft/uniqueness.md`).
-9. **Sound:** hits on beats and on the exact frame, at most ~1 SFX per 3 s, no unintended silence, music carved under voice.
+Taste is the creator's. The builder's own check of the look is the beat brief (`craft/graphic-jobs.md` "Self-check": every beat does its job, nothing only illustrates its line, no device or layout repeats on consecutive beats, every proof reads alone, every device passes the execution bar). No scores: a score of taste from the person who built it, or from an agent reading stills, has never predicted what the creator will say.
 
-Hunt specifically for:
-- text overlapping during swaps
-- anything sliding instead of easing
-- a dead beat with nothing moving
-- the same composition twice in a row
-- type touching frame edges
-- blurry scaled-up text
-- low contrast
-- an empty frame at a section start
-- a speaker on one side, an empty middle, and a small graphic pushed against the far edge
-- a graphic left where the speaker used to be after the shot changed
+**Then the technical review.** Start a separate agent that did not build the video. Give it the render, `words_out.json`, `work/shots.json` (the built video's edit points on the cut's timeline: a JSON list of shot start times or `[start, end]` pairs; not `cutlist.json`, which is source time), the caption file (`captions.py` phrases or `{start,end,text}`), `work/beats.json`, the planned holds, the brand's motion table, vertical rules and house rules, and `tools/tech_review.py`. It returns a pass/fail list, one line per fault with the time, what is wrong and how to fix it, covering:
 
-List the 3 worst problems with timestamps, fix them, re-render only what changed (or recheck stills), and score again. Repeat until every score is 8+. Stop and report if two rounds don't raise the lowest score.
+| Check | Fault |
+|---|---|
+| Clipped words | A cut, swap or transition lands less than 0.1 s after a word ends or before one starts; a word is cut short at any edit point |
+| Last-word cuts | A beat holds more than 0.2 s after the speaker's last word before the next beat (unless the hold is in the beat brief) |
+| Captions | A caption's words or times disagree with `words_out.json`; a caption overlaps hook text, a label or the face; a caption outside its box; a line over the chunk limit; the last 10 s transcript diffed against the captions |
+| Collisions and boxes | Two elements overlap during a swap; any text or face outside the safe box (vertical) or margins (wide); a speaker or graphic outside the beat brief's box; text touching a frame edge |
+| Layout | Consecutive beats share a layout without a planned hold; a graphic left where the speaker used to be |
+| Freezes | A frame held longer than 0.4 s where no hold is planned (`ffmpeg freezedetect`); a clip holding its last frame because it was shorter than its slot |
+| Durations | A proof on screen under 1.1 s; any single graphic over ~4 s; a title on screen outside the brand's range (default 2–3 s long-form, 1.5–2 s vertical) |
+| Pace | Speech outside the brand's pace target after the edit; gaps over the brand's limit (default 1.0 s long-form, 0.6 s vertical) |
+| Sound | Voice level and master loudness off target (`craft/sound.md`); music not ducked under voice; levels uneven between speakers; silence where there shouldn't be; an SFX off its frame |
+| Render | Black or duplicate frames, flicker on a cutout edge, blurry scaled-up text, low contrast, wrong size or frame rate |
+| Brand | `tools/brand_check.py`: colors or fonts outside the pack |
 
-**Then a fresh reviewer.** Start a separate agent that did not build the video. Give it only:
-- the render's contact sheet
-- the phone view
-- the strips
-- the transcript
-- the brand's personality, packs, motion table and house rules
-- the plan's promise (title and hook)
+**`work/beats.json`** is the beat brief written out by the builder when the brief is locked, one object per beat: `{"id", "start", "end", "layout", "job", "speaker": [x,y,w,h], "graphic": [x,y,w,h], "hook": [x,y,w,h]}` plus flags where they apply: `"hold": true` (the hold is planned), `"proof": true`, `"still": true` (a planned still frame), `"bleed": true` (a full-width band), `"overlap": true` (the graphic is meant to sit over the speaker). Boxes in render pixels. Keep it in step with `plan.md`; it is the file the checks read.
 
-Ask it to score the same 9 points cold and name the 3 worst problems. Where its score is 2+ points below yours, treat its view as right unless you can show it's wrong. Fix, recheck, log both sets of scores.
+`tools/tech_review.py` runs the measurable rows (clipped and last-word cuts, caption timing, boxes and safe box, freezes, durations, pace, levels) and prints the list; the agent checks the rest by eye on the contact sheet, the strips and the phone view and adds its lines. Nothing reaches the creator with an open item: fix, re-render only what changed, rerun. Log the list and the rerun in `_review/review-log.md`.
 
-**Show the creator** the draft with one line of final scores and a draft-review page (`decision-pages.md`), and say plainly that sound was metered, not heard.
+**Show the creator** the draft with the review's one-line result ("technical review clean, 2 planned holds") and a draft-review page (`decision-pages.md`): rendered clip cards for beats that move, stills for beats that don't. Say plainly that sound was metered, not heard. Any question of taste goes to them on a rendered clip card, never a still and never a score.

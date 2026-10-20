@@ -11,7 +11,7 @@ A Short is its own video, not a small episode and never a cut of the long edit. 
 ## Read
 - `shapes.md`: the six Short shapes.
 - `build.md`: shooting, the tall rough draft, pace, layout, captions, cutting.
-- `checks.md`: the Short's gates, the timing numbers and the scored review.
+- `checks.md`: the Short's gates, the timing numbers and the technical review.
 - `platforms.md`: files, covers, endings and music rules per platform, and the results to log.
 - From the main skill: `decision-pages.md`, `craft/layout.md` (9:16 rules), `craft/motion.md`, `craft/sound.md`, `setup/gotchas.md`.
 
@@ -30,10 +30,11 @@ Tracker line on every reply that moves the work: "Short 2 of 3 · plan · decisi
 | S1. Plan | The Short checklist below, one decision at a time | Short gate 1 passes (`checks.md`) |
 | S2. Asset debt | `plan/asset-debt.md`, same as long-form | Everything owed listed, library searched |
 | S2b. Direction | Two direction pages (`build.md`): the world the visuals come from, then how the creator and the source share the frame | Both picked, Main and Backup saved in `plan.md` |
+| S2c. Beat brief | One row per beat (`build.md` "Beat brief"): job, device and source, named layout with boxes, size, enter/exit, hold, and why it beat two alternates; moving graphics proved as 2–4 s clips | Every beat has a job, a source, a reason and a layout; `craft/graphic-jobs.md` self-check passes |
 | S3. Tall rough draft | `build.md` "Rough draft": built 9:16 from the start, temp voice or the creator's existing words, before anything is recorded | Creator watched it and said what changes; switch-model nudge given (main SKILL.md, "Which model for which part") |
 | S4. Record | Hook and lines recorded vertical (`build.md` "Recording") | Takes in, transcribed |
 | S5. Build | Draft quality asked again once real takes are in, then cut, pace, lay out, caption, sound (`build.md`) | Short gates 2–3 pass |
-| S6. Review | Timing numbers + scored review + fresh reviewer (`checks.md`) | Every score 8+ |
+| S6. Review | Timing numbers + technical review by an agent that didn't build it (`checks.md`) | Technical review clean; beat-brief self-check done |
 | S7. Deliver | One file per platform (`platforms.md`) | Each file meets its platform's spec |
 | S8. Results | `platforms.md` "Results" | 48 h and 28 d numbers logged |
 
@@ -52,7 +53,7 @@ Fill these in `plan.md`. Items taken from the Idea Record are confirmed in one p
 7. **Last line.** Written word for word: a payoff, a button line, a deadpan hold of 1 s or less, or a loop (the last line runs into the first, visually and in words). No outro, no "thanks for watching", no subscribe ask, no end card, no sting, nothing that announces the end.
 8. **Platform goal and ending.** Per platform: YouTube Shorts names the long video for the Related video link; Instagram builds reach on its own (the send reason below matters most there), with a call to action only as on-screen text over the last line; TikTok's sound policy (`platforms.md`).
 9. **Send reason.** Who would send this to someone, and why, in one line.
-10. **Layout and look.** One layout from the brand's vertical layouts (`build.md` "Layout"), the brand's caption and hook-text styles, the tall backdrop. **A direction page comes first:** before the first rough build the creator picks the look on pages (`build.md` "Direction pages"), never inside a build. Any later visual choice with two or more real options (layout per beat, a gag, the look of one moment) also goes on a page, as stills of the real material at 1080×1920 with Main and Backup; a gag or any moment that depends on motion or timing goes on as a rendered 2–4 s clip card, since it can't be judged from a still. Drafts are for timing and order, not for choosing looks.
+10. **Layout and look.** The named layouts the Short rotates through (`build.md` "Layouts"; one layout for a whole Short is a fail), the brand's caption and hook-text styles, the tall backdrop. Per-beat graphics are decided in the beat brief (S2c), each with a job (`craft/graphic-jobs.md`). **The direction pages come first:** before the first rough build the creator picks the look on pages (`build.md` "Direction pages"), never inside a build. Any later visual choice with two or more real options (layout per beat, a gag, the look of one moment) also goes on a page, as stills of the real material at 1080×1920 with Main and Backup; a gag or any moment that depends on motion or timing goes on as a rendered 2–4 s clip card, since it can't be judged from a still. Drafts are for timing and order, not for choosing looks.
 11. **Music and sound.** The brand's vertical lane, voice-led (`platforms.md` for music rights).
 12. **Truth and disclosure.** Same rules as long-form.
 

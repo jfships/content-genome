@@ -19,6 +19,7 @@ Do this at the start of every video, before any plan or code. The brand file com
   - the break-from-reality bank
   - the run sheet
   - house rules
+  - the brand's style ledger (`00 Decisions/style-ledger.md`), if present: what worked and what was killed in real videos, with stills. "Working" and "promoted" lines are strong defaults; "dropped" lines are not proposed again; the Genome's lists are a floor the ledger refines
 - **Demo creators:** if the brand says `mode: demo`, answer creator questions as the persona card in the brand, mark answers `answered_by: persona`, and let the operator veto. Use only the card's fictional Proof. A made-up creator can't film, so pick one with the operator (AskUserQuestion) before planning:
   - **Voice-only, graphics-led** (Recommended, free): Order A without a face; the narration is a generated voice described from the persona card (never imitating a real person). Placement: voice only.
   - **Avatar:** an avatar or video tool animates the persona's face references from the brand, speaking the cut script. Show the cost first. Label it as AI-generated everywhere it's posted.

@@ -4,11 +4,24 @@ Everything here is 1080×1920 from the first frame of the first draft. Nothing s
 
 ## Direction pages (S2b, before the first rough build)
 
-A rough draft built before the creator has chosen a look gets judged on the look and wastes the round. So two pages come first, built from real material (never stand-ins or screenshots made to fill the gap):
+A rough draft built before the creator has chosen a look gets judged on the look and wastes the round. So two pages come first, built from real material (the subject's films, pages and shots; a code-drawn mock only where nothing exists yet, labeled as a mock):
 1. **The world:** whose visuals fill the frame (the subject's own films, ads or footage; product or object shots in space; the creator's own set). Two or three options.
 2. **How the creator and the source share the frame:** full bleed with the creator over it, split top and bottom, or cutting between them. Two or three options.
 
 Each option is a 1080×1920 still with the safe box drawn on, two stills per option (the hook frame and one mid beat). Main and Backup picked; save both in `plan.md`. Only then build the rough draft.
+
+## Beat brief (S2c, after the direction pick, before the first rough build)
+
+The direction pages settle the world and the frame. The beat brief settles every beat, and it is the builder's creative work, not the creator's: done on the strongest model, written into `plan.md`, one row per beat:
+
+| # | In–Out | Line | Job | Device (source) | Layout + speaker box | Graphic box | Size | Enter / exit | Hold | Why this, not the two alternates |
+
+- **Job:** straight man · unsaid line · exaggeration · proof · breather (`craft/graphic-jobs.md`). "Illustrates the line" is not a job.
+- **Device (source):** *their material* · *kept* (the brand's lists) · *new* (designed for this line in brand limits, `craft/brand-fit.md`) · *generated* (image or clip, brand image rules). List candidates from every source before picking; "used last time" and "first in the list" are not reasons.
+- **Layout:** one of the named layouts below, with the speaker's box; consecutive beats never share a layout unless the hold is the joke.
+- **Why:** 2–3 treatments per beat, ranked; the builder drops its own weakest and records why the winner beat the other two. The creator sees Main and Backup only on beats marked **unsure**, as rendered 2–4 s clip cards, never as stills of something that moves.
+- Every moving graphic is proved as a rendered 2–4 s clip of that beat before the rough draft.
+- Gate: every beat has a job, a source, a reason and a layout, and the `craft/graphic-jobs.md` self-check passes.
 
 **Source visuals.** For a Short about a company, product or person, look for that subject's own films, ads, talks and footage first (official channels), and gather far more frames than the Short needs so the creator can choose. A screenshot of a web page is only for when the page itself is the point (an out-of-stock label, a price). Note every source in `plan/asset-debt.md`; check reuse rights as in `review/checks.md` gate 1. If downloads are blocked, see `setup/gotchas.md` "Frames from the web".
 
@@ -80,16 +93,27 @@ The target is a pace, in words a second after the edit, never a fixed speed-up. 
 - Call-and-response: 4 exchanges or fewer, each one escalating. Cutting back and forth more than that is the most common way a Short goes slow.
 - The long-form energy arc (build-up, climax two-thirds in) doesn't apply. The Short peaks at the hook and again at the last line.
 
-## Layout
+## Layouts
 
-Coordinates at 1080×1920 (`craft/layout.md` §1, Shorts and Reels):
-- **Safe box** for anything important: x 65–930, y 250–1450. The right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~470 px by the caption, handle and audio rows; the top ~250 px by the platform's top bar.
-- **Layouts:** full-frame face with captions; stacked (a 16:9 screen or graphic band on top, face below); 60/40 content and face; the creator's face in a corner over full content. A split only when both have to be seen at the same moment.
+Coordinates at 1080×1920 (`craft/layout.md` §1, Shorts and Reels). **Safe box** for anything important: x 65–930, y 250–1450. The right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~470 px by the caption, handle and audio rows; the top ~250 px by the platform's top bar.
+
+Every beat names one of these layouts in the beat brief. Two consecutive beats never share one unless the hold is the joke; one layout for a whole Short is a fail. Boxes are the defaults; a beat may move them, inside the safe box, by writing the new box in its row's "Layout + speaker box" / "Graphic box" cells.
+
+| Layout | Speaker | Graphic | Use when |
+|---|---|---|---|
+| **Full frame** | Chest-up, centered, eyes at y≈640 (head in the top 30–40%) | None, or hook text y 250–520 | Breathers, the hook, a punchline hold |
+| **Punch-in** | Full frame scaled 1.15–1.4×, eyes stay ≈ y 640; may shift off-centre to make room | A word or label in the space opened up | Key lines, hiding a jump cut, a reaction |
+| **Split top** | Cutout or crop in the lower band, eyes at ≈ 60% of frame height (y≈1150), centered | 16:9 band at x 0–1080, y 250–860 (their footage, a screen) | Straight man and proof beats where their material and the reaction are seen together |
+| **Over their page** | Cutout at about 0.64 of its full-frame size, bottom-left (about x 40–620, y 850–1450), feathered edge, never over the subject of the shot, never in x > 930 | Their page, post or shot full-bleed behind | Reading or reacting to a page, a post, a quote |
+| **Full graphic** | Off screen, 1.1–4 s at most | The whole safe box | Proof that must be read alone; a gag; the unsaid line as a scene |
+| **Words behind** | Full frame or punch-in | Big words layered between the backdrop and the cutout, beside the head, ≥ 70% visible | One standout line, the hook, a reveal |
+| **Floating card** | Full frame | A card, notification or object in the open space at head height, on the side the speaker faces | The unsaid line, an interruption, a small proof |
+
 - **Backdrop** built tall (the brand's tall backdrop), never a crop of the 16:9 plate. Cutouts sit on it at the framing above.
 - **Hook text** y ~250–520, above the face, on screen from frame 1 for at least 2 s, never colliding with captions or the face.
-- **Captions** centered around y 1150–1400, below the chin: 2–3 word chunks, one line (two at most), in the brand's caption style (its case, font and weight; heavy sans if it has none), one keyword per phrase in the brand's accent.
+- **Captions** centered around y 1150–1400, below the chin, inside the safe box on every layout (on Split top and Over their page the chin sits higher or to the left, so the caption box moves up or right, never into x > 930 or y > 1450): 2–3 word chunks, one line (two at most), in the brand's caption style (its case, font and weight; heavy sans if it has none), one keyword per phrase in the brand's accent.
 - **Text sizes** at least 44 / 34 / 30 px (headline / body / label); overlays stay at least 2 s.
-- Graphics follow the rest of `craft/layout.md` (lead room, one focal point, nothing touching edges) re-decided per scene.
+- Graphics follow the rest of `craft/layout.md` (lead room, one focal point, nothing touching edges) re-decided per scene; the beat brief's boxes are checked on stills and by `tools/tech_review.py` before any render.
 
 ## Brand-kit pieces
 

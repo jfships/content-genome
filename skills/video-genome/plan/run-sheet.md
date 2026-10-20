@@ -49,9 +49,9 @@ Fill the brand's run-sheet checklist in `plan.md`. If the brand's run sheet is m
    - Grade and accent grades.
    - 2–4 signature moments from the brand's kept list.
    - At most 1 wildcard, on the hook or a turning point.
-   - Moves per beat, only from the options the brand's packs kept, never from its No lists; build notes in `craft/graphics-library.md`. Where nothing kept fits, propose your own inside the brand's limits (`craft/brand-fit.md`).
+   - A graphic per beat that does a job (`craft/graphic-jobs.md`), chosen from every source (the subject's material, the brand's kept devices, a new device inside the brand's limits via `craft/brand-fit.md`, a generated image or clip) and designed for the line; the brand's lists are a floor, not a menu; nothing from its No lists or house rules. Recorded per beat in the beat brief (`paths/footage-first.md` B5 / `paths/graphics-first.md` A1).
    - **Spatial moves for screens and explainers.** Every beat that shows a screen, a tool or an idea gets a spatial move (`craft/spatial/README.md`) unless a plainer move is clearly better. Use the moves the brand kept; if the brand has no spatial library yet, or the episode needs moves it doesn't have, render a test pack of 6–12 short clips in the brand with real screens and put it on one page (Keep / Skip) before building. A flat screenshot sliding in is not a screen demo.
-   - Placement per beat from `craft/layout.md` (speaker position, open side, layout type), re-decided at every scene change.
+   - Placement per beat as a named layout with pixel boxes (`shorts/build.md` "Layouts" for vertical, `craft/layout.md` §2 for wide), re-decided at every scene change; consecutive beats never share a layout unless the hold is the joke.
    - The look is summarized to the creator in plain words, not asked beat by beat. A single moment gets its own page (`moment-look.json`) only when there are two genuinely good options or the creator asks; everything else is judged in the draft review.
 8. **Break-from-reality check. Always ask; never skip.**
    - Propose 2–3 spots, using the brand's break-from-reality templates tied to the beats, on one page (`break-from-reality.json`), each with where it lands (time + line).
@@ -60,7 +60,7 @@ Fill the brand's run-sheet checklist in `plan.md`. If the brand's run sheet is m
 9. **Story visuals.** One brief per generated image, following the brand's image rules (likeness included).
 10. **Shorts this video can feed.** 2–4 candidate moments that pass the stranger test (someone who never saw this video gets them alone), each with a one-sentence message, asked in chat (multi-select, each with its time and line). Each kept one becomes its own Short with its own Idea Record and plan on the Shorts track (`shorts/README.md`). Write the long script so these sections open with a standalone hook line and close on a one-line summary.
 11. **Call to action and disclosure.** The stack's CTA, worded in the brand's voice (the brand's CTA for this format wins if it names one); any synthetic person, voice or event gets its label.
-12. **Personality check.** Read each beat against the content personality. For every beat, name what makes it deliver the lead pick: a joke, a twist, a surprise, a real artifact, or a payoff of an earlier setup. "It explains X" is not an answer. When a beat is genuinely hard to make entertaining without forcing a joke, use the brand's entertainment fallback (brand file §2; most often spatial motion, `craft/spatial/README.md`) instead of a forced gag. Beats with no answer get rewritten or cut before building.
+12. **Personality check.** Read each beat against the content personality. For every beat, name what makes it deliver the lead pick: a joke, a twist, a surprise, a real artifact, or a payoff of an earlier setup. "It explains X" is not an answer, and for a graphic "it illustrates X" is not a job (`craft/graphic-jobs.md`). When a beat is genuinely hard to make entertaining without forcing a joke, use the brand's entertainment fallback (brand file §2; most often spatial motion, `craft/spatial/README.md`) instead of a forced gag. Beats with no answer get rewritten or cut before building.
 13. **Truth check.** Every claim about the creator traces to Proof. Every number is real or labeled illustrative.
 14. **Final cutout method** (only when the video cuts the creator out of their background). Due before the first final draft; due before filming if green screen is a candidate. One AskUserQuestion, with the consequence of each:
    - **Green screen:** keyed in seconds, cleanest edges, keeps hands and anything held. Needs a green backdrop lit evenly, set up before filming. Recommended whenever the creator can still film that way.
@@ -80,6 +80,9 @@ Fill the brand's run-sheet checklist in `plan.md`. If the brand's run sheet is m
 
 - A long backstory before anything happens.
 - Scenes that only list things (boxes of tools, dashboards of labels).
+- Graphics that only draw the spoken word (the word on a block, a chart for "prices", a mocked chat for "I messaged them").
+- The same device or the same layout on consecutive beats; one layout for a whole video.
+- The creator's face used as the graphic (a grid of them, a photo of them) more than once.
 - Slideshow-like title cards.
 - The same screenshot pattern repeated.
 - A slow, generic wind-down at the end.

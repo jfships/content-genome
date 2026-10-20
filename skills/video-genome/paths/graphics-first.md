@@ -10,6 +10,20 @@ Build a polished motion draft, the creator records over it, then rebuild the vid
 
 Build in HyperFrames: clips with `class="clip"` and `data-start`/`data-duration`, and the timeline at `window.__timelines["main"]`. Add a timeline label per beat (`tl.addLabel("s1-cards", 14.3)`) and place tweens relative to labels, so the rebuild can retime a beat to the creator's words by moving one label. The draft runs at a comfortable speaking pace, with breathing gaps between scenes. Always deliver the script beside the draft.
 
+**The beat brief comes first (gate).** Before any scene is built, every beat is a row of the beat brief in `plan.md`:
+
+One row per beat, in `plan.md`. The builder writes it, not the creator; it is the creative work, done on the strongest model.
+
+| # | In–Out | Line | Job | Device (source) | Layout + speaker box | Graphic box | Size | Enter / exit | Hold | Why this, not the two alternates |
+
+- **Job:** straight man · unsaid line · exaggeration · proof · breather (`craft/graphic-jobs.md`). "Illustrates the line" is not a job.
+- **Device (source):** what it is and where it came from: *their material* · *kept* (the brand's lists) · *new* (designed in brand limits, `craft/brand-fit.md`) · *generated* (image or clip, brand image rules). Candidates from every source are listed before the pick.
+- **Layout and boxes:** the named layout for the speaker (`shorts/build.md` "Layouts" for vertical; `craft/layout.md` §2 for wide) and the pixel box of the graphic. Consecutive beats never share a layout unless the hold is the joke.
+- **Size, enter/exit, hold:** in px and seconds, from the brand's motion table; proof holds ≥ 1.1 s; no single graphic over ~4 s.
+- **Why:** the builder writes 2–3 treatments per beat, ranks them, drops its own weakest and records why the winner beat the other two. The creator sees Main and Backup only on beats the builder marks **unsure**, as rendered clip cards (never stills for anything that moves, never a text description).
+- Every moving graphic is proved as a rendered 2–4 s clip of that beat before the full build.
+- Gate: every beat has a job, a source, a reason and a layout, and `craft/graphic-jobs.md` "Self-check" passes, before the first still is built.
+
 **Polish rules. Check every scene against them.**
 - **Something changes every 5–10 s**, and every 2–4 s in the first 30 s. Any hold longer than 6 s needs a reason: camera drift, parallax, a counter, a reveal or a cut. A static text card is never a scene by itself.
 - **The hook proves the promise visually first.** Open on the video's own best material, then the line. The first 2 s are the most striking image, never a logo fade.
