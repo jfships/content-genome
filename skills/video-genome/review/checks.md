@@ -68,4 +68,11 @@ Taste is the creator's. The builder's own check of the look is the beat brief (`
 
 `tools/tech_review.py` runs the measurable rows (clipped and last-word cuts, caption timing, boxes and safe box, freezes, durations, pace, levels) and prints the list; the agent checks the rest by eye on the contact sheet, the strips and the phone view and adds its lines. Nothing reaches the creator with an open item: fix, re-render only what changed, rerun. Log the list and the rerun in `_review/review-log.md`.
 
+**Fix rounds** (review → fix → recheck, before the creator sees it) cost minutes, not a full render each:
+- **Sound only** (levels, an SFX, a sound swap): rebuild the mix from the same clip list and remux it onto the existing picture. No frames are drawn.
+- **Picture:** redraw only the time range of each changed beat, padded by 1 s on each side, at the same size and frame rate as the render it patches. Splice the new frames over the old ones and re-encode once. Matting, cutouts and other per-segment work are cached and never redone unless a cut point moved.
+- **Redraw everything** only when a change reaches every beat: a global style, the caption system, the cut list, or the frame rate.
+- **Recheck what changed:** the review reruns on the changed beats plus the cut on each side, and the whole-video measures that a local change can move (master loudness, sync). It doesn't rerun the full list.
+- Build the renderer so it can draw a time range from day one. A range render that matches the full render frame for frame is what makes a patch safe. Check one patched beat against a full render once per project.
+
 **Show the creator** the draft with the review's one-line result ("technical review clean, 2 planned holds") and a draft-review page (`decision-pages.md`): rendered clip cards for beats that move, stills for beats that don't. Say plainly that sound was metered, not heard. Any question of taste goes to them on a rendered clip card, never a still and never a score.
