@@ -33,7 +33,7 @@ Same as A3 in `paths/graphics-first.md`: drop stumbles and repeats without rewor
 
 ## B4. Style of the edit (gate: one page)
 
-Propose these as one check page (`intake-confirm.json` shape, `adjust`): each item a card with a real still of their footage showing it, **Confirm / Change it**. One decision: the style of the edit. An item marked Change gets its own pick page next.
+Tone, moves and density are proposed in chat in plain words (**Confirm / Change it**). The parts that have to be seen (base treatment, captions) open the video's live picker on its **Look** tab, playing on their own footage (`decision-pages.md`, "The live picker"; `picker/README.md`). The same link carries every visual decision for the rest of the video.
 - **Tone** read from the footage, the words, the format and the content personality.
 - **Moves:** 4–8 from `craft/graphics-library.md`, only from families the brand allows, and which ones you're deliberately *not* using and why.
 - **Density:** light (2–4 moments a minute), medium (4–7) or heavy (most lines). High-energy personalities lean heavier; calm ones lighter.
@@ -50,11 +50,11 @@ One row per beat, in `plan.md`. The builder writes it, not the creator; it is th
 - **Device (source):** what it is and where it came from: *their material* · *kept* (the brand's lists) · *new* (designed in brand limits, `craft/brand-fit.md`) · *generated* (image or clip, brand image rules). Candidates from every source are listed before the pick.
 - **Layout and boxes:** the named layout for the speaker (`shorts/build.md` "Layouts" for vertical; `craft/layout.md` §2 for wide) and the pixel box of the graphic. Consecutive beats never share a layout unless the hold is the joke.
 - **Size, enter/exit, hold:** in px and seconds, from the brand's motion table; proof holds ≥ 1.1 s; no single graphic over ~4 s.
-- **Why:** the builder writes 2–3 treatments per beat, ranks them, drops its own weakest and records why the winner beat the other two. The creator sees Main and Backup only on beats the builder marks **unsure**, as rendered clip cards (never stills for anything that moves, never a text description).
+- **Why:** the builder writes 2–3 treatments per beat, ranks them and records why its pick beat the others. Every beat that gets a treatment becomes a row on the picker's **Beats** tab with those treatments playing on that beat's footage, the builder's pick marked "Our pick"; the creator makes one pick per row.
 - Every moving graphic is proved as a rendered 2–4 s clip of that beat before the full build.
 - Gate: every beat has a job, a source, a reason and a layout, and `craft/graphic-jobs.md` "Self-check" passes, before the first still is built.
 
-Then the creator sees one check page (`draft-review.json` shape): a rendered clip card per beat that moves, a still per beat that doesn't, each with its time and line, **Looks right / Change it**. Beats the builder marked unsure get their own pick page (`moment-look.json`, clip cards) first.
+Then the creator picks on the **Beats** tab and watches the **Watch** tab (every pick stacked) before the first full render. The draft review that follows the render adds a **Fixes** tab for only the beats they flag, each showing the current version next to 2 alternatives.
 
 Rules:
 - Placement per beat is the named layout in the row, re-decided whenever the speaker moves or leaves (`craft/layout.md`).

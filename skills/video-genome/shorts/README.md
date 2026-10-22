@@ -29,7 +29,7 @@ Tracker line on every reply that moves the work: "Short 2 of 3 · plan · decisi
 | S0. About | One confirmed line: "This Short is about ___, for ___, on ___ (platforms). Its message: ___." | Line confirmed; Idea Record present (idea-genome's Short record, or one written here with the same fields) |
 | S1. Plan | The Short checklist below, one decision at a time | Short gate 1 passes (`checks.md`) |
 | S2. Asset debt | `plan/asset-debt.md`, same as long-form | Everything owed listed, library searched |
-| S2b. Direction | Two direction pages (`build.md`): the world the visuals come from, then how the creator and the source share the frame | Both picked, Main and Backup saved in `plan.md` |
+| S2b. Direction | Two direction decisions (`build.md`): the world the visuals come from, then how the creator and the source share the frame; stills before filming, live picker rows once takes exist | Both picked and saved in `plan.md` |
 | S2c. Beat brief | One row per beat (`build.md` "Beat brief"): job, device and source, named layout with boxes, size, enter/exit, hold, and why it beat two alternates; moving graphics proved as 2–4 s clips | Every beat has a job, a source, a reason and a layout; `craft/graphic-jobs.md` self-check passes |
 | S3. Tall rough draft | `build.md` "Rough draft": built 9:16 from the start, temp voice or the creator's existing words, before anything is recorded | Creator watched it and said what changes; switch-model nudge given (main SKILL.md, "Which model for which part") |
 | S4. Record | Hook and lines recorded vertical (`build.md` "Recording") | Takes in, transcribed |

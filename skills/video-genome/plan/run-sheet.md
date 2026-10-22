@@ -22,7 +22,7 @@ Fill the brand's run-sheet checklist in `plan.md`. If the brand's run sheet is m
 | Rest of the story plan (proof, keeping people watching, pace, editing moves, ending and ask, feeling, platform tricks) | Claude picks within each layer's count; one question per layer the creator should weigh in on (feeling, ending and ask, proof); the rest summarized in one line and confirmed with one question |
 | Opening line | One question, 3–4 options written word for word, Main then Backup |
 | Script / beat outline | The script or cues as a file beside the draft video; one question: approved, or what to change |
-| Look | A plain-words summary in chat; single moments only get a page when two options are both good (`moment-look.json`) |
+| Look | A plain-words summary in chat; once footage or an edit exists, the live picker (Look tab: captions once; Beats tab: one row per treated beat) |
 | Motion and graphics for a moment | Page of rendered clips (Keep / Skip or Main / Backup) |
 | Cutaway gags | Page with a still per gag (`break-from-reality.json`) |
 | Music | Page with a player per part of the video (`music.json`) |
@@ -52,7 +52,7 @@ Fill the brand's run-sheet checklist in `plan.md`. If the brand's run sheet is m
    - A graphic per beat that does a job (`craft/graphic-jobs.md`), chosen from every source (the subject's material, the brand's kept devices, a new device inside the brand's limits via `craft/brand-fit.md`, a generated image or clip) and designed for the line; the brand's lists are a floor, not a menu; nothing from its No lists or house rules. Recorded per beat in the beat brief (`paths/footage-first.md` B5 / `paths/graphics-first.md` A1).
    - **Spatial moves for screens and explainers.** Every beat that shows a screen, a tool or an idea gets a spatial move (`craft/spatial/README.md`) unless a plainer move is clearly better. Use the moves the brand kept; if the brand has no spatial library yet, or the episode needs moves it doesn't have, render a test pack of 6–12 short clips in the brand with real screens and put it on one page (Keep / Skip) before building. A flat screenshot sliding in is not a screen demo.
    - Placement per beat as a named layout with pixel boxes (`shorts/build.md` "Layouts" for vertical, `craft/layout.md` §2 for wide), re-decided at every scene change; consecutive beats never share a layout unless the hold is the joke.
-   - The look is summarized to the creator in plain words, not asked beat by beat. A single moment gets its own page (`moment-look.json`) only when there are two genuinely good options or the creator asks; everything else is judged in the draft review.
+   - At plan time the look is summarized to the creator in plain words, not asked beat by beat. Once footage or a first edit exists, the beats that get a treatment are picked on the video's live picker (**Beats** tab, `decision-pages.md` "The live picker"), each treatment playing on that beat; `moment-look.json` is only for a moment that must be decided before anything is filmed or built.
 8. **Break-from-reality check. Always ask; never skip.**
    - Propose 2–3 spots, using the brand's break-from-reality templates tied to the beats, on one page (`break-from-reality.json`), each with where it lands (time + line).
    - If the creator wants all of them drafted and cut later, draft them cheaply (stills, animatics, code-built cutouts) and mark each "CUT CANDIDATE". Only kept ones get the full treatment.

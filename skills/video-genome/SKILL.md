@@ -76,6 +76,7 @@ Recommend one from the format and video type. Steps 0–2 and 4–7 are the same
 
 Read when their part starts:
 - `decision-pages.md` and `page-template/`: every decision page (read before the first one of a session)
+- `picker/README.md`: the video's live picker, one page for every visual decision once footage or a first edit exists (read before the Look or Beats tab opens)
 - `plan/story-libraries.md`: the story stack libraries and how to combine them
 - `craft/graphic-jobs.md`: what a graphic is for (five jobs), choosing from every source, design-don't-pick, execution bar; read before planning the look of any beat
 - `craft/layout.md`: where things sit on screen; read before building any scene
@@ -93,7 +94,7 @@ Read when their part starts:
 
 ## Principles
 
-1. **Follow the flow; decide one thing at a time.** Every open decision is one AskUserQuestion (anything decided in words) or one page (only when it has to be seen or heard), with a Recommended option and one line of why. Several options → Main, Backup and Alternatives, all written to `plan.md`.
+1. **Follow the flow; decide one thing at a time.** Every open decision is one AskUserQuestion (anything decided in words) or one page (only when it has to be seen or heard), with a Recommended option and one line of why. Several options → Main, Backup and Alternatives, all written to `plan.md`. Visual picks on the live picker are one pick per row (the other options recorded as also offered).
 2. **Show, don't describe.** Pair every script with a rough draft video. People react line by line and can't picture the whole from text.
 3. **Plain words, always with context.** Where in the video (time + the line said there), what's on screen now, what the decision changes. No internal labels.
 4. **Proof before admission.** Open on the best real material, then the humble line.

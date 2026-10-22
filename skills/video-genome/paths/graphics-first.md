@@ -20,7 +20,7 @@ One row per beat, in `plan.md`. The builder writes it, not the creator; it is th
 - **Device (source):** what it is and where it came from: *their material* · *kept* (the brand's lists) · *new* (designed in brand limits, `craft/brand-fit.md`) · *generated* (image or clip, brand image rules). Candidates from every source are listed before the pick.
 - **Layout and boxes:** the named layout for the speaker (`shorts/build.md` "Layouts" for vertical; `craft/layout.md` §2 for wide) and the pixel box of the graphic. Consecutive beats never share a layout unless the hold is the joke.
 - **Size, enter/exit, hold:** in px and seconds, from the brand's motion table; proof holds ≥ 1.1 s; no single graphic over ~4 s.
-- **Why:** the builder writes 2–3 treatments per beat, ranks them, drops its own weakest and records why the winner beat the other two. The creator sees Main and Backup only on beats the builder marks **unsure**, as rendered clip cards (never stills for anything that moves, never a text description).
+- **Why:** the builder writes 2–3 treatments per beat, ranks them and records why its pick beat the others. Once the first HyperFrames edit exists, every beat that gets a treatment becomes a row on the video's live picker (**Beats** tab, `decision-pages.md` "The live picker"), each treatment playing on that beat; the creator makes one pick per row. Before an edit exists, nothing moving is shown as a still or a description.
 - Every moving graphic is proved as a rendered 2–4 s clip of that beat before the full build.
 - Gate: every beat has a job, a source, a reason and a layout, and `craft/graphic-jobs.md` "Self-check" passes, before the first still is built.
 

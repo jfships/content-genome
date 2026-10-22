@@ -8,7 +8,7 @@ A rough draft built before the creator has chosen a look gets judged on the look
 1. **The world:** whose visuals fill the frame (the subject's own films, ads or footage; product or object shots in space; the creator's own set). Two or three options.
 2. **How the creator and the source share the frame:** full bleed with the creator over it, split top and bottom, or cutting between them. Two or three options.
 
-Each option is a 1080×1920 still with the safe box drawn on, two stills per option (the hook frame and one mid beat). Main and Backup picked; save both in `plan.md`. Only then build the rough draft.
+Before anything is filmed, each option is a 1080×1920 still with the safe box drawn on, two stills per option (the hook frame and one mid beat); Main and Backup picked and saved in `plan.md`. Once real takes exist, both decisions are rows on the Short's live picker instead, playing on the takes, one pick each. Only then build the rough draft.
 
 ## Beat brief (S2c, after the direction pick, before the first rough build)
 
@@ -19,7 +19,7 @@ The direction pages settle the world and the frame. The beat brief settles every
 - **Job:** straight man · unsaid line · exaggeration · proof · breather (`craft/graphic-jobs.md`). "Illustrates the line" is not a job.
 - **Device (source):** *their material* · *kept* (the brand's lists) · *new* (designed for this line in brand limits, `craft/brand-fit.md`) · *generated* (image or clip, brand image rules). List candidates from every source before picking; "used last time" and "first in the list" are not reasons.
 - **Layout:** one of the named layouts below, with the speaker's box; consecutive beats never share a layout unless the hold is the joke.
-- **Why:** 2–3 treatments per beat, ranked; the builder drops its own weakest and records why the winner beat the other two. The creator sees Main and Backup only on beats marked **unsure**, as rendered 2–4 s clip cards, never as stills of something that moves.
+- **Why:** 2–3 treatments per beat, ranked, with why the builder's pick beat the others. Once the creator's takes or a first edit exist, each beat that gets a treatment is a row on the Short's live picker (**Beats** tab, `../decision-pages.md` "The live picker"), its treatments playing on that beat; one pick per row. Captions are picked once on the **Look** tab; when a beat's on-screen text is up, captions hide.
 - Every moving graphic is proved as a rendered 2–4 s clip of that beat before the rough draft.
 - Gate: every beat has a job, a source, a reason and a layout, and the `craft/graphic-jobs.md` self-check passes.
 

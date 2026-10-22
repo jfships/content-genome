@@ -6,6 +6,8 @@
 
 Word decisions are asked in chat (`../decision-pages.md`, "When to use a page"); examples marked *chat by default* are kept for creators who ask for pages.
 
+Once footage or a first edit exists, visual decisions that move (the style of the edit, captions, the look of a moment, per-beat treatments, Shorts direction) go on the video's live picker instead (`../picker/README.md`); `intake-confirm.json` and `moment-look.json` stay for decisions made before anything is filmed or built.
+
 When you copy an example for a different use, set `stage` + `stepId` (+ `journeyIf`) to where the page really sits; the right column lists the common ones. A wrong pair stops `build.py`.
 
 | Example | Decision | Kind | stage · stepId for its uses |
