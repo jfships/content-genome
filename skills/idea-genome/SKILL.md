@@ -67,7 +67,7 @@ Content Creation/
 
 ## Read first
 
-`Brand Genome.md` sections Creator, Why and feel, Research, Formats, Voice and House rules; `Who I Am.md` (Proof, truth rules, story beats, opinions); `02 Research/channel-playbook.md`; `04 Ideas/idea-bank.md`; `03 Videos/results-log.md` if it exists.
+`Brand Genome.md` sections Creator, Why and feel, Research, Formats, Voice and House rules; `Who I Am.md` (Proof, truth rules, story beats, opinions); `02 Research/channel-playbook.md`; `04 Ideas/idea-bank.md`; `03 Videos/results-log.md` if it exists; `04 Ideas/swipe-library.md` if it exists (swipe-file skill): only the entries whose lane and type match this idea, plus its banks. Borrow only what the creator flagged there.
 
 ## Flow
 
