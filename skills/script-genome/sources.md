@@ -1,0 +1,24 @@
+# Where the cards come from
+
+Compiled October 2026 from about 600 sources across ten research passes (platform statements, peer-reviewed studies, practitioner interviews, vendor data). Load this file only when asked "where does this come from?" Platform rules drift; re-check anything dated.
+
+## How much to trust what
+- **Official (platform):** Instagram/Meta creator pages and Mosseri statements (often via trade press): skip rate = left within 3 s; retention chart; watch time, likes per reach, sends per reach as top signals (sends weigh more with non-followers); new Reels audition with a small non-follower group; up to 3 min eligible for recommendation; originality enforcement (all formats from April 2026); 5-hashtag cap (Dec 2025); explicit asks for comments/shares/tags may lose recommendation (2024, then clarified). Meta/Toluna ads study (ads only, ~100 ads, directional): visual + audio cue in the first 1–2 s, 1.5x top purchase intent. YouTube help on retention spikes and dips. TikTok guidance (other platform).
+- **Research (other media, by analogy):** Loewenstein 1994 and Golman & Loewenstein 2016 (information gap); Kang 2009, Gruber 2014 (curiosity and memory); Leavitt & Christenfeld 2011 (spoilers don't spoil); Fredrickson & Kahneman 1993 (peak-end); Berger & Milkman 2012 (high-arousal and useful content shared more; sadness less; NYT articles); Reagan et al. 2016 (six emotional arcs in books); Del Vecchio et al. (arcs and film revenue: man-in-hole positive); Boyd, Blackburn & Pennebaker 2020 (narrative arc language: staging, progression, cognitive tension); Ely, Frankel & Kamenica 2015 (suspense: reveal last, bigger rarer twists); Aronson 1966 (pratfall: blunders help only the competent); Cook & Lewandowsky, Debunking Handbook (fact first, one myth, ≤3 counter-arguments); Kivetz et al. 2006 (goal gradient); Lang's limited-capacity model (related vs unrelated cuts); Smith 2012 (cuts on attention shifts go unnoticed); Mayer's multimedia principles and meta-analyses (contiguity, coherence, signaling, redundancy, segmenting, modality); Yue, Bjork & Bjork 2013 and Fenesi & Kim 2014 (verbatim on-screen text lowers understanding while feeling helpful); Adesope & Nesbit 2012 (key-term displays beat verbatim text); Guo, Kim & Rubin 2014 (MOOC video engagement); Brysbaert 2019 (reading speed); subtitle-speed eye-tracking (2025); music-and-engagement meta-analysis (author conflict noted); Ghibellini & Meier 2025 (Zeigarnik: no memory advantage; resumption urge real); framing and anchoring replications; FTC endorsement guides, FTC actions on AI claims, FTC fake-review rule; WCAG captions and contrast; EU AI Act Art. 50.
+- **Practitioners (craft, no controlled data):** Jenny Hoyos (Shorts: hook works on mute, cut on the high point, asks mid-video), MrBeast production memo (reported secondhand), Mario Joos (novelty rate beats cut rate), Parker & Stone via secondary reports (but/therefore), Randy Olson (ABT), Kenn Adams (Story Spine), Pixar rules (Emma Coats), Dan Harmon (Story Circle), Blake Snyder (Save the Cat), kishotenketsu, stand-up and sitcom craft (button, callback), screenwriting cold opens, Walter Murch (cutting), Heath & Heath (Made to Stick), Google ABCD (YouTube ads, vendor-run).
+- **Vendor data (correlational, lowest weight):** Socialinsider (2026: 9.77M Reels, 45–60 s highest views; small brand accounts average a few hundred views), Metricool, Buffer, Highviz, OpusClip, Emplifi, Kapwing Trial Reels test (n=2), many hook-list blogs. Used to count how often something is named, not to prove it works.
+
+## Do not state as fact (folklore found during research)
+- "Viewers decide in 1.7 seconds" (Facebook 2016 average time on mobile feed content, not a decision time).
+- "The first 3 seconds decide everything" (3 s is measured; its weight is unknown).
+- Any fixed retention or 3-second-hold target ("60%+"); no official benchmark exists.
+- "Sends are worth 3–5x likes", "saves are worth 3x likes".
+- "Ideal Reel length is 7–15 s" (contradicted by 2026 data).
+- "85% watch with the sound off" (2016 Facebook publisher claims; Meta says most Reels plays have sound on, but design the first frame for mute anyway).
+- "Reels must be under 90 s to reach non-followers" (stale since Jan 2025).
+- "Comment keywords boost reach"; "hashtags are dead".
+- "Open loops are remembered better" (Zeigarnik memory claim did not hold up).
+- Priming words; "loss hurts twice as much"; "87% of viral Reels open with a pattern interrupt".
+- "Research shows a cut every 3 seconds"; "the strongest item goes in the middle".
+- Named-origin stories that couldn't be verified: the "Rick and Morty method" (the escalating-problem pattern is real, the attribution isn't); the NYU class as the origin of but/therefore.
+Say instead: "craft default, test it on your own numbers."

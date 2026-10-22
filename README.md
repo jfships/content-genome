@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/github/license/jfships/content-genome?color=1b4f8a)](LICENSE)
 [![Claude skills](https://img.shields.io/badge/Claude-skills-1b4f8a)](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
 
-Three free Claude skills that take you from "I should start posting" to a finished, on-brand video. My channel's first episode was made with them.
+Four free Claude skills that take you from "I should start posting" to a finished, on-brand video. My channel's first episode was made with them.
 
 [![brand-genome builds the brand, idea-genome scores the idea and writes the titles, video-genome makes the video and its Shorts, Reels and TikToks](media/demo.gif)][episode]
 
@@ -12,7 +12,7 @@ Three free Claude skills that take you from "I should start posting" to a finish
 
 **Claude (web, desktop, mobile)**
 
-1. Download a skill: [brand-genome.zip](../../releases/latest/download/brand-genome.zip) · [idea-genome.zip](../../releases/latest/download/idea-genome.zip) · [video-genome.zip](../../releases/latest/download/video-genome.zip)
+1. Download a skill: [brand-genome.zip](../../releases/latest/download/brand-genome.zip) · [idea-genome.zip](../../releases/latest/download/idea-genome.zip) · [script-genome.zip](../../releases/latest/download/script-genome.zip) · [video-genome.zip](../../releases/latest/download/video-genome.zip)
 2. In Claude, go to **Customize → Skills**, click **+**, then **Create skill → Upload a skill**, and pick the zip.
 3. Make sure code execution is on (**Settings → Capabilities**).
 
@@ -34,9 +34,9 @@ AI didn't kill everything. I made this episode with tools I built myself, and th
 
 [![Watch the episode: 5 minutes, made with these three skills](media/watch.jpg)][episode]
 
-## The three skills
+## The four skills
 
-They hand off to each other: **brand-genome** (once per brand) → **idea-genome** (per video) → **video-genome** (per video). Each one also works on its own. video-genome runs without a Brand Genome, using a brand kit you already have or one of the kits it ships with.
+They hand off to each other: **brand-genome** (once per brand) → **idea-genome** (per video) → **script-genome** (per video) → **video-genome** (per video). Each one also works on its own. video-genome runs without a Brand Genome, using a brand kit you already have or one of the kits it ships with.
 
 ### [brand-genome](skills/brand-genome)
 
@@ -54,11 +54,17 @@ Turns a theme, a hunch or nothing at all into a scored video idea, with an angle
 
 **You end up with:** an Idea Record per video.
 
+### [script-genome](skills/script-genome)
+
+Turns your raw words (notes, a voice memo, a transcript) into a short-video script, beat by beat: the hook on three layers, a shape or story arc picked for your idea, what keeps people watching, the ending, and what the screen and sound do on each line. It also checks a finished script: legal, platform, accuracy and clarity first, craft as notes, never a score. Every option comes with how it works and how well it's backed; nothing is treated as a rule. Reels and Shorts now; long-form scripts next.
+
+**You end up with:** a script card per video, or a check report.
+
 ### [video-genome](skills/video-genome)
 
 <img src="media/video-genome.jpg" alt="video-genome writes the script and plans every shot" width="640">
 
-Takes the brand and the idea, writes the script and plans every shot. Then it builds and checks the video: long episodes, plus Shorts, Reels and TikToks on their own track (written and built tall, never a crop of the long edit), with motion graphics, sound, thumbnails, titles and upload copy.
+Takes the brand, the idea and the script card, and plans every shot. Then it builds and checks the video: long episodes, plus Shorts, Reels and TikToks on their own track (written and built tall, never a crop of the long edit), with motion graphics, sound, thumbnails, titles and upload copy.
 
 **You end up with:** finished video files and a results log.
 

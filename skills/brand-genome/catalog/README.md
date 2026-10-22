@@ -5,6 +5,8 @@ The creator builds a style without knowing any design words. They never describe
 - **R** rare: used by few channels. Distinctive.
 - **F** funky: almost nobody uses it. Memorable, risky.
 
+**Every option ships with mechanics.** No option is added to this catalog without: what it is, when to use it (the moment or line it serves), timing (how long it holds, when it enters), what it pairs and clashes with, and when it fails. Existing rows that lack these get them in the next catalog pass. video-genome reads the same fields when it builds.
+
 **Rules for using the catalog:**
 - Every round shows a spread from all three tiers, even when the creator's personality points one way. Funky options often become moment looks or library items.
 - Every option is shown, never described: a picture, a click-to-play clip, or a sound in sync with a picture. The name is in plain words, with one line of "what it is". No jargon on the page.

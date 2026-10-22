@@ -1,6 +1,6 @@
 # Short shapes
 
-The same six shapes as idea-genome's `catalog/short-shapes.md` (same names and slugs; keep the two in step). Every Short names exactly one in `plan.md`; when the Idea Record already names it, it's taken from there.
+The same six shapes as idea-genome's `catalog/short-shapes.md` (same names and slugs; keep the two in step). Their full cards (beats with timings, word budgets, lines, edit intent), plus more shapes and story arcs, live in script-genome `catalog/shapes.md`; these slugs stay valid. Every Short names exactly one in `plan.md`; when the Idea Record already names it, it's taken from there.
 
 **The long video's order never transfers.** A Short made from a long video is rebuilt in one of these shapes, not kept in the episode's order.
 

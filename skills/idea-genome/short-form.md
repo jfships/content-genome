@@ -32,7 +32,7 @@ If it takes two sentences, it's two Shorts (see S12).
 
 ## S4. Shape
 
-Pick exactly one shape from `catalog/short-shapes.md`.
+Pick exactly one shape. The six slugs in `catalog/short-shapes.md` stay valid; the full set of shapes and story arcs, with beats, timings, lines and edit intent, is in script-genome (`catalog/selector.md` first, then the chosen card). When script-genome is installed, run its selector here; otherwise use `catalog/short-shapes.md`.
 
 1. Recommend one, with one line of why, plus one alternative.
 2. **The shape is proven by watching it, not by links.** video-genome's tall rough draft is where the creator judges it. Show real example Shorts of the shape in their niche only if they ask: find them live with web search and give the real links. Never invent a link.
@@ -56,6 +56,8 @@ Rules:
 
 Write 2 hook versions if the creator is unsure; rank them. They can go in Versions to test.
 
+All three layers carry the same idea, each in its own words; no layer is ranked first, and the first image must make sense with the sound off. Hook options with their mechanics: script-genome `catalog/hooks.md` (plus `hooks-psych.md`, `hooks-unusual.md`).
+
 ## S6. Length and word budget
 
 Use the shortest length that lands the idea.
@@ -66,18 +68,18 @@ Use the shortest length that lands the idea.
 | Instagram Reels | 20–60 s |
 | TikTok | 25–45 s (61–75 s only if the creator is in TikTok's Creator Rewards) |
 
-Word budget at the brand's pace (default about 2.8 words a second):
+Word budget at this video's pace, which depends on the delivery (a rant runs faster than an explanation) and rises as the creator improves: their recent pace for this mode from the Pace log in `00 Decisions/voice-kit.md`, else a mode default (explain ≈2.4, story ≈2.6, rant ≈3.0 w/s; script-genome `write/budget.md`). Table at 2.4: After the edit trims gaps, spoken pace usually lands at 2.6–3.0 w/s; that is video-genome's measure, not the planning number.
 
 | Length | Words |
 |---|---|
-| 15 s | ~42 |
-| 30 s | ~84 |
-| 45 s | ~126 |
-| 60 s | ~168 |
+| 15 s | ~36 |
+| 30 s | ~72 |
+| 45 s | ~108 |
+| 60 s | ~144 |
 
 Write the target length and the word cap. The script must fit the cap. Footage builds may run over and get cut after watching; the script may not.
 
-The creator's own words (voice memos, notes) are the base, not the limit. Once the shape and tone are known, restructure them, reweight them (put the strongest item at the center) and propose new lines in the creator's tone, each marked "new" so the creator keeps or cuts it. Never invent facts.
+The creator's own words (voice memos, notes) are the base, not the limit. Once the shape and tone are known, restructure them, reweight them (the strongest item goes first, as the hook, or last, as the payoff; never buried in the middle) and propose new lines in the creator's tone, each marked "new" so the creator keeps or cuts it. Never invent facts.
 
 ## S7. The last line (exact)
 
@@ -89,6 +91,8 @@ Write the exact last line. It is one of:
 
 Never: an outro, "thanks for watching", a subscribe ask, an end card, a sting at the end, or words that announce the end.
 
+Endings and any ask with their mechanics, and which asks fit the account's current stage (read from the brand's strategy block): script-genome `catalog/endings.md`. With no strategy block, the only ask is an optional situational send line ("for the friend who…").
+
 ## S8. Send reason
 
 One line: who would send this to someone, and why. ("A cook sends it to the friend who always overpays for knives.")
@@ -99,7 +103,7 @@ No real send reason usually means no message. Go back to S3.
 
 One line each:
 - **YouTube Shorts:** name the long video it points to (for the Related video link), or "none". Shorts and long videos are recommended separately; Shorts are ranked on viewed vs swiped away.
-- **Instagram:** reach on its own (sends, few skips in the first 3 s). A call to action only as on-screen text over the last line at most (e.g. "comment PRICE"), never an end card.
+- **Instagram:** reach on its own (sends, few skips in the first 3 s). Any ask must fit the account's stage (script-genome `catalog/endings.md`, "Stage-aware asks"); never an end card.
 - **TikTok:** sound on. Trending audio may be added in the app, low under the voice.
 
 Skip a platform the creator doesn't post on; write "not posting".
@@ -117,6 +121,10 @@ The cover (Instagram grid, YouTube Shorts thumbnail) is one short line plus the 
 ## S12. Overlap rule
 
 Two Shorts that overlap are one Short, unless each passes the stranger test with a different message. Same message = keep the stronger one; the other goes in the bank as `rejected` (`overlaps IDEA NNN`).
+
+## The script itself
+
+When script-genome is installed, it writes the script from these answers (its job A) and returns a script card: one row per beat with the line, screen text, picture, edit intent and the word that triggers it. Save the card with the record; video-genome builds from it.
 
 ## Then
 

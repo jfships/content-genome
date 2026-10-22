@@ -16,9 +16,9 @@ content plan   →  video-genome  →  plan → debt
 editing        →  video-genome  →  build → review → deliver → results log
 ```
 
-**Scope.** This skill decides *what* a video is and *why it gets clicked*: theme, idea, angle, audience, the proof that backs it, the opening hook (ranked), and 3 titles, all developed with the creator. It does not write the script, pick the story arc or plan beats (video-genome's plan does that, because those depend on the video type and the footage). It never builds media.
+**Scope.** This skill decides *what* a video is and *why it gets clicked*: theme, idea, angle, audience, the proof that backs it, the opening hook (ranked), and 3 titles, all developed with the creator. It does not write the script, pick the story arc or plan beats: script-genome writes the script (beats, arc, lines, edit intent) and video-genome plans the build, because those depend on the video type and the footage. It never builds media.
 
-**Shorts are the exception on shape.** For a Short / Reel the shape *is* the idea, so it is settled here (`short-form.md`): one shape, the hook word for word, the word budget and the exact last line.
+**Shorts are the exception on shape.** For a Short / Reel the shape *is* the idea, so it is settled here (`short-form.md`): one shape, the hook word for word, the word budget and the exact last line. When script-genome is installed, `short-form.md` S4–S7 use its selector, hook, budget and ending cards, and it writes the script card.
 
 **Every video starts from a developed Idea Record**, including when the creator brings their own idea. Their idea skips the brainstorm; it never skips development, the Genome cross-check, the completeness check or the record.
 

@@ -1,6 +1,6 @@
 # Short shapes
 
-The only list of Short shapes. Every Short names exactly one, by slug, in its Idea Record. video-genome uses the same names.
+The six core Short shapes. Every Short names exactly one shape by slug in its Idea Record. video-genome uses the same names. These slugs are also cards in script-genome `catalog/shapes.md`, which holds their beats with timings, word budgets, lines and edit intent, plus more shapes and story arcs. When script-genome is installed, pick with its selector; these six stay valid as slugs.
 
 **The long video's order never transfers.** A Short made from a long video is rebuilt in one of these shapes, not kept in the episode's order.
 

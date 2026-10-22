@@ -34,6 +34,7 @@ This skill brings the craft (plan, lay out, build, time, mix, check); the brand 
 ```
 brand          →  brand-genome: Brand Genome.md (or a Brand Sheet made in Step 0)   once per brand
 content idea   →  idea-genome: IDEA NNN <slug>.md                                   per video: what and why
+script         →  script-genome: script card (one row per beat)                    per video: lines + edit intent
 content plan   →  video-genome: intake → plan → asset debt                          per video
 editing        →  video-genome: build → sound → checks → deliver → results log
 ```
@@ -111,6 +112,7 @@ Read when their part starts:
 15. **No build without a record.** Every episode has an `idea.md`, a `plan.md` with a story stack, and a `debt.md`.
 16. **Entertaining first; motion carries what jokes can't.** When a beat is hard to make entertaining without forcing it, spatial motion carries it (brand file §2 fallback, `craft/spatial/`). The bar is a top agency's launch film, not a slideshow with easing.
 17. **Use it, log it, fix it.** Anything this skill got wrong or lacked during real work goes in the creator's skill-issues log (`review/session-close.md`) the moment it shows up, so the skill improves before the next release.
+18. **Every ability ships with its mechanics.** Nothing enters any library in this skill (a graphic, an animation, a transition, a move, a sound, a story item, a layout) without: what it does, the script line or beat that calls it (its trigger), timing and placement, what it pairs and clashes with, when it fails, and the use cases it is for. A name with a one-line description is not an ability; it can't be used. Script mechanics (hooks, shapes, arcs, retention, endings) live in script-genome; the libraries here keep their slugs and point there.
 
 ## Brand folder and where to look
 
