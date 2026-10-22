@@ -62,12 +62,6 @@ Takes the brand and the idea, writes the script and plans every shot. Then it bu
 
 **You end up with:** finished video files and a results log.
 
-### [swipe-file](skills/swipe-file) (add-on)
-
-Save Reels you like from your phone. It downloads them, transcribes them and builds a page where you tap what caught you: the ideas, the visuals, both or neither. Your answers become a swipe library and a bank of closings that idea-genome and video-genome read, so they borrow only what you flagged. Needs `yt-dlp`, `ffmpeg` and `faster-whisper` on your computer.
-
-**You end up with:** `swipe-library.md`, in your own words.
-
 ## What they need
 
 - **Required:** Claude with code execution (a shell with Python 3).
