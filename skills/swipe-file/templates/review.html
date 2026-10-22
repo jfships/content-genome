@@ -1,0 +1,125 @@
+<title>Swipe Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one section per save. Step 1 (what did you like) gates the idea cards and the visual cards; stacks on phone. */
+:root{--bg:#eef0f3;--panel:#fff;--fg:#14171c;--mute:#5d6572;--line:#d5d9e0;--accent:#2347e6;--accent-fg:#fff;--on:#e5ebff;--ok:#1f7a4d;
+--display:'Bricolage Grotesque','Segoe UI',sans-serif;--body:'Hanken Grotesk','Segoe UI',sans-serif;--mono:'IBM Plex Mono',Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101319;--panel:#181c24;--fg:#eceff4;--mute:#9aa3b2;--line:#2b313c;--accent:#7f98ff;--accent-fg:#0b0f1a;--on:#232d52;--ok:#5fcf9a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101319;--panel:#181c24;--fg:#eceff4;--mute:#9aa3b2;--line:#2b313c;--accent:#7f98ff;--accent-fg:#0b0f1a;--on:#232d52;--ok:#5fcf9a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;padding-block:20px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1{font-family:var(--display);font-size:1.9rem;line-height:1.1;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:1.15rem;margin:0;line-height:1.2;text-wrap:balance}
+h3{font-family:var(--display);font-size:1.5rem;margin:0;line-height:1.15;text-wrap:balance}
+.sub{color:var(--mute);margin:4px 0 0;max-width:60ch}
+.meta{font-family:var(--mono);font-size:.78rem;color:var(--mute);letter-spacing:.04em;text-transform:uppercase}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.toc a{font-size:.85rem;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+.toc a.done{border-color:var(--ok);color:var(--ok)}
+.save{display:flex;flex-direction:column;gap:14px;border-top:2px solid var(--line);padding-top:20px}
+.head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:start}
+.thumbs{display:flex;gap:4px}
+.thumbs img{width:54px;aspect-ratio:9/16;object-fit:cover;border-radius:3px;background:#000;display:block}
+@media(max-width:520px){.head{grid-template-columns:minmax(0,1fr)}}
+.head a{color:var(--accent)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:16px}
+.card.text{grid-template-columns:minmax(0,1fr)}
+@media(max-width:620px){.card{grid-template-columns:minmax(0,1fr)}}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;align-content:start}
+.strip.one{grid-template-columns:minmax(0,150px)}
+.strip figure{margin:0}
+.strip img{display:block;width:100%;max-width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:4px;background:#000}
+.strip figcaption{font-family:var(--mono);font-size:.68rem;color:var(--mute);margin-top:2px}
+.body{min-width:0;display:flex;flex-direction:column;gap:8px}
+.line{margin:0;font-size:.98rem}
+.vis{margin:0;color:var(--mute);font-size:.9rem}
+.list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:.9rem;font-weight:500;color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 13px;min-height:40px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.chip:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+textarea{font:inherit;font-size:.92rem;width:100%;box-sizing:border-box;min-height:44px;resize:vertical;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.step{background:var(--on);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.step label,.step .q{font-weight:600}
+.bar{position:sticky;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding-block:10px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;background:var(--accent);color:var(--accent-fg);border:0;border-radius:8px;padding:10px 16px;min-height:44px;cursor:pointer}
+.status{font-size:.88rem;color:var(--mute)}
+.status.ok{color:var(--ok)}
+</style>
+<main>
+<div>
+<div class="meta" id="top-meta"></div>
+<h1>What caught you in these?</h1>
+<p class="sub">One question per save first. Your answer decides what I ask next. Answers save as you tap.</p>
+<nav class="toc" id="toc"></nav>
+</div>
+<div id="saves" style="display:flex;flex-direction:column;gap:28px"></div>
+<div class="bar"><button class="btn" id="copy" type="button">Copy my answers</button><span class="status" id="status">Saves as you tap.</span></div>
+</main>
+<script>
+const SAVES=/*SAVES*/[];
+const BATCH=/*BATCH*/"";
+const MODES=[["content","The ideas and script"],["visual","The visuals"],["both","Both"],["neither","Neither, just saved it"]];
+const HINT={content:"Showing the ideas and the script. No visual questions.",visual:"Showing the on-screen moments. No script questions.",both:"Ideas first, then the visual moments.",neither:"I'll keep the transcript and stills with no breakdown. One line on why you saved it still helps."};
+const CCHIPS=[["idea","The idea itself"],["clear","How clearly it's explained"],["example","The example"],["use","I want to use this"],["none","Nothing here"]];
+const VCHIPS=[["visual","The look"],["lines","The words"],["idea","The idea"],["pace","The pacing"],["funny","The humor"],["none","Nothing here"]];
+const $=s=>document.querySelector(s);
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const st={};let db=null;
+const key=(s,c)=>s+"~"+c;
+function cur(k){return st[k]||(st[k]={chips:[],note:"",mode:"",text:""})}
+const status=(t,ok)=>{const e=$("#status");e.textContent=t;e.className="status"+(ok?" ok":"")};
+const LS="swipe-"+BATCH;
+try{Object.assign(st,JSON.parse(localStorage.getItem(LS)||"{}"))}catch(e){}
+const timers={};
+function save(sid,cid,payload){try{localStorage.setItem(LS,JSON.stringify(st))}catch(e){}
+ toc();if(!db){status("Saved on this device only.");return}
+ const k=key(sid,cid);clearTimeout(timers[k]);timers[k]=setTimeout(async()=>{
+  try{await db.doc("taps/"+k).set(Object.assign({save:sid,card:cid,batch:BATCH},payload()));status("Saved. Claude can read it.",true)}
+  catch(e){status("Saved on this device only.")}},500)}
+function chipRow(sid,c,set){const k=key(sid,c.id);const row=el("div","chips");
+ set.forEach(([v,t])=>{const b=el("button","chip",t);b.type="button";b.dataset.v=v;
+  b.onclick=()=>{const s=cur(k);let a=s.chips;if(v==="none")a=a.includes("none")?[]:["none"];else{a=a.filter(z=>z!=="none");a=a.includes(v)?a.filter(z=>z!==v):[...a,v]}
+   s.chips=a;paint(row,a);save(sid,c.id,()=>({title:c.title,chips:cur(k).chips,note:cur(k).note}))};row.append(b)});
+ paint(row,cur(k).chips);return row}
+function paint(row,a){row.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",a.includes(b.dataset.v)))}
+function note(sid,c){const k=key(sid,c.id);const t=el("textarea");t.id="n-"+k;t.placeholder="Note (optional)";t.value=cur(k).note;
+ t.oninput=()=>{cur(k).note=t.value;save(sid,c.id,()=>({title:c.title,chips:cur(k).chips,note:cur(k).note}))};return t}
+function card(s,c,visual){const a=el("article","card"+(visual?"":" text"));
+ if(visual&&c.imgs&&c.imgs.length){const sp=el("div","strip"+(c.imgs.length===1?" one":""));
+  c.imgs.forEach((src,i)=>{const f=el("figure");const im=el("img");im.src=src;im.alt="Still at "+c.t[i]+" s";im.loading="lazy";f.append(im,el("figcaption",null,"≈"+c.t[i]+"s"));sp.append(f)});a.append(sp)}
+ const b=el("div","body");b.append(el("div","meta",c.tag),el("h2",null,c.title));
+ if(c.line)b.append(el("p","line",c.line));
+ if(visual&&c.vis)b.append(el("p","vis","On screen: "+c.vis));if(!visual&&c.gist)b.append(el("p","vis",c.gist));
+ b.append(chipRow(s.id,c,visual?VCHIPS:CCHIPS),note(s.id,c));a.append(b);return a}
+function render(){const root=$("#saves");root.textContent="";
+ SAVES.forEach((s,i)=>{const sec=el("section","save");sec.id="s-"+s.id;
+  const h=el("div","head");const t=el("div");
+  t.append(el("div","meta",`Save ${i+1} of ${SAVES.length} · ${s.length}${s.creator?" · "+s.creator:""}`),el("h3",null,s.title));
+  if(s.gist)t.append(el("p","sub",s.gist));
+  const lk=el("a",null,"Watch the original");lk.href=s.url;lk.target="_blank";lk.rel="noopener";const p=el("p","sub");p.append(lk);t.append(p);
+  const th=el("div","thumbs");(s.thumbs||[]).forEach(src=>{const im=el("img");im.src=src;im.alt="";th.append(im)});h.append(t,th);
+  const step=el("div","step");step.append(el("div","q","What did you like about this one?"));
+  const mk=key(s.id,"_mode");const mrow=el("div","chips");const hint=el("p","vis");
+  const cw=el("div");cw.append(el("div","meta","The ideas and script · tap what you liked"));const cl=el("div","list");cw.append(cl);
+  const vw=el("div");vw.append(el("div","meta","The visuals · tap what you liked"));const vl=el("div","list");vw.append(vl);
+  const why=el("div","step");const wl=el("label",null,"In your own words, why did you save it?");const wt=el("textarea");wt.id="w-"+s.id;wl.htmlFor=wt.id;
+  const wk=key(s.id,"_why");wt.placeholder="Optional. One line is plenty.";wt.value=cur(wk).text;
+  wt.oninput=()=>{cur(wk).text=wt.value;save(s.id,"_why",()=>({text:cur(wk).text}))};why.append(wl,wt);
+  (s.content||[]).forEach(c=>cl.append(card(s,c,false)));(s.visual||[]).forEach(c=>vl.append(card(s,c,true)));
+  const show=()=>{const m=cur(mk).mode;paint(mrow,[m]);hint.textContent=HINT[m]||"";
+   cw.hidden=!(m==="content"||m==="both")||!(s.content||[]).length;vw.hidden=!(m==="visual"||m==="both")||!(s.visual||[]).length;why.hidden=!m};
+  MODES.forEach(([v,tx])=>{const b=el("button","chip",tx);b.type="button";b.dataset.v=v;b.onclick=()=>{cur(mk).mode=v;show();save(s.id,"_mode",()=>({mode:v}))};mrow.append(b)});
+  step.append(mrow,hint);sec.append(h,step,cw,vw,why);root.append(sec);show();sec._show=show});toc()}
+function toc(){const n=$("#toc");n.textContent="";SAVES.forEach((s,i)=>{const a=el("a",cur(key(s.id,"_mode")).mode?"done":"",(cur(key(s.id,"_mode")).mode?"✓ ":"")+(i+1)+". "+s.title);a.href="#s-"+s.id;n.append(a)})}
+$("#top-meta").textContent=`Swipe review · ${SAVES.length} save${SAVES.length===1?"":"s"} · ${BATCH}`;
+render();
+$("#copy").onclick=async()=>{const out=[];SAVES.forEach(s=>{out.push("## "+s.title,"Liked: "+(cur(key(s.id,"_mode")).mode||"(not answered)"),"Why: "+(cur(key(s.id,"_why")).text||"(none)"));
+ (s.content||[]).concat(s.visual||[]).forEach(c=>{const x=cur(key(s.id,c.id));if(x.chips.length||x.note)out.push(c.title+": "+x.chips.join(", ")+(x.note?" | "+x.note:""))})});
+ const txt=out.join("\n");try{await navigator.clipboard.writeText(txt);status("Copied.",true)}catch(e){const t=el("textarea");t.value=txt;document.querySelector("main").append(t);t.select();status("Select and copy the text below.")}};
+(async()=>{try{const c=window.claude&&await window.claude.use("db");if(!c)return;db=c;
+ const snap=await db.collection("taps").get();snap.docs.forEach(d=>{const v=d.data();if(!v||!v.save)return;const k=key(v.save,v.card);const s=cur(k);
+  if(v.card==="_mode"){if(v.mode)s.mode=v.mode}else if(v.card==="_why"){if(v.text)s.text=v.text}else{s.chips=v.chips||[];s.note=v.note||""}});
+ render();status("Saves as you tap.")}catch(e){}})();
+</script>
