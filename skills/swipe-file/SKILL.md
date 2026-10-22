@@ -50,7 +50,7 @@ Batch size: whatever is in the drop folder, usually 3–4. One page per batch, o
 ```
 ## NNN - <title> (<platform>, <length>) - <id>
 Source: <link> - Reviewed <date>
-Lane: CONTENT / VISUAL / BOTH / NEITHER. "<their why, word for word>"
+Lane: CONTENT / VISUAL / BOTH / NEITHER, plus WORKFLOW when it was saved to improve the tools or skills rather than for an idea. "<their why, word for word>"
 - <card title>: <their taps in words>. <their note, word for word>
 Borrowable: <only what they flagged>.
 Not borrowed: <what they marked "nothing here", if it teaches something>.
@@ -67,7 +67,7 @@ Their words are quoted, never paraphrased into something stronger. A save answer
 
 ## How the other skills use it
 
-idea-genome (develop) and video-genome (script) read the entries whose lane and type match the idea, plus the banks. They borrow only what the creator flagged. Hand a model the matching entries, never the whole library.
+idea-genome (develop) and video-genome (script) read the entries whose lane and type match the idea, plus the banks. WORKFLOW entries skip idea work: they go to the next skill-improvement handoff. For a fast montage of effects, prep with `--step 0.5` so each effect gets a still. They borrow only what the creator flagged. Hand a model the matching entries, never the whole library.
 
 ## Rules
 

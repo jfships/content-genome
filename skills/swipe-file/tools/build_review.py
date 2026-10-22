@@ -2,7 +2,7 @@
 usage: python build_review.py <work folder>   ->  <work>/review.html (publish it as the artifact)
 cards.json (written by Claude per save, see SKILL.md "Cards"):
   {"title", "gist", "content": [{"id","tag","title","line","gist"}], "visual": [{"id","tag","title","line","vis","t":[seconds]}]}
-Stills come from <id>/stills (one every 2 s); a visual card's "t" picks the nearest ones."""
+Stills come from <id>/stills (one every prep step, default 2 s); a visual card's "t" picks the nearest ones."""
 import sys, json, base64, pathlib, datetime
 
 STEP = 2
@@ -20,7 +20,8 @@ def main():
         cards = json.loads(cf.read_text(encoding='utf-8'))
         prep = json.loads((d / 'prep.json').read_text(encoding='utf-8')) if (d / 'prep.json').exists() else {}
         stills = sorted((d / 'stills').glob('s*.jpg'))
-        pick = lambda t: stills[min(len(stills) - 1, round(t / STEP))] if stills else None
+        step = prep.get('step', STEP)
+        pick = lambda t: stills[min(len(stills) - 1, round(t / step))] if stills else None
         for c in cards.get('visual', []):
             c['imgs'] = [uri(p) for p in map(pick, c.get('t', [])) if p]
         n = len(stills)
