@@ -1,6 +1,6 @@
 # Endings and asks
 
-How a 20–60 s Reel ends, and which ask (if any) it carries. Load when writing the last beat (job A) or checking it (job B). Ask selection is stage-aware (§4): read the brand's strategy block before proposing any ask.
+How a 20–60 s Reel ends, and which ask (if any) it carries. Load when writing the last beat (job A) or checking it (job B). Ask selection is stage-aware (§4): read the brand's growth plan before proposing any ask.
 
 Read first:
 - Instagram has said nothing found about loops or rewatches as a ranking signal. Its Views metric counts replays (secondary reports). "Loops feed watch time" is an inference, not a documented fact.
@@ -207,18 +207,20 @@ Caption and pinned comment can carry an ask instead of the video. No head-to-hea
 
 The skill never decides the business stage. It reads it.
 
-### 4.1 Read the strategy block
-At run time, read the brand folder's strategy block (path from the brand folder's index; video-genome/brand-genome name it if installed; otherwise look for a `## Strategy` / `content-strategy` file in `00 Decisions/`, else use the default below). Fields used:
+### 4.1 Read the growth plan
+At run time read `00 Decisions/growth-plan.md`, the first `## Growth state` heading: a YAML block written by growth-genome (the contract is growth-genome `interfaces.md`). Keys used:
 
-| Field | Used for |
+| Key | Used for |
 |---|---|
-| stage | which asks are open (table 4.2) |
-| follower count, and whether followers are mostly people the creator knows | stage check when `stage` is missing |
-| goal per Reel (reach / trust / follow / lead) | which single ask fits this Reel |
-| offers (real, live, with a link or DM flow) | gate for keyword-comment and lead |
-| CTA policy (allowed, banned, house rules like "no CTA", "vertical loops") | hard filter; overrides the table |
+| `stage` | context; the allowed list below already reflects it |
+| `post_job_now` | the post's job (reach strangers / sends / follows / leads); **the slot's `job` in the Idea Record overrides it** for that post |
+| `audience`, `offers` | who the send line names; whether any offer-type ending can exist |
+| `cta_allowed_now` | **the only asks and endings the script may use.** Map plain names to cards: payoff-and-stop → payoff-stop; situational send line → send-line; real opinion question → comment; follow-with-reason → follow-reason; save prompt → save-prompt; bio / pinned comment → not in the video. An allowed item with no card here (e.g. a brand's standing offer line) is used exactly as the plan words it, where it says |
+| `cta_not_yet` | asks to refuse, with what unlocks them (say it in one line if the creator asks for one) |
+| `house_bans` | always win, over everything |
 
-Write the result into the card header as `stage read: <stage> | asks open: <slugs> | source: strategy block|default`.
+Caps and frequencies written in an allowed item ("at most 1 in 3 posts") are the growth plan's to track; the script only notes which allowed item it used. Write into the card header: `stage read: <stage> | job: <job> (slot|plan) | ask: <card or none> | source: growth-plan|default`.
+No growth plan: say once that growth-genome set-up would set this; use the default below and the table in 4.2 as guidance.
 
 ### 4.2 Ask → stage table
 
@@ -240,7 +242,7 @@ Stage shorthand:
 - **Strangers arriving:** add follow-reason (with a series) and tease-next (with a real series); comment questions where opinions split.
 - **Offer live and strategy allows:** keyword-comment or lead, one per Reel, never stacked with a send line.
 
-**Default when no strategy block exists:** payoff-stop, button, deadpan-hold, callback, verbal-loop, visual-loop + an optional send-line. No follow asks, no comment-a-word, no lead doors. Say in the card header `source: default (no strategy block)`.
+**Default when there is no growth plan:** payoff-stop, button, deadpan-hold, callback, verbal-loop, visual-loop + an optional send-line. No follow asks, no comment-a-word, no lead doors. Say in the card header `source: default (no growth plan)`.
 
 One ask per Reel, or none. A pure-value Reel with no ask is complete.
 

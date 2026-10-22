@@ -42,10 +42,10 @@ Same map as the other genome skills (`Brands/<Brand>/`). Read only what the step
 | `00 Decisions/voice-kit.md`, `Who I Am.md` (Voice, Proof) | Voice, signature phrases, real proof; voice-kit's **Pace log** (date · video · mode · words/s) sets the planning pace (`write/budget.md`). Create the section on first use |
 | `00 Decisions/line-ledger.md` | Lines the creator kept or cut before, with reasons |
 | `04 Ideas/swipe-library.md` | Only entries marked CRAFT or matching this video's type; borrow only what the creator flagged (swipe-file skill) |
-| The brand's **strategy block** (path named in `START-HERE.md`, or a `## Strategy` / `content-strategy` file in `00 Decisions/`) | Stage, followers, goal per video, offers, CTA policy. Decides which endings and asks are allowed (`catalog/endings.md`, "Stage-aware asks") |
+| `00 Decisions/growth-plan.md`, section `## Growth state` (written by growth-genome; a YAML block) | `stage`, `post_job_now`, `audience`, `offers`, `cta_allowed_now`, `cta_not_yet`, `house_bans`. Endings and asks come only from `cta_allowed_now`; `house_bans` always win; the slot's job in the Idea Record overrides `post_job_now` for that post (`catalog/endings.md` §4) |
 | `03 Videos/results-log.md` | Last 3 shapes/arcs/hooks (variety), past results |
 | The Idea Record (`IDEA NNN`) | Message, angle, feeling, shape if already picked |
-No strategy block → default stage "no audience yet": endings payoff-stop, button, deadpan-hold, callback, verbal-loop, visual-loop, plus an optional situational send-line. No comment-a-word, follow or lead asks unless the creator asks for one.
+No growth plan → say once that growth-genome set-up would set this, then use the default stage "no audience yet": endings payoff-stop, button, deadpan-hold, callback, verbal-loop, visual-loop, plus an optional situational send-line. No comment-a-word, follow or lead asks unless the creator asks for one.
 
 ## Job A: write (flow)
 Tracker line on every reply that moves the work: "Script · step 3 of 7".

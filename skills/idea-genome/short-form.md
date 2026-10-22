@@ -91,7 +91,7 @@ Write the exact last line. It is one of:
 
 Never: an outro, "thanks for watching", a subscribe ask, an end card, a sting at the end, or words that announce the end.
 
-Endings and any ask with their mechanics, and which asks fit the account's current stage (read from the brand's strategy block): script-genome `catalog/endings.md`. With no strategy block, the only ask is an optional situational send line ("for the friend who…").
+Endings and any ask with their mechanics, and which asks fit the account's current stage (read from the brand's growth plan, `00 Decisions/growth-plan.md` `## Growth state` (growth-genome)): script-genome `catalog/endings.md`. With no growth plan, the only ask is an optional situational send line ("for the friend who…").
 
 ## S8. Send reason
 

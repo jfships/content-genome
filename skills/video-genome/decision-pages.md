@@ -8,7 +8,7 @@ Pages are for things the creator judges by looking or listening. Everything deci
 
 - **Page (visual or sound only):** thumbnails, the look of a moment, motion and graphics options (rendered clips), where the creator sits on screen, cutaway gags drawn as stills, the style of the edit, music, the cut's judgment calls, a draft review, the brand review at the end.
 - **Chat (AskUserQuestion, one decision per question):** every word decision. The idea fields, what they brought, kind of video, script shape, story arc, the rest of the story plan, titles (the words; the thumbnail they promise goes on a page), opening lines, the beat outline, order of work, length, yes/no, a follow-up after a page. Put the options' wording, a one-line example and what each changes in the option labels and descriptions; mark one "(Recommended)" with one line of why.
-- **Shorts:** the look of a moment, layout per beat and how creator and source share the frame go on pages as 1080×1920 stills of real material; gags and timing-dependent moments as 2–4 s clip cards (`shorts/README.md` checklist item 10).
+- **Shorts:** the look of a moment, layout per beat and how creator and source share the frame go on pages as 1080×1920 stills of real material; gags and timing-dependent moments as 2–4 s clip cards (`shorts/README.md` checklist item 11).
 - **Shorts this video can feed** are words in chat (each with its time, line and message); a page only when a still is needed to judge one. Each kept one becomes its own Short (`shorts/README.md`).
 - Never both for the same decision. A page's look follows the brand file (colors, fonts, house rules); that rule is for visual pages and never turns a word decision into a page.
 

@@ -1,22 +1,10 @@
 # Step 7: Results log
 
-After the creator publishes (by hand, for now), log how each video did. idea-genome reads this log to score the next ideas, and the plan reads it to vary story stacks. One file per brand: `<Brand>/03 Videos/results-log.md`.
+`03 Videos/results-log.md` is owned by **growth-genome** (its columns, checkpoints and verdicts: growth-genome `templates/results-log.md`). video-genome's only job here:
 
-## When
+- **When a post goes live, add the row:** post id, platform, surface, published date, the slot · lane · job from the Idea Record, and the Idea Record (link). One row per platform file. Leave checkpoints and verdicts to growth-genome.
+- The script-level details (hook, shape/arc, beat start times, pace) live in the video's script card (script-genome); the row's Idea link reaches it, so a retention drop can be mapped to a line.
 
-Ask the creator for numbers at 48 hours and again at 28 days (one AskUserQuestion reminder each time they next open a session; never chase). They paste numbers or a screenshot from each platform's analytics; a connector can supply them if one exists. Never estimate a number.
+Without growth-genome installed: add the same row and, at 48 h and 28 d, ask the creator for numbers (one reminder each time they next open a session; never chase; never estimate a number). Judge against the creator's own median, not online benchmarks.
 
-## Row per published file
-
-| EP | File | Platform | Published | Title used | Story stack | 48 h views | 48 h CTR | Avg % watched | 28 d views | Subs / follows | Top comment theme | What worked | What didn't |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-
-- **Story stack:** the slugs from the plan, in one cell: `type / framework / arc / hook / pacing / cta`, plus the angle and title formula from the Idea Record.
-- **CTR** (click rate) and **Avg % watched** only where the platform shows them; blank otherwise.
-- **What worked / didn't:** one line each, in the creator's words if they gave any, plus one line from the retention graph if they shared it (where people left).
-
-**Shorts** get their own row shape and numbers (viewed vs swiped, skip rate, sends): `shorts/platforms.md` "Results".
-
-## Reading it
-
-Before planning a new episode, and when idea-genome scores ideas, summarize the log in 3 lines: which formats, angles, hooks and title formulas beat the channel's median, and which fell below. With fewer than 5 videos, say the signal is weak and don't lean on it.
+**Reading it** (before planning, and for idea-genome scoring): summarize in 3 lines which formats, angles, hooks and shapes beat the creator's median, and which fell below. With fewer than 5 posts, say the signal is weak and don't lean on it.

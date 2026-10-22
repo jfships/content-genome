@@ -1,11 +1,11 @@
 # Learn from the creator's own numbers
 
-No hook, shape, arc or ending has been tested on 20–60 s Reels by anyone who published a method. The creator's Insights are the only real test. One log row per posted video; video-genome's `03 Videos/results-log.md` holds it (add these columns if missing; if video-genome is not installed, keep `results-log.md` next to the saved scripts).
+No hook, shape, arc or ending has been tested on 20–60 s Reels by anyone who published a method. The creator's Insights are the only real test. `03 Videos/results-log.md` is owned by growth-genome (its columns, checkpoints and verdicts); video-genome adds the row when a post goes live. script-genome adds nothing to the log: the script fields below live in the saved script card, which the row reaches through its Idea Record link. Without growth-genome, keep a simple `results-log.md` next to the saved scripts with the fields below.
 
 ## What Instagram actually reports (official)
 Skip rate (share of views that left within 3 s; no official benchmark) · retention chart (always slopes down; flatter is better; a bump = replays) · average watch time · views (replays count) · likes, sends/shares, saves, comments, follows per reach. Mosseri (Jan 2025, reported): watch time, likes per reach and sends per reach matter most; sends weigh more with non-followers. Judge by rates, not counts.
 
-## Log row
+## Script fields (in the script card header; the log links to it)
 Before posting: script file · date · core claim · runtime target · spoken words · pace · hook (three layers, verbatim) + hook slug · shape/arc/operator slugs · beat start times · ending slug + ask · stage · trial or regular · posting time · followers at post · check verdict · the creator's guess written before posting ("skip rate below my median").
 At 24 h / 72 h / 7 d: views · non-follower share · skip rate · average watch time · retention at ~3 s, middle, end · **drop timestamps mapped to the beat and line** · likes/reach · sends/reach · saves · follows.
 Review: the line at the biggest drop · one change for next time · was it the script, the topic or the visual?

@@ -23,7 +23,7 @@ RAW: <verbatim, each line tagged src: take | memo | chat>
 8 PERISHABLE FACTS (names, prices, limits, dates): verify before recording
 9 CONNECTIONS TO DISCLOSE (paid, free product/credits, affiliate, equity, friend/family):
 10 MADE WITH (AI voice, avatar, generated footage, if any):
-11 STAGE (from the strategy block, or "no audience yet"):
+11 STAGE (from the growth plan (`## Growth state`), or "no audience yet"):
 ```
 
 ## One idea per video: tests

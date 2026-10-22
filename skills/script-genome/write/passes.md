@@ -17,7 +17,7 @@
 | d. Verbs | Active verbs over "is/has/provides + noun"; hunt nominalisations ("provides editing assistance" → "helps you edit"). | No noun-stack sentences |
 | e. Hedges and tells | Cut stacked weak hedges (kinda, maybe, sort of, I guess); keep ONE calibrated first-person qualifier when a claim is genuinely uncertain ("in my tests", "as of this week"). Run `voice/tells.md` (flag clusters only). | No mush, no false confidence |
 | f. Hook | First ≤8 spoken words carry the point; the three layers are written (spoken / screen text 3–7 words, offered in both versions: own words and mirror (`catalog/hooks.md`) / first image); the hook's promise matches the payoff. Check the hook card's `Fails when`. | Three layers filled, promise traced to a later line |
-| g. Ending | Last line is a payoff, button, hold or loop (`catalog/endings.md`); any ask is allowed at this stage (strategy block); no outro. | Ending card named |
+| g. Ending | Last line is a payoff, button, hold or loop (`catalog/endings.md`); any ask is allowed at this stage (growth plan); no outro. | Ending card named |
 | h. Facts | Every name, price, limit, date and number has a source and date; perishable ones say "as of <month>" (spoken or on screen). Anything unverified is flagged, not stated. | Fact list with sources |
 | i. Read aloud and time | The creator reads it at natural pace with a timer; mark stumbles and breath breaks; split long sentences; add pause marks (`voice/delivery.md`); re-time. | Fits runtime in one natural take |
 | j. Keep-voice diff | Show before/after for every changed line. The creator can veto any line; a rewritten signature line reverts by default. | Creator has seen the diff |

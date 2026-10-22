@@ -58,7 +58,7 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 | 4. Sound | `craft/sound.md` | Levels metered, mix to target |
 | 5. Checks | `review/checks.md` | Gates 2–4 pass, debt is zero, technical review clean, beat-brief self-check done |
 | 6. Deliver | `craft/deliverables.md` + `review/session-close.md` | Every file meets its platform's spec; brand review done |
-| 7. Results | `learn/results-log.md` | 48 h and 28 d numbers logged after the creator publishes |
+| 7. Results | `learn/results-log.md` | Row added when the post goes live (growth-genome owns the log and fills the numbers) |
 
 Every session ends with `review/session-close.md`, whatever step it stopped on.
 

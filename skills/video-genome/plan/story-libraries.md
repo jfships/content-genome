@@ -230,7 +230,7 @@ Transitions, camera moves and placements are in `craft/graphics-library.md` and 
 
 ## 9. Calls to action
 
-Stage-aware: script-genome reads the brand's strategy file and proposes only asks that help at the account's current stage; with no strategy file, payoff endings and a situational send line only. **Mechanics** = script-genome `catalog/endings.md`, anchor = slug.
+Stage-aware: script-genome uses only the asks in the growth plan's `cta_allowed_now` (`00 Decisions/growth-plan.md`, `## Growth state`, written by growth-genome); with no growth plan, payoff endings and a situational send line only. **Mechanics** = script-genome `catalog/endings.md`, anchor = slug.
 
 | Slug | CTA | Where | Family/type | Scale | Mechanics |
 |---|---|---|---|---|---|

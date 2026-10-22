@@ -4,7 +4,7 @@ Plain words. No score, no ranking, no "wrong shape". Quote lines. Keep it to one
 
 ```
 SCRIPT CHECK · <title or file> · <date>
-Target <s> s · spoken words <n> (main hook/ending; alternatives one line each) · est. <s> s at <pace> w/s · stage: <from strategy block or "no audience yet">
+Target <s> s · spoken words <n> (main hook/ending; alternatives one line each) · est. <s> s at <pace> w/s · stage: <from growth plan or "no audience yet">
 
 VERDICT: FIX FIRST | NEEDS YOU | CLEAR TO RECORD
   FIX FIRST  = any hard gate FAIL
@@ -30,7 +30,7 @@ E. CAN'T CHECK FROM THE SCRIPT (who confirms)
 F. FIXES (≤5, gates first, smallest first)
    1. "<old line>" → "<new line>"  (why)
 ```
-Rules: re-check only changed lines after a fix round. Several hooks or endings given: count the first-listed one, report the others one line each. Elided text ("…") → C3 NEEDS-INFO. An ask outside the stage policy → a craft note + a house flag, not a gate (unless L9 bait). If the script was written by this skill, also attach the lint result (`card/lint.md`). Weak-evidence notes say so in plain words ("one creator's habit, untested").
+Rules: re-check only changed lines after a fix round. Several hooks or endings given: count the first-listed one, report the others one line each. Elided text ("…") → C3 NEEDS-INFO. An ask outside the growth plan's `cta_allowed_now`, or in `house_bans` → L11 FAIL. No growth plan → a craft note + a house flag (unless L9 bait). If the script was written by this skill, also attach the lint result (`card/lint.md`). Weak-evidence notes say so in plain words ("one creator's habit, untested").
 
 ## False positives
 

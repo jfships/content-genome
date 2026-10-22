@@ -39,9 +39,4 @@ Rules change; check each platform's current limits before delivery and say what 
 
 ## Results
 
-Add a row to `03 Videos/results-log.md` (`learn/results-log.md`) per platform file at 48 h and 28 d, with the Short's columns:
-
-| Short | Platform | Shape | Hook (spoken) | Length | Viewed vs swiped % (YT) / skip rate (IG) | Avg % viewed | Sends / shares | Follows / subs | Related-video clicks (YT, if shown) | What worked | What didn't |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-
-Judge against the creator's own channel, not online benchmarks. Views on YouTube Shorts count every start and replay since March 2025, so compare viewed-vs-swiped and average % viewed, not raw views.
+When each platform file goes live, add its row to `03 Videos/results-log.md` (`learn/results-log.md`; growth-genome owns the columns and fills the checkpoints). Judge against the creator's own channel, not online benchmarks. Views on YouTube Shorts count every start and replay since March 2025, so compare viewed-vs-swiped and average % viewed, not raw views.

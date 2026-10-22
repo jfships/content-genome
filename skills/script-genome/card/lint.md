@@ -90,10 +90,10 @@ How: find the myth line; check a fact line precedes it and that it is not repeat
 Severity: WARN.
 False positive: a hook that quotes the myth as a contrarian opener and corrects it within the hook beat (fact lands within ~3 s); a reaction to a clip where the myth is the clip.
 
-### K14 · Ask allowed by stage
-Test: the `ask` slug is in `asks open` for the stage read; at most one ask; no ask in the first 3 s; no outro, sign-off or end card; send lines are situational (no "share this", quotas or gates).
-How: compare the header `ask` to endings §4.2 and the strategy block's CTA policy; scan the last two rows for sign-off phrases; scan send lines for "share", "send this", numbers of people, "to find out".
-Severity: WARN (the outro/end-card ban is a design decision; report it first).
+### K14 · Ask allowed by the growth plan
+Test: the `ask` is in the growth plan's `cta_allowed_now` and not in `house_bans` (no growth plan: in `asks open` for the default stage); at most one ask; no ask in the first 3 s; no outro, sign-off or end card; send lines are situational (no "share this", quotas or gates).
+How: compare the header `ask` to `00 Decisions/growth-plan.md` `## Growth state` (endings §4.1 maps names to cards), else to endings §4.2; scan the last two rows for sign-off phrases; scan send lines for "share", "send this", numbers of people, "to find out".
+Severity: FAIL when a growth plan exists and the ask isn't allowed or is banned (gate L11); otherwise WARN. The outro/end-card ban is a design decision; report it first.
 False positive: an engagement-bait scan flagging a relevant situational send line (human decides); a series label ("#7") read as a follow ask.
 
 ### K15 · No invented facts
