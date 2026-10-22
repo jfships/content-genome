@@ -7,7 +7,14 @@ description: Turn short videos a creator saved (Reels, TikToks, Shorts) into a s
 
 *swipe-file by jfships · [youtube.com/@jfships_ai](https://youtube.com/@jfships_ai) · free (MIT)*
 
-A save has no fixed use. The creator may copy a format outright or take one idea from it. **Never assume why something was saved.** The first question for every save is what they liked: the ideas and script, the visuals, both, or neither. Only the matching questions follow.
+A save has no fixed use. **Never assume why something was saved.** Every save gets two questions first, then only the matching cards:
+
+1. **What's it for?** (pick all that fit)
+   - **Craft:** get better at making content (hook rules, retention, captions). Becomes a standing rule in the banks that every video applies.
+   - **Idea:** a format or topic to redo in their own voice. Goes to idea-genome as a candidate in `idea-bank.md`, with the save as its source.
+   - **Tools:** "make our tools do this" (an effect, a workflow, a picker). Goes to the next skill-improvement handoff, not to idea work.
+   - **Just liked it:** a short entry, nothing routed.
+2. **What did you like?** The ideas and script, the visuals, both, or neither.
 
 ## Setup (once per brand)
 
@@ -26,8 +33,8 @@ Needs on the computer: `yt-dlp` and `ffmpeg` (winget), Python with `faster-whisp
 | 3. Cards | Claude | Read each save's `transcript.txt`, `contact.jpg` and `prep.json`; write `<work>/<id>/cards.json` (see Cards). |
 | 4. Page | Claude | `python tools/build_review.py <work>` → `<work>/review.html`. Publish it to the review page link in the config (read it first in a new session; keep its `db` capability). Send the link. |
 | 5. Taps | Creator | Answers on the phone. Each save opens with step 1; idea cards and visual cards appear only for what they picked. |
-| 6. Read back | Claude | When they say done: read collection `taps` (docs `<id>~<card>`, `<id>~_mode`, `<id>~_why`). Untapped saves stay in the drop folder for the next batch. |
-| 7. Library | Claude | Write one entry per answered save (format below), update the banks, then move its link file(s) from the drop folder to the reviewed folder and delete `video.mp4` (the link is the source; transcript and stills stay). |
+| 6. Read back | Claude | When they say done: read collection `taps` (docs `<id>~<card>`, `<id>~_purpose`, `<id>~_mode`, `<id>~_why`). Untapped saves stay in the drop folder for the next batch. |
+| 7. Library | Claude | Write one entry per answered save (format below), route it by what it's for (below), update the banks, then move its link file(s) from the drop folder to the reviewed folder and delete `video.mp4` (the link is the source; transcript and stills stay). |
 
 Batch size: whatever is in the drop folder, usually 3–4. One page per batch, one section per save.
 
@@ -50,7 +57,8 @@ Batch size: whatever is in the drop folder, usually 3–4. One page per batch, o
 ```
 ## NNN - <title> (<platform>, <length>) - <id>
 Source: <link> - Reviewed <date>
-Lane: CONTENT / VISUAL / BOTH / NEITHER, plus WORKFLOW when it was saved to improve the tools or skills rather than for an idea. "<their why, word for word>"
+For: CRAFT / IDEA / TOOLS / LIKED (all that apply)
+Lane: CONTENT / VISUAL / BOTH / NEITHER. "<their why, word for word>"
 - <card title>: <their taps in words>. <their note, word for word>
 Borrowable: <only what they flagged>.
 Not borrowed: <what they marked "nothing here", if it teaches something>.
@@ -67,7 +75,10 @@ Their words are quoted, never paraphrased into something stronger. A save answer
 
 ## How the other skills use it
 
-idea-genome (develop) and video-genome (script) read the entries whose lane and type match the idea, plus the banks. WORKFLOW entries skip idea work: they go to the next skill-improvement handoff. For a fast montage of effects, prep with `--step 0.5` so each effect gets a still. They borrow only what the creator flagged. Hand a model the matching entries, never the whole library.
+- **Craft** entries and the banks: video-genome (script) and idea-genome (develop) read the ones matching the video's type and apply only what the creator flagged.
+- **Idea** entries: added to `idea-bank.md` as `raw` candidates when the entry is written, with the save linked; idea-genome develops them like any other idea, in the creator's voice.
+- **Tools** entries: listed under "Tools queue" at the bottom of the library and copied into the next skill-improvement handoff. The skills don't read them during a video.
+- For a fast montage of effects, prep with `--step 0.5` so each effect gets a still. They borrow only what the creator flagged. Hand a model the matching entries, never the whole library.
 
 ## Rules
 
