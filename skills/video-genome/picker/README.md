@@ -40,6 +40,10 @@ heading, lede, watchNote, locked   optional page copy; locked: true shows picks 
 
 1. Build, then publish `index.html` as a private artifact with `capabilities: {db: {}}`, `root` = the out dir and the printed file list as `files`. Same file path on every rebuild, so the link never changes.
 2. The page saves each pick as a document in the `picks` collection, id = row id: `{pick (null = undone, the row plays its default), status ("picked" | "check"), round, offered, notes: {optionId: text}, at}`. Read it back with the artifact data tool (`list`, collection `picks`); read only what changed since the last read (`at`), and act on every note.
+   **Running locally instead of as an artifact** (a creator who works only on their computer): serve `index.html`
+   from a local page server and give it a Done button that calls `window.engineAnswers()` and saves the result as a
+   file; it returns `{picks, rows: [{id, pick, status, round, offered, notes}]}`, the same fields as the store.
+   Picks and notes are also kept in the browser's local storage as they're made, so a reload loses nothing.
 3. Write `plan.md` from it: one line per row, "Opening line: Two-tone stack (also offered: Color blocks, Captions only) · round 1".
 4. Write `picks.json` (`{rowId: optionId}`), then `node compose.js <out_dir>/spec.json picks.json <hf>/index.html` and render the draft as usual. Before showing the draft, snapshot the render and the page's preview at the same times; they should match (the only difference is the player's control bar).
 5. A later round edits the same `picker.json`: add rows with the new `round` (and a new tab when its step comes), rebuild, republish to the same link. Earlier picks stay in the store and on the page.

@@ -98,6 +98,8 @@ const KEY="picker-"+SPEC.store;
 const S={};
 try{Object.assign(S,JSON.parse(localStorage.getItem(KEY)||"{}"))}catch(e){}
 const picks=()=>{const p={};for(const r of ROWS)if(S[r.id]&&S[r.id].pick)p[r.id]=S[r.id].pick;return p};
+/* local runs (no artifact store): a page server's Done button calls this and saves the result as a file */
+window.engineAnswers=()=>({picks:picks(),rows:ROWS.map(r=>{const s=S[r.id]||{};return{id:r.id,pick:s.pick||null,status:s.status||(s.pick?"picked":"open"),round:r.round||1,offered:r.options.map(o=>o.id),notes:s.notes||{}}})});
 const $=s=>document.querySelector(s);
 const el=(t,c,txt)=>{const e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e};
 const fmt=t=>{t=Math.max(0,t);return Math.floor(t/60)+":"+String(Math.floor(t%60)).padStart(2,"0")};
@@ -192,8 +194,10 @@ function rowEl(r){const sec=el("section","row");sec.id="row-"+r.id;
   const nl=el("button","notel",note?"Edit note":"Add a note");nl.type="button";
   const ta=el("textarea","note");ta.id=`note-${r.id}-${o.id}`;ta.value=note;ta.hidden=!note;ta.placeholder="What should change, or why this one";ta.setAttribute("aria-label","Note on "+o.name);
   nl.onclick=()=>{ta.hidden=false;ta.focus()};
-  ta.onblur=()=>{const v=ta.value.trim();const s=S[r.id]||(S[r.id]={pick:null,status:"picked"});s.notes=s.notes||{};if((s.notes[o.id]||"")===v)return;
-   if(v)s.notes[o.id]=v;else delete s.notes[o.id];nl.textContent=v?"Edit note":"Add a note";if(!v)ta.hidden=true;save(r.id)};
+  // every keystroke is kept on the page at once (survives tab switches and reloads); leaving the box also saves to the store
+  const keep=()=>{const v=ta.value.trim();const s=S[r.id]||(S[r.id]={pick:null,status:"picked"});s.notes=s.notes||{};if(v)s.notes[o.id]=v;else delete s.notes[o.id];return v};
+  ta.oninput=()=>{keep();local()};
+  ta.onblur=()=>{const v=keep();nl.textContent=v?"Edit note":"Add a note";if(!v)ta.hidden=true;save(r.id)};
   card.append(nl,ta);
   const c={row:r,opt:o,frame,wait,hit,p:null};frame._card=c;io.observe(frame);
   hit.onclick=()=>togglePlay(c);setOn(card,!!(st&&st.pick===o.id));g.append(card)}
