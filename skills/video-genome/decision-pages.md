@@ -4,7 +4,10 @@ A decision page lets the creator decide by looking, not by reading a description
 
 ## When to use a page, when to ask in chat
 
-Pages are for things the creator judges by looking or listening. Everything decided in words is an interview, and interviews happen in chat.
+Pages are for things the creator judges by looking or listening. Everything decided in words is an interview, and interviews happen in chat, with two limits:
+
+- **The question box stands alone.** It hides any text written above it. The question carries a one-line reason; every option has a short description; nothing depends on chat text above the box.
+- **Heavy word decisions go on a page.** A decision that needs more than ~2 lines of context, something to review (a script, research, a plan section), or several related questions goes on a page with the options and their context side by side. One decision per page still holds; related questions about one thing count as one decision.
 
 - **Page (visual or sound only):** thumbnails, the look of a moment, motion and graphics options (rendered clips), where the creator sits on screen, cutaway gags drawn as stills, the style of the edit, music, the cut's judgment calls, a draft review, the brand review at the end.
 - **Chat (AskUserQuestion, one decision per question):** every word decision. The idea fields, what they brought, kind of video, script shape, story arc, the rest of the story plan, titles (the words; the thumbnail they promise goes on a page), opening lines, the beat outline, order of work, length, yes/no, a follow-up after a page. Put the options' wording, a one-line example and what each changes in the option labels and descriptions; mark one "(Recommended)" with one line of why.
@@ -12,7 +15,7 @@ Pages are for things the creator judges by looking or listening. Everything deci
 - **Shorts this video can feed** are words in chat (each with its time, line and message); a page only when a still is needed to judge one. Each kept one becomes its own Short (`shorts/README.md`).
 - Never both for the same decision. A page's look follows the brand file (colors, fonts, house rules); that rule is for visual pages and never turns a word decision into a page.
 
-The page examples for word decisions (`arc.json`, `story-rest.json`, `hooks-*.json`, the title half of `titles.json`, `intake-confirm.json`) stay only for creators who ask for pages; the same shapes work as AskUserQuestion options.
+The page examples for word decisions (`arc.json`, `story-rest.json`, `hooks-*.json`, the title half of `titles.json`, `intake-confirm.json`) are for heavy word decisions (above) and for creators who ask for pages; the same shapes work as AskUserQuestion options.
 
 ## The live picker (visual decisions once there's footage or a built edit)
 

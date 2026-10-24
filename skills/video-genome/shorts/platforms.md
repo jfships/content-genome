@@ -39,4 +39,4 @@ Rules change; check each platform's current limits before delivery and say what 
 
 ## Results
 
-When each platform file goes live, add its row to `03 Videos/results-log.md` (`learn/results-log.md`; growth-genome owns the columns and fills the checkpoints). Judge against the creator's own channel, not online benchmarks. Views on YouTube Shorts count every start and replay since March 2025, so compare viewed-vs-swiped and average % viewed, not raw views.
+When each platform file goes live, hand its row fields to growth-genome, which writes `03 Videos/results-log.md` (`learn/results-log.md`; never write the log yourself while growth-genome is installed). Judge against the creator's own channel, not online benchmarks. Views on YouTube Shorts count every start and replay since March 2025, so compare viewed-vs-swiped and average % viewed, not raw views.

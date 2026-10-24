@@ -72,7 +72,7 @@ Content Creation/
       00 Decisions/             ← one doc per stage (names below) + house-rules.md
       01 Brand Kit/             ← page-sources/, sound/, exports/
       02 Research/              ← channel-playbook.md
-      03 Videos/                ← video-genome (episodes, results-log.md)
+      03 Videos/                ← video-genome (episodes); results-log.md ← growth-genome
       04 Ideas/                 ← idea-genome (idea-bank.md, IDEA NNN <slug>.md)
       05 Style Gallery/         ← exploration images (never used in videos)
       06 Profiles/              ← banners, profile pictures, highlight covers
@@ -111,7 +111,7 @@ Stage docs in `00 Decisions/`: `persona-card.md` (demo only), `formats.md`, `loo
 
 ## Principles (why it works)
 
-1. **No vocabulary needed. Picking beats describing.** Most creators have no words for styles. Show a voting page, let them vote, save the votes, read them back. Never ask "what style do you like?" in text. A page only when the choice must be seen or heard; words-only choices are questions in chat.
+1. **No vocabulary needed. Picking beats describing.** Most creators have no words for styles. Show a voting page, let them vote, save the votes, read them back. Never ask "what style do you like?" in text. A page only when the choice must be seen or heard; words-only choices are questions in chat. The question box hides any text written above it, so every chat question stands alone: a one-line reason in the question itself and a short description under every option. A word choice that needs more than ~2 lines of context, something to review, or several related answers goes on a page (`voting-pages.md`) instead.
 1a. **Fixed or library.** Every round is one of two kinds, and the page says which: a *fixed* pick (one answer, maybe a backup: palette, look, fonts, captions, kit) or a *library* (keep everything they like; the video skill picks per video: backdrops, moments, sounds, music, moves). Never make a creator pick "the one" from a library, or build a library out of a fixed pick.
 1b. **Explain the consequence, then ask.** Every question, on a page or in chat, first says what the answer changes in their videos and that nothing happens without their say. A creator must never fear something will be done to their footage. The wording pattern is in `voting-pages.md`.
 1c. **Never ask twice.** If two rounds would look the same to a creator ("didn't I just pick this?"), merge them or make the second a follow-up question. The round map in `voting-pages.md` is the result of that audit; keep it current.

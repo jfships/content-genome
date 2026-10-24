@@ -10,6 +10,10 @@ score: NN/60
 split_from: none         # IDEA NNN if this came from a split
 supersedes: none         # IDEA NNN this rewrite replaces (the old one gets status: superseded + superseded_by)
 written_in: idea-genome  # or video-genome, when the record was written or rewritten during planning
+slot: none               # growth plan `## This week` slot id, or none
+lane: none               # from the slot
+job: none                # from the slot (the post's job)
+weight: none             # heavy | light, from the slot
 ---
 <!-- Long-video template. For a Short / Reel, use the Short variant at the end of this file instead. Delete this line. -->
 
@@ -146,6 +150,10 @@ score: NN/70
 split_from: none         # IDEA NNN if this came from a split or overlap check
 supersedes: none
 written_in: idea-genome
+slot: none               # growth plan `## This week` slot id, or none
+lane: none
+job: none
+weight: none             # heavy | light
 ---
 
 # IDEA NNN: <working title> (Short)

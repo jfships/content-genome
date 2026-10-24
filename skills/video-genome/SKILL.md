@@ -58,7 +58,7 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 | 4. Sound | `craft/sound.md` | Levels metered, mix to target |
 | 5. Checks | `review/checks.md` | Gates 2–4 pass, debt is zero, technical review clean, beat-brief self-check done |
 | 6. Deliver | `craft/deliverables.md` + `review/session-close.md` | Every file meets its platform's spec; brand review done |
-| 7. Results | `learn/results-log.md` | Row added when the post goes live (growth-genome owns the log and fills the numbers) |
+| 7. Results | `learn/results-log.md` | Row fields handed to growth-genome when the post goes live (growth-genome is the log's only writer) |
 
 Every session ends with `review/session-close.md`, whatever step it stopped on.
 
@@ -95,7 +95,7 @@ Read when their part starts:
 
 ## Principles
 
-1. **Follow the flow; decide one thing at a time.** Every open decision is one AskUserQuestion (anything decided in words) or one page (only when it has to be seen or heard), with a Recommended option and one line of why. Several options → Main, Backup and Alternatives, all written to `plan.md`. Visual picks on the live picker are one pick per row (the other options recorded as also offered).
+1. **Follow the flow; decide one thing at a time.** Every open decision is one AskUserQuestion (anything decided in words) or one page (only when it has to be seen or heard), with a Recommended option and one line of why. The question box hides any text written above it, so each question stands alone: a one-line reason in the question, a short description under every option. A word decision that needs more than ~2 lines of context, something to review, or several related questions goes on a page instead (`decision-pages.md`). Several options → Main, Backup and Alternatives, all written to `plan.md`. Visual picks on the live picker are one pick per row (the other options recorded as also offered).
 2. **Show, don't describe.** Pair every script with a rough draft video. People react line by line and can't picture the whole from text.
 3. **Plain words, always with context.** Where in the video (time + the line said there), what's on screen now, what the decision changes. No internal labels.
 4. **Proof before admission.** Open on the best real material, then the humble line.

@@ -41,7 +41,7 @@ Content Creation/
   01 Brand Kit/
   02 Research/              ← channel-playbook.md
   03 Videos/
-    results-log.md          ← written by video-genome; read here for scoring
+    results-log.md          ← written by growth-genome; read here for scoring
     EP NN <slug>/           ← idea.md, plan.md, debt.md, work/, _review/, out/, shorts/, thumbs/, log.md
   04 Ideas/
     idea-bank.md            ← every candidate ever raised, with status
@@ -67,7 +67,9 @@ Content Creation/
 
 ## Read first
 
-`Brand Genome.md` sections Creator, Why and feel, Research, Formats, Voice and House rules; `Who I Am.md` (Proof, truth rules, story beats, opinions); `02 Research/channel-playbook.md`; `04 Ideas/idea-bank.md`; `03 Videos/results-log.md` if it exists; `04 Ideas/swipe-library.md` if it exists (swipe-file skill): only the entries whose lane and type match this idea, plus its banks. Borrow only what the creator flagged there.
+`Brand Genome.md` sections Creator, Why and feel, Research, Formats, Voice and House rules; `Who I Am.md` (Proof, truth rules, story beats, opinions); `02 Research/channel-playbook.md`; `04 Ideas/idea-bank.md`; `03 Videos/results-log.md` if it exists; the growth plan `00 Decisions/growth-plan.md` if it exists (growth-genome): `## Lanes`, `## This week` (open slots: lane × job × weight), `## Positioning` (audience statement, off-limits topics) and the `## Growth state` block; `04 Ideas/swipe-library.md` if it exists (swipe-file skill): only the entries whose lane and type match this idea, plus its banks. Borrow only what the creator flagged there.
+
+**Growth plan.** When `## This week` has open slots, each idea fills one: say which slot it's for at Step 1 (brainstorm and theme paths aim at an open slot's lane and job; the creator's own idea gets matched to the closest open slot, or `slot: none` if none fits), at Step 9 cite the slot in the Personality fit evidence and flag a poor fit to its lane or job (no new criterion), never pitch an off-limits topic, and write `slot`, `lane`, `job` and `weight` into the Idea Record. video-genome and script-genome read those fields. No growth plan: say so once, recommend growth-genome set-up, and write `slot: none`.
 
 ## Flow
 
@@ -111,6 +113,7 @@ Then one line on the model, unless you're already running on their strongest one
 ### Session rules (all steps)
 
 - **Plain setup on every option.** Each AskUserQuestion option carries a one-line plain setup of what choosing it leads to. Never assume the creator remembers a term, a file or an earlier step; name the thing.
+- **The question box stands alone.** It hides any text written above it, so the question itself carries a one-line reason and every option has its description. Anything needing more than ~2 lines of context, something to review (research, a draft record), or several related questions goes on a decision page (video-genome `decision-pages.md`), not a wall of chat followed by a box.
 - **Ask in rounds** of up to 4 questions, each with a Recommended option first and one line of why.
 - **Look things up live, on every path.** Demand, examples, competitor videos and news are researched at run time with sources, including for the creator's own idea. Never from memory.
 - **Volume, then cut** (brainstorm). Raise 10–20, show the best 5. Every candidate goes in `idea-bank.md`, kept or not, including splits.

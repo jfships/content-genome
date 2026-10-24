@@ -30,6 +30,7 @@ Works on its own (no brand folder needed) and inside the package.
 3. **The creator's words first.** Draft from their phrasing; new lines are marked `new`; never invent a fact, number, experience or quote.
 4. **Judge functions, not shapes.** Is it for someone within ~3 s? Is the promise paid off? Is there proof? One ask or none?
 5. **The edit is part of the script.** Every beat names what the screen and sound do and which spoken word fires it (`card/schema.md`). video-genome and the brand dress those codes.
+6. **Questions stand alone.** The question box hides text written above it: every AskUserQuestion carries a one-line reason in the question and a short description under every option. Anything needing more than ~2 lines of context, a script to review, or several related questions goes on a decision page (video-genome `decision-pages.md`).
 
 ## Evidence voice
 Use grades internally. Tell the creator only when a pick rests on a weak basis (grade SINGLE, VENDOR or INFERENCE: card line `Flag: weak`), in one plain line: "This one is one creator's habit, not tested. Fine to try; we'll see in your numbers." Never cite folklore as fact (list in `sources.md`).
