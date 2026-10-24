@@ -169,7 +169,8 @@ Content Creation/
 | `mix.py` | Voice clean-up, music ducked under voice, SFX, sound logo, loudness master |
 | `reframe_vertical.py` | One 16:9 source clip → a 9:16 part, following the speaker's head (a part for a Short, never the long edit) |
 | `short_timing.py` | A Short's timing numbers: pace, gaps, first payoff, word budget (`shorts/checks.md`) |
-| `tech_review.py` | The technical review on a render: clipped words at cuts, caption timing and collisions, safe box and layout boxes per beat, unplanned freezes, graphic durations, levels, pace (`review/checks.md` gate 4) |
+| `tech_review.py` | The technical review on a render: clipped words at cuts, caption timing, case, centering and collisions, uncaptioned speech, safe box and layout boxes per beat, unplanned freezes, graphic durations, levels, pace (`review/checks.md` gate 4) |
+| `draft_checks.py` | Per-frame checks on every draft: lips above the bottom line, blank flashes at cuts, clipped word endings, moves out of delivery before a cut, angle changes mid-sentence, overlays vs the face through their animation, and a linger sheet per beat end (`review/checks.md` gate 4) |
 | `thumb_text.py` | Builds and measures a thumbnail's text block to the rules in `craft/thumbnails.md` |
 | `talking-head/` | Transcription, inspection, background blur/zoom, mattes, speaker-to-side, captions, composite, thumbnails, motion engine |
 

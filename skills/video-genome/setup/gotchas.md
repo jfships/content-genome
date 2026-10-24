@@ -9,6 +9,11 @@
 - **Cutouts silently falling back to rembg.** MediaPipe 0.10.15+ dropped its old interface (`mp.solutions`), and 0.10.14 won't install on newer Python. `base.py` now uses the current interface (the selfie segmenter model, downloaded to `motion/models/`). If it ever prints `cutout: rembg`, stop and fix MediaPipe: rembg is often 10× slower.
 - If the environment has a preinstalled browser, point HyperFrames and Playwright at it (`HYPERFRAMES_BROWSER_PATH=…`, Playwright `executablePath`) instead of downloading one, and pin the Playwright version that matches it.
 
+- **An overlay that ends exactly on a cut stays up on the cut frame.** End it half a frame early (`end - 0.5/fps`).
+- **Studio snapshots lag the video by one frame at cuts.** Judge cuts and overlays on renders (or `draft_checks.py` sheets), never on Studio stills.
+- **Frame count can come out one long** (558 where 557 were expected); the extra frame shows the next beat's text before the loop. Check the last frame of every final, and trim to the expected count. There is no 540-wide preset: render at the full size and scale the draft copy down.
+- **Phone footage frame rate:** `r_frame_rate` can read 120 while the real rate is `avg_frame_rate` (30). Read `avg_frame_rate` (the bundled tools do).
+
 ## HyperFrames compositions
 - One root `index.html` per folder. Any other `.html` with `data-composition-id` in the folder (sources, old drafts, installed registry components) causes a "multiple roots" error. Keep sources in `src/` and generate `index.html` with a build script. Move installed registry components out after copying what you need.
 - Inline the timeline script in `index.html` (the linter can't see a `<script src>` registration). Add `window.__timelines = window.__timelines || {}` so plain-Playwright stills work.
