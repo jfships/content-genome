@@ -15,7 +15,11 @@ Inputs (all optional except the render; each missing input skips its checks and 
   --beats     work/beats.json, written from the beat brief: list of {"id","start","end","layout","job",
               optional "hold": true (a planned hold), "proof": true, "still": true (a planned still frame),
               "bleed": true (a full-width band), "speaker":[x,y,w,h], "graphic":[x,y,w,h], "hook":[x,y,w,h],
-              "overlap": true (the graphic is meant to sit over the speaker: words behind, a page he reads)}.
+              "overlap": true (the graphic is meant to sit over the speaker: words behind, a page he reads),
+              "captions_off": "<why>" (no captions on this beat on purpose)}. Spoken words with no caption
+              and no captions_off beat are flagged.
+  --case      the brand's caption case (sentence | caps | title); flags every chunk in another case.
+  --center    caption center x from the brand's caption spec; flags boxes centered more than 4 px off.
   --chunk     caption words per chunk limit (default 5 vertical, 7 wide).
   --gap       longest spoken gap in seconds (default 0.6 vertical, 1.0 wide).
   --hold      planned hold times (seconds); a freeze or a lingering beat near one is not a fault.
@@ -52,11 +56,13 @@ def run(cmd):
 
 def probe(path):
     out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
-                          "stream=width,height,r_frame_rate:format=duration", "-of", "json", path],
+                          "stream=width,height,avg_frame_rate,r_frame_rate:format=duration", "-of", "json", path],
                          capture_output=True, text=True).stdout
     d = json.loads(out)
     st = d["streams"][0]
-    num, den = st["r_frame_rate"].split("/")
+    # phone files: r_frame_rate can read 120 while the real rate is avg_frame_rate
+    rate = st.get("avg_frame_rate") if st.get("avg_frame_rate") not in (None, "0/0") else st["r_frame_rate"]
+    num, den = rate.split("/")
     return int(st["width"]), int(st["height"]), float(num) / float(den), float(d["format"]["duration"])
 
 
@@ -141,7 +147,19 @@ def check_pace(words, pace, holds, gap_limit):
             fix(e0, "gap", f"{gap:.2f} s between '{w0}' and '{w1}'", "cut the pause, or plan it as a hold")
 
 
-def check_captions(caps, words, beats, safe, chunk):
+def case_of(text):
+    ws = [w for w in re.findall(r"[A-Za-z][A-Za-z']*", text)]
+    if not ws:
+        return None
+    if len(ws) > 1 and all(w.isupper() for w in ws if len(w) > 1):
+        return "caps"
+    if len(ws) > 2 and all(w[0].isupper() for w in ws[1:] if len(w) > 3):
+        return "title"
+    return "sentence"
+
+
+def check_captions(caps, words, beats, safe, chunk, case=None, center=None):
+    covered = []
     for c in caps:
         s, e, text = float(c.get("start", c.get("a", 0))), float(c.get("end", c.get("b", 0))), c.get("text", "")
         spoken = [w for ws, we, w in words if we > s - 0.05 and ws < e + 0.05]
@@ -150,6 +168,10 @@ def check_captions(caps, words, beats, safe, chunk):
             missing = [w for w in norm(text) if w not in {x for sw in spoken for x in norm(sw)}]
             if missing:
                 fix(s, "caption text", f"'{text}' has words not spoken in {s:.2f}-{e:.2f}: {' '.join(missing)}", "match the caption to words_out.json")
+        covered.append((s, e))
+        got = case_of(text)
+        if case and got and got != case and not (case == "sentence" and got == "caps" and len(text.split()) == 1):
+            fix(s, "caption case", f"'{text}' reads as {got} case", f"the brand's caption spec says {case} case")
         n = max(1, len(text.split()))
         if n > chunk:
             fix(s, "caption chunk", f"'{text}' is {n} words", f"2-3 word chunks, {chunk} at most")
@@ -158,11 +180,21 @@ def check_captions(caps, words, beats, safe, chunk):
         box = [c[k] for k in ("x", "y", "w", "h")] if all(k in c for k in ("x", "y", "w", "h")) else None
         if box and outside(box, safe):
             fix(s, "caption box", f"'{text}' outside the safe box", "move it inside the safe box")
+        if box and center is not None and abs(box[0] + box[2] / 2 - center) > 4:
+            fix(s, "caption center", f"'{text}' centered on x {box[0] + box[2] / 2:.0f}", f"center captions on x {center:.0f} (the caption spec)")
         for b in beats:
             if box and float(b["start"]) < e and float(b["end"]) > s:
                 for key in ("hook", "graphic"):
                     if overlap(box, b.get(key)) > 0:
                         fix(s, "collision", f"caption '{text}' overlaps the {key} of beat {b.get('id')}", "move the caption or the element; captions sit below the chin")
+    off = [(float(b["start"]), float(b["end"])) for b in beats if b.get("captions_off")]
+    bare = [(ws, w) for ws, we, w in words
+            if not any(a - 0.05 <= (ws + we) / 2 <= b + 0.05 for a, b in covered + off)]
+    for i, (t, w) in enumerate(bare):
+        if i == 0 or t - bare[i - 1][0] > 1.0:
+            run_words = [x for tt, x in bare[i:] if tt - t <= 1.5][:6]
+            fix(t, "uncaptioned", f"spoken with no caption: '{' '.join(run_words)}'",
+                "caption it, or give the beat \"captions_off\": \"<why>\" in beats.json")
 
 
 def check_beats(beats, safe, holds, vertical):
@@ -240,6 +272,8 @@ def main():
     ap.add_argument("--wide", action="store_true")
     ap.add_argument("--chunk", type=int)
     ap.add_argument("--gap", type=float)
+    ap.add_argument("--case", choices=["sentence", "caps", "title"], help="the brand's caption case")
+    ap.add_argument("--center", type=float, help="caption center x from the brand's caption spec (needs caption boxes)")
     ap.add_argument("--json")
     a = ap.parse_args()
 
@@ -265,7 +299,7 @@ def main():
     else:
         note("no --words: pace, gaps, clipped-word and caption-text checks skipped")
     if a.captions:
-        check_captions(json.load(open(a.captions)), words, beats, safe, chunk)
+        check_captions(json.load(open(a.captions)), words, beats, safe, chunk, a.case, a.center)
     else:
         note("no --captions: caption checks skipped")
     if beats:

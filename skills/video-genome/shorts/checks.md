@@ -25,6 +25,7 @@ Log every gate in `_review/review-log.md`, as in `review/checks.md`.
 
 - [ ] A still of every beat at 1080×1920 with the safe box (x 65–930, y 250–1450) and each platform's overlay drawn on; nothing important underneath.
 - [ ] Frame 1 still: is it interesting with the sound off? Is the hook text there?
+- [ ] Captions match the brand's caption spec on the first draft, not only the final: every chunk in the spec's case and centered on its x (`tools/tech_review.py --case sentence --center 540` with caption boxes), and no spoken stretch without a caption unless its beat has `captions_off` with a reason.
 - [ ] Captions and hook text never collide with each other or the face; every beat sits in its named layout's boxes (`build.md` "Layouts"), checked with `tools/tech_review.py` run on `work/beats.json` (the beat brief as JSON, see `review/checks.md` gate 4) before any render.
 - [ ] Brand check (`tools/brand_check.py`) and the layout still check (`craft/layout.md` §3).
 - [ ] No sting, sound logo, end card or name tag; the backdrop is tall, not a crop.

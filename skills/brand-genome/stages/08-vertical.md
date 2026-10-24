@@ -57,11 +57,13 @@ A split (stacked or 60/40) only when both must be seen at the same moment.
 The 3–7 words on screen from frame 1 that tell a stranger why to stay. Start from `../page-template/examples/hook-text.json` (phone frames, safe box and grid crop drawn), title "Hook text", 6–10 options: the locked text style (Stage 4, step 6), its backup and alternatives at hook size, plus a few hook-only styles from `../catalog/vertical-voice-formats.md` ("Hook text styles"). Say in one line that it starts from their text style. Each option sits at y 250–520 above the face on the full-face layout, with the vertical captions below the chin; one option folds "Part 2" into the hook to show the series-tag rule. One page, no finalists (the text style was already narrowed in Stage 4): **Main** · **Backup** · **Alternative** · **Discard**. Rules written with it: 3–7 words, on screen from frame 1 for at least 2 s, never touching the captions or the face, inside the safe box, at least 44 px.
 
 The same page shows one reference card with no buttons (`control: true`), **Your captions on a Short**: the Stage 4 caption style at the vertical spec, in a phone frame with the safe box drawn on:
-- 2–3 word chunks, one line (two at most)
+- the Stage 4 caption spec fields (`look.md` "Caption spec": case, font and weight, size, plate, lines, box and centering, key word), shown as they are
+- 2–3 word chunks, one line unless the spec allows two
 - heavy sans: the caption font if it is one; otherwise the heaviest sans in the font set, said once in chat
-- caps, unless a house rule says otherwise
 - one keyword per phrase in the pop color (never default yellow)
 - centered around y 1150–1400, below the chin, inside the safe box; at least 44 / 34 px headline / body
+
+Write the vertical caption spec as the same fields (`vertical.md` "Caption spec"), changing only what differs on Shorts (usually size and y). A field never written here falls back to the Stage 4 value; the case is never left to the builder.
 
 ## 5. Covers (library page, skippable)
 
@@ -118,6 +120,6 @@ Write the four frame specs (hook, proof, poll, link: what's in it, where the tex
 
 ## Output
 
-`vertical.md`: how they shoot Shorts and the framing marks; the tall backdrop (file path); the kept layouts with their use-when and framing spec; hook text (Main, Backup, alternatives, rules); the caption spec; the kept Short endings; covers (kept, or the skipped default); the fixed rules (hook, openers, series tag, endings); safe box and 3:4 crop numbers with the date checked; the audio policy per platform and the music lane; the vertical pacing row; the pages' artifact URLs. If Instagram was picked: the carousel rules and kept layouts (or "owed"), and the Stories frame specs and Highlight covers (or "skipped: under the follower gate").
+`vertical.md`: how they shoot Shorts and the framing marks; the tall backdrop (file path); the kept layouts with their use-when and framing spec; hook text (Main, Backup, alternatives, rules); the caption spec (fields); the kept Short endings; covers (kept, or the skipped default); the fixed rules (hook, openers, series tag, endings); safe box and 3:4 crop numbers with the date checked; the audio policy per platform and the music lane; the vertical pacing row; the pages' artifact URLs. If Instagram was picked: the carousel rules and kept layouts (or "owed"), and the Stories frame specs and Highlight covers (or "skipped: under the follower gate").
 
 **Hand-off at the end of Vertical** (one line): "Shorts and Reels are done. Next: your Brand Genome, everything you picked in one place."

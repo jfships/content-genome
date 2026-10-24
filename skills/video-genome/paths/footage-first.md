@@ -38,7 +38,7 @@ Tone, moves and density are proposed in chat in plain words (**Confirm / Change 
 - **Moves:** 4–8 from `craft/graphics-library.md`, only from families the brand allows, and which ones you're deliberately *not* using and why.
 - **Density:** light (2–4 moments a minute), medium (4–7) or heavy (most lines). High-energy personalities lean heavier; calm ones lighter.
 - **Base treatment:** background blur, dim, color or image replacement; zoom style (ease or punch) from the motion table.
-- **Captions:** the brand's caption style, or none.
+- **Captions:** the brand's caption style and its caption spec fields (case, size, plate, centering), or none. A missing field is asked, never guessed.
 
 ## B5. Beat brief (gate: written, then one page)
 
