@@ -8,7 +8,7 @@ One page per video, for every visual decision that has to be seen moving. Every 
 |---|---|
 | `compose.js` | Assembles the edit from a base composition plus one option per row. The page inlines it; `node compose.js spec.json picks.json <hf>/index.html` writes the edit that renders. |
 | `picker.html` | The page template (tabs, rows, live cards, preview, saving). |
-| `build.py` | `python3 build.py picker.json <out_dir>`: checks the picker, makes caption options from word timing, writes `index.html`, `spec.json` and copies of the HyperFrames project's `assets/` and `fonts/`. |
+| `build.py` | `python3 build.py picker.json <out_dir> [--only rowId,…]`: checks the picker, makes caption options from word timing, writes `index.html`, `spec.json` and copies of the HyperFrames project's `assets/` and `fonts/`. |
 
 ## How a video's edit is split
 
@@ -25,16 +25,25 @@ round               which round of decisions this is (1, 2, 3 …); rows added l
 hyperframes         the HyperFrames version the project renders with; the page loads that version's player
 hf, base, words     the HyperFrames project folder, the base composition, word timing (words_out.json shape: w, t0, t1)
 keyWords            words the caption styles color
-tabs                [{id, name, ask}] in order: look, beats, then fixes, sound, thumbnail as their steps come; "Watch" is added at the end
-rows                [{id, tab, name, short, ask, span:[t0,t1], default, dependsOn:[rowIds], global, round, options:[…]}]
-options             [{id, name, feel, pick, why, hideCaptions, src | css/html/js | captions:{mode, maxWords, track}}]
+tabs                [{id, name, ask}] in order: look, beats, then fixes, sound, thumbnail as their steps come
+rows                [{id, tab, name, short, ask, span:[t0,t1], default, dependsOn:[rowIds], global, round, sound, options:[…]}]
+options             [{id, name, feel, pick, why, hideCaptions, sound, src | css/html/js | captions:{mode, maxWords, track}}]
 heading, lede, watchNote, locked   optional page copy; locked: true shows picks read-only
 ```
-- `span`: the stretch each card loops. For a beat, the beat's own time; for a look row, a stretch that shows the look (captions: a captions-only stretch).
+- `span`: the stretch each card plays, once per click (a new click replays it from the start).
+- `sound: true` on a row or option: its cards play with sound and carry a "Sound" tag (set it whenever the moment has a sound effect, music or a voice change worth judging). Cards without it play muted. Sound plays only in a real browser: VS Code's preview panel plays no sound in any format and can't play WebM, so a page with sound is opened in the browser. For a beat, the beat's own time; for a look row, a stretch that shows the look (captions: a captions-only stretch).
 - `captions` on an option generates the caption clips from `words`: `mode` "pair" (2–3 words), "word" (one at a time) or "line" (a short line, stacked by the option's CSS). The option's `css` styles `.cap`, `.cap span`, `.cap i` and `.cap i.k` (key words). Each caption clip carries the beat it falls in, so a beat option with `hideCaptions: true` hides that beat's captions.
 - `dependsOn`: when one of those rows changes, this row is marked "Check again" (never silently kept or wiped).
 - `pick: true` + `why`: "Our pick" on one option per row at most.
 - A look row (or `global: true`) affects the whole video; changing it reloads every card on screen. A beat row reloads only cards whose span overlaps it.
+
+## How the page behaves
+
+- **Playing never picks.** The see-through play button (and the clip itself) only plays and pauses; only **Pick this** picks.
+- **Neither, try something else** under each row: no option fits, so the row comes back with new options. Its status is `retry`, pick empty; the creator's note on the closest card says what to try. Build the new options as a new round of that row.
+- **Notes are kept on every option**, picked or not, on every keystroke; switching tabs, reloading or the store loading later never drops one.
+- **No Watch tab.** The preview on the left is the whole video with every pick stacked.
+- **Re-picking one row: a branched page.** `build.py picker.json <out_dir>-<row> --only <rowId>` builds a page holding only that row (more with commas), with the full video still in the preview. It shares the store, so the answer lands on the same row of the main page.
 
 ## Round trip
 
@@ -42,7 +51,8 @@ heading, lede, watchNote, locked   optional page copy; locked: true shows picks 
 2. The page saves each pick as a document in the `picks` collection, id = row id: `{pick (null = undone, the row plays its default), status ("picked" | "check"), round, offered, notes: {optionId: text}, at}`. Read it back with the artifact data tool (`list`, collection `picks`); read only what changed since the last read (`at`), and act on every note.
    **Running locally instead of as an artifact** (a creator who works only on their computer): serve `index.html`
    from a local page server and give it a Done button that calls `window.engineAnswers()` and saves the result as a
-   file; it returns `{picks, rows: [{id, pick, status, round, offered, notes}]}`, the same fields as the store.
+   file; it returns `{picks, rows: [{id, pick, status, round, offered, notes}]}`, the same fields as the store
+   (`status` is `picked`, `check`, `retry` or `open`). Pages with sound open in the real browser.
    Picks and notes are also kept in the browser's local storage as they're made, so a reload loses nothing.
 3. Write `plan.md` from it: one line per row, "Opening line: Two-tone stack (also offered: Color blocks, Captions only) · round 1".
 4. Write `picks.json` (`{rowId: optionId}`), then `node compose.js <out_dir>/spec.json picks.json <hf>/index.html` and render the draft as usual. Before showing the draft, snapshot the render and the page's preview at the same times; they should match (the only difference is the player's control bar).
@@ -51,7 +61,7 @@ heading, lede, watchNote, locked   optional page copy; locked: true shows picks 
 
 ## Limits
 
-- Each card is a live player, paused on a frame of its moment until the creator presses play; one plays at a time. The page loads only cards near the screen. Keep a row to 2–4 options.
+- Each card is a live player, paused on a frame of its moment until the creator presses play; one plays at a time, once. The page loads only cards near the screen. Keep a row to 2–4 options.
 - Tapping a picked option again undoes the pick. Every option takes a note.
 - The page's footage must match the base composition's timing. If the video is re-cut, rebuild the picker from the new edit; don't republish new footage under old timings.
 - Artifact files: 15 MB per file, 16 MB for the page. A long video's footage over 15 MB goes in as a draft-quality copy for the page; the render keeps the real one.

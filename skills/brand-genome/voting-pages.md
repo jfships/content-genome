@@ -106,6 +106,8 @@ python3 page-template/build.py <round>.json <round>.html
 
 Then publish `<round>.html` as a private artifact with `capabilities: {db: {}}` and the images it references in `files`. The JSONs in `page-template/examples/` are the models to copy: one for every page in Stages 4–8, change mode and the Brand Genome page (`gen_examples.py` regenerates them).
 
+**Running locally instead** (a creator who works only on their computer, no artifacts): serve the built page from a local page server with a Done button that calls `window.engineAnswers()` and saves what it returns as a file: `{round, set, setName, items: [{id, name, section, verdict, note, answered_by}]}`, the same fields as the store (an untouched finalist on a pick page reads as the alternative value). Votes and notes are kept in the browser's local storage as they're made, so a reload loses nothing. Read that file where the steps below say "read back", and record its path instead of an artifact URL. Pages with sound open in the real browser: an editor's preview panel plays no sound.
+
 **Copy the nearest example.** A round with no example JSON is built by copying the nearest example of the same shape (library tiles → `moments-library.json`; finalists tiles → `text-style-tiles.json`; pick page → `text-style-pick.json`; click-to-play cards → `captions-tiles.json`; phone frames → `vertical-layouts.json`) and changing only `round`, `stage`, `stepId`, `part`, `title`, `what`, `next`, `rule` and `options`. **Sample words on the mocks are standard and never rewritten:** title "I TRIED IT FOR 30 DAYS" (Title Case under a no-all-caps house rule; `build.py` does it), text "Here's what actually happened.", label "Day 1 vs Day 30", caption "and that's the part nobody tells you", list "1 · Week one / 2 · The hard part / 3 · The result", "EP 1", "Part 2", notes "start here →". Same for every creator, whatever their field (constants at the top of `gen_examples.py`). Only these change for the creator: the palette, fonts, their name (name tag, kit mocks) and, once they exist, their photos.
 
 Fields the template reads (nothing else is read; a field not listed here does nothing):
@@ -216,7 +218,7 @@ In demo, the persona fills the page and the operator says "go" (Stage 0 run cont
 ## Saved data
 
 - Collection `votes-<round>`, doc id = option id. Fields: `{item, name, verdict, note, section, at, answered_by}`; `answered_by` is `creator`, `persona`, `operator` or `claude (auto)`. On a pick page, a finalist with no doc (or an empty verdict) is an **Alternative**. Set builder: doc `set`, `{item: "set", set: {slotId: choiceId}, name}`. Section picks: doc `_sec-<section id>`, `{verdict}`.
-- Read back with the artifact data tool on **Ready, review it**, "check", "done" or "notes are in", or in demo right after writing.
+- Read back with the artifact data tool (or the Done file, run locally) on **Ready, review it**, "check", "done" or "notes are in", or in demo right after writing.
 - After reading votes back, record the page's artifact URL in the stage doc (the Genome page links to it).
 - Fallback with no saved-data capability: the bottom bar's **Copy answers for the chat** button puts a tab-separated list on the clipboard.
 

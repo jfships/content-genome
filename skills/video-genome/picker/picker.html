@@ -41,7 +41,8 @@ hyperframes-player{display:block;width:100%;height:100%}
 .card.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 .frame{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:6px;overflow:hidden;background:#05070a}
 .frame .hit{position:absolute;inset:0;z-index:2;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:var(--fg)}
-.frame .hit span{position:absolute;left:10px;bottom:10px;width:44px;height:44px;border-radius:50%;background:rgba(14,17,22,.82);border:1px solid var(--line);display:grid;place-items:center;font-size:1rem}
+.frame .hit span{position:absolute;left:10px;bottom:10px;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.55);color:#fff;display:grid;place-items:center;font-size:1rem}
+.frame .snd{position:absolute;right:10px;bottom:10px;z-index:3;background:rgba(0,0,0,.5);color:#fff;font-size:.7rem;font-weight:700;border-radius:4px;padding:2px 6px;pointer-events:none}
 .frame.playing .hit span{opacity:.35}
 .pickb{margin-top:auto;font:inherit;font-weight:700;font-size:.88rem;border-radius:7px;padding:8px 10px;min-height:38px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--fg);text-align:left}
 .card.on .pickb{background:var(--accent);border-color:var(--accent);color:var(--ink)}
@@ -53,15 +54,16 @@ hyperframes-player{display:block;width:100%;height:100%}
 .name{font-weight:700;font-size:.95rem;line-height:1.2}
 .feel{color:var(--mute);font-size:.84rem;margin-top:-4px}
 .why{color:var(--fg);font-size:.8rem;opacity:.85}
-.watch{display:flex;flex-direction:column;gap:12px;max-width:440px}
-.watch p{margin:0;color:var(--mute)}
 .tab:focus-visible,button:focus-visible,textarea:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .foot{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(14,17,22,.95);border-top:1px solid var(--line);padding-block:10px calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .foot .in{max-width:1240px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .foot button{font:inherit;font-weight:700;border-radius:8px;padding:9px 14px;min-height:42px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--fg)}
 .foot .count{font-variant-numeric:tabular-nums}
 .foot .saved{color:var(--mute);font-size:.85rem;margin-left:auto}
-.locked .pickb,.locked .notel{display:none}
+.neither{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.neither .still[aria-pressed="true"]{background:var(--warn);border-color:var(--warn);color:#241800}
+.pvnote{margin:0;color:var(--mute);font-size:.82rem}
+.locked .pickb,.locked .notel,.locked .neither button{display:none}
 [hidden]{display:none!important}
 @media (max-width:760px){
  .app{grid-template-columns:minmax(0,1fr);gap:16px}
@@ -80,6 +82,7 @@ hyperframes-player{display:block;width:100%;height:100%}
  <aside class="side">
   <h2>Your video so far</h2>
   <div class="pv" id="pv"></div>
+  <p class="pvnote" id="pvnote"></p>
   <div class="sum" id="sum"></div>
  </aside>
  <section id="stage"></section>
@@ -92,9 +95,12 @@ hyperframes-player{display:block;width:100%;height:100%}
 <script>/*COMPOSE*/</script>
 <script>
 const SPEC=/*SPEC*/{};
-const ROWS=SPEC.rows, TABS=[...SPEC.tabs,{id:"watch",name:"Watch",ask:"The whole video with every pick stacked, live. Timing is the real edit's. Turn the sound on in the player."}];
+const ROWS=SPEC.rows;
+/* a branched page (spec.only) shows just the rows being re-picked; the preview still plays the whole video */
+const SHOWN=SPEC.only?ROWS.filter(r=>SPEC.only.includes(r.id)):ROWS;
+const TABS=SPEC.tabs.filter(t=>!SPEC.only||SHOWN.some(r=>r.tab===t.id));
 const KEY="picker-"+SPEC.store;
-/* state: rowId -> {pick, status, round} */
+/* state: rowId -> {pick, status ("picked" | "check" | "retry"), notes} */
 const S={};
 try{Object.assign(S,JSON.parse(localStorage.getItem(KEY)||"{}"))}catch(e){}
 const picks=()=>{const p={};for(const r of ROWS)if(S[r.id]&&S[r.id].pick)p[r.id]=S[r.id].pick;return p};
@@ -104,12 +110,13 @@ const $=s=>document.querySelector(s);
 const el=(t,c,txt)=>{const e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e};
 const fmt=t=>{t=Math.max(0,t);return Math.floor(t/60)+":"+String(Math.floor(t%60)).padStart(2,"0")};
 const rowById=id=>ROWS.find(r=>r.id===id);
-let tab=TABS[0].id;
+let tab=(TABS[0]||{}).id;
 try{const h=location.hash.slice(1);if(TABS.some(t=>t.id===h))tab=h}catch(e){}
 
 $("#eyebrow").textContent=SPEC.video;
 $("#heading").textContent=SPEC.heading||"Pick the look on your own footage";
-$("#lede").textContent=SPEC.lede||"Press play on any option to watch it on your real footage, on top of what you've already picked. One plays at a time. Your picks stack in the video on the left, and what you see here is exactly what renders.";
+$("#lede").textContent=SPEC.lede||"Press play on any option to watch it once on your real footage, on top of what you've already picked. Playing never picks; only the Pick button does. Your picks stack in the video on the left, and what you see here is exactly what renders.";
+$("#pvnote").textContent=SPEC.watchNote||"The whole video with every pick stacked. Parts not picked yet play their current version. Turn the sound on in the player.";
 if(SPEC.locked)document.body.classList.add("locked");
 
 /* ---------- players ---------- */
@@ -117,11 +124,15 @@ function startWhenReady(p,seek,play=true){let n=0;const go=()=>{if(!p.isConnecte
 /* one card plays at a time; it stops the others and the preview */
 let playing=null;
 function stopPlaying(){if(playing&&playing.p)playing.p.pause();if(playing)playing.frame.classList.remove("playing"),playing.hit.firstChild.textContent="▶";playing=null}
-function togglePlay(c){if(playing===c){stopPlaying();return}stopPlaying();if(!c.p)mount(c);if(pvPlayer)pvPlayer.pause();
- playing=c;c.frame.classList.add("playing");c.hit.firstChild.textContent="❚❚";startWhenReady(c.p,c.row.span[0])}
+let endTimer=null;
+function togglePlay(c){clearTimeout(endTimer);if(playing===c){stopPlaying();return}stopPlaying();if(!c.p)mount(c);if(pvPlayer)pvPlayer.pause();
+ playing=c;c.frame.classList.add("playing");c.hit.firstChild.textContent="❚❚";startWhenReady(c.p,c.row.span[0]);
+ // plays once and stops; a new click replays from the start
+ const len=c.row.span?c.row.span[1]-c.row.span[0]:0;if(len>0)endTimer=setTimeout(()=>{if(playing===c){stopPlaying();if(c.p)c.p.seek(still(c.row))}},len*1000+400)}
+const hasSound=(r,o)=>!!(o.sound??r.sound);
 const still=r=>r.span?r.span[0]+(r.span[1]-r.span[0])*.6:0;
 function makePlayer(html,range,opts){const p=document.createElement("hyperframes-player");
- p.setAttribute("muted","");if(range){p.setAttribute("loop","");p.setAttribute("range-start",String(range[0]));p.setAttribute("range-end",String(range[1]))}
+ if(!(opts&&opts.sound))p.setAttribute("muted","");if(range){p.setAttribute("range-start",String(range[0]));p.setAttribute("range-end",String(range[1]))}
  if(opts&&opts.controls)p.setAttribute("controls","");else p.setAttribute("disable-click-to-play","");
  p.setAttribute("srcdoc",html);return p}
 
@@ -133,7 +144,7 @@ function preview(seek){const box=$("#pv");box.textContent="";pvPlayer=makePlayer
 const mounted=new Set();
 const io=new IntersectionObserver(es=>es.forEach(e=>{const c=e.target._card;if(!c)return;if(e.isIntersecting)mount(c);else unmount(c)}),{rootMargin:"300px 0px"});
 function cardHTML(c){return compose(SPEC,Object.assign(picks(),{[c.row.id]:c.opt.id}))}
-function mount(c){if(c.p)return;c.wait.hidden=true;c.p=makePlayer(cardHTML(c),c.row.span);c.frame.prepend(c.p);mounted.add(c);startWhenReady(c.p,still(c.row),false)}
+function mount(c){if(c.p)return;c.wait.hidden=true;c.p=makePlayer(cardHTML(c),c.row.span,{sound:hasSound(c.row,c.opt)});c.frame.prepend(c.p);mounted.add(c);startWhenReady(c.p,still(c.row),false)}
 function unmount(c){if(!c.p)return;if(playing===c)stopPlaying();c.p.remove();c.p=null;c.wait.hidden=false;mounted.delete(c)}
 function refresh(c){if(!c.p)return;c.p.setAttribute("srcdoc",cardHTML(c));if(playing===c)startWhenReady(c.p,c.row.span[0]);else startWhenReady(c.p,still(c.row),false)}
 const overlaps=(a,b)=>a&&b&&a[0]<b[1]&&b[0]<a[1];
@@ -150,6 +161,7 @@ function pick(row,opt){if(SPEC.locked)return;
  const prev=S[row.id]||{};const was=composeChosen(row,picks()).id;
  // tapping the picked card again undoes the pick; the row falls back to its current version
  S[row.id]={pick:prev.pick===opt.id?null:opt.id,status:"picked",notes:prev.notes||{}};save(row.id);
+ const nb=document.querySelector(`#row-${row.id} .neither .still`);if(nb)nb.setAttribute("aria-pressed","false");
  const now=composeChosen(row,picks()).id;
  const redo=[row];
  if(was!==now){
@@ -165,12 +177,14 @@ function pick(row,opt){if(SPEC.locked)return;
 /* ---------- page ---------- */
 function summary(){const s=$("#sum");s.textContent="";
  for(const r of ROWS){const d=el("div");const o=composeChosen(r,picks());const chosen=S[r.id]&&S[r.id].pick;
-  d.append(el("span",null,r.short||r.name),el("span",chosen?"":"dflt",o?(o.name+(chosen?"":" for now")):"-"));s.append(d)}
- const done=ROWS.filter(r=>S[r.id]&&S[r.id].pick&&S[r.id].status!=="check").length;
- $("#count").textContent=`${done} of ${ROWS.length} picked`}
+  const retry=S[r.id]&&S[r.id].status==="retry";
+  d.append(el("span",null,r.short||r.name),el("span",chosen?"":"dflt",retry?"Try something else":o?(o.name+(chosen?"":" for now")):"-"));s.append(d)}
+ const done=SHOWN.filter(answered).length;
+ $("#count").textContent=`${done} of ${SHOWN.length} answered`}
+const answered=r=>{const s=S[r.id];return !!s&&((!!s.pick&&s.status!=="check")||s.status==="retry")};
 function tabs(){const n=el("nav","tabs");n.setAttribute("aria-label","Decisions");
  for(const t of TABS){const rs=ROWS.filter(r=>r.tab===t.id);const b=el("button","tab",t.name);b.type="button";
-  if(rs.length){const left=rs.filter(r=>!(S[r.id]&&S[r.id].pick)||S[r.id].status==="check").length;b.append(el("span","n",left?left+" to pick":"done"))}
+  if(rs.length){const left=rs.filter(r=>SHOWN.includes(r)&&!answered(r)).length;b.append(el("span","n",left?left+" to pick":"done"))}
   if(t.id===tab)b.setAttribute("aria-current","page");b.onclick=()=>{tab=t.id;render();window.scrollTo({top:0,behavior:"smooth"})};n.append(b)}
  return n}
 function setOn(card,on){card.classList.toggle("on",on);const b=card.querySelector(".pickb");b.textContent=on?"Picked (tap to undo)":"Pick this";b.setAttribute("aria-pressed",on)}
@@ -195,26 +209,33 @@ function rowEl(r){const sec=el("section","row");sec.id="row-"+r.id;
   const ta=el("textarea","note");ta.id=`note-${r.id}-${o.id}`;ta.value=note;ta.hidden=!note;ta.placeholder="What should change, or why this one";ta.setAttribute("aria-label","Note on "+o.name);
   nl.onclick=()=>{ta.hidden=false;ta.focus()};
   // every keystroke is kept on the page at once (survives tab switches and reloads); leaving the box also saves to the store
-  const keep=()=>{const v=ta.value.trim();const s=S[r.id]||(S[r.id]={pick:null,status:"picked"});s.notes=s.notes||{};if(v)s.notes[o.id]=v;else delete s.notes[o.id];return v};
+  const keep=()=>{const v=ta.value.trim();const s=S[r.id]||(S[r.id]={pick:null,status:"open"});s.notes=s.notes||{};if(v)s.notes[o.id]=v;else delete s.notes[o.id];return v};
   ta.oninput=()=>{keep();local()};
   ta.onblur=()=>{const v=keep();nl.textContent=v?"Edit note":"Add a note";if(!v)ta.hidden=true;save(r.id)};
   card.append(nl,ta);
   const c={row:r,opt:o,frame,wait,hit,p:null};frame._card=c;io.observe(frame);
+  if(hasSound(r,o))frame.append(el("span","snd","Sound"));
   hit.onclick=()=>togglePlay(c);setOn(card,!!(st&&st.pick===o.id));g.append(card)}
- sec.append(g);return sec}
+ sec.append(g);
+ // "neither": no option fits; the row goes back for new options (a note on the closest card says what to try)
+ const nw=el("div","neither");const nb=el("button","still","Neither, try something else");nb.type="button";
+ nb.setAttribute("aria-pressed",String(!!(st&&st.status==="retry")));
+ nb.onclick=()=>{if(SPEC.locked)return;const s=S[r.id]||{};const on=s.status!=="retry";
+  S[r.id]={pick:on?null:s.pick||null,status:on?"retry":"picked",notes:s.notes||{}};save(r.id);nb.setAttribute("aria-pressed",String(on));
+  for(const card of sec.querySelectorAll(".card"))setOn(card,card._opt===S[r.id].pick);
+  const n=document.querySelector(".tabs");if(n)n.replaceWith(tabs());summary()};
+ nw.append(nb,el("span","rowask","Leave a note on the closest card saying what to try."));sec.append(nw);return sec}
 function render(){for(const c of[...mounted])unmount(c);io.disconnect();
  const st=$("#stage");st.textContent="";st.append(tabs());const t=TABS.find(x=>x.id===tab);
  if(t.ask)st.append(el("p","ask",t.ask));
- if(tab==="watch"){const w=el("div","watch");const box=el("div","pv");box.append(makePlayer(compose(SPEC,picks()),null,{controls:true}));w.append(box);
-  w.append(el("p",null,SPEC.watchNote||"Picks not made yet show as \"for now\" in the list on the left; those parts play their current version."));st.append(w)}
- else{const rows=el("div","rows");for(const r of ROWS.filter(x=>x.tab===tab))rows.append(rowEl(r));st.append(rows)}
+ const rows=el("div","rows");for(const r of SHOWN.filter(x=>x.tab===tab))rows.append(rowEl(r));st.append(rows);
  summary()}
 $("#copy").onclick=async e=>{const txt=JSON.stringify(picks());try{await navigator.clipboard.writeText(txt);e.target.textContent="Copied. Paste it in chat."}catch(err){e.target.textContent="Copy failed. Your picks are saved anyway."}};
 
 preview(0);render();
 (async()=>{try{const d=window.claude&&await window.claude.use("db");if(!d)return;db=d;
  const q=await db.collection("picks").get();
- for(const doc of q.docs){const v=doc.data();if(v&&rowById(doc.id))S[doc.id]={pick:v.pick||null,status:v.status||"picked",notes:v.notes||{}}}
+ for(const doc of q.docs){const v=doc.data();if(v&&rowById(doc.id))S[doc.id]={pick:v.pick||null,status:v.status||"picked",notes:Object.assign({},v.notes||{},(S[doc.id]||{}).notes||{})}}
  local();$("#saved").textContent="Saves as you pick. Claude can read your picks and notes.";preview(0);
  if(!document.activeElement||document.activeElement.tagName!=="TEXTAREA")render()}catch(e){}})();
 </script>

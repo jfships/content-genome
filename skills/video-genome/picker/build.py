@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Build a video's live picker page from its picker.json.
 
-usage: build.py picker.json out_dir
+usage: build.py picker.json out_dir [--only rowId[,rowId]]
+
+--only builds a branched page holding just those rows (a re-pick), into its own out_dir; it shares the
+picks store, so its answers land on the same rows.
 
 out_dir gets index.html (the page), spec.json (what compose.js assembles; the render uses the same file)
 and copies of the HyperFrames project's assets/ and fonts/ (published as the artifact's files).
@@ -10,8 +13,12 @@ Field reference: README.md.
 import json, re, shutil, sys, html, pathlib
 
 here = pathlib.Path(__file__).parent
-src = pathlib.Path(sys.argv[1]).resolve()
-out = pathlib.Path(sys.argv[2]).resolve()
+args = sys.argv[1:]
+only = None
+if "--only" in args:
+    i = args.index("--only"); only = args[i + 1].split(","); del args[i:i + 2]
+src = pathlib.Path(args[0]).resolve()
+out = pathlib.Path(args[1]).resolve()
 P = json.loads(src.read_text(encoding="utf-8"))
 base_dir = src.parent
 hf = (base_dir / P["hf"]).resolve()
@@ -90,11 +97,15 @@ for t in readable():
     for m in CODE.finditer(t or ""):
         if m.group(0) not in OK: problems.append(f"internal label '{m.group(0)}' in: {t[:70]}")
     if re.search(r"\b[a-z0-9]+_[a-z0-9_]+\b", t or ""): problems.append(f"slug-like word in: {t[:70]}")
+if only:
+    ids = {r["id"] for r in P["rows"]}
+    problems += [f"--only: no row '{x}'" for x in only if x not in ids]
 if problems: sys.exit("build.py: " + "\n  ".join(problems))
 
 spec = {k: P[k] for k in ("video", "store", "tabs", "rows") if k in P}
 spec.update({k: P[k] for k in ("heading", "lede", "watchNote", "locked") if k in P})
 spec["round"] = P.get("round", 1); spec["base"] = base
+if only: spec["only"] = only
 
 if out.exists(): shutil.rmtree(out)
 out.mkdir(parents=True)

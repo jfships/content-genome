@@ -306,6 +306,15 @@ __HEAD__
     }
   }
 
+  // local runs (no artifact store): a page server's Done button calls this and saves the result as a file.
+  // Votes and notes are also in local storage as they're made, so a reload loses nothing.
+  window.engineAnswers = () => {
+    const a = document.activeElement; if (a && a.tagName === 'TEXTAREA') a.blur();   // flush a note still being typed
+    return {round: D.round, set: state.set || null, setName: state.setName || '',
+      items: ALL.map(o => { const s = state[o.id] || {}; const sec = SECTIONS.find(x => x.id === sectionOf(o));
+        return {id: o.id, name: o.name, section: sectionOf(o), verdict: verdictOf(o, sec) || '', note: s.note || '', answered_by: s.answered_by || ''}; })};
+  };
+
   // ---------- set builder (mode: "sets") ----------
   var setPicks;
   function choice(slot, id){ return (D.choices[slot]||[]).find(c => c.id === id) || (D.choices[slot]||[])[0]; }

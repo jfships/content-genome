@@ -18,15 +18,16 @@ The page examples for word decisions (`arc.json`, `story-rest.json`, `hooks-*.js
 
 Once real footage or a first HyperFrames edit exists, the visual decisions of a video go on **one living picker page** (`picker/README.md`), not one page per decision. Every option plays the real edit live on the creator's footage, on top of everything already picked, so they see combinations without a render, and what they pick is exactly what renders.
 
-- **One page per video, same link all the way through.** Tabs are groups of decisions that appear when their step comes: **Look** → **Beats** → later **Fixes**, **Sound**, **Thumbnail**. **Watch** plays the whole video with every pick stacked.
+- **One page per video, same link all the way through.** Tabs are groups of decisions that appear when their step comes: **Look** → **Beats** → later **Fixes**, **Sound**, **Thumbnail**. The preview beside the tabs plays the whole video with every pick stacked (no separate Watch tab).
 - **Decisions get added, never restarted.** A later round adds rows marked "New" to the same page. Earlier picks stay visible and can still be changed. When a change affects another pick, that row is marked "Check again" (`dependsOn`), never silently kept or wiped.
 - **Captions are one style for the whole video.** Picked once, on the Look tab.
 - **On-screen text changes per beat.** Important moments get their own treatment, chosen for how that moment should feel. Beats with no special treatment just show captions and get no row.
 - **When on-screen text is up, captions are hidden.** The two never show together (`hideCaptions`).
 - **When each tab opens.** Look: after the script is locked and footage or a first edit exists, before the beats are built (caption style once; colors and fonts too only without a Brand Genome). Beats: after the beat brief, one row per beat that gets a treatment, 2–3 treatments each playing on that beat's own footage. Fixes: from the draft review, only the beats the creator flagged, each showing the current version next to 2 alternatives. Sound and thumbnail when their steps come.
+- **Playing never picks; every row has "Neither, try something else".** A row the creator sends back comes back as a new round of that row, on a branched page holding only it (`build.py --only`), never by re-showing the whole page. Cards with sound play it (`sound: true`); open those pages in the real browser, since an editor's preview panel plays no sound.
 - **One pick per row, no backup.** The creator sees every option moving and combined, so a visual pick on the picker is a single pick; the other options are recorded as "also offered". Word decisions in chat keep Main and Backup.
 - **The page is the decision log.** Each row is one stored record (what was picked, what else was offered, which round). Write `plan.md` from it and read back only what changed since the last read.
-- **Watch replaces render rounds that only show combinations.** Real renders are for checking timing and for the final.
+- **The stacked preview replaces render rounds that only show combinations.** Real renders are for checking timing and for the final.
 - **Options come from the effects library**: `tools/talking-head/reference/looks.md`, `craft/graphics-library.md`, the spatial library and the swipe-library entries marked visual, inside the brand's limits. Every effect added to the library is built so it can be a picker option (a fragment over the creator's own take).
 - **What stays off the picker:** word decisions (chat, one at a time), Keep / Cut lists, the cut, and the checks. Before footage or an edit exists (brand building, plan-stage mocks), the static pages below are still used.
 
