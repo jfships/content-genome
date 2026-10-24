@@ -3,10 +3,10 @@
 catching by eye. Runs on every draft next to tech_review.py (review/checks.md gate 4), not instead of it.
 
 python3 draft_checks.py <render> --timeline work/timeline.json [--source <take.mp4>] --out <folder>
-       [--overlays work/overlays.json] [--line 1450] [--top 288] [--json report.json]
+       [--overlays work/overlays.json] [--line 1500] [--top 288] [--json report.json]
 
 Checks:
-  lips      lower lip above the platform bottom rows (y 1450 at 1920 tall) on every frame a face is found
+  lips      lower lip above the platform bottom rows (y 1500 at 1920 tall) on every frame a face is found
   blank     empty-panel / flat-color flashes: a flat patch that appears for 1-3 frames (or a whole flat frame)
   endings   word endings clipped: the take's sound still runs > 30 ms past a clip's source out point
   delivery  the speaker moves out of delivery (leans back, drops or turns away) in a clip's last 12 frames
@@ -353,7 +353,7 @@ def main():
     ap.add_argument("--source")
     ap.add_argument("--out", required=True)
     ap.add_argument("--overlays")
-    ap.add_argument("--line", type=float, default=1450, help="bottom no-go line at 1920 tall")
+    ap.add_argument("--line", type=float, default=1500, help="bottom no-go line at 1920 tall")
     ap.add_argument("--top", type=float, default=288, help="top platform rows at 1920 tall (sheet guide only)")
     ap.add_argument("--json")
     a = ap.parse_args()

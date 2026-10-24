@@ -30,7 +30,7 @@ Coordinates: 16:9 is 1920×1080 (thirds at x 640/1280, y 360/720). 9:16 is 1080�
 17. **Lower third.** Left-aligned at x=96, bottom edge at y≈900–950, 90–130 px tall, below the chin. Simple fade or slide.
 
 **Shorts and Reels (9:16)**
-18. **Safe box.** Everything important inside x 65–930, y 250–1450 (the strictest overlap of TikTok, Reels and Shorts UI). The right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~470 px by the caption, handle and audio rows; the top ~250 px by the top bar. Instagram's grid shows a centered 3:4 crop: cover text inside y 400–1300.
+18. **Safe box.** Everything important inside x 65–930, y 250–1500 (organic posts: Shorts' caption rows start highest, about y 1540; ads zones are bigger and not used). The right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~420 px by the caption, handle and audio rows; the top ~250 px by the top bar. Instagram's grid shows a centered 3:4 crop: cover text inside y 400–1300.
 19. **Face high, captions below.** Chest-up, head in the top 30–40% of the frame, eyes near y≈640; hook text y ~250–520; captions centered around y 1150–1400, below the chin. Full rules: `shorts/build.md` "Layout".
 
 ## 2. Standard layouts
@@ -52,7 +52,7 @@ Pick per scene; the brand's layout picks (if any) come first, these fill the gap
 ## 3. Still check (gate 2, every scene; gate 4 hunts for misses)
 
 Answer each for every still. Any "no" is fixed before render.
-1. Every text and graphic edge ≥ 96 px from the edge (16:9), or inside x 65–930, y 250–1450 (9:16)?
+1. Every text and graphic edge ≥ 96 px from the edge (16:9), or inside x 65–930, y 250–1500 (9:16)?
 2. Nothing touches or overshoots an edge by accident?
 3. One clearly dominant element, ≥ 2× the next?
 4. The graphic is on the open side, off the face and hands?
@@ -62,7 +62,7 @@ Answer each for every still. Any "no" is fixed before render.
 8. Display lines ≤ 30 characters, captions ≤ 42, smallest text ≥ 4% of frame height?
 9. Related items closer to each other than to anything else?
 10. The layout fits this shot (speaker present, gone, or in a bubble), with no empty patch where the speaker used to be?
-11. On 9:16: everything inside x 65–930, y 250–1450; captions around y 1150–1400 and clear of the right rail?
+11. On 9:16: everything inside x 65–930, y 250–1500; captions around y 1150–1400 and clear of the right rail?
 12. Squint test: balanced, no heavy side, no hollow middle?
 
 ## Sources

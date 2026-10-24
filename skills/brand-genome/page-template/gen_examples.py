@@ -1175,9 +1175,9 @@ finalist_flow("banner", "Banner", "The wide image at the top of your channel pag
 
 # ---------- 17. Vertical: layouts library, each a real 9:16 test frame in a phone, with the app's buttons ghosted ----------
 # Built on the native vertical test photo, never a 16:9 photo cropped to 9:16. Every phone draws the safe box
-# (x 65-930, y 250-1450 on 1080x1920, dashed) and the Instagram 3:4 grid crop (y 240-1680 survive, dotted lines).
+# (x 65-930, y 250-1500 on 1080x1920, dashed) and the Instagram 3:4 grid crop (y 240-1680 survive, dotted lines).
 VF = "img/10-car-vertical.jpg"
-SAFE = ('<div style="position:absolute;left:6.02%;width:80.09%;top:13.02%;height:62.5%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none"></div>'
+SAFE = ('<div style="position:absolute;left:6.02%;width:80.09%;top:13.02%;height:65.1%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none"></div>'
         + ''.join(f'<i style="position:absolute;left:0;right:0;top:{y};border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block"></i>' for y in ("12.5%", "87.5%")))
 def phone(inner):
     ui = (f'<div style="position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5">'

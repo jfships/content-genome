@@ -8,7 +8,7 @@ A Short is not the long video cropped. It's its own video: written for vertical,
 
 ## Fixed rules (said once in chat, in two plain lines; never asked)
 
-- **Safe box:** anything important stays inside x 65–930, y 250–1450. The top ~250 px is the platform's top bar; the right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~470 px by the caption, handle and audio rows. **Instagram grid crop:** the grid shows a centered 3:4, so only y 240–1680 survive. Both are drawn on every vertical mock, on every page.
+- **Safe box:** anything important stays inside x 65–930, y 250–1500. The top ~250 px is the platform's top bar; the right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~420 px by the caption, handle and audio rows. **Instagram grid crop:** the grid shows a centered 3:4, so only y 240–1680 survive. Both are drawn on every vertical mock, on every page.
 - **The hook:** lands in the first 1–2 s on three layers together: the creator (or their real material) on screen in frame 1, a spoken line, and 3–7 words of hook text visible from frame 1. Frame 1 makes sense with no context. Nothing comes before it.
 - **Openers:** no sting, no sound logo, no name tag on Shorts. Corner mark off.
 - **Series tag:** the series or show name never appears on a Short or Reel; each one stands alone. Only "Part N" for a numbered part, folded into the hook text (or a small tag right after the hook). Never before the hook, never competing with it.
@@ -47,7 +47,7 @@ Built from the native vertical test photo (`../benchmark/10-car-vertical.jpg`, o
 |---|---|---|---|---|
 | Full face | chest-up, head in the top 30–40%, eyes y ≈ 640, centered | none, or graphics beside the face | y 1150–1400, below the chin | y 250–520, above the head |
 | Stacked | below the band: chest-up, eyes about y 1050, chin above y 1250 | a 16:9 band on top, full width, y 250–858 (1080×608) | y 1280–1400, below the chin | over the top of the band, y 250–520 |
-| 60/40 split | the lower 40% (from y 1152): head and shoulders, eyes a third down the panel, face inside y 1152–1450 | the top 60% | centered on the seam (y ≈ 1150), never across the eyes | over the top of the content, y 250–520 |
+| 60/40 split | the lower 40% (from y 1152): head and shoulders, eyes a third down the panel, face inside y 1152–1500 | the top 60% | centered on the seam (y ≈ 1150), never across the eyes | over the top of the content, y 250–520 |
 | Corner face | a box about 360×480 at lower left (x 65–425, y 970–1450), never on the right rail | full frame | beside or above the face box, inside the safe box | y 250–520 |
 
 A split (stacked or 60/40) only when both must be seen at the same moment.

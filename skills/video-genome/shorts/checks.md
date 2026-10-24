@@ -23,7 +23,7 @@ Log every gate in `_review/review-log.md`, as in `review/checks.md`.
 
 ## Short gate 2: build (on stills)
 
-- [ ] A still of every beat at 1080×1920 with the safe box (x 65–930, y 250–1450) and each platform's overlay drawn on; nothing important underneath.
+- [ ] A still of every beat at 1080×1920 with the safe box (x 65–930, y 250–1500) and each platform's overlay drawn on; nothing important underneath.
 - [ ] Frame 1 still: is it interesting with the sound off? Is the hook text there?
 - [ ] Captions match the brand's caption spec on the first draft, not only the final: every chunk in the spec's case and centered on its x (`tools/tech_review.py --case <spec case> --center <spec x>` with caption boxes), and no spoken stretch without a caption unless its beat has `captions_off` with a reason.
 - [ ] `tools/draft_checks.py` clean on every draft (`review/checks.md` gate 4): lips above the bottom line on every frame, no blank flashes, no word ending clipped over 30 ms, no move out of delivery before a cut, angle changes on sentence boundaries, overlays clear of the face through their whole animation. Every linger sheet looked at.
@@ -50,7 +50,7 @@ Same five views as `review/checks.md` gate 3, at 1080×1920, plus:
 
 ## Short gate 4: Technical review
 
-Same as `review/checks.md` gate 4, at 1080×1920: the builder's own look check is the beat brief self-check (`craft/graphic-jobs.md`), never a score; then a separate agent that didn't build it runs the technical review with `tools/tech_review.py` on the render, `words_out.json`, `work/shots.json`, the caption file and `work/beats.json`, plus by eye on the contact sheet (1 frame a second), the strips and the 360 px phone view. Vertical specifics: the safe box x 65–930, y 250–1450 and each platform's overlay; the named layout per beat and its boxes (`build.md` "Layouts"), with no layout on two consecutive beats unless the hold is in the brief; hook text on from frame 1 for 2 s; the loop seam; every word readable at 360 px; the last 10 s diffed against the captions.
+Same as `review/checks.md` gate 4, at 1080×1920: the builder's own look check is the beat brief self-check (`craft/graphic-jobs.md`), never a score; then a separate agent that didn't build it runs the technical review with `tools/tech_review.py` on the render, `words_out.json`, `work/shots.json`, the caption file and `work/beats.json`, plus by eye on the contact sheet (1 frame a second), the strips and the 360 px phone view. Vertical specifics: the safe box x 65–930, y 250–1500 and each platform's overlay; the named layout per beat and its boxes (`build.md` "Layouts"), with no layout on two consecutive beats unless the hold is in the brief; hook text on from frame 1 for 2 s; the loop seam; every word readable at 360 px; the last 10 s diffed against the captions.
 
 Output is a pass/fail list with times and fixes. Nothing reaches the creator with an open item. Log it in `_review/review-log.md`.
 

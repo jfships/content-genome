@@ -4,7 +4,7 @@
 
 ## Vertical layouts (Stage 8), shown in a phone frame with platform buttons drawn on
 
-Three sections on the page. Built from the native vertical test photo (`10-car-vertical.jpg`, or the creator's own upright photo), drawn graphics and a plain gray silhouette for cut-outs; never another person's photo, never a 16:9 photo cropped to 9:16. Every mock has the safe box (x 65–930, y 250–1450) and the Instagram 3:4 grid crop (y 240–1680) drawn on.
+Three sections on the page. Built from the native vertical test photo (`10-car-vertical.jpg`, or the creator's own upright photo), drawn graphics and a plain gray silhouette for cut-outs; never another person's photo, never a 16:9 photo cropped to 9:16. Every mock has the safe box (x 65–930, y 250–1500) and the Instagram 3:4 grid crop (y 240–1680) drawn on.
 
 | Slug | Name | Section | Tier | What it is |
 |---|---|---|---|---|

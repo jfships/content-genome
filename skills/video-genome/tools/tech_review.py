@@ -25,7 +25,7 @@ Inputs (all optional except the render; each missing input skips its checks and 
   --hold      planned hold times (seconds); a freeze or a lingering beat near one is not a fault.
   --pace      the brand's spoken pace target in words a second (default 2.6-3.0).
   --loudness  master target LUFS (default -14).
-  --vertical  safe box x 65-930, y 250-1450 at 1080x1920 (default when the render is taller than wide).
+  --vertical  safe box x 65-930, y 250-1500 at 1080x1920 (default when the render is taller than wide).
   --wide      96 px margin at 1920x1080.
 
 Prints one line per fault: FIX  t=12.30  <check>  <what>  ->  <how to fix>, then a summary.
@@ -216,7 +216,7 @@ def check_beats(beats, safe, holds, vertical):
             fix(s, "safe box", f"beat {b.get('id')} hook box {b.get('hook')} leaves the safe box {safe}", "move it inside the safe box")
         sp = b.get("speaker")
         if sp and vertical and (sp[0] + sp[2] > safe[2] + 60 or sp[1] + sp[3] > safe[3] + 120 and sp[1] > safe[1]):
-            fix(s, "button zone", f"beat {b.get('id')} speaker box {sp} runs into the right rail or bottom rows", "move the speaker left or up; the face stays inside x 65-930, y 250-1450")
+            fix(s, "button zone", f"beat {b.get('id')} speaker box {sp} runs into the right rail or bottom rows", "move the speaker left or up; the face stays inside x 65-930, y 250-1500")
         g = b.get("graphic")
         if g and (g[1] < safe[1] or g[1] + g[3] > safe[3]) and not b.get("bleed"):
             fix(s, "safe box", f"beat {b.get('id')} graphic box {g} runs into the top or bottom platform rows", "keep the graphic between y {safe[1]} and {safe[3]} (a full-bleed band may mark bleed: true)".replace("{safe[1]}", str(safe[1])).replace("{safe[3]}", str(safe[3])))
@@ -283,7 +283,7 @@ def main():
 
     w, h, fps, dur = probe(a.render)
     vertical = a.vertical or (h > w and not a.wide)
-    safe = (65, 250, 930, 1450) if vertical else (96, 96, w - 96, h - 96)
+    safe = (65, 250, 930, 1500) if vertical else (96, 96, w - 96, h - 96)
     if vertical and (w, h) != (1080, 1920):
         note(f"render is {w}x{h}; safe box assumes 1080x1920 (scale boxes accordingly)")
     if fps < 23:

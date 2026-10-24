@@ -64,7 +64,7 @@ Taste is the creator's. The builder's own check of the look is the beat brief (`
 | Render | Black or duplicate frames, flicker on a cutout edge, blurry scaled-up text, low contrast, wrong size or frame rate |
 | Brand | `tools/brand_check.py`: colors or fonts outside the pack |
 | Linger and endings | A beat holds past its last word into the speaker leaning back, dropping or looking away (check each cut against the body, not only the audio); a word's ending clipped by more than 30 ms at a cut; an angle change that doesn't land on a sentence boundary; also at the end of held moments (the eyes drift) |
-| Face and lines | The lower lip below the platform's bottom rows (y 1450 at 1920 tall) on any frame; an overlay touching the face on any frame it is up, its pop-in or slide-in included, not only at rest; a blank or flat-color panel flashing for 1–3 frames at a cut |
+| Face and lines | The lower lip below the platform's bottom rows (y 1500 at 1920 tall) on any frame; an overlay touching the face on any frame it is up, its pop-in or slide-in included, not only at rest; a blank or flat-color panel flashing for 1–3 frames at a cut |
 
 **`work/beats.json`** is the beat brief written out by the builder when the brief is locked, one object per beat: `{"id", "start", "end", "layout", "job", "speaker": [x,y,w,h], "graphic": [x,y,w,h], "hook": [x,y,w,h]}` plus flags where they apply: `"hold": true` (the hold is planned), `"proof": true`, `"still": true` (a planned still frame), `"bleed": true` (a full-width band), `"overlap": true` (the graphic is meant to sit over the speaker). Boxes in render pixels. Keep it in step with `plan.md`; it is the file the checks read.
 
