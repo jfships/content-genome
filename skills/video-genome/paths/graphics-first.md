@@ -12,7 +12,7 @@ Build in HyperFrames: clips with `class="clip"` and `data-start`/`data-duration`
 
 **The beat brief comes first (gate).** Before any scene is built, every beat is a row of the beat brief in `plan.md`:
 
-One row per beat, in `plan.md`. The builder writes it, not the creator; it is the creative work, done on the strongest model.
+One row per beat, in `plan.md`. The builder writes it, not the creator; it is the creative work, done on the creative tier (SKILL.md, "Which model for which part").
 
 | # | In–Out | Line | Job | Device (source) | Layout + speaker box | Graphic box | Size | Enter / exit | Hold | Why this, not the two alternates |
 
@@ -39,7 +39,7 @@ One row per beat, in `plan.md`. The builder writes it, not the creator; it is th
 - **Draft-only overlays:** a cue strip (SAY / SILENT + the bullet cue) and a dashed zone where the creator will probably appear (a provisional placement; A4 decides the final one). Both come out in the rebuild.
 - **Temp sound:** a temp music bed and the key SFX, so the energy can be judged (`craft/sound.md`).
 
-Run **gate 2** (build checks) on stills, then render, then **gate 3** and **gate 4** in `review/checks.md` before showing the creator. Show it with the render plus a draft-review page (`draft-review.json`): one still per scene with its time and line, **Looks right / Change it** and a note per scene. On this voiceless draft, skip the gate-3 checks that need a voice (captions, face, voice sync); they run after the rebuild. Once they've seen it, give the switch-model nudge (SKILL.md, "Which model for which part").
+Run **gate 2** (build checks) on stills, then render, then **gate 3** and **gate 4** in `review/checks.md` before showing the creator. Show it with the render plus a draft-review page (`draft-review.json`): one still per scene with its time and line, **Looks right / Change it** and a note per scene. On this voiceless draft, skip the gate-3 checks that need a voice (captions, face, voice sync); they run after the rebuild. At each hand-off between kinds of work, give the model nudge (SKILL.md, "Which model for which part").
 
 ## A2. Recording kit (gate)
 
@@ -53,6 +53,7 @@ Write `RECORDING.md` in plain words:
 
 ## A3. Transcribe, cut, claim check (gate)
 
+- **Take Check first** when the creator recorded several takes of the same lines: they mark keep / maybe / drop on `tools/take-check.html` (`shorts/build.md` "Take Check"); transcribe and cut only the finalists.
 - **Transcribe** with the bundled `$SKILL/tools/talking-head/scripts/transcribe.py --lang <the brand's content language>`. For long takes on a slow link, extract a 16 kHz mono WAV first and transcribe that.
 - **The cut:**
   - Drop stumbles, fillers, repeats and weak asides. Never reword.
@@ -84,3 +85,4 @@ Write `RECORDING.md` in plain words:
 - **Real footage gets the pack grade** (`$SKILL/tools/grade.py` with the brand's recipe). Graded footage with flat graphics, or the other way round, is the most common "cheap" tell.
 - Mix with `$SKILL/tools/mix.py`: music ducked under the voice, SFX and sound logo placed, master at target loudness (`craft/sound.md`).
 - Rerun gates 2–4 at every beat change, and look at a full-resolution frame of each overlap.
+- **Live preview before any render is sent** (`shorts/build.md` "Live preview", same launcher): the creator watches the draft live and calls tweaks; a moment that needs new ideas is a new picker round. Renders are for the checks and the final.

@@ -1,6 +1,6 @@
 # Vertical: Shorts, Reels, TikTok
 
-Shorts have their own track now: `shorts/README.md` (checklist), `shorts/build.md` (shooting, tall rough draft, pace, layout, captions), `shorts/checks.md` (gates, timing numbers, technical review), `shorts/platforms.md` (files, covers, music, results), `shorts/shapes.md` (the six shapes).
+Shorts have their own track now: `shorts/README.md` (checklist), `shorts/build.md` (shooting, Take Check, cut, live preview, pace, layout, captions), `shorts/checks.md` (gates, timing numbers, technical review), `shorts/platforms.md` (files, covers, music, results), `shorts/shapes.md` (the six shapes).
 
 Two rules from real failures:
 - **A crop of the long edit is never a draft.** Long-video footage is only ever a part, rebuilt in a tall frame with a fresh hook.

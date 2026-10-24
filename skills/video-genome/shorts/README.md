@@ -11,7 +11,7 @@ A Short is its own video, not a small episode and never a cut of the long edit. 
 ## Read
 - `shapes.md`: the six Short shapes (slugs; their full cards, plus more shapes and story arcs, live in script-genome).
 - script-genome (sibling skill): writes the script as a **script card**, one row per beat with line, screen text, picture, edit intent and trigger word. Items 3–7 below come from it when it is installed.
-- `build.md`: shooting, the tall rough draft, pace, layout, captions, cutting.
+- `build.md`: shooting, Take Check, the optional rough draft, cutting, live preview, pace, layout, captions.
 - `checks.md`: the Short's gates, the timing numbers and the technical review.
 - `platforms.md`: files, covers, endings and music rules per platform, and the results to log.
 - From the main skill: `decision-pages.md`, `craft/layout.md` (9:16 rules), `craft/motion.md`, `craft/sound.md`, `setup/gotchas.md`.
@@ -32,10 +32,14 @@ Tracker line on every reply that moves the work: "Short 2 of 3 · plan · decisi
 | S2. Asset debt | `plan/asset-debt.md`, same as long-form | Everything owed listed, library searched |
 | S2b. Direction | Two direction decisions (`build.md`): the world the visuals come from, then how the creator and the source share the frame; stills before filming, live picker rows once takes exist | Both picked and saved in `plan.md` |
 | S2c. Beat brief | One row per beat (`build.md` "Beat brief"): job, device and source, named layout with boxes, size, enter/exit, hold, and why it beat two alternates; moving graphics proved as 2–4 s clips | Every beat has a job, a source, a reason and a layout; `craft/graphic-jobs.md` self-check passes |
-| S3. Tall rough draft | `build.md` "Rough draft": built 9:16 from the start, temp voice or the creator's existing words, before anything is recorded | Creator watched it and said what changes; switch-model nudge given (main SKILL.md, "Which model for which part") |
-| S4. Record | Hook and lines recorded vertical (`build.md` "Recording") | Takes in, transcribed |
-| S5. Build | Draft quality asked again once real takes are in, then cut, pace, lay out, caption, sound (`build.md`) | Short gates 2–3 pass |
-| S6. Review | Timing numbers + technical review by an agent that didn't build it (`checks.md`) | Technical review clean; beat-brief self-check done |
+| S3. Rough draft (optional) | `build.md` "Rough draft": a tall mock with temp voice before recording. Only when the creator wants to judge the shape or a gag before filming; not the default for a talking Short | Creator watched it and said what changes |
+| S4. Record | Hook and lines recorded vertical (`build.md` "Recording") | Takes in |
+| S4b. Take Check | `build.md` "Take Check": the creator marks every take keep / maybe / drop on `tools/take-check.html`; only the finalists go forward | Summary saved (file + start/end per kept take) |
+| S5. Cut + base | `build.md` "Cut": transcribe the finalists, cut, rough cutout, pace | Cut measured (`short_timing.py`) |
+| S5b. Picker | The Short's live picker (`../decision-pages.md` "The live picker"): rows only where a real choice exists; the builder decides the rest. Generation prompts one at a time, each approved before it runs | Every row picked or sent back |
+| S5c. Draft + checks | Draft built from the picks, then lay out, caption, sound (`build.md`); measured checks on every draft (`checks.md`) | Short gates 2–3 pass |
+| S5d. Live preview | `build.md` "Live preview": the creator watches the live HyperFrames preview and calls tweaks before any video file is sent; a moment that needs new ideas is a new picker round | Creator says the edit is right |
+| S6. Final + review | Final cutout, mix, final render; timing numbers + technical review by an agent that didn't build it (`checks.md`) | Technical review clean; beat-brief self-check done |
 | S7. Deliver | One file per platform (`platforms.md`) | Each file meets its platform's spec |
 | S8. Results | `platforms.md` "Results" | 48 h and 28 d numbers logged |
 
@@ -47,7 +51,7 @@ Fill these in `plan.md`. Items taken from the Idea Record are confirmed in one p
 
 1. **Source.** Written for vertical (default): re-scripted, hook recorded fresh. Or made from a long video's material: only moments that pass the stranger test, still rebuilt tall with a fresh hook. Never "the long edit, cropped".
 2. **Message.** One sentence, 12 words or fewer: what a stranger walks away with. If it needs the long video to make sense, the Short fails the stranger test and is rejected, not rescued.
-3. **Shape.** Exactly one from `shapes.md`, or a shape/arc from script-genome's selector (`catalog/selector.md`). The creator judges a shape by watching it, so the tall rough draft (S3) is the proof: a short mock with a temp voice and a placeholder face, not a list of links. Real examples in their niche only if the creator asks (links found by search, never invented).
+3. **Shape.** Exactly one from `shapes.md`, or a shape/arc from script-genome's selector (`catalog/selector.md`). The creator judges a shape by watching it: when the shape is in doubt, the optional rough draft (S3) is the proof, a short mock with a temp voice and a placeholder face, not a list of links. Real examples in their niche only if the creator asks (links found by search, never invented).
 4. **Hook.** Written word for word, on three layers that land together in the first 1–2 s: the first frame (the creator on screen, or their real material; never solely a generated figure), the spoken line, and 3–7 words of hook text on screen from frame 1. Main and Backup. Frame 1 must make sense with no context and with the sound off. All three layers carry the same idea, each in its own words; none is ranked first (hook cards with mechanics: script-genome `catalog/hooks*.md`). No greeting, intro, logo, sting, sound logo or name tag before it.
 5. **Length and word budget.** Shorts 20–45 s, Reels 20–60 s, TikTok 25–45 s (61–75 s only for creators in TikTok's Creator Rewards). The shortest length that lands the idea. Word budget at this video's pace: the creator's recent pace for this delivery mode (Pace log in `00 Decisions/voice-kit.md`), else a mode default (explain ≈2.4, story ≈2.6, rant ≈3.0 w/s; at 2.4: ~36 per 15 s, ~72 per 30 s, ~108 per 45 s, ~144 per 60 s; script-genome `write/budget.md`). Add each measured natural take to the Pace log. After trimming gaps, the cut's spoken pace usually lands at 2.6–3.0 w/s (`build.md` "Spoken pace"). The script must fit; footage may run over and gets cut after watching.
 6. **Script.** When script-genome is installed, it writes this as a script card (its job A) and its lint runs before the beat brief; the beat brief (S2c) dresses each beat's edit intent in the brand. Otherwise: the creator's own words (voice memos, notes) are the base, not the limit. Claude may restructure them, reweight them (strongest item first, as the hook, or last, as the payoff; never buried in the middle) and propose new lines in the creator's tone, each marked "new" so the creator keeps or cuts it. Never invent facts. The shape's beats, in order, with the time each lands. Call-and-response: 4 exchanges or fewer, each one escalating. The first payoff (laugh, twist or result) within 3 s.

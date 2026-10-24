@@ -12,7 +12,7 @@ Before anything is filmed, each option is a 1080×1920 still with the safe box d
 
 ## Beat brief (S2c, after the direction pick, before the first rough build)
 
-The direction pages settle the world and the frame. The beat brief settles every beat, and it is the builder's creative work, not the creator's: done on the strongest model, written into `plan.md`, one row per beat:
+The direction pages settle the world and the frame. The beat brief settles every beat, and it is the builder's creative work, not the creator's: done on the creative tier (SKILL.md, "Which model for which part"), written into `plan.md`, one row per beat:
 
 | # | In–Out | Line | Job | Device (source) | Layout + speaker box | Graphic box | Size | Enter / exit | Hold | Why this, not the two alternates |
 
@@ -25,9 +25,9 @@ The direction pages settle the world and the frame. The beat brief settles every
 
 **Source visuals.** For a Short about a company, product or person, look for that subject's own films, ads, talks and footage first (official channels), and gather far more frames than the Short needs so the creator can choose. A screenshot of a web page is only for when the page itself is the point (an out-of-stock label, a price). Note every source in `plan/asset-debt.md`; check reuse rights as in `review/checks.md` gate 1. If downloads are blocked, see `setup/gotchas.md` "Frames from the web".
 
-## Rough draft (S3, before recording)
+## Rough draft (S3, optional, before recording)
 
-The creator judges by watching, so the plan becomes a tall rough draft before anything is filmed.
+Optional. Build it only when the creator wants to judge the shape, a gag or a layout by watching before filming; a talking Short goes straight to recording, and the live picker (S5b) shows the choices on the real takes instead.
 - Build it 9:16 in HyperFrames at draft quality, at the planned length, with the shape's beats on the planned times.
 - Voice: the creator's recorded lines wherever they exist; a free temp voice (`setup/tools.md` §3b) for every line not yet recorded, at the brand's target pace ("Spoken pace" below), so the creator can judge the whole Short. Tag each temp stretch "temp voice" on screen. Never leave a line out or wait on a recording.
 - On screen: the hook text from frame 1, captions in the brand's style, the layout, the backdrop, placeholders for what isn't shot yet.
@@ -43,18 +43,34 @@ Shoot for the tall frame:
 - **Delivery:** at the brand's pace (default 2.6–3 words a second after the edit), eyes on the lens, one idea. Energy comes from the writing and the cut, not from shouting. A deadpan read lands on a tight cut.
 - Write `RECORDING.md` in plain words (setup, framing, the exact words that must be said: names, numbers, the hook, the last line). For words on screen while recording, use a prompter skill if one is installed (recording-prompter builds its page from the locked script card, one spoken slate per take, opened locally); never hand-build a one-off cue page.
 
+## Take Check (S4b, before the cut)
+
+Before anything is transcribed or cut, the creator screens the takes on `tools/take-check.html` (copy it into the video's `_review/`; it runs in the browser on their computer, nothing is uploaded). It splits each recording into takes at the pauses; they mark each take Keep, Maybe or Drop, optionally tag the script line, and add a note.
+- Only Keep and Maybe takes go forward. The page's summary (file + start/end per kept take, lines still missing a keeper) is the input to the cut; save it as `_review/take-check.txt` (Copy summary or Save picks file).
+- A line with no keeper goes back to recording before the cut, not after the draft.
+- The builder may rank Maybes against each other on eyes, face and words (step 0 below); it never overrules a Drop.
+
 ## Cut (S5)
 
 **Draft quality, asked again.** When the first draft built from real takes starts, and on any resumed session, ask the draft quality again with the measured time, and recommend the input's own frame rate: lip sync, eye contact and cut timing can't be judged at 15 fps. HyperFrames always draws at the composition size, so offer frame rate (and a smaller composition), not sizes it can't do (`plan/intake.md` "Draft quality").
 
 0. **Screen every take on words, eyes, face and framing.** Never rank takes by audio alone and never assume a line stays voice-only: edits change and any line can end up on camera. Cut every take with picture at full quality.
-1. Transcribe (`tools/talking-head/scripts/transcribe.py`), pick takes, cut frame-accurate (`paths/graphics-first.md` A3 "The cut" method). Save `cutlist.json`, run `tools/remap_words.py`.
+1. Transcribe the finalists from Take Check (`tools/talking-head/scripts/transcribe.py`), pick among them, cut frame-accurate (`paths/graphics-first.md` A3 "The cut" method). Save `cutlist.json`, run `tools/remap_words.py`.
 2. **Trim dead air first:** cut every gap over about 0.4–0.5 s, and cut 0.1–0.2 s into the end of each line. Breaths go.
 3. **Then bring the speech to the target pace** ("Spoken pace" below): measure it, and speed up only by the gap between what was said and the target. Never speed up instead of trimming.
 4. Measure the cut with `tools/short_timing.py` (`checks.md`) before building graphics on it.
 5. **Inserting audio before a take:** split the take's picture and voice. The picture can hold or slow; the voice is placed by its word times. Never start a take's media earlier than its first-word lead allows, or its own audio plays under the insert.
 6. **Take files:** keep proxies shallow (small copies of the takes in one shallow folder such as `work/takes/`; deep folder trees can fail when files are copied between computers) and convert only the candidate segments listed from the transcript. Phone 4K HEVC decodes slower than real time on many laptops.
 7. **Footage clips** (a source ad, a screen recording) are their own top-level clips in the composition, placed by CSS; the scene section holds only graphics (a video inside a timed section fails lint).
+
+## Live preview (S5d, before any video file is sent)
+
+After the draft passes its measured checks, the creator watches it live instead of waiting for a render.
+- The draft's HyperFrames project lives in the video folder (`hf/`), so every edit reloads in the preview in about 5 s.
+- **Launcher:** copy `tools/preview.bat` into the video folder as `preview.bat` and fill `{{VIDEO}}` and `{{VERSION}}` (the HyperFrames version written in the log at setup, `setup/tools.md` §2; never `latest`). It starts the preview in the background, prints the Studio link, and stops it when the creator presses a key in its window. Without Windows: `cd hf && npx hyperframes@<version> preview`, and `--stop` when done. Give the creator the launcher, or the preview link it prints; never send a render first.
+- The creator calls tweaks in chat while watching. A tweak that is a value (timing, size, position, a color inside the brand) is edited in `hf/` and they watch it reload. A moment that needs new ideas is a new picker round for that row only (`picker/README.md`, branched page).
+- Renders are for the measured checks and the final, not for showing combinations.
+- Gate: the creator says the edit is right. Then the final (S6).
 
 ## Pace
 

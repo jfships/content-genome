@@ -20,6 +20,8 @@ If the footage already exists, skip to B2 and note what's missing (e.g. no empty
 
 ## B2. Inspect and transcribe
 
+- **Take Check first** when the creator recorded several takes of the same lines: they mark keep / maybe / drop on `tools/take-check.html` (`shorts/build.md` "Take Check"); transcribe and cut only the finalists.
+
 ```
 python3 $SKILL/tools/talking-head/scripts/inspect_video.py work/source.mp4 work   # contact.png + video.json
 python3 $SKILL/tools/talking-head/scripts/transcribe.py work/source.mp4 work --lang <the brand's content language>   # words.json, words.txt, transcript.srt
@@ -42,7 +44,7 @@ Tone, moves and density are proposed in chat in plain words (**Confirm / Change 
 
 ## B5. Beat brief (gate: written, then one page)
 
-One row per beat, in `plan.md`. The builder writes it, not the creator; it is the creative work, done on the strongest model.
+One row per beat, in `plan.md`. The builder writes it, not the creator; it is the creative work, done on the creative tier (SKILL.md, "Which model for which part").
 
 | # | In–Out | Line | Job | Device (source) | Layout + speaker box | Graphic box | Size | Enter / exit | Hold | Why this, not the two alternates |
 
@@ -82,7 +84,9 @@ Order matters; later steps use earlier outputs.
 9. **Mix and finish:** `python3 $SKILL/tools/mix.py mix.json` puts the cleaned voice, the music lanes (ducked under the voice), the SFX and the sound logo on the composite, at the target loudness (`craft/sound.md`).
 10. **Shorts are not made here.** Never crop this cut into a Short. Each Short runs on the Shorts track (`shorts/README.md`) with its own script, fresh hook and tall build; this episode's footage can be a part inside it (`reframe_vertical.py` on one source clip, following the head).
 
-Once the creator has seen the first full draft, give the switch-model nudge (SKILL.md, "Which model for which part"). Then sound (`craft/sound.md`), gates 2–4 (`review/checks.md`) and deliverables.
+After the measured checks: **Live preview before any render is sent** (`shorts/build.md` "Live preview", same launcher): the creator watches the draft live and calls tweaks; a moment that needs new ideas is a new picker round. Renders are for the checks and the final.
+
+At each hand-off between kinds of work, give the model nudge (SKILL.md, "Which model for which part"). Then sound (`craft/sound.md`), gates 2–4 (`review/checks.md`) and deliverables.
 
 ## Two hard rules for anything that moves or covers the speaker
 

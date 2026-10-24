@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Take Check</title>
+<style>
+:root{--bg:#0d0f14;--panel:#161a22;--line:#262c38;--text:#e8ebf1;--dim:#8a93a6;--keep:#3ecf8e;--redo:#ff6b5e;--maybe:#f5b942;--accent:#5b8cff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;height:100vh;display:flex;flex-direction:column}
+header{display:flex;gap:10px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+header h1{font-size:16px;margin:0 12px 0 0}
+button,.btn{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 12px;font:inherit;cursor:pointer}
+button:hover,.btn:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+input[type=file]{display:none}
+.hint{color:var(--dim);font-size:12px}
+main{flex:1;display:grid;grid-template-columns:minmax(260px,32%) 1fr minmax(260px,28%);min-height:0}
+section{border-right:1px solid var(--line);overflow:auto;min-height:0}
+section:last-child{border-right:0}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin:14px 16px 8px}
+#player{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;background:#000}
+video{max-height:calc(100vh - 210px);max-width:100%;background:#000}
+#now{color:var(--dim);font-size:13px;min-height:20px;text-align:center}
+.ctl{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.ctl .k{border-color:var(--keep);color:var(--keep)}.ctl .m{border-color:var(--maybe);color:var(--maybe)}.ctl .r{border-color:var(--redo);color:var(--redo)}
+select{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px;font:inherit;max-width:220px}
+#keys{color:var(--dim);font-size:12px;text-align:center}
+kbd{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:0 5px;font:11px ui-monospace,monospace;color:var(--text)}
+.take{display:grid;grid-template-columns:44px 1fr auto;gap:6px;align-items:center;padding:7px 16px;border-bottom:1px solid var(--line);cursor:pointer}
+.take:hover{background:#121620}
+.take.cur{background:#1a2234;box-shadow:inset 3px 0 0 var(--accent)}
+.take .n{font-weight:600}
+.take .t{color:var(--dim);font-size:12px}
+.take .line{font-size:12px;color:var(--text)}
+.badge{font-size:11px;font-weight:700;padding:2px 7px;border-radius:10px;border:1px solid var(--line);color:var(--dim)}
+.badge.keep{background:var(--keep);color:#06281a;border-color:var(--keep)}
+.badge.drop{background:transparent;color:var(--redo);border-color:var(--redo)}
+.take.dropped{opacity:.4}
+.view{display:flex;gap:4px;padding:0 16px;margin:6px 0 10px}.view button{flex:1;padding:5px 6px;font-size:12px}.view button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.badge.maybe{background:var(--maybe);color:#2b1e00;border-color:var(--maybe)}
+.file{padding:6px 16px;color:var(--dim);font-size:12px;background:#10131a;border-bottom:1px solid var(--line);position:sticky;top:0}
+textarea{width:calc(100% - 32px);margin:0 16px;min-height:120px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:8px;font:13px/1.4 inherit;resize:vertical}
+.sline{display:grid;grid-template-columns:24px 1fr auto;gap:8px;padding:6px 16px;border-bottom:1px solid var(--line);align-items:start}
+.sline.need{background:rgba(255,107,94,.08)}
+.sline .k{color:var(--dim);font:12px ui-monospace,monospace}
+.sline .cnt{font-size:12px;white-space:nowrap}
+.need .cnt{color:var(--redo);font-weight:700}
+.row{display:flex;gap:8px;align-items:center;padding:0 16px;margin:8px 0;flex-wrap:wrap}
+.row label{font-size:12px;color:var(--dim)}
+input[type=range]{accent-color:var(--accent)}
+#summary{white-space:pre-wrap;font:12px/1.5 ui-monospace,monospace;background:var(--panel);margin:0 16px 16px;padding:10px;border-radius:6px;border:1px solid var(--line)}
+#drop{position:fixed;inset:0;background:rgba(91,140,255,.15);border:3px dashed var(--accent);display:none;align-items:center;justify-content:center;font-size:22px;z-index:9}
+#status{font-size:12px;color:var(--maybe)}
+.empty{padding:20px 16px;color:var(--dim)}
+.note{font-size:12px;color:var(--maybe);grid-column:2/4}
+@media (max-width:900px){main{grid-template-columns:1fr}section{border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Take Check</h1>
+  <label class="btn primary" for="f">Open recordings</label>
+  <input id="f" type="file" accept="video/*,audio/*" multiple>
+  <span class="hint">or drag them in. Nothing is uploaded; it all runs on this PC.</span>
+  <span id="status"></span>
+</header>
+<main>
+  <section id="left">
+    <h2>Takes</h2>
+    <div class="row">
+      <label for="gap">Split when silence lasts</label>
+      <input id="gap" type="range" min="0.4" max="2.5" step="0.1" value="1.0">
+      <span id="gapv" class="hint">1.0 s</span>
+    </div>
+    <div class="view"><button data-v="all">All</button><button data-v="live" class="on">Hide dropped</button><button data-v="final">Finalists</button></div>
+    <div id="takes"><div class="empty">Open a recording. Takes are split automatically wherever you stop talking.</div></div>
+  </section>
+  <section id="player">
+    <video id="v" controls playsinline></video>
+    <div id="now"></div>
+    <div class="ctl">
+      <button id="bprev" title="Previous take (↑)">↑ Prev</button>
+      <button id="bp" title="Play this take (Space)">▶ Play</button>
+      <button id="bnext" title="Next take (↓)">↓ Next</button>
+      <button id="bk" class="k">Keep (K)</button>
+      <button id="bm" class="m">Maybe (M)</button>
+      <button id="br" class="r">Drop (D)</button>
+      <select id="lsel" title="Which script line is this take?"><option value="">Line…</option></select>
+    </div>
+    <div id="keys"><kbd>Space</kbd> play take · <kbd>K</kbd> keep · <kbd>M</kbd> maybe · <kbd>D</kbd> drop · <kbd>1</kbd>… which line (two digits fast = 10+) · <kbd>↑</kbd><kbd>↓</kbd> move · <kbd>N</kbd> note</div>
+  </section>
+  <section id="right">
+    <details id="sdet"><summary class="hint" style="padding:12px 16px;cursor:pointer">Script checklist (optional)</summary>
+    <div class="hint" style="padding:0 16px 6px">Only if you want a list of lines still missing a keeper. Paste the lines; then tag takes with the Line menu or number keys. Skip it when you go off script.</div>
+    <textarea id="script" placeholder="Hook line&#10;Second line&#10;..."></textarea>
+    <div id="lines"></div>
+    </details>
+    <h2>Result</h2>
+    <div class="row">
+      <button id="copy">Copy summary</button>
+      <button id="clear" title="Remove every mark on the open recordings">Clear marks</button>
+      <button id="save">Save picks file</button>
+    </div>
+    <div id="summary">Nothing marked yet.</div>
+  </section>
+</main>
+<div id="drop">Drop recordings</div>
+<script>
+const $=s=>document.querySelector(s);
+const V=$('#v');
+const S={files:[],takes:[],cur:-1,stopAt:null,view:'live'};
+// files: {name,size,url,env:Float32Array,hop,dur}
+// takes: {file,start,end,mark,line,note}
+
+// keep saved marks of recordings not split yet (several files reopened at once load one by one)
+function store(){try{const done=S.files.filter(f=>f.env).map(f=>f.name+'|'+f.size+'|'),prev=(loadStore().marks||[]).filter(m=>!done.some(p=>m.k.startsWith(p)));localStorage.setItem('takecheck',JSON.stringify({script:$('#script').value,marks:prev.concat(S.takes.map(t=>({k:key(t),mark:t.mark,line:t.line,note:t.note})))}))}catch(e){}}
+function loadStore(){try{return JSON.parse(localStorage.getItem('takecheck')||'{}')}catch(e){return {}}}
+const key=t=>S.files[t.file].name+'|'+S.files[t.file].size+'|'+t.start.toFixed(1);
+const fmt=s=>{s=Math.max(0,s);const m=Math.floor(s/60);return m+':'+(s%60).toFixed(1).padStart(4,'0')};
+
+async function analyse(file){
+  const buf=await file.arrayBuffer();
+  const ac=new (window.AudioContext||window.webkitAudioContext)();
+  const audio=await ac.decodeAudioData(buf);
+  ac.close();
+  const sr=audio.sampleRate,hop=Math.round(sr*0.02),n=Math.floor(audio.length/hop);
+  const ch=[];for(let c=0;c<audio.numberOfChannels;c++)ch.push(audio.getChannelData(c));
+  const env=new Float32Array(n);
+  for(let i=0;i<n;i++){let s=0;const o=i*hop;for(let j=0;j<hop;j++){let x=0;for(const d of ch)x+=d[o+j];x/=ch.length;s+=x*x}env[i]=10*Math.log10(s/hop+1e-12)}
+  return {env,hop:0.02,dur:audio.duration};
+}
+
+function split(f,gap){
+  const e=f.env,sorted=Array.from(e).sort((a,b)=>a-b);
+  const floor=sorted[Math.floor(sorted.length*0.15)],peak=sorted[Math.floor(sorted.length*0.97)];
+  const thr=floor+Math.max(6,(peak-floor)*0.30);
+  // smooth: speech if any frame in a 0.1 s window is above threshold
+  const on=new Uint8Array(e.length);for(let i=0;i<e.length;i++)if(e[i]>thr)for(let k=-2;k<=2;k++)if(i+k>=0&&i+k<e.length)on[i+k]=1;
+  const segs=[];let s=-1;
+  for(let i=0;i<=on.length;i++){const v=i<on.length&&on[i];if(v&&s<0)s=i;if(!v&&s>=0){segs.push([s,i]);s=-1}}
+  const g=Math.round(gap/f.hop),out=[];
+  for(const x of segs){if(out.length&&x[0]-out[out.length-1][1]<=g)out[out.length-1][1]=x[1];else out.push([...x])}
+  return out.filter(x=>(x[1]-x[0])*f.hop>=0.6).map(x=>({start:Math.max(0,x[0]*f.hop-0.25),end:Math.min(f.dur,x[1]*f.hop+0.35)}));
+}
+
+function rebuild(){
+  const gap=+$('#gap').value,saved=loadStore(),old=new Map();
+  for(const t of S.takes)old.set(key(t),t);
+  for(const m of (saved.marks||[]))if(!old.has(m.k))old.set(m.k,m);
+  const prevKey=S.cur>=0&&S.takes[S.cur]?key(S.takes[S.cur]):null;
+  S.takes=[];
+  S.files.forEach((f,fi)=>{if(!f.env)return;for(const sg of split(f,gap)){const t={file:fi,...sg,mark:null,line:null,note:''};
+    // keep marks from the closest earlier take (survives re-splitting and reopening)
+    const m=findOld(old,t);if(m){t.mark=m.mark==='redo'?'drop':m.mark;t.line=m.line;t.note=m.note||''}S.takes.push(t)}});
+  S.cur=prevKey?Math.max(0,S.takes.findIndex(t=>key(t)===prevKey)):(S.takes.length?0:-1);
+  render();store();
+}
+function findOld(old,t){
+  const name=S.files[t.file].name+'|'+S.files[t.file].size+'|';
+  let best=null,bd=1e9;
+  for(const [k,o] of old){if(!k.startsWith(name))continue;const st=+k.slice(name.length);const d=Math.abs(st-t.start);if(d<bd&&d<0.8){bd=d;best=o}}
+  return best&&(best.mark||best.line||best.note)?best:null;
+}
+
+function lines(){return $('#script').value.split('\n').map(s=>s.trim()).filter(Boolean)}
+
+function render(){
+  const L=lines(),box=$('#takes');
+  if(!S.takes.length){box.innerHTML='<div class="empty">'+(S.files.length?'No speech found. Try a shorter silence setting.':'Open a recording. Takes are split automatically wherever you stop talking.')+'</div>'}
+  else{
+    let h='',lastF=-1;
+    visible().forEach(i=>{const t=S.takes[i];
+      if(t.file!==lastF){h+='<div class="file">'+esc(S.files[t.file].name)+'</div>';lastF=t.file}
+      const b=t.mark?'<span class="badge '+t.mark+'">'+t.mark.toUpperCase()+'</span>':'<span class="badge">—</span>';
+      const ln=t.line!=null?'<div class="line">Line '+(t.line+1)+(L[t.line]?': '+esc(L[t.line].slice(0,48)):'')+'</div>':'';
+      h+='<div class="take'+(i===S.cur?' cur':'')+(t.mark==='drop'?' dropped':'')+'" data-i="'+i+'"><div class="n">#'+(i+1)+'</div><div><div class="t">'+fmt(t.start)+' · '+(t.end-t.start).toFixed(1)+' s</div>'+ln+'</div>'+b+(t.note?'<div class="note">'+esc(t.note)+'</div>':'')+'</div>';
+    });
+    box.innerHTML=h||'<div class="empty">'+(S.view==='final'?'No keep or maybe takes yet.':'Every take is dropped.')+'</div>';
+    const c=box.querySelector('.cur');if(c)c.scrollIntoView({block:'nearest'});
+  }
+  // script coverage
+  let lh='';L.forEach((l,i)=>{const ts=S.takes.filter(t=>t.line===i);const k=ts.filter(t=>t.mark==='keep').length,m=ts.filter(t=>t.mark==='maybe').length;
+    const need=k===0;lh+='<div class="sline'+(need?' need':'')+'"><span class="k">'+(i+1)+'</span><span>'+esc(l)+'</span><span class="cnt">'+(k?k+' keep':m?m+' maybe':'re-record')+'</span></div>'});
+  $('#lines').innerHTML=lh;
+  const t=S.takes[S.cur];
+  $('#lsel').style.display=L.length?'':'none';
+  $('#lsel').innerHTML='<option value="">Line…</option>'+L.map((l,i)=>'<option value="'+i+'"'+(t&&t.line===i?' selected':'')+'>'+(i+1)+'. '+esc(l.slice(0,40))+'</option>').join('');
+  $('#now').textContent=t?('Take #'+(S.cur+1)+' — '+S.files[t.file].name+' at '+fmt(t.start)):'';
+  $('#summary').textContent=summary();
+}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function summary(){
+  if(!S.takes.some(t=>t.mark||t.line!=null))return 'Nothing marked yet.';
+  const L=lines(),o=[];
+  if(L.length){
+    const need=L.map((l,i)=>[i,l]).filter(([i])=>!S.takes.some(t=>t.line===i&&t.mark==='keep'));
+    o.push(need.length?'RE-RECORD ('+need.length+'):':'ALL LINES HAVE A KEEPER.');
+    for(const [i,l] of need)o.push('  '+(i+1)+'. '+l);
+    o.push('');
+  }
+  o.push('KEEPERS:');
+  for(const [i,t] of S.takes.entries())if(t.mark==='keep'||t.mark==='maybe')o.push('  #'+(i+1)+' '+(t.mark==='maybe'?'(maybe) ':'')+(t.line!=null?'line '+(t.line+1)+' · ':'')+S.files[t.file].name+' '+t.start.toFixed(2)+'–'+t.end.toFixed(2)+(t.note?' · '+t.note:''));
+  const r=S.takes.filter(t=>t.mark==='drop').length;o.push('','Dropped: '+r+' · Unmarked: '+S.takes.filter(t=>!t.mark).length);
+  return o.join('\n');
+}
+
+function play(i){
+  if(i<0||i>=S.takes.length)return;S.cur=i;const t=S.takes[i],f=S.files[t.file];
+  const go=()=>{V.currentTime=t.start;S.stopAt=t.end;V.play().catch(()=>{})};
+  if(V.dataset.src!==f.url){V.src=f.url;V.dataset.src=f.url;V.addEventListener('loadedmetadata',go,{once:true})}else go();
+  render();
+}
+V.addEventListener('timeupdate',()=>{if(S.stopAt!=null&&V.currentTime>=S.stopAt){V.pause();S.stopAt=null}});
+V.addEventListener('seeking',()=>{const t=S.takes[S.cur];if(t&&(V.currentTime<t.start-0.05||V.currentTime>t.end+0.05))S.stopAt=null});
+
+function visible(){return S.takes.map((t,i)=>i).filter(i=>{const m=S.takes[i].mark;return S.view==='all'||(S.view==='live'?m!=='drop':(m==='keep'||m==='maybe'))}).sort((a,b)=>{if(S.view!=='final')return a-b;const la=S.takes[a].line??999,lb=S.takes[b].line??999;return la-lb||a-b})}
+function nextOf(d){const v=visible();if(!v.length)return null;const p=v.indexOf(S.cur);if(p<0)return d>0?(v.find(i=>i>S.cur)??null):([...v].reverse().find(i=>i<S.cur)??null);return v[p+d]??null}
+function step(d){const n=nextOf(d);if(n!=null)play(n)}
+function mark(m){const t=S.takes[S.cur];if(!t)return;const next=nextOf(1);t.mark=t.mark===m?null:m;store();render();if(t.mark&&next!=null)play(next);else render()}
+
+document.addEventListener('keydown',e=>{
+  // ignore keys only while typing in the script box or the line box
+  if(e.target.tagName==='TEXTAREA'||(e.target.tagName==='INPUT'&&/^(text|number|search)$/.test(e.target.type)))return;
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(/^(arrowup|arrowdown| )$/.test(e.key.toLowerCase())&&document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
+  const k=e.key.toLowerCase();
+  if(k===' '){e.preventDefault();if(!V.paused){V.pause()}else play(Math.max(0,S.cur))}
+  else if(k==='k')mark('keep');else if(k==='r'||k==='d'||k==='delete'||k==='backspace'){e.preventDefault();mark('drop')}else if(k==='m')mark('maybe');
+  else if(k==='arrowdown'||k==='j'){e.preventDefault();step(1)}
+  else if(k==='arrowup'){e.preventDefault();step(-1)}
+  else if(/^[0-9]$/.test(k)){const t=S.takes[S.cur];if(!t)return;
+    // two digits typed quickly = line 10+ (e.g. 1 then 4 = line 14)
+    const now=Date.now(),join=S.dig&&now-S.dig.at<700&&S.dig.take===S.cur;
+    const num=join?+(S.dig.s+k):+k;S.dig={s:join?'':k,at:now,take:S.cur};
+    if(num<1)return;const n=num-1;t.line=(!join&&t.line===n)?null:n;store();render()}
+  else if(k==='n'){const t=S.takes[S.cur];if(t){const s=prompt('Note for take #'+(S.cur+1),t.note||'');if(s!==null){t.note=s.trim();store();render()}}}
+},true);
+V.tabIndex=-1;
+$('#bk').onclick=()=>mark('keep');$('#bm').onclick=()=>mark('maybe');$('#br').onclick=()=>mark('drop');
+$('#bp').onclick=()=>play(Math.max(0,S.cur));
+$('#bprev').onclick=()=>step(-1);$('#bnext').onclick=()=>step(1);
+document.querySelectorAll('.view button').forEach(b=>b.onclick=()=>{S.view=b.dataset.v;document.querySelectorAll('.view button').forEach(x=>x.classList.toggle('on',x===b));b.blur();const v=visible();if(v.length&&!v.includes(S.cur))S.cur=v[0];render()});
+$('#lsel').onchange=e=>{const t=S.takes[S.cur];if(t){t.line=e.target.value===''?null:+e.target.value;store();render()}e.target.blur()};
+$('#takes').addEventListener('click',e=>{const d=e.target.closest('.take');if(d)play(+d.dataset.i)});
+$('#gap').addEventListener('input',e=>{$('#gapv').textContent=(+e.target.value).toFixed(1)+' s'});
+$('#gap').addEventListener('change',rebuild);
+$('#script').addEventListener('input',()=>{store();render()});
+$('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(summary());$('#copy').textContent='Copied';setTimeout(()=>$('#copy').textContent='Copy summary',1500)}catch(e){alert('Copy failed; select the text below instead.')}});
+$('#save').addEventListener('click',()=>{
+  const data={made:new Date().toISOString(),script:lines(),silence_split_s:+$('#gap').value,
+    takes:S.takes.map((t,i)=>({n:i+1,file:S.files[t.file].name,start:+t.start.toFixed(2),end:+t.end.toFixed(2),mark:t.mark,line:t.line!=null?t.line+1:null,note:t.note||undefined}))};
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
+  a.download='take-check-'+(S.files[0]?S.files[0].name.replace(/\.[^.]+$/,''):'picks')+'.json';a.click();
+});
+
+async function add(list){
+  for(const file of list){
+    if(!/^(video|audio)\//.test(file.type)&&!/\.(mp4|mov|m4a|wav|mp3|webm|mkv)$/i.test(file.name))continue;
+    const f={name:file.name,size:file.size,url:URL.createObjectURL(file)};S.files.push(f);
+    $('#status').textContent='Listening to '+file.name+'…';
+    const t0=performance.now();
+    try{Object.assign(f,await analyse(file));$('#status').textContent='Split '+file.name+' in '+((performance.now()-t0)/1000).toFixed(1)+' s'}
+    catch(err){$('#status').textContent='Could not read the sound in '+file.name+' ('+err.message+'). It still plays; split by hand is not available.';
+      f.env=null;if(!V.src){V.src=f.url;V.dataset.src=f.url}}
+    rebuild();
+  }
+  if(S.cur>=0)play(S.cur);
+}
+$('#f').addEventListener('change',e=>{add([...e.target.files]);e.target.value='';e.target.blur();document.activeElement&&document.activeElement.blur()});
+let dc=0;
+addEventListener('dragenter',e=>{e.preventDefault();dc++;$('#drop').style.display='flex'});
+addEventListener('dragleave',()=>{if(--dc<=0){dc=0;$('#drop').style.display='none'}});
+addEventListener('dragover',e=>e.preventDefault());
+addEventListener('drop',e=>{e.preventDefault();dc=0;$('#drop').style.display='none';add([...e.dataTransfer.files])});
+$('#clear').onclick=()=>{if(!confirm('Clear all marks on these recordings?'))return;S.takes.forEach(t=>{t.mark=null;t.line=null;t.note=''});try{localStorage.removeItem('takecheck')}catch(e){}store();render()};
+(()=>{const s=loadStore();if(s.script){$('#script').value=s.script;$('#sdet').open=true}render()})();
+</script>
+</body>
+</html>

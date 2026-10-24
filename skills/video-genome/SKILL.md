@@ -44,7 +44,7 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 
 ## Flow
 
-**A Short, Reel or TikTok runs on the Shorts track** (`shorts/README.md`): its own checklist, tall rough draft, pacing, checks and review, after the same Step 0. Never plan, pace or review a Short with the long-form steps below, and never make one by cropping the long edit.
+**A Short, Reel or TikTok runs on the Shorts track** (`shorts/README.md`): its own checklist, Take Check, picker before the draft, live preview, pacing, checks and review, after the same Step 0. Never plan, pace or review a Short with the long-form steps below, and never make one by cropping the long edit.
 
 | Step | File | Gate |
 |---|---|---|
@@ -62,12 +62,14 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 
 Every session ends with `review/session-close.md`, whatever step it stopped on.
 
-**Which model for which part.** You can't switch the model; the creator does it in the model picker. So nudge, never ask: one line with the reason and the cost at each hand-off below, then carry on either way, except where the creator asked you to pause at model switches; then wait until they say they've switched. Name the role, with today's model as the example, and add "if you have it".
-- **At the start of a video** (before the first question in 0c), unless you're already on their strongest model: "For best results, run planning and the first draft on your strongest model (today: Fable), if you have it. That's where the creative calls are made. It costs more credits, so once the first draft is built, switch to your everyday model (today: Opus) for the iteration."
-- **Once the creator has seen the first draft** (graphics first: the A1 draft review; footage first: the first full draft out of B6; Shorts: the S3 tall rough draft), unless you're already on their everyday model: "First draft's done. For best results on cost, switch to your everyday model (today: Opus) now. Fixes, renders and checks are long, repeat-heavy work, and it handles them well for less."
-- A resumed video gets the nudge that fits where it is: before the first draft, the strongest model; after it, the everyday one.
-- **At every hand-off between kinds of work, not once per video:** before any page or taste review: "Taste call next. Switch to your strongest model (today: Fable) if you have it." Before any re-cut, render, matte or check stretch: "Mechanical stretch next. Switch to your everyday model (today: Opus)."
-- **Say each line once per hand-off,** not every reply. Skip it when the creator is already on the right model, has said they don't have the stronger one, or chose to stay put; don't repeat it for the same hand-off.
+**Which model for which part.** You can't switch the model; the creator does it in the model picker. So nudge, never ask: one line with the reason at each hand-off below, then carry on either way, except where the creator asked you to pause at model switches; then wait until they say they've switched. Name the tier, with today's model as the example, and add "if you have it". Where each step runs (chat or a coding tool) is the creator's own setup; never prescribe it.
+- **Three tiers, by the kind of work, not by how far along the video is:**
+  - **Creative** (today: Fable): idea, plan, script, beat brief, picker options and new picker rounds, generation prompts, any taste call.
+  - **Build** (today: Opus): the optional rough draft, the draft from the picks, live-preview tweaks, fixes that need judgment.
+  - **Mechanical** (today: Sonnet): Take Check prep, transcribe, cut + base, cutouts, mix, final render, measured checks, deliverables.
+- **At every hand-off between tiers,** one line, for example: "Taste calls next (the picker). Switch to your creative model (today: Fable) if you have it." · "Building the draft next. Your build model (today: Opus) handles it well for less." · "Mechanical stretch next (cut, checks, render). Your mechanical model (today: Sonnet) does it for the least."
+- A resumed video gets the nudge for the step it's on.
+- **Say each line once per hand-off,** not every reply. Skip it when the creator is already on the right model, has said they don't have that one, or chose to stay put; don't repeat it for the same hand-off.
 
 **Pick the order in Step 1** (one AskUserQuestion):
 - **Graphics first:** build a polished motion draft, the creator records over it from bullet cues, then the video is rebuilt around their real words. Best when the video is mostly graphics, or when the creator is new to camera and needs a pacing guide.
@@ -172,6 +174,8 @@ Content Creation/
 | `short_timing.py` | A Short's timing numbers: pace, gaps, first payoff, word budget (`shorts/checks.md`) |
 | `tech_review.py` | The technical review on a render: clipped words at cuts, caption timing, case, centering and collisions, uncaptioned speech, safe box and layout boxes per beat, unplanned freezes, graphic durations, levels, pace (`review/checks.md` gate 4) |
 | `draft_checks.py` | Per-frame checks on every draft: lips above the bottom line, blank flashes at cuts, clipped word endings, moves out of delivery before a cut, angle changes mid-sentence, overlays vs the face through their animation, and a linger sheet per beat end (`review/checks.md` gate 4) |
+| `take-check.html` | Take Check: the creator marks every take keep / maybe / drop in the browser; its summary (file + start/end per kept take) feeds the cut (`shorts/build.md`) |
+| `preview.bat` | Live-preview launcher template for the video folder; fill the video name and the HyperFrames version from the log (`shorts/build.md` "Live preview") |
 | `thumb_text.py` | Builds and measures a thumbnail's text block to the rules in `craft/thumbnails.md` |
 | `talking-head/` | Transcription, inspection, background blur/zoom, mattes, speaker-to-side, captions, composite, thumbnails, motion engine |
 
