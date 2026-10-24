@@ -153,7 +153,11 @@ def case_of(text):
         return None
     if len(ws) > 1 and all(w.isupper() for w in ws if len(w) > 1):
         return "caps"
-    if len(ws) > 2 and all(w[0].isupper() for w in ws[1:] if len(w) > 3):
+    # Title Case: two or more words after the first, none starting a new sentence, all capitalized
+    # (one capital word mid-chunk is a name, not a style)
+    mid = [m.group(0) for m in re.finditer(r"[A-Za-z][A-Za-z']*", text)
+           if m.start() > 0 and not re.search(r"[.?!]\s*$", text[:m.start()]) and len(m.group(0)) > 1]
+    if len(mid) >= 2 and all(w[0].isupper() for w in mid):
         return "title"
     return "sentence"
 
