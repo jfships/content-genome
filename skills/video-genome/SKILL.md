@@ -165,6 +165,7 @@ Content Creation/
 |---|---|
 | `grade.py` | Applies the brand's grade recipe to footage or stills |
 | `brand_check.py` | Lists colors and fonts in a build that aren't in the brand's pack |
+| `onsets.py` | Snaps word starts to where the sound really begins in the take (Whisper drifts 50–150 ms), so a graphic keyed to a word lands on it; run it on the take's words before `remap_words.py`, with `--words` for just the anchors |
 | `remap_words.py` | Moves word times from the raw take onto the cut |
 | `mix.py` | Voice clean-up, music ducked under voice, SFX, sound logo, loudness master |
 | `reframe_vertical.py` | One 16:9 source clip → a 9:16 part, following the speaker's head (a part for a Short, never the long edit) |
