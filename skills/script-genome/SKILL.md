@@ -57,7 +57,7 @@ Tracker line on every reply that moves the work: "Script · step 3 of 7".
 | 4. Outline | Beats with % / seconds / word budget; hook, re-hook, payoff and ending marked. Re-hook beat for runtimes ≥30 s. | `write/budget.md`, the card, `catalog/retention.md` (re-hook device card, ≥30 s) |
 | 5. Draft | Build each beat from the creator's own phrases; every line tagged `src` (take / memo / chat / new). | `write/passes.md` |
 | 6. Passes | cut → specifics → show → verbs → hedges/AI-tells → hook → ending → facts → read-aloud timing → keep-voice diff | `write/passes.md`, `voice/` |
-| 7. Card | Script card with edit intent per beat; run lint; show the creator the card + the before/after list + parked ideas + facts to verify. | `card/schema.md`, `card/triggers.md`, `card/lint.md` |
+| 7. Card | Whole-script pass first (`write/passes.md` k: hook, proof, why/stakes, turn, payoff, loop each have a quoted line, or n.a. with a reason; never lock with a gap). Then the script card with edit intent per beat; run lint; show the creator the card + the job list + the before/after list + parked ideas + facts to verify. | `card/schema.md`, `card/triggers.md`, `card/lint.md` |
 Then: if a video is being made, hand the card to video-genome (Shorts track item 6 / long-form run-sheet step 6) if it is installed; otherwise the card is the edit brief for the creator or editor. Save the card to the video folder as `script.md` (or `04 Ideas/SCRIPT NNN <slug> vN.md` before a video folder exists). Each new version is a new file (`v2`, `v3`); never overwrite.
 
 ## Job B: check (flow)

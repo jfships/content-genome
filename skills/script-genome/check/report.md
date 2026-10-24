@@ -17,7 +17,10 @@ A. HARD GATES (only non-PASS rows shown; then "all other gates: PASS / N/A")
 B. WHAT IT DOES (no labels)
    Opening: who it's for + what they get, by ~3 s? yes/no · "line"
    Middle: what proof is shown?
+   Why / stakes: why is this person telling me this, and why should I care? · "line" (none → a fix)
+   Turn: where it changes direction or reveals · "line" or n.a. (why)
    Payoff: what lands; does it match the promise?
+   Loop (if the ending loops): the line that leads back into the first · "line"
    Ending: the one ask, or none; allowed at this stage?
 
 C. CRAFT NOTES (S1–S13 that are absent or unusual; quote + "ignore if …"; news topics always get S13 freshness: when did this break, is it still new?)

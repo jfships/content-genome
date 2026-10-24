@@ -21,9 +21,10 @@
 | h. Facts | Every name, price, limit, date and number has a source and date; perishable ones say "as of <month>" (spoken or on screen). Anything unverified is flagged, not stated. | Fact list with sources |
 | i. Read aloud and time | The creator reads it at natural pace with a timer; mark stumbles and breath breaks; split long sentences; add pause marks (`voice/delivery.md`); re-time. | Fits runtime in one natural take |
 | j. Keep-voice diff | Show before/after for every changed line. The creator can veto any line; a rewritten signature line reverts by default. | Creator has seen the diff |
+| k. Whole script (before lock) | Read it top to bottom as a viewer who doesn't know the creator, not line by line. List the jobs and quote the line doing each: **hook** (why stop), **proof** (why believe), **why / stakes** (why is this person telling me this, and why should I care: what they lost, risked, or will save me), **turn** (where it changes direction or reveals), **payoff** (the hook's promise kept), **loop** (only if the ending loops: the last line that leads back into the first). A job with no line is a gap: write the line from the creator's own words, or ask them for it; never lock with a gap. A job that genuinely doesn't apply says n.a. and why ("no turn: a straight list"). Then re-time if a line was added. | Every job has a quoted line or a stated n.a.; shown to the creator with the card |
 
 ## Output of job A
-1. The script card (`card/schema.md`), lint run (`card/lint.md`).
+1. The script card (`card/schema.md`), lint run (`card/lint.md`), and the job list from pass k.
 2. Before/after list.
 3. Parked ideas.
 4. Facts to verify, with who confirms.
