@@ -41,7 +41,7 @@ Shoot for the tall frame:
 - **Framing:** chest-up, head in the top 30–40% of the frame, eyes near the upper third line (y≈640), centered. Same distance, light and backdrop as the brand's vertical setup.
 - **Record the hook fresh,** 3–6 ways, Main and Backup first. Then the lines, each new thought opening with its own hook sentence.
 - **Delivery:** at the brand's pace (default 2.6–3 words a second after the edit), eyes on the lens, one idea. Energy comes from the writing and the cut, not from shouting. A deadpan read lands on a tight cut.
-- Write the prompter or `RECORDING.md` in plain words, with the exact words that must be said (names, numbers, the hook, the last line).
+- Write `RECORDING.md` in plain words (setup, framing, the exact words that must be said: names, numbers, the hook, the last line). For words on screen while recording, use a prompter skill if one is installed (recording-prompter builds its page from the locked script card, one spoken slate per take, opened locally); never hand-build a one-off cue page.
 
 ## Cut (S5)
 
