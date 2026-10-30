@@ -26,3 +26,4 @@ The creator builds a style without knowing any design words. They never describe
 | `sound.md` | Music lanes, sound-effect roles, sound logo styles | 6, 7 |
 | `kit.md` | Wordmarks, series tags, stings, thumbnail systems (with the thumbnail text spec), ways to close a video, corner marks, profile pictures and banners | 7 |
 | `vertical-voice-formats.md` | Vertical layouts (with framing families), hook text styles, Short covers, Short endings, voice styles, format recipes (long and Short) | 1d, 3, 8 |
+| `stock-ids.md` | Every device row → its stock-library id, and which have no stock sample yet | 4.7–8.3 device rounds |

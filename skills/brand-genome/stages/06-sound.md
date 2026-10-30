@@ -19,13 +19,13 @@ Both steps are **libraries**: keep every kind of music and every sound they like
 ## 6b. Sound effects (library, skippable)
 
 - Every sound has a named role: whoosh (wipes), tick (counters, typing), hit (big type lands), click (UI, cursor), riser (before a reveal), drop or stop (punchline), plus 2–4 that are theirs, from the taste answers (paper, workshop, kitchen, retro game…).
-- Role options in `../catalog/sound.md`. 2–4 options per moment kind (synthesized in Web Audio), one page with a section per moment kind, each sound playing **with the visual it belongs to**. Keep in library / Discard; several per kind is fine. Start from `../page-template/examples/sound-effects.json` (sound recipes in `head`, one play per card; rename the sections to the creator's moments). Skipped → none.
+- Role options in `../catalog/sound.md`. 2–4 options per moment kind: the SND stock sample where one is built (`../voting-pages.md`, "Stock samples"), otherwise synthesized in Web Audio, one page with a section per moment kind, each sound playing **with the visual it belongs to**. Keep in library / Discard; several per kind is fine. Start from `../page-template/examples/sound-effects.json` (sound recipes in `head`, one play per card; rename the sections to the creator's moments). Skipped → none.
 - Rule to write down: sound effects on transitions and reveals, not every cut. A starting cap of about 1 per 3 s.
 
 The sting and sound logo are made in Stage 7, because they can only be judged with their picture.
 
 ## Output
 
-`sound.md` (the music lanes with BPM ranges and prompts, SFX roles with file names, rules, the pages' artifact URLs) and the chosen SFX files in `01 Brand Kit/sound/`, each with a `Type: kit` row in `07 Asset Library/asset-index.md`.
+`sound.md` (the music lanes with BPM ranges and prompts, SFX roles with file names and stock ids where they have one, rules, the pages' artifact URLs) and the chosen SFX files in `01 Brand Kit/sound/`, each with a `Type: kit` row in `07 Asset Library/asset-index.md`.
 
 **Hand-off at the end of Sound** (one line): "Sound is done: your music and sound effects are saved. Next: your brand kit, the logo, name tag, intro and other pieces with your name on them (9 steps)."

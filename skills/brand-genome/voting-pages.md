@@ -2,7 +2,7 @@
 
 A voting page is how the creator picks by looking instead of describing. **Use one only when the choice has to be seen or heard.** If words are enough to judge it, ask with AskUserQuestion in chat.
 
-Nothing on a page costs the creator anything: photos come from `benchmark/`, art styles from `benchmark/looks/`, backdrop scenes from `benchmark/backdrops/`, everything else is drawn in code.
+Nothing on a page costs the creator anything: photos come from `benchmark/`, art styles from `benchmark/looks/`, backdrop scenes from `benchmark/backdrops/`, device rounds from the stock library when there is one ("Stock samples" below), everything else is drawn in code.
 
 ## Two kinds of decision: fixed and library
 
@@ -67,6 +67,33 @@ One line per round on what it decides. Test: if the creator could ask "didn't I 
 | 8 | Vertical rules, pacing | Question | Short endings, music under Shorts, trending sounds on TikTok, captions on Shorts; then the pacing row confirmed | Chat |
 | 9 | Bios, profiles copy, run sheet | Written automatically | Shown on the Brand Genome page for edits | No page |
 | any | Change something | Same as the original round | One decision, rerun in change mode (`revisit.md`) | The original page with `change` + `current` |
+
+## Stock samples (device rounds vote by id)
+
+A **stock sample** is a short neutral demo of one device (gray plus one accent color, a stand-in person) from a shared stock library. Each has a stable id (`LAY-04`, `CAP-02`) that never changes. On a **device round** the cards are these samples, never mocks drawn for the page, so the creator judges the real move and the pick is saved under an id every video skill can find again. Everything else is the **brand layer** (palette, fonts, color editing, filters, art styles, text style, motion feel and entrances, music, sound logo, every kit piece except thumbnails): drawn in the creator's colors, as the rest of this file says.
+
+| Device round | Stock categories |
+|---|---|
+| 4.7 Captions | CAP |
+| 4.8 Backdrops (scene rows; plains and patterns are brand layer) | BKD |
+| 4.9 Extras | POP, PROP, SCR (small extras) · BIG, CAM, TRN (big moments) |
+| 4.10 Break-from-reality | BIG |
+| 5.2 Scene changes | TRN, CUT |
+| 5.3 Spatial moves | SPA |
+| 6.2 Sound effects | SND |
+| 7.7 Thumbnail layouts | COV |
+| 8.1 Vertical layouts | LAY, STO |
+| 8.2 Hook text | HOOK |
+| 8.3 Short covers | COV |
+
+1. **Find the library.** The `stock:` line in the `## Brand` section of `START-HERE.md` (a folder path), else a `stock/manifest.json` in the connected folders (depth ≤ 3); write the path found into `## Brand`. No library, or a round none of whose rows has a built sample → that round is drawn as before, each option still gets its id from `catalog/stock-ids.md` (so picks line up once samples exist), and the stage doc says `Stock samples: none (drawn)`.
+2. **Pick the options** from the catalog as always (spread, Our pick for you), then look each row up in `catalog/stock-ids.md` and the manifest. The manifest is the truth for what is built. Rows that share an id are one card.
+3. **Build each card from its sample.** Option `id` = the stock id; `name` and `line` from the catalog row (copy rules unchanged); media = the sample's render: a clip card for motion (`page-template/README.md`, "Clip cards"), an image for stills (covers, backdrops). Card count is the samples available, not the catalog's count.
+4. **Restyle to the brand** once the palette is locked (4.4): render each sample through the library's brand swap (the manifest says how) with the locked palette, fonts and text style, at draft quality. No renderer or under 2 GB free → show the neutral samples and say once in chat: "These samples are in plain gray; your colors go on when a video uses them."
+5. **Owed rows.** The benchmark stills (backdrop scenes, break-from-reality strips) count as the sample until the stock version exists. Any other catalog row whose sample isn't built is left off a stock page and listed in the stage doc under `Owed samples` (its id, or `new <CAT>`, plus the catalog slug). A tier with nothing built (often funky) gets one line in chat: that shelf is still being built. When the library later has the sample, `revisit.md` offers it on that round.
+6. **Save by id.** Votes doc id = the stock id. Stage docs write every kept device as `<id> <name> · use when …` (catalog slug in brackets when it differs from the name), fixed picks the same way: `Captions: Main CAP-02 Words light up · Backup CAP-04 Boxed chunks · Alternatives CAP-03, CAP-06`. Video skills read the id.
+
+The round is done when every card on the page is a stock sample (or, with no library, carries its id), and every kept, picked and owed item is written into the stage doc by id.
 
 ## Page copy and layout (applies to every page)
 
@@ -243,7 +270,7 @@ Backup never gets a follow-up. Max 3 per page, AskUserQuestion with suggested an
 - Phone width works. Dark mode follows the system.
 - Tap the pictures to see them big.
 - In code-drawn mocks, highlighted words on consecutive lines must not touch: line-height ≥ 1.35 and padding on highlight boxes, or one box per line.
-- Stand-in people in mocks: a benchmark photo cut-out or a plain gray silhouette. Never a drawn figure that reads as an animal or object. No icons, no emoji; a pointer is an inline SVG.
+- Stand-in people in mocks: the stock library's stand-in, a benchmark photo cut-out or a plain gray silhouette. Never a drawn figure that reads as an animal or object. No icons, no emoji; a pointer is an inline SVG.
 
 ## Never replace a published page
 

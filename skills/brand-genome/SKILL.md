@@ -35,7 +35,7 @@ The Brand Genome covers:
 
 ## How to use this folder
 
-Read this file first. When a stage starts, read its file in `stages/`, and only that one, plus the catalog files it names. `catalog/` holds every option for every round (common, rare and funky), so the creator can build a style without knowing any design words. Before any voting page, read `voting-pages.md` and build the page from `page-template/` (never by hand). Read `revisit.md` whenever the creator wants to change or correct anything already decided, including interview answers: it finds the decision from plain words, reruns only that step the way it was first built, and asks before anything downstream changes. `benchmark/` holds the test photos, pre-made art styles, backdrop scenes and cutaways for the look rounds.
+Read this file first. When a stage starts, read its file in `stages/`, and only that one, plus the catalog files it names. `catalog/` holds every option for every round (common, rare and funky), so the creator can build a style without knowing any design words. Before any voting page, read `voting-pages.md` and build the page from `page-template/` (never by hand). Device rounds in Stages 4–8 (captions, backdrops, extras, cutaways, scene changes, spatial moves, sound effects, thumbnails, vertical layouts, hook text, covers) show stock samples and save picks by stock id (`voting-pages.md`, "Stock samples"; catalog row → id in `catalog/stock-ids.md`). Read `revisit.md` whenever the creator wants to change or correct anything already decided, including interview answers: it finds the decision from plain words, reruns only that step the way it was first built, and asks before anything downstream changes. `benchmark/` holds the test photos, pre-made art styles, backdrop scenes and cutaways for the look rounds.
 
 | # | Stage | File | Locked output |
 |---|---|---|---|
@@ -107,6 +107,7 @@ Stage docs in `00 Decisions/`: `persona-card.md` (demo only), `formats.md`, `loo
 | Headless browser (to render WAVs and stills from pages) | No | A download button on the page; the creator saves the file |
 | Image, music and voice tools | No; asked about only in the brand kit (Stage 7) and the image question after the art-styles page (Stage 4) | Drawn in code, Web Audio sketches, benchmark photos and scenes |
 | Node + HyperFrames (renders spatial-move clips, Stage 5c) | No | Skip 5c; the spatial library is marked owed and video-genome builds it later |
+| A stock library (`stock/manifest.json`: neutral samples with ids) | No | Device rounds are drawn in code; each option still carries its stock id |
 | The creator's computer | No | Everything kept in the project |
 
 ## Principles (why it works)
