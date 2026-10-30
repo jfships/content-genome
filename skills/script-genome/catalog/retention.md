@@ -182,6 +182,22 @@ What counts as a re-hook: a tease of the next point, a new question, a viewer-jo
 
 Basis: Joos (ex-MrBeast retention strategist) reports attention drops without novelty every ~10–15 s in long-form; shortened here by inference. The memo's "every ~3 minutes" is long-form and does not scale. Never write "research shows" for this interval.
 
+**Where the main re-hook goes:** about 40% in, right after the main point lands, as one short plain sentence that reopens a question (not a new segment). Under ~20 s (a 15–25 s rant, a fast tip) the hook carries most of it: at most one re-hook, right after the main point, used as the turn into the strongest example; often none. INFERENCE; check the creator's own chart.
+
+**Re-hook openers (fill-in).** Ten lines to finish with this video's next point. Each is the opening of a `tease-rehook`, `stacked-loops` or but-turn line, never a line on its own: what follows must deliver. Credit: Briar Cochran, "10 rehooks to drive average watch time" (Instagram Reel, 2026). Evidence: SINGLE. Flag: weak
+| Opener | Turns into |
+|---|---|
+| "But this is where things get crazy." | escalation; the next beat must be bigger |
+| "Here's a tactical example." | proof; a real, specific example follows |
+| "Nothing I've said matters unless you understand this." | the key condition |
+| "Now here's what I mean by (x)." | the concrete version of the claim |
+| "Which, by the way, only matters if (x)." | the condition that makes it apply |
+| "But honestly, that's not even the main part." | the bigger point |
+| "Which is fine, except (x)." | the catch |
+| "But here's the part that took me too long to figure out." | the hard-won lesson (creator's real experience only) |
+| "So here is where I would actually start if I were you." | the first step |
+| "Here is usually the part that most people skip." | the overlooked step; also works as the last line of a list |
+
 ## 3. Choosing devices by idea type
 
 | Idea type | First pick | Add | Avoid |

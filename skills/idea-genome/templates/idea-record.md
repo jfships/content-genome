@@ -41,6 +41,12 @@ One line, or "evergreen".
 ## Format
 <kept format from the Genome, or "one-off: nearest <format>">, target length.
 
+## Format rules (borrowed format only, develop.md 3a+; else "none")
+Format: <one line> · examples read: <M> (links in Sources)
+- <rule> — seen in <N> of <M>
+What this idea changes, and why: <one line>
+Rules broken with the creator's yes: <rule — reason, or "none">
+
 ## Shorts this video can feed
 Candidate moments, each self-contained (stranger test). Each becomes its own Short record later, through `short-form.md`; none is a cut of this video.
 - <moment, roughly where> — message (≤12 words) — likely shape
@@ -176,6 +182,12 @@ Examples shown (real links):
 1. <link> — <one line>
 2. <link>
 3. <link>
+
+## Format rules (borrowed format only, develop.md 3a+; else "none")
+Format: <one line> · examples read: <M> (links in Sources)
+- <rule> — seen in <N> of <M>
+What this idea changes, and why: <one line>
+Rules broken with the creator's yes: <rule — reason, or "none">
 
 ## Angle
 <angle slug, or "none">

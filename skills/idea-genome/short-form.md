@@ -6,7 +6,7 @@ A Short is its own video, never a cut-down of a long one. For a Short the shape 
 
 **One Idea Record per Short. One idea per Short.**
 
-From develop.md, still run: 3a research, 3c voting page, 3e versions to test, 3f only-you line. This file replaces 3b (question rounds) and Hooks. Answers go under `## Develop rounds` in the record, in the creator's words.
+From develop.md, still run: 3a research (plus 3a+ when the idea borrows a known format), 3c voting page, 3e versions to test, 3f only-you line. This file replaces 3b (question rounds) and Hooks. Answers go under `## Develop rounds` in the record, in the creator's words.
 
 ## S1. Source
 
@@ -32,7 +32,7 @@ If it takes two sentences, it's two Shorts (see S12).
 
 ## S4. Shape
 
-Pick exactly one shape. The six slugs in `catalog/short-shapes.md` stay valid; the full set of shapes and story arcs, with beats, timings, lines and edit intent, is in script-genome (`catalog/selector.md` first, then the chosen card). When script-genome is installed, run its selector here; otherwise use `catalog/short-shapes.md`.
+Pick exactly one shape. A borrowed format (develop.md 3a+) is the shape: its `## Format rules` come first and the slug is the nearest match. The six slugs in `catalog/short-shapes.md` stay valid; the full set of shapes and story arcs, with beats, timings, lines and edit intent, is in script-genome (`catalog/selector.md` first, then the chosen card). When script-genome is installed, run its selector here; otherwise use `catalog/short-shapes.md`.
 
 1. Recommend one, with one line of why, plus one alternative.
 2. **The shape is proven by watching it, not by links.** video-genome's tall rough draft is where the creator judges it. Show real example Shorts of the shape in their niche only if they ask: find them live with web search and give the real links. Never invent a link.

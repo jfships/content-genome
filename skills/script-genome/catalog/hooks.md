@@ -246,6 +246,13 @@ Ten openers from one creator's on-screen-text list. Each is a skeleton for a mec
 | "I hate doing (x) but it's the only reason (y) worked out" | contradiction | confession + stakes | (y) is the payoff; make it concrete |
 | "The reason most people struggle with (x) is because" | cause reveal | curiosity-gap / callout | the cause must be one specific thing |
 
+**Rant openers.** Three shapes for an opinion or rant Short. The noun in the blank picks the audience: name something the creator's buyers deal with, or the frame pulls viewers outside the market. Casual, person-to-person register: check it fits the creator's voice and stage before offering it. Credit: jfships' own hook bank (2026). Evidence: SINGLE (untested). Flag: weak
+| Line | Delivers | Slug | Watch |
+|---|---|---|---|
+| "Nothing makes me more mad than (x)." | strong stance, up front | bold-claim / contrarian | (x) is specific and real; the next line says why |
+| "Three types of (x) that I hate." | ranked rant list | number + contrarian | pairs with a list format (`shapes.md` list-of-3); each type gets one real example |
+| "Want to know what I find crazy? (x)." | question, then the take | question / curiosity-gap | answer in the same breath; (x) is the creator's real view |
+
 ---
 
 ## Timing: what is official and what is not

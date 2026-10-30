@@ -67,7 +67,7 @@ Content Creation/
 
 ## Read first
 
-`Brand Genome.md` sections Creator, Why and feel, Research, Formats, Voice and House rules; `Who I Am.md` (Proof, truth rules, story beats, opinions); `02 Research/channel-playbook.md`; `04 Ideas/idea-bank.md`; `03 Videos/results-log.md` if it exists; the growth plan `00 Decisions/growth-plan.md` if it exists (growth-genome): `## Lanes`, `## This week` (open slots: lane × job × weight), `## Positioning` (audience statement, off-limits topics) and the `## Growth state` block; `04 Ideas/swipe-library.md` if it exists (swipe-file skill): only the entries whose lane and type match this idea, plus its banks. Borrow only what the creator flagged there.
+`Brand Genome.md` sections Creator, Why and feel, Research, Formats, Voice and House rules; `Who I Am.md` (Proof, truth rules, story beats, Takes they hold = the opinions list); `02 Research/channel-playbook.md`; `04 Ideas/idea-bank.md`; `03 Videos/results-log.md` if it exists; the growth plan `00 Decisions/growth-plan.md` if it exists (growth-genome): `## Lanes`, `## This week` (open slots: lane × job × weight), `## Positioning` (audience statement, off-limits topics) and the `## Growth state` block; `04 Ideas/swipe-library.md` if it exists (swipe-file skill): only the entries whose lane and type match this idea, plus its banks. Borrow only what the creator flagged there.
 
 **Growth plan.** When `## This week` has open slots, each idea fills one: say which slot it's for at Step 1 (brainstorm and theme paths aim at an open slot's lane and job; the creator's own idea gets matched to the closest open slot, or `slot: none` if none fits), at Step 9 cite the slot in the Personality fit evidence and flag a poor fit to its lane or job (no new criterion), never pitch an off-limits topic, and write `slot`, `lane`, `job` and `weight` into the Idea Record. video-genome and script-genome read those fields. No growth plan: say so once, recommend growth-genome set-up, and write `slot: none`.
 
@@ -104,7 +104,7 @@ Then one line on the model, unless you're already running on their creative-tier
 
 - **I have an idea:** capture it in their words, then go to Step 3 (Develop) with it as the pick. Brainstorm candidates are skipped; development is not.
 - **I have a theme, not an idea:** run Step 2 limited to that theme, then Develop the creator's pick.
-- **Nothing, brainstorm with me:** theme check-in in `catalog/sources.md`, Step 2 across the channel's pillars, creator picks 1 (or a short queue) from the best 5, then Develop.
+- **Nothing, brainstorm with me:** theme check-in in `catalog/sources.md`, Step 2 across the channel's pillars, creator picks 1 from the best 5, then Develop.
 - **Pick from the bank:** show the top 5 `parked` ideas in `idea-bank.md` with last score and what would raise it; the pick goes to Develop.
 - **A Short / Reel** (new, or a moment from a long video): go to `short-form.md`. It replaces develop.md's structure and hooks parts for this Short; checks, scoring and the record still run.
 
@@ -112,6 +112,7 @@ Then one line on the model, unless you're already running on their creative-tier
 
 ### Session rules (all steps)
 
+- **Next video only.** A session develops one idea: the next video. Develop more (a queue, a week, a series) only when the creator asks; other good candidates go to the bank as `shortlisted`, undeveloped.
 - **Plain setup on every option.** Each AskUserQuestion option carries a one-line plain setup of what choosing it leads to. Never assume the creator remembers a term, a file or an earlier step; name the thing.
 - **The question box stands alone.** It hides any text written above it, so the question itself carries a one-line reason and every option has its description. Anything needing more than ~2 lines of context, something to review (research, a draft record), or several related questions goes on a decision page (video-genome `decision-pages.md`), not a wall of chat followed by a box.
 - **Ask in rounds** of up to 4 questions, each with a Recommended option first and one line of why.

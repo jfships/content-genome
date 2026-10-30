@@ -6,41 +6,43 @@ Evidence grade in this file (from the script-edit research): **A** controlled st
 
 ## 1. Technique × trigger × job × evidence × fails when
 
-| Technique (code) | Script trigger | Job | Ev. | Fails when |
-|---|---|---|---|---|
-| Jump cut (`JUMP`) | any pause, filler, restart or trailing breath inside a beat; always on | compress time, remove dead air | C | every sentence cut at the same frame size; breaths all removed so it sounds panicked |
-| Hard cut on new idea (`CUT-S/M/F`) | line starts with "So", "Now", "But", "Step 2", a number, or a question | mark the segment boundary | A/B | cut lands mid-clause |
-| J-cut (`J`) | next beat opens on a payoff, question or surprising number; face → demo jumps | prime the next shot; smooth the jump | C | overlap so long voice and picture contradict; used on every cut |
-| L-cut (`L`) | beat ends on a claim that needs proof, or a reaction/proof shot while the sentence finishes | proof under voice; keep the thought alive | C | picture goes to something unrelated to the words still playing |
-| Smash cut (`SMASH`) | hard contrast: "You'd think it works. [cut] It doesn't."; script marks `[cut to opposite]` | surprise, reversal | 0 (B: orienting response) | used as a joke with no teaching point |
-| Match cut (`MATCH`) | last line echoes the first, or last frame matches the first (loops, callbacks) | closure, replay pull | 0 (B: match cuts least noticed) | loop makes the ending abrupt before the point lands |
-| Punch-in (`PUNCH`) | key word, number, opinion line; "here", "this"; the sentence's last stressed word | emphasis: which line mattered | C (B: change on an attention cue is least intrusive; signaling) | >3–5 per 30 s; on every sentence; no key word; hides context on a screen recording |
-| Slow push (`PUSH`) | a beat that builds: the turn, a reveal approaching, a demo the viewer must watch | sustained attention over a beat | C | on every beat (stops meaning anything) |
-| Speed ramp (`RAMP`) | a step that is slow in real life (resting, drying, baking) or a jump between demo steps | time compression with a sense of progress | 0 | hides the one step the viewer must see; used on a talking face |
-| Cutaway / b-roll (`CUTAWAY`) | line names a showable thing ("a crowded pan", "the hollow wall") | concrete picture for a noun | A (multimedia, temporal contiguity) | shown after the word; decorative; unrelated stock |
-| Screen insert (`SCREEN`) | procedural line ("click", "type", "set") or "watch this" | proof and procedure | B (signaling, cueing) | text unreadable on a phone; voice and cursor out of sync; no highlight |
-| Picture-in-picture (`PIP`) | creator's opinion or reaction matters while the screen/object is the subject | trust and presence | B (face mainly a trust device) | covers the UI/object; sits in the right rail or bottom zone |
-| Split screen (`SPLIT`) | before/after, A vs B, two products | direct comparison in one frame | B (spatial contiguity) | both halves change at once; text unreadable at half width |
-| Same-frame wipe (`WIPE`) | "before → after" on the same framing | the arc is the edit: change is visible | C | framing differs between halves |
-| Freeze (`FREEZE`) | "this one number / this setting / this moment" | hold a still for reading | 0 | nothing to read on the frozen frame |
-| Rewind / replay | "wait, watch that again", a missed detail | redo at slower speed | 0 | replays something already clear |
-| Word emphasis (POP color/size) | the row's `key_word` | direct attention to one word | B (signaling) | more than one key word per row; emphasis on a filler word |
-| Captions, chunked (`CAPTION full`) | default for all speech | muted viewing, comprehension, accessibility | A/B (most for non-native) | over-reading during the demo moment; sits in an unsafe zone |
-| Captions, word-by-word / karaoke | fast-delivery beats only | rhythm | 0 (vendor claims) | slow delivery; long Reels |
-| Text pop (`POP`) | key term, number or label spoken in the line | label, structure, step number | B (key terms beat verbatim; contiguity) | pops before/after the word; sentence-length text; competes with the demo |
-| Big number (`CARD-N`) | a result or number the Reel turns on | make the number readable | B (signaling) | number not spoken too (say it simply AND show it) |
-| One-line card (`CARD-L`) | a rule or a label that needs a full short line | name the rule | B | it duplicates the spoken sentence (redundancy) |
-| Warning style (`WARN`) | a mistake, risk or "don't" | flag danger | C | used for mild preferences (cries wolf) |
-| Step label (`STEP`) | "one", "two", "step 3", timer | orientation, progress | 0 (Instagram has a native bar) | competes with the native bar's screen area |
-| Sticker / emoji | emotion or yes/no verdict; ≤1 per 10 s | quick emotion read | 0 (B: seductive details hurt recall) | decorates without meaning; covers the object |
-| Highlight / circle / dim-the-rest | pointing words: "this", "here", "right there" | direct the eye to one element | B (relation-showing cues beat plain highlights) | highlight shown while the line talks about something else |
-| SFX (`SFX`) | information events only: something slides in, a number appears, a cut to full-screen proof | mark "something changed here" | B (sync window) / C | under the key claim; on every line; louder than voice |
-| Music bed (`MUS-LOW`) | tone under hook and ending; low under explain | mood | B (engagement up; verbal recall down when it competes with narration) | competes with narration; lyrics; same loudness as voice |
-| Music hit / drop (`BEAT`, `DROP`, `HIT`) | payoff line or reveal, once | punctuation | 0 | forces cuts mid-clause |
-| Riser (`RISE`) | the second before a reveal | anticipation | 0 | no reveal follows |
-| Clock (`TICK`) | ticking-clock arcs, timed steps | visible/audible pressure | 0 | no real time limit |
-| Silence (`SIL`) | after a claim; before the payoff; max one held pause per Reel | weight, lets it land | C (B: segmenting) | silence that is just a gap |
-| Pattern interrupt (`INT`) | the turn: valley to climb, expectation flip | reset attention with new information | B (orienting response) | two in a row; decoration with no new info |
+**Stock id** points an edit code at its sample in the stock library: short neutral demos (gray plus one accent, a stand-in person), one per device, ids `CAT-NN`, stable and never renumbered. The library's `manifest.json` gives each id's name, tier and sample file. A picker plays the sample restyled to the brand, so the creator judges the move by watching it. Write the id beside the code in the card's `edit` cell when one device is meant (`PUNCH @batches [CAM-01]`). Devices with no edit code go in the `visual` cell by id alone: look-real props (`PROP-`), 3D moves (`SPA-`), words behind the speaker (`LAY-06`), a card beside the head (`LAY-07`), lights out (`CAM-04`), searchlight (`CAM-05`), transitions `TRN-03..06`. No stock library installed: skip the column.
+
+| Technique (code) | Stock id | Script trigger | Job | Ev. | Fails when |
+|---|---|---|---|---|---|
+| Jump cut (`JUMP`) | CUT-02 | any pause, filler, restart or trailing breath inside a beat; always on | compress time, remove dead air | C | every sentence cut at the same frame size; breaths all removed so it sounds panicked |
+| Hard cut on new idea (`CUT-S/M/F`) | TRN-01 | line starts with "So", "Now", "But", "Step 2", a number, or a question | mark the segment boundary | A/B | cut lands mid-clause |
+| J-cut (`J`) | CUT-03 | next beat opens on a payoff, question or surprising number; face → demo jumps | prime the next shot; smooth the jump | C | overlap so long voice and picture contradict; used on every cut |
+| L-cut (`L`) | CUT-04 | beat ends on a claim that needs proof, or a reaction/proof shot while the sentence finishes | proof under voice; keep the thought alive | C | picture goes to something unrelated to the words still playing |
+| Smash cut (`SMASH`) | CUT-05 | hard contrast: "You'd think it works. [cut] It doesn't."; script marks `[cut to opposite]` | surprise, reversal | 0 (B: orienting response) | used as a joke with no teaching point |
+| Match cut (`MATCH`) | TRN-02, STO-09 | last line echoes the first, or last frame matches the first (loops, callbacks) | closure, replay pull | 0 (B: match cuts least noticed) | loop makes the ending abrupt before the point lands |
+| Punch-in (`PUNCH`) | CAM-01 | key word, number, opinion line; "here", "this"; the sentence's last stressed word | emphasis: which line mattered | C (B: change on an attention cue is least intrusive; signaling) | >3–5 per 30 s; on every sentence; no key word; hides context on a screen recording |
+| Slow push (`PUSH`) | CAM-02 | a beat that builds: the turn, a reveal approaching, a demo the viewer must watch | sustained attention over a beat | C | on every beat (stops meaning anything) |
+| Speed ramp (`RAMP`) | CAM-07 | a step that is slow in real life (resting, drying, baking) or a jump between demo steps | time compression with a sense of progress | 0 | hides the one step the viewer must see; used on a talking face |
+| Cutaway / b-roll (`CUTAWAY`) | LAY-05 | line names a showable thing ("a crowded pan", "the hollow wall") | concrete picture for a noun | A (multimedia, temporal contiguity) | shown after the word; decorative; unrelated stock |
+| Screen insert (`SCREEN`) | SCR-01..06 | procedural line ("click", "type", "set") or "watch this" | proof and procedure | B (signaling, cueing) | text unreadable on a phone; voice and cursor out of sync; no highlight |
+| Picture-in-picture (`PIP`) | LAY-08, LAY-04 | creator's opinion or reaction matters while the screen/object is the subject | trust and presence | B (face mainly a trust device) | covers the UI/object; sits in the right rail or bottom zone |
+| Split screen (`SPLIT`) | LAY-02, LAY-03 | before/after, A vs B, two products | direct comparison in one frame | B (spatial contiguity) | both halves change at once; text unreadable at half width |
+| Same-frame wipe (`WIPE`) | SCR-06 | "before → after" on the same framing | the arc is the edit: change is visible | C | framing differs between halves |
+| Freeze (`FREEZE`) | CAM-03 | "this one number / this setting / this moment" | hold a still for reading | 0 | nothing to read on the frozen frame |
+| Rewind / replay | — | "wait, watch that again", a missed detail | redo at slower speed | 0 | replays something already clear |
+| Word emphasis (POP color/size) | CAP-01, POP-01 | the row's `key_word` | direct attention to one word | B (signaling) | more than one key word per row; emphasis on a filler word |
+| Captions, chunked (`CAPTION full`) | CAP-01, CAP-04, CAP-05 | default for all speech | muted viewing, comprehension, accessibility | A/B (most for non-native) | over-reading during the demo moment; sits in an unsafe zone |
+| Captions, word-by-word / karaoke | CAP-02, CAP-03 | fast-delivery beats only | rhythm | 0 (vendor claims) | slow delivery; long Reels |
+| Text pop (`POP`) | POP-01, POP-02 | key term, number or label spoken in the line | label, structure, step number | B (key terms beat verbatim; contiguity) | pops before/after the word; sentence-length text; competes with the demo |
+| Big number (`CARD-N`) | POP-06, POP-07 | a result or number the Reel turns on | make the number readable | B (signaling) | number not spoken too (say it simply AND show it) |
+| One-line card (`CARD-L`) | — | a rule or a label that needs a full short line | name the rule | B | it duplicates the spoken sentence (redundancy) |
+| Warning style (`WARN`) | — | a mistake, risk or "don't" | flag danger | C | used for mild preferences (cries wolf) |
+| Step label (`STEP`) | STO-03, POP-08 | "one", "two", "step 3", timer | orientation, progress | 0 (Instagram has a native bar) | competes with the native bar's screen area |
+| Sticker / emoji | POP-09 | emotion or yes/no verdict; ≤1 per 10 s | quick emotion read | 0 (B: seductive details hurt recall) | decorates without meaning; covers the object |
+| Highlight / circle / dim-the-rest | POP-03, POP-04, SCR-05 | pointing words: "this", "here", "right there" | direct the eye to one element | B (relation-showing cues beat plain highlights) | highlight shown while the line talks about something else |
+| SFX (`SFX`) | SND-01 | information events only: something slides in, a number appears, a cut to full-screen proof | mark "something changed here" | B (sync window) / C | under the key claim; on every line; louder than voice |
+| Music bed (`MUS-LOW`) | — | tone under hook and ending; low under explain | mood | B (engagement up; verbal recall down when it competes with narration) | competes with narration; lyrics; same loudness as voice |
+| Music hit / drop (`BEAT`, `DROP`, `HIT`) | SND-04 | payoff line or reveal, once | punctuation | 0 | forces cuts mid-clause |
+| Riser (`RISE`) | SND-03 | the second before a reveal | anticipation | 0 | no reveal follows |
+| Clock (`TICK`) | SND-06 | ticking-clock arcs, timed steps | visible/audible pressure | 0 | no real time limit |
+| Silence (`SIL`) | SND-05, CUT-06 | after a claim; before the payoff; max one held pause per Reel | weight, lets it land | C (B: segmenting) | silence that is just a gap |
+| Pattern interrupt (`INT`) | CAM-06, CUT-05 | the turn: valley to climb, expectation flip | reset attention with new information | B (orienting response) | two in a row; decoration with no new info |
 
 Zoom, ramp, freeze, rewind, smash, stickers, progress bars: no controlled evidence for teaching. Treat as style, tie each to a trigger, cap them (R4).
 
@@ -99,6 +101,8 @@ Pace conflict, settled: the script budgets spoken words at the planning pace (2.
 ## 5. Pacing patterns → 30 s timelines
 
 video-genome pacing slugs (`plan/story-libraries.md` §7, if video-genome is installed; otherwise this table is the full slug list for the card's `pacing` field), mapped to a 30 s Reel. Scale times proportionally (×2 for 60 s). "Ev." = support for teaching.
+
+Stock ids per slug: front-loaded `CUT-09` · calm-bursts `CUT-07` · fast-talk-slow-show `CUT-08` · cut-to-beat `CUT-11` · relentless `CUT-12` · one-take `CUT-10` · return-hook and cut-on-emotion: none yet.
 
 | Slug | 30 s timeline | Script needs | Edit per beat | Ev. / risk |
 |---|---|---|---|---|

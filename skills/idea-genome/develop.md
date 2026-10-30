@@ -4,7 +4,7 @@ Purpose: turn a captured idea into a worked-through one, with the creator. Claud
 
 Develop settles the idea's shape (stance, rough structure, cast, tone, payoff, twist). It does not write the script or plan beats; that is video-genome's plan.
 
-**A Short / Reel** runs 3a, 3c, 3e and 3f here, but `short-form.md` instead of 3b and Hooks.
+**A Short / Reel** runs 3a (and 3a+ for a borrowed format), 3c, 3e and 3f here, but `short-form.md` instead of 3b and Hooks.
 
 ## 3a. Research the raw material (live, with sources)
 
@@ -14,6 +14,14 @@ Before the first question, search for:
 - **Demand**: what people search or ask about the topic.
 
 Share findings as short option lists inside the questions, not as a report. Keep links for `## Sources`.
+
+## 3a+. Borrowed format (when the idea copies a known format)
+
+Trigger: the idea borrows a format that exists outside this channel: "make one like this saved Reel", a countdown of tools, an empty list that fills, a tier list, "POV:". Runs before any question round or shape pick.
+1. Name the format in one line. Find 8–15 more real examples of it live, across creators and niches, beyond the one the creator saved (links go in `## Sources`).
+2. Write its rules from what the examples share: runtime, beat order, item count, what's on screen and when, the hook pattern, the ending, the pace, and what the strong examples do that weak ones don't. Mark each rule `seen in N of M`; a rule seen in fewer than half is an option, not a rule.
+3. Record them under `## Format rules` in the Idea Record, with what this idea changes and why: the angle is the change, the format stays.
+4. Follow them. Angle, hook, shape and last line are checked against the format rules before scoring; script-genome and video-genome build to them. Breaking a rule needs the creator's yes, written next to that rule.
 
 ## 3b. Question rounds (1–3 rounds, up to 4 questions each)
 

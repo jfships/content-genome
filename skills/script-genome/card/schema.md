@@ -50,7 +50,7 @@ Field notes:
 | caption | full · emphasis · off; chunk rule §5 | no word in both caption and POP at once |
 | rehook | `no` or the new reason to keep watching | ≥1 between 40–70% at ≥30 s |
 
-Optional per-row fields: `V` (felt state −2…+2, for arcs), `in` (connective that opens the beat: but / so / because / until), `layout` (video-genome layout name), `safe_ok` (overlay inside the brand's safe box).
+Optional per-row fields: `V` (felt state −2…+2, for arcs), `in` (connective that opens the beat: but / so / because / until), `layout` (video-genome layout name), `safe_ok` (overlay inside the brand's safe box), `act` (silent-acting cue: move @trigger word, hold; `write/intake.md`).
 
 ## 3. Two notations
 

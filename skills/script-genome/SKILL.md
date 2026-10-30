@@ -1,6 +1,6 @@
 ---
 name: script-genome
-description: Write and check short-video scripts. Turns a creator's raw words (notes, voice memo, transcript, a long video) into a 20–60 s Reel/Short script card, beat by beat, with hook, shape or story arc, retention, ending and the edit intent per line; and checks a finished script (legal, platform, accuracy and clarity gates, craft notes, no score). Use when someone asks to write, tighten, restructure or check a script, hook, rehook, loop or ending for a Reel, Short or TikTok, or says "make this a script" or "check my script". video-genome and idea-genome call it for the script step.
+description: Write and check short-video scripts. Turns a creator's raw words (notes, voice memo, transcript, a long video) into a 20–60 s Reel/Short script card, beat by beat, with hook, shape or story arc, retention, ending and the edit intent per line; and checks a finished script (legal, platform, accuracy and clarity gates, craft notes, no score). Use when someone asks to write, tighten, restructure or check a script, hook, rehook, loop or ending for a Reel, Short or TikTok, or says "make this a script", "check my script" or "build a script from my saved devices". video-genome and idea-genome call it for the script step.
 ---
 
 # script-genome: raw words → a script card, and a check for finished scripts
@@ -20,6 +20,7 @@ content plan   →  video-genome   →  plan → debt → build → review → d
 
 **Two jobs.**
 - **Write (job A):** organize and tighten the creator's own words into a script card. `write/`.
+  - **From saved devices:** the creator asks for a script built backwards from the devices they saved (swipe banks), on a topic or none: `write/from-devices.md`, then the job A flow.
 - **Check (job B):** read a finished script and return a verdict, gates first, craft as notes. `check/`.
 
 Works on its own (no brand folder needed) and inside the package.
@@ -74,7 +75,7 @@ Then: if a video is being made, hand the card to video-genome (Shorts track item
 Load only the cards you need: find a card by its `### <slug> ·` heading and read that card, not the whole file (`catalog/selector.md` has a card index). Never load all catalogs. `sources.md` only when asked where something comes from.
 
 ## Files
-- `write/`: `intake.md` (worksheet, one-idea tests, converting lists and long videos), `passes.md` (the passes, keep-voice rules), `budget.md` (pace, words per runtime, beats per runtime).
+- `write/`: `intake.md` (worksheet, one-idea tests, converting lists and long videos, narrator and silent-acting scripts), `from-devices.md` (backwards from saved devices), `passes.md` (the passes, keep-voice rules), `budget.md` (pace, words per runtime, beats per runtime).
 - `catalog/`: `selector.md`; hooks (`hooks.md`, `hooks-psych.md`, `hooks-unusual.md`); `shapes.md`; arcs by family (`arcs-setback.md`, `arcs-fall.md`, `arcs-rise.md`, `arcs-curiosity.md`, `arcs-ladder.md`, `arcs-argument.md`, `arcs-containers.md`, `arcs-operators.md`); `retention.md`; `endings.md`.
 - `card/`: `schema.md` (the script card, the contract with video-genome), `triggers.md` (edit move ↔ script trigger, timing, sound, pacing patterns), `lint.md`.
 - `check/`: `gates.md`, `craft.md`, `report.md`.

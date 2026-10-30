@@ -2,10 +2,13 @@
 
 Run the ones that fit the entry. **Own idea or bank pick:** no candidates are raised, but `search`, `gap-scan` and examples of the thing itself still run, inside Develop (`develop.md` 3a). For a full brainstorm, run the theme check-in, then at least 4 others, mixing inside sources (the creator's own material) and outside sources (research). Every candidate is written to `idea-bank.md` with its source slug.
 
+**Look next door.** Patterns (formats, hooks, angles, series ideas) come from neighboring niches too, not only the creator's own: niches with the same audience or the same job to be done but a different topic. Every brainstorm runs at least one source on a neighboring niche (`steal-format`, or `gap-scan` on a neighbor's top videos), and every gap scan adds 2–3 neighbor channels to the benchmark ones. Write the source niche next to each borrowed pattern in the bank row.
+
 | Slug | Source | How to run | Gives |
 |---|---|---|---|
 | theme-checkin | Theme check-in | Read Why and feel + Formats from the Genome. Ask (AskUserQuestion, multi-select) which pillar or theme this round is for, plus "what's on your mind this week" as free text. | The theme that bounds the round |
 | proof-bank | Proof bank mining | Walk `Who I Am.md` Proof and story beats. For each item ask: what did it cost, what went wrong, what would a viewer copy? | Ideas only the creator can make |
+| takes | Opinions mining | Walk `Who I Am.md` "Takes they hold" (the creator's opinions list). Each take: who disagrees, what proof backs it, which shape carries it (hot take, myth-bust, rant). None listed: ask for 3 opinions they'd argue on camera, use them, and offer to save them there through brand-genome (revisit). | Opinion and rant ideas in the creator's voice |
 | comments | Comment & question mining | Read comments, DMs or customer questions the creator pastes or a connector returns. Cluster repeated questions. | Ideas with proven demand |
 | search | Search demand | Web search the theme plus YouTube autocomplete-style phrasings ("how to…", "…vs…", "…worth it"). Note sources. | What people type |
 | gap-scan | Competitor gap scan | Take the playbook's benchmark channels. Find their top videos on the theme; list the angle each took and the angle nobody took. | Open lanes |

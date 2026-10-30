@@ -42,5 +42,9 @@ Don't turn 5 tips into 5 equal beats (≈26 words each at 60 s, no room for proo
 ## Converting a long video or transcript
 Find a self-contained passage: claim + proof + payoff that makes sense with zero prior context (test: pretend the long video doesn't exist). Lift the creator's own words; reorder so the point leads; cut setup and asides; re-record the hook fresh for vertical. A crop of a long edit is never a draft. Re-editing your own long video is original; someone else's clip with subtitles or credit only is not.
 
+## Scripts the creator doesn't speak
+**Narrator script** (a mock documentary: a narrator describes the creator in the third person). The narrator is the creator's own voice or a designed one, never an imitation of a real person. Lines are written for the narrator (`speaker: second`); the creator's real proof and quirks still supply the content, so the stranger test and the facts gates apply as usual. 4–6 scene changes, under ~30 s. Budget at the narrator voice's pace, measured from one temp read (until then, the default planning pace).
+**Silent acting** (the creator acts against a voice track: a narrator, a clip, a sound). Every row gets an `act` cue: the move, the word that fires it, and how long it holds (`act: looks up from the laptop @deadline, hold 1 s`). One clear move per row, mouth closed; leave ~0.3 s after the trigger word for reaction lag. The `line` column holds the voice track's words. The card is the recording brief: the creator records the moves last, against the assembled track playing out loud.
+
 ## Rough script handed in
 Treat it as raw words: extract the claim first, then compare. Keep its structure if it passes the function read (`check/report.md` B); change only what fails.

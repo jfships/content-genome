@@ -145,6 +145,12 @@ Pairs: hooks number, warning, callout, secret; endings send-line, button, payoff
 Fails when: items are not parallel; a ranking is implied but not justified; more than 3 items under 45 s (each beat drops under 5 s).
 Evidence: VENDOR [4] for the format; RESEARCH (other medium) [1] for the cap (3 counter-arguments beat 12, overkill effect). List effect itself unproven.
 
+**List formats.** Pick one per list; write it in the header's `shape` line (`list-of-3 · countdown`) and its screen part in each row's `visual` cell. Stock id in brackets (`card/triggers.md` §1).
+- **Countdown** [STO-03]: items count down to #1 and the current number stays on screen the whole time (`STEP` persistent, same spot). Ranked lists only: say the ranking reason once, tease #1 in the hook, #1 is the payoff. A countdown to a #1 the hook never teased is `countdown-to-reveal` (`arcs-ladder.md`).
+- **Empty list that fills** [STO-04]: the title and an empty numbered list are on screen from frame 1; each line fills in as the item is said, no explanation per item. The filled list is the payoff, so this format breaks the item cap on purpose: many items (8–13) in 13–20 s, said fast, each line a few words. Hook = the title; ending = the last item, no sign-off. Light edit.
+- **Name pill per item** [STO-13]: each item gets a name pill (the tool or thing's name) over real footage or a screen recording of it, plus one line of what it does or why it's on the list. Tool and resource lists. Needs real footage of every item before the script locks; an item with none is cut or swapped.
+Evidence: SINGLE per format (saved Reels from creators' swipe files). Flag: weak
+
 ### myth-bust · Myth-bust, fact first
 Aliases: myth-bust-fact-first (twin arc: myth-vs-truth)
 Does: states the true fact first, names the myth once and small after a warning, says why it feels true, gives the replacement with one concrete example, ends on the true statement.
