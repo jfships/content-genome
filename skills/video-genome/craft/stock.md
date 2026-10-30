@@ -2,7 +2,7 @@
 
 The stock library is a set of neutral samples (gray plus one accent, a stand-in presenter), one per visual device, each with a **stock id** such as `LAY-03`, `PROP-01`, `SPA-02`, `COV-05`. The creator picks from samples by watching them, never from names. The id prefixes are categories: LAY layouts · PROP look-real props · POP pop-ins · SCR screen proof · SPA 3D moves · CAM camera on the person · TRN transitions · CUT cuts and pacing · STO story devices · CAP captions · HOOK hook text · COV covers (plus later BKD backdrops, BIG set pieces, SND sounds, MAP places, TEX textures).
 
-**Where it is.** `stock/manifest.json` in the creator's tools folder (for jfships-style setups: `Content Creation/04 Free Tools/stock/`). The manifest is the source of truth: for each id it lists name, category, tier (core / later / funky), source and render path. An id appears in this skill's tables (`graphics-library.md`, `shorts/build.md` "Layouts", `spatial/README.md`) whether or not a sample is built yet; only ids in the manifest have one. No stock library at all: pick from `graphics-library.md` by name as before.
+**Where it is.** `stock/manifest.json` in the creator's tools folder (wherever the brand files point to it). The manifest is the source of truth: for each id it lists name, category, tier (core / later / funky), source and render path. An id appears in this skill's tables (`graphics-library.md`, `shorts/build.md` "Layouts", `spatial/README.md`) whether or not a sample is built yet; only ids in the manifest have one. No stock library at all: pick from `graphics-library.md` by name as before.
 
 ## Picking by id
 

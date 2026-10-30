@@ -184,19 +184,22 @@ Basis: Joos (ex-MrBeast retention strategist) reports attention drops without no
 
 **Where the main re-hook goes:** about 40% in, right after the main point lands, as one short plain sentence that reopens a question (not a new segment). Under ~20 s (a 15–25 s rant, a fast tip) the hook carries most of it: at most one re-hook, right after the main point, used as the turn into the strongest example; often none. INFERENCE; check the creator's own chart.
 
-**Re-hook openers (fill-in).** Ten lines to finish with this video's next point. Each is the opening of a `tease-rehook`, `stacked-loops` or but-turn line, never a line on its own: what follows must deliver. Credit: Briar Cochran, "10 rehooks to drive average watch time" (Instagram Reel, 2026). Evidence: SINGLE. Flag: weak
-| Opener | Turns into |
-|---|---|
-| "But this is where things get crazy." | escalation; the next beat must be bigger |
-| "Here's a tactical example." | proof; a real, specific example follows |
-| "Nothing I've said matters unless you understand this." | the key condition |
-| "Now here's what I mean by (x)." | the concrete version of the claim |
-| "Which, by the way, only matters if (x)." | the condition that makes it apply |
-| "But honestly, that's not even the main part." | the bigger point |
-| "Which is fine, except (x)." | the catch |
-| "But here's the part that took me too long to figure out." | the hard-won lesson (creator's real experience only) |
-| "So here is where I would actually start if I were you." | the first step |
-| "Here is usually the part that most people skip." | the overlooked step; also works as the last line of a list |
+**Re-hook openers (fill-in).** Ten opener jobs to finish with this video's next point, each with a sample phrasing in plain
+words (write the creator's own version; don't reuse the sample). Each is the opening of a `tease-rehook`, `stacked-loops` or
+but-turn line, never a line on its own: what follows must deliver. Adapted from Briar Cochran's "10 rehooks to drive average
+watch time" (Instagram Reel, 2026); phrasings rewritten. Evidence: SINGLE. Flag: weak
+| Opener job | Sample phrasing | Turns into |
+|---|---|---|
+| Raise the stakes | "And this is where it gets wild." | escalation; the next beat must be bigger |
+| Promise proof | "Let me show you a real one." | proof; a real, specific example follows |
+| Gate everything on one idea | "None of this works without one thing." | the key condition |
+| Make the claim concrete | "Here's what that looks like in practice." | the concrete version of the claim |
+| Add the condition | "That only counts if (x)." | the condition that makes it apply |
+| Demote what came before | "That's actually the small part." | the bigger point |
+| Name the catch | "Fine, until (x)." | the catch |
+| Hard-won lesson | "This one took me way too long to learn." | the hard-won lesson (creator's real experience only) |
+| First step | "If I were starting today, I'd do this first." | the first step |
+| The skipped step | "This is the step almost everyone skips." | the overlooked step; also works as the last line of a list |
 
 ## 3. Choosing devices by idea type
 
