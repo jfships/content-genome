@@ -44,7 +44,7 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 
 ## Flow
 
-**A Short, Reel or TikTok runs on the Shorts track** (`shorts/README.md`): its own checklist, Take Check, picker before the draft, live preview, pacing, checks and review, after the same Step 0. Never plan, pace or review a Short with the long-form steps below, and never make one by cropping the long edit.
+**A Short, Reel or TikTok runs on the Shorts track** (`shorts/README.md`): its own checklist, Take Check, picker before the draft, live preview, pacing, checks and review, after the same Step 0. Never plan, pace or review a Short with the long-form steps below, and never make one by cropping the long edit. **Read `shorts/build.md` before any Short build,** every session.
 
 | Step | File | Gate |
 |---|---|---|
@@ -66,7 +66,7 @@ Every session ends with `review/session-close.md`, whatever step it stopped on.
 - **Three tiers, by the kind of work, not by how far along the video is:**
   - **Creative** (today: Fable): idea, plan, script, beat brief, picker options and new picker rounds, generation prompts, any taste call.
   - **Build** (today: Opus): the optional rough draft, the draft from the picks, live-preview tweaks, fixes that need judgment.
-  - **Mechanical** (today: Sonnet): Take Check prep, transcribe, cut + base, cutouts, mix, final render, measured checks, deliverables.
+  - **Mechanical** (today: Sonnet): Take Check prep, transcribe, cut + base, cutouts, building graphic beats to stills from a written graphics plan (`shorts/build.md` "Graphics and motion"; the plan itself is build tier), mix, final render, measured checks, deliverables.
 - **At every hand-off between tiers,** one line, for example: "Taste calls next (the picker). Switch to your creative model (today: Fable) if you have it." · "Building the draft next. Your build model (today: Opus) handles it well for less." · "Mechanical stretch next (cut, checks, render). Your mechanical model (today: Sonnet) does it for the least."
 - A resumed video gets the nudge for the step it's on.
 - **Say each line once per hand-off,** not every reply. Skip it when the creator is already on the right model, has said they don't have that one, or chose to stay put; don't repeat it for the same hand-off.
@@ -86,7 +86,8 @@ Read when their part starts:
 - `craft/brand-fit.md`: when the brand's graphics don't fit a moment
 - `craft/asset-library.md`: the brand's central asset library and index
 - `craft/motion.md`: timing, layers, camera, music grid, transitions, text sizes, anti-slideshow
-- `craft/graphics-library.md`: the catalog of moves, with each one's fit
+- `craft/graphics-library.md`: the catalog of moves, with each one's fit and stock id
+- `craft/stock.md`: the stock library of neutral samples by id; picking, restyling to the brand, and how new builds join it; read before listing options for any beat or cover
 - `craft/spatial/README.md`: spatial moves (3D camera, depth, screens in space) with working sources; read before planning the look of any screen demo or explainer
 - `craft/uniqueness.md`: how a video stays recognizably theirs
 - `shorts/README.md`: the Shorts track (Shorts, Reels, TikTok); `craft/vertical.md` points there
@@ -114,7 +115,7 @@ Read when their part starts:
 15. **No build without a record.** Every episode has an `idea.md`, a `plan.md` with a story stack, and a `debt.md`.
 16. **Entertaining first; motion carries what jokes can't.** When a beat is hard to make entertaining without forcing it, spatial motion carries it (brand file §2 fallback, `craft/spatial/`). The bar is a top agency's launch film, not a slideshow with easing.
 17. **Use it, log it, fix it.** Anything this skill got wrong or lacked during real work goes in the creator's skill-issues log (`review/session-close.md`) the moment it shows up, so the skill improves before the next release.
-18. **Every ability ships with its mechanics.** Nothing enters any library in this skill (a graphic, an animation, a transition, a move, a sound, a story item, a layout) without: what it does, the script line or beat that calls it (its trigger), timing and placement, what it pairs and clashes with, when it fails, and the use cases it is for. A name with a one-line description is not an ability; it can't be used. Script mechanics (hooks, shapes, arcs, retention, endings) live in script-genome; the libraries here keep their slugs and point there.
+18. **Every ability ships with its mechanics.** Nothing enters any library in this skill (a graphic, an animation, a transition, a move, a sound, a story item, a layout) without: what it does, the script line or beat that calls it (its trigger), timing and placement, what it pairs and clashes with, when it fails, and the use cases it is for. A name with a one-line description is not an ability; it can't be used. Every visual also has a neutral stock sample: anything built new in a video gets one at close-out, and outside inspiration waits for its sample before it enters any library (`craft/stock.md`). Script mechanics (hooks, shapes, arcs, retention, endings) live in script-genome; the libraries here keep their slugs and point there.
 
 ## Brand folder and where to look
 

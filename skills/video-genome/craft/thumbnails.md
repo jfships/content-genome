@@ -1,6 +1,6 @@
 # Thumbnails
 
-*Covers for Shorts and Reels: `shorts/platforms.md` "Covers" (same text rules, cover line inside y 400–1300).*
+*Covers for Shorts and Reels: `shorts/platforms.md` "Covers" (measured frames, cover styles by stock id, words for the cover's job, 3:4 crop, feed check; same text rules, cover line inside y 400–1300).*
 
 Thumbnails are chosen after the build, once it's clear what was actually said. Use the brand's kept thumbnail systems (usually 3–4, e.g. screen + face, before/after, a milestone frame, a one-word frame).
 

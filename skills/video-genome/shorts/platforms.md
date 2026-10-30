@@ -22,9 +22,21 @@ Rules change; check each platform's current limits before delivery and say what 
 
 ## Covers
 
-- 3 real frames from the Short plus a cover line of 3–5 words, on one page; the creator picks.
-- The cover line follows the brand's cover template and the thumbnail text rules (`craft/thumbnails.md`), inside y 400–1300 so it survives the Instagram grid crop.
-- Check at feed size beside other Shorts in the niche.
+A cover's job is the click from the profile grid and from YouTube's Shorts shelf, where the video doesn't play. Built after the final cut, from what was actually said. Build it with the thumbnails skill (its 9:16 cover layout) when installed, else `craft/thumbnails.md` and `tools/thumb_text.py`; the steps below decide what goes in.
+
+1. **Frame candidates, measured, not eyeballed.** Scan the final cut for frames where the face is whole and calm, and rank them on numbers:
+   - mouth closed (lip gap small against face height, from the face landmarker `tools/draft_checks.py` uses);
+   - calm: eyes open, not mid-blink or mid-word, head level;
+   - sharp: highest sharpness (variance of the Laplacian) among neighbors, no motion blur;
+   - whole face: every face point inside the frame and clear of overlays, with room above the head for words.
+   Offer the top 3 as stills with their times.
+2. **Cover styles by stock id:** 2–3 from COV-01..08 (`craft/stock.md`), ranked for this video, with the brand's kept cover style first when it has one. A series keeps its layout (COV-06).
+3. **Words chosen for this video and the cover's job:** 3–5 words that make a stranger on the grid want this one. They may repeat the title or the hook when that is the strongest line for the job; that is a choice with a reason, never the default.
+4. **Lay out the full 1080×1920:** whole face, even spacing, nothing in the bottom zone (y > 1500); the cover line inside y 400–1300.
+5. **3:4 grid crop:** draw the centered crop (y 240–1680 survive) on every option; the face and the words must read inside it.
+6. **Feed-size check:** each option at phone grid size in a 3×3 grid beside the brand's recent covers or others in the niche. The subject is clear and the words read.
+
+Options go to the creator on one page (frame × style × words, the crop drawn); they pick. Record the stock id, frame time and words picked in `log.md`.
 
 ## Music rights
 

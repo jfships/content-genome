@@ -17,7 +17,7 @@ The direction pages settle the world and the frame. The beat brief settles every
 | # | In–Out | Line | Job | Device (source) | Layout + speaker box | Graphic box | Size | Enter / exit | Hold | Why this, not the two alternates |
 
 - **Job:** straight man · unsaid line · exaggeration · proof · breather (`craft/graphic-jobs.md`). "Illustrates the line" is not a job.
-- **Device (source):** *their material* · *kept* (the brand's lists) · *new* (designed for this line in brand limits, `craft/brand-fit.md`) · *generated* (image or clip, brand image rules). List candidates from every source before picking; "used last time" and "first in the list" are not reasons.
+- **Device (source):** *their material* · *stock <id>* (a sample from the stock library, `craft/stock.md`) · *kept* (the brand's lists) · *new* (designed for this line in brand limits, `craft/brand-fit.md`) · *generated* (image or clip, brand image rules). List candidates from every source before picking; "used last time" and "first in the list" are not reasons.
 - **Layout:** one of the named layouts below, with the speaker's box; consecutive beats never share a layout unless the hold is the joke.
 - **Why:** 2–3 treatments per beat, ranked, with why the builder's pick beat the others. Once the creator's takes or a first edit exist, each beat that gets a treatment is a row on the Short's live picker (**Beats** tab, `../decision-pages.md` "The live picker"), its treatments playing on that beat; one pick per row. Captions are picked once on the **Look** tab; when a beat's on-screen text is up, captions hide.
 - Every moving graphic is proved as a rendered 2–4 s clip of that beat before the rough draft.
@@ -50,6 +50,16 @@ Before anything is transcribed or cut, the creator screens the takes on `tools/t
 - A line with no keeper goes back to recording before the cut, not after the draft.
 - The builder may rank Maybes against each other on eyes, face and words (step 0 below); it never overrules a Drop.
 
+## Acting takes with no spoken words (S4c)
+
+When the creator acts silently against a voice track (a narrator, a clip), takes have no words to split or cut on.
+1. **Record against playback:** the voice track plays out loud in the room (a prompter skill's clip mode), so each take's own audio carries the voice and can be lined up by sound. Never record acting in silence.
+2. **Split one file per take** on the creator's markers (spoken beat line, "take N", "moving on") and the playback audio. Never merge two takes; when pauses are short, split finer on the markers.
+3. **Line up each take** by matching its room audio to the voice track (cross-correlation); write the offset per take. Measure the reaction lag (move start minus the trigger word's onset) and write it too.
+4. **Weed out** takes that can't work (wrong beat, out of frame, mouth moving), listed with times so the creator can overrule.
+5. **Take Check card per take:** beat and take number, trimmed to the take, the beat's picture and voice line beside it, Keep / Maybe / Drop and a comment.
+6. **Cut each kept take at the start of the move,** not the blink or reset before it; the move lands on its trigger word (measured onset, `tools/onsets.py`). Show 2–3 candidate windows per beat on a 0.1 s contact sheet before choosing.
+
 ## Cut (S5)
 
 **Draft quality, asked again.** When the first draft built from real takes starts, and on any resumed session, ask the draft quality again with the measured time, and recommend the input's own frame rate: lip sync, eye contact and cut timing can't be judged at 15 fps. HyperFrames always draws at the composition size, so offer frame rate (and a smaller composition), not sizes it can't do (`plan/intake.md` "Draft quality").
@@ -65,8 +75,9 @@ Before anything is transcribed or cut, the creator screens the takes on `tools/t
 
 ## Live preview (S5d, before any video file is sent)
 
-After the draft passes its measured checks, the creator watches it live instead of waiting for a render.
-- The draft's HyperFrames project lives in the video folder (`hf/`), so every edit reloads in the preview in about 5 s.
+The creator watches each draft live instead of waiting for a render.
+- **Every draft, from the first, is built in `hf/`** (the video folder's HyperFrames project), so every edit reloads in the preview in about 5 s. No draft is composited outside HyperFrames.
+- **Measured checks before the link.** Each round makes one draft-quality render of the `hf/` project and runs `tools/draft_checks.py` on it (plus `tools/tech_review.py` on `work/beats.json`, `checks.md` gate 2). The preview link goes to the creator only when both are clean: every fail fixed, or written in `log.md` as a known false flag with its reason. The link message lists the accepted false flags in one line. That render is the round's only one.
 - **Launcher:** copy `tools/preview.bat` into the video folder as `preview.bat` and fill `{{VIDEO}}` and `{{VERSION}}` (the HyperFrames version written in the log at setup, `setup/tools.md` §2; never `latest`). It starts the preview in the background, prints the Studio link, and stops it when the creator presses a key in its window. Without Windows: `cd hf && npx hyperframes@<version> preview`, and `--stop` when done. Give the creator the launcher, or the preview link it prints; never send a render first.
 - The creator calls tweaks in chat while watching. A tweak that is a value (timing, size, position, a color inside the brand) is edited in `hf/` and they watch it reload. A moment that needs new ideas is a new picker round for that row only (`picker/README.md`, branched page).
 - Renders are for the measured checks and the final, not for showing combinations.
@@ -92,7 +103,7 @@ One range for every shot ("a change every 3–5 s") makes a slow Short. Each sho
 - **Ceiling:** no shot runs past the brand's ceiling (default about 2.5 s) unless it's reading time or the planned hold. It's a soft rule, judged by watching, but every shot over it needs a reason in `log.md`.
 - **Average:** about 1.5–2 s a shot across the Short for fast or comedic brands, 2–3 s for calm ones.
 - Cut the moment the last word ends; when the picture leaves the speaker, the next beat starts on that frame.
-- A punch-in (about 1.1–1.25×, eased in, hard cut back) counts as a new shot; use it on the hook and the punchlines and to hide jump cuts.
+- A punch-in ("Transitions and camera in 9:16") counts as a new shot; use it on the hook and the punchlines and to hide jump cuts.
 - No single visual (one graphic, one screen) longer than about 4 s, even with motion inside it.
 
 ### Spoken pace
@@ -115,24 +126,41 @@ Coordinates at 1080×1920 (`craft/layout.md` §1, Shorts and Reels). **Safe box*
 
 Every beat names one of these layouts in the beat brief. Two consecutive beats never share one unless the hold is the joke; one layout for a whole Short is a fail. Boxes are the defaults; a beat may move them, inside the safe box, by writing the new box in its row's "Layout + speaker box" / "Graphic box" cells.
 
+The stock id after each name is its sample in the stock library (`craft/stock.md`).
+
 | Layout | Speaker | Graphic | Use when |
 |---|---|---|---|
-| **Full frame** | Chest-up, centered, eyes at y≈640 (head in the top 30–40%) | None, or hook text y 250–520 | Breathers, the hook, a punchline hold |
-| **Punch-in** | Full frame scaled 1.15–1.4×, eyes stay ≈ y 640; may shift off-centre to make room | A word or label in the space opened up | Key lines, hiding a jump cut, a reaction |
-| **Split top** | Cutout or crop in the lower band, eyes at ≈ 60% of frame height (y≈1150), centered | 16:9 band at x 0–1080, y 250–860 (their footage, a screen) | Straight man and proof beats where their material and the reaction are seen together |
-| **Over their page** | Cutout at about 0.64 of its full-frame size, bottom-left (about x 40–620, y 850–1450), feathered edge, never over the subject of the shot, never in x > 930 | Their page, post or shot full-bleed behind | Reading or reacting to a page, a post, a quote |
-| **Full graphic** | Off screen, 1.1–4 s at most | The whole safe box | Proof that must be read alone; a gag; the unsaid line as a scene |
-| **Words behind** | Full frame or punch-in | Big words layered between the backdrop and the cutout, beside the head, ≥ 70% visible | One standout line, the hook, a reveal |
-| **Floating card** | Full frame | A card, notification or object in the open space at head height, on the side the speaker faces | The unsaid line, an interruption, a small proof |
+| **Full frame** (LAY-01) | Chest-up, centered, eyes at y≈640 (head in the top 30–40%) | None, or hook text y 250–520 | Breathers, the hook, a punchline hold |
+| **Punch-in** (CAM-01, CAM-02) | Full frame scaled 1.15–1.4×, eyes stay ≈ y 640; may shift off-centre to make room | A word or label in the space opened up | Key lines, hiding a jump cut, a reaction |
+| **Split top** (LAY-02) | Cutout or crop in the lower band, eyes at ≈ 60% of frame height (y≈1150), centered | 16:9 band at x 0–1080, y 250–860 (their footage, a screen) | Straight man and proof beats where their material and the reaction are seen together |
+| **Half and half** (LAY-03) | Bottom half (y 960–1920), lifted until the mouth sits above y 1500 on every frame (about 50 px on a chest-up take; measure, `draft_checks.py`) | Top half, 1080×960; anything read inside x 65–930, y 250–930. The picture moves (a still card fails); each picture holds ≥ 1 s so it can be read | A picture beat that is as important as the speaker: proof, their footage, a generated scene |
+| **Over their page** (LAY-04) | Cutout at about 0.64 of its full-frame size, bottom-left (about x 40–620, y 850–1450), feathered edge, never over the subject of the shot, never in x > 930 | Their page, post or shot full-bleed behind | Reading or reacting to a page, a post, a quote |
+| **Full graphic** (LAY-05) | Off screen, 1.1–4 s at most | The whole safe box | Proof that must be read alone; a gag; the unsaid line as a scene |
+| **Words behind** (LAY-06) | Full frame or punch-in | Big words layered between the backdrop and the cutout, beside the head, ≥ 70% visible | One standout line, the hook, a reveal |
+| **Floating card** (LAY-07) | Full frame | A card, notification or object in the open space at head height, on the side the speaker faces | The unsaid line, an interruption, a small proof |
+| **Corner bubble** (LAY-08) | Round face bubble about 320 px across, lower-left (about x 65–385, y 1150–1470), never in x > 930 | The screen fills the safe box; the bubble never covers the part being pointed at | A screen beat where the screen is the subject and the speaker reacts or explains |
+| **Lights out** (CAM-04) | Full frame or punch-in, still lit | The backdrop drops to near black on the trigger word; at most one word or prop in the dark space; back on the next beat | The serious line, a turn, the moment before a reveal |
+| **Cutout over a scene** | Cutout at one head size across beats (±5%), body running off the bottom edge, never over the scene's figures or focal object | A full-frame generated or illustrated scene with the space for him planned when it's made (the bottom, or a named corner) | Mock documentary (`shapes.md`), a "you in this world" gag |
 
+- **Cutout over a scene:** soft edge fade only where the source frame ends; a contact shadow on the scene's ground line. Placement in a prompt is unreliable, so plan the empty space by generation or crop, then check it on the still.
 - **Backdrop** built tall (the brand's tall backdrop), never a crop of the 16:9 plate. Cutouts sit on it at the framing above.
 - **Graphics keyed to a word** start on its measured onset, not Whisper's time: `tools/onsets.py <take> words.json words_onsets.json --words "<anchor words>"`, then `remap_words.py` onto the cut. Words it marks `rise` (connected speech) get one listen at the anchor.
 - **Hook text** y ~250–520, above the face, on screen from frame 1 for at least 2 s, never colliding with captions or the face. **Place it from the face, not a fixed y:** measure the top of the head on the frames it's up and keep the text's largest box (its pop-in scale included) clear of it; a pop-in from 1.6× that clears at rest can still cover the chin or beard for 4 frames. List it in `work/overlays.json`.
 
 **Safe zones on every layout or split change.** Before building any layout change or a requested split (55/45, a lower band, a bigger speaker), measure the mouth and chin on the real frames of that layout against the bottom line (y 1500): run `tools/draft_checks.py` on a short test render, or measure the face on 3–5 frames of the take at the new scale and offset. If the request breaks the line, say so before building, with the measured numbers and a safe alternative ("at 55/45 your mouth sits at y 1540, under the caption rows; 50/50 lifted 50 px keeps it at 1480"). Fix with the smallest change that clears it, measured, not guessed: a 170 px lift overcorrects where 50 px was right. Re-measure per frame on the draft, since the speaker moves.
-- **Captions** centered around y 1150–1400, below the chin, inside the safe box on every layout (on Split top and Over their page the chin sits higher or to the left, so the caption box moves up or right, never into x > 930 or y > 1500): 2–3 word chunks, one line (two at most), in the brand's caption spec (`vertical.md` or `look.md` "Caption spec": case, font and weight, size, plate, lines, box and centering, key word), one keyword per phrase in the brand's accent. **No spec, no captions:** if a field is missing (the case most of all), ask the creator in one question box before building any caption, with sentence case recommended, and write the answer back into the brand's caption spec. Never default to the hook's style or Title Case. Every spoken beat is captioned unless the beat brief gives a reason (`"captions_off": "<why>"` in `work/beats.json`, e.g. the line is already on screen as big type).
 - **Text sizes** at least 44 / 34 / 30 px (headline / body / label); overlays stay at least 2 s.
 - Graphics follow the rest of `craft/layout.md` (lead room, one focal point, nothing touching edges) re-decided per scene; the beat brief's boxes are checked on stills and by `tools/tech_review.py` before any render.
+
+## Captions
+
+- **Style comes from the brand's caption spec** (`vertical.md` or `look.md` "Caption spec": case, font and weight, size, plate, lines, box and centering, key word). Stock samples: CAP-01..06.
+- **No spec, no captions.** If a field is missing (the case most of all), ask the creator in one question box before building any caption, sentence case recommended, and write the answer back into the spec. The hook's style and Title Case are never the fallback.
+- **Chunks:** 2–3 words, one line (two at most), one key word per phrase in the brand's accent.
+- **Every spoken beat is captioned** unless the beat brief gives a reason (`"captions_off": "<why>"` in `work/beats.json`, e.g. the line is already on screen as big type). When a beat's own on-screen text is up, captions hide.
+- **Placement is decided per beat:** the best free spot on that beat's layout, clear of the face, the graphic's box, the top 250 px, the bottom zone (y > 1500) and the right-side buttons (x > 930 from y 900 down). Write it in the beat's row as a caption box.
+  - Default spot: centered around y 1150–1400, below the chin.
+  - Split top and half and half: on the seam between the picture and the speaker (y ≈ 860 and ≈ 960), clear of the head. Over their page and corner bubble: up or right of the cutout, clear of the part of the page being read.
+- **Moving between beats** is right when another spot is clearly freer or reads better; a caption never moves within one line. A line-by-line caption (one sentence shown across several chunks) stays in one spot until the sentence ends.
 
 ## Brand-kit pieces
 
@@ -142,9 +170,38 @@ Every beat names one of these layouts in the beat brief. Two consecutive beats n
 
 ## Graphics and motion
 
+Graphic beats cost the most draft rounds. Build them with this loop; it held quality at a fraction of the build cost.
+
+**Read before planning any graphic beat,** and list what was read at the top of the plan:
+- `craft/graphic-jobs.md` (the beat's job) and `craft/stock.md` (picking by id, restyling)
+- `craft/spatial/README.md`, with its "Tall frame" boxes
+- the brand's swipe library "Visual devices" and style ledger (what the creator saved, kept and dropped)
+- the brand's rendered 3D packs in `07 Asset Library/graphics/`: watch them and port from their sources
+
+**The loop, every round that has graphic beats:**
+1. **Plan** (build tier): a short graphics plan in `work/GRAPHICS-PLAN.md`, one row per beat: time, the line, the stock id or saved source file it ports from, what appears on which word, its boxes; plus what must not change. Each later round's plan lists only the changes from the last one.
+2. **Build to stills** (mechanical tier): port each beat from its named source into `hf/` (a comment on each beat names the file it came from), take stills at the plan's check times (`hyperframes snapshot --at`), and stop. No taste calls, no renders, no paid calls.
+3. **Check the stills against the plan:** whoever wrote the plan reads them row by row. A still that misses gets one rebuild; a second miss sends the plan back.
+4. **Measured checks, then the live preview** (S5d). The creator judges in motion, never from stills alone.
+
+**Rules for every graphic beat**
+- **Pick by stock id** from the manifest (`craft/stock.md`): 2–3 candidates per beat from the beat's job, the picked one written in the beat brief. Restyle by swapping the brand file, never by redrawing the sample.
+- **The first take is never the plain card.** A flat card with the line typed on it is a breather at most, and only when the beat brief says so. A first take is a look-real prop (`craft/graphics-library.md` §15), a move in space, or the subject's real material.
+- **Tall frame:** a 16:9 source is re-framed, never squeezed: port its tween numbers (depth, rotation, ease, duration), not its pixel layout, into the boxes in `craft/spatial/README.md` "Tall frame".
 - Build in HyperFrames at 1080×1920 (or the bundled engine over the cut, `tools/talking-head/`), restyled from the brand's vertical motion row.
-- Spatial moves (`craft/spatial/`) work tall too: re-frame them for 9:16, don't squeeze a 16:9 scene.
-- Stills first (Short gate 2), then render.
+- **Re-plan, don't keep fixing.** When draft 3 isn't approved, or one beat is rejected twice, stop fixing that beat. Re-plan it as a picker row of 2–3 stock samples the creator hasn't rejected for it, or switch its build type. Two more rounds after the re-plan; then the creator decides: ship, park or rebuild.
+- Any device built new for this video joins the stock library at close-out (`craft/stock.md` "New builds become stock").
+
+## Transitions and camera in 9:16
+
+Shots in a Short last 1–2.5 s, so a transition's time comes out of the shot it sits in.
+- **Hard cut** for nearly every change (TRN-01): on the new idea's first word, or the moment the last word ends (CUT-01).
+- **Read well tall,** at about 0.4 s or less: match cut on shape or motion (TRN-02), whip between screens (TRN-03), an object passing the lens (TRN-04), a color sweep (TRN-06), zoom-through into a screen (SPA-07).
+- **Too slow for most Shorts:** dissolve (TRN-08) and soft rise (TRN-09); keep them for a planned mood change. Strips, page tear, film burn and the like are wildcards: one per Short at most.
+- Never the same transition twice in a row.
+- **Punch-ins move inside the shot.** Cut in at the brand's scale (default 1.15–1.4×, CAM-01), then keep a slow push toward the face across the line (CAM-02, about 1.08× over the line) instead of a still scale step; hard cut back on the next line. Emotional beats get the bigger move. A brand whose motion row says the camera is static keeps the cut-in only.
+- At every scale the eyes stay near y 640 and the mouth above y 1500.
+- **Crash zoom** (CAM-06): one per Short at most, on the pivot word, with something new right after it.
 
 ## Sound
 

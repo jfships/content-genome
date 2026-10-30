@@ -53,3 +53,14 @@ The creator judges a shape by watching it as a tall rough draft (`README.md`, ch
 - **Example:** a comment "You can't cook rice in a kettle" on screen → creator holding a kettle → it works, or it doesn't.
 - **Watch out:** the take is the content, not the clip; check the rights to the clip.
 - **Angles that fit:** myth-test, matchup, insider.
+
+## Formats that ride on a shape
+
+A format changes how a shape is produced, not its beats; the Short still names one shape above.
+
+### Mock documentary (narrator Short)
+- **What:** a narrator (the creator's voice or a designed one, never an imitation of a real person) describes the creator in the third person, hushed and serious, over 4–6 scene changes. The creator doesn't speak; he acts silently as a cutout over the scenes (`build.md` layout "Cutout over a scene").
+- **Rides on:** skit / POV or before / after. Under 30 s.
+- **Order:** script lock → scenes (generated, with the space for him planned) → narrator voice → assembly in `hf/` with stand-ins → acting recorded against the assembled draft playing out loud (`build.md` S4c) → recut.
+- **Captions** follow the brand's spec; one stylized caption on the biggest line at most.
+- **Watch out:** the comedy is the gap between the grand narration and the mundane act, so the acting stays small and deadpan; the narrator voice is synthetic and labeled where the platform asks.
