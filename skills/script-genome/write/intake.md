@@ -24,6 +24,7 @@ RAW: <verbatim, each line tagged src: take | memo | chat>
 9 CONNECTIONS TO DISCLOSE (paid, free product/credits, affiliate, equity, friend/family):
 10 MADE WITH (AI voice, avatar, generated footage, if any):
 11 STAGE (from the growth plan (`## Growth state`), or "no audience yet"):
+12 AWARENESS (unaware | problem- | solution- | product- | most aware; source; the symptom the viewer feels, in their words): `check/awareness.md` §1
 ```
 
 ## One idea per video: tests

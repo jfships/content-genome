@@ -12,7 +12,7 @@ words_out.json : from tools/remap_words.py ({"words": [...], "duration": s}) or 
 --hold         : time of a planned deadpan hold (up to 1.5 s); a gap starting within 0.3 s of it
                  isn't flagged (and a shot containing it may run past the ceiling). Repeat for several holds.
 --pace         : target spoken pace in words a second, from the Brand Genome (default 2.6-3.0).
-                 Prints the speed-up needed to reach it (12% max), or none when already there.
+                 Prints the speed-up needed to reach it (10% max), or none when already there.
 --cuts         : the built Short's shots: a JSON list of shot start times in seconds, or of
                  [start, end] pairs. Prints shot count, average length and every shot over --ceiling.
 --ceiling      : the brand's longest shot in seconds (default 2.5). Proof shots that need reading
@@ -70,10 +70,10 @@ def main():
     print(f"cut {dur:.1f} s · target {length:.0f} s · {len(words)} words · pace {pace:.2f} words/s{flag}")
     if pace and pace < lo:
         need = lo / pace
-        if need <= 1.12:
+        if need <= 1.10:
             print(f"  speed-up to reach {lo} words/s: {round((need - 1) * 100)}% (after trimming gaps; per line if one line drags)")
         else:
-            print(f"  needs {round((need - 1) * 100)}% to reach {lo} words/s: over the 12% cap, re-record the slow lines faster")
+            print(f"  needs {round((need - 1) * 100)}% to reach {lo} words/s: over the 10% cap, re-record the slow lines faster")
     elif pace:
         print("  speed-up needed: none")
 

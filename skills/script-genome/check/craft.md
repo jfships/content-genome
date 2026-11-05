@@ -17,5 +17,8 @@ Report each as present / absent / n.a., with the quoted line. A note that breaks
 | S11 | Order checks: competence shown before any failure beat; fact before myth (one myth, ≤3 counter-points); reveal last, twists bigger and rarer; re-anchor after a twist. | Pratfall research; Debunking Handbook; suspense theory; ad eye-tracking | Only when that beat type exists. |
 | S12 | Variety: not the same shape/arc + hook pair as the last 3 videos (results log). | House variety rule | Unless the log shows it over-performing. |
 | S13 | Freshness (news topics): when did this break; is it still new on the day it posts? Undated "just happened" lines get a date or "as of <month>". | INFERENCE (craft). Flag: weak | Evergreen topics; a news item used only as an example. |
+| S14 | Awareness match: the wording, order and ask fit the viewer's level (`check/awareness.md` §1, §3); rewrites quoted. | Schwartz awareness levels (MANY, copywriting; untested on Reels). Flag: weak | The level is a guess until the creator confirms it. |
+| S15 | Symptom-first opener: the first spoken line and hook text name what the viewer feels, not the problem's label or the fix (`check/awareness.md` §2). | Same basis; house default. Flag: weak | Product- or most-aware posts; a stated contrarian label-first line. |
+| S16 | Pro read: the six questions in `check/awareness.md` §5, each a quoted line or "missing". | Practitioner (script editing) | A "missing" is a question to the creator, never a license to invent. |
 
 House rules (from the brand's `house-rules.md`) are listed separately as HOUSE FLAGS and never fail a script.

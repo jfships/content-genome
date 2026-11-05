@@ -4,6 +4,7 @@ without measuring onsets by hand. Whisper's word times drift 50-150 ms; this mea
 start and moves it to the onset.
 
 usage: python3 onsets.py <take.mp4|wav> work/words.json work/words_onsets.json [--window 0.12] [--words "nine,dollar"]
+       [--drift auto|0|<seconds>]
 
 words.json: [{t0, t1, w}] (transcribe.py), {"words": [...]}, [{start, end, w}] or [[t0, t1, w]], in take time.
 Writes the same words with t0 moved to the onset, the old time kept as t0_asr, and how it was found:
@@ -11,6 +12,10 @@ Writes the same words with t0 moved to the onset, the old time kept as t0_asr, a
   rise  connected speech: the sharpest level rise near the old start (good to ~20 ms; check anchors by ear)
   kept  nothing clear in the window: Whisper's time kept
 --words limits the snap to those words (the graphic anchors); the rest are copied unchanged.
+Drift first: Whisper can put a whole take early or late (0.8 s early has happened), which a 0.12 s search can never
+reach. --drift auto (default) matches every word that starts a phrase (after a pause in the transcript) to the
+nearest rise out of silence within 1.5 s, either side, and shifts all words by the median when 3+ agree; the shift
+is printed and kept per word as "drift". --drift 0 turns it off; a number forces it.
 Prints the words moved more than 40 ms. Needs ffmpeg and numpy.
 """
 import argparse
@@ -69,6 +74,30 @@ def onset(lv, t0, t1, prev, window, floor):
     return (a + k) * HOP, "rise"
 
 
+def drift_auto(lv, words, floor, reach=1.5):
+    need = round(0.02 / HOP); quiet = 0; rises = []
+    for k, v in enumerate(lv):                       # every rise out of >= 20 ms of quiet in the take
+        if v < floor:
+            quiet += 1
+        else:
+            if quiet >= need:
+                rises.append(k * HOP)
+            quiet = 0
+    if not rises:
+        return 0.0, 0
+    rises = np.array(rises)
+    starts = np.array([w["t0"] for i, w in enumerate(words) if i == 0 or w["t0"] - words[i - 1]["t1"] >= 0.25])
+    if len(starts) < 3:
+        return 0.0, len(starts)
+    def hits(s):                                     # phrase starts landing within 50 ms of a rise after shift s
+        return int(sum(np.min(np.abs(rises - (t + s))) < 0.05 for t in starts))
+    grid = np.round(np.arange(-reach, reach + 1e-9, 0.01), 2)
+    score = np.array([hits(s) for s in grid]); best = int(np.argmax(score)); s = float(grid[best])
+    base = hits(0.0)
+    if score[best] >= max(3, 0.4 * len(starts)) and score[best] >= base + 2 and abs(s) > 0.04:
+        return round(s, 3), len(starts)
+    return 0.0, len(starts)
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("take")
@@ -76,12 +105,21 @@ def main():
     ap.add_argument("out")
     ap.add_argument("--window", type=float, default=0.12, help="seconds before the old start to search")
     ap.add_argument("--words", dest="only", help="comma list: snap only these words")
+    ap.add_argument("--drift", default="auto", help="auto, 0, or seconds to shift every word before snapping")
     a = ap.parse_args()
 
     lv = level(a.take)
     floor = max(float(np.percentile(lv, 10)) + 15, -45.0)
     only = {x.strip().lower() for x in a.only.split(",")} if a.only else None
     words, wrapped, data = load(a.words)
+    if a.drift == "auto":
+        dr, n = drift_auto(lv, words, floor)
+        print(f"drift: {dr * 1000:+.0f} ms from {n} phrase starts" + ("" if dr else " (none applied)"))
+    else:
+        dr = float(a.drift)
+    if dr:
+        for w in words:
+            w["t0"], w["t1"], w["drift"] = round(w["t0"] + dr, 3), round(w["t1"] + dr, 3), dr
     count = {"gap": 0, "rise": 0, "kept": 0}
     prev = 0.0
     for w in words:

@@ -8,7 +8,7 @@ A Short is not the long video cropped. It's its own video: written for vertical,
 
 ## Fixed rules (said once in chat, in two plain lines; never asked)
 
-- **Safe box:** anything important stays inside x 65–930, y 250–1500. The top ~250 px is the platform's top bar; the right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~420 px by the caption, handle and audio rows. **Instagram grid crop:** the grid shows a centered 3:4, so only y 240–1680 survive. Both are drawn on every vertical mock, on every page.
+- **Safe box:** anything important stays inside x 65–930, y 210–1500. The top ~210 px is the platform's top bar (Reels top UI measured about 210–220 px on 1080×1920 by two creator-tool sites, 2026-04 and 2026-05; Meta's larger figures are for ads; recheck yearly); the right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~420 px by the caption, handle and audio rows. **Instagram grid crop:** the grid shows a centered 3:4, so only y 240–1680 survive. Both are drawn on every vertical mock, on every page.
 - **The hook:** lands in the first 1–2 s on three layers together: the creator (or their real material) on screen in frame 1, a spoken line, and 3–7 words of hook text visible from frame 1. Frame 1 makes sense with no context. Nothing comes before it.
 - **Openers:** no sting, no sound logo, no name tag on Shorts. Corner mark off.
 - **Series tag:** the series or show name never appears on a Short or Reel; each one stands alone. Only "Part N" for a numbered part, folded into the hook text (or a small tag right after the hook). Never before the hook, never competing with it.
@@ -28,7 +28,7 @@ Then write the **framing marks** into `vertical.md` (no question): chest-up medi
 
 The default backdrop (Stage 4, step 8) gets a 1080×1920 version, **built tall, never a crop of the 16:9 plate**:
 - Plains, gradients and patterns: redrawn tall in the palette. Free.
-- A scene (a backdrop photo, or the room they're cut out over): rebuilt tall with the same objects and light, open space behind the head (y 250–900) and nothing busy behind the captions. Free path until it exists: the palette plain, tall. The tall scene comes from the creator's own upright photo of the space, or an image tool if they want one (name it and the cost from its own price check; run only on a yes).
+- A scene (a backdrop photo, or the room they're cut out over): rebuilt tall with the same objects and light, open space behind the head (y 210–900) and nothing busy behind the captions. Free path until it exists: the palette plain, tall. The tall scene comes from the creator's own upright photo of the space, or an image tool if they want one (name it and the cost from its own price check; run only on a yes).
 
 Say it in one line: "I built your backdrop tall for Shorts." It sits behind the backdrop and cut-out layouts on the next page and on the Brand Genome page. Save it to `01 Brand Kit/exports/` with a `Type: kit` row in `07 Asset Library/asset-index.md`.
 
@@ -45,16 +45,16 @@ Say it in one line: "I built your backdrop tall for Shorts." It sits behind the 
 
 | Family | Face | Content | Captions | Hook text |
 |---|---|---|---|---|
-| Full face | chest-up, head in the top 30–40%, eyes y ≈ 640, centered | none, or graphics beside the face | y 1150–1400, below the chin | y 250–520, above the head |
-| Stacked | below the band: chest-up, eyes about y 1050, chin above y 1250 | a 16:9 band on top, full width, y 250–858 (1080×608) | y 1280–1400, below the chin | over the top of the band, y 250–520 |
-| 60/40 split | the lower 40% (from y 1152): head and shoulders, eyes a third down the panel, face inside y 1152–1500 | the top 60% | centered on the seam (y ≈ 1150), never across the eyes | over the top of the content, y 250–520 |
-| Corner face | a box about 360×480 at lower left (x 65–425, y 970–1450), never on the right rail | full frame | beside or above the face box, inside the safe box | y 250–520 |
+| Full face | chest-up, head in the top 30–40%, eyes y ≈ 640, centered | none, or graphics beside the face | y 1150–1400, below the chin | y 210–480, above the head |
+| Stacked | below the band: chest-up, eyes about y 1050, chin above y 1250 | a 16:9 band on top, full width, y 210–818 (1080×608) | y 1280–1400, below the chin | over the top of the band, y 210–480 |
+| 60/40 split | the lower 40% (from y 1152): head and shoulders, eyes a third down the panel, face inside y 1152–1500 | the top 60% | centered on the seam (y ≈ 1150), never across the eyes | over the top of the content, y 210–480 |
+| Corner face | a box about 360×480 at lower left (x 65–425, y 970–1450), never on the right rail | full frame | beside or above the face box, inside the safe box | y 210–480 |
 
 A split (stacked or 60/40) only when both must be seen at the same moment.
 
 ## 4. Hook text (fixed, one pick page)
 
-The 3–7 words on screen from frame 1 that tell a stranger why to stay. Start from `../page-template/examples/hook-text.json` (phone frames, safe box and grid crop drawn), title "Hook text", 6–10 options: the locked text style (Stage 4, step 6), its backup and alternatives at hook size (brand layer, drawn), plus the hook-only styles as their HOOK stock samples restyled in the locked text style (`../catalog/vertical-voice-formats.md`, "Hook text styles"; `../voting-pages.md`, "Stock samples"). Say in one line that it starts from their text style. Each option sits at y 250–520 above the face on the full-face layout, with the vertical captions below the chin; one option folds "Part 2" into the hook to show the series-tag rule. One page, no finalists (the text style was already narrowed in Stage 4): **Main** · **Backup** · **Alternative** · **Discard**. Rules written with it: 3–7 words, on screen from frame 1 for at least 2 s, never touching the captions or the face, inside the safe box, at least 44 px.
+The 3–7 words on screen from frame 1 that tell a stranger why to stay. Start from `../page-template/examples/hook-text.json` (phone frames, safe box and grid crop drawn), title "Hook text", 6–10 options: the locked text style (Stage 4, step 6), its backup and alternatives at hook size (brand layer, drawn), plus the hook-only styles as their HOOK stock samples restyled in the locked text style (`../catalog/vertical-voice-formats.md`, "Hook text styles"; `../voting-pages.md`, "Stock samples"). Say in one line that it starts from their text style. Each option sits at y 210–480 above the face on the full-face layout, with the vertical captions below the chin; one option folds "Part 2" into the hook to show the series-tag rule. One page, no finalists (the text style was already narrowed in Stage 4): **Main** · **Backup** · **Alternative** · **Discard**. Rules written with it: 3–7 words, on screen from frame 1 for at least 2 s, never touching the captions or the face, inside the safe box, at least 44 px.
 
 The same page shows one reference card with no buttons (`control: true`), **Your captions on a Short**: the Stage 4 caption style at the vertical spec, in a phone frame with the safe box drawn on:
 - the Stage 4 caption spec fields (`look.md` "Caption spec": case, font and weight, size, plate, lines, box and centering, key word), shown as they are
@@ -97,13 +97,26 @@ Reels are covered above. Instagram's other two formats have their own rules. Che
 
 ### Carousels
 
-Starting rules (say them in two plain lines in chat; the creator can change any):
+**Craft rules** (slide plan, slide-one hook, keeper slide, last-slide ask by growth stage, text size at feed scale, swipe cues, 4:5 layout) live in one file: script-genome `catalog/carousel.md`. Read it if script-genome is installed; otherwise the starting rules below are enough. This stage decides the **look**, and the look comes from what the creator actually posts, not from a fixed style.
+
+**Step 1: read what they post.** Ask for their last 3–5 posted carousels (files, screenshots or links) and read them. Write what you see into the **carousel look** field below, in plain words, and show it back to the creator to confirm. If they have posted none, offer the starting rules and layouts below as labeled tests ("not yet tested on your audience") and write what they pick.
+
+**Carousel look field** (goes in `vertical.md` and the Brand Genome; every value is read from the posts or chosen by the creator, never defaulted):
+- Layout: e.g. stacked two-panel split, full-bleed photo, text card, mixed (name which)
+- Caption or text style: font, weight, size at 1080 wide, color, outline or block, one accent-color key word or none, where it sits
+- Handle on slides: yes / no · Page counter: yes / no · Swipe cue on slide 1: yes / no
+- Brand fonts and brand palette on slides: yes / no (a plain caption style that differs from the brand fonts is allowed; write it down)
+- Last-slide card: none / plain closing line / branded card
+- Source: the posts it was read from and the date; "tests, no posts yet" if chosen from the options
+A reviewer or builder reading a carousel against the brand uses this field, not the vertical video style; it never adds a handle, counter or cue the field says is off.
+
+Starting rules when no posts exist (say them in two plain lines in chat; the creator can change any; these are options, not the look):
 - **Canvas:** 1080×1350 (4:5), one ratio for the whole carousel, never 1:1 and 4:5 mixed. The profile grid shows a centered crop (sources disagree on the exact shape, check live), so keep the key words and faces in the middle. Keep text out of the top 120 px and bottom 150 px, and 65 px off the sides (house numbers).
-- **Slide 1 is the hook:** one specific claim or number, high contrast, readable at feed size; a swipe cue on slide 1 only; a logo, if any, under 15% of the slide.
+- **Slide 1 is the hook:** one specific claim or number, high contrast, readable at feed size. A swipe cue, a progress mark and a logo are options the look field turns on or off.
 - **Length:** 6–10 slides (the platform allows 20; guides put 7–10 best; no official number).
-- **Value slides:** one idea each, under about 25 words, at most two type sizes (headline, body), a progress mark like "3 / 7".
+- **Value slides:** one idea each, under about 25 words, at most two type sizes.
 - **Text sizes** (house numbers at 1080 wide; no source gives any): headline at least 80 px, body at least 44 px.
-- **Last slide** mirrors slide 1 (same color and type) and asks for one thing: save, follow, send to someone, or comment. A link only if the link is the point. The caption is short and never repeats the slides.
+- **Last slide** asks for one thing, chosen by growth stage (craft file §7). The caption is short and never repeats the slides.
 
 **Page: carousel layouts** (library, skippable). Start from `../page-template/examples/vertical-layouts.json` and swap the phone for a 4:5 slide strip: 8–10 layouts, each showing three slides (cover, a value slide, the last slide) in the locked palette, fonts and text style, with the creator's real photo or a drawn stand-in. Include a stacked "podcast split" (two wide, zoomed-out framings of the creator one above the other, one written line per panel, each line in its own frame; carousel-only if the brand bans split screen while talking). Say on the page: "Seen a layout you like that isn't here? Tell me and I'll add it." An added layout is built the same way, goes on the same page and is voted like the rest. **Keep in library** / **Discard**. Skipped → "Carousel layouts: owed" in `vertical.md`; video-genome never guesses them.
 
@@ -120,6 +133,6 @@ Write the four frame specs (hook, proof, poll, link: what's in it, where the tex
 
 ## Output
 
-`vertical.md`: how they shoot Shorts and the framing marks; the tall backdrop (file path); the kept layouts by stock id with their use-when and framing spec; owed samples; hook text (Main, Backup, alternatives, rules); the caption spec (fields); the kept Short endings; covers (kept, or the skipped default); the fixed rules (hook, openers, series tag, endings); safe box and 3:4 crop numbers with the date checked; the audio policy per platform and the music lane; the vertical pacing row; the pages' artifact URLs. If Instagram was picked: the carousel rules and kept layouts (or "owed"), and the Stories frame specs and Highlight covers (or "skipped: under the follower gate").
+`vertical.md`: how they shoot Shorts and the framing marks; the tall backdrop (file path); the kept layouts by stock id with their use-when and framing spec; owed samples; hook text (Main, Backup, alternatives, rules); the caption spec (fields); the kept Short endings; covers (kept, or the skipped default); the fixed rules (hook, openers, series tag, endings); safe box and 3:4 crop numbers with the date checked; the audio policy per platform and the music lane; the vertical pacing row; the pages' artifact URLs. If Instagram was picked: the carousel look field and kept layouts (or "owed"), and the Stories frame specs and Highlight covers (or "skipped: under the follower gate").
 
 **Hand-off at the end of Vertical** (one line): "Shorts and Reels are done. Next: your Brand Genome, everything you picked in one place."

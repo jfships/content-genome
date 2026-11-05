@@ -1175,9 +1175,9 @@ finalist_flow("banner", "Banner", "The wide image at the top of your channel pag
 
 # ---------- 17. Vertical: layouts library, each a real 9:16 test frame in a phone, with the app's buttons ghosted ----------
 # Built on the native vertical test photo, never a 16:9 photo cropped to 9:16. Every phone draws the safe box
-# (x 65-930, y 250-1500 on 1080x1920, dashed) and the Instagram 3:4 grid crop (y 240-1680 survive, dotted lines).
+# (x 65-930, y 210-1500 on 1080x1920, dashed) and the Instagram 3:4 grid crop (y 240-1680 survive, dotted lines).
 VF = "img/10-car-vertical.jpg"
-SAFE = ('<div style="position:absolute;left:6.02%;width:80.09%;top:13.02%;height:65.1%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none"></div>'
+SAFE = ('<div style="position:absolute;left:6.02%;width:80.09%;top:10.94%;height:67.19%;border:.5cqw dashed rgba(255,255,255,.9);box-shadow:0 0 0 .25cqw rgba(0,0,0,.35);z-index:6;pointer-events:none"></div>'
         + ''.join(f'<i style="position:absolute;left:0;right:0;top:{y};border-top:.5cqw dotted rgba(255,255,255,.85);box-shadow:0 0 0 .2cqw rgba(0,0,0,.3);z-index:6;display:block"></i>' for y in ("12.5%", "87.5%")))
 def phone(inner):
     ui = (f'<div style="position:absolute;right:3.5%;bottom:18%;display:grid;gap:5cqw;justify-items:center;opacity:.55;z-index:5">'
@@ -1211,7 +1211,7 @@ VERT = [  # id, name, tier, line, inner
   f'<div style="position:absolute;left:0;right:0;top:0;height:50%">{VIMG(VF, "50% 28%", "filter:grayscale(1) brightness(.75)")}</div><div style="position:absolute;left:0;right:0;bottom:0;height:50%">{VIMG(VF, "50% 28%", "filter:saturate(1.25)")}</div>'
   + ''.join(f'<span style="position:absolute;left:6%;top:{t};z-index:4;font:400 9cqw/1 {TITLE};background:{b};color:{c};padding:1cqw 3cqw">{w}</span>' for t, b, c, w in [("6%", "#fff", TX, "DAY 1"), ("56%", HL, TX, "DAY 30")])),
  ("reaction", "Reaction", "R", "For: reacting to something, your face small at the bottom.",
-  f'<div style="position:absolute;left:0;right:0;top:44.7%;bottom:0">{VIMG(VF, "50% 18%")}</div><div style="position:absolute;left:0;right:0;top:13%;aspect-ratio:16/9;overflow:hidden;z-index:2">{SCREEN}</div>'
+  f'<div style="position:absolute;left:0;right:0;top:42.6%;bottom:0">{VIMG(VF, "50% 18%")}</div><div style="position:absolute;left:0;right:0;top:10.94%;aspect-ratio:16/9;overflow:hidden;z-index:2">{SCREEN}</div>'
   f'<span style="position:absolute;left:6%;top:47%;z-index:4;background:{EX2};color:{TX};font:800 5cqw {TEXT};padding:1cqw 2.6cqw;border-radius:2cqw">wait for it…</span>' + VCAP("67%")),
  ("quote", "Big quote", "R", "For: one line you want people to screenshot.",
   f'<div style="position:absolute;inset:0;background:{TX};display:grid;align-content:center;padding:0 9%;gap:4cqw"><div style="font:400 30cqw/.6 {F["fr"]};color:{HL}">“</div>'
@@ -1265,25 +1265,25 @@ W("vertical-layouts", {
  "sections": [vsec("everyday", "Everyday", "", VERT), vsec("cutout", "Cut-out and green screen", "Your background removed or replaced.", VERT_CUT), vsec("bfr", "Break-from-reality", "Layouts that bend the frame for a laugh.", VERT_BFR)]})
 
 # ---------- 17b. Vertical: hook text (fixed: Main / Backup / Alternative / Discard), phone frames, safe box + grid crop drawn ----------
-# The words sit at y 250-520 (13%-27% of the frame) above the face, on screen from frame 1. Each option is the locked
+# The words sit at y 210-480 (11%-25% of the frame) above the face, on screen from frame 1. Each option is the locked
 # text style or a hook-only style at hook size; the full-face layout and the vertical captions sit below the chin.
 HOOK_WORDS = "Nobody tells you this"
 def hook_card(inner):
     return phone(VIMG(VF) + inner + VCAP("66%"))
 HOOKS = [  # id, name, line, inner html
  ("hook-block", "Color block", "Words on a solid block in your pop color.",
-  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4"><span style="display:inline-block;background:{HL};color:{TX};font:400 12cqw/1 {TITLE};padding:1.5cqw 3.5cqw">{HOOK_WORDS.upper()}</span></div>'),
+  f'<div style="position:absolute;left:7%;right:7%;top:11.5%;z-index:4"><span style="display:inline-block;background:{HL};color:{TX};font:400 12cqw/1 {TITLE};padding:1.5cqw 3.5cqw">{HOOK_WORDS.upper()}</span></div>'),
  ("hook-outline", "Outlined", "Big white words, dark outline, no box.",
-  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 14cqw/.95 {TITLE};color:#fff;-webkit-text-stroke:.9cqw {TX};paint-order:stroke fill;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.5)">{HOOK_WORDS.upper()}</div>'),
+  f'<div style="position:absolute;left:7%;right:7%;top:11.5%;z-index:4;font:400 14cqw/.95 {TITLE};color:#fff;-webkit-text-stroke:.9cqw {TX};paint-order:stroke fill;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.5)">{HOOK_WORDS.upper()}</div>'),
  ("hook-two-tone", "Two-tone", "One key word in the pop color, the rest white.",
-  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 14cqw/.95 {TITLE};color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)">NOBODY TELLS YOU <span style="color:{HL}">THIS</span></div>'),
+  f'<div style="position:absolute;left:7%;right:7%;top:11.5%;z-index:4;font:400 14cqw/.95 {TITLE};color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)">NOBODY TELLS YOU <span style="color:{HL}">THIS</span></div>'),
  ("hook-label", "Label + line", "A small label above one big line.",
-  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4"><div style="display:inline-block;background:#fff;color:{TX};font:800 4.6cqw {TEXT};padding:.8cqw 2.4cqw;border-radius:1.4cqw;margin-bottom:2cqw">WEEK ONE</div>'
+  f'<div style="position:absolute;left:7%;right:7%;top:11.5%;z-index:4"><div style="display:inline-block;background:#fff;color:{TX};font:800 4.6cqw {TEXT};padding:.8cqw 2.4cqw;border-radius:1.4cqw;margin-bottom:2cqw">WEEK ONE</div>'
   f'<div style="font:400 13cqw/.95 {TITLE};color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)">{HOOK_WORDS.upper()}</div></div>'),
  ("hook-sticker", "Sticker", "Words on a tilted, thick-outlined sticker.",
-  f'<div style="position:absolute;left:8%;top:14%;z-index:4;transform:rotate(-4deg);background:{EX2};color:{TX};border:1.2cqw solid #fff;border-radius:3cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.35);font:400 11cqw/1 {TITLE};padding:1.6cqw 4cqw">{HOOK_WORDS.upper()}</div>'),
+  f'<div style="position:absolute;left:8%;top:12%;z-index:4;transform:rotate(-4deg);background:{EX2};color:{TX};border:1.2cqw solid #fff;border-radius:3cqw;box-shadow:0 1cqw 3cqw rgba(0,0,0,.35);font:400 11cqw/1 {TITLE};padding:1.6cqw 4cqw">{HOOK_WORDS.upper()}</div>'),
  ("hook-part", "Part N + hook", "\"Part 2\" folded into the hook line (numbered series only).",
-  f'<div style="position:absolute;left:7%;right:7%;top:13.5%;z-index:4;font:400 13cqw/.95 {TITLE};color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)"><span style="display:inline-block;vertical-align:middle;background:{HL};color:{TX};font:800 4.6cqw {TEXT};padding:.8cqw 2.2cqw;border-radius:5cqw;margin-right:2cqw">PART 2</span>{HOOK_WORDS.upper()}</div>')]
+  f'<div style="position:absolute;left:7%;right:7%;top:11.5%;z-index:4;font:400 13cqw/.95 {TITLE};color:#fff;text-shadow:0 .6cqw 2cqw rgba(0,0,0,.55)"><span style="display:inline-block;vertical-align:middle;background:{HL};color:{TX};font:800 4.6cqw {TEXT};padding:.8cqw 2.2cqw;border-radius:5cqw;margin-right:2cqw">PART 2</span>{HOOK_WORDS.upper()}</div>')]
 W("hook-text", {
  "round": "hook-text", "kind": "fixed", "fonts": ["bebas-neue", "inter"], "aspect": "3/4.6", "photoTag": PHOTO_TAG,
  "title": "Hook text", "what": "The words on screen from the first frame. Dashed box: keep words inside. Dotted lines: what the grid keeps.",

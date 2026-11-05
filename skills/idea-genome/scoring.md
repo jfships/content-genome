@@ -6,6 +6,7 @@ Say this in plain words, adapted to the creator:
 - The score asks six questions about the idea, each rated 1–5 and weighted: Click appeal ×3, Proof ×3, Personality fit ×2, Freshness ×2, Effort ×1, Past results ×1. Max 60.
 - 42+ = make it next. 30–41 = park it, and I'll say what would raise it. Under 30 = reject.
 - A Short / Reel uses its own table (below): max 70, 49+ make it next, 35–48 park, under 35 reject.
+- A still carousel uses its own table (last section): max 70, same cut points as a Short.
 - It rates the IDEA (is it worth making?), not how well the video will be made. Execution quality is checked later, in video-genome's reviews.
 - Some lines can rise before or during production: Proof rises when the missing proof gets made; Click can rise with a sharper title or thumbnail. Effort and Personality fit usually don't move.
 - Every line comes with one line of evidence. Where there's no data (a new channel has none for Click or Freshness), I mark it as a guess.
@@ -57,3 +58,26 @@ Shorts get swiped, not clicked, and they spread by being sent. So Click appeal i
 - **Under 35**: reject, with the reason in the bank.
 
 The bank's score column takes `NN/70` for Shorts.
+
+## A still carousel
+
+Carousels are saved and sent, not swiped past or clicked. Stop + hold becomes Cover + second look, Send reason stays, and Save reason is added. Freshness is dropped (a slide idea can't be gap-scanned fairly); name overlaps with other ideas in the record's Overlaps section instead. Craft rules behind each line: script-genome `catalog/carousel.md`.
+
+**Before scoring:** a carousel whose slide 1 fails the stranger test (read alone, out of order, no caption: does a stranger get it?) or that needs video to land is rejected, like a truth-rule break. It never gets a number.
+
+| Criterion | Weight | 5 means | 1 means | Evidence to cite |
+|---|---|---|---|---|
+| Cover + second look | 3 | Slide 1 stops a stranger and slide 2 works as its own cover for someone who skipped | Slide 1 needs the caption; slide 2 only continues slide 1 | The slide-1 and slide-2 lines read cold |
+| Send reason | 2 | A clear person would send it to a clear someone | Nobody would forward it | The "sent to" line |
+| Save reason | 2 | The keeper slide is something people screenshot and act on alone | No keeper: a take with nothing to keep | The keeper line |
+| Proof | 3 | The creator can back every claim today | Needs proof they don't have | Proof items we have / still need |
+| Personality fit | 2 | As the long table (brand fit, truth rules, no forced pitch) | Needs a twist bolted on | Genome wording, only-you line |
+| Effort | 1 | The slides and their pictures fit the publishing rhythm | New shoots or panels break it | The pictures and shoots it needs |
+| Past results | 1 | Similar carousels over-performed in `results-log.md` | Under-performed | Log rows; 3 and "no log yet" if none |
+
+**Total** = sum of score × weight (max 70). Cut points as a Short:
+- **49+**: recommend making it next.
+- **35–48**: park; say what would raise it and to how much.
+- **Under 35**: reject, with the reason in the bank.
+
+The bank's score column takes `NN/70`, Format `carousel`. Provisional: nobody has results on this table yet; rescore after three posted carousels.

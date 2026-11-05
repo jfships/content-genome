@@ -55,7 +55,7 @@ Publishing is done by hand for now; this skill stops at finished files and picks
 | 2. Asset debt | `plan/asset-debt.md` + `craft/asset-library.md` | Everything owed listed, library searched, creator's list sent |
 | 3a. Graphics first | `paths/graphics-first.md` | Beat brief written → draft reviewed → recording → cut → placement → rebuild; final cutout method decided before the first final draft |
 | 3b. Footage first | `paths/footage-first.md` | Shoot brief → footage → cut → style of the edit → beat brief → build; final cutout method decided before the first final draft |
-| 4. Sound | `craft/sound.md` | Levels metered, mix to target |
+| 4. Sound | `craft/sound.md` | `sound_check.py` passes and the creator heard the listen file before approving |
 | 5. Checks | `review/checks.md` | Gates 2–4 pass, debt is zero, technical review clean, beat-brief self-check done |
 | 6. Deliver | `craft/deliverables.md` + `review/session-close.md` | Every file meets its platform's spec; brand review done |
 | 7. Results | `learn/results-log.md` | Row fields handed to growth-genome when the post goes live (growth-genome is the log's only writer) |
@@ -106,7 +106,7 @@ Read when their part starts:
 6. **Show the real thing.** When the script says they built, made or decided something, show the real artifact (screens, pages, footage, the object), each one visibly different.
 7. **Every scene is laid out, not placed.** Placement is re-decided per scene from what's on screen (`craft/layout.md`); every still passes its check.
 8. **Every graphic does a job, and is designed, not picked.** A graphic is the straight man, the unsaid line, the exaggeration, the proof, or a planned breather (`craft/graphic-jobs.md`). One that only illustrates the line is cut. Candidates come from every source (the subject's material, the brand's devices, a new device in brand limits, a generated image or clip); the pick is written with its reason in the beat brief; the brand's lists are a floor, never a ceiling. Readable on a phone, always.
-9. **Converge on stills, not renders.** Stills take seconds and renders take minutes. Fix layout in stills first. Drafts render at the draft quality the creator picked in intake, with the fast rough cutout; finals render at full quality with the final cutout method, decided before the first final draft (`plan/intake.md`, `plan/run-sheet.md` item 14). **Fix rounds patch; they don't re-render.** A whole-video render is for a draft the creator watches and for the final. Between them, a review or fix round redraws only the changed beats and splices them in, or remixes and remuxes when the fix is sound only (`review/checks.md`, "Fix rounds").
+9. **Converge on stills, not renders.** Stills take seconds and renders take minutes. Fix layout in stills first. Drafts render at the draft quality the creator picked in intake, with the fast rough cutout; finals render at full quality with the final cutout method, decided before the first final draft (`plan/intake.md`, `plan/run-sheet.md` item 14). **Fix rounds patch; they don't re-render.** A whole-video render is for a draft the creator watches and for the final. On the Shorts track drafts are never rendered: the creator watches the live preview, and every check runs on the composition (`tools/glitch_gate.py`); the final is the only render. Between them, a review or fix round redraws only the changed beats and splices them in, or remixes and remuxes when the fix is sound only (`review/checks.md`, "Fix rounds").
 10. **Technical review, then the creator judges.** A separate agent that didn't build the video runs the technical review (`review/checks.md` gate 4): clipped words, collisions, safe box, freezes, durations, levels, pace, glitches, as a pass/fail list with times. Nothing reaches the creator with an open item. Taste is the creator's: the builder's own check is the beat brief, never a score, and any taste question goes to them on a rendered clip card.
 11. **Money and credits.** Before any paid generation (music, voices, images, video), name the tool, what it makes and the cost from the tool's own price check, and wait for approval unless the brand's budget pre-approves it.
 12. **Disclose what must be disclosed.** Realistic synthetic people, voices or events get the platform's label (check current rules).
@@ -168,14 +168,25 @@ Content Creation/
 |---|---|
 | `grade.py` | Applies the brand's grade recipe to footage or stills |
 | `brand_check.py` | Lists colors and fonts in a build that aren't in the brand's pack |
-| `onsets.py` | Snaps word starts to where the sound really begins in the take (Whisper drifts 50–150 ms), so a graphic keyed to a word lands on it; run it on the take's words before `remap_words.py`, with `--words` for just the anchors |
+| `onsets.py` | Snaps word starts to where the sound really begins in the take, so a graphic keyed to a word lands on it: first a whole-take shift when Whisper runs early or late (up to 1.5 s either way), then each start (drift 50–150 ms); run it on the take's words before `remap_words.py`, with `--words` for just the anchors |
 | `remap_words.py` | Moves word times from the raw take onto the cut |
 | `mix.py` | Voice clean-up, music ducked under voice, SFX, sound logo, loudness master |
 | `reframe_vertical.py` | One 16:9 source clip → a 9:16 part, following the speaker's head (a part for a Short, never the long edit) |
 | `short_timing.py` | A Short's timing numbers: pace, gaps, first payoff, word budget (`shorts/checks.md`) |
 | `tech_review.py` | The technical review on a render: clipped words at cuts, caption timing, case, centering and collisions, uncaptioned speech, safe box and layout boxes per beat, unplanned freezes, graphic durations, levels, pace (`review/checks.md` gate 4) |
 | `draft_checks.py` | Per-frame checks on every draft: lips above the bottom line, blank flashes at cuts, clipped word endings, moves out of delivery before a cut, angle changes mid-sentence, overlays vs the face through their animation, and a linger sheet per beat end (`review/checks.md` gate 4) |
-| `take-check.html` | Take Check: the creator marks every take keep / maybe / drop in the browser; its summary (file + start/end per kept take) feeds the cut (`shorts/build.md`) |
+| `comp_stills.py` | Stills straight from a HyperFrames composition, no render (timeline seek, each video at its own time, clips hidden outside their window), plus what is on screen per element |
+| `glitch_gate.py` | The glitch and seam gate on the composition, no render: pops, black frames, doubled frames, jump cuts with a head-jump number per cut, seams, marks early, short holds, hard entrances, nudges, text blocks, clip timing, sound, lip-sync drift, flicker; pass/fail list, accepted-flags list (`shorts/build.md` "Glitch gate") |
+| `frame_map.py` | Which take frame each on-camera clip shows against the voice: lip-sync drift, doubled first frame, rewinds, dropped frames |
+| `cut_segment.py` | Cuts a take segment (optionally with its matte) to a clip file with frames at true time; prints the half-frame start to paste |
+| `cutout_flicker.py` | How much a cutout's edge flickers (spots a second, head third judged) |
+| `edge_smooth.py` | Calms a flickering cutout edge with motion-compensated smoothing of the edge band |
+| `lip_sync.py` | Mouth opening against the voice on a take or clip: the lag in frames (cross-correlation, plus the b/p/m lip-release check) |
+| `voice_stretch.py` | Voice speed-up with Rubber Band's finer engine, 1.10× limit, optional A/B file |
+| `sound_check.py` | The sound step: loudness, true peak, clipping, bed length, voice over bed, render vs mix, listen file |
+| `steady_scan.py` | Camera speed and shake per second of a clip, to pick steady windows |
+| `track_blur.py` | Blurs a moving box (a house number, a plate) through a shot, tracked frame by frame |
+| `take-check.html` | Take Check: the creator marks every take keep / maybe / drop in the browser, with a comment per take, the builder's proposed marks and the beat's picture; its summary (file + start/end per kept take) feeds the cut (`shorts/build.md`) |
 | `preview.bat` | Live-preview launcher template for the video folder; fill the video name and the HyperFrames version from the log (`shorts/build.md` "Live preview") |
 | `thumb_text.py` | Builds and measures a thumbnail's text block to the rules in `craft/thumbnails.md` |
 | `talking-head/` | Transcription, inspection, background blur/zoom, mattes, speaker-to-side, captions, composite, thumbnails, motion engine |

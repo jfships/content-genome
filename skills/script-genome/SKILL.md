@@ -43,7 +43,9 @@ Same map as the other genome skills (`Brands/<Brand>/`). Read only what the step
 | `00 Decisions/house-rules.md` | Hard no's for this brand (beat card lint reads them) |
 | `00 Decisions/voice-kit.md`, `Who I Am.md` (Voice, Proof) | Voice, signature phrases, real proof; voice-kit's **Pace log** (date · video · mode · words/s) sets the planning pace (`write/budget.md`). Create the section on first use |
 | `00 Decisions/line-ledger.md` | Lines the creator kept or cut before, with reasons |
-| `04 Ideas/swipe-library.md` | Only entries marked CRAFT or matching this video's type; borrow only what the creator flagged (swipe-file skill) |
+| `04 Ideas/swipe-library.md` | Only entries marked CRAFT or matching this video's type; borrow only what the creator flagged (swipe-file skill). Its "Closings bank" feeds `write/closings.md` |
+| `04 Ideas/script-toolbox.md` | The creator's saved script devices in one list (structures, hooks, retention, messaging checks, closings, principles). Read before step 3 and in `write/from-devices.md`; each candidate names the toolbox devices it uses. A device or register it marks "not for now" is not offered |
+| `04 Ideas/hook-bank.md`, `04 Ideas/cta-bank.md` | Fill-in hook shapes and ask lines saved by the creator: shapes, never finished lines. Hooks in step 3; asks in `write/closings.md` |
 | `00 Decisions/growth-plan.md`, section `## Growth state` (written by growth-genome; a YAML block) | `stage`, `post_job_now`, `audience`, `offers`, `cta_allowed_now`, `cta_not_yet`, `house_bans`. Endings and asks come only from `cta_allowed_now`; `house_bans` always win; the slot's job in the Idea Record overrides `post_job_now` for that post (`catalog/endings.md` §4) |
 | `03 Videos/results-log.md` | Last 3 shapes/arcs/hooks (variety), past results |
 | The Idea Record (`IDEA NNN`) | Message, angle, feeling, shape if already picked |
@@ -53,18 +55,18 @@ No growth plan → say once that growth-genome set-up would set this, then use t
 Tracker line on every reply that moves the work: "Script · step 3 of 7".
 | Step | What | File |
 |---|---|---|
-| 1. Intake | Take the raw words verbatim. Ask at most 3 things if missing: who it's for, the one thing they'll know or can do after, the proof. Fill the worksheet. | `write/intake.md` |
+| 1. Intake | Take the raw words verbatim. Ask at most 3 things if missing: who it's for, the one thing they'll know or can do after, the proof. Fill the worksheet, including the viewer's awareness level and the symptom they feel (line 12). | `write/intake.md`, `check/awareness.md` §1 |
 | 2. One idea | Core claim in one sentence ≤20 words; one-idea tests; extra ideas go to a parked list (or a series), never smuggled in. | `write/intake.md` |
-| 3. Pick | Selector: 2 candidates + 1 wildcard, each offered as shape/arc (plus optional operator and line rule) + a two-line example in their topic + what it changes. Creator picks (AskUserQuestion). After the pick: load the chosen card(s) (skeleton, twin arc if any, hook, ending) and fill the full selector header (hook, ending, clash checks) for the chosen candidate only. Hook: write 2–3 three-layer versions, ranked. | `catalog/selector.md` + `catalog/hooks.md` + `catalog/endings.md`; then the chosen card(s) |
-| 4. Outline | Beats with % / seconds / word budget; hook, re-hook, payoff and ending marked. Re-hook beat for runtimes ≥30 s. | `write/budget.md`, the card, `catalog/retention.md` (re-hook device card, ≥30 s) |
+| 3. Pick | Selector: 2 candidates + 1 wildcard, each offered as shape/arc (plus optional operator and line rule) + a two-line example in their topic + what it changes. Creator picks (AskUserQuestion). After the pick: load the chosen card(s) (skeleton, twin arc if any, hook, ending) and fill the full selector header (hook, ending, clash checks) for the chosen candidate only. **Then build in parts:** 5 hooks (three-layer, from at least 3 families, at least 2 symptom-first, the brand's hook bank tried first, ranked); one middle (a second only when the order is a real choice); 2–3 closes (`write/closings.md`). The card locks one of each; the unused parts stay listed under it as alternatives. | `catalog/selector.md` + `catalog/hooks.md` + `catalog/endings.md` + `check/awareness.md` §2; then the chosen card(s) |
+| 4. Outline | Beats with % / seconds / word budget; hook, re-hook, payoff and ending marked; beat order follows the awareness level (`check/awareness.md` §1) unless the shape says otherwise. Re-hook beat for runtimes ≥30 s; 15–25 s: `catalog/retention.md` §2 "Where the main re-hook goes". | `write/budget.md`, the card, `catalog/retention.md` (re-hook device card) |
 | 5. Draft | Build each beat from the creator's own phrases; every line tagged `src` (take / memo / chat / new). | `write/passes.md` |
-| 6. Passes | cut → specifics → show → verbs → hedges/AI-tells → hook → ending → facts → read-aloud timing → keep-voice diff | `write/passes.md`, `voice/` |
-| 7. Card | Whole-script pass first (`write/passes.md` k: hook, proof, why/stakes, turn, payoff, loop each have a quoted line, or n.a. with a reason; never lock with a gap). Then the script card with edit intent per beat; run lint; show the creator the card + the job list + the before/after list + parked ideas + facts to verify. | `card/schema.md`, `card/triggers.md`, `card/lint.md` |
+| 6. Passes | cut → specifics → show → verbs → hedges/AI-tells → hook → ending → facts → read-aloud timing → keep-voice diff | `write/passes.md`, `voice/`, `write/closings.md` |
+| 7. Card | Whole-script pass first (`write/passes.md` k: hook, proof, why/stakes, turn, payoff, loop each have a quoted line, or n.a. with a reason; never lock with a gap), then the awareness rewrite and pro read (pass l, `check/awareness.md`). Then the script card with edit intent per beat; run lint; show the creator the card + the job list + the before/after list + parked ideas + facts to verify. | `card/schema.md`, `card/triggers.md`, `card/lint.md` |
 Then: if a video is being made, hand the card to video-genome (Shorts track item 6 / long-form run-sheet step 6) if it is installed; otherwise the card is the edit brief for the creator or editor. Save the card to the video folder as `script.md` (or `04 Ideas/SCRIPT NNN <slug> vN.md` before a video folder exists). Each new version is a new file (`v2`, `v3`); never overwrite.
 
 ## Job B: check (flow)
 1. Read the script as given (any format). Convert to beats internally; don't rewrite it.
-2. Load `check/gates.md`, `check/craft.md`, `check/report.md`, `write/budget.md` (for C3), `voice/tells.md` (for S4) and the brand's `house-rules.md` if present. Run the gates (hard), then the function read, then craft notes, then house rules, then the `card/lint.md` items that apply to a plain script: K1–K4, K6 (hook screen text vs caption, if both are given), K11, K12, K14 (K5, K7–K10, K15 need card fields; K15's facts are covered by gate A3).
+2. Load `check/gates.md`, `check/craft.md`, `check/report.md`, `check/awareness.md` (for B2, S14–S16), `write/budget.md` (for C3), `voice/tells.md` (for S4) and the brand's `house-rules.md` if present. Run the gates (hard), then the function read, then the awareness read with its rewrites, then craft notes, then house rules, then the `card/lint.md` items that apply to a plain script: K1–K4, K6 (hook screen text vs caption, if both are given), K11, K12, K14 (K5, K7–K10, K15 need card fields; K15's facts are covered by gate A3).
    - Alternatives (several hooks or endings): count the main one (first listed) for words and C3; report the alternatives separately, one line each.
    - Elided text ("…", "[line here]"): C3 = NEEDS-INFO; count what is written and say what's missing.
    - An ask outside the stage policy (`catalog/endings.md` §4.2): a craft note + a house flag, not a gate, unless it is L9 engagement bait.
@@ -75,10 +77,10 @@ Then: if a video is being made, hand the card to video-genome (Shorts track item
 Load only the cards you need: find a card by its `### <slug> ·` heading and read that card, not the whole file (`catalog/selector.md` has a card index). Never load all catalogs. `sources.md` only when asked where something comes from.
 
 ## Files
-- `write/`: `intake.md` (worksheet, one-idea tests, converting lists and long videos, narrator and silent-acting scripts), `from-devices.md` (backwards from saved devices), `passes.md` (the passes, keep-voice rules), `budget.md` (pace, words per runtime, beats per runtime).
+- `write/`: `intake.md` (worksheet, one-idea tests, converting lists and long videos, narrator and silent-acting scripts), `from-devices.md` (backwards from saved devices), `closings.md` (2–3 closes from the brand's kept closes, closings bank and CTA bank), `passes.md` (the passes, keep-voice rules), `budget.md` (pace, words per runtime, beats per runtime).
 - `catalog/`: `selector.md`; hooks (`hooks.md`, `hooks-psych.md`, `hooks-unusual.md`); `shapes.md`; arcs by family (`arcs-setback.md`, `arcs-fall.md`, `arcs-rise.md`, `arcs-curiosity.md`, `arcs-ladder.md`, `arcs-argument.md`, `arcs-containers.md`, `arcs-operators.md`); `retention.md`; `endings.md`.
 - `card/`: `schema.md` (the script card, the contract with video-genome), `triggers.md` (edit move ↔ script trigger, timing, sound, pacing patterns), `lint.md`.
-- `check/`: `gates.md`, `craft.md`, `report.md`.
+- `check/`: `gates.md`, `craft.md`, `report.md`, `awareness.md` (viewer's awareness level, symptom-first opener, rewrite pass, pro read).
 - `voice/`: `delivery.md` (spoken-copy rules, notation), `tells.md` (sounds-like-AI / sounds-like-a-script flags).
 - `learn/log.md`: what to log per posted video and how to compare hooks fairly at small numbers.
 - `sources.md`: where the cards come from; folklore not to repeat.
@@ -93,3 +95,6 @@ Write (picks, hooks, drafts) on the strongest model available; checks, lint and 
 
 ## Credit line
 What this skill hands the creator carries one line: `Made with script-genome by jfships · youtube.com/@jfships_ai` (last line of a saved script card or check report). On by default; drop it when asked (`credit: off` in `START-HERE.md`). Never inside a video, caption or post.
+
+## Carousels
+A still carousel (new, or cut from a script) follows `catalog/carousel.md`: slide plan, slide-one hook, keeper slide, last-slide ask by stage, text size at feed scale, 4:5 layout.

@@ -1,6 +1,6 @@
 # Instagram carousels and Stories: what the rules rest on
 
-Read by Stage 8 §8. Checked 2026-10-17. Re-check before relying on any number; Instagram changes these.
+Read by Stage 8 §8. Craft rules for carousels now live in script-genome `catalog/carousel.md`; this table keeps the evidence. Checked 2026-10-17. Re-check before relying on any number; Instagram changes these.
 
 ## How sure each rule is
 
@@ -15,6 +15,8 @@ Read by Stage 8 §8. Checked 2026-10-17. Re-check before relying on any number; 
 | One action on the last slide; links are slightly de-weighted | Vendor guides (soft) |
 | Carousel text kept out of the top 120 px and bottom 150 px; logo under 15% of the slide | Vendor guides; the 120/150 px are house numbers |
 | Text sizes (80 px headline, 44 px body at 1080 wide) | House numbers, no source gives any |
+| Reels top UI about 210-220 px on 1080x1920 (Reels safe line y 210) | Creator-tool sites, checked 2026-04 and 2026-05; Meta 270 is for ads; recheck yearly |
+| Carousel look comes from the creator's posted carousels | Decision, no source |
 | Profile grid crop | Sources disagree (centered 1:1 vs 3:4); check live |
 | Stories safe zones: top 250 px, bottom 340 px, 65 px sides | Third-party readings of Meta's diagram |
 

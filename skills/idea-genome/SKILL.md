@@ -106,6 +106,7 @@ Then one line on the model, unless you're already running on their creative-tier
 - **I have a theme, not an idea:** run Step 2 limited to that theme, then Develop the creator's pick.
 - **Nothing, brainstorm with me:** theme check-in in `catalog/sources.md`, Step 2 across the channel's pillars, creator picks 1 from the best 5, then Develop.
 - **Pick from the bank:** show the top 5 `parked` ideas in `idea-bank.md` with last score and what would raise it; the pick goes to Develop.
+- **A still carousel** (Instagram, LinkedIn document): go to `carousel-form.md`. It replaces develop.md's structure and hooks parts; checks, scoring (carousel table in `scoring.md`) and the record (carousel variant) still run. One record per carousel.
 - **A Short / Reel** (new, or a moment from a long video): go to `short-form.md`. It replaces develop.md's structure and hooks parts for this Short; checks, scoring and the record still run.
 
 **One Idea Record per Short.** Five Shorts are five records, each with its own message, shape, checks and score. The first-10-seconds hook and the 3 titles with thumbnails are long-form rules; on a Short the hook text, first frame and cover line do that job.

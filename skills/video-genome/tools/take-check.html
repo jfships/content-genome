@@ -62,6 +62,8 @@ input[type=range]{accent-color:var(--accent)}
   <h1>Take Check</h1>
   <label class="btn primary" for="f">Open recordings</label>
   <input id="f" type="file" accept="video/*,audio/*" multiple>
+  <label class="btn" for="pf" title="A proposal from the builder (or a saved picks file): marks, lines, comments and beat pictures">Load proposed marks</label>
+  <input id="pf" type="file" accept=".json,application/json">
   <span class="hint">or drag them in. Nothing is uploaded; it all runs on this PC.</span>
   <span id="status"></span>
 </header>
@@ -88,7 +90,9 @@ input[type=range]{accent-color:var(--accent)}
       <button id="br" class="r">Drop (D)</button>
       <select id="lsel" title="Which script line is this take?"><option value="">Line…</option></select>
     </div>
-    <div id="keys"><kbd>Space</kbd> play take · <kbd>K</kbd> keep · <kbd>M</kbd> maybe · <kbd>D</kbd> drop · <kbd>1</kbd>… which line (two digits fast = 10+) · <kbd>↑</kbd><kbd>↓</kbd> move · <kbd>N</kbd> note</div>
+    <div id="beat" style="display:none;text-align:center"><img id="beatimg" alt="" style="max-height:180px;max-width:100%;border:1px solid var(--line);border-radius:6px"><div id="beatcap" class="hint"></div></div>
+    <textarea id="tnote" placeholder="Comment on this take (saved with its mark)" style="min-height:52px;max-width:640px"></textarea>
+    <div id="keys"><kbd>Space</kbd> play take · <kbd>K</kbd> keep · <kbd>M</kbd> maybe · <kbd>D</kbd> drop · <kbd>1</kbd>… which line (two digits fast = 10+) · <kbd>↑</kbd><kbd>↓</kbd> move · <kbd>N</kbd> comment box (<kbd>Esc</kbd> leaves it)</div>
   </section>
   <section id="right">
     <details id="sdet"><summary class="hint" style="padding:12px 16px;cursor:pointer">Script checklist (optional)</summary>
@@ -114,8 +118,9 @@ const S={files:[],takes:[],cur:-1,stopAt:null,view:'live'};
 // takes: {file,start,end,mark,line,note}
 
 // keep saved marks of recordings not split yet (several files reopened at once load one by one)
-function store(){try{const done=S.files.filter(f=>f.env).map(f=>f.name+'|'+f.size+'|'),prev=(loadStore().marks||[]).filter(m=>!done.some(p=>m.k.startsWith(p)));localStorage.setItem('takecheck',JSON.stringify({script:$('#script').value,marks:prev.concat(S.takes.map(t=>({k:key(t),mark:t.mark,line:t.line,note:t.note})))}))}catch(e){}}
-function loadStore(){try{return JSON.parse(localStorage.getItem('takecheck')||'{}')}catch(e){return {}}}
+const SKEY='takecheck:'+location.pathname;   // one store per copy of the page (per video): never another brand's marks
+function store(){try{const done=S.files.filter(f=>f.env).map(f=>f.name+'|'+f.size+'|'),prev=(loadStore().marks||[]).filter(m=>!done.some(p=>m.k.startsWith(p)));localStorage.setItem(SKEY,JSON.stringify({script:$('#script').value,marks:prev.concat(S.takes.map(t=>({k:key(t),mark:t.mark,line:t.line,note:t.note})))}))}catch(e){}}
+function loadStore(){try{return JSON.parse(localStorage.getItem(SKEY)||'{}')}catch(e){return {}}}
 const key=t=>S.files[t.file].name+'|'+S.files[t.file].size+'|'+t.start.toFixed(1);
 const fmt=s=>{s=Math.max(0,s);const m=Math.floor(s/60);return m+':'+(s%60).toFixed(1).padStart(4,'0')};
 
@@ -133,10 +138,14 @@ async function analyse(file){
 
 function split(f,gap){
   const e=f.env,sorted=Array.from(e).sort((a,b)=>a-b);
-  const floor=sorted[Math.floor(sorted.length*0.15)],peak=sorted[Math.floor(sorted.length*0.97)];
-  const thr=floor+Math.max(6,(peak-floor)*0.30);
+  const floor=sorted[Math.floor(sorted.length*0.15)];
+  // the threshold follows the room: set per 1 s block from the 60 s around it, so a quieter pass later in the
+  // recording (farther from the mic, another room) is still split into takes instead of skipped
+  const B=Math.round(1/f.hop),W=Math.round(30/f.hop),nb=Math.ceil(e.length/B),thrB=new Float32Array(nb);
+  for(let b=0;b<nb;b++){const lo=Math.max(0,b*B-W),hi=Math.min(e.length,b*B+W),w=Array.from(e.subarray(lo,hi)).sort((x,y)=>x-y);
+    const lf=w[Math.floor(w.length*0.15)],lp=w[Math.floor(w.length*0.97)];thrB[b]=Math.max(floor+6,lf+Math.max(6,(lp-lf)*0.30))}
   // smooth: speech if any frame in a 0.1 s window is above threshold
-  const on=new Uint8Array(e.length);for(let i=0;i<e.length;i++)if(e[i]>thr)for(let k=-2;k<=2;k++)if(i+k>=0&&i+k<e.length)on[i+k]=1;
+  const on=new Uint8Array(e.length);for(let i=0;i<e.length;i++)if(e[i]>thrB[Math.floor(i/B)])for(let k=-2;k<=2;k++)if(i+k>=0&&i+k<e.length)on[i+k]=1;
   const segs=[];let s=-1;
   for(let i=0;i<=on.length;i++){const v=i<on.length&&on[i];if(v&&s<0)s=i;if(!v&&s>=0){segs.push([s,i]);s=-1}}
   const g=Math.round(gap/f.hop),out=[];
@@ -150,9 +159,14 @@ function rebuild(){
   for(const m of (saved.marks||[]))if(!old.has(m.k))old.set(m.k,m);
   const prevKey=S.cur>=0&&S.takes[S.cur]?key(S.takes[S.cur]):null;
   S.takes=[];
-  S.files.forEach((f,fi)=>{if(!f.env)return;for(const sg of split(f,gap)){const t={file:fi,...sg,mark:null,line:null,note:''};
+  S.files.forEach((f,fi)=>{if(!f.env)return;const pr=(S.prop||[]).filter(p=>p.file===f.name);
+    // proposed takes (from the builder) win: auto-split takes keep only their parts outside them (0.6 s or longer)
+    let auto=split(f,gap);for(const p of pr)auto=auto.flatMap(sg=>[{start:sg.start,end:Math.min(sg.end,p.start)},{start:Math.max(sg.start,p.end),end:sg.end}]).filter(x=>x.end-x.start>=0.6);
+    for(const sg of [...auto,...pr.map(p=>({start:p.start,end:p.end}))].sort((x,y)=>x.start-y.start)){const t={file:fi,...sg,mark:null,line:null,note:''};
     // keep marks from the closest earlier take (survives re-splitting and reopening)
-    const m=findOld(old,t);if(m){t.mark=m.mark==='redo'?'drop':m.mark;t.line=m.line;t.note=m.note||''}S.takes.push(t)}});
+    const m=findOld(old,t);if(m){t.mark=m.mark==='redo'?'drop':m.mark;t.line=m.line;t.note=m.note||''}
+    else{const p=pr.find(p=>Math.abs(p.start-t.start)<0.05);if(p){t.mark=p.mark||null;t.line=p.line!=null?p.line-1:null;t.note=p.note||'';t.proposed=true}}
+    S.takes.push(t)}});
   S.cur=prevKey?Math.max(0,S.takes.findIndex(t=>key(t)===prevKey)):(S.takes.length?0:-1);
   render();store();
 }
@@ -186,13 +200,16 @@ function render(){
   const t=S.takes[S.cur];
   $('#lsel').style.display=L.length?'':'none';
   $('#lsel').innerHTML='<option value="">Line…</option>'+L.map((l,i)=>'<option value="'+i+'"'+(t&&t.line===i?' selected':'')+'>'+(i+1)+'. '+esc(l.slice(0,40))+'</option>').join('');
-  $('#now').textContent=t?('Take #'+(S.cur+1)+' — '+S.files[t.file].name+' at '+fmt(t.start)):'';
+  $('#now').textContent=t?('Take #'+(S.cur+1)+' — '+S.files[t.file].name+' at '+fmt(t.start)+(t.proposed?' · proposed by the builder':'')):'';
+  if(document.activeElement!==$('#tnote'))$('#tnote').value=t?t.note||'':'';
+  const bt=t&&t.line!=null&&S.beats?S.beats.find(b=>b.line===t.line+1):null;
+  $('#beat').style.display=bt&&bt.picture?'':'none';if(bt&&bt.picture){$('#beatimg').src=bt.picture;$('#beatcap').textContent='Beat for line '+bt.line+(bt.text?': '+bt.text:'')}
   $('#summary').textContent=summary();
 }
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 function summary(){
-  if(!S.takes.some(t=>t.mark||t.line!=null))return 'Nothing marked yet.';
+  if(!S.takes.some(t=>t.mark||t.line!=null||t.note))return 'Nothing marked yet.';
   const L=lines(),o=[];
   if(L.length){
     const need=L.map((l,i)=>[i,l]).filter(([i])=>!S.takes.some(t=>t.line===i&&t.mark==='keep'));
@@ -203,6 +220,8 @@ function summary(){
   o.push('KEEPERS:');
   for(const [i,t] of S.takes.entries())if(t.mark==='keep'||t.mark==='maybe')o.push('  #'+(i+1)+' '+(t.mark==='maybe'?'(maybe) ':'')+(t.line!=null?'line '+(t.line+1)+' · ':'')+S.files[t.file].name+' '+t.start.toFixed(2)+'–'+t.end.toFixed(2)+(t.note?' · '+t.note:''));
   const r=S.takes.filter(t=>t.mark==='drop').length;o.push('','Dropped: '+r+' · Unmarked: '+S.takes.filter(t=>!t.mark).length);
+  const holes=[];S.files.forEach((f,fi)=>{if(!f.env)return;let last=0;for(const t of S.takes.filter(t=>t.file===fi)){if(t.start-last>20)holes.push(f.name+' '+fmt(last)+'–'+fmt(t.start));last=Math.max(last,t.end)}if(f.dur-last>20)holes.push(f.name+' '+fmt(last)+'–'+fmt(f.dur))});
+  if(holes.length)o.push('','NO TAKES FOUND over 20 s (listen in case a pass was skipped): '+holes.join(' · '));
   return o.join('\n');
 }
 
@@ -222,6 +241,7 @@ function mark(m){const t=S.takes[S.cur];if(!t)return;const next=nextOf(1);t.mark
 
 document.addEventListener('keydown',e=>{
   // ignore keys only while typing in the script box or the line box
+  if(e.target.tagName==='TEXTAREA'&&e.key==='Escape'){e.target.blur();return}
   if(e.target.tagName==='TEXTAREA'||(e.target.tagName==='INPUT'&&/^(text|number|search)$/.test(e.target.type)))return;
   if(e.ctrlKey||e.metaKey||e.altKey)return;
   if(/^(arrowup|arrowdown| )$/.test(e.key.toLowerCase())&&document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
@@ -235,7 +255,7 @@ document.addEventListener('keydown',e=>{
     const now=Date.now(),join=S.dig&&now-S.dig.at<700&&S.dig.take===S.cur;
     const num=join?+(S.dig.s+k):+k;S.dig={s:join?'':k,at:now,take:S.cur};
     if(num<1)return;const n=num-1;t.line=(!join&&t.line===n)?null:n;store();render()}
-  else if(k==='n'){const t=S.takes[S.cur];if(t){const s=prompt('Note for take #'+(S.cur+1),t.note||'');if(s!==null){t.note=s.trim();store();render()}}}
+  else if(k==='n'){e.preventDefault();$('#tnote').focus()}
 },true);
 V.tabIndex=-1;
 $('#bk').onclick=()=>mark('keep');$('#bm').onclick=()=>mark('maybe');$('#br').onclick=()=>mark('drop');
@@ -247,6 +267,15 @@ $('#takes').addEventListener('click',e=>{const d=e.target.closest('.take');if(d)
 $('#gap').addEventListener('input',e=>{$('#gapv').textContent=(+e.target.value).toFixed(1)+' s'});
 $('#gap').addEventListener('change',rebuild);
 $('#script').addEventListener('input',()=>{store();render()});
+$('#tnote').addEventListener('input',e=>{const t=S.takes[S.cur];if(t){t.note=e.target.value;store();$('#summary').textContent=summary()}});
+$('#tnote').addEventListener('blur',()=>render());
+// proposed marks: {script?:[lines], beats?:[{line,text,picture}], takes:[{file,start,end,mark?,line?,note?}]}; a saved picks file loads too
+async function loadProposal(file){try{const p=JSON.parse(await file.text());
+  if(Array.isArray(p.script)&&p.script.length&&!$('#script').value.trim()){$('#script').value=p.script.join('\n');$('#sdet').open=true}
+  S.beats=Array.isArray(p.beats)?p.beats:S.beats;S.prop=(p.takes||[]).map(t=>({...t,start:+t.start,end:+t.end}));
+  $('#status').textContent='Loaded '+S.prop.length+' proposed takes'+(S.files.length?'':'; now open the recordings they name');rebuild()}
+  catch(err){$('#status').textContent='Could not read '+file.name+': '+err.message}}
+$('#pf').addEventListener('change',e=>{if(e.target.files[0])loadProposal(e.target.files[0]);e.target.value='';e.target.blur()});
 $('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(summary());$('#copy').textContent='Copied';setTimeout(()=>$('#copy').textContent='Copy summary',1500)}catch(e){alert('Copy failed; select the text below instead.')}});
 $('#save').addEventListener('click',()=>{
   const data={made:new Date().toISOString(),script:lines(),silence_split_s:+$('#gap').value,
@@ -273,8 +302,8 @@ let dc=0;
 addEventListener('dragenter',e=>{e.preventDefault();dc++;$('#drop').style.display='flex'});
 addEventListener('dragleave',()=>{if(--dc<=0){dc=0;$('#drop').style.display='none'}});
 addEventListener('dragover',e=>e.preventDefault());
-addEventListener('drop',e=>{e.preventDefault();dc=0;$('#drop').style.display='none';add([...e.dataTransfer.files])});
-$('#clear').onclick=()=>{if(!confirm('Clear all marks on these recordings?'))return;S.takes.forEach(t=>{t.mark=null;t.line=null;t.note=''});try{localStorage.removeItem('takecheck')}catch(e){}store();render()};
+addEventListener('drop',e=>{e.preventDefault();dc=0;$('#drop').style.display='none';const fs=[...e.dataTransfer.files];fs.filter(f=>/\.json$/i.test(f.name)).forEach(loadProposal);add(fs.filter(f=>!/\.json$/i.test(f.name)))});
+$('#clear').onclick=()=>{if(!confirm('Clear all marks on these recordings?'))return;S.takes.forEach(t=>{t.mark=null;t.line=null;t.note=''});try{localStorage.removeItem(SKEY)}catch(e){}store();render()};
 (()=>{const s=loadStore();if(s.script){$('#script').value=s.script;$('#sdet').open=true}render()})();
 </script>
 </body>

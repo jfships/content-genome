@@ -23,14 +23,20 @@ B. WHAT IT DOES (no labels)
    Loop (if the ending loops): the line that leads back into the first · "line"
    Ending: the one ask, or none; allowed at this stage?
 
-C. CRAFT NOTES (S1–S13 that are absent or unusual; quote + "ignore if …"; news topics always get S13 freshness: when did this break, is it still new?)
+B2. AWARENESS (`check/awareness.md`)
+   Level: <level> · source · symptom the viewer feels: "<their words>"
+   Opener symptom-first? yes/no · "line" → rewrite if no
+   Rewrites: beat | "line" | misses (words / knowledge / order / ask) | rewrite
+   Pro read: one viewer · their words · cost of scrolling · earned turn · only-you line · lines that don't earn their seconds (quote or "missing")
+
+C. CRAFT NOTES (S1–S16 that are absent or unusual; quote + "ignore if …"; news topics always get S13 freshness: when did this break, is it still new?)
 
 D. HOUSE FLAGS (brand house rules; advisory)
 
 E. CAN'T CHECK FROM THE SCRIPT (who confirms)
    disclosure placement · partnership label · music rights · facts re-verified on <date> · AI label
 
-F. FIXES (≤5, gates first, smallest first)
+F. FIXES (≤5, gates first, smallest first; awareness rewrites count as fixes after the gates)
    1. "<old line>" → "<new line>"  (why)
 ```
 Rules: re-check only changed lines after a fix round. Several hooks or endings given: count the first-listed one, report the others one line each. Elided text ("…") → C3 NEEDS-INFO. An ask outside the growth plan's `cta_allowed_now`, or in `house_bans` → L11 FAIL. No growth plan → a craft note + a house flag (unless L9 bait). If the script was written by this skill, also attach the lint result (`card/lint.md`). Weak-evidence notes say so in plain words ("one creator's habit, untested").

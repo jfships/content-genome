@@ -42,8 +42,13 @@ The brand's sound lanes, SFX set, rules and sound logo decide what the brand sou
 - Sound logo on the sting, every long-form episode. Never on a Short.
 - Audio-only fixes don't need a re-render: rebuild the mix from the same clip list and remux onto the video.
 
-## Checks (part of gate 3)
+- **Gain then limit, never the reverse.** Gain added to a source before it is written clips it silently (+9–11 dB took one Short's takes to +3 dBFS); add gain inside the mix and limit the master.
+- **Voice speed-ups:** `tools/voice_stretch.py` (Rubber Band's finer engine), 1.10× at most (`shorts/build.md` "Speed-ups").
+- **The music bed runs to the end.** A generated bed shorter than the video is looped on one of its own phrases (level-matched, 30–40 ms equal-power joins) before the planned fade, never left to stop early.
+- **Bake one mix** and place it as the composition's only audio; HyperFrames renders have come out ~5 dB under the mix when levels were left to the renderer.
 
-- Meter every section (`ffmpeg … -af volumedetect`) to catch silent gaps and clipping.
-- Measure integrated loudness of the master (`loudnorm` print mode); it must be within ±1 LU of target.
-- Say plainly in the review that you can't listen: levels are metered, not heard. Ask the creator to listen once on phone speakers and once on headphones.
+## Checks (part of gate 3, and before the creator approves any draft's sound)
+
+- `tools/sound_check.py <mix> --comp hf --target <LUFS> --bed … --voice … --music … --sources … --listen …`: loudness within ±1 LU of target, true peak ≤ −1 dBTP, no clipped samples in the mix or the gained sources, the bed as long as the video, the voice over the ducked music; writes the listen file.
+- **The creator hears the listen file before approving the sound.** Metered is not heard: say so, and ask for one listen on phone speakers and one on headphones.
+- After the final render, `sound_check.py <mix> --render <final>`: off by more than 1 LU → remux the mix onto the render (command printed), no re-render.

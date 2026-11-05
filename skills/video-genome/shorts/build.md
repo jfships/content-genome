@@ -45,7 +45,10 @@ Shoot for the tall frame:
 
 ## Take Check (S4b, before the cut)
 
-Before anything is transcribed or cut, the creator screens the takes on `tools/take-check.html` (copy it into the video's `_review/`; it runs in the browser on their computer, nothing is uploaded). It splits each recording into takes at the pauses; they mark each take Keep, Maybe or Drop, optionally tag the script line, and add a note.
+Before anything is transcribed or cut, the creator screens the takes on `tools/take-check.html` (copy it into the video's `_review/`; it runs in the browser on their computer, nothing is uploaded). It splits each recording into takes at the pauses; they mark each take Keep, Maybe or Drop, optionally tag the script line, and write a comment in the box under the player.
+- **Proposed marks:** the builder may pre-mark takes. Write `_review/take-check-proposed.json` (`{"script": [lines], "beats": [{"line", "text", "picture"}], "takes": [{"file", "start", "end", "mark", "line", "note"}]}`, `picture` a path relative to the page, e.g. a still of the beat) and the creator loads it with "Load proposed marks" (or drops it on the page). Proposed takes keep the builder's start and end; the creator's own marks always win. The beat's picture shows beside each take tagged with its line.
+- Marks are stored per copy of the page (per video); one video's marks never show up in another's.
+- The split follows the room level through the recording, and the summary lists any stretch over 20 s with no takes ("NO TAKES FOUND"): play those before saving, in case a whole pass was missed.
 - Only Keep and Maybe takes go forward. The page's summary (file + start/end per kept take, lines still missing a keeper) is the input to the cut; save it as `_review/take-check.txt` (Copy summary or Save picks file).
 - A line with no keeper goes back to recording before the cut, not after the draft.
 - The builder may rank Maybes against each other on eyes, face and words (step 0 below); it never overrules a Drop.
@@ -73,15 +76,40 @@ When the creator acts silently against a voice track (a narrator, a clip), takes
 6. **Take files:** keep proxies shallow (small copies of the takes in one shallow folder such as `work/takes/`; deep folder trees can fail when files are copied between computers) and convert only the candidate segments listed from the transcript. Phone 4K HEVC decodes slower than real time on many laptops.
 7. **Footage clips** (a source ad, a screen recording) are their own top-level clips in the composition, placed by CSS; the scene section holds only graphics (a video inside a timed section fails lint).
 
+### Clip timing (every build; stutter and sync)
+
+Two rules for every video clip in a HyperFrames composition, found on a Short whose speaker stuttered 10 times a second:
+- **Start half a frame in.** `data-media-start` = the clip's in point + 0.5/fps (0.0167 at 30 fps). WebM stores frame times in whole milliseconds (frame 17 at 30 fps is stamped 0.567 s, asked for at 0.5667 s), so a clip started on a whole frame shows every third frame twice and skips the next. Measured on composition stills: 10 repeats and 9 skips a second at a whole-frame start, none at half a frame.
+- **First kept frame at its true time.** When a take segment is cut to its own file, seek one take frame early and place every kept frame at its true time; ffmpeg otherwise pulls the first kept frame to 0 and the picture runs up to a frame ahead of the voice. `tools/cut_segment.py` does both and prints the attributes to paste (measured: picture -0.39 frame against the voice with a plain cut, -0.06 with it).
+- **Starts and lengths on the frame grid, rounded down:** `data-start` = frame/fps written down to 4 decimals; the composition's `data-duration` = frames/fps rounded down. Rounding the length up by even 0.0001 s renders one extra frame (2.0001 s at 30 fps rendered 61 frames). Overlays that end on a cut end half a frame early.
+- **Build scripts never run on import.** All work sits under `if __name__ == "__main__":`; a checker that imported a build script once restarted a 35-minute build. Checks read the build's output files, never import the build.
+
+### Speed-ups
+
+A speed-up is 10% at most (1.10×). Voice: `tools/voice_stretch.py` (Rubber Band's finer engine; ffmpeg's `rubberband`/`atempo` use the older engine, which squeezed a voice at 1.18–1.25×); picture: `setpts=PTS/<speed>` with frames at true time (`cut_segment.py --speed`). Over 1.10×: re-record the line faster, or A/B both versions by ear with the creator first (`voice_stretch.py --ab`). A sped-up line drops one take frame every ~1/(speed−1) frames; that's expected, and `frame_map.py` only flags drops beyond it.
+
 ## Live preview (S5d, before any video file is sent)
 
 The creator watches each draft live instead of waiting for a render.
 - **Every draft, from the first, is built in `hf/`** (the video folder's HyperFrames project), so every edit reloads in the preview in about 5 s. No draft is composited outside HyperFrames.
-- **Measured checks before the link.** Each round makes one draft-quality render of the `hf/` project and runs `tools/draft_checks.py` on it (plus `tools/tech_review.py` on `work/beats.json`, `checks.md` gate 2). The preview link goes to the creator only when both are clean: every fail fixed, or written in `log.md` as a known false flag with its reason. The link message lists the accepted false flags in one line. That render is the round's only one.
+- **Drafts are never rendered.** Every check on a draft runs on the composition itself: the glitch gate below, stills from `tools/comp_stills.py`, and `tools/tech_review.py` on `work/beats.json` (`checks.md` gate 2). The only render is the final (S6); `draft_checks.py` and the render half of `tech_review.py` run on it.
+- **Glitch gate before the link** (below). The link goes to the creator when it passes; the message lists any accepted flags and any leftovers in one line each.
 - **Launcher:** copy `tools/preview.bat` into the video folder as `preview.bat` and fill `{{VIDEO}}` and `{{VERSION}}` (the HyperFrames version written in the log at setup, `setup/tools.md` §2; never `latest`). It starts the preview in the background, prints the Studio link, and stops it when the creator presses a key in its window. Without Windows: `cd hf && npx hyperframes@<version> preview`, and `--stop` when done. Give the creator the launcher, or the preview link it prints; never send a render first.
 - The creator calls tweaks in chat while watching. A tweak that is a value (timing, size, position, a color inside the brand) is edited in `hf/` and they watch it reload. A moment that needs new ideas is a new picker round for that row only (`picker/README.md`, branched page).
-- Renders are for the measured checks and the final, not for showing combinations.
+- Renders are for the final only, never for checks or for showing combinations.
 - Gate: the creator says the edit is right. Then the final (S6).
+
+## Glitch gate (every draft, before the creator sees it)
+
+```
+python3 $SKILL/tools/glitch_gate.py hf --out _review/gate-r<N> --timeline work/timeline.json --root . \
+  --marks work/marks.json --target <brand LUFS, default -14> [--bed <bed file>] [--flicker]
+```
+It runs on the composition, no render (stills around every cut and a frame-by-frame read of what is on screen), and prints a pass/fail list with times: 1-frame pops, black or flat frames, a doubled first frame, near-identical jump cuts and the head-jump number at every cut, moves that change speed at a seam, lips under the line, marks showing early or late, holds short of plan, hard entrances, pictures shifting position, text blocks breaking the one-size rule, clips not started half a frame in, files shorter than their slot, a length that renders one frame long, mix loudness, peaks and clipping, a music bed that stops before the end, lip-sync drift, rewinds and dropped frames on sped-up lines (`--timeline`), and cutout edge flicker (`--flicker`). A strip of 9 frames before and after each cut lands in `<out>/strips/` with the head-jump number on it.
+- `work/marks.json`: every graphic keyed to a word, `[{"id": "<element id>", "at": <measured onset, s>, "hold": <planned s>}]` (onsets from `tools/onsets.py`).
+- **Known false positives** go in `_review/accepted-flags.json` as `[{"key": "<key printed after the FIX>", "why": "<reason>"}]` (one list per video, kept across rounds) so they stop coming back; never accept a real fault to get a pass.
+- **On a fail, the builder fixes and reruns, up to 2 tries.** Still failing after the second try: the draft goes to the creator anyway, with each leftover named in plain words (time, what is wrong, what was tried). No extra review loop.
+- `--quick` re-checks one change in seconds (3 frames each side, no full scan); the last run before the link is a full one.
 
 ## Pace
 
@@ -110,7 +138,7 @@ One range for every shot ("a change every 3–5 s") makes a slow Short. Each sho
 
 The target is a pace, in words a second after the edit, never a fixed speed-up. The creator's natural pace changes as they improve, so the speed-up shrinks to nothing on its own.
 - **Default target 2.6–3 words a second** (the brand's number wins). Longest silence 0.6 s or less unless it's the planned hold.
-- Order: trim gaps first, then measure (`tools/short_timing.py`, which prints the speed-up needed). Already at the target: no speed-up. Below it: speed up just enough to reach the low end, 12% at most (ffmpeg's `setpts` for picture and `atempo` for sound). Still slow at 12%: re-record that line faster.
+- Order: trim gaps first, then measure (`tools/short_timing.py`, which prints the speed-up needed). Already at the target: no speed-up. Below it: speed up just enough to reach the low end, 10% at most ("Speed-ups" above). Still slow at 10%: re-record that line faster.
 - Per line is fine: a line that drags gets its own speed; a deadpan line may stay slower on purpose.
 - Speed-up blunts deadpan and makes voices sound squeezed past about 10%; judge by watching. Write the measured pace and any speed in `log.md`.
 
@@ -122,7 +150,7 @@ The target is a pace, in words a second after the edit, never a fixed speed-up. 
 
 ## Layouts
 
-Coordinates at 1080×1920 (`craft/layout.md` §1, Shorts and Reels). **Safe box** for anything important: x 65–930, y 250–1500. The right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~420 px by the caption, handle and audio rows; the top ~250 px by the platform's top bar.
+Coordinates at 1080×1920 (`craft/layout.md` §1, Shorts and Reels). **Safe box** for anything important: x 65–930, y 210–1500. The right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~420 px by the caption, handle and audio rows; the top ~210 px by the platform's top bar (Reels top UI, checked 2026-05; Meta's 270 is for ads; recheck yearly).
 
 Every beat names one of these layouts in the beat brief. Two consecutive beats never share one unless the hold is the joke; one layout for a whole Short is a fail. Boxes are the defaults; a beat may move them, inside the safe box, by writing the new box in its row's "Layout + speaker box" / "Graphic box" cells.
 
@@ -130,10 +158,10 @@ The stock id after each name is its sample in the stock library (`craft/stock.md
 
 | Layout | Speaker | Graphic | Use when |
 |---|---|---|---|
-| **Full frame** (LAY-01) | Chest-up, centered, eyes at y≈640 (head in the top 30–40%) | None, or hook text y 250–520 | Breathers, the hook, a punchline hold |
+| **Full frame** (LAY-01) | Chest-up, centered, eyes at y≈640 (head in the top 30–40%) | None, or hook text y 210–520 | Breathers, the hook, a punchline hold |
 | **Punch-in** (CAM-01, CAM-02) | Full frame scaled 1.15–1.4×, eyes stay ≈ y 640; may shift off-centre to make room | A word or label in the space opened up | Key lines, hiding a jump cut, a reaction |
-| **Split top** (LAY-02) | Cutout or crop in the lower band, eyes at ≈ 60% of frame height (y≈1150), centered | 16:9 band at x 0–1080, y 250–860 (their footage, a screen) | Straight man and proof beats where their material and the reaction are seen together |
-| **Half and half** (LAY-03) | Bottom half (y 960–1920), lifted until the mouth sits above y 1500 on every frame (about 50 px on a chest-up take; measure, `draft_checks.py`) | Top half, 1080×960; anything read inside x 65–930, y 250–930. The picture moves (a still card fails); each picture holds ≥ 1 s so it can be read | A picture beat that is as important as the speaker: proof, their footage, a generated scene |
+| **Split top** (LAY-02) | Cutout or crop in the lower band, eyes at ≈ 60% of frame height (y≈1150), centered | 16:9 band at x 0–1080, y 210–818 (their footage, a screen) | Straight man and proof beats where their material and the reaction are seen together |
+| **Half and half** (LAY-03) | Bottom half (y 960–1920), lifted until the mouth sits above y 1500 on every frame (about 50 px on a chest-up take; measure, `draft_checks.py`) | Top half, 1080×960; anything read inside x 65–930, y 210–930. The picture moves (a still card fails); each picture holds ≥ 1 s so it can be read | A picture beat that is as important as the speaker: proof, their footage, a generated scene |
 | **Over their page** (LAY-04) | Cutout at about 0.64 of its full-frame size, bottom-left (about x 40–620, y 850–1450), feathered edge, never over the subject of the shot, never in x > 930 | Their page, post or shot full-bleed behind | Reading or reacting to a page, a post, a quote |
 | **Full graphic** (LAY-05) | Off screen, 1.1–4 s at most | The whole safe box | Proof that must be read alone; a gag; the unsaid line as a scene |
 | **Words behind** (LAY-06) | Full frame or punch-in | Big words layered between the backdrop and the cutout, beside the head, ≥ 70% visible | One standout line, the hook, a reveal |
@@ -145,10 +173,12 @@ The stock id after each name is its sample in the stock library (`craft/stock.md
 - **Cutout over a scene:** soft edge fade only where the source frame ends; a contact shadow on the scene's ground line. Placement in a prompt is unreliable, so plan the empty space by generation or crop, then check it on the still.
 - **Backdrop** built tall (the brand's tall backdrop), never a crop of the 16:9 plate. Cutouts sit on it at the framing above.
 - **Graphics keyed to a word** start on its measured onset, not Whisper's time: `tools/onsets.py <take> words.json words_onsets.json --words "<anchor words>"`, then `remap_words.py` onto the cut. Words it marks `rise` (connected speech) get one listen at the anchor.
-- **Hook text** y ~250–520, above the face, on screen from frame 1 for at least 2 s, never colliding with captions or the face. **Place it from the face, not a fixed y:** measure the top of the head on the frames it's up and keep the text's largest box (its pop-in scale included) clear of it; a pop-in from 1.6× that clears at rest can still cover the chin or beard for 4 frames. List it in `work/overlays.json`.
+- **Hook text** y ~210–520, above the face, on screen from frame 1 for at least 2 s, never colliding with captions or the face. **Place it from the face, not a fixed y:** measure the top of the head on the frames it's up and keep the text's largest box (its pop-in scale included) clear of it; a pop-in from 1.6× that clears at rest can still cover the chin or beard for 4 frames. List it in `work/overlays.json`.
 
 **Safe zones on every layout or split change.** Before building any layout change or a requested split (55/45, a lower band, a bigger speaker), measure the mouth and chin on the real frames of that layout against the bottom line (y 1500): run `tools/draft_checks.py` on a short test render, or measure the face on 3–5 frames of the take at the new scale and offset. If the request breaks the line, say so before building, with the measured numbers and a safe alternative ("at 55/45 your mouth sits at y 1540, under the caption rows; 50/50 lifted 50 px keeps it at 1480"). Fix with the smallest change that clears it, measured, not guessed: a 170 px lift overcorrects where 50 px was right. Re-measure per frame on the draft, since the speaker moves.
 - **Text sizes** at least 44 / 34 / 30 px (headline / body / label); overlays stay at least 2 s.
+- **One size per text block.** A title or hook block of several lines uses one font size and one fixed line height in px; emphasis is color only (never a bigger line, never fitting each line to the width). On a text-only still, every line's letter height and every gap between lines match within 2 px. Give the block `class="hook"` / `class="title"` (or `data-text-block`) so the glitch gate checks sizes, line heights and line gaps.
+- **Words behind the speaker** (LAY-06): use the bundled talking-head tools first (`tools/talking-head/`, the text-behind look in `reference/looks.md`, `subject.py occlusion`); hand-build only what they can't do.
 - Graphics follow the rest of `craft/layout.md` (lead room, one focal point, nothing touching edges) re-decided per scene; the beat brief's boxes are checked on stills and by `tools/tech_review.py` before any render.
 
 ## Captions
@@ -157,7 +187,7 @@ The stock id after each name is its sample in the stock library (`craft/stock.md
 - **No spec, no captions.** If a field is missing (the case most of all), ask the creator in one question box before building any caption, sentence case recommended, and write the answer back into the spec. The hook's style and Title Case are never the fallback.
 - **Chunks:** 2–3 words, one line (two at most), one key word per phrase in the brand's accent.
 - **Every spoken beat is captioned** unless the beat brief gives a reason (`"captions_off": "<why>"` in `work/beats.json`, e.g. the line is already on screen as big type). When a beat's own on-screen text is up, captions hide.
-- **Placement is decided per beat:** the best free spot on that beat's layout, clear of the face, the graphic's box, the top 250 px, the bottom zone (y > 1500) and the right-side buttons (x > 930 from y 900 down). Write it in the beat's row as a caption box.
+- **Placement is decided per beat:** the best free spot on that beat's layout, clear of the face, the graphic's box, the top 210 px, the bottom zone (y > 1500) and the right-side buttons (x > 930 from y 900 down). Write it in the beat's row as a caption box.
   - Default spot: centered around y 1150–1400, below the chin.
   - Split top and half and half: on the seam between the picture and the speaker (y ≈ 860 and ≈ 960), clear of the head. Over their page and corner bubble: up or right of the cutout, clear of the part of the page being read.
 - **Moving between beats** is right when another spot is clearly freer or reads better; a caption never moves within one line. A line-by-line caption (one sentence shown across several chunks) stays in one spot until the sentence ends.
@@ -196,6 +226,8 @@ Graphic beats cost the most draft rounds. Build them with this loop; it held qua
 
 Shots in a Short last 1–2.5 s, so a transition's time comes out of the shot it sits in.
 - **Hard cut** for nearly every change (TRN-01): on the new idea's first word, or the moment the last word ends (CUT-01).
+- **Cut on the eye trace:** put the incoming shot's focal point (the face, the word, the object) where the viewer's eye already is at the end of the outgoing shot, or where it is moving to. A cut that makes the eye jump across the frame reads as a glitch.
+- **Jump cuts inside one take:** punch in 10–15% (1.10–1.15×) on the incoming side, or cut away. Two shots at the same size with the head a little off reads as a glitch (the glitch gate flags it with the head-jump number); a punch-in of the brand's bigger scale (below) is for key lines.
 - **Read well tall,** at about 0.4 s or less: match cut on shape or motion (TRN-02), whip between screens (TRN-03), an object passing the lens (TRN-04), a color sweep (TRN-06), zoom-through into a screen (SPA-07).
 - **Too slow for most Shorts:** dissolve (TRN-08) and soft rise (TRN-09); keep them for a planned mood change. Strips, page tear, film burn and the like are wildcards: one per Short at most.
 - Never the same transition twice in a row.
@@ -205,4 +237,11 @@ Shots in a Short last 1–2.5 s, so a transition's time comes out of the shot it
 
 ## Sound
 
-Voice-led: music ducked about 15–25 dB under the voice, master at −14 LUFS (`craft/sound.md`). Sparse, dry SFX; on a deadpan beat, silence or one small sound lands harder than a stack of whooshes. Music rights per platform in `platforms.md`.
+Voice-led: music ducked about 15–25 dB under the voice, master at −14 LUFS unless the brand sets its own (`craft/sound.md`). Sparse, dry SFX; on a deadpan beat, silence or one small sound lands harder than a stack of whooshes. Music rights per platform in `platforms.md`.
+
+**Sound step (before the creator approves any draft's sound):** bake one mix file for the whole Short and place it as the composition's only audio clip, then:
+```
+python3 $SKILL/tools/sound_check.py hf/assets/mix.wav --comp hf --target <brand LUFS> --bed <bed as placed> \
+  --voice <voice stem> --music <ducked music stem> --sources <gained voice files> --listen _review/listen-r<N>.m4a
+```
+It checks loudness on target, true peak at or under −1 dBTP, no clipped samples (sources gained before the limiter clip silently), the bed running to the end, and the voice over the bed; and writes a listen file. The creator hears the listen file (on the decision page or the preview) before the sound is approved; never approve a mix nobody has heard. After the final render, `--render out/<final>.mp4`: if its sound is off the mix by more than 1 LU (HyperFrames renders have come out ~5 dB low), remux the mix onto the render with the printed command; never re-render for sound.

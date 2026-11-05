@@ -24,14 +24,15 @@ Coordinates: 16:9 is 1920×1080 (thirds at x 640/1280, y 360/720). 9:16 is 1080�
 **Size and reading**
 12. **One star per moment.** One dominant element, 2–3× the next. Balance is visual weight, not equal area.
 13. **Three text sizes at most.** Key phrase cap height ≥ 7% of frame height (≈76 px at 1080p); secondary 50–60% of that; nothing under 4% (≈43 px at 1080p, ≈40 px on 1080×1920).
+13b. **One size per text block.** A title or hook of several lines is one font size and one fixed line height in px; emphasis by color only, never by a bigger line or by fitting each line to the width. Measured on a text-only still: every line's letter height and every gap between lines within 2 px (	ools/glitch_gate.py checks it on the composition).
 14. **Short lines.** Display text ≤ 25–30 characters a line, ≤ 3 lines, block ≤ 50–60% of frame width on 16:9 (80% on 9:16). Captions ≈ 42 characters, ≤ 2 lines.
 15. **Keep related things together.** A label sits within a third of its own height of what it names; unrelated items get at least twice that space.
 16. **Read in order.** Top-left to bottom-right: setup first, result or punchline last (Z for sparse frames, F for text-heavy).
 17. **Lower third.** Left-aligned at x=96, bottom edge at y≈900–950, 90–130 px tall, below the chin. Simple fade or slide.
 
 **Shorts and Reels (9:16)**
-18. **Safe box.** Everything important inside x 65–930, y 250–1500 (organic posts: Shorts' caption rows start highest, about y 1540; ads zones are bigger and not used). The right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~420 px by the caption, handle and audio rows; the top ~250 px by the top bar. Instagram's grid shows a centered 3:4 crop: cover text inside y 400–1300.
-19. **Face high, captions below.** Chest-up, head in the top 30–40% of the frame, eyes near y≈640; hook text y ~250–520; captions centered around y 1150–1400, below the chin. Full rules: `shorts/build.md` "Layout".
+18. **Safe box.** Everything important inside x 65–930, y 210–1500 (organic posts: Shorts' caption rows start highest, about y 1540; ads zones are bigger and not used). The right rail (x > 930) is covered by buttons from about y 900 down; the bottom ~420 px by the caption, handle and audio rows; the top ~210 px by the top bar (Reels top UI, checked 2026-05; Meta's 270 is for ads; recheck yearly). Instagram's grid shows a centered 3:4 crop: cover text inside y 400–1300.
+19. **Face high, captions below.** Chest-up, head in the top 30–40% of the frame, eyes near y≈640; hook text y ~210–520; captions centered around y 1150–1400, below the chin. Full rules: `shorts/build.md` "Layout".
 
 ## 2. Standard layouts
 
@@ -52,7 +53,7 @@ Pick per scene; the brand's layout picks (if any) come first, these fill the gap
 ## 3. Still check (gate 2, every scene; gate 4 hunts for misses)
 
 Answer each for every still. Any "no" is fixed before render.
-1. Every text and graphic edge ≥ 96 px from the edge (16:9), or inside x 65–930, y 250–1500 (9:16)?
+1. Every text and graphic edge ≥ 96 px from the edge (16:9), or inside x 65–930, y 210–1500 (9:16)?
 2. Nothing touches or overshoots an edge by accident?
 3. One clearly dominant element, ≥ 2× the next?
 4. The graphic is on the open side, off the face and hands?
@@ -62,7 +63,7 @@ Answer each for every still. Any "no" is fixed before render.
 8. Display lines ≤ 30 characters, captions ≤ 42, smallest text ≥ 4% of frame height?
 9. Related items closer to each other than to anything else?
 10. The layout fits this shot (speaker present, gone, or in a bubble), with no empty patch where the speaker used to be?
-11. On 9:16: everything inside x 65–930, y 250–1500; captions around y 1150–1400 and clear of the right rail?
+11. On 9:16: everything inside x 65–930, y 210–1500; captions around y 1150–1400 and clear of the right rail?
 12. Squint test: balanced, no heavy side, no hollow middle?
 
 ## Sources

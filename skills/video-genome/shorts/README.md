@@ -37,9 +37,9 @@ Tracker line on every reply that moves the work: "Short 2 of 3 · plan · decisi
 | S4b. Take Check | `build.md` "Take Check": the creator marks every take keep / maybe / drop on `tools/take-check.html`; only the finalists go forward | Summary saved (file + start/end per kept take) |
 | S5. Cut + base | `build.md` "Cut": transcribe the finalists, cut, rough cutout, pace | Cut measured (`short_timing.py`) |
 | S5b. Picker | The Short's live picker (`../decision-pages.md` "The live picker"): rows only where a real choice exists; the builder decides the rest. Generation prompts one at a time, each approved before it runs | Every row picked or sent back |
-| S5c. Draft + checks | Draft built from the picks in `hf/` (graphic beats on the plan → stills → preview loop, `build.md` "Graphics and motion"), then lay out, caption, sound; measured checks on every draft (`checks.md`) | Short gates 2–3 pass; `draft_checks.py` clean before any preview link |
+| S5c. Draft + checks | Draft built from the picks in `hf/` (graphic beats on the plan → stills → preview loop, `build.md` "Graphics and motion"), then lay out, caption, sound; glitch gate and sound step on every draft, on the composition, no render (`build.md` "Glitch gate", "Sound") | Short gate 2 passes; glitch gate passes (or its leftovers are named after 2 fix tries) and the creator heard the mix, before any preview link |
 | S5d. Live preview | `build.md` "Live preview": the creator watches the live HyperFrames preview and calls tweaks before any video file is sent; a moment that needs new ideas is a new picker round | Creator says the edit is right |
-| S6. Final + review | Final cutout, mix, final render; timing numbers + technical review by an agent that didn't build it (`checks.md`) | Technical review clean; beat-brief self-check done |
+| S6. Final + review | Final cutout, mix, final render (the only render; free disk and `hyperframes clean` first); `draft_checks.py`, timing numbers + technical review by an agent that didn't build it, render sound vs mix (`checks.md`) | Technical review clean; beat-brief self-check done |
 | S7. Deliver | One file per platform and the cover (`platforms.md`) | Each file meets its platform's spec; cover picked |
 | S8. Results | `platforms.md` "Results" | 48 h and 28 d numbers logged |
 

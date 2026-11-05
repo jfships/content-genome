@@ -182,7 +182,7 @@ What counts as a re-hook: a tease of the next point, a new question, a viewer-jo
 
 Basis: Joos (ex-MrBeast retention strategist) reports attention drops without novelty every ~10–15 s in long-form; shortened here by inference. The memo's "every ~3 minutes" is long-form and does not scale. Never write "research shows" for this interval.
 
-**Where the main re-hook goes:** about 40% in, right after the main point lands, as one short plain sentence that reopens a question (not a new segment). Under ~20 s (a 15–25 s rant, a fast tip) the hook carries most of it: at most one re-hook, right after the main point, used as the turn into the strongest example; often none. INFERENCE; check the creator's own chart.
+**Where the main re-hook goes:** about 40% in, right after the main point lands, as one short plain sentence that reopens a question (not a new segment). Under ~20 s (a 15–25 s rant, a fast tip) the hook carries most of it: at most one re-hook, right after the main point, used as the turn into the strongest example; often none. In seconds: a 15 s rant has none (the turn line at ~6–8 s does the job); a 20–25 s rant gets one, one short sentence of 3–6 words at ~8–10 s, right after the main claim lands and right before the sharpest example ("And that's the cheap part.", invented). It reopens a question; it never recaps. INFERENCE; check the creator's own chart (the dip, if any, shows where).
 
 **Re-hook openers (fill-in).** Ten opener jobs to finish with this video's next point, each with a sample phrasing in plain
 words (write the creator's own version; don't reuse the sample). Each is the opening of a `tease-rehook`, `stacked-loops` or

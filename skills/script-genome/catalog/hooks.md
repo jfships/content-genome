@@ -246,7 +246,7 @@ Ten openers from one creator's on-screen-text list. Each is a skeleton for a mec
 | "I hate doing (x) but it's the only reason (y) worked out" | contradiction | confession + stakes | (y) is the payoff; make it concrete |
 | "The reason most people struggle with (x) is because" | cause reveal | curiosity-gap / callout | the cause must be one specific thing |
 
-**Rant openers.** Three shapes for an opinion or rant Short. The noun in the blank picks the audience: name something the creator's buyers deal with, or the frame pulls viewers outside the market. Casual, person-to-person register: check it fits the creator's voice and stage before offering it. Credit: jfships' own hook bank (2026). Evidence: SINGLE (untested). Flag: weak
+**Rant openers.** Three shapes for an opinion or rant Short. The noun in the blank picks the audience: name something the creator's buyers deal with, or the frame pulls viewers outside the market. Casual, person-to-person register: check it fits the creator's voice and stage before offering it. Register is the creator's call, not the skill's: if the brand's toolbox or line ledger marks the casual register "not for now" (often a follower-count worry), don't offer these; write the same opinion in a calmer register instead (a plain claim plus the symptom: "Most booking apps charge you for the busiest night of your week.", invented) and revisit when the creator's stage changes. Credit: jfships' own hook bank (2026). Evidence: SINGLE (untested). Flag: weak
 | Line | Delivers | Slug | Watch |
 |---|---|---|---|
 | "Nothing makes me more mad than (x)." | strong stance, up front | bold-claim / contrarian | (x) is specific and real; the next line says why |

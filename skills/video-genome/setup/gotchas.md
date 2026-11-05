@@ -10,8 +10,12 @@
 - If the environment has a preinstalled browser, point HyperFrames and Playwright at it (`HYPERFRAMES_BROWSER_PATH=…`, Playwright `executablePath`) instead of downloading one, and pin the Playwright version that matches it.
 
 - **An overlay that ends exactly on a cut stays up on the cut frame.** End it half a frame early (`end - 0.5/fps`).
-- **Studio snapshots lag the video by one frame at cuts.** Judge cuts and overlays on renders (or `draft_checks.py` sheets), never on Studio stills.
-- **Frame count can come out one long** (558 where 557 were expected); the extra frame shows the next beat's text before the loop. Check the last frame of every final, and trim to the expected count. There is no 540-wide preset: render at the full size and scale the draft copy down.
+- **Studio snapshots lag the video by one frame at cuts.** Judge cuts and overlays on `tools/comp_stills.py` stills (it sets each video's own time) and the glitch gate's strips, never on Studio stills.
+- **Frame count one long** (558 where 557 were expected, 642 for 641): the renderer rounds the composition length up to whole frames, so a length written even 0.0001 s long renders one more frame (measured: 2.0 s at 30 fps = 60 frames, 2.0001 s = 61). Write `data-duration` as frames/fps rounded down to 4 decimals; the glitch gate flags it. Still check the last frame of every final. There is no 540-wide preset: render at the full size and scale the draft copy down.
+- **Video clips stutter every third frame** when they start on a whole frame (WebM's millisecond frame times). Start every clip half a frame in (`shorts/build.md` "Clip timing").
+- **Frame cache fills the disk** (~1.4 GB a render; renders then fail "no space left"). Before every render, check free space (at least 5 GB) and run `npx hyperframes@<version> clean` in the project when it's short; after a final is accepted, clean again.
+- **iPhone HDR (HLG) footage renders pink or washed out.** Make SDR BT.709 proxies before building and render with `--sdr`: `ffmpeg -i in.mov -vf "zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p" -c:v libx264 -crf 16 -color_primaries bt709 -color_trc bt709 -colorspace bt709 out.mp4`. Check `color_transfer` with ffprobe first: `arib-std-b67` = HLG.
+- **Rotated phone video:** read the rotation side data; a 3840×2160 file tagged 90° is portrait. Swap width and height before scaling, or stills come out squashed.
 - **Phone footage frame rate:** `r_frame_rate` can read 120 while the real rate is `avg_frame_rate` (30). Read `avg_frame_rate` (the bundled tools do).
 
 ## HyperFrames compositions
@@ -47,7 +51,7 @@
 - Web fonts and CDNs are often blocked. Use local `@fontsource/*` files and a local `gsap.min.js` from npm.
 
 ## Stills
-- Hide clips outside their time range, seek videos to `data-media-start + (t − data-start)`, then `__timelines.main.seek(t)`.
+- Use `tools/comp_stills.py` (never hand-write a stills script): it hides clips outside their time range, seeks videos to `data-media-start + (t − data-start)`, then `__timelines.main.seek(t)`.
 - A clean-still mode (cue strip, placeholder zones and labels hidden) makes stills reusable inside the video (hook montages, thumbnails).
 
 ## Bundled talking-head tools
@@ -57,9 +61,19 @@
 - A speaker-to-side clip must start and end on the `full` box, or the cut shows.
 - `base.py` processes the whole video; for quick tests, trim a section first and shift the plan times.
 
+## Build scripts
+- **A build script must never run on import.** Put everything under `if __name__ == "__main__":`. A checker that imported a build script for one constant restarted a 35-minute build and killed the running one. Checks read the build's output files (`index.html`, `timeline.json`, the mix), never the build script.
+- A JavaScript error anywhere in the timeline script (one un-evaluated expression) stops the whole timeline: stills then show only frame-0 states. `comp_stills.py` stops with the page error; check after any build.
+
 ## Background jobs and transfers
 - Jobs started on the creator's computer through a remote shell may die when the call ends; finish inside one call or detach them properly.
 - Transfers to the creator's computer may have a per-file size cap; make a smaller review copy and keep the master where it was rendered.
+- Files written to the creator's computer through a remote link can carry an extra provenance stamp (a zone marker); check that a file arrived by probing it (ffprobe, open it), not by comparing checksums.
+
+## Cloud workspaces
+- Model downloads can be blocked in a cloud sandbox (Hugging Face often is); models published on GitHub releases (Parakeet, for example) usually download.
+- HyperFrames' CLI in a cloud sandbox needs `PUPPETEER_EXECUTABLE_PATH` set to the sandbox's browser.
+- The high-quality cutout can run as a rented-GPU run of the same model; the local run on the creator's computer is the free fallback.
 
 ## Services
 - Never print API keys. Read them from a local `.env` in the script.

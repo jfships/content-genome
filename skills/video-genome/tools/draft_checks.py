@@ -3,7 +3,7 @@
 catching by eye. Runs on every draft next to tech_review.py (review/checks.md gate 4), not instead of it.
 
 python3 draft_checks.py <render> --timeline work/timeline.json [--source <take.mp4>] --out <folder>
-       [--overlays work/overlays.json] [--line 1500] [--top 288] [--json report.json]
+       [--overlays work/overlays.json] [--line 1500] [--top 210] [--json report.json]
 
 Checks:
   lips      lower lip above the platform bottom rows (y 1500 at 1920 tall) on every frame a face is found
@@ -354,7 +354,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--overlays")
     ap.add_argument("--line", type=float, default=1500, help="bottom no-go line at 1920 tall")
-    ap.add_argument("--top", type=float, default=288, help="top platform rows at 1920 tall (sheet guide only)")
+    ap.add_argument("--top", type=float, default=210, help="top platform rows at 1920 tall (sheet guide only)")
     ap.add_argument("--json")
     a = ap.parse_args()
 

@@ -84,7 +84,7 @@ Order matters; later steps use earlier outputs.
 9. **Mix and finish:** `python3 $SKILL/tools/mix.py mix.json` puts the cleaned voice, the music lanes (ducked under the voice), the SFX and the sound logo on the composite, at the target loudness (`craft/sound.md`).
 10. **Shorts are not made here.** Never crop this cut into a Short. Each Short runs on the Shorts track (`shorts/README.md`) with its own script, fresh hook and tall build; this episode's footage can be a part inside it (`reframe_vertical.py` on one source clip, following the head).
 
-After the measured checks: **Live preview before any render is sent** (`shorts/build.md` "Live preview", same launcher): the creator watches the draft live and calls tweaks; a moment that needs new ideas is a new picker round. Renders are for the checks and the final.
+After the measured checks: **Live preview before any render is sent** (`shorts/build.md` "Live preview", same launcher): the creator watches the draft live and calls tweaks; a moment that needs new ideas is a new picker round. On the Shorts track the checks run on the composition (glitch gate) and the final is the only render.
 
 At each hand-off between kinds of work, give the model nudge (SKILL.md, "Which model for which part"). Then sound (`craft/sound.md`), gates 2–4 (`review/checks.md`) and deliverables.
 

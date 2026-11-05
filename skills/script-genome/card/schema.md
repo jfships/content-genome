@@ -13,6 +13,7 @@ pacing: <pacing slug: `card/triggers.md` §5> | idea-type: demo|tip|opinion|stor
 hook: <hook slug> | spoken: "<≤8 words>" | text: "<3–7 words>" | image: "<what frame 1 shows>"
 ending: <ending slug> | ask: <slug|none> | ask_place: mid-peak|after-payoff|caption|none | peak-in-last-third: yes|no
 stage read: <stage|unknown> | asks open: <slugs> | source: growth plan|default (no growth plan)
+awareness: <unaware|problem|solution|product|most> · <source> | symptom: "<what the viewer feels, their words>" | alt hooks: <n> · alt closes: <n>
 captions: full|emphasis|off (default full, chunk 3–4 words) | pop style: brand
 cover: <frame: time or row id> | line: "<cover text>"
 sources: <S1: claim → source pointer> …  (every number/claim in the script; empty only if the script has none)
@@ -24,6 +25,7 @@ Field notes:
 - `shape / arc / operator / line-rule`: the stack the selector picked. An arc can take one ORDER operator (in-medias-res, full-circle, reversal) and one line rule.
 - `hook` has three layers carrying the same idea; no layer ranked first. Screen text is `own words` or `mirror` (the spoken line word for word, captions hidden for that line), picked per video (`catalog/hooks.md`); write which in the header (`text_mode`); `image` must make sense with sound off. `text` (hook screen text) is 3–7 words; in-body POP overlays are 1–4 words. No word of `text` sits in the caption chunk on screen at the same time (K6).
 - `cover`: the frame used as the cover (a time or row id) and the cover line, in its own words.
+- `awareness`: the viewer's level and the felt symptom the opener names (`check/awareness.md`). `alt hooks` / `alt closes`: how many unused parts are listed under the card (job A step 3).
 - `stage read`: copied from the growth plan (`## Growth state`), or `default` (endings §4).
 - `sources`: pointers, not prose. A claim with no pointer fails lint K15.
 

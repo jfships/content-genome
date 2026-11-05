@@ -286,3 +286,101 @@ How it should feel; what must be in it. Not a script.
 
 ---
 Made with idea-genome by jfships · youtube.com/@jfships_ai
+
+<!-- ===================== CAROUSEL VARIANT ===================== -->
+<!-- For a still carousel, copy from the next "---" down instead of the long template above. One record per carousel. -->
+
+---
+id: IDEA NNN
+slug: <short-slug>
+status: draft            # draft | ready | made | superseded
+format: carousel
+brand: <Creator name from the Genome>
+genome: <path to Brand Genome.md, or "none">
+created: YYYY-MM-DD
+episode: none            # set by video-genome or the creator's workflow
+score: NN/70
+split_from: none
+supersedes: none
+written_in: idea-genome
+slot: none               # growth plan `## This week` slot id, or none
+lane: none
+job: none
+weight: none             # heavy | light
+slides: 8                # 6-10
+linkedin: no             # yes = also a PDF document there
+---
+
+# IDEA NNN: <working title> (carousel)
+
+## Source
+The creator's words (take, memo, checklist), or the script it is cut from.
+
+## Message
+One sentence, 12 words or fewer: what the reader walks away with.
+
+## Who it's for / sent to
+The reader in plain words, and the type of person who would send it (never a name).
+
+## Stranger test
+Pass or fail, one line why. Slide 1 read alone, no caption, no video.
+
+## Order
+<pain-first | take-first | payoff-first (checklist)> and why. Where the take lands.
+
+## Slide plan
+| # | Job | Line (their words) | What leaves the next slide open |
+|---|---|---|---|
+| 1 | Cover | | |
+| 2 | Second cover | | |
+| 3.. | Body | | |
+| N-1 | Keeper | | |
+| N | Close, one ask | | |
+Slide-1 line: "<exact>" · Slide-2 line: "<exact>" · Keeper: "<what people save>" · The one ask: "<exact>", allowed because <stage / `cta_allowed_now`> says so.
+
+## Look
+<the brand's carousel look field, copied, or "owed">. Handle / counter / swipe cue: as that field says.
+
+## Caption (draft: adds, never retells)
+"<in their voice>"
+
+## Truth check
+Claims the creator can back; general pains that are not their claims; overrides they made on purpose.
+
+## Overlaps
+Other ideas or videos on the same theme, and how far apart to post them.
+
+## Develop rounds
+### Round 1 (YYYY-MM-DD)
+- <creator's words>
+
+## Genome cross-check (YYYY-MM-DD)
+<fits; each conflict ruled by the creator>
+
+## Completeness check
+<every item done, or open with an owner>
+
+## Sources
+Research links, example carousels.
+
+## Score
+| Cover+2nd ×3 | Send ×2 | Save ×2 | Proof ×3 | Fit ×2 | Effort ×1 | Results ×1 | Total |
+|---|---|---|---|---|---|---|---|
+| | | | | | | | NN/70 |
+- Cover + second look N: <slide 1 and 2 read cold>
+- Send N: <evidence>
+- Save N: <the keeper>
+- Proof N: <evidence>
+- Fit N: <evidence>
+- Effort N: <pictures it needs>
+- Results N: <evidence, or "no log yet">
+Verdict: <make next / park (what would raise it) / reject>. <"Creator's call: …" if overruled>
+
+## Measures
+Sends, saves and follows per 1,000 reached vs the Reels baseline. One-line prediction.
+
+## Notes for the plan
+How it should feel; what must be in it. Not a script.
+
+---
+Made with idea-genome by jfships · youtube.com/@jfships_ai
